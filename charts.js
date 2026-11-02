@@ -4,6 +4,7 @@
   'use strict';
 
   const GAUGE_W = 150, GAUGE_H = 400, GAUGE_TOP = 22, GAUGE_BOTTOM = 12, RAIL_X = 18;
+  const LABEL_MIN_GAP = 12;          // minimum vertical distance between landmark labels
   const CURVE_W = 480, CURVE_H = 170, CURVE_PAD = { top: 26, right: 10, bottom: 30, left: 10 };
   const CURVE_BIN_M = 250;          // metres per histogram bin (must match the server RPC)
   const CURVE_SMOOTH_SIGMA = 1.4;   // in bins
@@ -32,12 +33,15 @@
     }
     out += '<line class="rail" x1="' + RAIL_X + '" y1="' + GAUGE_TOP + '" x2="' + RAIL_X + '" y2="' + (GAUGE_H - GAUGE_BOTTOM) + '"/>';
     out += '<rect class="fill" x="' + (RAIL_X - 3) + '" y="' + GAUGE_TOP + '" width="6" height="' + (depthToY(d) - GAUGE_TOP).toFixed(1) + '" rx="3"/>';
+    let lastLabelY = -Infinity;
     for (const lm of dive.LANDMARKS) {
       const y = depthToY(lm.depth);
+      const labelY = Math.max(y, lastLabelY + LABEL_MIN_GAP);     // keep close landmarks (3,800 / 4,000) readable
+      lastLabelY = labelY;
       const passed = d >= lm.depth ? ' lm-passed' : '';
       out += '<g class="lm' + passed + '" data-depth="' + lm.depth + '">';
       out += '<line x1="' + (RAIL_X - 7) + '" y1="' + y.toFixed(1) + '" x2="' + (RAIL_X + 7) + '" y2="' + y.toFixed(1) + '" stroke="currentColor" stroke-width="1.5" opacity=".7"/>';
-      out += '<text class="lm-label" x="' + (RAIL_X + 14) + '" y="' + (y + 3.5).toFixed(1) + '">' + esc(fmt(lm.depth)) + ' ' + esc(lm.label) + '</text>';
+      out += '<text class="lm-label" x="' + (RAIL_X + 14) + '" y="' + (labelY + 3.5).toFixed(1) + '">' + esc(fmt(lm.depth)) + ' ' + esc(lm.label) + '</text>';
       out += '</g>';
     }
     out += '<circle class="marker" cx="' + RAIL_X + '" cy="' + depthToY(d).toFixed(1) + '" r="7"/>';
