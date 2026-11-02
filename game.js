@@ -75,7 +75,7 @@
   function startFree(seed) {
     const { dive, prompts } = F();
     const s = seed || dive.randomSeed(6);
-    if (location.hash !== '#/free/' + s) { history.replaceState(null, '', '#/free/' + s); }
+    if (location.hash !== '#free-' + s) { history.replaceState(null, '', '#free-' + s); }
     startDive({ mode: 'free', promptIds: dive.freePromptIds(s, prompts), seed: s });
   }
   function startArchive(dayKey) {
@@ -334,10 +334,10 @@
     }
     if (record.mode === 'daily') {
       const cd = el('p', { class: 'small muted', style: 'margin:12px 0 0', html: 'Next dive in <b id="countdown">--:--:--</b>' });
-      row.append(el('a', { class: 'btn', href: '#/free', text: 'Free Dive' }));
+      row.append(el('a', { class: 'btn', href: '#free', text: 'Free Dive' }));
       actions.append(row, cd);
     } else {
-      row.append(el('a', { class: 'btn', href: record.mode === 'pack' ? '#/packs' : '#/free', text: record.mode === 'pack' ? 'More packs' : 'Dive again' }));
+      row.append(el('a', { class: 'btn', href: record.mode === 'pack' ? '#packs' : '#free', text: record.mode === 'pack' ? 'More packs' : 'Dive again' }));
       actions.append(row);
     }
     nodes.push(actions);
@@ -373,7 +373,7 @@
       list.append(li);
     });
     nodes.push(el('div', { class: 'card' }, [el('h3', { text: 'Your seven prompts' }), list]));
-    nodes.push(el('div', { class: 'row center', style: 'justify-content:center' }, [el('a', { class: 'btn btn-ghost', href: '#/logbook', text: 'Open the logbook' }), el('a', { class: 'btn btn-ghost', href: '#/', text: 'Home' })]));
+    nodes.push(el('div', { class: 'row center', style: 'justify-content:center' }, [el('a', { class: 'btn btn-ghost', href: '#logbook', text: 'Open the logbook' }), el('a', { class: 'btn btn-ghost', href: '#home', text: 'Home' })]));
     render(nodes);
     if (record.mode === 'daily') startCountdown();
   }
@@ -400,7 +400,7 @@
       const ms = dive.msUntilNextDay(new Date());
       const h = Math.floor(ms / 3600000), m = Math.floor((ms % 3600000) / 60000), s = Math.floor((ms % 60000) / 1000);
       node.textContent = String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
-      if (ms <= 0) { clearInterval(countdownTimer); countdownTimer = null; F().navigate('#/daily'); }
+      if (ms <= 0) { clearInterval(countdownTimer); countdownTimer = null; F().navigate('#daily'); }
     };
     tick();
     countdownTimer = setInterval(tick, config.COUNTDOWN_TICK_MS);

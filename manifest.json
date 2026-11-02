@@ -2,7 +2,7 @@
   "name": "FATHOM — the daily ocean dive",
   "short_name": "FATHOM",
   "description": "Seven ocean questions a day. The rarer your answer, the deeper you dive.",
-  "start_url": "./#/",
+  "start_url": "./#home",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",

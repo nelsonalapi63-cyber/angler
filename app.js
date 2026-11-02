@@ -92,6 +92,16 @@
     return box;
   }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeModal(); closeMenu(); } });
+  function confirmDialog(message, okLabel) {
+    return new Promise((resolve) => {
+      let answered = false;
+      const done = (v) => { if (answered) return; answered = true; closeModal(); resolve(v); };
+      modal({ title: 'Are you sure?', body: el('div', {}, [el('p', { text: message }), el('div', { class: 'row' }, [
+        el('button', { class: 'btn btn-primary', type: 'button', text: okLabel || 'Yes', onClick: () => done(true) }),
+        el('button', { class: 'btn', type: 'button', text: 'Cancel', onClick: () => done(false) }),
+      ])]), onClose: () => done(false) });
+    });
+  }
 
   // ---------------------------------------------------------------- menu drawer
   const menu = () => document.getElementById('menu');
@@ -175,7 +185,7 @@
   }
 
   // ---------------------------------------------------------------- router
-  function currentHash() { return location.hash || '#/'; }
+  function currentHash() { return location.hash || '#home'; }
   function navigate(hash) { if (currentHash() === hash) route(); else location.hash = hash; }
   function route() {
     closeMenu();
@@ -185,19 +195,23 @@
     const game = root.FathomGame;
     if (game.leaveDive) game.leaveDive();
     applyDepthTint(0);
-    const parts = hash.replace(/^#\/?/, '').split('/').filter(Boolean);
-    const page = parts[0] || '';
-    document.querySelectorAll('#menu a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#/' + page));
+    // Routes are plain hash names (#daily, #pack-sharks, #archive-2026-11-01): the first word is the page,
+    // the rest is its parameter. Plain names survive every host, including ones that only pass #name through.
+    const raw = hash.replace(/^#\/?/, '');
+    const dash = raw.indexOf('-');
+    const page = dash > -1 ? raw.slice(0, dash) : raw;
+    const param = dash > -1 ? raw.slice(dash + 1) : '';
+    document.querySelectorAll('#menu a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + page));
     if (hash.indexOf('access_token=') > -1 || hash.indexOf('error=') > -1) { return; } // handled by online.js on load
     switch (page) {
-      case '': return pages.home();
+      case '': case 'home': return pages.home();
       case 'daily': return game.startDaily();
-      case 'free': return game.startFree(parts[1]);
-      case 'archive': return parts[1] ? game.startArchive(parts[1]) : pages.archive();
+      case 'free': return game.startFree(param);
+      case 'archive': return param ? game.startArchive(param) : pages.archive();
       case 'packs': return pages.packs();
-      case 'pack': return game.startPack(parts[1]);
-      case 'leaderboard': return pages.leaderboard(parts[1]);
-      case 'logbook': return pages.logbook(parts[1]);
+      case 'pack': return game.startPack(param);
+      case 'leaderboard': return pages.leaderboard(param);
+      case 'logbook': return pages.logbook(param);
       case 'stats': pages.home(); return pages.statsModal();
       case 'faq': return pages.faq();
       case 'challenge': return game.startChallenge(hash);
@@ -209,7 +223,7 @@
   function init() {
     root.Fathom = {
       config: CONFIG, dive, storage, charts, entities, prompts, promptsById, packs, packsById,
-      el, esc, render, navigate, modal, closeModal, toast, applyDepthTint, applySettings, sound,
+      el, esc, render, navigate, modal, closeModal, confirmDialog, toast, applyDepthTint, applySettings, sound,
       todayKey: () => dive.dayKey(new Date()),
     };
     applySettings();
@@ -219,7 +233,7 @@
     document.getElementById('btn-help').addEventListener('click', () => root.FathomPages.howToModal());
     document.getElementById('btn-stats').addEventListener('click', () => root.FathomPages.statsModal());
     document.getElementById('btn-settings').addEventListener('click', () => root.FathomPages.settingsModal());
-    document.getElementById('footer-contact').addEventListener('click', (e) => { e.preventDefault(); navigate('#/faq'); setTimeout(() => { const c = document.getElementById('contact'); if (c) c.scrollIntoView(); }, 50); });
+    document.getElementById('footer-contact').addEventListener('click', (e) => { e.preventDefault(); navigate('#faq'); setTimeout(() => { const c = document.getElementById('contact'); if (c) c.scrollIntoView(); }, 50); });
     root.addEventListener('hashchange', route);
     if (root.FathomOnline && root.FathomOnline.init) root.FathomOnline.init();
     if (root.FathomMonetise && root.FathomMonetise.init) root.FathomMonetise.init();

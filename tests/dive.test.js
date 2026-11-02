@@ -117,13 +117,14 @@ test('day keys, puzzle numbers and countdown use America/New_York', () => {
 
 test('challenge hashes round-trip and reject garbage', () => {
   const h = dive.makeChallengeHash('k7p2qz', 4210, ['tidepool', 'reef', 'twilight', null, 'midnight', 'hadal', 'baitball']);
-  assert.strictEqual(h, '#/challenge/k7p2qz-4210-1340562');
+  assert.strictEqual(h, '#challenge-k7p2qz-4210-1340562');
   const parsed = dive.parseChallenge(h);
   assert.deepStrictEqual(parsed, { seed: 'k7p2qz', depth: 4210, tiers: ['tidepool', 'reef', 'twilight', null, 'midnight', 'hadal', 'baitball'] });
-  assert.deepStrictEqual(dive.parseChallenge('#/challenge/k7p2qz'), { seed: 'k7p2qz', depth: 0, tiers: null });
-  assert.strictEqual(dive.parseChallenge('#/challenge/'), null);
-  assert.strictEqual(dive.parseChallenge('#/challenge/!!!-abc'), null);
-  assert.strictEqual(dive.parseChallenge('#/challenge/k7p2qz-4210-99'), null);
+  assert.deepStrictEqual(dive.parseChallenge('#challenge-k7p2qz'), { seed: 'k7p2qz', depth: 0, tiers: null });
+  assert.deepStrictEqual(dive.parseChallenge('#/challenge/k7p2qz-10'), { seed: 'k7p2qz', depth: 10, tiers: null });
+  assert.strictEqual(dive.parseChallenge('#challenge-'), null);
+  assert.strictEqual(dive.parseChallenge('#challenge-!!!-abc'), null);
+  assert.strictEqual(dive.parseChallenge('#challenge-k7p2qz-4210-99'), null);
   assert.strictEqual(dive.parseChallenge(undefined), null);
 });
 

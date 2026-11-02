@@ -295,9 +295,9 @@
   }
 
   // ---------------------------------------------------------------- challenge links
-  const CHALLENGE_RE = /^#\/challenge\/([a-z0-9]{4,12})(?:-(\d{1,5}))?(?:-([0-6]{7}))?\/?$/;
+  const CHALLENGE_RE = /^#\/?challenge[-\/]([a-z0-9]{4,12})(?:-(\d{1,5}))?(?:-([0-6]{7}))?\/?$/;
   function makeChallengeHash(seed, depth, tierCodes) {
-    let h = '#/challenge/' + seed;
+    let h = '#challenge-' + seed;
     if (depth != null) h += '-' + Math.max(0, Math.round(depth));
     if (tierCodes && tierCodes.length === PROMPTS_PER_DIVE) h += '-' + tiersToDigits(tierCodes);
     return h;

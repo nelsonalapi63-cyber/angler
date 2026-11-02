@@ -19,7 +19,7 @@
   }
   function message(title, text) {
     const { el, render } = F();
-    render(el('div', { class: 'card strong' }, [el('h2', { text: title }), el('p', { text: text }), el('a', { class: 'btn', href: '#/', text: 'Home' })]));
+    render(el('div', { class: 'card strong' }, [el('h2', { text: title }), el('p', { text: text }), el('a', { class: 'btn', href: '#home', text: 'Home' })]));
   }
   function notFound() { message('Nothing down here', 'That page does not exist. Surface and try the menu.'); }
 
@@ -37,20 +37,20 @@
     if (played) {
       daily.append(el('p', { html: 'You reached <b>' + esc(dive.formatMeters(played.depth)) + ' m</b> today — ' + esc(dive.zoneFor(played.depth).name.toLowerCase()) + '.' }));
       daily.append(el('div', { class: 'grid-emoji', text: dive.tiersToEmoji(played.tiers) }));
-      daily.append(el('div', { class: 'row', style: 'margin-top:12px' }, [el('a', { class: 'btn btn-primary', href: '#/daily', text: 'See your dive' }), el('a', { class: 'btn', href: '#/free', text: 'Free Dive' })]));
+      daily.append(el('div', { class: 'row', style: 'margin-top:12px' }, [el('a', { class: 'btn btn-primary', href: '#daily', text: 'See your dive' }), el('a', { class: 'btn', href: '#free', text: 'Free Dive' })]));
     } else {
       daily.append(el('p', { text: 'Seven ocean prompts, 25 seconds each. The rarer your answer, the deeper you sink. Same seven for everyone today.' }));
-      daily.append(el('div', { class: 'row' }, [el('a', { class: 'btn btn-primary', href: '#/daily', text: number > 0 ? 'Start today’s dive' : 'Practice dive' }), el('a', { class: 'btn', href: '#/free', text: 'Free Dive' })]));
+      daily.append(el('div', { class: 'row' }, [el('a', { class: 'btn btn-primary', href: '#daily', text: number > 0 ? 'Start today’s dive' : 'Practice dive' }), el('a', { class: 'btn', href: '#free', text: 'Free Dive' })]));
     }
     if (streak.current > 1) daily.append(el('p', { class: 'small muted', style: 'margin:12px 0 0', text: streak.current + '-day streak' }));
     nodes.push(daily);
 
     const lb = storage.logbook();
     const items = [
-      ['#/packs', '🪸', 'Themed Packs', 'Sharks, Deep Sea, Reef Life and more'],
-      ['#/archive', '🗓', 'Archive', 'Replay past daily dives'],
-      ['#/leaderboard', '🏆', 'Leaderboard', 'Today, this Tide, all time'],
-      ['#/logbook', '📓', 'Logbook', Object.keys(lb).length + ' logged so far'],
+      ['#packs', '🪸', 'Themed Packs', 'Sharks, Deep Sea, Reef Life and more'],
+      ['#archive', '🗓', 'Archive', 'Replay past daily dives'],
+      ['#leaderboard', '🏆', 'Leaderboard', 'Today, this Tide, all time'],
+      ['#logbook', '📓', 'Logbook', Object.keys(lb).length + ' logged so far'],
     ];
     nodes.push(el('div', { class: 'card' }, el('ul', { class: 'list' }, items.map(([href, icon, name, sub]) => el('li', {}, [
       el('span', { text: icon, 'aria-hidden': 'true', style: 'font-size:1.3rem' }),
@@ -79,7 +79,7 @@
       const rec = live[k] || arch[k];
       const locked = M && !M.isArchiveUnlocked(k);
       const li = el('li', {}, [
-        el('a', { class: 'grow', href: '#/archive/' + k, html: '<b>FATHOM #' + dive.puzzleNumber(k) + '</b> <span class="muted small">' + esc(niceDate(k)) + '</span>' }),
+        el('a', { class: 'grow', href: '#archive-' + k, html: '<b>FATHOM #' + dive.puzzleNumber(k) + '</b> <span class="muted small">' + esc(niceDate(k)) + '</span>' }),
         rec ? el('span', { class: 'small', html: '<b>' + esc(dive.formatMeters(rec.depth)) + ' m</b>' }) : el('span', { class: 'small muted', text: locked ? '' : 'Not played' }),
         locked ? el('span', { class: 'lock', text: '🔒 Archive Pass' }) : null,
       ]);
@@ -99,7 +99,7 @@
       const locked = M && !M.isPackUnlocked(p.id);
       list.append(el('li', {}, [
         el('span', { text: p.emoji, 'aria-hidden': 'true', style: 'font-size:1.4rem' }),
-        el('a', { class: 'grow', href: '#/pack/' + p.id, html: '<b>' + esc(p.name) + '</b><br><span class="small muted">' + esc(p.blurb) + '</span>' }),
+        el('a', { class: 'grow', href: '#pack-' + p.id, html: '<b>' + esc(p.name) + '</b><br><span class="small muted">' + esc(p.blurb) + '</span>' }),
         best ? el('span', { class: 'small', html: 'Best<br><b>' + esc(dive.formatMeters(best.depth)) + ' m</b>' }) : null,
         locked ? el('span', { class: 'lock', text: '🔒 ' + (M ? M.priceLabel('pack') : '') }) : null,
       ]));
@@ -117,7 +117,7 @@
     for (const p of prompts) for (const a of p.answers) if (a.tier === 'hadal') hadalIds.add(a.entity);
     const hadalFound = Array.from(hadalIds).filter(id => lb[id] && lb[id].bestTier === 'hadal').length;
 
-    const tabs = el('div', { class: 'tabs', role: 'tablist' }, LOGBOOK_TABS.map(t => el('button', { role: 'tab', 'aria-selected': String(t.kind === kind), onClick: () => F().navigate('#/logbook/' + t.kind), text: t.label })));
+    const tabs = el('div', { class: 'tabs', role: 'tablist' }, LOGBOOK_TABS.map(t => el('button', { role: 'tab', 'aria-selected': String(t.kind === kind), onClick: () => F().navigate('#logbook-' + t.kind), text: t.label })));
     const ofKind = all.filter(e => e.kind === kind);
     const logged = ofKind.filter(e => lb[e.id]);
     const groups = Array.from(new Set(ofKind.map(e => e.group))).sort();
@@ -269,7 +269,7 @@
     const O = root.FathomOnline;
     if (O && O.settingsSection) body.append(O.settingsSection());
     body.append(el('p', { class: 'small muted', style: 'margin-top:14px', text: 'Tip: add FATHOM to your home screen from your browser’s share or menu button — it works offline.' }));
-    body.append(el('div', { class: 'switch' }, [el('div', { html: '<b>Reset local data</b><br><span class="small muted">Clears results, logbook and settings on this device</span>' }), el('button', { class: 'btn btn-sm', type: 'button', text: 'Reset', onClick: () => { if (confirm('Clear everything FATHOM has saved on this device?')) { storage.clearAll(); applySettings(); F().closeModal(); toast('Local data cleared'); F().navigate('#/'); } } })]));
+    body.append(el('div', { class: 'switch' }, [el('div', { html: '<b>Reset local data</b><br><span class="small muted">Clears results, logbook and settings on this device</span>' }), el('button', { class: 'btn btn-sm', type: 'button', text: 'Reset', onClick: async () => { if (await F().confirmDialog('Clear everything FATHOM has saved on this device?', 'Clear it')) { storage.clearAll(); applySettings(); toast('Local data cleared'); F().navigate('#home'); } } })]));
     modal({ title: 'Settings', body });
   }
 

@@ -70,10 +70,10 @@ async function exposePromptIds(page) {
     const dive = window.FathomDive;
     const hash = location.hash;
     let ids;
-    if (hash.startsWith('#/daily')) ids = dive.dailyPromptIds(dive.dayKey(new Date()), window.FATHOM_PROMPTS, dive.LAUNCH_DATE);
-    else if (hash.startsWith('#/free/')) ids = dive.freePromptIds(hash.split('/')[2], window.FATHOM_PROMPTS);
-    else if (hash.startsWith('#/pack/')) ids = dive.packPromptIds(window.FATHOM_PACKS.find(p => p.id === hash.split('/')[2]), window.FATHOM_PROMPTS);
-    else if (hash.startsWith('#/challenge/')) ids = dive.freePromptIds(dive.parseChallenge(hash).seed, window.FATHOM_PROMPTS);
+    if (hash.startsWith('#daily')) ids = dive.dailyPromptIds(dive.dayKey(new Date()), window.FATHOM_PROMPTS, dive.LAUNCH_DATE);
+    else if (hash.startsWith('#free-')) ids = dive.freePromptIds(hash.slice(6), window.FATHOM_PROMPTS);
+    else if (hash.startsWith('#pack-')) ids = dive.packPromptIds(window.FATHOM_PACKS.find(p => p.id === hash.slice(6)), window.FATHOM_PROMPTS);
+    else if (hash.startsWith('#challenge-')) ids = dive.freePromptIds(dive.parseChallenge(hash).seed, window.FATHOM_PROMPTS);
     document.body.dataset.promptIds = JSON.stringify(ids);
   });
 }
@@ -104,15 +104,15 @@ async function playDive(page, plan, opts) {
   watch(page, 'mobile');
 
   // ---- first visit: how-to modal, home
-  await page.goto(srv.url + '#/');
+  await page.goto(srv.url + '#home');
   await page.waitForSelector('.modal');
   assert.ok((await page.textContent('.modal')).includes('How to play'));
   await page.click('#howto-go');
-  await page.waitForSelector('main a[href="#/daily"]');
+  await page.waitForSelector('main a[href="#daily"]');
   await page.screenshot({ path: path.join(SHOTS, 'home-mobile.png') });
 
   // ---- daily dive with scripted inputs
-  await page.click('main a[href="#/daily"]');
+  await page.click('main a[href="#daily"]');
   await page.waitForSelector('#answer');
   await exposePromptIds(page);
   const plan = await planAnswers(page);
@@ -145,7 +145,7 @@ async function playDive(page, plan, opts) {
   fs.writeFileSync(path.join(FIXTURES, 'recorded-dive.json'), JSON.stringify({ day: result.dayKey, promptIds: result.promptIds, answers: result.results.map(r => ({ typed: r.typed, secondsUsed: r.secondsUsed })), depth: result.depth, points: result.points, tiers: result.tiers }, null, 2));
 
   // ---- daily is now locked to the result; countdown shows
-  await page.goto(srv.url + '#/daily');
+  await page.goto(srv.url + '#daily');
   await page.waitForSelector('#countdown');
   await page.waitForFunction(() => /\d\d:\d\d:\d\d/.test(document.getElementById('countdown').textContent));
 
@@ -157,43 +157,43 @@ async function playDive(page, plan, opts) {
   const statsText = await page.textContent('.modal');
   assert.ok(/1\s*Dives played/.test(statsText.replace(/\n/g, ' ')), 'stats show 1 dive played');
   await page.keyboard.press('Escape');
-  await page.goto(srv.url + '#/logbook');
+  await page.goto(srv.url + '#logbook');
   await page.waitForSelector('.tabs');
   const logged = await page.evaluate(() => Object.keys(window.FathomStorage.logbook()).length);
   assert.ok(logged >= 4, 'logbook has the accepted answers, got ' + logged);
   await page.screenshot({ path: path.join(SHOTS, 'logbook-mobile.png') });
-  for (const tab of ['plant', 'place', 'person', 'vessel']) { await page.goto(srv.url + '#/logbook/' + tab); await page.waitForSelector('.tabs'); }
+  for (const tab of ['plant', 'place', 'person', 'vessel']) { await page.goto(srv.url + '#logbook-' + tab); await page.waitForSelector('.tabs'); }
 
   // ---- leaderboard tabs (mock)
   for (const tab of ['today', 'tide', 'alltime', 'friends']) {
-    await page.goto(srv.url + '#/leaderboard/' + tab);
+    await page.goto(srv.url + '#leaderboard-' + tab);
     await page.waitForSelector('.tabs');
     assert.ok((await page.textContent('main')).includes('demo'), 'demo badge on ' + tab);
   }
-  await page.goto(srv.url + '#/leaderboard');
+  await page.goto(srv.url + '#leaderboard');
   await page.waitForSelector('.lb-rank');
   await page.screenshot({ path: path.join(SHOTS, 'leaderboard-mobile.png') });
 
   // ---- packs: free pack plays, locked pack opens the unlock modal
-  await page.goto(srv.url + '#/packs');
+  await page.goto(srv.url + '#packs');
   await page.waitForSelector('.list');
-  await page.click('a[href="#/pack/deep-sea"]');
+  await page.click('a[href="#pack-deep-sea"]');
   await page.waitForSelector('.modal');
   assert.ok((await page.textContent('.modal')).includes('Coming soon'));
   await page.keyboard.press('Escape');
-  await page.goto(srv.url + '#/pack/sharks');
+  await page.goto(srv.url + '#pack-sharks');
   await page.waitForSelector('#answer');
   await playDive(page, null, {});
   assert.ok((await page.textContent('main')).includes('Sharks'));
 
   // ---- free dive → challenge link → second context plays the identical seven
-  await page.goto(srv.url + '#/free');
+  await page.goto(srv.url + '#free');
   await page.waitForSelector('#answer');
   const seen1 = await playDive(page, null, {});
   await page.click('text=Challenge a friend');
   await page.waitForSelector('.toast');
   const link = await page.evaluate(() => navigator.clipboard.readText());
-  assert.ok(/#\/challenge\/[a-z0-9]+-\d+-[0-6]{7}$/.test(link), 'challenge link: ' + link);
+  assert.ok(/#challenge-[a-z0-9]+-\d+-[0-6]{7}$/.test(link), 'challenge link: ' + link);
   const ctx2 = await browser.newContext({ viewport: { width: 390, height: 844 } });
   const page2 = await ctx2.newPage();
   watch(page2, 'challenge');
@@ -207,10 +207,10 @@ async function playDive(page, plan, opts) {
   await ctx2.close();
 
   // ---- archive, faq, settings, help, 404, legal pages
-  await page.goto(srv.url + '#/archive'); await page.waitForSelector('main h1');
-  await page.goto(srv.url + '#/archive/2020-01-01'); await page.waitForSelector('main h1');
-  await page.goto(srv.url + '#/faq'); await page.waitForSelector('#contact');
-  await page.goto(srv.url + '#/nope'); await page.waitForSelector('main h2');
+  await page.goto(srv.url + '#archive'); await page.waitForSelector('main h1');
+  await page.goto(srv.url + '#archive-2020-01-01'); await page.waitForSelector('main h1');
+  await page.goto(srv.url + '#faq'); await page.waitForSelector('#contact');
+  await page.goto(srv.url + '#nope'); await page.waitForSelector('main h2');
   await page.click('#btn-help'); await page.waitForSelector('.modal'); await page.keyboard.press('Escape');
   await page.click('#btn-settings'); await page.waitForSelector('.modal');
   await page.selectOption('.modal select', 'light');
@@ -224,15 +224,15 @@ async function playDive(page, plan, opts) {
   for (const legal of ['privacy.html', 'terms.html', 'refunds.html']) { const r = await page.goto(srv.url + legal); assert.strictEqual(r.status(), 200); await page.waitForSelector('h1'); }
 
   // ---- offline: service worker serves the site and a free dive still plays
-  await page.goto(srv.url + '#/');
+  await page.goto(srv.url + '#home');
   await page.evaluate(() => navigator.serviceWorker.ready);
   await page.waitForFunction(() => navigator.serviceWorker.controller !== null, null, { timeout: 15000 }).catch(() => {});
   await page.reload();
   await page.waitForSelector('main');
   await mobile.setOffline(true);
   await page.reload();
-  await page.waitForSelector('main a[href="#/free"]', { timeout: 15000 });
-  await page.click('main a[href="#/free"]');
+  await page.waitForSelector('main a[href="#free"]', { timeout: 15000 });
+  await page.click('main a[href="#free"]');
   await page.waitForSelector('#answer');
   await mobile.setOffline(false);
 
@@ -240,10 +240,10 @@ async function playDive(page, plan, opts) {
   const desktop = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   const dpage = await desktop.newPage();
   watch(dpage, 'desktop');
-  await dpage.goto(srv.url + '#/');
+  await dpage.goto(srv.url + '#home');
   await dpage.waitForSelector('.modal'); await dpage.click('#howto-go');
   await dpage.screenshot({ path: path.join(SHOTS, 'home-desktop.png') });
-  await dpage.goto(srv.url + '#/free');
+  await dpage.goto(srv.url + '#free');
   await dpage.waitForSelector('#answer');
   await dpage.fill('#answer', 'nothing at all'); await dpage.press('#answer', 'Enter'); await dpage.waitForSelector('.tile');
   await dpage.screenshot({ path: path.join(SHOTS, 'dive-desktop.png') });

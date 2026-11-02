@@ -140,7 +140,7 @@
     const bar = el('div', { class: 'consent', role: 'dialog', 'aria-label': 'Cookie consent' }, [
       el('p', { class: 'small', style: 'margin:0 0 10px', html: 'FATHOM is free because of ads. Ads use cookies to pick what you see. You can change this any time in Settings. <a href="privacy.html">Privacy policy</a>.' }),
       el('div', { class: 'row' }, [
-        el('button', { class: 'btn btn-sm btn-primary', type: 'button', text: 'Allow ads', onClick: () => { storage.updateSettings({ consent: 'yes' }); bar.remove(); F().navigate(location.hash || '#/'); } }),
+        el('button', { class: 'btn btn-sm btn-primary', type: 'button', text: 'Allow ads', onClick: () => { storage.updateSettings({ consent: 'yes' }); bar.remove(); F().navigate(location.hash || '#home'); } }),
         el('button', { class: 'btn btn-sm', type: 'button', text: 'No thanks', onClick: () => { storage.updateSettings({ consent: 'no' }); bar.remove(); } }),
       ]),
     ]);

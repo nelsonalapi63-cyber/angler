@@ -16,13 +16,13 @@ const { start } = require('./serve');
   const shots = path.join(__dirname, 'screenshots');
   fs.mkdirSync(shots, { recursive: true });
 
-  await page.goto(srv.url + '#/');
+  await page.goto(srv.url + '#home');
   await page.waitForSelector('.modal');          // how-to on first visit
   await page.screenshot({ path: path.join(shots, 'smoke-howto.png') });
   await page.click('#howto-go');
   await page.screenshot({ path: path.join(shots, 'smoke-home.png') });
 
-  await page.click('main a[href="#/daily"]');
+  await page.click('main a[href="#daily"]');
   await page.waitForSelector('#answer');
   const data = await page.evaluate(() => {
     const ids = Array.from(document.querySelectorAll('.progress-dots span')).length;
@@ -54,10 +54,10 @@ const { start } = require('./serve');
   await page.waitForSelector('.modal');
   await page.screenshot({ path: path.join(shots, 'smoke-stats.png') });
   await page.keyboard.press('Escape');
-  await page.goto(srv.url + '#/leaderboard');
+  await page.goto(srv.url + '#leaderboard');
   await page.waitForSelector('.tabs');
   await page.screenshot({ path: path.join(shots, 'smoke-leaderboard.png'), fullPage: true });
-  await page.goto(srv.url + '#/logbook');
+  await page.goto(srv.url + '#logbook');
   await page.waitForSelector('.tabs');
   await page.screenshot({ path: path.join(shots, 'smoke-logbook.png'), fullPage: true });
   console.log('console errors:', errors.length ? errors : 'none');

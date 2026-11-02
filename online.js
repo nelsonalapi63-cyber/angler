@@ -98,7 +98,7 @@
     const hash = location.hash || '';
     if (hash.indexOf('access_token=') < 0 && hash.indexOf('error=') < 0) return false;
     const params = new URLSearchParams(hash.replace(/^#\/?/, ''));
-    history.replaceState(null, '', siteRoot() + '#/');
+    history.replaceState(null, '', siteRoot() + '#home');
     if (params.get('error')) { F().toast('Sign-in failed: ' + (params.get('error_description') || params.get('error'))); return true; }
     session = { access_token: params.get('access_token'), refresh_token: params.get('refresh_token'), expires_at: Date.now() + Number(params.get('expires_in') || 3600) * 1000, user: null };
     try {
@@ -349,7 +349,7 @@
     }
     const demo = !flags.LEADERBOARD_ENABLED;
     const today = F().todayKey();
-    const tabs = el('div', { class: 'tabs', role: 'tablist' }, TABS.map(([code, label]) => el('button', { role: 'tab', 'aria-selected': String(code === t), text: label, onClick: () => F().navigate('#/leaderboard/' + code) })));
+    const tabs = el('div', { class: 'tabs', role: 'tablist' }, TABS.map(([code, label]) => el('button', { role: 'tab', 'aria-selected': String(code === t), text: label, onClick: () => F().navigate('#leaderboard-' + code) })));
     const head = el('div', { class: 'row between', style: 'margin-bottom:8px' }, [el('div', { id: 'world-one', class: 'small', html: '' }), demo ? el('span', { class: 'badge demo', text: 'demo data' }) : null]);
     const body = el('div', { html: '<p class="small muted">Loading…</p>' });
     wrap.append(head, tabs, body);
@@ -425,7 +425,7 @@
         } else {
           if (!user()) return drawFriends([], 'Sign in to follow friends and see them here.');
           const rows = await rest('/rest/v1/rpc/friends_today', { method: 'POST', body: { p_day: today } });
-          const form = el('form', { class: 'row', onSubmit: async (e) => { e.preventDefault(); const h = form.querySelector('input').value.trim(); if (!h) return; try { await rest('/rest/v1/rpc/follow_handle', { method: 'POST', body: { p_handle: h } }); F().toast('Following ' + h); F().navigate('#/leaderboard/friends'); } catch (err) { F().toast('No diver with that handle'); } } }, [el('input', { class: 'input', placeholder: 'Follow a handle', 'aria-label': 'Handle to follow' }), el('button', { class: 'btn', type: 'submit', text: 'Follow' })]);
+          const form = el('form', { class: 'row', onSubmit: async (e) => { e.preventDefault(); const h = form.querySelector('input').value.trim(); if (!h) return; try { await rest('/rest/v1/rpc/follow_handle', { method: 'POST', body: { p_handle: h } }); F().toast('Following ' + h); F().navigate('#leaderboard-friends'); } catch (err) { F().toast('No diver with that handle'); } } }, [el('input', { class: 'input', placeholder: 'Follow a handle', 'aria-label': 'Handle to follow' }), el('button', { class: 'btn', type: 'submit', text: 'Follow' })]);
           drawFriends(rows, rows.length ? 'You and the divers you follow, today.' : 'You are not following anyone yet.');
           body.prepend(form);
         }
@@ -481,7 +481,7 @@
       el('div', { class: 'switch' }, [el('div', { html: '<b>Handle</b><br><span class="small muted">Shown on leaderboards. 3–16 letters, numbers, underscores.</span>' }), el('div', { class: 'row' }, [handleInput, saveBtn])]),
       el('div', { class: 'switch' }, [el('div', { html: '<b>Flag</b><br><span class="small muted">Optional, chosen by you.</span>' }), flagSel]),
       el('div', { class: 'switch' }, [el('div', { html: '<b>Hide me from leaderboards</b><br><span class="small muted">Your dives still count in the daily curve.</span>' }), hideBtn]),
-      el('div', { class: 'switch' }, [el('div', { html: '<b>Delete my account and data</b><br><span class="small muted">Removes everything stored for you on our server.</span>' }), el('button', { class: 'btn btn-sm', type: 'button', text: 'Delete', onClick: async () => { if (!confirm('Delete your account and all server data? This cannot be undone.')) return; try { await deleteAccount(); toast('Account deleted'); F().closeModal(); } catch (e) { toast('Could not delete right now'); } } })]),
+      el('div', { class: 'switch' }, [el('div', { html: '<b>Delete my account and data</b><br><span class="small muted">Removes everything stored for you on our server.</span>' }), el('button', { class: 'btn btn-sm', type: 'button', text: 'Delete', onClick: async () => { if (!(await F().confirmDialog('Delete your account and all server data? This cannot be undone.', 'Delete'))) return; try { await deleteAccount(); toast('Account deleted'); } catch (e) { toast('Could not delete right now'); } } })]),
     );
     return box;
   }
@@ -505,7 +505,7 @@
     loadSession();
     loadAnalytics();
     handleAuthRedirect().then(async (handled) => {
-      if (handled) { await syncProgressDown(); F().navigate('#/'); }
+      if (handled) { await syncProgressDown(); F().navigate('#home'); }
       else if (user()) { await loadProfile().catch(() => {}); await refreshEntitlements(); await syncProgressDown(); }
       drainQueue();
     });
