@@ -18,38 +18,40 @@ function makeBatch(n, opts = {}) {
 }
 
 test('a good batch passes', () => {
-  const r = validateBatch(makeBatch(25), seeds, {}, ['shark-species']);
+  const r = validateBatch(makeBatch(40), seeds, {}, ['shark-species']);
   assert.deepStrictEqual(r.errors, []);
   assert.ok(r.ok);
 });
 
-test('24 answers fails and names the prompt', () => {
-  const r = validateBatch(makeBatch(24), seeds, {});
+test('39 answers fails and names the prompt; a seed "min" lowers the floor', () => {
+  const r = validateBatch(makeBatch(39), seeds, {});
   assert.ok(!r.ok);
-  assert.ok(r.errors.some(e => e.includes('shark-species') && e.includes('24')));
+  assert.ok(r.errors.some(e => e.includes('shark-species') && e.includes('39')));
+  const r2 = validateBatch(makeBatch(30), [{ ...seeds[0], min: 28 }], {});
+  assert.ok(r2.ok);
 });
 
 test('two hadals fails', () => {
-  const r = validateBatch(makeBatch(25, { twoHadal: true }), seeds, {});
+  const r = validateBatch(makeBatch(40, { twoHadal: true }), seeds, {});
   assert.ok(r.errors.some(e => e.includes('exactly one hadal')));
 });
 
 test('a shared alias inside a prompt is a warning, a shared canonical name is an error', () => {
-  const r = validateBatch(makeBatch(25, { collide: true }), seeds, {});   // entity 1 has alias "Shark number 0" = entity 0's name
+  const r = validateBatch(makeBatch(40, { collide: true }), seeds, {});   // entity 1 has alias "Shark number 0" = entity 0's name
   assert.ok(r.ok);
   assert.ok(r.warnings.some(w => w.includes('shared by')));
-  const batch = makeBatch(25);
+  const batch = makeBatch(40);
   batch.entities[1].name = 'Shark number 0';
   const r2 = validateBatch(batch, seeds, {});
   assert.ok(r2.errors.some(e => e.includes('same name')));
 });
 
 test('bad kind fails', () => {
-  const r = validateBatch(makeBatch(25, { kind: 'fish' }), seeds, {});
+  const r = validateBatch(makeBatch(40, { kind: 'fish' }), seeds, {});
   assert.ok(r.errors.some(e => e.includes('kind must be')));
 });
 
 test('missing expected prompt fails', () => {
-  const r = validateBatch(makeBatch(25), seeds, {}, ['shark-species', 'other']);
+  const r = validateBatch(makeBatch(40), seeds, {}, ['shark-species', 'other']);
   assert.ok(r.errors.some(e => e.includes('other') && e.includes('missing')));
 });

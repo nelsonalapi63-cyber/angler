@@ -7,8 +7,8 @@ const fs = require('fs');
 const path = require('path');
 const dive = require(path.join(__dirname, '..', 'shared', 'dive.js'));
 
-const MIN_ANSWERS = 25;
-const KINDS = new Set(['creature', 'plant', 'place', 'vessel', 'person']);
+const MIN_ANSWERS = 40;                 // a prompt may set a lower "min" in prompt-seeds.json when fewer true answers exist
+const KINDS = new Set(['creature', 'plant', 'place', 'vessel', 'person', 'other']);
 const TIER_CODES = new Set(dive.TIERS.map(t => t.code));
 const SLUG_RE = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const FACT_MIN = 20, FACT_MAX = 240;
@@ -54,7 +54,8 @@ function validateBatch(batch, seeds, knownEntities, expectedPromptIds) {
     if (seenPrompts.has(p.id)) errors.push(where + ': listed twice');
     seenPrompts.add(p.id);
     if (!Array.isArray(p.answers)) { errors.push(where + ': answers must be an array'); continue; }
-    if (p.answers.length < MIN_ANSWERS) errors.push(where + ': only ' + p.answers.length + ' answers, need at least ' + MIN_ANSWERS);
+    const minHere = seedById[p.id].min || MIN_ANSWERS;
+    if (p.answers.length < minHere) errors.push(where + ': only ' + p.answers.length + ' answers, need at least ' + minHere);
     let hadal = 0;
     const tierCounts = {};
     const usedEntities = new Set();
@@ -114,7 +115,12 @@ if (require.main === module) {
   catch (e) { console.error('JSON does not parse: ' + e.message); process.exit(1); }
   const ex = process.argv.indexOf('--expect');
   const expected = ex > -1 ? process.argv[ex + 1].split(',') : null;
-  const res = validateBatch(batch, seeds, {}, expected);
+  // --known: answers may reference entities that already exist in data/entities.json (top-up batches)
+  let known = {};
+  if (process.argv.includes('--known')) {
+    for (const e of JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'entities.json'), 'utf8'))) known[e.id] = e;
+  }
+  const res = validateBatch(batch, seeds, known, expected);
   for (const w of res.warnings) console.log('warn: ' + w);
   for (const e of res.errors) console.log('ERROR: ' + e);
   console.log(res.ok ? 'OK: ' + batch.prompts.length + ' prompts, ' + batch.entities.length + ' entities' : 'FAILED with ' + res.errors.length + ' errors');

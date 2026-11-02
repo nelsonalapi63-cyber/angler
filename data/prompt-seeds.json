@@ -742,5 +742,527 @@
     "text": "Name a sea creature found in the Indian Ocean.",
     "group": "regions",
     "difficulty": 2
+  },
+  {
+    "id": "shark-species-b",
+    "text": "Name a shark whose name begins with the letter B, C or D.",
+    "group": "letters",
+    "difficulty": 3
+  },
+  {
+    "id": "fish-letter-s",
+    "text": "Name a fish whose name begins with the letter S.",
+    "group": "letters",
+    "difficulty": 2
+  },
+  {
+    "id": "fish-letter-b",
+    "text": "Name a fish whose name begins with the letter B.",
+    "group": "letters",
+    "difficulty": 2
+  },
+  {
+    "id": "fish-letter-c",
+    "text": "Name a fish whose name begins with the letter C.",
+    "group": "letters",
+    "difficulty": 2
+  },
+  {
+    "id": "fish-letter-p",
+    "text": "Name a fish whose name begins with the letter P.",
+    "group": "letters",
+    "difficulty": 2
+  },
+  {
+    "id": "fish-letter-m",
+    "text": "Name a fish whose name begins with the letter M.",
+    "group": "letters",
+    "difficulty": 2
+  },
+  {
+    "id": "fish-letter-g",
+    "text": "Name a fish whose name begins with the letter G.",
+    "group": "letters",
+    "difficulty": 3
+  },
+  {
+    "id": "fish-letter-t",
+    "text": "Name a fish whose name begins with the letter T.",
+    "group": "letters",
+    "difficulty": 3
+  },
+  {
+    "id": "fish-letter-a",
+    "text": "Name a fish whose name begins with the letter A.",
+    "group": "letters",
+    "difficulty": 3
+  },
+  {
+    "id": "fish-letter-r",
+    "text": "Name a fish whose name begins with the letter R.",
+    "group": "letters",
+    "difficulty": 3
+  },
+  {
+    "id": "sea-creature-letter-w",
+    "text": "Name a sea creature whose name begins with the letter W.",
+    "group": "letters",
+    "difficulty": 3
+  },
+  {
+    "id": "sea-creature-letter-l",
+    "text": "Name a sea creature whose name begins with the letter L.",
+    "group": "letters",
+    "difficulty": 3
+  },
+  {
+    "id": "schooling-fish",
+    "text": "Name a fish that swims in schools.",
+    "group": "behaviour",
+    "difficulty": 2
+  },
+  {
+    "id": "sex-change-fish",
+    "text": "Name a fish that changes sex during its life.",
+    "group": "behaviour",
+    "difficulty": 4
+  },
+  {
+    "id": "venomous-fish",
+    "text": "Name a fish with venomous spines.",
+    "group": "venomous",
+    "difficulty": 3
+  },
+  {
+    "id": "camouflage",
+    "text": "Name a sea creature that hides by camouflage.",
+    "group": "behaviour",
+    "difficulty": 3
+  },
+  {
+    "id": "barbels",
+    "text": "Name a fish with whiskers (barbels) around its mouth.",
+    "group": "appearance",
+    "difficulty": 3
+  },
+  {
+    "id": "striped-fish",
+    "text": "Name a fish with stripes.",
+    "group": "appearance",
+    "difficulty": 2
+  },
+  {
+    "id": "spotted-fish",
+    "text": "Name a fish with spots.",
+    "group": "appearance",
+    "difficulty": 2
+  },
+  {
+    "id": "blue-fish",
+    "text": "Name a fish or sea creature that is mostly blue.",
+    "group": "appearance",
+    "difficulty": 2
+  },
+  {
+    "id": "red-fish",
+    "text": "Name a fish or sea creature that is mostly red.",
+    "group": "appearance",
+    "difficulty": 2
+  },
+  {
+    "id": "yellow-fish",
+    "text": "Name a fish or sea creature that is mostly yellow.",
+    "group": "appearance",
+    "difficulty": 3
+  },
+  {
+    "id": "echolocation",
+    "text": "Name a sea animal that uses echolocation.",
+    "group": "senses",
+    "difficulty": 3
+  },
+  {
+    "id": "benthic",
+    "text": "Name an animal that lives on or in the seabed.",
+    "group": "habitats",
+    "difficulty": 2
+  },
+  {
+    "id": "beak",
+    "text": "Name a sea creature that has a beak.",
+    "group": "appearance",
+    "difficulty": 3
+  },
+  {
+    "id": "claws",
+    "text": "Name a sea creature with claws or pincers.",
+    "group": "appearance",
+    "difficulty": 2
+  },
+  {
+    "id": "poisonous-to-eat",
+    "text": "Name a sea creature that can be dangerous to eat.",
+    "group": "venomous",
+    "difficulty": 4
+  },
+  {
+    "id": "endangered-fish",
+    "text": "Name a fish species that is threatened or endangered.",
+    "group": "conservation",
+    "difficulty": 3
+  },
+  {
+    "id": "food-name",
+    "text": "Name a sea creature named after a food.",
+    "group": "names",
+    "difficulty": 3
+  },
+  {
+    "id": "royal-name",
+    "text": "Name a sea creature with king, queen, emperor or another royal title in its name.",
+    "group": "names",
+    "difficulty": 3
+  },
+  {
+    "id": "bird-name",
+    "text": "Name a fish or sea creature named after a bird or an insect.",
+    "group": "names",
+    "difficulty": 4
+  },
+  {
+    "id": "seabird-species",
+    "text": "Name a seabird species.",
+    "group": "seabirds",
+    "difficulty": 2
+  },
+  {
+    "id": "bivalve",
+    "text": "Name a clam, oyster, mussel, scallop or other two-shelled mollusc species.",
+    "group": "molluscs",
+    "difficulty": 3
+  },
+  {
+    "id": "nudibranch",
+    "text": "Name a sea slug or nudibranch species.",
+    "group": "molluscs",
+    "difficulty": 5
+  },
+  {
+    "id": "seagrass-mangrove",
+    "text": "Name a seagrass or mangrove species.",
+    "group": "plants",
+    "difficulty": 4
+  },
+  {
+    "id": "sea-anemone-coral-species",
+    "text": "Name a sea anemone, jellyfish or coral species.",
+    "group": "corals",
+    "difficulty": 4
+  },
+  {
+    "id": "sponge-tunicate",
+    "text": "Name a sponge, sea squirt or other animal that stays fixed in one place.",
+    "group": "invertebrates",
+    "difficulty": 4
+  },
+  {
+    "id": "australia",
+    "text": "Name a sea creature found in Australian waters.",
+    "group": "regions",
+    "difficulty": 2
+  },
+  {
+    "id": "british-waters",
+    "text": "Name a sea creature found around the British Isles.",
+    "group": "regions",
+    "difficulty": 3
+  },
+  {
+    "id": "new-zealand",
+    "text": "Name a sea creature found around New Zealand.",
+    "group": "regions",
+    "difficulty": 3
+  },
+  {
+    "id": "florida",
+    "text": "Name a sea creature found off the coast of Florida.",
+    "group": "regions",
+    "difficulty": 2
+  },
+  {
+    "id": "hawaii",
+    "text": "Name a sea creature found around Hawaii.",
+    "group": "regions",
+    "difficulty": 3
+  },
+  {
+    "id": "japan-waters",
+    "text": "Name a sea creature found in Japanese waters.",
+    "group": "regions",
+    "difficulty": 3
+  },
+  {
+    "id": "amazon",
+    "text": "Name a fish or animal that lives in the Amazon river.",
+    "group": "freshwater",
+    "difficulty": 2
+  },
+  {
+    "id": "africa-great-lakes",
+    "text": "Name a fish that lives in an African lake or river.",
+    "group": "freshwater",
+    "difficulty": 4
+  },
+  {
+    "id": "caribbean-island",
+    "text": "Name an island in the Caribbean Sea.",
+    "group": "islands",
+    "difficulty": 1
+  },
+  {
+    "id": "indian-ocean-island",
+    "text": "Name an island in the Indian Ocean.",
+    "group": "islands",
+    "difficulty": 3
+  },
+  {
+    "id": "mediterranean-island",
+    "text": "Name an island in the Mediterranean Sea.",
+    "group": "islands",
+    "difficulty": 2
+  },
+  {
+    "id": "atlantic-country",
+    "text": "Name a country with an Atlantic Ocean coastline.",
+    "group": "countries",
+    "difficulty": 1
+  },
+  {
+    "id": "pacific-country",
+    "text": "Name a country with a Pacific Ocean coastline.",
+    "group": "countries",
+    "difficulty": 1
+  },
+  {
+    "id": "indian-ocean-country",
+    "text": "Name a country with an Indian Ocean coastline.",
+    "group": "countries",
+    "difficulty": 2
+  },
+  {
+    "id": "island-nation",
+    "text": "Name a country that is made up entirely of islands.",
+    "group": "countries",
+    "difficulty": 2
+  },
+  {
+    "id": "famous-beach",
+    "text": "Name a famous beach.",
+    "group": "places",
+    "difficulty": 2
+  },
+  {
+    "id": "lighthouse",
+    "text": "Name a famous lighthouse.",
+    "group": "places",
+    "difficulty": 4
+  },
+  {
+    "id": "aquarium-public",
+    "text": "Name a famous public aquarium.",
+    "group": "places",
+    "difficulty": 3
+  },
+  {
+    "id": "surf-spot",
+    "text": "Name a famous surfing spot.",
+    "group": "places",
+    "difficulty": 3
+  },
+  {
+    "id": "pacific-port",
+    "text": "Name a port city on the Pacific Ocean.",
+    "group": "ports",
+    "difficulty": 2
+  },
+  {
+    "id": "indian-ocean-port",
+    "text": "Name a port city on the Indian Ocean or its seas.",
+    "group": "ports",
+    "difficulty": 3
+  },
+  {
+    "id": "mediterranean-port",
+    "text": "Name a port city on the Mediterranean Sea.",
+    "group": "ports",
+    "difficulty": 2
+  },
+  {
+    "id": "shipping-route",
+    "text": "Name a canal, strait or passage that matters for shipping.",
+    "group": "straits",
+    "difficulty": 3
+  },
+  {
+    "id": "sea-god-monster",
+    "text": "Name a sea god, goddess or sea monster from mythology.",
+    "group": "mythology",
+    "difficulty": 3
+  },
+  {
+    "id": "sea-book-film",
+    "text": "Name a book, film or television series set at sea or under it.",
+    "group": "culture",
+    "difficulty": 1
+  },
+  {
+    "id": "pirate",
+    "text": "Name a famous pirate or privateer.",
+    "group": "people",
+    "difficulty": 2
+  },
+  {
+    "id": "admiral",
+    "text": "Name a famous admiral or naval commander.",
+    "group": "people",
+    "difficulty": 4
+  },
+  {
+    "id": "naval-battle",
+    "text": "Name a famous naval battle.",
+    "group": "history",
+    "difficulty": 3
+  },
+  {
+    "id": "warship-type",
+    "text": "Name a type of warship, past or present.",
+    "group": "boats",
+    "difficulty": 3
+  },
+  {
+    "id": "submarine",
+    "text": "Name a famous submarine or submersible.",
+    "group": "vessels",
+    "difficulty": 3
+  },
+  {
+    "id": "ocean-liner",
+    "text": "Name a famous ocean liner or cruise ship.",
+    "group": "vessels",
+    "difficulty": 3
+  },
+  {
+    "id": "voyage",
+    "text": "Name a famous sea voyage or expedition.",
+    "group": "history",
+    "difficulty": 4
+  },
+  {
+    "id": "seafood-dish",
+    "text": "Name a seafood dish from anywhere in the world.",
+    "group": "seafood",
+    "difficulty": 1
+  },
+  {
+    "id": "fish-preparation",
+    "text": "Name a way of cooking or preserving fish.",
+    "group": "seafood",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-job",
+    "text": "Name a job or profession connected to the sea.",
+    "group": "culture",
+    "difficulty": 1
+  },
+  {
+    "id": "sea-instrument",
+    "text": "Name an instrument, unit or tool used at sea or in ocean science.",
+    "group": "culture",
+    "difficulty": 3
+  },
+  {
+    "id": "sailor-word",
+    "text": "Name a word sailors use for a part of a ship or for life at sea.",
+    "group": "culture",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-phenomenon",
+    "text": "Name an ocean or coastal phenomenon, such as a tide or a current.",
+    "group": "geography",
+    "difficulty": 2
+  },
+  {
+    "id": "ocean-organisation",
+    "text": "Name an ocean conservation organisation, agreement or treaty.",
+    "group": "culture",
+    "difficulty": 4
+  },
+  {
+    "id": "water-sport",
+    "text": "Name a sport done in or on the sea.",
+    "group": "culture",
+    "difficulty": 1
+  },
+  {
+    "id": "whale-dolphin-letter-s",
+    "text": "Name a whale, dolphin or porpoise whose name begins with S, B or H.",
+    "group": "letters",
+    "difficulty": 4
+  },
+  {
+    "id": "shark-letter",
+    "text": "Name a shark whose name begins with the letter S, T or W.",
+    "group": "letters",
+    "difficulty": 3
+  },
+  {
+    "id": "deep-sea-creature-letter",
+    "text": "Name a deep-sea creature whose name begins with the letter A, B or G.",
+    "group": "letters",
+    "difficulty": 5
+  },
+  {
+    "id": "sea-creature-letter-p",
+    "text": "Name a sea creature whose name begins with the letter P.",
+    "group": "letters",
+    "difficulty": 2
+  },
+  {
+    "id": "sea-creature-letter-m",
+    "text": "Name a sea creature whose name begins with the letter M.",
+    "group": "letters",
+    "difficulty": 2
+  },
+  {
+    "id": "crustacean-species",
+    "text": "Name a crustacean species (crabs, lobsters, shrimps, barnacles and their relatives).",
+    "group": "crustaceans",
+    "difficulty": 3
+  },
+  {
+    "id": "whale-letter",
+    "text": "Name a whale species whose name includes a colour, a size or a place.",
+    "group": "names",
+    "difficulty": 4
+  },
+  {
+    "id": "prehistoric-sea",
+    "text": "Name a prehistoric sea creature known from fossils.",
+    "group": "conservation",
+    "difficulty": 4
+  },
+  {
+    "id": "ocean-record",
+    "text": "Name the holder of an ocean record: the largest, smallest, deepest-living, fastest or longest-lived of its kind.",
+    "group": "records",
+    "difficulty": 4
+  },
+  {
+    "id": "sea-turtle-reptile-mammal",
+    "text": "Name a sea animal that breathes air but lives in the water.",
+    "group": "behaviour",
+    "difficulty": 2
   }
 ]
