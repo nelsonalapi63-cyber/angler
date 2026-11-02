@@ -58,7 +58,8 @@ function validateBatch(batch, seeds, knownEntities, expectedPromptIds) {
     let hadal = 0;
     const tierCounts = {};
     const usedEntities = new Set();
-    const formOwner = new Map();   // normalised form -> entity id
+    const formOwner = new Map();   // normalised alias form -> entity id
+    const nameOwner = new Map();   // normalised canonical name form -> entity id
     for (const a of p.answers) {
       if (!a || !a.entity || !TIER_CODES.has(a.tier)) { errors.push(where + ': bad answer ' + JSON.stringify(a)); continue; }
       if (a.tier === 'hadal') hadal++;
@@ -67,15 +68,21 @@ function validateBatch(batch, seeds, knownEntities, expectedPromptIds) {
       usedEntities.add(a.entity);
       const ent = entities[a.entity];
       if (!ent) { errors.push(where + ': answer references unknown entity ' + a.entity); continue; }
-      const names = [ent.name].concat(ent.aliases || []);
-      for (const raw of names) {
+      // two entities with the same canonical name in one prompt is an error; a shared alias is only a
+      // warning, because the matcher gives it to the canonical owner or the lower-tier entity
+      const nameNorm = dive.normalise(ent.name);
+      for (const form of dive.pluralForms(nameNorm)) {
+        const owner = nameOwner.get(form);
+        if (owner && owner !== a.entity) errors.push(where + ': entities ' + a.entity + ' and ' + owner + ' have the same name');
+        else nameOwner.set(form, a.entity);
+      }
+      for (const raw of (ent.aliases || [])) {
         const norm = dive.normalise(raw);
         if (!norm) continue;
         for (const form of dive.pluralForms(norm)) {
-          const owner = formOwner.get(form);
-          if (owner && owner !== a.entity) {
-            errors.push(where + ': "' + raw + '" of ' + a.entity + ' collides with ' + owner + ' (same name or alias in one prompt)');
-          } else formOwner.set(form, a.entity);
+          const owner = formOwner.get(form) || nameOwner.get(form);
+          if (owner && owner !== a.entity) warnings.push(where + ': alias "' + raw + '" is shared by ' + a.entity + ' and ' + owner);
+          else if (!formOwner.has(form)) formOwner.set(form, a.entity);
         }
       }
     }

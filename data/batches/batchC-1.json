@@ -327,7 +327,7 @@
       ],
       "kind": "creature",
       "group": "fish",
-      "fact": "The Mexican golden trout lives in mountain streams of the Sierra Madre Occidental and is the southernmost native trout in North America."
+      "fact": "The Mexican golden trout lives in mountain streams of the Sierra Madre Occidental and is one of the southernmost native trout in North America."
     },
     {
       "id": "lahontan-cutthroat-trout",
@@ -424,7 +424,7 @@
       ],
       "kind": "creature",
       "group": "fish",
-      "fact": "American shad live at sea and surge up east-coast rivers each spring to spawn, a run so huge it once fed George Washington's troops at Valley Forge."
+      "fact": "American shad live at sea and surge up east-coast rivers each spring to spawn, and the shad is the official state fish of Connecticut."
     },
     {
       "id": "alewife",

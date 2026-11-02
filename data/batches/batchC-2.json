@@ -1,0 +1,5513 @@
+{
+ "entities": [
+  {
+   "id": "great-barrier-reef",
+   "name": "Great Barrier Reef",
+   "aliases": [],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The Great Barrier Reef stretches more than 2,300 kilometres along Australia's north-east coast and is the largest structure ever built by living things."
+  },
+  {
+   "id": "belize-barrier-reef",
+   "name": "Belize Barrier Reef",
+   "aliases": [
+    "Belize Reef",
+    "Belize Barrier Reef Reserve System"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The Belize Barrier Reef runs about 300 kilometres along the coast of Belize and is the largest section of the Mesoamerican Reef."
+  },
+  {
+   "id": "mesoamerican-reef",
+   "name": "Mesoamerican Reef",
+   "aliases": [
+    "Mesoamerican Barrier Reef",
+    "Mesoamerican Barrier Reef System",
+    "Great Mayan Reef",
+    "Mayan Reef"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The Mesoamerican Reef runs about 1,000 kilometres from Mexico's Yucatán to Honduras and is the largest barrier reef in the Western Hemisphere."
+  },
+  {
+   "id": "florida-reef",
+   "name": "Florida Reef",
+   "aliases": [
+    "Florida Reef Tract",
+    "Florida Keys Reef Tract",
+    "Florida Keys reef",
+    "Great Florida Reef"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The Florida Reef is the only living coral barrier reef in the continental United States, running from near Miami to the Dry Tortugas."
+  },
+  {
+   "id": "ningaloo-reef",
+   "name": "Ningaloo Reef",
+   "aliases": [
+    "Ningaloo"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Ningaloo Reef in Western Australia is a fringing reef that hugs the shore so closely you can swim to it from the beach, and whale sharks gather there each year."
+  },
+  {
+   "id": "tubbataha-reef",
+   "name": "Tubbataha Reef",
+   "aliases": [
+    "Tubbataha",
+    "Tubbataha Reefs Natural Park"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The Tubbataha Reefs in the Philippines' Sulu Sea are two coral atolls so rich in life that they were made a UNESCO World Heritage Site."
+  },
+  {
+   "id": "bikini-atoll",
+   "name": "Bikini Atoll",
+   "aliases": [
+    "Bikini"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Bikini Atoll's reef was blasted by 23 nuclear tests between 1946 and 1958, yet its corals have since grown back vigorously."
+  },
+  {
+   "id": "raja-ampat",
+   "name": "Raja Ampat",
+   "aliases": [
+    "Raja Ampat Islands",
+    "Four Kings"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The reefs of Raja Ampat in Indonesia hold more coral and reef-fish species than almost anywhere else on Earth, at the heart of the Coral Triangle."
+  },
+  {
+   "id": "new-caledonia-barrier-reef",
+   "name": "New Caledonia Barrier Reef",
+   "aliases": [
+    "New Caledonian Barrier Reef",
+    "New Caledonia reef",
+    "New Caledonia lagoon"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The New Caledonia Barrier Reef is the second-longest double barrier reef in the world and encloses one of the largest lagoons on Earth."
+  },
+  {
+   "id": "andros-barrier-reef",
+   "name": "Andros Barrier Reef",
+   "aliases": [
+    "Andros Reef",
+    "Andros Island reef"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The Andros Barrier Reef in the Bahamas runs about 190 kilometres and drops away into the Tongue of the Ocean, a deep ocean trench."
+  },
+  {
+   "id": "apo-reef",
+   "name": "Apo Reef",
+   "aliases": [],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Apo Reef off Mindoro in the Philippines is the largest atoll-like reef in the country and the second-largest contiguous coral reef in the world."
+  },
+  {
+   "id": "lighthouse-reef",
+   "name": "Lighthouse Reef",
+   "aliases": [
+    "Lighthouse Reef Atoll"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Lighthouse Reef is an atoll off Belize whose lagoon contains the Great Blue Hole, a sinkhole about 125 metres deep made famous by Jacques Cousteau."
+  },
+  {
+   "id": "palancar-reef",
+   "name": "Palancar Reef",
+   "aliases": [],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Palancar Reef off Cozumel, Mexico, is part of the Mesoamerican Reef and became a famous dive site after Jacques Cousteau filmed it in the 1960s."
+  },
+  {
+   "id": "aldabra-atoll",
+   "name": "Aldabra Atoll",
+   "aliases": [
+    "Aldabra"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Aldabra Atoll in the Seychelles is one of the largest raised coral atolls in the world and home to about 100,000 giant tortoises."
+  },
+  {
+   "id": "kingman-reef",
+   "name": "Kingman Reef",
+   "aliases": [],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Kingman Reef is a nearly submerged coral atoll in the central Pacific with almost no dry land, yet its reef is one of the most pristine on Earth."
+  },
+  {
+   "id": "flower-garden-banks",
+   "name": "Flower Garden Banks",
+   "aliases": [
+    "Flower Gardens",
+    "Flower Garden Banks National Marine Sanctuary"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The Flower Garden Banks are coral reefs growing on top of salt domes in the Gulf of Mexico, about 160 kilometres off the Texas coast."
+  },
+  {
+   "id": "great-sea-reef",
+   "name": "Great Sea Reef",
+   "aliases": [
+    "Cakaulevu",
+    "Cakaulevu Reef"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Fiji's Great Sea Reef, known locally as Cakaulevu, is the third-longest continuous barrier reef in the world."
+  },
+  {
+   "id": "great-chagos-bank",
+   "name": "Great Chagos Bank",
+   "aliases": [],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The Great Chagos Bank in the Indian Ocean is the largest atoll structure in the world and is almost entirely submerged."
+  },
+  {
+   "id": "glovers-reef",
+   "name": "Glover's Reef",
+   "aliases": [
+    "Glover's Reef Atoll",
+    "Glovers Reef"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Glover's Reef is an atoll off Belize named after the pirate John Glover and is a marine reserve known for its sheer outer walls."
+  },
+  {
+   "id": "turneffe-atoll",
+   "name": "Turneffe Atoll",
+   "aliases": [
+    "Turneffe Islands",
+    "Turneffe"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Turneffe Atoll off Belize is a large coral atoll whose mangrove islands and seagrass lagoons shelter manatees, crocodiles and bonefish."
+  },
+  {
+   "id": "lord-howe-island-reef",
+   "name": "Lord Howe Island reef",
+   "aliases": [
+    "Lord Howe Island",
+    "Lord Howe reef"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The reef around Lord Howe Island, between Australia and New Zealand, is the southernmost coral reef in the world."
+  },
+  {
+   "id": "molasses-reef",
+   "name": "Molasses Reef",
+   "aliases": [],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Molasses Reef off Key Largo, Florida, is one of the most visited reefs in the world, lying inside the Florida Keys National Marine Sanctuary."
+  },
+  {
+   "id": "palmyra-atoll",
+   "name": "Palmyra Atoll",
+   "aliases": [
+    "Palmyra"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Palmyra Atoll, an uninhabited US territory south of Hawaii, has reefs so untouched that predators like sharks make up most of the fish biomass."
+  },
+  {
+   "id": "kwajalein-atoll",
+   "name": "Kwajalein Atoll",
+   "aliases": [
+    "Kwajalein"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Kwajalein Atoll in the Marshall Islands encloses one of the largest lagoons in the world, about 2,000 square kilometres."
+  },
+  {
+   "id": "rangiroa",
+   "name": "Rangiroa",
+   "aliases": [
+    "Rangiroa Atoll"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Rangiroa in French Polynesia is one of the largest atolls in the world, with a lagoon so big that the whole island of Tahiti would fit inside it."
+  },
+  {
+   "id": "rowley-shoals",
+   "name": "Rowley Shoals",
+   "aliases": [],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The Rowley Shoals are three atolls off north-west Australia that rise steeply from deep water and are famous for strong tidal currents and clear water."
+  },
+  {
+   "id": "scott-reef",
+   "name": "Scott Reef",
+   "aliases": [],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Scott Reef is a remote atoll system off north-west Australia that recovered remarkably after being devastated by coral bleaching in 1998."
+  },
+  {
+   "id": "enewetak-atoll",
+   "name": "Enewetak Atoll",
+   "aliases": [
+    "Enewetak",
+    "Eniwetok",
+    "Eniwetok Atoll"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Enewetak Atoll in the Marshall Islands was the site of 43 nuclear tests, and deep drilling into its reef in 1952 proved Darwin's theory of how atolls form."
+  },
+  {
+   "id": "abrolhos-bank",
+   "name": "Abrolhos Bank",
+   "aliases": [
+    "Abrolhos",
+    "Abrolhos reefs",
+    "Abrolhos Archipelago"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The Abrolhos Bank off Brazil holds the largest coral reefs in the South Atlantic, built into mushroom-shaped pillars found nowhere else."
+  },
+  {
+   "id": "osprey-reef",
+   "name": "Osprey Reef",
+   "aliases": [],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Osprey Reef is a submerged atoll in the Coral Sea off Queensland whose walls plunge about 1,000 metres and attract shark-diving expeditions."
+  },
+  {
+   "id": "ribbon-reefs",
+   "name": "Ribbon Reefs",
+   "aliases": [
+    "Ribbon Reef",
+    "Ribbon Reef Number 10"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The Ribbon Reefs are a chain of ten long, narrow reefs on the outer Great Barrier Reef, home to the famous Cod Hole dive site."
+  },
+  {
+   "id": "sanganeb-atoll",
+   "name": "Sanganeb Atoll",
+   "aliases": [
+    "Sanganeb",
+    "Sanganeb Reef"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "Sanganeb is the only atoll in the Red Sea, rising off the coast of Sudan and protected as a UNESCO World Heritage Site."
+  },
+  {
+   "id": "minerva-reefs",
+   "name": "Minerva Reefs",
+   "aliases": [
+    "Minerva Reef",
+    "Teleki Tonga"
+   ],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The Minerva Reefs are two remote atolls south of Fiji, claimed by Tonga, that briefly hosted a self-declared micronation in 1972."
+  },
+  {
+   "id": "amazon-reef",
+   "name": "Amazon Reef",
+   "aliases": [],
+   "kind": "place",
+   "group": "reefs",
+   "fact": "The Amazon Reef was only fully described in 2016, a reef system hidden under the muddy plume of the Amazon River where few thought reefs could grow."
+  },
+  {
+   "id": "mariana-trench",
+   "name": "Mariana Trench",
+   "aliases": [
+    "Marianas Trench",
+    "Challenger Deep"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Mariana Trench holds the Challenger Deep, the deepest known point in the ocean at about 10,935 metres."
+  },
+  {
+   "id": "puerto-rico-trench",
+   "name": "Puerto Rico Trench",
+   "aliases": [
+    "Milwaukee Deep"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Puerto Rico Trench is the deepest point in the Atlantic Ocean, reaching about 8,400 metres at the Milwaukee Deep."
+  },
+  {
+   "id": "japan-trench",
+   "name": "Japan Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Japan Trench runs off north-east Honshu, and the 2011 Tōhoku earthquake that caused the Fukushima disaster ruptured along it."
+  },
+  {
+   "id": "philippine-trench",
+   "name": "Philippine Trench",
+   "aliases": [
+    "Mindanao Trench",
+    "Mindanao Deep",
+    "Galathea Deep",
+    "Emden Deep"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Philippine Trench off Mindanao reaches about 10,500 metres at the Emden Deep, named after the German cruiser that sounded it in 1927."
+  },
+  {
+   "id": "tonga-trench",
+   "name": "Tonga Trench",
+   "aliases": [
+    "Horizon Deep"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Tonga Trench is the second-deepest trench on Earth, reaching about 10,800 metres at the Horizon Deep."
+  },
+  {
+   "id": "java-trench",
+   "name": "Java Trench",
+   "aliases": [
+    "Sunda Trench",
+    "Sunda Double Trench"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Java Trench, also called the Sunda Trench, is the deepest point in the Indian Ocean at more than 7,000 metres, and the 2004 tsunami began along it."
+  },
+  {
+   "id": "kermadec-trench",
+   "name": "Kermadec Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Kermadec Trench north-east of New Zealand plunges to about 10,000 metres and is home to huge swarms of amphipods and snailfish."
+  },
+  {
+   "id": "peru-chile-trench",
+   "name": "Peru-Chile Trench",
+   "aliases": [
+    "Atacama Trench",
+    "Chile Trench",
+    "Peru Trench",
+    "Richards Deep"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Peru-Chile Trench, or Atacama Trench, runs about 5,900 kilometres along South America's Pacific coast and reaches about 8,000 metres deep."
+  },
+  {
+   "id": "aleutian-trench",
+   "name": "Aleutian Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Aleutian Trench curves for about 3,400 kilometres south of Alaska's Aleutian Islands and reaches more than 7,600 metres deep."
+  },
+  {
+   "id": "kuril-kamchatka-trench",
+   "name": "Kuril-Kamchatka Trench",
+   "aliases": [
+    "Kuril Trench",
+    "Kamchatka Trench"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Kuril-Kamchatka Trench runs south from Kamchatka past the Kuril Islands and reaches more than 9,000 metres deep."
+  },
+  {
+   "id": "south-sandwich-trench",
+   "name": "South Sandwich Trench",
+   "aliases": [
+    "Meteor Deep"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The South Sandwich Trench east of the South Sandwich Islands is the deepest trench in the South Atlantic, reaching about 8,300 metres at the Meteor Deep."
+  },
+  {
+   "id": "izu-ogasawara-trench",
+   "name": "Izu-Ogasawara Trench",
+   "aliases": [
+    "Izu-Bonin Trench",
+    "Bonin Trench",
+    "Izu Trench",
+    "Ogasawara Trench"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Izu-Ogasawara Trench runs south from Japan to join the Mariana Trench and reaches more than 9,700 metres deep."
+  },
+  {
+   "id": "cayman-trough",
+   "name": "Cayman Trough",
+   "aliases": [
+    "Cayman Trench",
+    "Bartlett Deep",
+    "Bartlett Trough"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Cayman Trough is the deepest part of the Caribbean Sea, at about 7,500 metres, and holds the deepest known hydrothermal vents, the Beebe vent field."
+  },
+  {
+   "id": "ryukyu-trench",
+   "name": "Ryukyu Trench",
+   "aliases": [
+    "Nansei-Shoto Trench"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Ryukyu Trench runs along the Ryukyu Islands between Japan and Taiwan and reaches about 7,500 metres deep."
+  },
+  {
+   "id": "middle-america-trench",
+   "name": "Middle America Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Middle America Trench runs along the Pacific coast of Central America from Mexico to Costa Rica and reaches about 6,600 metres deep."
+  },
+  {
+   "id": "hikurangi-trench",
+   "name": "Hikurangi Trench",
+   "aliases": [
+    "Hikurangi Trough"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Hikurangi Trench off the east coast of New Zealand's North Island is where the Pacific Plate dives beneath the Australian Plate."
+  },
+  {
+   "id": "yap-trench",
+   "name": "Yap Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Yap Trench lies south-west of the Mariana Trench near the island of Yap and reaches about 8,500 metres deep."
+  },
+  {
+   "id": "palau-trench",
+   "name": "Palau Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Palau Trench lies east of the islands of Palau in the western Pacific and reaches about 8,000 metres deep."
+  },
+  {
+   "id": "new-britain-trench",
+   "name": "New Britain Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The New Britain Trench off Papua New Guinea drops to about 9,000 metres and has been explored by robotic landers dropped from the surface."
+  },
+  {
+   "id": "bougainville-trench",
+   "name": "Bougainville Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Bougainville Trench lies south of Bougainville Island in the Solomon Sea and reaches more than 9,000 metres deep."
+  },
+  {
+   "id": "san-cristobal-trench",
+   "name": "San Cristobal Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The San Cristobal Trench runs south of the Solomon Islands and is part of the chain of trenches along the Pacific's Ring of Fire."
+  },
+  {
+   "id": "manila-trench",
+   "name": "Manila Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Manila Trench lies west of Luzon in the South China Sea and reaches about 5,400 metres deep."
+  },
+  {
+   "id": "new-hebrides-trench",
+   "name": "New Hebrides Trench",
+   "aliases": [
+    "Vanuatu Trench"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The New Hebrides Trench near Vanuatu reaches about 7,600 metres, and a 2013 expedition found it full of cusk eels and prawns rather than the snailfish seen in other trenches."
+  },
+  {
+   "id": "puysegur-trench",
+   "name": "Puysegur Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Puysegur Trench off the south-west tip of New Zealand is where the Australian Plate begins to slide beneath the Pacific Plate."
+  },
+  {
+   "id": "south-shetland-trench",
+   "name": "South Shetland Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The South Shetland Trench north of the Antarctic Peninsula is one of the few ocean trenches in Antarctic waters."
+  },
+  {
+   "id": "makran-trench",
+   "name": "Makran Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Makran Trench in the Arabian Sea, off Pakistan and Iran, is a shallow trench where the Arabian Plate slides beneath Eurasia."
+  },
+  {
+   "id": "hjort-trench",
+   "name": "Hjort Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Hjort Trench south of New Zealand and Macquarie Island is one of the southernmost trenches in the world, reaching about 6,700 metres."
+  },
+  {
+   "id": "vityaz-trench",
+   "name": "Vityaz Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Vityaz Trench north of Fiji is named after the Soviet research ship Vityaz, which surveyed the Pacific's deepest trenches in the 1950s."
+  },
+  {
+   "id": "mussau-trench",
+   "name": "Mussau Trench",
+   "aliases": [],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Mussau Trench north of Papua New Guinea is a young, short trench reaching about 7,000 metres deep."
+  },
+  {
+   "id": "nankai-trough",
+   "name": "Nankai Trough",
+   "aliases": [
+    "Nankai Trench"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Nankai Trough off southern Japan is a subduction trench feared for the huge earthquakes it produces roughly every 100 to 150 years."
+  },
+  {
+   "id": "hellenic-trench",
+   "name": "Hellenic Trench",
+   "aliases": [
+    "Hellenic Trough",
+    "Calypso Deep"
+   ],
+   "kind": "place",
+   "group": "trenches",
+   "fact": "The Hellenic Trench, curving south of Greece and Crete, contains the Calypso Deep, the deepest point in the Mediterranean at about 5,100 metres."
+  },
+  {
+   "id": "caribbean-sea",
+   "name": "Caribbean Sea",
+   "aliases": [
+    "Caribbean"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Caribbean Sea is a marginal sea of the Atlantic enclosed by the Antilles and Central America, and its Cayman Trough is more than 7,000 metres deep."
+  },
+  {
+   "id": "gulf-of-mexico",
+   "name": "Gulf of Mexico",
+   "aliases": [
+    "Gulf of America"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Mexico is an ocean basin of the Atlantic almost encircled by Mexico, Cuba and the United States, and the Mississippi River drains into it."
+  },
+  {
+   "id": "north-sea",
+   "name": "North Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The North Sea is a shallow arm of the Atlantic between Britain and mainland Europe, averaging only about 90 metres deep."
+  },
+  {
+   "id": "mediterranean-sea",
+   "name": "Mediterranean Sea",
+   "aliases": [
+    "Mediterranean"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Mediterranean is almost landlocked, connected to the Atlantic only through the Strait of Gibraltar, and evaporates far more water than its rivers bring in."
+  },
+  {
+   "id": "baltic-sea",
+   "name": "Baltic Sea",
+   "aliases": [
+    "Baltic"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Baltic Sea is a brackish arm of the Atlantic so diluted by rivers that parts of it freeze over every winter."
+  },
+  {
+   "id": "sargasso-sea",
+   "name": "Sargasso Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Sargasso Sea is the only sea with no coastline, bounded instead by Atlantic currents, and both European and American eels spawn there."
+  },
+  {
+   "id": "bay-of-fundy",
+   "name": "Bay of Fundy",
+   "aliases": [
+    "Fundy"
+   ],
+   "kind": "place",
+   "group": "bays",
+   "fact": "The Bay of Fundy between Nova Scotia and New Brunswick has the highest tides in the world, rising and falling by as much as 16 metres."
+  },
+  {
+   "id": "bay-of-biscay",
+   "name": "Bay of Biscay",
+   "aliases": [
+    "Biscay"
+   ],
+   "kind": "place",
+   "group": "bays",
+   "fact": "The Bay of Biscay, between France and Spain, is notorious among sailors for its violent Atlantic storms."
+  },
+  {
+   "id": "irish-sea",
+   "name": "Irish Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Irish Sea separates Ireland from Great Britain and opens to the Atlantic through the North Channel and St George's Channel."
+  },
+  {
+   "id": "gulf-of-guinea",
+   "name": "Gulf of Guinea",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Guinea is the great bend of the African coast where the equator and the prime meridian cross in open water."
+  },
+  {
+   "id": "labrador-sea",
+   "name": "Labrador Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Labrador Sea between Canada and Greenland is one of the few places where surface water sinks to the deep ocean, helping drive global circulation."
+  },
+  {
+   "id": "celtic-sea",
+   "name": "Celtic Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Celtic Sea lies south of Ireland and west of Cornwall and was only given its name in 1921."
+  },
+  {
+   "id": "gulf-of-st-lawrence",
+   "name": "Gulf of St Lawrence",
+   "aliases": [
+    "Gulf of Saint Lawrence"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of St Lawrence is the largest estuary in the world, where the St Lawrence River meets the Atlantic, and it freezes over in winter."
+  },
+  {
+   "id": "chesapeake-bay",
+   "name": "Chesapeake Bay",
+   "aliases": [
+    "Chesapeake"
+   ],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Chesapeake Bay is the largest estuary in the United States and is famous for its blue crabs and oysters."
+  },
+  {
+   "id": "gulf-of-maine",
+   "name": "Gulf of Maine",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Maine is one of the fastest-warming bodies of water in the world and borders the famous Georges Bank fishing grounds."
+  },
+  {
+   "id": "delaware-bay",
+   "name": "Delaware Bay",
+   "aliases": [],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Delaware Bay hosts the world's largest spawning gathering of horseshoe crabs each spring, feeding millions of migrating shorebirds."
+  },
+  {
+   "id": "gulf-of-bothnia",
+   "name": "Gulf of Bothnia",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Bothnia, the northern arm of the Baltic, is so fresh and cold that it is largely frozen for months each winter."
+  },
+  {
+   "id": "gulf-of-cadiz",
+   "name": "Gulf of Cádiz",
+   "aliases": [
+    "Gulf of Cadiz"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Cádiz lies off south-west Spain and Portugal just outside the Strait of Gibraltar, where salty Mediterranean water pours out into the Atlantic."
+  },
+  {
+   "id": "gulf-of-finland",
+   "name": "Gulf of Finland",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Finland is the easternmost arm of the Baltic Sea, with St Petersburg at its head and Helsinki and Tallinn on its shores."
+  },
+  {
+   "id": "wadden-sea",
+   "name": "Wadden Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Wadden Sea is a shallow, tidal stretch of the North Sea with the world's largest unbroken system of intertidal sand and mud flats."
+  },
+  {
+   "id": "bay-of-campeche",
+   "name": "Bay of Campeche",
+   "aliases": [
+    "Campeche Bay"
+   ],
+   "kind": "place",
+   "group": "bays",
+   "fact": "The Bay of Campeche is the southern bight of the Gulf of Mexico, site of the huge Cantarell oil field and part of the Chicxulub impact crater."
+  },
+  {
+   "id": "gulf-of-venezuela",
+   "name": "Gulf of Venezuela",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Venezuela opens off the Caribbean and connects through a narrow channel to Lake Maracaibo, one of the world's oldest oil regions."
+  },
+  {
+   "id": "gulf-of-honduras",
+   "name": "Gulf of Honduras",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Honduras is a Caribbean inlet bordered by Belize, Guatemala and Honduras at the southern end of the Mesoamerican Reef."
+  },
+  {
+   "id": "bight-of-benin",
+   "name": "Bight of Benin",
+   "aliases": [],
+   "kind": "place",
+   "group": "bays",
+   "fact": "The Bight of Benin is a bay in the Gulf of Guinea whose shore was once known as the Slave Coast."
+  },
+  {
+   "id": "gulf-of-paria",
+   "name": "Gulf of Paria",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Paria is a shallow inlet between Trinidad and Venezuela, fed by the muddy waters of the Orinoco delta."
+  },
+  {
+   "id": "cardigan-bay",
+   "name": "Cardigan Bay",
+   "aliases": [],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Cardigan Bay is the largest bay in Wales and home to a resident population of bottlenose dolphins."
+  },
+  {
+   "id": "gulf-of-riga",
+   "name": "Gulf of Riga",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Riga is a bay of the Baltic Sea enclosed by Latvia and Estonia and nearly cut off from the open sea by the island of Saaremaa."
+  },
+  {
+   "id": "bight-of-biafra",
+   "name": "Bight of Biafra",
+   "aliases": [
+    "Bight of Bonny"
+   ],
+   "kind": "place",
+   "group": "bays",
+   "fact": "The Bight of Biafra, now officially the Bight of Bonny, is the easternmost corner of the Gulf of Guinea, off Nigeria and Cameroon."
+  },
+  {
+   "id": "gulf-of-san-jorge",
+   "name": "Gulf of San Jorge",
+   "aliases": [
+    "Golfo San Jorge",
+    "San Jorge Gulf"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of San Jorge is a wide bay on the Patagonian coast of Argentina, open to the South Atlantic."
+  },
+  {
+   "id": "walvis-bay",
+   "name": "Walvis Bay",
+   "aliases": [],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Walvis Bay on the coast of Namibia is a natural deep-water harbour whose name means whale bay in Afrikaans."
+  },
+  {
+   "id": "guanabara-bay",
+   "name": "Guanabara Bay",
+   "aliases": [],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Guanabara Bay is the great bay on which Rio de Janeiro stands, named by Portuguese sailors who mistook it for a river mouth in January 1502."
+  },
+  {
+   "id": "bay-of-all-saints",
+   "name": "Bay of All Saints",
+   "aliases": [
+    "All Saints Bay",
+    "Baía de Todos os Santos",
+    "Todos os Santos Bay"
+   ],
+   "kind": "place",
+   "group": "bays",
+   "fact": "The Bay of All Saints at Salvador is the largest bay in Brazil and was named by Portuguese explorers who arrived on All Saints' Day in 1501."
+  },
+  {
+   "id": "bay-of-pigs",
+   "name": "Bay of Pigs",
+   "aliases": [
+    "Bahía de Cochinos"
+   ],
+   "kind": "place",
+   "group": "bays",
+   "fact": "The Bay of Pigs is an inlet on Cuba's southern Caribbean coast, famous for the failed 1961 invasion by CIA-trained Cuban exiles."
+  },
+  {
+   "id": "south-china-sea",
+   "name": "South China Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The South China Sea is a marginal sea of the western Pacific crossed by roughly a third of the world's shipping."
+  },
+  {
+   "id": "sea-of-japan",
+   "name": "Sea of Japan",
+   "aliases": [
+    "East Sea"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Sea of Japan, called the East Sea in Korea, is a marginal sea of the Pacific nearly enclosed by Japan, Korea and Russia."
+  },
+  {
+   "id": "bering-sea",
+   "name": "Bering Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Bering Sea separates Alaska from Siberia and is named after Vitus Bering, the Danish navigator who sailed through it for Russia in 1728."
+  },
+  {
+   "id": "gulf-of-california",
+   "name": "Gulf of California",
+   "aliases": [
+    "Sea of Cortez",
+    "Sea of Cortés",
+    "Vermilion Sea"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of California, also called the Sea of Cortez after the conquistador Hernán Cortés, separates Baja California from mainland Mexico and is home to the vaquita."
+  },
+  {
+   "id": "coral-sea",
+   "name": "Coral Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Coral Sea off north-east Australia contains the Great Barrier Reef, and a 1942 battle fought there was the first in which opposing ships never sighted each other."
+  },
+  {
+   "id": "tasman-sea",
+   "name": "Tasman Sea",
+   "aliases": [
+    "the Ditch"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Tasman Sea between Australia and New Zealand is named after the Dutch explorer Abel Tasman, who sailed it in 1642, and is nicknamed the Ditch."
+  },
+  {
+   "id": "east-china-sea",
+   "name": "East China Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The East China Sea lies between China and Japan's Ryukyu Islands and receives the muddy outflow of the Yangtze River."
+  },
+  {
+   "id": "gulf-of-alaska",
+   "name": "Gulf of Alaska",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Alaska is a wide arm of the Pacific along Alaska's southern coast where glaciers meet the sea and ferocious winter storms are born."
+  },
+  {
+   "id": "philippine-sea",
+   "name": "Philippine Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Philippine Sea, east of the Philippines, is the largest sea in the world by area and contains the Mariana Trench."
+  },
+  {
+   "id": "sea-of-okhotsk",
+   "name": "Sea of Okhotsk",
+   "aliases": [
+    "Okhotsk Sea"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Sea of Okhotsk, off Russia's far east, is the coldest sea in East Asia and is covered by drifting ice for much of the winter."
+  },
+  {
+   "id": "yellow-sea",
+   "name": "Yellow Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Yellow Sea between China and Korea takes its name from the yellow silt carried into it by the Yellow River."
+  },
+  {
+   "id": "gulf-of-thailand",
+   "name": "Gulf of Thailand",
+   "aliases": [
+    "Gulf of Siam"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Thailand is a shallow inlet of the South China Sea, bordered by Thailand, Cambodia, Vietnam and Malaysia."
+  },
+  {
+   "id": "celebes-sea",
+   "name": "Celebes Sea",
+   "aliases": [
+    "Sulawesi Sea"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Celebes Sea between Indonesia and the Philippines is a deep basin of more than 6,000 metres, famous for the rich reefs around Sipadan."
+  },
+  {
+   "id": "sulu-sea",
+   "name": "Sulu Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Sulu Sea in the south-west Philippines holds the Tubbataha Reefs and is enclosed by Palawan, Borneo and the Sulu Archipelago."
+  },
+  {
+   "id": "san-francisco-bay",
+   "name": "San Francisco Bay",
+   "aliases": [
+    "SF Bay"
+   ],
+   "kind": "place",
+   "group": "bays",
+   "fact": "San Francisco Bay is the largest estuary on the Pacific coast of the Americas, entered through the Golden Gate strait."
+  },
+  {
+   "id": "monterey-bay",
+   "name": "Monterey Bay",
+   "aliases": [],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Monterey Bay in California lies above a submarine canyon as deep as the Grand Canyon and is a sanctuary for sea otters and whales."
+  },
+  {
+   "id": "tokyo-bay",
+   "name": "Tokyo Bay",
+   "aliases": [
+    "Edo Bay"
+   ],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Tokyo Bay, the harbour of Tokyo and Yokohama, is where Commodore Perry's black ships arrived in 1853 to open Japan to trade."
+  },
+  {
+   "id": "banda-sea",
+   "name": "Banda Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Banda Sea in eastern Indonesia is a deep basin surrounding the Banda Islands, the original source of nutmeg and mace."
+  },
+  {
+   "id": "bismarck-sea",
+   "name": "Bismarck Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Bismarck Sea lies north-east of New Guinea and is named, like the Bismarck Archipelago, after the German chancellor Otto von Bismarck."
+  },
+  {
+   "id": "solomon-sea",
+   "name": "Solomon Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Solomon Sea lies between the Solomon Islands and Papua New Guinea and was the scene of fierce naval battles in the Second World War."
+  },
+  {
+   "id": "gulf-of-tonkin",
+   "name": "Gulf of Tonkin",
+   "aliases": [
+    "Tonkin Gulf"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Tonkin, between northern Vietnam and China, holds Halong Bay and gave its name to the 1964 incident that drew the United States deeper into the Vietnam War."
+  },
+  {
+   "id": "gulf-of-panama",
+   "name": "Gulf of Panama",
+   "aliases": [
+    "Bay of Panama",
+    "Panama Bay"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Panama is the Pacific entrance to the Panama Canal and has some of the largest tides in the tropics, unlike the tiny tides on the Caribbean side."
+  },
+  {
+   "id": "bohai-sea",
+   "name": "Bohai Sea",
+   "aliases": [
+    "Bo Hai",
+    "Bohai Gulf",
+    "Gulf of Chihli"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Bohai Sea is the innermost gulf of the Yellow Sea, almost enclosed by China's coast, and the sea approach to the port of Tianjin."
+  },
+  {
+   "id": "seto-inland-sea",
+   "name": "Seto Inland Sea",
+   "aliases": [
+    "Seto Naikai",
+    "Inland Sea of Japan",
+    "Inland Sea"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Seto Inland Sea separates three of Japan's main islands, Honshu, Shikoku and Kyushu, and is dotted with about 3,000 islands."
+  },
+  {
+   "id": "puget-sound",
+   "name": "Puget Sound",
+   "aliases": [],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Puget Sound is a deep, glacier-carved inlet of the Pacific in Washington state, named by George Vancouver after his lieutenant Peter Puget, with Seattle on its shore."
+  },
+  {
+   "id": "botany-bay",
+   "name": "Botany Bay",
+   "aliases": [],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Botany Bay south of Sydney is where Captain Cook first landed in Australia in 1770, named for the plants collected there by Joseph Banks."
+  },
+  {
+   "id": "molucca-sea",
+   "name": "Molucca Sea",
+   "aliases": [
+    "Maluku Sea"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Molucca Sea lies between Sulawesi and the Maluku Islands, the Spice Islands that drew European traders to Indonesia."
+  },
+  {
+   "id": "leyte-gulf",
+   "name": "Leyte Gulf",
+   "aliases": [
+    "Gulf of Leyte"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "Leyte Gulf in the Philippines saw the largest naval battle of the Second World War in October 1944."
+  },
+  {
+   "id": "gulf-of-tehuantepec",
+   "name": "Gulf of Tehuantepec",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Tehuantepec off southern Mexico is famous for violent gap winds that blast through the mountains and far out to sea."
+  },
+  {
+   "id": "bay-of-plenty",
+   "name": "Bay of Plenty",
+   "aliases": [],
+   "kind": "place",
+   "group": "bays",
+   "fact": "The Bay of Plenty on New Zealand's North Island was named by Captain Cook in 1769 for the friendly welcome and abundant supplies he found there."
+  },
+  {
+   "id": "cenderawasih-bay",
+   "name": "Cenderawasih Bay",
+   "aliases": [
+    "Cendrawasih Bay",
+    "Teluk Cenderawasih",
+    "Geelvink Bay"
+   ],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Cenderawasih Bay in Indonesian New Guinea is famous for whale sharks that gather beneath fishing platforms to feed on baitfish."
+  },
+  {
+   "id": "hangzhou-bay",
+   "name": "Hangzhou Bay",
+   "aliases": [],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Hangzhou Bay in eastern China produces the world's largest tidal bore, a wall of water that surges up the Qiantang River."
+  },
+  {
+   "id": "halong-bay",
+   "name": "Halong Bay",
+   "aliases": [
+    "Ha Long Bay"
+   ],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Halong Bay in northern Vietnam is studded with about 1,600 limestone islands and is a UNESCO World Heritage Site."
+  },
+  {
+   "id": "salish-sea",
+   "name": "Salish Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Salish Sea, which includes Puget Sound and the Strait of Georgia, was only officially named in 2009, after the Coast Salish peoples."
+  },
+  {
+   "id": "strait-of-gibraltar",
+   "name": "Strait of Gibraltar",
+   "aliases": [
+    "Gibraltar Strait",
+    "Straits of Gibraltar"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Strait of Gibraltar joins the Atlantic to the Mediterranean and is only about 14 kilometres wide at its narrowest, between Spain and Morocco."
+  },
+  {
+   "id": "english-channel",
+   "name": "English Channel",
+   "aliases": [
+    "the Channel",
+    "La Manche"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The English Channel separates England from France and joins the Atlantic to the North Sea; it is about 34 kilometres across at the Strait of Dover."
+  },
+  {
+   "id": "bering-strait",
+   "name": "Bering Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Bering Strait, named after the Danish navigator Vitus Bering, separates Russia from Alaska by about 82 kilometres and links the Pacific to the Arctic."
+  },
+  {
+   "id": "strait-of-hormuz",
+   "name": "Strait of Hormuz",
+   "aliases": [
+    "Hormuz Strait",
+    "Hormuz"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Strait of Hormuz connects the Persian Gulf to the Gulf of Oman, and about a fifth of the world's oil passes through it."
+  },
+  {
+   "id": "bosporus",
+   "name": "Bosporus",
+   "aliases": [
+    "Bosphorus",
+    "Istanbul Strait",
+    "Strait of Istanbul"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Bosporus runs through the middle of Istanbul, linking the Black Sea to the Sea of Marmara and dividing Europe from Asia."
+  },
+  {
+   "id": "strait-of-magellan",
+   "name": "Strait of Magellan",
+   "aliases": [
+    "Magellan Strait",
+    "Straits of Magellan"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Strait of Magellan, named after Ferdinand Magellan who sailed through it in 1520, lets ships pass between the Atlantic and Pacific south of mainland South America."
+  },
+  {
+   "id": "strait-of-malacca",
+   "name": "Strait of Malacca",
+   "aliases": [
+    "Malacca Strait",
+    "Straits of Malacca"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Strait of Malacca between Malaysia and Sumatra is one of the busiest shipping lanes in the world, linking the Indian Ocean to the South China Sea."
+  },
+  {
+   "id": "drake-passage",
+   "name": "Drake Passage",
+   "aliases": [
+    "Drake Strait",
+    "Mar de Hoces"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Drake Passage between Cape Horn and Antarctica, named after Sir Francis Drake, has some of the roughest seas on Earth."
+  },
+  {
+   "id": "dardanelles",
+   "name": "Dardanelles",
+   "aliases": [
+    "Hellespont",
+    "Strait of Çanakkale",
+    "Çanakkale Strait"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Dardanelles, known in ancient times as the Hellespont, link the Sea of Marmara to the Aegean and were the scene of the Gallipoli campaign in 1915."
+  },
+  {
+   "id": "strait-of-dover",
+   "name": "Strait of Dover",
+   "aliases": [
+    "Dover Strait",
+    "Pas de Calais"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Strait of Dover is the narrowest part of the English Channel, about 33 kilometres wide, and one of the busiest shipping lanes in the world."
+  },
+  {
+   "id": "bass-strait",
+   "name": "Bass Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "Bass Strait separates Tasmania from mainland Australia and is named after George Bass, the ship's surgeon who proved Tasmania was an island in 1798."
+  },
+  {
+   "id": "cook-strait",
+   "name": "Cook Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "Cook Strait separates New Zealand's North and South Islands and is named after Captain James Cook, who sailed through it in 1770."
+  },
+  {
+   "id": "torres-strait",
+   "name": "Torres Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "Torres Strait between Australia and New Guinea is named after the Spanish navigator Luis Váez de Torres, who sailed through it in 1606."
+  },
+  {
+   "id": "strait-of-messina",
+   "name": "Strait of Messina",
+   "aliases": [
+    "Messina Strait"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Strait of Messina between Sicily and mainland Italy is home to the whirlpools behind the legend of Scylla and Charybdis."
+  },
+  {
+   "id": "bab-el-mandeb",
+   "name": "Bab-el-Mandeb",
+   "aliases": [
+    "Bab al-Mandab",
+    "Mandeb Strait",
+    "Gate of Tears",
+    "Gate of Grief"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Bab-el-Mandeb, whose name means Gate of Tears, joins the Red Sea to the Gulf of Aden between Yemen and Djibouti."
+  },
+  {
+   "id": "strait-of-juan-de-fuca",
+   "name": "Strait of Juan de Fuca",
+   "aliases": [
+    "Juan de Fuca Strait"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Strait of Juan de Fuca between Washington state and Vancouver Island is named after a Greek sailor, known by his Spanish name Juan de Fuca, who claimed to have found it in 1592."
+  },
+  {
+   "id": "taiwan-strait",
+   "name": "Taiwan Strait",
+   "aliases": [
+    "Formosa Strait"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Taiwan Strait separates Taiwan from mainland China and is about 130 kilometres wide at its narrowest."
+  },
+  {
+   "id": "davis-strait",
+   "name": "Davis Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "Davis Strait between Baffin Island and Greenland is named after the English explorer John Davis, who sailed through it in the 1580s seeking the Northwest Passage."
+  },
+  {
+   "id": "denmark-strait",
+   "name": "Denmark Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Denmark Strait between Greenland and Iceland is where the Bismarck sank HMS Hood in 1941, and it carries the world's biggest underwater waterfall."
+  },
+  {
+   "id": "hudson-strait",
+   "name": "Hudson Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "Hudson Strait links Hudson Bay to the Labrador Sea and the Atlantic and is named after the English explorer Henry Hudson."
+  },
+  {
+   "id": "oresund",
+   "name": "Oresund",
+   "aliases": [
+    "Öresund",
+    "the Sound"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Oresund between Denmark and Sweden is one of the three Danish straits linking the Baltic to the North Sea, now spanned by the Oresund Bridge."
+  },
+  {
+   "id": "skagerrak",
+   "name": "Skagerrak",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Skagerrak is the strait between Norway, Denmark and Sweden that links the North Sea to the Baltic, and it was the scene of the Battle of Jutland in 1916."
+  },
+  {
+   "id": "korea-strait",
+   "name": "Korea Strait",
+   "aliases": [
+    "Tsushima Strait"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Korea Strait between South Korea and Japan links the East China Sea to the Sea of Japan, and the Russian fleet was destroyed there at Tsushima in 1905."
+  },
+  {
+   "id": "sunda-strait",
+   "name": "Sunda Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Sunda Strait between Java and Sumatra links the Java Sea to the Indian Ocean and holds the volcano Krakatoa."
+  },
+  {
+   "id": "mozambique-channel",
+   "name": "Mozambique Channel",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Mozambique Channel separates Madagascar from the African mainland, and the coelacanth was found alive in the Comoros at its northern end."
+  },
+  {
+   "id": "yucatan-channel",
+   "name": "Yucatán Channel",
+   "aliases": [
+    "Yucatan Strait",
+    "Yucatan Channel"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Yucatán Channel between Mexico and Cuba links the Caribbean Sea to the Gulf of Mexico and carries the current that becomes the Gulf Stream."
+  },
+  {
+   "id": "strait-of-bonifacio",
+   "name": "Strait of Bonifacio",
+   "aliases": [
+    "Bonifacio Strait"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Strait of Bonifacio separates Corsica from Sardinia and is notorious for strong winds and shipwrecks."
+  },
+  {
+   "id": "strait-of-otranto",
+   "name": "Strait of Otranto",
+   "aliases": [
+    "Otranto Strait"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Strait of Otranto between Italy and Albania is the gateway from the Ionian Sea into the Adriatic."
+  },
+  {
+   "id": "windward-passage",
+   "name": "Windward Passage",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Windward Passage between Cuba and Haiti connects the Atlantic to the Caribbean and is the main shipping route from the US east coast to the Panama Canal."
+  },
+  {
+   "id": "lombok-strait",
+   "name": "Lombok Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Lombok Strait between Bali and Lombok marks part of the Wallace Line, the boundary between Asian and Australian wildlife."
+  },
+  {
+   "id": "palk-strait",
+   "name": "Palk Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "Palk Strait between India and Sri Lanka is so shallow that large ships cannot pass, and a chain of shoals called Adam's Bridge lies at its southern end."
+  },
+  {
+   "id": "pentland-firth",
+   "name": "Pentland Firth",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Pentland Firth between mainland Scotland and Orkney has some of the fastest tidal currents in the world, used today to generate electricity."
+  },
+  {
+   "id": "tsugaru-strait",
+   "name": "Tsugaru Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Tsugaru Strait separates Honshu from Hokkaido and is crossed by the Seikan Tunnel, one of the longest rail tunnels in the world."
+  },
+  {
+   "id": "cabot-strait",
+   "name": "Cabot Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "Cabot Strait between Newfoundland and Cape Breton Island is named after the explorer John Cabot and is the main entrance to the Gulf of St Lawrence."
+  },
+  {
+   "id": "golden-gate",
+   "name": "Golden Gate",
+   "aliases": [
+    "Golden Gate Strait"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Golden Gate is the strait connecting San Francisco Bay to the Pacific, and its famous bridge was for decades the longest suspension bridge in the world."
+  },
+  {
+   "id": "hudson-bay",
+   "name": "Hudson Bay",
+   "aliases": [
+    "Hudson's Bay"
+   ],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Hudson Bay is a vast inland sea in Canada named after the English explorer Henry Hudson, who was set adrift there by mutineers in 1611 and never seen again."
+  },
+  {
+   "id": "beaufort-sea",
+   "name": "Beaufort Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Beaufort Sea north of Alaska and Canada is named after Sir Francis Beaufort, the British admiral who devised the Beaufort wind scale."
+  },
+  {
+   "id": "weddell-sea",
+   "name": "Weddell Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Weddell Sea off Antarctica is named after the British sealer James Weddell, who sailed into it in 1823, and its pack ice crushed Shackleton's ship Endurance in 1915."
+  },
+  {
+   "id": "ross-sea",
+   "name": "Ross Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Ross Sea is a deep bay of Antarctica named after James Clark Ross, who discovered it in 1841, and it is fringed by the Ross Ice Shelf, the largest in the world."
+  },
+  {
+   "id": "amundsen-sea",
+   "name": "Amundsen Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Amundsen Sea off West Antarctica is named after the Norwegian explorer Roald Amundsen and is where the fast-melting Thwaites Glacier flows into the sea."
+  },
+  {
+   "id": "barents-sea",
+   "name": "Barents Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Barents Sea north of Norway and Russia is named after the Dutch navigator Willem Barentsz, who died there in 1597 after wintering on Novaya Zemlya."
+  },
+  {
+   "id": "baffin-bay",
+   "name": "Baffin Bay",
+   "aliases": [],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Baffin Bay between Greenland and Baffin Island is named after William Baffin, the English navigator who explored it in 1616."
+  },
+  {
+   "id": "bellingshausen-sea",
+   "name": "Bellingshausen Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Bellingshausen Sea off Antarctica is named after Fabian Gottlieb von Bellingshausen, the Russian officer whose expedition sighted the continent in 1820."
+  },
+  {
+   "id": "laptev-sea",
+   "name": "Laptev Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Laptev Sea off Siberia is named after the Russian explorer cousins Dmitry and Khariton Laptev, who charted the Arctic coast in the 1730s and 1740s."
+  },
+  {
+   "id": "lincoln-sea",
+   "name": "Lincoln Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Lincoln Sea, north of Greenland and Ellesmere Island, is named after Robert Todd Lincoln, US Secretary of War and son of Abraham Lincoln."
+  },
+  {
+   "id": "james-bay",
+   "name": "James Bay",
+   "aliases": [],
+   "kind": "place",
+   "group": "bays",
+   "fact": "James Bay, the southern arm of Hudson Bay, is named after Thomas James, the Welsh captain who wintered on its shore in 1631."
+  },
+  {
+   "id": "frobisher-bay",
+   "name": "Frobisher Bay",
+   "aliases": [],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Frobisher Bay on Baffin Island is named after Martin Frobisher, who sailed into it in 1576 searching for the Northwest Passage and brought home worthless ore he took for gold."
+  },
+  {
+   "id": "foxe-basin",
+   "name": "Foxe Basin",
+   "aliases": [],
+   "kind": "place",
+   "group": "bays",
+   "fact": "Foxe Basin north of Hudson Bay is named after Luke Foxe, the English explorer who searched it for the Northwest Passage in 1631."
+  },
+  {
+   "id": "dampier-strait",
+   "name": "Dampier Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "Dampier Strait in Papua New Guinea is named after William Dampier, the English buccaneer and naturalist who sailed through it in 1700."
+  },
+  {
+   "id": "bransfield-strait",
+   "name": "Bransfield Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "Bransfield Strait between the South Shetland Islands and the Antarctic Peninsula is named after Edward Bransfield, who charted the area in 1820."
+  },
+  {
+   "id": "gerlache-strait",
+   "name": "Gerlache Strait",
+   "aliases": [
+    "de Gerlache Strait"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Gerlache Strait along the Antarctic Peninsula is named after Adrien de Gerlache, the Belgian whose expedition was the first to winter in the Antarctic, in 1898."
+  },
+  {
+   "id": "nares-strait",
+   "name": "Nares Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "Nares Strait between Greenland and Ellesmere Island is named after George Nares, the British admiral who led an expedition towards the North Pole in 1875."
+  },
+  {
+   "id": "lancaster-sound",
+   "name": "Lancaster Sound",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "Lancaster Sound, the eastern entrance to the Northwest Passage, is named after Sir James Lancaster, a sponsor of William Baffin's 1616 voyage."
+  },
+  {
+   "id": "gulf-of-carpentaria",
+   "name": "Gulf of Carpentaria",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Carpentaria in northern Australia is named after Pieter de Carpentier, a governor-general of the Dutch East Indies, and hosts the Morning Glory cloud."
+  },
+  {
+   "id": "joseph-bonaparte-gulf",
+   "name": "Joseph Bonaparte Gulf",
+   "aliases": [
+    "Bonaparte Gulf"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Joseph Bonaparte Gulf in northern Australia was named by the French explorer Nicolas Baudin after Napoleon's elder brother Joseph."
+  },
+  {
+   "id": "adriatic-sea",
+   "name": "Adriatic Sea",
+   "aliases": [
+    "Adriatic"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Adriatic Sea separates Italy from the Balkans and is the arm of the Mediterranean on which Venice was built."
+  },
+  {
+   "id": "aegean-sea",
+   "name": "Aegean Sea",
+   "aliases": [
+    "Aegean"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Aegean Sea between Greece and Turkey is scattered with hundreds of islands, and its ancient trade routes made it the cradle of Greek civilisation."
+  },
+  {
+   "id": "ionian-sea",
+   "name": "Ionian Sea",
+   "aliases": [
+    "Ionian"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Ionian Sea lies between southern Italy and western Greece and holds the deepest point in the Mediterranean, the Calypso Deep at about 5,100 metres."
+  },
+  {
+   "id": "tyrrhenian-sea",
+   "name": "Tyrrhenian Sea",
+   "aliases": [
+    "Tyrrhenian"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Tyrrhenian Sea, between Italy's west coast, Sardinia, Corsica and Sicily, is named after the Tyrrhenians, the Greek name for the Etruscans."
+  },
+  {
+   "id": "black-sea",
+   "name": "Black Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Black Sea connects to the Mediterranean only through the Bosporus and Dardanelles, and below about 150 metres its water contains no oxygen at all."
+  },
+  {
+   "id": "ligurian-sea",
+   "name": "Ligurian Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Ligurian Sea, between the Italian Riviera and Corsica, is part of the Pelagos Sanctuary, a protected area rich in fin whales and dolphins."
+  },
+  {
+   "id": "balearic-sea",
+   "name": "Balearic Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Balearic Sea lies between the east coast of Spain and the Balearic Islands of Majorca, Minorca and Ibiza."
+  },
+  {
+   "id": "sea-of-marmara",
+   "name": "Sea of Marmara",
+   "aliases": [
+    "Marmara Sea",
+    "Propontis"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Sea of Marmara is a small inland sea entirely within Turkey, linking the Black Sea to the Aegean through the Bosporus and Dardanelles."
+  },
+  {
+   "id": "alboran-sea",
+   "name": "Alboran Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Alboran Sea is the westernmost part of the Mediterranean, just inside the Strait of Gibraltar, where Atlantic water first flows in."
+  },
+  {
+   "id": "levantine-sea",
+   "name": "Levantine Sea",
+   "aliases": [
+    "Levantine Basin"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Levantine Sea is the easternmost part of the Mediterranean, off Turkey, Syria, Lebanon, Israel and Egypt, and the saltiest part of the whole sea."
+  },
+  {
+   "id": "gulf-of-lion",
+   "name": "Gulf of Lion",
+   "aliases": [
+    "Gulf of Lions",
+    "Golfe du Lion"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Lion on the south coast of France is swept by the mistral wind and receives the waters of the Rhône."
+  },
+  {
+   "id": "gulf-of-genoa",
+   "name": "Gulf of Genoa",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Genoa is the northernmost part of the Ligurian Sea, with the port of Genoa, birthplace of Christopher Columbus, at its head."
+  },
+  {
+   "id": "gulf-of-taranto",
+   "name": "Gulf of Taranto",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Taranto is the large bay in the instep of Italy's boot, opening onto the Ionian Sea."
+  },
+  {
+   "id": "gulf-of-sidra",
+   "name": "Gulf of Sidra",
+   "aliases": [
+    "Gulf of Sirte",
+    "Gulf of Sirt"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Sidra on the coast of Libya was claimed by Gaddafi as Libyan waters behind a Line of Death, leading to clashes with the US Navy in the 1980s."
+  },
+  {
+   "id": "sea-of-crete",
+   "name": "Sea of Crete",
+   "aliases": [
+    "Cretan Sea"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Sea of Crete is the southern part of the Aegean between Crete and the Cyclades, and is deeper than most of the Aegean."
+  },
+  {
+   "id": "gulf-of-corinth",
+   "name": "Gulf of Corinth",
+   "aliases": [
+    "Corinthian Gulf"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Corinth nearly cuts the Peloponnese off from mainland Greece, and the Corinth Canal, finished in 1893, links it to the Saronic Gulf."
+  },
+  {
+   "id": "sea-of-azov",
+   "name": "Sea of Azov",
+   "aliases": [
+    "Azov Sea"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Sea of Azov, linked to the Black Sea by the Kerch Strait, is the shallowest sea in the world, averaging only about 7 metres deep."
+  },
+  {
+   "id": "gulf-of-venice",
+   "name": "Gulf of Venice",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Venice is the northern end of the Adriatic Sea, so shallow that Venice floods whenever strong winds push water into it."
+  },
+  {
+   "id": "libyan-sea",
+   "name": "Libyan Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Libyan Sea is the stretch of the Mediterranean between Crete and the coast of Libya."
+  },
+  {
+   "id": "thracian-sea",
+   "name": "Thracian Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Thracian Sea is the northernmost part of the Aegean, off the coasts of Greek Thrace and Macedonia and the island of Thasos."
+  },
+  {
+   "id": "myrtoan-sea",
+   "name": "Myrtoan Sea",
+   "aliases": [
+    "Mirtoan Sea"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Myrtoan Sea is the part of the Aegean between the Cyclades and the eastern coast of the Peloponnese."
+  },
+  {
+   "id": "icarian-sea",
+   "name": "Icarian Sea",
+   "aliases": [],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Icarian Sea is the part of the Aegean around the island of Icaria, where in legend Icarus fell into the sea after flying too close to the sun."
+  },
+  {
+   "id": "gulf-of-gabes",
+   "name": "Gulf of Gabès",
+   "aliases": [
+    "Gulf of Gabes",
+    "Lesser Syrtis",
+    "Syrtis Minor"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Gabès off Tunisia has the largest tides in the Mediterranean, up to about 2 metres, in a sea where tides are usually tiny."
+  },
+  {
+   "id": "gulf-of-tunis",
+   "name": "Gulf of Tunis",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Tunis is a bay of the Mediterranean on which the ruins of ancient Carthage stand, near the modern city of Tunis."
+  },
+  {
+   "id": "gulf-of-trieste",
+   "name": "Gulf of Trieste",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Trieste is the northernmost point of the Adriatic and of the whole Mediterranean, shared by Italy, Slovenia and Croatia."
+  },
+  {
+   "id": "saronic-gulf",
+   "name": "Saronic Gulf",
+   "aliases": [
+    "Gulf of Aegina",
+    "Saronic Sea"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Saronic Gulf is the bay of the Aegean on which Athens and its port Piraeus stand, where the Greeks crushed the Persian fleet at Salamis in 480 BC."
+  },
+  {
+   "id": "gulf-of-naples",
+   "name": "Gulf of Naples",
+   "aliases": [
+    "Bay of Naples"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Naples is overlooked by Mount Vesuvius, whose eruption in AD 79 buried Pompeii, and holds the islands of Capri and Ischia."
+  },
+  {
+   "id": "gulf-of-antalya",
+   "name": "Gulf of Antalya",
+   "aliases": [
+    "Antalya Bay"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Antalya on Turkey's southern coast is a wide bay of the Levantine Sea backed by the Taurus Mountains."
+  },
+  {
+   "id": "sea-of-sardinia",
+   "name": "Sea of Sardinia",
+   "aliases": [
+    "Sardinian Sea"
+   ],
+   "kind": "place",
+   "group": "seas",
+   "fact": "The Sea of Sardinia is the stretch of the western Mediterranean between Sardinia and the Balearic Islands."
+  },
+  {
+   "id": "gulf-of-hammamet",
+   "name": "Gulf of Hammamet",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Hammamet is a bay on Tunisia's east coast lined with beach resorts."
+  },
+  {
+   "id": "gulf-of-salerno",
+   "name": "Gulf of Salerno",
+   "aliases": [],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of Salerno, south of the Amalfi Coast, was where Allied troops landed in Italy in September 1943."
+  },
+  {
+   "id": "gulf-of-iskenderun",
+   "name": "Gulf of İskenderun",
+   "aliases": [
+    "Gulf of Iskenderun",
+    "Gulf of Alexandretta",
+    "Iskenderun Bay"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Gulf of İskenderun in the far north-east corner of the Mediterranean is where the Turkish coast turns south towards Syria, near the ancient battlefield of Issus."
+  },
+  {
+   "id": "thermaic-gulf",
+   "name": "Thermaic Gulf",
+   "aliases": [
+    "Gulf of Thessaloniki",
+    "Gulf of Salonika",
+    "Thermaikos Gulf"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Thermaic Gulf is the arm of the Aegean at whose head stands Thessaloniki, Greece's second city."
+  },
+  {
+   "id": "kvarner-gulf",
+   "name": "Kvarner Gulf",
+   "aliases": [
+    "Kvarner",
+    "Kvarner Bay",
+    "Gulf of Quarnero"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Kvarner Gulf is a bay of the northern Adriatic in Croatia, sheltered by the islands of Krk, Cres and Rab, with the port of Rijeka at its head."
+  },
+  {
+   "id": "pagasetic-gulf",
+   "name": "Pagasetic Gulf",
+   "aliases": [
+    "Gulf of Volos",
+    "Pagasitic Gulf",
+    "Gulf of Pagasae"
+   ],
+   "kind": "place",
+   "group": "gulfs",
+   "fact": "The Pagasetic Gulf is an almost enclosed bay of the Aegean in Thessaly from whose shore, in legend, Jason and the Argonauts set sail for the Golden Fleece."
+  },
+  {
+   "id": "gulf-stream",
+   "name": "Gulf Stream",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Gulf Stream carries warm water from the Gulf of Mexico up the US east coast and across the Atlantic, keeping north-west Europe far milder than its latitude suggests."
+  },
+  {
+   "id": "humboldt-current",
+   "name": "Humboldt Current",
+   "aliases": [
+    "Peru Current",
+    "Peru-Chile Current"
+   ],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Humboldt Current carries cold, nutrient-rich water north along the coast of Chile and Peru, feeding the world's largest anchovy fishery."
+  },
+  {
+   "id": "east-australian-current",
+   "name": "East Australian Current",
+   "aliases": [
+    "EAC"
+   ],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The East Australian Current sweeps warm water south along Australia's east coast and was the EAC ridden by the turtles in Finding Nemo."
+  },
+  {
+   "id": "california-current",
+   "name": "California Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The California Current flows south along the US west coast, bringing cold water and the fog for which San Francisco is famous."
+  },
+  {
+   "id": "kuroshio",
+   "name": "Kuroshio Current",
+   "aliases": [
+    "Kuroshio",
+    "Japan Current",
+    "Black Stream",
+    "Black Current"
+   ],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Kuroshio, or Black Stream, is the Pacific's counterpart to the Gulf Stream, carrying warm water north past Japan."
+  },
+  {
+   "id": "north-atlantic-drift",
+   "name": "North Atlantic Drift",
+   "aliases": [
+    "North Atlantic Current"
+   ],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The North Atlantic Drift is the continuation of the Gulf Stream that carries warm water towards Britain, Norway and the Arctic."
+  },
+  {
+   "id": "antarctic-circumpolar-current",
+   "name": "Antarctic Circumpolar Current",
+   "aliases": [
+    "ACC",
+    "West Wind Drift",
+    "Circumpolar Current"
+   ],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Antarctic Circumpolar Current circles the whole of Antarctica unbroken by land and is the largest ocean current on Earth, carrying more water than any other."
+  },
+  {
+   "id": "labrador-current",
+   "name": "Labrador Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Labrador Current carries cold Arctic water and icebergs south past Newfoundland, and it was one of its icebergs that sank the Titanic."
+  },
+  {
+   "id": "canary-current",
+   "name": "Canary Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Canary Current flows south past north-west Africa and the Canary Islands and helped carry Columbus's ships towards the Caribbean."
+  },
+  {
+   "id": "benguela-current",
+   "name": "Benguela Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Benguela Current carries cold, nutrient-rich water north along the coast of Namibia and South Africa, supporting vast shoals of sardines and the Namib coast's fogs."
+  },
+  {
+   "id": "agulhas-current",
+   "name": "Agulhas Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Agulhas Current races south along the east coast of South Africa and, meeting opposing winds, produces some of the world's most dangerous rogue waves."
+  },
+  {
+   "id": "brazil-current",
+   "name": "Brazil Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Brazil Current carries warm tropical water south along the coast of Brazil until it meets the cold Falkland Current off Argentina."
+  },
+  {
+   "id": "north-equatorial-current",
+   "name": "North Equatorial Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The North Equatorial Current flows westward just north of the equator in both the Atlantic and the Pacific, driven by the trade winds."
+  },
+  {
+   "id": "equatorial-counter-current",
+   "name": "Equatorial Counter Current",
+   "aliases": [
+    "Equatorial Countercurrent",
+    "North Equatorial Countercurrent"
+   ],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Equatorial Counter Current flows eastward against the trade winds in a narrow band near the equator, between the westward-flowing equatorial currents."
+  },
+  {
+   "id": "oyashio",
+   "name": "Oyashio Current",
+   "aliases": [
+    "Oyashio",
+    "Kuril Current",
+    "Okhotsk Current"
+   ],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Oyashio is a cold current flowing south from the Bering Sea past Kamchatka, and where it meets the warm Kuroshio it creates rich fishing grounds off Japan."
+  },
+  {
+   "id": "florida-current",
+   "name": "Florida Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Florida Current squeezes between Florida and the Bahamas as the start of the Gulf Stream and carries far more water than all the world's rivers combined."
+  },
+  {
+   "id": "alaska-current",
+   "name": "Alaska Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Alaska Current carries relatively warm water anticlockwise around the Gulf of Alaska, keeping the coast of the Alaska panhandle milder and wetter."
+  },
+  {
+   "id": "loop-current",
+   "name": "Loop Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Loop Current curls up into the Gulf of Mexico and back out past Florida, and its deep warm water can strengthen hurricanes passing over it."
+  },
+  {
+   "id": "falkland-current",
+   "name": "Falkland Current",
+   "aliases": [
+    "Malvinas Current"
+   ],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Falkland Current carries cold Antarctic water north along the coast of Argentina, bringing Magellanic penguins as far north as Brazil."
+  },
+  {
+   "id": "leeuwin-current",
+   "name": "Leeuwin Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Leeuwin Current flows south along the coast of Western Australia, carrying warm tropical water that lets corals grow as far south as the Abrolhos Islands."
+  },
+  {
+   "id": "north-pacific-gyre",
+   "name": "North Pacific Gyre",
+   "aliases": [
+    "North Pacific Subtropical Gyre"
+   ],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The North Pacific Gyre is the huge clockwise circulation of the North Pacific whose calm centre collects floating plastic in the Great Pacific Garbage Patch."
+  },
+  {
+   "id": "north-atlantic-gyre",
+   "name": "North Atlantic Gyre",
+   "aliases": [
+    "North Atlantic Subtropical Gyre"
+   ],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The North Atlantic Gyre is the clockwise loop formed by the Gulf Stream, North Atlantic Drift, Canary Current and North Equatorial Current, enclosing the Sargasso Sea."
+  },
+  {
+   "id": "east-greenland-current",
+   "name": "East Greenland Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The East Greenland Current carries cold water and sea ice south from the Arctic along Greenland's east coast and through the Denmark Strait."
+  },
+  {
+   "id": "south-equatorial-current",
+   "name": "South Equatorial Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The South Equatorial Current flows westward along the equator, and in the Atlantic it splits on the coast of Brazil to feed both the Brazil Current and the Guiana Current."
+  },
+  {
+   "id": "guinea-current",
+   "name": "Guinea Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Guinea Current flows eastward along the coast of West Africa into the Gulf of Guinea."
+  },
+  {
+   "id": "irminger-current",
+   "name": "Irminger Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Irminger Current is a warm branch of the North Atlantic Drift that flows west past Iceland towards Greenland."
+  },
+  {
+   "id": "somali-current",
+   "name": "Somali Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Somali Current off the Horn of Africa is one of the few currents that reverses direction, flowing north in the summer monsoon and south in winter."
+  },
+  {
+   "id": "norwegian-current",
+   "name": "Norwegian Current",
+   "aliases": [
+    "Norwegian Atlantic Current"
+   ],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Norwegian Current carries warm Atlantic water north along the coast of Norway, keeping its harbours ice-free even beyond the Arctic Circle."
+  },
+  {
+   "id": "beaufort-gyre",
+   "name": "Beaufort Gyre",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Beaufort Gyre is a wind-driven clockwise circulation in the Arctic Ocean north of Alaska that stores a huge volume of fresh water from melting ice."
+  },
+  {
+   "id": "antilles-current",
+   "name": "Antilles Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Antilles Current flows north-west along the outer edge of the Caribbean islands and joins the Florida Current to form the Gulf Stream."
+  },
+  {
+   "id": "transpolar-drift",
+   "name": "Transpolar Drift",
+   "aliases": [
+    "Transpolar Drift Stream"
+   ],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Transpolar Drift carries sea ice from Siberia across the North Pole towards Greenland, and it carried Nansen's ship Fram across the Arctic."
+  },
+  {
+   "id": "west-australian-current",
+   "name": "West Australian Current",
+   "aliases": [],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The West Australian Current is the cold northward flow on the eastern side of the Indian Ocean gyre, offshore of the warm Leeuwin Current."
+  },
+  {
+   "id": "cromwell-current",
+   "name": "Cromwell Current",
+   "aliases": [
+    "Equatorial Undercurrent",
+    "Pacific Equatorial Undercurrent"
+   ],
+   "kind": "place",
+   "group": "currents",
+   "fact": "The Cromwell Current is a hidden river of water flowing east beneath the surface of the equatorial Pacific, discovered only in 1952."
+  },
+  {
+   "id": "hawaii",
+   "name": "Hawaii",
+   "aliases": [
+    "Hawaiian Islands",
+    "Hawai'i",
+    "Big Island"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Hawaiian Islands are the tops of volcanoes built over a hotspot, and Mauna Kea is the tallest mountain on Earth measured from its base on the sea floor."
+  },
+  {
+   "id": "fiji",
+   "name": "Fiji",
+   "aliases": [
+    "Fiji Islands",
+    "Viti Levu"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Fiji is a nation of more than 300 islands in the South Pacific, and its Great Sea Reef is one of the longest barrier reefs in the world."
+  },
+  {
+   "id": "tahiti",
+   "name": "Tahiti",
+   "aliases": [
+    "Society Islands"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Tahiti is the largest island of French Polynesia, a volcanic peak ringed by reef, where Captain Cook observed the transit of Venus in 1769."
+  },
+  {
+   "id": "galapagos-islands",
+   "name": "Galápagos Islands",
+   "aliases": [
+    "Galapagos",
+    "Galápagos",
+    "Galapagos Islands",
+    "Archipiélago de Colón"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Galápagos Islands straddle the equator about 1,000 kilometres off Ecuador, and their finches and tortoises helped inspire Darwin's theory of evolution."
+  },
+  {
+   "id": "new-zealand",
+   "name": "New Zealand",
+   "aliases": [
+    "Aotearoa"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "New Zealand's two main islands sit alone in the South Pacific, and their isolation produced flightless birds like the kiwi and the extinct giant moa."
+  },
+  {
+   "id": "easter-island",
+   "name": "Easter Island",
+   "aliases": [
+    "Rapa Nui",
+    "Isla de Pascua"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Easter Island is one of the most remote inhabited islands on Earth, more than 3,500 kilometres from Chile, and is famous for its giant stone moai."
+  },
+  {
+   "id": "bora-bora",
+   "name": "Bora Bora",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Bora Bora is a volcanic island in French Polynesia surrounded by a turquoise lagoon and a ring of reef islets."
+  },
+  {
+   "id": "japan",
+   "name": "Japan",
+   "aliases": [
+    "Japanese archipelago",
+    "Honshu",
+    "Hokkaido",
+    "Kyushu",
+    "Shikoku"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Japan is an archipelago of thousands of islands in the western Pacific, dominated by the four large islands of Honshu, Hokkaido, Kyushu and Shikoku."
+  },
+  {
+   "id": "guam",
+   "name": "Guam",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Guam is the largest of the Mariana Islands and lies close to the Mariana Trench, the deepest part of the ocean."
+  },
+  {
+   "id": "samoa",
+   "name": "Samoa",
+   "aliases": [
+    "Samoan Islands",
+    "American Samoa",
+    "Western Samoa",
+    "Upolu"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Samoan Islands in the central Pacific are divided between the independent nation of Samoa and the US territory of American Samoa."
+  },
+  {
+   "id": "tonga",
+   "name": "Tonga",
+   "aliases": [
+    "Tongatapu",
+    "Friendly Islands"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Tonga is a kingdom of about 170 islands in the South Pacific, and the Tonga Trench off its coast is the second-deepest in the world."
+  },
+  {
+   "id": "philippines",
+   "name": "Philippines",
+   "aliases": [
+    "Philippine Islands",
+    "Luzon",
+    "Mindanao"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Philippines is an archipelago of more than 7,000 islands between the South China Sea and the Pacific."
+  },
+  {
+   "id": "solomon-islands",
+   "name": "Solomon Islands",
+   "aliases": [
+    "Solomons",
+    "Guadalcanal"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Solomon Islands in the south-west Pacific include Guadalcanal, where a brutal six-month battle was fought in 1942 and 1943."
+  },
+  {
+   "id": "vanuatu",
+   "name": "Vanuatu",
+   "aliases": [
+    "New Hebrides"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Vanuatu is a chain of about 80 volcanic islands in the South Pacific, including Tanna with its easily visited active volcano, Mount Yasur."
+  },
+  {
+   "id": "new-caledonia",
+   "name": "New Caledonia",
+   "aliases": [
+    "Grande Terre",
+    "Nouvelle-Calédonie"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "New Caledonia is a French territory in the south-west Pacific whose main island is ringed by one of the longest barrier reefs in the world."
+  },
+  {
+   "id": "marshall-islands",
+   "name": "Marshall Islands",
+   "aliases": [
+    "Marshalls",
+    "Majuro"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Marshall Islands are 29 low coral atolls in the central Pacific, including Bikini and Enewetak, where the United States tested nuclear weapons."
+  },
+  {
+   "id": "okinawa",
+   "name": "Okinawa",
+   "aliases": [
+    "Ryukyu Islands",
+    "Ryukyus"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Okinawa is the largest of Japan's Ryukyu Islands, in the East China Sea, and was the site of the last great battle of the Second World War in 1945."
+  },
+  {
+   "id": "iwo-jima",
+   "name": "Iwo Jima",
+   "aliases": [
+    "Iwo To",
+    "Ioto"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Iwo Jima is a small volcanic island south of Japan where US Marines raised the flag on Mount Suribachi in 1945."
+  },
+  {
+   "id": "midway-atoll",
+   "name": "Midway Atoll",
+   "aliases": [
+    "Midway",
+    "Midway Island",
+    "Midway Islands"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Midway Atoll lies near the end of the Hawaiian chain and gave its name to the 1942 battle that turned the Pacific War."
+  },
+  {
+   "id": "pitcairn-islands",
+   "name": "Pitcairn Islands",
+   "aliases": [
+    "Pitcairn",
+    "Pitcairn Island"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Pitcairn Island was settled in 1790 by the mutineers of HMS Bounty and remains one of the least populated territories on Earth."
+  },
+  {
+   "id": "marquesas-islands",
+   "name": "Marquesas Islands",
+   "aliases": [
+    "Marquesas",
+    "Nuku Hiva",
+    "Hiva Oa"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Marquesas are rugged volcanic islands in French Polynesia without protecting reefs, where the painter Paul Gauguin spent his last years."
+  },
+  {
+   "id": "palau",
+   "name": "Palau",
+   "aliases": [
+    "Belau",
+    "Rock Islands"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Palau in the western Pacific is famous for its Rock Islands and for Jellyfish Lake, where millions of harmless jellyfish drift in a marine lake."
+  },
+  {
+   "id": "kiribati",
+   "name": "Kiribati",
+   "aliases": [
+    "Gilbert Islands",
+    "Kiritimati",
+    "Tarawa",
+    "Line Islands",
+    "Phoenix Islands"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Kiribati is spread across 33 islands straddling the equator and the International Date Line, and includes Kiritimati, the largest coral atoll by land area."
+  },
+  {
+   "id": "tuvalu",
+   "name": "Tuvalu",
+   "aliases": [
+    "Ellice Islands",
+    "Funafuti"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Tuvalu is a nation of nine low coral atolls in the Pacific whose highest point is only a few metres above sea level."
+  },
+  {
+   "id": "cook-islands",
+   "name": "Cook Islands",
+   "aliases": [
+    "Rarotonga",
+    "Aitutaki"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Cook Islands are 15 islands in the South Pacific named after Captain James Cook and self-governing in free association with New Zealand."
+  },
+  {
+   "id": "new-guinea",
+   "name": "New Guinea",
+   "aliases": [
+    "Papua New Guinea",
+    "Papua",
+    "Niugini"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "New Guinea is the second-largest island in the world and is home to the birds of paradise and more than 800 languages."
+  },
+  {
+   "id": "vancouver-island",
+   "name": "Vancouver Island",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Vancouver Island off Canada's west coast is the largest island on the Pacific coast of the Americas."
+  },
+  {
+   "id": "aleutian-islands",
+   "name": "Aleutian Islands",
+   "aliases": [
+    "Aleutians",
+    "Unalaska",
+    "Attu"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Aleutian Islands are a chain of volcanic islands stretching about 1,900 kilometres west from Alaska towards Russia."
+  },
+  {
+   "id": "nauru",
+   "name": "Nauru",
+   "aliases": [
+    "Pleasant Island"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Nauru is a single raised coral island in the Pacific, the smallest island nation in the world, once rich from mining phosphate formed from seabird droppings."
+  },
+  {
+   "id": "tuamotu-islands",
+   "name": "Tuamotu Islands",
+   "aliases": [
+    "Tuamotus",
+    "Tuamotu Archipelago"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Tuamotus are the largest chain of coral atolls in the world, about 80 low islands strung across French Polynesia."
+  },
+  {
+   "id": "chatham-islands",
+   "name": "Chatham Islands",
+   "aliases": [
+    "Chathams",
+    "Rekohu"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Chatham Islands east of New Zealand are among the first inhabited places on Earth to see each new day."
+  },
+  {
+   "id": "kuril-islands",
+   "name": "Kuril Islands",
+   "aliases": [
+    "Kurils",
+    "Kuriles"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Kuril Islands are a volcanic chain between Kamchatka and Japan, still disputed between Russia and Japan since the end of the Second World War."
+  },
+  {
+   "id": "farallon-islands",
+   "name": "Farallon Islands",
+   "aliases": [
+    "Farallones",
+    "Farallons"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Farallon Islands off San Francisco are a wildlife refuge where great white sharks gather each autumn to hunt seals."
+  },
+  {
+   "id": "clipperton-island",
+   "name": "Clipperton Island",
+   "aliases": [
+    "Clipperton",
+    "Île de la Passion"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Clipperton Island is a tiny uninhabited French atoll in the eastern Pacific, more than 1,000 kilometres from Mexico, ringed by a lagoon and overrun by land crabs."
+  },
+  {
+   "id": "juan-fernandez-islands",
+   "name": "Juan Fernández Islands",
+   "aliases": [
+    "Juan Fernandez",
+    "Robinson Crusoe Island",
+    "Más a Tierra",
+    "Mas a Tierra"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Juan Fernández Islands off Chile include Robinson Crusoe Island, where the marooned sailor Alexander Selkirk survived alone for four years and inspired Defoe's novel."
+  },
+  {
+   "id": "iceland",
+   "name": "Iceland",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Iceland sits astride the Mid-Atlantic Ridge, where the North American and Eurasian plates pull apart, which is why it is so volcanic."
+  },
+  {
+   "id": "bermuda",
+   "name": "Bermuda",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Bermuda is a lone group of islands in the North Atlantic about 1,000 kilometres from the US coast, with the most northerly coral reefs in the world."
+  },
+  {
+   "id": "bahamas",
+   "name": "Bahamas",
+   "aliases": [
+    "the Bahamas",
+    "Bahama Islands",
+    "Andros",
+    "Eleuthera",
+    "Grand Bahama",
+    "Bimini",
+    "Exumas"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Bahamas are about 700 islands and cays on shallow banks in the Atlantic, where Columbus made his first landfall in 1492."
+  },
+  {
+   "id": "canary-islands",
+   "name": "Canary Islands",
+   "aliases": [
+    "Canaries",
+    "Tenerife",
+    "Gran Canaria",
+    "Lanzarote",
+    "Fuerteventura",
+    "La Palma",
+    "La Gomera",
+    "El Hierro"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Canary Islands are Spanish volcanic islands off north-west Africa, named not after birds but probably after dogs, from the Latin canaria."
+  },
+  {
+   "id": "greenland",
+   "name": "Greenland",
+   "aliases": [
+    "Kalaallit Nunaat"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Greenland is the largest island in the world, lying between the Atlantic and Arctic oceans, and about 80 per cent of it is buried under an ice sheet."
+  },
+  {
+   "id": "cuba",
+   "name": "Cuba",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Cuba is the largest island in the Caribbean, sitting where the Atlantic, the Gulf of Mexico and the Caribbean Sea meet."
+  },
+  {
+   "id": "azores",
+   "name": "Azores",
+   "aliases": [
+    "Açores",
+    "São Miguel",
+    "Sao Miguel",
+    "Pico",
+    "Terceira",
+    "Faial"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Azores are nine volcanic Portuguese islands in the mid-Atlantic, about 1,500 kilometres west of Lisbon, and a famous whale-watching spot."
+  },
+  {
+   "id": "falkland-islands",
+   "name": "Falkland Islands",
+   "aliases": [
+    "Falklands",
+    "Malvinas",
+    "Islas Malvinas"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Falkland Islands lie in the South Atlantic about 500 kilometres east of Argentina and have far more sheep and penguins than people."
+  },
+  {
+   "id": "madeira",
+   "name": "Madeira",
+   "aliases": [
+    "Madeira Islands",
+    "Porto Santo"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Madeira is a Portuguese volcanic island in the Atlantic north of the Canaries, famous for its fortified wine and the laurel forests that once covered it."
+  },
+  {
+   "id": "cape-verde",
+   "name": "Cape Verde",
+   "aliases": [
+    "Cabo Verde",
+    "Cape Verde Islands"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Cape Verde is a group of ten volcanic islands off the coast of Senegal, and many Atlantic hurricanes begin as storms passing nearby."
+  },
+  {
+   "id": "faroe-islands",
+   "name": "Faroe Islands",
+   "aliases": [
+    "Faroes",
+    "Faeroe Islands"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Faroe Islands are 18 rugged islands between Norway and Iceland, where sheep outnumber people and the cliffs host huge seabird colonies."
+  },
+  {
+   "id": "puerto-rico",
+   "name": "Puerto Rico",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Puerto Rico lies at the eastern end of the Greater Antilles, and just north of it the Puerto Rico Trench drops to the deepest point in the Atlantic."
+  },
+  {
+   "id": "great-britain",
+   "name": "Great Britain",
+   "aliases": [
+    "Britain",
+    "British Isles",
+    "United Kingdom"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Great Britain is the largest island in Europe and was joined to the continent by dry land until rising seas flooded Doggerland about 8,000 years ago."
+  },
+  {
+   "id": "ireland",
+   "name": "Ireland",
+   "aliases": [
+    "Eire",
+    "Éire",
+    "Emerald Isle"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Ireland is the second-largest island of the British Isles, and the Gulf Stream keeps its climate mild enough for subtropical gardens to thrive on its west coast."
+  },
+  {
+   "id": "newfoundland",
+   "name": "Newfoundland",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Newfoundland is a large island off eastern Canada where Vikings landed around the year 1000 and whose Grand Banks were once the richest cod fishery on Earth."
+  },
+  {
+   "id": "st-helena",
+   "name": "St Helena",
+   "aliases": [
+    "Saint Helena"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "St Helena is a remote volcanic island in the South Atlantic where Napoleon was exiled from 1815 until his death in 1821."
+  },
+  {
+   "id": "long-island",
+   "name": "Long Island",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Long Island stretches about 190 kilometres east from New York City into the Atlantic and is the largest island in the contiguous United States."
+  },
+  {
+   "id": "south-georgia",
+   "name": "South Georgia",
+   "aliases": [
+    "South Georgia Island"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "South Georgia is a mountainous, glacier-covered island in the South Atlantic where Ernest Shackleton is buried and millions of king penguins and fur seals breed."
+  },
+  {
+   "id": "ascension-island",
+   "name": "Ascension Island",
+   "aliases": [
+    "Ascension"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Ascension Island is a volcanic island in the mid-Atlantic to which green turtles swim about 2,000 kilometres from Brazil to nest on its beaches."
+  },
+  {
+   "id": "tristan-da-cunha",
+   "name": "Tristan da Cunha",
+   "aliases": [
+    "Tristan"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Tristan da Cunha is the most remote inhabited island in the world, with about 250 people living more than 2,000 kilometres from the nearest inhabited land."
+  },
+  {
+   "id": "shetland",
+   "name": "Shetland",
+   "aliases": [
+    "Shetland Islands",
+    "Shetlands"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Shetland is the northernmost part of the British Isles, closer to Norway than to Edinburgh, with a long Norse history."
+  },
+  {
+   "id": "orkney",
+   "name": "Orkney",
+   "aliases": [
+    "Orkney Islands",
+    "Orkneys"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Orkney, just north of mainland Scotland, is home to Skara Brae, a stone village older than the pyramids, and the natural harbour of Scapa Flow."
+  },
+  {
+   "id": "hebrides",
+   "name": "Hebrides",
+   "aliases": [
+    "Outer Hebrides",
+    "Inner Hebrides",
+    "Western Isles",
+    "Isle of Skye",
+    "Skye",
+    "Lewis and Harris"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Hebrides off Scotland's west coast include Skye, Mull, Lewis and Harris, and the tiny island of Staffa with its basalt Fingal's Cave."
+  },
+  {
+   "id": "isles-of-scilly",
+   "name": "Isles of Scilly",
+   "aliases": [
+    "Scilly Isles",
+    "Scilly",
+    "Scillies"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Isles of Scilly lie about 45 kilometres off Cornwall and are warmed by the Gulf Stream so that subtropical plants grow in their gardens."
+  },
+  {
+   "id": "channel-islands",
+   "name": "Channel Islands",
+   "aliases": [
+    "Jersey",
+    "Guernsey",
+    "Sark",
+    "Alderney"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Channel Islands of Jersey, Guernsey, Alderney and Sark lie off Normandy and were the only British soil occupied by Germany in the Second World War."
+  },
+  {
+   "id": "outer-banks",
+   "name": "Outer Banks",
+   "aliases": [
+    "Ocracoke",
+    "Hatteras Island"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Outer Banks are a long chain of barrier islands off North Carolina, where the Wright brothers first flew and the pirate Blackbeard was killed."
+  },
+  {
+   "id": "sable-island",
+   "name": "Sable Island",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Sable Island is a crescent of sand off Nova Scotia known as the Graveyard of the Atlantic for its hundreds of shipwrecks, and home to wild horses."
+  },
+  {
+   "id": "fernando-de-noronha",
+   "name": "Fernando de Noronha",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Fernando de Noronha is a volcanic archipelago off north-east Brazil famous for its spinner dolphins and strictly limited number of visitors."
+  },
+  {
+   "id": "bioko",
+   "name": "Bioko",
+   "aliases": [
+    "Fernando Po",
+    "Fernando Pó"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Bioko is a volcanic island in the Gulf of Guinea that holds Malabo, the capital of Equatorial Guinea, far from the country's mainland."
+  },
+  {
+   "id": "sao-tome-and-principe",
+   "name": "São Tomé and Príncipe",
+   "aliases": [
+    "Sao Tome and Principe",
+    "São Tomé",
+    "Sao Tome",
+    "Príncipe",
+    "Principe"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "São Tomé and Príncipe are two volcanic islands in the Gulf of Guinea that make up Africa's second-smallest country."
+  },
+  {
+   "id": "rockall",
+   "name": "Rockall",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Rockall is a lone granite rock about 20 metres high in the North Atlantic, west of Scotland, claimed by Britain and argued over for its fishing waters."
+  },
+  {
+   "id": "surtsey",
+   "name": "Surtsey",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Surtsey is a volcanic island off Iceland that rose from the sea in 1963 and has been off limits to all but scientists ever since."
+  },
+  {
+   "id": "skellig-michael",
+   "name": "Skellig Michael",
+   "aliases": [
+    "Skellig",
+    "Great Skellig",
+    "Skellig Islands",
+    "Skelligs"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Skellig Michael is a jagged rock off Ireland with a sixth-century monastery on its summit, later used as Luke Skywalker's hideout in Star Wars."
+  },
+  {
+   "id": "robben-island",
+   "name": "Robben Island",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Robben Island in Table Bay off Cape Town is where Nelson Mandela was imprisoned for 18 of his 27 years in jail."
+  },
+  {
+   "id": "bouvet-island",
+   "name": "Bouvet Island",
+   "aliases": [
+    "Bouvet",
+    "Bouvetoya"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Bouvet Island is the most remote island on Earth, an ice-covered volcanic island in the South Atlantic about 1,700 kilometres from Antarctica with no permanent inhabitants."
+  },
+  {
+   "id": "alvin",
+   "name": "Alvin",
+   "aliases": [
+    "DSV Alvin"
+   ],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "Alvin is the US deep-diving submersible that explored the wreck of the Titanic in 1986 and found the first hydrothermal vent communities in 1977."
+  },
+  {
+   "id": "calypso",
+   "name": "Calypso",
+   "aliases": [
+    "RV Calypso"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "Calypso was a former minesweeper that Jacques Cousteau turned into the floating base for his films and expeditions from 1950 until it sank in Singapore harbour in 1996."
+  },
+  {
+   "id": "trieste",
+   "name": "Trieste",
+   "aliases": [
+    "Bathyscaphe Trieste"
+   ],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "The bathyscaphe Trieste carried Jacques Piccard and Don Walsh to the bottom of the Challenger Deep in 1960, the first crewed dive to the ocean's deepest point."
+  },
+  {
+   "id": "hms-challenger",
+   "name": "HMS Challenger",
+   "aliases": [
+    "Challenger",
+    "Challenger expedition"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "HMS Challenger sailed around the world from 1872 to 1876 on the first great oceanographic expedition, sounding the deep that now bears its name."
+  },
+  {
+   "id": "deepsea-challenger",
+   "name": "Deepsea Challenger",
+   "aliases": [],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "Deepsea Challenger carried the film director James Cameron alone to the bottom of the Challenger Deep in 2012."
+  },
+  {
+   "id": "hms-beagle",
+   "name": "HMS Beagle",
+   "aliases": [
+    "Beagle"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "HMS Beagle carried the young Charles Darwin on a five-year surveying voyage around the world from 1831 to 1836 that led to his theory of evolution."
+  },
+  {
+   "id": "ev-nautilus",
+   "name": "Nautilus",
+   "aliases": [
+    "EV Nautilus",
+    "E/V Nautilus",
+    "Exploration Vessel Nautilus"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "The exploration vessel Nautilus, run by Titanic discoverer Robert Ballard's Ocean Exploration Trust, streams its deep-sea dives live to the public."
+  },
+  {
+   "id": "limiting-factor",
+   "name": "Limiting Factor",
+   "aliases": [
+    "DSV Limiting Factor",
+    "Bakunawa"
+   ],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "Limiting Factor is the submersible in which Victor Vescovo became the first person to dive to the deepest point of all five oceans, in 2018 and 2019."
+  },
+  {
+   "id": "bathysphere",
+   "name": "Bathysphere",
+   "aliases": [],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "The bathysphere was a steel ball on a cable in which William Beebe and Otis Barton descended to about 920 metres off Bermuda in 1934, a record that stood for 15 years."
+  },
+  {
+   "id": "mir",
+   "name": "Mir",
+   "aliases": [
+    "Mir-1",
+    "Mir-2",
+    "Mir 1",
+    "Mir 2",
+    "Mir submersible"
+   ],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "The Russian submersibles Mir-1 and Mir-2 filmed the Titanic wreck for James Cameron's 1997 film and in 2007 planted a flag on the sea floor at the North Pole."
+  },
+  {
+   "id": "glomar-challenger",
+   "name": "Glomar Challenger",
+   "aliases": [],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "The drilling ship Glomar Challenger took cores from the Atlantic floor in 1968 that confirmed sea-floor spreading and plate tectonics."
+  },
+  {
+   "id": "fram",
+   "name": "Fram",
+   "aliases": [],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "Fram was built for Fridtjof Nansen to be frozen into the Arctic ice and drift across the polar sea, and later carried Roald Amundsen to Antarctica."
+  },
+  {
+   "id": "rrs-discovery",
+   "name": "RRS Discovery",
+   "aliases": [
+    "Discovery"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "The Discovery was built for Scott's first Antarctic expedition in 1901, and three later British research ships of the same name have continued its work."
+  },
+  {
+   "id": "atlantis",
+   "name": "Atlantis",
+   "aliases": [
+    "RV Atlantis",
+    "R/V Atlantis"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "Atlantis is the Woods Hole research ship that serves as the mothership for the submersible Alvin."
+  },
+  {
+   "id": "knorr",
+   "name": "Knorr",
+   "aliases": [
+    "RV Knorr",
+    "R/V Knorr"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "The research vessel Knorr was the ship from which Robert Ballard's team found the wreck of the Titanic in 1985."
+  },
+  {
+   "id": "polarstern",
+   "name": "Polarstern",
+   "aliases": [
+    "RV Polarstern"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "The German icebreaker Polarstern spent a year frozen into Arctic sea ice for the MOSAiC expedition of 2019 to 2020, the largest polar research expedition ever mounted."
+  },
+  {
+   "id": "shinkai-6500",
+   "name": "Shinkai 6500",
+   "aliases": [
+    "Shinkai"
+   ],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "Japan's Shinkai 6500 can dive to 6,500 metres and was for many years the deepest-diving crewed research submersible in service."
+  },
+  {
+   "id": "jiaolong",
+   "name": "Jiaolong",
+   "aliases": [],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "China's submersible Jiaolong dived to more than 7,000 metres in the Mariana Trench in 2012."
+  },
+  {
+   "id": "kaiko",
+   "name": "Kaiko",
+   "aliases": [
+    "Kaikō"
+   ],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "Kaiko was a Japanese robotic vehicle that in 1995 became the second craft to reach the bottom of the Challenger Deep, and it was lost at sea in 2003."
+  },
+  {
+   "id": "nereus",
+   "name": "Nereus",
+   "aliases": [],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "Nereus was a hybrid robot submarine that reached the Challenger Deep in 2009 and was lost in the Kermadec Trench in 2014 when it imploded at nearly 10,000 metres."
+  },
+  {
+   "id": "nautile",
+   "name": "Nautile",
+   "aliases": [],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "Nautile is the French crewed submersible that explored the wreck of the Titanic and recovered thousands of artefacts from it."
+  },
+  {
+   "id": "joides-resolution",
+   "name": "JOIDES Resolution",
+   "aliases": [
+    "Joides Resolution"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "The drilling ship JOIDES Resolution spent decades recovering sediment cores from the deep sea floor that record millions of years of Earth's climate."
+  },
+  {
+   "id": "okeanos-explorer",
+   "name": "Okeanos Explorer",
+   "aliases": [
+    "NOAA Ship Okeanos Explorer"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "Okeanos Explorer is a US government ship dedicated entirely to exploring unknown parts of the ocean, broadcasting its dives live online."
+  },
+  {
+   "id": "falkor",
+   "name": "Falkor",
+   "aliases": [
+    "RV Falkor",
+    "Falkor (too)"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "Falkor and its successor Falkor (too) are research ships run by the Schmidt Ocean Institute that offer free ship time to scientists and have mapped vast areas of sea floor."
+  },
+  {
+   "id": "rrs-sir-david-attenborough",
+   "name": "RRS Sir David Attenborough",
+   "aliases": [
+    "Sir David Attenborough"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "The polar research ship RRS Sir David Attenborough got its name after a 2016 public vote overwhelmingly chose Boaty McBoatface, a name given to one of its robot submarines instead."
+  },
+  {
+   "id": "fendouzhe",
+   "name": "Fendouzhe",
+   "aliases": [
+    "Striver"
+   ],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "Fendouzhe, meaning Striver, is the Chinese submersible that carried three people to the bottom of the Challenger Deep in 2020."
+  },
+  {
+   "id": "chikyu",
+   "name": "Chikyu",
+   "aliases": [
+    "Chikyū"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "Chikyu is a Japanese drilling ship with a derrick about 120 metres above the water, built to drill deeper into the sea floor than any ship before it."
+  },
+  {
+   "id": "archimede",
+   "name": "Archimède",
+   "aliases": [
+    "Archimede",
+    "Bathyscaphe Archimède"
+   ],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "The French bathyscaphe Archimède dived to about 9,500 metres in the Kuril Trench in 1962 and later explored the Mid-Atlantic Ridge in Project FAMOUS."
+  },
+  {
+   "id": "ben-franklin",
+   "name": "Ben Franklin",
+   "aliases": [
+    "PX-15",
+    "Ben Franklin submersible"
+   ],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "In 1969 the submersible Ben Franklin drifted silently for 30 days inside the Gulf Stream with six men aboard, a mission NASA studied as a model for long space flights."
+  },
+  {
+   "id": "uss-albatross",
+   "name": "Albatross",
+   "aliases": [
+    "USFC Albatross",
+    "USS Albatross"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "The Albatross, launched in 1882, was the first ship built specifically for marine research and dredged up thousands of new species."
+  },
+  {
+   "id": "meteor",
+   "name": "Meteor",
+   "aliases": [
+    "German Meteor expedition"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "The German ship Meteor criss-crossed the South Atlantic from 1925 to 1927 using echo sounding to produce the first detailed picture of a whole ocean basin's floor."
+  },
+  {
+   "id": "galathea",
+   "name": "Galathea",
+   "aliases": [],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "The Danish ship Galathea dredged living animals from more than 10,000 metres in the Philippine Trench in 1951, proving that life exists at the ocean's greatest depths."
+  },
+  {
+   "id": "akademik-mstislav-keldysh",
+   "name": "Akademik Mstislav Keldysh",
+   "aliases": [
+    "Keldysh"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "The Russian research ship Akademik Mstislav Keldysh carries the Mir submersibles and appears as itself in the opening scenes of the film Titanic."
+  },
+  {
+   "id": "boaty-mcboatface",
+   "name": "Boaty McBoatface",
+   "aliases": [
+    "Boaty"
+   ],
+   "kind": "vessel",
+   "group": "submersibles",
+   "fact": "Boaty McBoatface is a yellow robot submarine that won its name in a public vote and has since made long journeys under Antarctic sea ice and deep in the Southern Ocean."
+  },
+  {
+   "id": "jacques-cousteau",
+   "name": "Jacques Cousteau",
+   "aliases": [
+    "Jacques-Yves Cousteau",
+    "Cousteau",
+    "Captain Cousteau"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Jacques Cousteau co-invented the Aqua-Lung in 1943, the first successful open-circuit scuba gear, and brought the undersea world to television aboard Calypso."
+  },
+  {
+   "id": "james-cameron",
+   "name": "James Cameron",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "The film director James Cameron made a solo dive to the bottom of the Challenger Deep in 2012 and has visited the Titanic wreck more than 30 times."
+  },
+  {
+   "id": "robert-ballard",
+   "name": "Robert Ballard",
+   "aliases": [
+    "Bob Ballard",
+    "Ballard"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Robert Ballard led the team that found the wreck of the Titanic in 1985 and also located the Bismarck and took part in the discovery of hydrothermal vents."
+  },
+  {
+   "id": "sylvia-earle",
+   "name": "Sylvia Earle",
+   "aliases": [
+    "Her Deepness"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Sylvia Earle, nicknamed Her Deepness, set a record in 1979 by walking the sea floor at 381 metres in a pressurised suit and has spent thousands of hours underwater."
+  },
+  {
+   "id": "ferdinand-magellan",
+   "name": "Ferdinand Magellan",
+   "aliases": [
+    "Magellan",
+    "Fernão de Magalhães"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Ferdinand Magellan led the first expedition to cross the Pacific, which he named for its calm waters, though he was killed in the Philippines before it completed the first circumnavigation."
+  },
+  {
+   "id": "james-cook",
+   "name": "James Cook",
+   "aliases": [
+    "Captain Cook",
+    "Captain James Cook",
+    "Cook"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Captain James Cook charted more of the Pacific than any navigator before him, crossed the Antarctic Circle, and kept his crews free of scurvy on three great voyages."
+  },
+  {
+   "id": "jacques-piccard",
+   "name": "Jacques Piccard",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Jacques Piccard and Don Walsh reached the bottom of the Challenger Deep in the bathyscaphe Trieste in 1960, the first humans ever to do so."
+  },
+  {
+   "id": "don-walsh",
+   "name": "Don Walsh",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Don Walsh, a US Navy lieutenant, piloted the bathyscaphe Trieste to the bottom of the Challenger Deep with Jacques Piccard in 1960."
+  },
+  {
+   "id": "victor-vescovo",
+   "name": "Victor Vescovo",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Victor Vescovo became the first person to reach the deepest point of all five oceans, completing the Five Deeps Expedition in 2019."
+  },
+  {
+   "id": "christopher-columbus",
+   "name": "Christopher Columbus",
+   "aliases": [
+    "Columbus",
+    "Cristoforo Colombo",
+    "Cristóbal Colón"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Christopher Columbus crossed the Atlantic in 1492 on a voyage that opened lasting contact between Europe and the Americas."
+  },
+  {
+   "id": "francis-drake",
+   "name": "Francis Drake",
+   "aliases": [
+    "Sir Francis Drake",
+    "Drake"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Sir Francis Drake was the first captain to complete a circumnavigation of the globe, from 1577 to 1580, and the stormy passage below Cape Horn is named after him."
+  },
+  {
+   "id": "william-beebe",
+   "name": "William Beebe",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "William Beebe descended more than 900 metres off Bermuda in the bathysphere in 1934 and was the first scientist to watch deep-sea animals alive in their own world."
+  },
+  {
+   "id": "auguste-piccard",
+   "name": "Auguste Piccard",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Auguste Piccard invented the bathyscaphe, a free-diving deep submersible, after first setting altitude records in a stratospheric balloon."
+  },
+  {
+   "id": "philippe-cousteau",
+   "name": "Philippe Cousteau",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Philippe Cousteau, Jacques Cousteau's younger son, filmed and co-produced many of his father's undersea documentaries before dying in a seaplane crash in 1979."
+  },
+  {
+   "id": "thor-heyerdahl",
+   "name": "Thor Heyerdahl",
+   "aliases": [
+    "Heyerdahl"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Thor Heyerdahl sailed the balsa raft Kon-Tiki about 8,000 kilometres across the Pacific in 1947 to show that ancient people could have made such voyages."
+  },
+  {
+   "id": "eugenie-clark",
+   "name": "Eugenie Clark",
+   "aliases": [
+    "Shark Lady"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Eugenie Clark, the Shark Lady, studied shark behaviour for decades and discovered a Red Sea fish whose secretions repel sharks."
+  },
+  {
+   "id": "vasco-da-gama",
+   "name": "Vasco da Gama",
+   "aliases": [
+    "da Gama"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Vasco da Gama sailed around the Cape of Good Hope to reach India in 1498, opening the sea route from Europe to Asia."
+  },
+  {
+   "id": "hans-hass",
+   "name": "Hans Hass",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Hans Hass was an Austrian diving pioneer who made some of the first underwater films of sharks and manta rays in the 1940s and 1950s."
+  },
+  {
+   "id": "jean-michel-cousteau",
+   "name": "Jean-Michel Cousteau",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Jean-Michel Cousteau, Jacques Cousteau's elder son, founded the Ocean Futures Society and has spent his life making ocean documentaries."
+  },
+  {
+   "id": "fabien-cousteau",
+   "name": "Fabien Cousteau",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Fabien Cousteau, grandson of Jacques, spent 31 days living in the undersea laboratory Aquarius in 2014, beating his grandfather's record."
+  },
+  {
+   "id": "rachel-carson",
+   "name": "Rachel Carson",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Rachel Carson was a marine biologist whose book The Sea Around Us, published in 1951, introduced millions of readers to the science of the oceans."
+  },
+  {
+   "id": "jacques-mayol",
+   "name": "Jacques Mayol",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Jacques Mayol was the free diver who first dived below 100 metres on a single breath in 1976 and inspired the film The Big Blue."
+  },
+  {
+   "id": "fridtjof-nansen",
+   "name": "Fridtjof Nansen",
+   "aliases": [
+    "Nansen"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Fridtjof Nansen let his ship Fram freeze into the Arctic ice to drift across the polar sea and later invented the Nansen bottle for sampling seawater at depth."
+  },
+  {
+   "id": "zheng-he",
+   "name": "Zheng He",
+   "aliases": [
+    "Cheng Ho"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Zheng He commanded huge Chinese treasure fleets on seven voyages across the Indian Ocean between 1405 and 1433."
+  },
+  {
+   "id": "james-clark-ross",
+   "name": "James Clark Ross",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "James Clark Ross discovered the Ross Sea and Ross Ice Shelf in 1841 and made some of the first soundings of the deep ocean, reaching below 4,000 metres."
+  },
+  {
+   "id": "matthew-flinders",
+   "name": "Matthew Flinders",
+   "aliases": [
+    "Flinders"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Matthew Flinders was the first to sail right around Australia, from 1801 to 1803, and popularised the continent's name."
+  },
+  {
+   "id": "matthew-fontaine-maury",
+   "name": "Matthew Fontaine Maury",
+   "aliases": [
+    "Maury",
+    "Matthew Maury"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Matthew Fontaine Maury, known as the Pathfinder of the Seas, compiled ships' logs into the first charts of ocean winds and currents in the 1840s and 1850s."
+  },
+  {
+   "id": "charles-wyville-thomson",
+   "name": "Charles Wyville Thomson",
+   "aliases": [
+    "Wyville Thomson"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Charles Wyville Thomson was the chief scientist of the Challenger expedition of 1872 to 1876, which laid the foundations of oceanography."
+  },
+  {
+   "id": "otis-barton",
+   "name": "Otis Barton",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Otis Barton designed and paid for the bathysphere in which he and William Beebe dived in the 1930s, and in 1949 reached about 1,370 metres alone in his benthoscope."
+  },
+  {
+   "id": "walter-munk",
+   "name": "Walter Munk",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Walter Munk, called the Einstein of the oceans, predicted surf conditions for the D-Day landings and explained how ocean waves travel across whole oceans."
+  },
+  {
+   "id": "prince-albert-i-of-monaco",
+   "name": "Prince Albert I of Monaco",
+   "aliases": [
+    "Albert I of Monaco",
+    "Prince Albert I"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Prince Albert I of Monaco spent his fortune on oceanographic cruises in the 1880s and 1890s and founded the Oceanographic Museum of Monaco."
+  },
+  {
+   "id": "herbert-nitsch",
+   "name": "Herbert Nitsch",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Herbert Nitsch, the deepest man on Earth, free-dived to 214 metres on a single breath in 2007."
+  },
+  {
+   "id": "natalia-molchanova",
+   "name": "Natalia Molchanova",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Natalia Molchanova was the most decorated free diver in history, holding dozens of world records, before disappearing on a dive off Ibiza in 2015."
+  },
+  {
+   "id": "jean-baptiste-charcot",
+   "name": "Jean-Baptiste Charcot",
+   "aliases": [
+    "Charcot"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "Jean-Baptiste Charcot led French Antarctic expeditions aboard the ships Français and Pourquoi-Pas? and charted long stretches of the Antarctic Peninsula."
+  },
+  {
+   "id": "marie-tharp",
+   "name": "Marie Tharp",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Marie Tharp drew the first map of the entire ocean floor and spotted the rift valley running down the Mid-Atlantic Ridge, key evidence for continental drift."
+  }
+ ],
+ "prompts": [
+  {
+   "id": "reef-system",
+   "answers": [
+    {
+     "entity": "great-barrier-reef",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "belize-barrier-reef",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mesoamerican-reef",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "florida-reef",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "ningaloo-reef",
+     "tier": "baitball"
+    },
+    {
+     "entity": "tubbataha-reef",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bikini-atoll",
+     "tier": "baitball"
+    },
+    {
+     "entity": "raja-ampat",
+     "tier": "reef"
+    },
+    {
+     "entity": "new-caledonia-barrier-reef",
+     "tier": "reef"
+    },
+    {
+     "entity": "andros-barrier-reef",
+     "tier": "reef"
+    },
+    {
+     "entity": "apo-reef",
+     "tier": "reef"
+    },
+    {
+     "entity": "lighthouse-reef",
+     "tier": "reef"
+    },
+    {
+     "entity": "palancar-reef",
+     "tier": "reef"
+    },
+    {
+     "entity": "aldabra-atoll",
+     "tier": "reef"
+    },
+    {
+     "entity": "kingman-reef",
+     "tier": "reef"
+    },
+    {
+     "entity": "flower-garden-banks",
+     "tier": "reef"
+    },
+    {
+     "entity": "great-sea-reef",
+     "tier": "twilight"
+    },
+    {
+     "entity": "great-chagos-bank",
+     "tier": "twilight"
+    },
+    {
+     "entity": "glovers-reef",
+     "tier": "twilight"
+    },
+    {
+     "entity": "turneffe-atoll",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lord-howe-island-reef",
+     "tier": "twilight"
+    },
+    {
+     "entity": "molasses-reef",
+     "tier": "twilight"
+    },
+    {
+     "entity": "palmyra-atoll",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kwajalein-atoll",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rangiroa",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rowley-shoals",
+     "tier": "midnight"
+    },
+    {
+     "entity": "scott-reef",
+     "tier": "midnight"
+    },
+    {
+     "entity": "enewetak-atoll",
+     "tier": "midnight"
+    },
+    {
+     "entity": "abrolhos-bank",
+     "tier": "midnight"
+    },
+    {
+     "entity": "osprey-reef",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ribbon-reefs",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sanganeb-atoll",
+     "tier": "midnight"
+    },
+    {
+     "entity": "minerva-reefs",
+     "tier": "midnight"
+    },
+    {
+     "entity": "amazon-reef",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "trench",
+   "answers": [
+    {
+     "entity": "mariana-trench",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "puerto-rico-trench",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "japan-trench",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "philippine-trench",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "tonga-trench",
+     "tier": "baitball"
+    },
+    {
+     "entity": "java-trench",
+     "tier": "baitball"
+    },
+    {
+     "entity": "kermadec-trench",
+     "tier": "baitball"
+    },
+    {
+     "entity": "peru-chile-trench",
+     "tier": "reef"
+    },
+    {
+     "entity": "aleutian-trench",
+     "tier": "reef"
+    },
+    {
+     "entity": "kuril-kamchatka-trench",
+     "tier": "reef"
+    },
+    {
+     "entity": "south-sandwich-trench",
+     "tier": "reef"
+    },
+    {
+     "entity": "izu-ogasawara-trench",
+     "tier": "reef"
+    },
+    {
+     "entity": "cayman-trough",
+     "tier": "reef"
+    },
+    {
+     "entity": "ryukyu-trench",
+     "tier": "reef"
+    },
+    {
+     "entity": "middle-america-trench",
+     "tier": "reef"
+    },
+    {
+     "entity": "hikurangi-trench",
+     "tier": "reef"
+    },
+    {
+     "entity": "yap-trench",
+     "tier": "twilight"
+    },
+    {
+     "entity": "palau-trench",
+     "tier": "twilight"
+    },
+    {
+     "entity": "new-britain-trench",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bougainville-trench",
+     "tier": "twilight"
+    },
+    {
+     "entity": "san-cristobal-trench",
+     "tier": "twilight"
+    },
+    {
+     "entity": "manila-trench",
+     "tier": "twilight"
+    },
+    {
+     "entity": "new-hebrides-trench",
+     "tier": "twilight"
+    },
+    {
+     "entity": "puysegur-trench",
+     "tier": "twilight"
+    },
+    {
+     "entity": "south-shetland-trench",
+     "tier": "twilight"
+    },
+    {
+     "entity": "makran-trench",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hjort-trench",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vityaz-trench",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mussau-trench",
+     "tier": "midnight"
+    },
+    {
+     "entity": "nankai-trough",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hellenic-trench",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "atlantic-sea",
+   "answers": [
+    {
+     "entity": "caribbean-sea",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "gulf-of-mexico",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "north-sea",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mediterranean-sea",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "baltic-sea",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sargasso-sea",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bay-of-fundy",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bay-of-biscay",
+     "tier": "baitball"
+    },
+    {
+     "entity": "irish-sea",
+     "tier": "reef"
+    },
+    {
+     "entity": "gulf-of-guinea",
+     "tier": "reef"
+    },
+    {
+     "entity": "labrador-sea",
+     "tier": "reef"
+    },
+    {
+     "entity": "celtic-sea",
+     "tier": "reef"
+    },
+    {
+     "entity": "gulf-of-st-lawrence",
+     "tier": "reef"
+    },
+    {
+     "entity": "chesapeake-bay",
+     "tier": "reef"
+    },
+    {
+     "entity": "gulf-of-maine",
+     "tier": "reef"
+    },
+    {
+     "entity": "delaware-bay",
+     "tier": "reef"
+    },
+    {
+     "entity": "gulf-of-bothnia",
+     "tier": "reef"
+    },
+    {
+     "entity": "gulf-of-cadiz",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gulf-of-finland",
+     "tier": "twilight"
+    },
+    {
+     "entity": "wadden-sea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bay-of-campeche",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gulf-of-venezuela",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gulf-of-honduras",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bight-of-benin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gulf-of-paria",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cardigan-bay",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gulf-of-riga",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bight-of-biafra",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gulf-of-san-jorge",
+     "tier": "midnight"
+    },
+    {
+     "entity": "walvis-bay",
+     "tier": "midnight"
+    },
+    {
+     "entity": "guanabara-bay",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bay-of-all-saints",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bay-of-pigs",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "pacific-sea",
+   "answers": [
+    {
+     "entity": "south-china-sea",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sea-of-japan",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "bering-sea",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "gulf-of-california",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "coral-sea",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "tasman-sea",
+     "tier": "baitball"
+    },
+    {
+     "entity": "east-china-sea",
+     "tier": "baitball"
+    },
+    {
+     "entity": "gulf-of-alaska",
+     "tier": "baitball"
+    },
+    {
+     "entity": "philippine-sea",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-of-okhotsk",
+     "tier": "reef"
+    },
+    {
+     "entity": "yellow-sea",
+     "tier": "reef"
+    },
+    {
+     "entity": "gulf-of-thailand",
+     "tier": "reef"
+    },
+    {
+     "entity": "celebes-sea",
+     "tier": "reef"
+    },
+    {
+     "entity": "sulu-sea",
+     "tier": "reef"
+    },
+    {
+     "entity": "san-francisco-bay",
+     "tier": "reef"
+    },
+    {
+     "entity": "monterey-bay",
+     "tier": "reef"
+    },
+    {
+     "entity": "tokyo-bay",
+     "tier": "reef"
+    },
+    {
+     "entity": "banda-sea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bismarck-sea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "solomon-sea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gulf-of-tonkin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gulf-of-panama",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bohai-sea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "seto-inland-sea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "puget-sound",
+     "tier": "twilight"
+    },
+    {
+     "entity": "botany-bay",
+     "tier": "twilight"
+    },
+    {
+     "entity": "molucca-sea",
+     "tier": "midnight"
+    },
+    {
+     "entity": "leyte-gulf",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gulf-of-tehuantepec",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bay-of-plenty",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cenderawasih-bay",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hangzhou-bay",
+     "tier": "midnight"
+    },
+    {
+     "entity": "halong-bay",
+     "tier": "midnight"
+    },
+    {
+     "entity": "salish-sea",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "strait",
+   "answers": [
+    {
+     "entity": "strait-of-gibraltar",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "english-channel",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "bering-strait",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "strait-of-hormuz",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "bosporus",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "strait-of-magellan",
+     "tier": "baitball"
+    },
+    {
+     "entity": "strait-of-malacca",
+     "tier": "baitball"
+    },
+    {
+     "entity": "drake-passage",
+     "tier": "baitball"
+    },
+    {
+     "entity": "dardanelles",
+     "tier": "reef"
+    },
+    {
+     "entity": "strait-of-dover",
+     "tier": "reef"
+    },
+    {
+     "entity": "bass-strait",
+     "tier": "reef"
+    },
+    {
+     "entity": "cook-strait",
+     "tier": "reef"
+    },
+    {
+     "entity": "torres-strait",
+     "tier": "reef"
+    },
+    {
+     "entity": "strait-of-messina",
+     "tier": "reef"
+    },
+    {
+     "entity": "bab-el-mandeb",
+     "tier": "reef"
+    },
+    {
+     "entity": "strait-of-juan-de-fuca",
+     "tier": "reef"
+    },
+    {
+     "entity": "taiwan-strait",
+     "tier": "reef"
+    },
+    {
+     "entity": "davis-strait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "denmark-strait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hudson-strait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "oresund",
+     "tier": "twilight"
+    },
+    {
+     "entity": "skagerrak",
+     "tier": "twilight"
+    },
+    {
+     "entity": "korea-strait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sunda-strait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mozambique-channel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "yucatan-channel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "strait-of-bonifacio",
+     "tier": "midnight"
+    },
+    {
+     "entity": "strait-of-otranto",
+     "tier": "midnight"
+    },
+    {
+     "entity": "windward-passage",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lombok-strait",
+     "tier": "midnight"
+    },
+    {
+     "entity": "palk-strait",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pentland-firth",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tsugaru-strait",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cabot-strait",
+     "tier": "midnight"
+    },
+    {
+     "entity": "golden-gate",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "current",
+   "answers": [
+    {
+     "entity": "gulf-stream",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "humboldt-current",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "east-australian-current",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "california-current",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "kuroshio",
+     "tier": "baitball"
+    },
+    {
+     "entity": "north-atlantic-drift",
+     "tier": "baitball"
+    },
+    {
+     "entity": "antarctic-circumpolar-current",
+     "tier": "baitball"
+    },
+    {
+     "entity": "labrador-current",
+     "tier": "reef"
+    },
+    {
+     "entity": "canary-current",
+     "tier": "reef"
+    },
+    {
+     "entity": "benguela-current",
+     "tier": "reef"
+    },
+    {
+     "entity": "agulhas-current",
+     "tier": "reef"
+    },
+    {
+     "entity": "brazil-current",
+     "tier": "reef"
+    },
+    {
+     "entity": "north-equatorial-current",
+     "tier": "reef"
+    },
+    {
+     "entity": "equatorial-counter-current",
+     "tier": "reef"
+    },
+    {
+     "entity": "oyashio",
+     "tier": "reef"
+    },
+    {
+     "entity": "florida-current",
+     "tier": "reef"
+    },
+    {
+     "entity": "alaska-current",
+     "tier": "twilight"
+    },
+    {
+     "entity": "loop-current",
+     "tier": "twilight"
+    },
+    {
+     "entity": "falkland-current",
+     "tier": "twilight"
+    },
+    {
+     "entity": "leeuwin-current",
+     "tier": "twilight"
+    },
+    {
+     "entity": "north-pacific-gyre",
+     "tier": "twilight"
+    },
+    {
+     "entity": "north-atlantic-gyre",
+     "tier": "twilight"
+    },
+    {
+     "entity": "east-greenland-current",
+     "tier": "twilight"
+    },
+    {
+     "entity": "south-equatorial-current",
+     "tier": "twilight"
+    },
+    {
+     "entity": "guinea-current",
+     "tier": "twilight"
+    },
+    {
+     "entity": "irminger-current",
+     "tier": "midnight"
+    },
+    {
+     "entity": "somali-current",
+     "tier": "midnight"
+    },
+    {
+     "entity": "norwegian-current",
+     "tier": "midnight"
+    },
+    {
+     "entity": "beaufort-gyre",
+     "tier": "midnight"
+    },
+    {
+     "entity": "antilles-current",
+     "tier": "midnight"
+    },
+    {
+     "entity": "transpolar-drift",
+     "tier": "midnight"
+    },
+    {
+     "entity": "west-australian-current",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cromwell-current",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "pacific-island",
+   "answers": [
+    {
+     "entity": "hawaii",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "fiji",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "tahiti",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "galapagos-islands",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "new-zealand",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "easter-island",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bora-bora",
+     "tier": "baitball"
+    },
+    {
+     "entity": "japan",
+     "tier": "baitball"
+    },
+    {
+     "entity": "guam",
+     "tier": "reef"
+    },
+    {
+     "entity": "samoa",
+     "tier": "reef"
+    },
+    {
+     "entity": "tonga",
+     "tier": "reef"
+    },
+    {
+     "entity": "philippines",
+     "tier": "reef"
+    },
+    {
+     "entity": "solomon-islands",
+     "tier": "reef"
+    },
+    {
+     "entity": "vanuatu",
+     "tier": "reef"
+    },
+    {
+     "entity": "new-caledonia",
+     "tier": "reef"
+    },
+    {
+     "entity": "marshall-islands",
+     "tier": "reef"
+    },
+    {
+     "entity": "okinawa",
+     "tier": "reef"
+    },
+    {
+     "entity": "iwo-jima",
+     "tier": "twilight"
+    },
+    {
+     "entity": "midway-atoll",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pitcairn-islands",
+     "tier": "twilight"
+    },
+    {
+     "entity": "marquesas-islands",
+     "tier": "twilight"
+    },
+    {
+     "entity": "palau",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kiribati",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tuvalu",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cook-islands",
+     "tier": "twilight"
+    },
+    {
+     "entity": "new-guinea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "vancouver-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "aleutian-islands",
+     "tier": "midnight"
+    },
+    {
+     "entity": "nauru",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tuamotu-islands",
+     "tier": "midnight"
+    },
+    {
+     "entity": "chatham-islands",
+     "tier": "midnight"
+    },
+    {
+     "entity": "kuril-islands",
+     "tier": "midnight"
+    },
+    {
+     "entity": "farallon-islands",
+     "tier": "midnight"
+    },
+    {
+     "entity": "clipperton-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "juan-fernandez-islands",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "atlantic-island",
+   "answers": [
+    {
+     "entity": "iceland",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "bermuda",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "bahamas",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "canary-islands",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "greenland",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "cuba",
+     "tier": "baitball"
+    },
+    {
+     "entity": "azores",
+     "tier": "baitball"
+    },
+    {
+     "entity": "falkland-islands",
+     "tier": "baitball"
+    },
+    {
+     "entity": "madeira",
+     "tier": "reef"
+    },
+    {
+     "entity": "cape-verde",
+     "tier": "reef"
+    },
+    {
+     "entity": "faroe-islands",
+     "tier": "reef"
+    },
+    {
+     "entity": "puerto-rico",
+     "tier": "reef"
+    },
+    {
+     "entity": "great-britain",
+     "tier": "reef"
+    },
+    {
+     "entity": "ireland",
+     "tier": "reef"
+    },
+    {
+     "entity": "newfoundland",
+     "tier": "reef"
+    },
+    {
+     "entity": "st-helena",
+     "tier": "reef"
+    },
+    {
+     "entity": "long-island",
+     "tier": "reef"
+    },
+    {
+     "entity": "south-georgia",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ascension-island",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tristan-da-cunha",
+     "tier": "twilight"
+    },
+    {
+     "entity": "shetland",
+     "tier": "twilight"
+    },
+    {
+     "entity": "orkney",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hebrides",
+     "tier": "twilight"
+    },
+    {
+     "entity": "isles-of-scilly",
+     "tier": "twilight"
+    },
+    {
+     "entity": "channel-islands",
+     "tier": "twilight"
+    },
+    {
+     "entity": "outer-banks",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sable-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "fernando-de-noronha",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bioko",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sao-tome-and-principe",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rockall",
+     "tier": "midnight"
+    },
+    {
+     "entity": "surtsey",
+     "tier": "midnight"
+    },
+    {
+     "entity": "skellig-michael",
+     "tier": "midnight"
+    },
+    {
+     "entity": "robben-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bouvet-island",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "water-named-person",
+   "answers": [
+    {
+     "entity": "hudson-bay",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "bering-sea",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "tasman-sea",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "drake-passage",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "strait-of-magellan",
+     "tier": "baitball"
+    },
+    {
+     "entity": "cook-strait",
+     "tier": "baitball"
+    },
+    {
+     "entity": "beaufort-sea",
+     "tier": "baitball"
+    },
+    {
+     "entity": "weddell-sea",
+     "tier": "reef"
+    },
+    {
+     "entity": "ross-sea",
+     "tier": "reef"
+    },
+    {
+     "entity": "amundsen-sea",
+     "tier": "reef"
+    },
+    {
+     "entity": "barents-sea",
+     "tier": "reef"
+    },
+    {
+     "entity": "davis-strait",
+     "tier": "reef"
+    },
+    {
+     "entity": "baffin-bay",
+     "tier": "reef"
+    },
+    {
+     "entity": "bass-strait",
+     "tier": "reef"
+    },
+    {
+     "entity": "torres-strait",
+     "tier": "reef"
+    },
+    {
+     "entity": "bering-strait",
+     "tier": "reef"
+    },
+    {
+     "entity": "hudson-strait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bellingshausen-sea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "laptev-sea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lincoln-sea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "james-bay",
+     "tier": "twilight"
+    },
+    {
+     "entity": "frobisher-bay",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gulf-of-california",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bismarck-sea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "strait-of-juan-de-fuca",
+     "tier": "twilight"
+    },
+    {
+     "entity": "foxe-basin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dampier-strait",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bransfield-strait",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gerlache-strait",
+     "tier": "midnight"
+    },
+    {
+     "entity": "nares-strait",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lancaster-sound",
+     "tier": "midnight"
+    },
+    {
+     "entity": "puget-sound",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gulf-of-carpentaria",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cabot-strait",
+     "tier": "midnight"
+    },
+    {
+     "entity": "joseph-bonaparte-gulf",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "mediterranean-sea",
+   "answers": [
+    {
+     "entity": "adriatic-sea",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "aegean-sea",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "ionian-sea",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "tyrrhenian-sea",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "black-sea",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "ligurian-sea",
+     "tier": "baitball"
+    },
+    {
+     "entity": "balearic-sea",
+     "tier": "baitball"
+    },
+    {
+     "entity": "sea-of-marmara",
+     "tier": "baitball"
+    },
+    {
+     "entity": "alboran-sea",
+     "tier": "reef"
+    },
+    {
+     "entity": "levantine-sea",
+     "tier": "reef"
+    },
+    {
+     "entity": "gulf-of-lion",
+     "tier": "reef"
+    },
+    {
+     "entity": "gulf-of-genoa",
+     "tier": "reef"
+    },
+    {
+     "entity": "gulf-of-taranto",
+     "tier": "reef"
+    },
+    {
+     "entity": "gulf-of-sidra",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-of-crete",
+     "tier": "reef"
+    },
+    {
+     "entity": "gulf-of-corinth",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-of-azov",
+     "tier": "reef"
+    },
+    {
+     "entity": "gulf-of-venice",
+     "tier": "twilight"
+    },
+    {
+     "entity": "libyan-sea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "thracian-sea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "myrtoan-sea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "icarian-sea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gulf-of-gabes",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gulf-of-trieste",
+     "tier": "twilight"
+    },
+    {
+     "entity": "saronic-gulf",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gulf-of-naples",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gulf-of-tunis",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gulf-of-antalya",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sea-of-sardinia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gulf-of-hammamet",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gulf-of-salerno",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gulf-of-iskenderun",
+     "tier": "midnight"
+    },
+    {
+     "entity": "thermaic-gulf",
+     "tier": "midnight"
+    },
+    {
+     "entity": "kvarner-gulf",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pagasetic-gulf",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "research-vessel",
+   "answers": [
+    {
+     "entity": "alvin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "calypso",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "trieste",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "hms-challenger",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "deepsea-challenger",
+     "tier": "baitball"
+    },
+    {
+     "entity": "hms-beagle",
+     "tier": "baitball"
+    },
+    {
+     "entity": "ev-nautilus",
+     "tier": "baitball"
+    },
+    {
+     "entity": "limiting-factor",
+     "tier": "reef"
+    },
+    {
+     "entity": "bathysphere",
+     "tier": "reef"
+    },
+    {
+     "entity": "mir",
+     "tier": "reef"
+    },
+    {
+     "entity": "glomar-challenger",
+     "tier": "reef"
+    },
+    {
+     "entity": "fram",
+     "tier": "reef"
+    },
+    {
+     "entity": "rrs-discovery",
+     "tier": "reef"
+    },
+    {
+     "entity": "atlantis",
+     "tier": "reef"
+    },
+    {
+     "entity": "knorr",
+     "tier": "reef"
+    },
+    {
+     "entity": "polarstern",
+     "tier": "reef"
+    },
+    {
+     "entity": "shinkai-6500",
+     "tier": "twilight"
+    },
+    {
+     "entity": "jiaolong",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kaiko",
+     "tier": "twilight"
+    },
+    {
+     "entity": "nereus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "nautile",
+     "tier": "twilight"
+    },
+    {
+     "entity": "joides-resolution",
+     "tier": "twilight"
+    },
+    {
+     "entity": "okeanos-explorer",
+     "tier": "twilight"
+    },
+    {
+     "entity": "falkor",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rrs-sir-david-attenborough",
+     "tier": "twilight"
+    },
+    {
+     "entity": "fendouzhe",
+     "tier": "midnight"
+    },
+    {
+     "entity": "chikyu",
+     "tier": "midnight"
+    },
+    {
+     "entity": "archimede",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ben-franklin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "uss-albatross",
+     "tier": "midnight"
+    },
+    {
+     "entity": "meteor",
+     "tier": "midnight"
+    },
+    {
+     "entity": "galathea",
+     "tier": "midnight"
+    },
+    {
+     "entity": "akademik-mstislav-keldysh",
+     "tier": "midnight"
+    },
+    {
+     "entity": "boaty-mcboatface",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "explorer",
+   "answers": [
+    {
+     "entity": "jacques-cousteau",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "james-cameron",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "robert-ballard",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sylvia-earle",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "ferdinand-magellan",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "james-cook",
+     "tier": "baitball"
+    },
+    {
+     "entity": "jacques-piccard",
+     "tier": "baitball"
+    },
+    {
+     "entity": "don-walsh",
+     "tier": "baitball"
+    },
+    {
+     "entity": "victor-vescovo",
+     "tier": "reef"
+    },
+    {
+     "entity": "christopher-columbus",
+     "tier": "reef"
+    },
+    {
+     "entity": "francis-drake",
+     "tier": "reef"
+    },
+    {
+     "entity": "william-beebe",
+     "tier": "reef"
+    },
+    {
+     "entity": "auguste-piccard",
+     "tier": "reef"
+    },
+    {
+     "entity": "philippe-cousteau",
+     "tier": "reef"
+    },
+    {
+     "entity": "thor-heyerdahl",
+     "tier": "reef"
+    },
+    {
+     "entity": "eugenie-clark",
+     "tier": "reef"
+    },
+    {
+     "entity": "vasco-da-gama",
+     "tier": "reef"
+    },
+    {
+     "entity": "hans-hass",
+     "tier": "twilight"
+    },
+    {
+     "entity": "jean-michel-cousteau",
+     "tier": "twilight"
+    },
+    {
+     "entity": "fabien-cousteau",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rachel-carson",
+     "tier": "twilight"
+    },
+    {
+     "entity": "jacques-mayol",
+     "tier": "twilight"
+    },
+    {
+     "entity": "fridtjof-nansen",
+     "tier": "twilight"
+    },
+    {
+     "entity": "zheng-he",
+     "tier": "twilight"
+    },
+    {
+     "entity": "james-clark-ross",
+     "tier": "twilight"
+    },
+    {
+     "entity": "matthew-flinders",
+     "tier": "twilight"
+    },
+    {
+     "entity": "matthew-fontaine-maury",
+     "tier": "midnight"
+    },
+    {
+     "entity": "charles-wyville-thomson",
+     "tier": "midnight"
+    },
+    {
+     "entity": "otis-barton",
+     "tier": "midnight"
+    },
+    {
+     "entity": "walter-munk",
+     "tier": "midnight"
+    },
+    {
+     "entity": "prince-albert-i-of-monaco",
+     "tier": "midnight"
+    },
+    {
+     "entity": "herbert-nitsch",
+     "tier": "midnight"
+    },
+    {
+     "entity": "natalia-molchanova",
+     "tier": "midnight"
+    },
+    {
+     "entity": "jean-baptiste-charcot",
+     "tier": "midnight"
+    },
+    {
+     "entity": "marie-tharp",
+     "tier": "hadal"
+    }
+   ]
+  }
+ ]
+}

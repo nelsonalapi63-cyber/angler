@@ -144,3 +144,18 @@ test('scoreSubmission re-scores typed answers', () => {
   assert.deepStrictEqual(r.tiers, ['hadal', null]);
   assert.strictEqual(r.secondsUsed, 29.2);
 });
+
+test('shared spellings: canonical name beats alias, lower tier beats higher tier', () => {
+  const ents = {
+    'mako-shark': { id: 'mako-shark', name: 'Mako shark', aliases: ['mako'] },
+    'shortfin-mako': { id: 'shortfin-mako', name: 'Shortfin mako', aliases: ['mako', 'shortfin mako shark'] },
+    'manta-ray': { id: 'manta-ray', name: 'Manta ray', aliases: ['manta', 'giant manta ray'] },
+    'giant-manta-ray': { id: 'giant-manta-ray', name: 'Giant manta ray', aliases: ['giant manta'] },
+  };
+  const p = { id: 'x', answers: [{ entity: 'shortfin-mako', tier: 'twilight' }, { entity: 'mako-shark', tier: 'baitball' }, { entity: 'giant-manta-ray', tier: 'reef' }, { entity: 'manta-ray', tier: 'tidepool' }] };
+  const idx = dive.buildIndex(p, ents);
+  assert.strictEqual(dive.matchAnswer('mako', idx).entityId, 'mako-shark');                 // generic wins the shared alias
+  assert.strictEqual(dive.matchAnswer('shortfin mako', idx).entityId, 'shortfin-mako');
+  assert.strictEqual(dive.matchAnswer('giant manta ray', idx).entityId, 'giant-manta-ray'); // canonical beats the generic's alias
+  assert.strictEqual(dive.matchAnswer('manta', idx).entityId, 'manta-ray');
+});

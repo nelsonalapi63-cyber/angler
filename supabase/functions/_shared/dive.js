@@ -108,24 +108,27 @@
 
   // ---------------------------------------------------------------- matching
   // prompt: {id, answers:[{entity, tier}]}; entitiesById: {id: {name, aliases[]}}
+  // Precedence when two entities in one prompt share a spelling: a canonical name always beats an alias,
+  // and between aliases the lower-tier (more generic) entity wins — "mako" goes to the generic mako shark,
+  // not to the shortfin mako listed higher up.
   function buildIndex(prompt, entitiesById) {
     const exact = new Map();
     const list = [];
-    for (const a of prompt.answers) {
-      const ent = entitiesById[a.entity];
-      if (!ent) continue;
-      const tier = TIER_BY_CODE[a.tier];
-      if (!tier) continue;
-      const names = [ent.name].concat(ent.aliases || []);
-      for (const raw of names) {
+    const claim = (form, entityId, tierCode) => {
+      if (exact.has(form)) return;
+      exact.set(form, { entityId, tier: tierCode });
+      list.push({ form, entityId, tier: tierCode });
+    };
+    const answers = prompt.answers.filter(a => entitiesById[a.entity] && TIER_BY_CODE[a.tier]);
+    for (const a of answers) {
+      const norm = normalise(entitiesById[a.entity].name);
+      if (norm) for (const form of pluralForms(norm)) claim(form, a.entity, a.tier);
+    }
+    const byTier = answers.slice().sort((x, y) => TIER_BY_CODE[x.tier].points - TIER_BY_CODE[y.tier].points);
+    for (const a of byTier) {
+      for (const raw of (entitiesById[a.entity].aliases || [])) {
         const norm = normalise(raw);
-        if (!norm) continue;
-        for (const form of pluralForms(norm)) {
-          if (!exact.has(form)) {
-            exact.set(form, { entityId: a.entity, tier: tier.code });
-            list.push({ form, entityId: a.entity, tier: tier.code });
-          }
-        }
+        if (norm) for (const form of pluralForms(norm)) claim(form, a.entity, a.tier);
       }
     }
     return { promptId: prompt.id, exact, list };

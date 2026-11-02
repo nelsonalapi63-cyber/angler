@@ -11,19 +11,19 @@
   ],
   "answers": [
     {
-      "typed": "Dev tide pool 5",
+      "typed": "Octopus",
+      "secondsUsed": 0.2
+    },
+    {
+      "typed": "New York City",
       "secondsUsed": 0.1
     },
     {
-      "typed": "alias atlantic-port",
+      "typed": "Caribbaan Sea",
       "secondsUsed": 0
     },
     {
-      "typed": "Dev atlanaic sea 0",
-      "secondsUsed": 0
-    },
-    {
-      "typed": "Dev sunken ship 3",
+      "typed": "Titanic",
       "secondsUsed": 0
     },
     {
@@ -35,17 +35,17 @@
       "secondsUsed": 0
     },
     {
-      "typed": "Dev vent life 22",
+      "typed": "Hoff crab",
       "secondsUsed": 0
     }
   ],
-  "depth": 2578,
-  "points": 165,
+  "depth": 2499,
+  "points": 160,
   "tiers": [
     "reef",
     "tidepool",
     "tidepool",
-    "baitball",
+    "tidepool",
     null,
     null,
     "hadal"

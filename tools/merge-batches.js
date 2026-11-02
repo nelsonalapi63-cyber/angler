@@ -2,7 +2,6 @@
 /* Merges every data/batches/*.json into data/entities.json and data/prompts.json.
  * - entities with the same id merge: aliases are unioned, the first name/kind/group/fact win
  * - an entity whose canonical name equals another entity's name/alias is reported
- * - inside one prompt, an alias that collides with another entity is dropped from the lower-tier entity (warning)
  */
 'use strict';
 const fs = require('fs');
@@ -58,33 +57,6 @@ for (const e of Object.values(entities)) {
     const owner = nameOwner.get(n);
     if (owner && owner !== e.id) warnings.push('global: "' + n + '" belongs to both ' + owner + ' and ' + e.id);
     else nameOwner.set(n, e.id);
-  }
-}
-
-// Within-prompt alias collisions: drop the alias from the lower-tier entity
-const tierPoints = Object.fromEntries(dive.TIERS.map(t => [t.code, t.points]));
-for (const [pid, answers] of Object.entries(promptAnswers)) {
-  const formOwner = new Map();
-  for (const a of answers.slice().sort((x, y) => tierPoints[y.tier] - tierPoints[x.tier])) {   // higher tier claims first? no: canonical names must win
-    const ent = entities[a.entity];
-    if (!ent) continue;
-    for (const form of dive.pluralForms(dive.normalise(ent.name))) formOwner.set(form, a.entity);
-  }
-  for (const a of answers) {
-    const ent = entities[a.entity];
-    if (!ent) continue;
-    ent.aliases = ent.aliases.filter(alias => {
-      const n = dive.normalise(alias);
-      for (const form of dive.pluralForms(n)) {
-        const owner = formOwner.get(form);
-        if (owner && owner !== a.entity) {
-          warnings.push(pid + ': dropped alias "' + alias + '" from ' + a.entity + ' (collides with ' + owner + ')');
-          return false;
-        }
-      }
-      for (const form of dive.pluralForms(n)) if (!formOwner.has(form)) formOwner.set(form, a.entity);
-      return true;
-    });
   }
 }
 

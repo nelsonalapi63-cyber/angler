@@ -34,9 +34,14 @@ test('two hadals fails', () => {
   assert.ok(r.errors.some(e => e.includes('exactly one hadal')));
 });
 
-test('alias collision inside a prompt fails', () => {
-  const r = validateBatch(makeBatch(25, { collide: true }), seeds, {});
-  assert.ok(r.errors.some(e => e.includes('collides')));
+test('a shared alias inside a prompt is a warning, a shared canonical name is an error', () => {
+  const r = validateBatch(makeBatch(25, { collide: true }), seeds, {});   // entity 1 has alias "Shark number 0" = entity 0's name
+  assert.ok(r.ok);
+  assert.ok(r.warnings.some(w => w.includes('shared by')));
+  const batch = makeBatch(25);
+  batch.entities[1].name = 'Shark number 0';
+  const r2 = validateBatch(batch, seeds, {});
+  assert.ok(r2.errors.some(e => e.includes('same name')));
 });
 
 test('bad kind fails', () => {
