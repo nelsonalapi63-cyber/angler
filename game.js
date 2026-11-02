@@ -70,6 +70,12 @@
     if (existing) return resultScreen(existing, { fresh: false });
     const promptIds = dive.dailyPromptIds(today, prompts, dive.LAUNCH_DATE);
     if (!promptIds) return root.FathomPages.message('Not yet', 'FATHOM #1 opens on ' + dive.LAUNCH_DATE + ' (Eastern time). Try a Free Dive meanwhile.');
+    // A daily dive that was left half-way (refresh, back button, closed tab) resumes where it was. The prompt that
+    // was on screen keeps its original 25-second deadline measured on the wall clock, so reloading never buys time.
+    const progress = storage.get('progress', null);
+    if (progress && progress.mode === 'daily' && progress.dayKey === today && progress.promptIds.join('|') === promptIds.join('|')) {
+      return startDive({ mode: 'daily', promptIds, dayKey: today, number: dive.puzzleNumber(today), resume: progress });
+    }
     startDive({ mode: 'daily', promptIds, dayKey: today, number: dive.puzzleNumber(today) });
   }
   function startFree(seed) {
@@ -105,17 +111,35 @@
 
   // ---------------------------------------------------------------- the dive loop
   function startDive(spec) {
-    const { storage, dive } = F();
+    const { storage, dive, charts } = F();
     clearTimers();
     const timerOn = spec.mode === 'free' ? storage.settings().freeTimer !== false : true;
     state = { spec, idx: 0, results: [], points: 0, depth: 0, timerOn, timer: null, revealTimer: null, answered: false, promptStart: 0, deadline: 0 };
-    if (root.FathomOnline && root.FathomOnline.trackEvent) root.FathomOnline.trackEvent('dive_started', { mode: spec.mode });
+    let remainingMs = null;
+    if (spec.resume) {
+      state.results = spec.resume.results.slice();
+      state.points = state.results.reduce((n, r) => n + (r.points || 0), 0);
+      state.depth = dive.depthFor(state.points);
+      state.idx = state.results.length;
+      if (spec.resume.shownAt && spec.resume.shownIdx === state.idx) {
+        remainingMs = dive.SECONDS_PER_PROMPT * 1000 - (Date.now() - spec.resume.shownAt);
+      }
+      if (state.idx >= dive.PROMPTS_PER_DIVE) return finish();
+    } else if (root.FathomOnline && root.FathomOnline.trackEvent) root.FathomOnline.trackEvent('dive_started', { mode: spec.mode });
     renderDiveShell();
-    renderPrompt();
+    charts.updateGauge(state.gauge, state.depth);
+    F().applyDepthTint(state.depth);
+    if (remainingMs !== null && remainingMs <= 0) { renderPrompt(0); submit(null); return; }
+    renderPrompt(remainingMs);
+  }
+  function saveProgress(shownAt) {
+    if (!state || state.spec.mode !== 'daily') return;
+    F().storage.set('progress', { mode: 'daily', dayKey: state.spec.dayKey, promptIds: state.spec.promptIds, results: state.results, shownIdx: state.idx, shownAt: shownAt || null });
   }
 
   function renderDiveShell() {
-    const { el, charts, render } = F();
+    const { el, render } = F();
+    const charts = F().charts;
     const compact = !root.matchMedia('(min-width: 560px)').matches;
     const gaugeWrap = el('div', { class: 'gauge-wrap', html: charts.gaugeSvg(0, compact) });
     const mainCol = el('div', { class: 'dive-main' });
@@ -135,18 +159,19 @@
     return el('div', { class: 'progress-dots' }, dots);
   }
 
-  function timerNode() {
+  function timerNode(seconds) {
     const { el, dive } = F();
     if (!state.timerOn) return el('div', { class: 'muted small', text: 'No timer' });
     const C = 2 * Math.PI * 20;
+    const secs = seconds == null ? dive.SECONDS_PER_PROMPT : seconds;
     const t = el('div', { class: 'timer', role: 'timer', 'aria-live': 'off' }, [
-      el('div', { html: '<svg viewBox="0 0 48 48" aria-hidden="true"><circle class="track" cx="24" cy="24" r="20"/><circle class="arc" cx="24" cy="24" r="20" stroke-dasharray="' + C.toFixed(1) + '" stroke-dashoffset="0"/></svg>' }),
-      el('div', { class: 'num', text: String(dive.SECONDS_PER_PROMPT) }),
+      el('div', { html: '<svg viewBox="0 0 48 48" aria-hidden="true"><circle class="track" cx="24" cy="24" r="20"/><circle class="arc" cx="24" cy="24" r="20" stroke-dasharray="' + C.toFixed(1) + '" stroke-dashoffset="' + (C * (1 - secs / dive.SECONDS_PER_PROMPT)).toFixed(1) + '"/></svg>' }),
+      el('div', { class: 'num', text: String(Math.ceil(secs)) }),
     ]);
     return t;
   }
 
-  function renderPrompt() {
+  function renderPrompt(remainingMs) {
     const { el, dive, promptsById, esc, config } = F();
     const promptId = state.spec.promptIds[state.idx];
     const prompt = promptsById[promptId];
@@ -154,13 +179,14 @@
     const input = el('input', { class: 'input', id: 'answer', type: 'text', autocomplete: 'off', autocapitalize: 'off', autocorrect: 'off', spellcheck: 'false', enterkeyhint: 'go', placeholder: 'Type one answer…', 'aria-label': 'Your answer', maxlength: '60' });
     const submitBtn = el('button', { class: 'btn btn-primary', type: 'submit', text: 'Dive' });
     const form = el('form', { class: 'answer-form', onSubmit: (e) => { e.preventDefault(); submit(input.value); } }, [input, submitBtn]);
+    const allowedMs = remainingMs != null ? Math.max(0, Math.min(remainingMs, dive.SECONDS_PER_PROMPT * 1000)) : dive.SECONDS_PER_PROMPT * 1000;
     const head = el('div', { class: 'dive-head' }, [
       el('div', {}, [
         el('div', { class: 'tiny muted', text: (MODE_LABELS[state.spec.mode] || '') + (state.spec.number ? ' · FATHOM #' + state.spec.number : '') }),
         el('div', { class: 'small', html: '<b>Prompt ' + (state.idx + 1) + ' of ' + dive.PROMPTS_PER_DIVE + '</b>' }),
         progressDots(),
       ]),
-      timerNode(),
+      timerNode(allowedMs / 1000),
     ]);
     const challengeNote = state.spec.challenge && state.spec.challenge.depth ? el('p', { class: 'small', html: 'Beat <b>' + esc(dive.formatMeters(state.spec.challenge.depth)) + ' m</b> to win this challenge.' }) : null;
     state.mainCol.innerHTML = '';
@@ -169,8 +195,9 @@
     state.form = form;
     setTimeout(() => input.focus(), 30);
     state.promptStart = performance.now();
+    saveProgress(Date.now() - (dive.SECONDS_PER_PROMPT * 1000 - allowedMs));
     if (state.timerOn) {
-      state.deadline = state.promptStart + dive.SECONDS_PER_PROMPT * 1000;
+      state.deadline = state.promptStart + allowedMs;
       const arc = state.mainCol.querySelector('.timer .arc');
       const num = state.mainCol.querySelector('.timer .num');
       const timerEl = state.mainCol.querySelector('.timer');
@@ -202,6 +229,7 @@
     state.points += m.points;
     const prevDepth = state.depth;
     state.depth = dive.depthFor(state.points);
+    saveProgress(null);
     state.input.disabled = true;
     state.form.querySelector('button').disabled = true;
 
@@ -263,6 +291,7 @@
       finishedAt: new Date().toISOString(), challenge: s.challenge || null, timerOn: state.timerOn,
     };
     if (s.mode === 'daily') {
+      storage.remove('progress');
       storage.saveDailyResult(s.dayKey, record);
       if (root.FathomOnline && root.FathomOnline.submitDaily) root.FathomOnline.submitDaily(record);
     } else if (s.mode === 'free') {
@@ -321,7 +350,8 @@
     const actions = el('div', { class: 'card' });
     const shareBtn = el('button', { class: 'btn btn-primary', type: 'button', text: 'Share', onClick: () => {
       const pct = root.FathomOnline && root.FathomOnline.lastPercentile ? root.FathomOnline.lastPercentile(record) : null;
-      const text = dive.shareText({ number: record.number || dive.puzzleNumber(F().todayKey()), depth: record.depth, percentile: record.mode === 'daily' ? pct : null, tiers: record.tiers, siteUrl: config.SITE_URL });
+      const label = record.mode === 'daily' ? null : record.mode === 'pack' ? (packsById[record.packId] ? packsById[record.packId].name + ' pack' : 'Pack') : record.mode === 'challenge' ? 'Challenge' : record.mode === 'archive' ? 'Archive #' + record.number : 'Free Dive';
+      const text = dive.shareText({ number: record.number || dive.puzzleNumber(F().todayKey()), label, depth: record.depth, percentile: record.mode === 'daily' ? pct : null, tiers: record.tiers, siteUrl: config.SITE_URL });
       copyText(text, 'Copied results to clipboard');
       if (root.FathomOnline && root.FathomOnline.trackEvent) root.FathomOnline.trackEvent('share_clicked', { mode: record.mode });
     } });

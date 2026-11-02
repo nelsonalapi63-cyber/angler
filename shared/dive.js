@@ -314,7 +314,7 @@
   // ---------------------------------------------------------------- share text
   function formatMeters(n) { return Math.round(n).toLocaleString('en-US'); }
   function shareText(opts) {
-    const bits = ['FATHOM #' + opts.number, formatMeters(opts.depth) + ' m'];
+    const bits = [opts.label ? 'FATHOM ' + opts.label : 'FATHOM #' + opts.number, formatMeters(opts.depth) + ' m'];
     if (opts.percentile != null) bits.push('top ' + opts.percentile + '%');
     bits.push(tiersToEmoji(opts.tiers));
     let s = bits.join(' · ');

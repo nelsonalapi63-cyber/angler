@@ -159,3 +159,8 @@ test('shared spellings: canonical name beats alias, lower tier beats higher tier
   assert.strictEqual(dive.matchAnswer('giant manta ray', idx).entityId, 'giant-manta-ray'); // canonical beats the generic's alias
   assert.strictEqual(dive.matchAnswer('manta', idx).entityId, 'manta-ray');
 });
+
+test('share text can carry a mode label instead of a puzzle number', () => {
+  const s = dive.shareText({ number: 3, label: 'Sharks pack', depth: 1000, percentile: null, tiers: [null, null, null, null, null, null, null] });
+  assert.strictEqual(s, 'FATHOM Sharks pack · 1,000 m · ⬛⬛⬛⬛⬛⬛⬛');
+});
