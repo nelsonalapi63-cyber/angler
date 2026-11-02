@@ -1160,10 +1160,10 @@
    "fact": "The basking shark, second-largest fish on Earth, filters plankton from British and North Sea waters each summer and is listed as endangered."
   },
   {
-   "id": "shortfin-mako",
-   "name": "Shortfin mako",
+   "id": "mako-shark",
+   "name": "Mako shark",
    "aliases": [
-    "mako shark",
+    "shortfin mako",
     "mako",
     "Isurus oxyrinchus"
    ],
@@ -1306,10 +1306,10 @@
    "fact": "Sperm whales dive more than a kilometre down to hunt squid and have the largest brain of any animal."
   },
   {
-   "id": "grey-whale",
-   "name": "Grey whale",
+   "id": "gray-whale",
+   "name": "Gray whale",
    "aliases": [
-    "gray whale",
+    "grey whale",
     "Eschrichtius robustus"
    ],
    "kind": "creature",
@@ -1438,10 +1438,7 @@
   {
    "id": "sea-lion",
    "name": "Sea lion",
-   "aliases": [
-    "California sea lion",
-    "Zalophus californianus"
-   ],
+   "aliases": [],
    "kind": "creature",
    "group": "seals",
    "fact": "Sea lions differ from true seals in having external ear flaps and front flippers strong enough to walk on land."
@@ -1536,10 +1533,10 @@
    "fact": "The ringed seal is the smallest Arctic seal, and an isolated population breeds on the winter sea ice of the Baltic Sea."
   },
   {
-   "id": "northern-elephant-seal",
-   "name": "Northern elephant seal",
+   "id": "elephant-seal",
+   "name": "Elephant seal",
    "aliases": [
-    "elephant seal",
+    "northern elephant seal",
     "Mirounga angustirostris"
    ],
    "kind": "creature",
@@ -1547,10 +1544,10 @@
    "fact": "Northern elephant seals were reduced to fewer than 100 animals by the 1890s but now breed in the tens of thousands on Californian and Mexican beaches."
   },
   {
-   "id": "west-indian-manatee",
-   "name": "West Indian manatee",
+   "id": "manatee",
+   "name": "Manatee",
    "aliases": [
-    "manatee",
+    "West Indian manatee",
     "Florida manatee",
     "Caribbean manatee",
     "Trichechus manatus"
@@ -1809,10 +1806,10 @@
    "fact": "The vampire squid is the last survivor of an ancient order that is neither squid nor octopus, drifting in oxygen-poor deep water eating falling 'marine snow'."
   },
   {
-   "id": "common-cuttlefish",
-   "name": "Common cuttlefish",
+   "id": "cuttlefish",
+   "name": "Cuttlefish",
    "aliases": [
-    "cuttlefish",
+    "common cuttlefish",
     "European cuttlefish",
     "Sepia officinalis"
    ],
@@ -3512,7 +3509,7 @@
    "fact": "The electric eel of the Amazon is a knifefish, not an eel, and can discharge more than 600 volts."
   },
   {
-   "id": "red-bellied-piranha",
+   "id": "piranha",
    "name": "Piranha",
    "aliases": [
     "red-bellied piranha",
@@ -3787,7 +3784,6 @@
    "id": "beluga-sturgeon",
    "name": "Beluga sturgeon",
    "aliases": [
-    "beluga",
     "Huso huso"
    ],
    "kind": "creature",
@@ -4249,10 +4245,10 @@
    "fact": "The smooth handfish of Tasmania was declared extinct in 2020, the first modern marine bony fish to be lost, known from a single specimen collected in 1802."
   },
   {
-   "id": "regal-blue-tang",
-   "name": "Regal blue tang",
+   "id": "blue-tang",
+   "name": "Blue tang",
    "aliases": [
-    "blue tang",
+    "regal blue tang",
     "palette surgeonfish",
     "regal tang",
     "hippo tang",
@@ -4315,7 +4311,7 @@
    "fact": "The blue whiting is a small cod relative of the deep North Atlantic caught in huge quantities for fishmeal and surimi."
   },
   {
-   "id": "red-lionfish",
+   "id": "lionfish",
    "name": "Lionfish",
    "aliases": [
     "red lionfish",
@@ -4541,10 +4537,10 @@
    "fact": "The juvenile yellowtail damselfish of the Caribbean is dark blue sprinkled with electric-blue spots, earning it the name jewelfish."
   },
   {
-   "id": "great-barracuda",
-   "name": "Great barracuda",
+   "id": "barracuda",
+   "name": "Barracuda",
    "aliases": [
-    "barracuda",
+    "great barracuda",
     "Sphyraena barracuda"
    ],
    "kind": "creature",
@@ -5178,11 +5174,11 @@
    "fact": "The common periwinkle, a European shore snail, was carried to Nova Scotia in the 1800s and now dominates rocky shores down to Chesapeake Bay."
   },
   {
-   "id": "siamese-fighting-fish",
-   "name": "Siamese fighting fish",
+   "id": "betta",
+   "name": "Betta",
    "aliases": [
-    "betta",
     "betta fish",
+    "Siamese fighting fish",
     "fighting fish",
     "Betta splendens"
    ],
@@ -5578,7 +5574,6 @@
    "id": "bowfin",
    "name": "Bowfin",
    "aliases": [
-    "dogfish",
     "grinnel",
     "Amia calva"
    ],
@@ -6270,9 +6265,9 @@
   },
   {
    "id": "rainbow-smelt",
-   "name": "Smelt",
+   "name": "Rainbow smelt",
    "aliases": [
-    "rainbow smelt",
+    "smelt",
     "Osmerus mordax"
    ],
    "kind": "creature",
@@ -6373,7 +6368,6 @@
    "id": "mackerel-scad",
    "name": "Mackerel scad",
    "aliases": [
-    "scad",
     "Decapterus macarellus"
    ],
    "kind": "creature",
@@ -6496,8 +6490,7 @@
    "name": "Rockfish",
    "aliases": [
     "Pacific rockfish",
-    "Sebastes",
-    "rock cod"
+    "Sebastes"
    ],
    "kind": "creature",
    "group": "fish",
@@ -7513,7 +7506,7 @@
      "tier": "twilight"
     },
     {
-     "entity": "shortfin-mako",
+     "entity": "mako-shark",
      "tier": "twilight"
     },
     {
@@ -7775,7 +7768,7 @@
      "tier": "tidepool"
     },
     {
-     "entity": "regal-blue-tang",
+     "entity": "blue-tang",
      "tier": "tidepool"
     },
     {
@@ -7847,7 +7840,7 @@
      "tier": "reef"
     },
     {
-     "entity": "red-lionfish",
+     "entity": "lionfish",
      "tier": "reef"
     },
     {
@@ -7964,7 +7957,7 @@
      "tier": "tidepool"
     },
     {
-     "entity": "great-barracuda",
+     "entity": "barracuda",
      "tier": "tidepool"
     },
     {
@@ -7972,7 +7965,7 @@
      "tier": "tidepool"
     },
     {
-     "entity": "red-lionfish",
+     "entity": "lionfish",
      "tier": "baitball"
     },
     {
@@ -7980,7 +7973,7 @@
      "tier": "baitball"
     },
     {
-     "entity": "west-indian-manatee",
+     "entity": "manatee",
      "tier": "baitball"
     },
     {
@@ -8426,7 +8419,7 @@
    "id": "invasive",
    "answers": [
     {
-     "entity": "red-lionfish",
+     "entity": "lionfish",
      "tier": "tidepool"
     },
     {
@@ -8615,7 +8608,7 @@
      "tier": "tidepool"
     },
     {
-     "entity": "siamese-fighting-fish",
+     "entity": "betta",
      "tier": "tidepool"
     },
     {
@@ -8627,7 +8620,7 @@
      "tier": "tidepool"
     },
     {
-     "entity": "regal-blue-tang",
+     "entity": "blue-tang",
      "tier": "baitball"
     },
     {
@@ -8763,7 +8756,7 @@
      "tier": "midnight"
     },
     {
-     "entity": "red-bellied-piranha",
+     "entity": "piranha",
      "tier": "midnight"
     },
     {
@@ -8796,7 +8789,7 @@
      "tier": "tidepool"
     },
     {
-     "entity": "red-bellied-piranha",
+     "entity": "piranha",
      "tier": "baitball"
     },
     {
@@ -9857,7 +9850,7 @@
      "tier": "twilight"
     },
     {
-     "entity": "common-cuttlefish",
+     "entity": "cuttlefish",
      "tier": "twilight"
     },
     {
@@ -9950,7 +9943,7 @@
      "tier": "tidepool"
     },
     {
-     "entity": "grey-whale",
+     "entity": "gray-whale",
      "tier": "baitball"
     },
     {
@@ -9978,7 +9971,7 @@
      "tier": "reef"
     },
     {
-     "entity": "northern-elephant-seal",
+     "entity": "elephant-seal",
      "tier": "reef"
     },
     {
@@ -10255,7 +10248,7 @@
      "tier": "baitball"
     },
     {
-     "entity": "red-lionfish",
+     "entity": "lionfish",
      "tier": "baitball"
     },
     {
@@ -10279,7 +10272,7 @@
      "tier": "reef"
     },
     {
-     "entity": "common-cuttlefish",
+     "entity": "cuttlefish",
      "tier": "reef"
     },
     {
@@ -10448,7 +10441,7 @@
      "tier": "reef"
     },
     {
-     "entity": "common-cuttlefish",
+     "entity": "cuttlefish",
      "tier": "reef"
     },
     {
@@ -10585,7 +10578,7 @@
      "tier": "baitball"
     },
     {
-     "entity": "west-indian-manatee",
+     "entity": "manatee",
      "tier": "baitball"
     },
     {
@@ -10681,7 +10674,7 @@
      "tier": "reef"
     },
     {
-     "entity": "great-barracuda",
+     "entity": "barracuda",
      "tier": "reef"
     },
     {
@@ -10753,7 +10746,7 @@
      "tier": "twilight"
     },
     {
-     "entity": "red-lionfish",
+     "entity": "lionfish",
      "tier": "twilight"
     },
     {
@@ -10882,7 +10875,7 @@
      "tier": "reef"
     },
     {
-     "entity": "red-lionfish",
+     "entity": "lionfish",
      "tier": "reef"
     },
     {
@@ -10934,7 +10927,7 @@
      "tier": "reef"
     },
     {
-     "entity": "great-barracuda",
+     "entity": "barracuda",
      "tier": "reef"
     },
     {
