@@ -189,3 +189,53 @@ test('share text can carry a mode label instead of a puzzle number', () => {
   const s = dive.shareText({ number: 3, label: 'Sharks pack', depth: 1000, percentile: null, tiers: [null, null, null, null, null, null, null] });
   assert.strictEqual(s, 'FATHOM Sharks pack · 1,000 m · ⬛⬛⬛⬛⬛⬛⬛');
 });
+
+test('taxon safety net accepts listed species at Midnight, filtered for letter prompts', () => {
+  const taxa = { sharks: ['Great white shark', 'Porbeagle', 'Bramble shark', 'Blue shark'] };
+  const p = { id: 's', taxon: 'sharks', answers: [{ entity: 'great-white-shark', tier: 'tidepool' }, { entity: 'blue-shark', tier: 'reef' }] };
+  const idx = dive.buildIndex(p, entities, taxa);
+  assert.strictEqual(dive.matchAnswer('great white shark', idx).tier, 'tidepool');      // hand-listed wins
+  assert.strictEqual(dive.matchAnswer('blue sharks', idx).entityId, 'blue-shark');
+  const m = dive.matchAnswer('porbeagle', idx);
+  assert.strictEqual(m.tier, 'midnight');
+  assert.ok(dive.isTaxonId(m.entityId));
+  assert.strictEqual(m.name, 'Porbeagle');
+  const letter = { id: 'b', taxon: 'sharks', taxonFilter: '^b', answers: [{ entity: 'blue-shark', tier: 'tidepool' }] };
+  const idx2 = dive.buildIndex(letter, entities, taxa);
+  assert.strictEqual(dive.matchAnswer('bramble shark', idx2).tier, 'midnight');
+  assert.strictEqual(dive.matchAnswer('porbeagle', idx2).entityId, null);              // wrong letter
+  assert.ok(dive.taxonFact('sharks').includes('shark'));
+});
+
+test('did you mean: close spellings and word order, never from short input', () => {
+  const ents = {
+    'scalloped-hammerhead': { id: 'scalloped-hammerhead', name: 'Scalloped hammerhead', aliases: ['Sphyrna lewini'] },
+    'great-hammerhead': { id: 'great-hammerhead', name: 'Great hammerhead', aliases: [] },
+    'whale-shark': { id: 'whale-shark', name: 'Whale shark', aliases: [] },
+    'cod': { id: 'cod', name: 'Cod', aliases: [] },
+  };
+  const p = { id: 'x', answers: [{ entity: 'scalloped-hammerhead', tier: 'twilight' }, { entity: 'great-hammerhead', tier: 'reef' }, { entity: 'whale-shark', tier: 'tidepool' }, { entity: 'cod', tier: 'hadal' }] };
+  const idx = dive.buildIndex(p, ents);
+  assert.strictEqual(dive.matchAnswer('scaloped hamerhead', idx).entityId, 'scalloped-hammerhead');   // 2 edits: accepted outright
+  const far = dive.suggestAnswers('scalopd hamrhead', idx, ents);                                      // 4 edits: suggested
+  assert.deepStrictEqual(far.map(s => s.name), ['Scalloped hammerhead']);
+  assert.deepStrictEqual(dive.suggestAnswers('shark whale', idx, ents).map(s => s.name), ['Whale shark']); // word order
+  assert.deepStrictEqual(dive.suggestAnswers('hammerhead', idx, ents).map(s => s.name), ['Great hammerhead', 'Scalloped hammerhead']); // one word missing, lower tier first, max two
+  assert.deepStrictEqual(dive.suggestAnswers('cod', idx, ents), []);                                    // too short
+  assert.deepStrictEqual(dive.suggestAnswers('zzzzzzzz', idx, ents), []);                               // nothing like it
+  assert.deepStrictEqual(dive.suggestAnswers('whale', idx, ents).map(s => s.name), ['Whale shark']);
+});
+
+test('hints point at a rarer unanswered answer and cost HINT_COST', () => {
+  const ents = { a: { id: 'a', name: 'Alpha fish', aliases: [] }, b: { id: 'b', name: 'Bravo eel', aliases: [] }, c: { id: 'c', name: 'Charlie', aliases: [] } };
+  const p = { id: 'h', answers: [{ entity: 'a', tier: 'tidepool' }, { entity: 'b', tier: 'midnight' }, { entity: 'c', tier: 'hadal' }] };
+  const h = dive.pickHint(p, ents, ['c'], () => 0);
+  assert.strictEqual(h.entityId, 'b');
+  assert.strictEqual(h.firstLetter, 'B');
+  assert.strictEqual(h.shape, 'B____ ___');
+  assert.strictEqual(dive.pickHint(p, ents, ['b', 'c']), null);
+  const scored = dive.scoreSubmissionFull({ promptIds: ['h'], answers: [{ typed: 'bravo eel', secondsUsed: 5, hint: true }] }, [p], ents);
+  assert.strictEqual(scored.points, 85 - dive.HINT_COST);
+  const scored2 = dive.scoreSubmissionFull({ promptIds: ['h'], answers: [{ typed: 'alpha fish', secondsUsed: 5, hint: true }] }, [p], ents);
+  assert.strictEqual(scored2.points, 0);   // 10 - 10, never below zero
+});
