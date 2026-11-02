@@ -57,6 +57,19 @@ for (const r of patch.aliasRemove || []) {
   e.aliases = e.aliases.filter(x => dive.normalise(x) !== dive.normalise(r.alias));
   if (e.aliases.length !== n) log.push('alias - ' + r.alias + ' from ' + r.entity);
 }
+for (const [fromId, intoId] of Object.entries(patch.merge || {})) {   // same thing under two names → one entity
+  const a = byId[fromId], b = byId[intoId];
+  if (!a || !b) { log.push('skip merge ' + fromId + ' -> ' + intoId); continue; }
+  const have = new Set(b.aliases.map(dive.normalise)); have.add(dive.normalise(b.name));
+  for (const alias of [a.name].concat(a.aliases)) { const n = dive.normalise(alias); if (n && !have.has(n)) { b.aliases.push(alias); have.add(n); } }
+  for (const p of prompts) {
+    const hasInto = p.answers.some(x => x.entity === intoId);
+    p.answers = p.answers.filter(x => !(x.entity === fromId && hasInto));
+    for (const x of p.answers) if (x.entity === fromId) x.entity = intoId;
+  }
+  delete byId[fromId];
+  log.push('merged ' + fromId + ' into ' + intoId);
+}
 for (const [oldId, newId] of Object.entries(patch.rename || {})) {
   if (!byId[oldId] || byId[newId]) { log.push('skip rename ' + oldId); continue; }
   byId[oldId].id = newId; byId[newId] = byId[oldId]; delete byId[oldId];

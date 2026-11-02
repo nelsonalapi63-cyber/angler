@@ -35,7 +35,7 @@
    },
    {
     "entity": "goblin-shark",
-    "tier": "baitball"
+    "tier": "twilight"
    },
    {
     "entity": "reef-shark",
@@ -90,10 +90,6 @@
     "tier": "twilight"
    },
    {
-    "entity": "shortfin-mako",
-    "tier": "twilight"
-   },
-   {
     "entity": "frilled-shark",
     "tier": "twilight"
    },
@@ -106,7 +102,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "bluntnose-sixgill-shark",
+    "entity": "sixgill-shark",
     "tier": "twilight"
    },
    {
@@ -122,7 +118,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "angelshark",
+    "entity": "angel-shark",
     "tier": "twilight"
    },
    {
@@ -330,10 +326,6 @@
     "tier": "reef"
    },
    {
-    "entity": "shortfin-mako",
-    "tier": "twilight"
-   },
-   {
     "entity": "oceanic-whitetip-shark",
     "tier": "twilight"
    },
@@ -350,7 +342,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "bluntnose-sixgill-shark",
+    "entity": "sixgill-shark",
     "tier": "twilight"
    },
    {
@@ -362,7 +354,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "angelshark",
+    "entity": "angel-shark",
     "tier": "twilight"
    },
    {
@@ -518,7 +510,7 @@
     "tier": "baitball"
    },
    {
-    "entity": "bluntnose-sixgill-shark",
+    "entity": "sixgill-shark",
     "tier": "reef"
    },
    {
@@ -694,10 +686,6 @@
     "tier": "twilight"
    },
    {
-    "entity": "shortfin-mako",
-    "tier": "twilight"
-   },
-   {
     "entity": "oceanic-whitetip-shark",
     "tier": "twilight"
    },
@@ -710,7 +698,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "bluntnose-sixgill-shark",
+    "entity": "sixgill-shark",
     "tier": "twilight"
    },
    {
@@ -718,7 +706,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "angelshark",
+    "entity": "angel-shark",
     "tier": "twilight"
    },
    {
@@ -1038,10 +1026,6 @@
     "tier": "reef"
    },
    {
-    "entity": "giant-manta-ray",
-    "tier": "reef"
-   },
-   {
     "entity": "reef-manta-ray",
     "tier": "reef"
    },
@@ -1338,7 +1322,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "angelshark",
+    "entity": "angel-shark",
     "tier": "twilight"
    },
    {
@@ -1366,7 +1350,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "witch-flounder",
+    "entity": "witch",
     "tier": "midnight"
    },
    {
@@ -1442,7 +1426,7 @@
     "tier": "reef"
    },
    {
-    "entity": "gray-whale",
+    "entity": "grey-whale",
     "tier": "reef"
    },
    {
@@ -1726,7 +1710,7 @@
     "tier": "baitball"
    },
    {
-    "entity": "gray-whale",
+    "entity": "grey-whale",
     "tier": "reef"
    },
    {
@@ -1846,7 +1830,7 @@
     "tier": "reef"
    },
    {
-    "entity": "gray-whale",
+    "entity": "grey-whale",
     "tier": "reef"
    },
    {
@@ -2418,10 +2402,6 @@
     "tier": "reef"
    },
    {
-    "entity": "vaquita",
-    "tier": "twilight"
-   },
-   {
     "entity": "franciscana",
     "tier": "twilight"
    },
@@ -2439,10 +2419,6 @@
    },
    {
     "entity": "yangtze-finless-porpoise",
-    "tier": "twilight"
-   },
-   {
-    "entity": "hectors-dolphin",
     "tier": "twilight"
    },
    {
@@ -2806,10 +2782,6 @@
     "tier": "reef"
    },
    {
-    "entity": "west-indian-manatee",
-    "tier": "reef"
-   },
-   {
     "entity": "california-sea-lion",
     "tier": "reef"
    },
@@ -2974,7 +2946,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "gray-whale",
+    "entity": "grey-whale",
     "tier": "twilight"
    },
    {
@@ -3002,11 +2974,11 @@
     "tier": "midnight"
    },
    {
-    "entity": "northern-shrimp",
+    "entity": "northern-prawn",
     "tier": "midnight"
    },
    {
-    "entity": "atlantic-wolffish",
+    "entity": "wolffish",
     "tier": "midnight"
    },
    {
@@ -3046,12 +3018,12 @@
     "tier": "tidepool"
    },
    {
-    "entity": "green-sea-turtle",
+    "entity": "green-turtle",
     "tier": "tidepool"
    },
    {
-    "entity": "leatherback-sea-turtle",
-    "tier": "tidepool"
+    "entity": "leatherback-turtle",
+    "tier": "baitball"
    },
    {
     "entity": "saltwater-crocodile",
@@ -3063,14 +3035,14 @@
    },
    {
     "entity": "sea-snake",
+    "tier": "tidepool"
+   },
+   {
+    "entity": "hawksbill-turtle",
     "tier": "baitball"
    },
    {
-    "entity": "hawksbill-sea-turtle",
-    "tier": "baitball"
-   },
-   {
-    "entity": "loggerhead-sea-turtle",
+    "entity": "loggerhead-turtle",
     "tier": "baitball"
    },
    {
@@ -3082,7 +3054,7 @@
     "tier": "reef"
    },
    {
-    "entity": "flatback-sea-turtle",
+    "entity": "flatback-turtle",
     "tier": "reef"
    },
    {
@@ -3234,7 +3206,7 @@
     "tier": "reef"
    },
    {
-    "entity": "green-sea-turtle",
+    "entity": "green-turtle",
     "tier": "reef"
    },
    {
@@ -3394,7 +3366,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "california-market-squid",
+    "entity": "market-squid",
     "tier": "twilight"
    },
    {
@@ -3626,7 +3598,7 @@
     "tier": "reef"
    },
    {
-    "entity": "california-market-squid",
+    "entity": "market-squid",
     "tier": "reef"
    },
    {
@@ -3652,10 +3624,6 @@
    {
     "entity": "neon-flying-squid",
     "tier": "reef"
-   },
-   {
-    "entity": "hawaiian-bobtail-squid",
-    "tier": "twilight"
    },
    {
     "entity": "strawberry-squid",
@@ -3903,10 +3871,6 @@
    },
    {
     "entity": "stone-crab",
-    "tier": "reef"
-   },
-   {
-    "entity": "red-king-crab",
     "tier": "reef"
    },
    {
@@ -4242,7 +4206,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "gray-whale",
+    "entity": "grey-whale",
     "tier": "twilight"
    },
    {
@@ -4699,10 +4663,6 @@
    },
    {
     "entity": "spiny-dogfish",
-    "tier": "midnight"
-   },
-   {
-    "entity": "port-jackson-shark",
     "tier": "midnight"
    },
    {
@@ -5462,10 +5422,6 @@
     "tier": "baitball"
    },
    {
-    "entity": "xenophyophore",
-    "tier": "baitball"
-   },
-   {
     "entity": "hirondellea-gigas",
     "tier": "reef"
    },
@@ -5527,10 +5483,6 @@
    },
    {
     "entity": "grenadier",
-    "tier": "twilight"
-   },
-   {
-    "entity": "foraminifera",
     "tier": "twilight"
    },
    {
@@ -5704,12 +5656,16 @@
    {
     "entity": "harp-sponge",
     "tier": "hadal"
+   },
+   {
+    "entity": "xenophyophore",
+    "tier": "midnight"
    }
   ]
  },
  {
   "id": "deep-shipwreck",
-  "text": "Name a famous shipwreck lying on the deep seabed.",
+  "text": "Name a famous shipwreck still lying on the seabed.",
   "group": "wrecks",
   "difficulty": 3,
   "answers": [
@@ -6358,7 +6314,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "common-snook",
+    "entity": "snook",
     "tier": "midnight"
    },
    {
@@ -6622,10 +6578,6 @@
     "tier": "twilight"
    },
    {
-    "entity": "northern-snakehead",
-    "tier": "twilight"
-   },
-   {
     "entity": "dwarf-gourami",
     "tier": "twilight"
    },
@@ -6642,7 +6594,7 @@
     "tier": "midnight"
    },
    {
-    "entity": "mangrove-rivulus",
+    "entity": "mangrove-killifish",
     "tier": "midnight"
    },
    {
@@ -6659,10 +6611,6 @@
    },
    {
     "entity": "kissing-gourami",
-    "tier": "midnight"
-   },
-   {
-    "entity": "silver-arowana",
     "tier": "midnight"
    },
    {
@@ -6766,7 +6714,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "gooseneck-barnacle",
+    "entity": "goose-barnacle",
     "tier": "twilight"
    },
    {
@@ -6846,7 +6794,7 @@
     "tier": "baitball"
    },
    {
-    "entity": "sunflower-star",
+    "entity": "sunflower-sea-star",
     "tier": "baitball"
    },
    {
@@ -7598,7 +7546,7 @@
     "tier": "reef"
    },
    {
-    "entity": "boxer-crab",
+    "entity": "pom-pom-crab",
     "tier": "reef"
    },
    {
@@ -9123,7 +9071,7 @@
    },
    {
     "entity": "james-cameron",
-    "tier": "tidepool"
+    "tier": "baitball"
    },
    {
     "entity": "robert-ballard",
@@ -9131,7 +9079,7 @@
    },
    {
     "entity": "sylvia-earle",
-    "tier": "tidepool"
+    "tier": "baitball"
    },
    {
     "entity": "ferdinand-magellan",
@@ -9139,7 +9087,7 @@
    },
    {
     "entity": "james-cook",
-    "tier": "baitball"
+    "tier": "tidepool"
    },
    {
     "entity": "jacques-piccard",
@@ -9155,7 +9103,7 @@
    },
    {
     "entity": "christopher-columbus",
-    "tier": "reef"
+    "tier": "tidepool"
    },
    {
     "entity": "francis-drake",
@@ -9261,7 +9209,7 @@
  },
  {
   "id": "sunken-ship",
-  "text": "Name a famous ship that sank at sea.",
+  "text": "Name a famous ship that sank.",
   "group": "wrecks",
   "difficulty": 2,
   "answers": [
@@ -9914,7 +9862,7 @@
     "tier": "reef"
    },
    {
-    "entity": "common-periwinkle",
+    "entity": "periwinkle",
     "tier": "reef"
    },
    {
@@ -10142,7 +10090,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "northern-shrimp",
+    "entity": "northern-prawn",
     "tier": "twilight"
    },
    {
@@ -10246,7 +10194,7 @@
     "tier": "reef"
    },
    {
-    "entity": "european-sea-bass",
+    "entity": "sea-bass",
     "tier": "reef"
    },
    {
@@ -10266,7 +10214,7 @@
     "tier": "reef"
    },
    {
-    "entity": "common-sole",
+    "entity": "dover-sole",
     "tier": "twilight"
    },
    {
@@ -10298,7 +10246,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "gilthead-bream",
+    "entity": "sea-bream",
     "tier": "twilight"
    },
    {
@@ -10538,11 +10486,11 @@
     "tier": "reef"
    },
    {
-    "entity": "european-sea-bass",
+    "entity": "sea-bass",
     "tier": "reef"
    },
    {
-    "entity": "gilthead-bream",
+    "entity": "sea-bream",
     "tier": "reef"
    },
    {
@@ -11074,7 +11022,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "pelican-eel",
+    "entity": "gulper-eel",
     "tier": "baitball"
    },
    {
@@ -12214,7 +12162,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "european-sea-bass",
+    "entity": "sea-bass",
     "tier": "tidepool"
    },
    {
@@ -12330,7 +12278,7 @@
     "tier": "midnight"
    },
    {
-    "entity": "two-spot-red-snapper",
+    "entity": "red-bass",
     "tier": "midnight"
    },
    {
@@ -12802,7 +12750,7 @@
     "tier": "baitball"
    },
    {
-    "entity": "atlantic-bluefin-tuna",
+    "entity": "bluefin-tuna",
     "tier": "baitball"
    },
    {
@@ -12854,7 +12802,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "shortfin-mako",
+    "entity": "mako-shark",
     "tier": "twilight"
    },
    {
@@ -12913,7 +12861,7 @@
  },
  {
   "id": "electric",
-  "text": "Name a sea creature that produces electricity or senses electric fields.",
+  "text": "Name a creature that produces electricity or senses electric fields.",
   "group": "senses",
   "difficulty": 4,
   "answers": [
@@ -13018,7 +12966,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "shortfin-mako",
+    "entity": "mako-shark",
     "tier": "twilight"
    },
    {
@@ -13034,7 +12982,7 @@
     "tier": "midnight"
    },
    {
-    "entity": "coffin-ray",
+    "entity": "numbfish",
     "tier": "midnight"
    },
    {
@@ -13098,7 +13046,7 @@
     "tier": "reef"
    },
    {
-    "entity": "atlantic-bluefin-tuna",
+    "entity": "bluefin-tuna",
     "tier": "reef"
    },
    {
@@ -13110,7 +13058,7 @@
     "tier": "reef"
    },
    {
-    "entity": "shortfin-mako",
+    "entity": "mako-shark",
     "tier": "reef"
    },
    {
@@ -13214,7 +13162,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "antarctic-krill",
+    "entity": "krill",
     "tier": "tidepool"
    },
    {
@@ -13522,7 +13470,7 @@
     "tier": "baitball"
    },
    {
-    "entity": "humphead-wrasse",
+    "entity": "napoleon-wrasse",
     "tier": "baitball"
    },
    {
@@ -13618,7 +13566,7 @@
     "tier": "midnight"
    },
    {
-    "entity": "giant-triton",
+    "entity": "tritons-trumpet",
     "tier": "midnight"
    },
    {
@@ -13790,7 +13738,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "antarctic-krill",
+    "entity": "krill",
     "tier": "tidepool"
    },
    {
@@ -13942,7 +13890,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "queen-conch",
+    "entity": "conch",
     "tier": "tidepool"
    },
    {
@@ -14018,7 +13966,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "giant-triton",
+    "entity": "tritons-trumpet",
     "tier": "twilight"
    },
    {
@@ -14078,7 +14026,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "siamese-fighting-fish",
+    "entity": "betta",
     "tier": "tidepool"
    },
    {
@@ -14174,7 +14122,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "plainfin-midshipman",
+    "entity": "midshipman",
     "tier": "midnight"
    },
    {
@@ -14238,7 +14186,7 @@
     "tier": "baitball"
    },
    {
-    "entity": "humphead-wrasse",
+    "entity": "napoleon-wrasse",
     "tier": "baitball"
    },
    {
@@ -14310,7 +14258,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "sea-goldie",
+    "entity": "anthias",
     "tier": "twilight"
    },
    {
@@ -14374,7 +14322,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "atlantic-bluefin-tuna",
+    "entity": "bluefin-tuna",
     "tier": "tidepool"
    },
    {
@@ -14390,11 +14338,11 @@
     "tier": "baitball"
    },
    {
-    "entity": "european-anchovy",
+    "entity": "anchovy",
     "tier": "reef"
    },
    {
-    "entity": "european-sea-bass",
+    "entity": "sea-bass",
     "tier": "reef"
    },
    {
@@ -14422,7 +14370,7 @@
     "tier": "reef"
    },
    {
-    "entity": "gilthead-bream",
+    "entity": "sea-bream",
     "tier": "reef"
    },
    {
@@ -14618,7 +14566,7 @@
     "tier": "midnight"
    },
    {
-    "entity": "pelican-eel",
+    "entity": "gulper-eel",
     "tier": "midnight"
    },
    {
@@ -14838,7 +14786,7 @@
     "tier": "reef"
    },
    {
-    "entity": "plainfin-midshipman",
+    "entity": "midshipman",
     "tier": "reef"
    },
    {
@@ -15066,7 +15014,7 @@
     "tier": "midnight"
    },
    {
-    "entity": "slender-snipe-eel",
+    "entity": "snipe-eel",
     "tier": "hadal"
    }
   ]
@@ -15098,7 +15046,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "shortfin-mako",
+    "entity": "mako-shark",
     "tier": "baitball"
    },
    {
@@ -15150,7 +15098,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "mobula-ray",
+    "entity": "devil-ray",
     "tier": "twilight"
    },
    {
@@ -15466,7 +15414,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "tubbataha-reefs-natural-park",
+    "entity": "tubbataha-reef",
     "tier": "twilight"
    },
    {
@@ -15566,7 +15514,7 @@
     "tier": "baitball"
    },
    {
-    "entity": "hawksbill-sea-turtle",
+    "entity": "hawksbill-turtle",
     "tier": "baitball"
    },
    {
@@ -15574,11 +15522,11 @@
     "tier": "baitball"
    },
    {
-    "entity": "green-sea-turtle",
+    "entity": "green-turtle",
     "tier": "reef"
    },
    {
-    "entity": "leatherback-sea-turtle",
+    "entity": "leatherback-turtle",
     "tier": "reef"
    },
    {
@@ -15598,7 +15546,7 @@
     "tier": "reef"
    },
    {
-    "entity": "giant-manta-ray",
+    "entity": "manta-ray",
     "tier": "reef"
    },
    {
@@ -15626,7 +15574,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "humphead-wrasse",
+    "entity": "napoleon-wrasse",
     "tier": "twilight"
    },
    {
@@ -15646,7 +15594,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "shortfin-mako",
+    "entity": "mako-shark",
     "tier": "twilight"
    },
    {
@@ -15654,7 +15602,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "angelshark",
+    "entity": "angel-shark",
     "tier": "twilight"
    },
    {
@@ -15914,7 +15862,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "regal-blue-tang",
+    "entity": "blue-tang",
     "tier": "tidepool"
    },
    {
@@ -15986,7 +15934,7 @@
     "tier": "reef"
    },
    {
-    "entity": "red-lionfish",
+    "entity": "lionfish",
     "tier": "reef"
    },
    {
@@ -16106,7 +16054,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "great-barracuda",
+    "entity": "barracuda",
     "tier": "tidepool"
    },
    {
@@ -16114,7 +16062,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "red-lionfish",
+    "entity": "lionfish",
     "tier": "baitball"
    },
    {
@@ -16122,7 +16070,7 @@
     "tier": "baitball"
    },
    {
-    "entity": "west-indian-manatee",
+    "entity": "manatee",
     "tier": "baitball"
    },
    {
@@ -16134,7 +16082,7 @@
     "tier": "reef"
    },
    {
-    "entity": "marine-angelfish",
+    "entity": "angelfish",
     "tier": "reef"
    },
    {
@@ -16146,11 +16094,11 @@
     "tier": "reef"
    },
    {
-    "entity": "hawksbill-sea-turtle",
+    "entity": "hawksbill-turtle",
     "tier": "reef"
    },
    {
-    "entity": "green-sea-turtle",
+    "entity": "green-turtle",
     "tier": "reef"
    },
    {
@@ -16162,7 +16110,7 @@
     "tier": "reef"
    },
    {
-    "entity": "queen-conch",
+    "entity": "conch",
     "tier": "reef"
    },
    {
@@ -16342,7 +16290,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "sea-slug",
+    "entity": "nudibranch",
     "tier": "twilight"
    },
    {
@@ -16450,7 +16398,7 @@
     "tier": "reef"
    },
    {
-    "entity": "giant-manta-ray",
+    "entity": "manta-ray",
     "tier": "reef"
    },
    {
@@ -16478,7 +16426,7 @@
     "tier": "reef"
    },
    {
-    "entity": "green-sea-turtle",
+    "entity": "green-turtle",
     "tier": "reef"
    },
    {
@@ -16574,7 +16522,7 @@
   "difficulty": 4,
   "answers": [
    {
-    "entity": "red-lionfish",
+    "entity": "lionfish",
     "tier": "tidepool"
    },
    {
@@ -16586,7 +16534,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "northern-snakehead",
+    "entity": "snakehead",
     "tier": "baitball"
    },
    {
@@ -16594,7 +16542,7 @@
     "tier": "baitball"
    },
    {
-    "entity": "european-green-crab",
+    "entity": "shore-crab",
     "tier": "baitball"
    },
    {
@@ -16622,7 +16570,7 @@
     "tier": "reef"
    },
    {
-    "entity": "common-carp",
+    "entity": "carp",
     "tier": "reef"
    },
    {
@@ -16634,7 +16582,7 @@
     "tier": "reef"
    },
    {
-    "entity": "red-king-crab",
+    "entity": "king-crab",
     "tier": "reef"
    },
    {
@@ -16642,7 +16590,7 @@
     "tier": "reef"
    },
    {
-    "entity": "atlantic-blue-crab",
+    "entity": "blue-crab",
     "tier": "reef"
    },
    {
@@ -16722,7 +16670,7 @@
     "tier": "midnight"
    },
    {
-    "entity": "plecostomus",
+    "entity": "pleco",
     "tier": "midnight"
    },
    {
@@ -16730,7 +16678,7 @@
     "tier": "midnight"
    },
    {
-    "entity": "common-periwinkle",
+    "entity": "periwinkle",
     "tier": "midnight"
    },
    {
@@ -16766,7 +16714,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "siamese-fighting-fish",
+    "entity": "betta",
     "tier": "tidepool"
    },
    {
@@ -16778,7 +16726,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "regal-blue-tang",
+    "entity": "blue-tang",
     "tier": "baitball"
    },
    {
@@ -16786,7 +16734,7 @@
     "tier": "baitball"
    },
    {
-    "entity": "plecostomus",
+    "entity": "pleco",
     "tier": "baitball"
    },
    {
@@ -16882,7 +16830,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "silver-arowana",
+    "entity": "arowana",
     "tier": "twilight"
    },
    {
@@ -16914,7 +16862,7 @@
     "tier": "midnight"
    },
    {
-    "entity": "red-bellied-piranha",
+    "entity": "piranha",
     "tier": "midnight"
    },
    {
@@ -16942,7 +16890,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "common-carp",
+    "entity": "carp",
     "tier": "tidepool"
    },
    {
@@ -16950,7 +16898,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "red-bellied-piranha",
+    "entity": "piranha",
     "tier": "baitball"
    },
    {
@@ -17094,7 +17042,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "northern-snakehead",
+    "entity": "snakehead",
     "tier": "twilight"
    },
    {
@@ -17258,7 +17206,7 @@
     "tier": "reef"
    },
    {
-    "entity": "common-carp",
+    "entity": "carp",
     "tier": "reef"
    },
    {
@@ -17266,7 +17214,7 @@
     "tier": "reef"
    },
    {
-    "entity": "atlantic-cod",
+    "entity": "cod",
     "tier": "reef"
    },
    {
@@ -17458,7 +17406,7 @@
     "tier": "reef"
    },
    {
-    "entity": "bluntnose-sixgill-shark",
+    "entity": "sixgill-shark",
     "tier": "reef"
    },
    {
@@ -17474,7 +17422,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "silver-arowana",
+    "entity": "arowana",
     "tier": "twilight"
    },
    {
@@ -17570,7 +17518,7 @@
     "tier": "reef"
    },
    {
-    "entity": "sea-slug",
+    "entity": "nudibranch",
     "tier": "reef"
    },
    {
@@ -17690,7 +17638,7 @@
     "tier": "midnight"
    },
    {
-    "entity": "sea-catfish",
+    "entity": "hardhead-catfish",
     "tier": "midnight"
    },
    {
@@ -17710,7 +17658,7 @@
   "difficulty": 3,
   "answers": [
    {
-    "entity": "atlantic-herring",
+    "entity": "herring",
     "tier": "tidepool"
    },
    {
@@ -17734,7 +17682,7 @@
     "tier": "baitball"
    },
    {
-    "entity": "european-sprat",
+    "entity": "sprat",
     "tier": "baitball"
    },
    {
@@ -17742,7 +17690,7 @@
     "tier": "reef"
    },
    {
-    "entity": "sand-lance",
+    "entity": "sand-eel",
     "tier": "reef"
    },
    {
@@ -17850,11 +17798,11 @@
   "difficulty": 3,
   "answers": [
    {
-    "entity": "atlantic-cod",
+    "entity": "cod",
     "tier": "tidepool"
    },
    {
-    "entity": "atlantic-herring",
+    "entity": "herring",
     "tier": "tidepool"
    },
    {
@@ -17878,7 +17826,7 @@
     "tier": "baitball"
    },
    {
-    "entity": "european-plaice",
+    "entity": "plaice",
     "tier": "baitball"
    },
    {
@@ -17886,7 +17834,7 @@
     "tier": "reef"
    },
    {
-    "entity": "common-sole",
+    "entity": "dover-sole",
     "tier": "reef"
    },
    {
@@ -17894,11 +17842,11 @@
     "tier": "reef"
    },
    {
-    "entity": "brown-crab",
+    "entity": "edible-crab",
     "tier": "reef"
    },
    {
-    "entity": "european-sprat",
+    "entity": "sprat",
     "tier": "reef"
    },
    {
@@ -17990,7 +17938,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "sand-lance",
+    "entity": "sand-eel",
     "tier": "twilight"
    },
    {
@@ -17998,7 +17946,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "common-dab",
+    "entity": "dab",
     "tier": "twilight"
    },
    {
@@ -18014,7 +17962,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "atlantic-wolffish",
+    "entity": "wolffish",
     "tier": "twilight"
    },
    {
@@ -18030,7 +17978,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "norway-lobster",
+    "entity": "langoustine",
     "tier": "twilight"
    },
    {
@@ -18042,7 +17990,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "lesser-weever",
+    "entity": "weever-fish",
     "tier": "twilight"
    },
    {
@@ -18234,7 +18182,7 @@
     "tier": "reef"
    },
    {
-    "entity": "sea-slug",
+    "entity": "nudibranch",
     "tier": "reef"
    },
    {
@@ -18294,7 +18242,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "gooseneck-barnacle",
+    "entity": "goose-barnacle",
     "tier": "twilight"
    },
    {
@@ -18302,7 +18250,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "bluntnose-sixgill-shark",
+    "entity": "sixgill-shark",
     "tier": "twilight"
    },
    {
@@ -18358,7 +18306,7 @@
     "tier": "midnight"
    },
    {
-    "entity": "plainfin-midshipman",
+    "entity": "midshipman",
     "tier": "midnight"
    },
    {
@@ -18430,7 +18378,7 @@
     "tier": "baitball"
    },
    {
-    "entity": "red-lionfish",
+    "entity": "lionfish",
     "tier": "baitball"
    },
    {
@@ -18502,7 +18450,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "hawaiian-bobtail-squid",
+    "entity": "bobtail-squid",
     "tier": "twilight"
    },
    {
@@ -18514,7 +18462,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "angelshark",
+    "entity": "angel-shark",
     "tier": "twilight"
    },
    {
@@ -18522,7 +18470,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "bluntnose-sixgill-shark",
+    "entity": "sixgill-shark",
     "tier": "twilight"
    },
    {
@@ -18638,7 +18586,7 @@
     "tier": "reef"
    },
    {
-    "entity": "atlantic-blue-crab",
+    "entity": "blue-crab",
     "tier": "reef"
    },
    {
@@ -18658,7 +18606,7 @@
     "tier": "reef"
    },
    {
-    "entity": "sea-slug",
+    "entity": "nudibranch",
     "tier": "reef"
    },
    {
@@ -18718,7 +18666,7 @@
     "tier": "midnight"
    },
    {
-    "entity": "blue-sea-star",
+    "entity": "blue-starfish",
     "tier": "midnight"
    },
    {
@@ -18766,7 +18714,7 @@
     "tier": "baitball"
    },
    {
-    "entity": "west-indian-manatee",
+    "entity": "manatee",
     "tier": "baitball"
    },
    {
@@ -18774,7 +18722,7 @@
     "tier": "reef"
    },
    {
-    "entity": "atlantic-blue-crab",
+    "entity": "blue-crab",
     "tier": "reef"
    },
    {
@@ -18830,7 +18778,7 @@
     "tier": "reef"
    },
    {
-    "entity": "loggerhead-sea-turtle",
+    "entity": "loggerhead-turtle",
     "tier": "reef"
    },
    {
@@ -18862,7 +18810,7 @@
     "tier": "reef"
    },
    {
-    "entity": "great-barracuda",
+    "entity": "barracuda",
     "tier": "reef"
    },
    {
@@ -18930,11 +18878,11 @@
     "tier": "twilight"
    },
    {
-    "entity": "bonnethead-shark",
+    "entity": "bonnethead",
     "tier": "twilight"
    },
    {
-    "entity": "red-lionfish",
+    "entity": "lionfish",
     "tier": "twilight"
    },
    {
@@ -18966,7 +18914,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "sea-catfish",
+    "entity": "hardhead-catfish",
     "tier": "midnight"
    },
    {
@@ -19050,7 +18998,7 @@
     "tier": "tidepool"
    },
    {
-    "entity": "giant-manta-ray",
+    "entity": "manta-ray",
     "tier": "baitball"
    },
    {
@@ -19066,15 +19014,15 @@
     "tier": "reef"
    },
    {
-    "entity": "red-lionfish",
+    "entity": "lionfish",
     "tier": "reef"
    },
    {
-    "entity": "hawksbill-sea-turtle",
+    "entity": "hawksbill-turtle",
     "tier": "reef"
    },
    {
-    "entity": "green-sea-turtle",
+    "entity": "green-turtle",
     "tier": "reef"
    },
    {
@@ -19118,7 +19066,7 @@
     "tier": "reef"
    },
    {
-    "entity": "great-barracuda",
+    "entity": "barracuda",
     "tier": "reef"
    },
    {
@@ -19162,7 +19110,7 @@
     "tier": "reef"
    },
    {
-    "entity": "marine-angelfish",
+    "entity": "angelfish",
     "tier": "reef"
    },
    {
@@ -19206,7 +19154,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "humphead-wrasse",
+    "entity": "napoleon-wrasse",
     "tier": "twilight"
    },
    {
@@ -19230,7 +19178,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "bluestreak-cleaner-wrasse",
+    "entity": "cleaner-wrasse",
     "tier": "twilight"
    },
    {
@@ -19282,7 +19230,7 @@
     "tier": "twilight"
    },
    {
-    "entity": "sea-slug",
+    "entity": "nudibranch",
     "tier": "twilight"
    },
    {
@@ -19342,7 +19290,7 @@
     "tier": "midnight"
    },
    {
-    "entity": "blue-sea-star",
+    "entity": "blue-starfish",
     "tier": "midnight"
    },
    {

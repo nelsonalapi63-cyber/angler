@@ -1,0 +1,92 @@
+{
+ "merge": {
+  "european-anchovy": "anchovy",
+  "angelshark": "angel-shark",
+  "antarctic-krill": "krill",
+  "sea-goldie": "anthias",
+  "silver-arowana": "arowana",
+  "atlantic-bluefin-tuna": "bluefin-tuna",
+  "atlantic-cod": "cod",
+  "atlantic-herring": "herring",
+  "atlantic-wolffish": "wolffish",
+  "great-barracuda": "barracuda",
+  "siamese-fighting-fish": "betta",
+  "blue-sea-star": "blue-starfish",
+  "regal-blue-tang": "blue-tang",
+  "bluestreak-cleaner-wrasse": "cleaner-wrasse",
+  "bluntnose-sixgill-shark": "sixgill-shark",
+  "hawaiian-bobtail-squid": "bobtail-squid",
+  "bonnethead-shark": "bonnethead",
+  "boxer-crab": "pom-pom-crab",
+  "brown-crab": "edible-crab",
+  "california-market-squid": "market-squid",
+  "common-carp": "carp",
+  "coffin-ray": "numbfish",
+  "common-periwinkle": "periwinkle",
+  "common-snook": "snook",
+  "common-sole": "dover-sole",
+  "queen-conch": "conch",
+  "mobula-ray": "devil-ray",
+  "european-green-crab": "shore-crab",
+  "european-sea-bass": "sea-bass",
+  "flatback-sea-turtle": "flatback-turtle",
+  "giant-manta-ray": "manta-ray",
+  "giant-triton": "tritons-trumpet",
+  "gilthead-bream": "sea-bream",
+  "gooseneck-barnacle": "goose-barnacle",
+  "gray-whale": "grey-whale",
+  "green-sea-turtle": "green-turtle",
+  "pelican-eel": "gulper-eel",
+  "sea-catfish": "hardhead-catfish",
+  "hawksbill-sea-turtle": "hawksbill-turtle",
+  "humphead-wrasse": "napoleon-wrasse",
+  "red-king-crab": "king-crab",
+  "norway-lobster": "langoustine",
+  "lesser-weever": "weever-fish",
+  "loggerhead-sea-turtle": "loggerhead-turtle",
+  "shortfin-mako": "mako-shark",
+  "west-indian-manatee": "manatee",
+  "mangrove-rivulus": "mangrove-killifish",
+  "plainfin-midshipman": "midshipman",
+  "northern-shrimp": "northern-prawn",
+  "northern-snakehead": "snakehead",
+  "sea-slug": "nudibranch",
+  "plecostomus": "pleco",
+  "two-spot-red-snapper": "red-bass",
+  "sand-lance": "sand-eel",
+  "slender-snipe-eel": "snipe-eel",
+  "sunflower-star": "sunflower-sea-star",
+  "tubbataha-reefs-natural-park": "tubbataha-reef",
+  "witch-flounder": "witch",
+  "leatherback-sea-turtle": "leatherback-turtle",
+  "marine-angelfish": "angelfish",
+  "atlantic-blue-crab": "blue-crab",
+  "common-dab": "dab",
+  "european-plaice": "plaice",
+  "european-sprat": "sprat",
+  "red-lionfish": "lionfish",
+  "red-bellied-piranha": "piranha"
+ },
+ "aliasAdd": [
+  {
+   "entity": "mariana-trench",
+   "alias": "Mariana"
+  },
+  {
+   "entity": "mariana-trench",
+   "alias": "Marianas"
+  },
+  {
+   "entity": "mariana-trench",
+   "alias": "Marianas Trench"
+  },
+  {
+   "entity": "puerto-rico-trench",
+   "alias": "Puerto Rico"
+  },
+  {
+   "entity": "anglerfish",
+   "alias": "angler"
+  }
+ ]
+}
