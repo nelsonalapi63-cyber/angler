@@ -1,7 +1,8 @@
 // FATHOM — stripe-webhook Edge Function (Deno). Deploy with --no-verify-jwt (Stripe calls it unauthenticated).
 // On checkout.session.completed it writes one entitlement row. The product comes from the Payment Link's
 // metadata.product_id, or from STRIPE_PRICE_MAP ({"price_123":"supporter", ...}) as a fallback.
-// client_reference_id is "<user_id>" or "<user_id>:<pack_id>" for a single-pack purchase (see monetise.js).
+// client_reference_id is "<user_id>" or "<user_id>__<pack_id>" for a single-pack purchase (Stripe allows only
+// letters, digits, - and _ in that field; see monetise.js). A charge.refunded event removes the entitlement again.
 import Stripe from "npm:stripe@14";
 import { createClient } from "npm:@supabase/supabase-js@2";
 
@@ -25,7 +26,7 @@ Deno.serve(async (req) => {
   if (event.type === "checkout.session.completed") {
     const session = event.data.object as Stripe.Checkout.Session;
     const ref = session.client_reference_id || "";
-    const [userId, packId] = ref.split(":");
+    const [userId, packId] = ref.split("__");
     if (!userId) return new Response("no client_reference_id", { status: 200 });
 
     let productId = (session.metadata && session.metadata.product_id) || "";
@@ -39,8 +40,17 @@ Deno.serve(async (req) => {
     const entitlement = productId === "pack" ? "pack:" + (packId || "") : productId;
 
     const admin = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
-    const { error } = await admin.from("entitlements").upsert({ user_id: userId, product_id: entitlement, payment_session_id: session.id }, { onConflict: "payment_session_id" });
+    const paymentIntent = typeof session.payment_intent === "string" ? session.payment_intent : session.payment_intent?.id ?? null;
+    const { error } = await admin.from("entitlements").upsert({ user_id: userId, product_id: entitlement, payment_session_id: session.id, payment_intent: paymentIntent }, { onConflict: "payment_session_id" });
     if (error && !/duplicate|unique/i.test(error.message)) return new Response("db error: " + error.message, { status: 500 });
+  }
+  if (event.type === "charge.refunded") {
+    const charge = event.data.object as Stripe.Charge;
+    const paymentIntent = typeof charge.payment_intent === "string" ? charge.payment_intent : charge.payment_intent?.id ?? null;
+    if (paymentIntent && charge.refunded) {
+      const admin = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
+      await admin.from("entitlements").delete().eq("payment_intent", paymentIntent);
+    }
   }
   return new Response("ok", { status: 200 });
 });

@@ -19,7 +19,9 @@
   }
 
   // ---------------------------------------------------------------- gauge
-  const GAUGE_COMPACT_W = 44;      // viewBox width on narrow screens: just the rail, no landmark labels
+  const GAUGE_COMPACT_W = 96;      // viewBox width on narrow screens: the rail plus short landmark labels
+  const COMPACT_LABELS = { 200: 'Sunlight ends', 1000: 'Twilight ends', 3800: 'Titanic', 4000: 'Abyss begins', 6000: 'Hadal begins', 8336: 'Deepest fish', 10935: 'Challenger Deep' };
+  const CURVE_TICKS_M = [0, 2000, 4000, 6000, 8000];
   function gaugeSvg(depth, compact) {
     const dive = root.FathomDive;
     const d = Math.max(0, depth || 0);
@@ -41,7 +43,8 @@
       const passed = d >= lm.depth ? ' lm-passed' : '';
       out += '<g class="lm' + passed + '" data-depth="' + lm.depth + '">';
       out += '<line x1="' + (RAIL_X - 7) + '" y1="' + y.toFixed(1) + '" x2="' + (RAIL_X + 7) + '" y2="' + y.toFixed(1) + '" stroke="currentColor" stroke-width="1.5" opacity=".7"/>';
-      out += '<text class="lm-label" x="' + (RAIL_X + 14) + '" y="' + (labelY + 3.5).toFixed(1) + '">' + esc(fmt(lm.depth)) + ' ' + esc(lm.label) + '</text>';
+      const label = compact ? (COMPACT_LABELS[lm.depth] || lm.label) : fmt(lm.depth) + ' ' + lm.label;
+      out += '<text class="lm-label" x="' + (RAIL_X + 12) + '" y="' + (labelY + 3.5).toFixed(1) + '">' + esc(label) + '</text>';
       out += '</g>';
     }
     out += '<circle class="marker" cx="' + RAIL_X + '" cy="' + depthToY(d).toFixed(1) + '" r="7"/>';
@@ -114,7 +117,7 @@
       out += '<rect x="' + x1.toFixed(1) + '" y="' + CURVE_PAD.top + '" width="' + (x2 - x1).toFixed(1) + '" height="' + (base - CURVE_PAD.top) + '" fill="transparent"><title>' + esc(label) + '</title></rect>';
     }
     // axis labels
-    for (const t of [0, 2000, 4000, 6000, 8000]) {
+    for (const t of CURVE_TICKS_M) {
       out += '<text x="' + x(t).toFixed(1) + '" y="' + (base + 16) + '" text-anchor="' + (t === 0 ? 'start' : 'middle') + '">' + fmt(t) + '</text>';
     }
     out += '<text x="' + x(max).toFixed(1) + '" y="' + (base + 16) + '" text-anchor="end">' + fmt(max) + ' m</text>';

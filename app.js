@@ -66,12 +66,15 @@
 
   // ---------------------------------------------------------------- modal
   let modalEl = null;
+  let modalTrigger = null;
   function closeModal() {
     if (!modalEl) return;
     const onClose = modalEl._onClose;
     modalEl.remove();
     modalEl = null;
     if (onClose) onClose();
+    if (modalTrigger && document.contains(modalTrigger)) { try { modalTrigger.focus({ preventScroll: true }); } catch (e) { /* ignore */ } }
+    modalTrigger = null;
   }
   function modal(opts) {
     closeModal();
@@ -87,19 +90,33 @@
     wrap._onClose = opts.onClose;
     document.getElementById('modal-root').appendChild(wrap);
     modalEl = wrap;
-    const focusable = box.querySelector('input, button:not([aria-label="Close"]), a');
-    (focusable || head.querySelector('button')).focus();
+    modalTrigger = document.activeElement && document.activeElement !== document.body ? document.activeElement : null;
+    const heading = head.querySelector('h2');
+    heading.setAttribute('tabindex', '-1');
+    try { heading.focus({ preventScroll: true }); } catch (e) { heading.focus(); }   // read the title first; never open scrolled
     return box;
   }
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeModal(); closeMenu(); } });
+  // A small yes/no dialog that sits on top of whatever modal is open (Cancel returns to it).
   function confirmDialog(message, okLabel) {
     return new Promise((resolve) => {
       let answered = false;
-      const done = (v) => { if (answered) return; answered = true; closeModal(); resolve(v); };
-      modal({ title: 'Are you sure?', body: el('div', {}, [el('p', { text: message }), el('div', { class: 'row' }, [
-        el('button', { class: 'btn btn-primary', type: 'button', text: okLabel || 'Yes', onClick: () => done(true) }),
-        el('button', { class: 'btn', type: 'button', text: 'Cancel', onClick: () => done(false) }),
-      ])]), onClose: () => done(false) });
+      const wrap = el('div', { class: 'modal-wrap confirm' });
+      const done = (v) => { if (answered) return; answered = true; wrap.remove(); document.removeEventListener('keydown', onKey, true); resolve(v); };
+      const onKey = (e) => { if (e.key === 'Escape') { e.stopPropagation(); done(false); } };
+      const box = el('div', { class: 'modal', role: 'alertdialog', 'aria-modal': 'true', 'aria-label': 'Are you sure?' }, [
+        el('div', { class: 'modal-head' }, el('h2', { text: 'Are you sure?' })),
+        el('p', { text: message }),
+        el('div', { class: 'row' }, [
+          el('button', { class: 'btn btn-primary', type: 'button', text: okLabel || 'Yes', onClick: () => done(true) }),
+          el('button', { class: 'btn', type: 'button', text: 'Cancel', onClick: () => done(false) }),
+        ]),
+      ]);
+      wrap.addEventListener('click', (e) => { if (e.target === wrap) done(false); });
+      wrap.appendChild(box);
+      document.getElementById('modal-root').appendChild(wrap);
+      document.addEventListener('keydown', onKey, true);
+      box.querySelector('.btn').focus();
     });
   }
 
@@ -198,6 +215,7 @@
     // Routes are plain hash names (#daily, #pack-sharks, #archive-2026-11-01): the first word is the page,
     // the rest is its parameter. Plain names survive every host, including ones that only pass #name through.
     const raw = hash.replace(/^#\/?/, '');
+    if (/^challenge[-\/]/i.test(raw)) return game.startChallenge(hash);
     const dash = raw.indexOf('-');
     const page = dash > -1 ? raw.slice(0, dash) : raw;
     const param = dash > -1 ? raw.slice(dash + 1) : '';

@@ -37,6 +37,7 @@ create table if not exists public.entitlements (
   product_id text not null,
   purchased_at timestamptz not null default now(),
   payment_session_id text unique,
+  payment_intent text,
   unique (user_id, product_id)
 );
 
@@ -162,11 +163,13 @@ create or replace view public.leaderboard_tide as
   join public.profiles p on p.user_id = r.user_id
   where not p.hidden and p.handle is not null and r.dives >= public.param('min_ranked_days');
 
-create or replace view public.leaderboard_alltime as
-  select p.handle, p.flag, r.total_meters as meters, r.rating, r.league
-  from public.ratings r
-  join public.profiles p on p.user_id = r.user_id
-  where not p.hidden and p.handle is not null;
+create or replace view public.leaderboard_alltime as          -- computed from the dives themselves, so it never resets
+  select p.handle, p.flag, sum(d.depth)::bigint as meters, r.rating, r.league
+  from public.dives d
+  join public.profiles p on p.user_id = d.user_id
+  left join public.ratings r on r.user_id = d.user_id
+  where d.approved and not p.hidden and p.handle is not null
+  group by p.handle, p.flag, r.rating, r.league;
 
 grant select on public.leaderboard_today, public.leaderboard_tide, public.leaderboard_alltime, public.hall_of_fame to anon, authenticated;
 
@@ -174,7 +177,7 @@ grant select on public.leaderboard_today, public.leaderboard_tide, public.leader
 create or replace function public.eastern_today() returns date language sql stable as
   $$ select (now() at time zone 'America/New_York')::date $$;
 
-create or replace function public.league_for(p_rating numeric) returns text language sql immutable as $$
+create or replace function public.league_for(p_rating numeric) returns text language sql stable as $$
   select case
     when p_rating >= public.param('league_hadal') then 'hadal'
     when p_rating >= public.param('league_abyss') then 'abyss'
@@ -211,7 +214,7 @@ begin
     select count(*) + 1 into v_rank from public.dives where day = p_day and depth > v_mine;
     select greatest(1, ceil(100.0 * count(*) / v_total)) into v_pct from public.dives where day = p_day and depth >= v_mine;
   end if;
-  return json_build_object('bins', v_bins, 'total', v_total, 'median', v_median, 'percentile', v_pct, 'rank', v_rank, 'frozen', v_frozen);
+  return json_build_object('bins', v_bins, 'total', v_total, 'median', v_median, 'percentile', v_pct, 'rank', v_rank, 'frozen', coalesce(v_frozen, false));
 end $$;
 grant execute on function public.daily_curve(date, text) to anon, authenticated;
 
@@ -228,6 +231,27 @@ language sql security definer set search_path = public stable as $$
   order by d.depth desc, d.seconds_used asc
 $$;
 grant execute on function public.friends_today(date) to authenticated;
+
+create or replace function public.friends_tide()
+returns table (handle text, flag text, rating numeric, league text, dives int)
+language sql security definer set search_path = public stable as $$
+  select p.handle, p.flag, r.rating, r.league, r.dives
+  from public.ratings r join public.profiles p on p.user_id = r.user_id
+  where p.handle is not null and (r.user_id = auth.uid() or r.user_id in (select followee from public.follows where follower = auth.uid()))
+  order by r.rating desc
+$$;
+grant execute on function public.friends_tide() to authenticated;
+
+create or replace function public.friends_alltime()
+returns table (handle text, flag text, meters bigint, rating numeric)
+language sql security definer set search_path = public stable as $$
+  select p.handle, p.flag, sum(d.depth)::bigint as meters, max(r.rating) as rating
+  from public.dives d join public.profiles p on p.user_id = d.user_id left join public.ratings r on r.user_id = d.user_id
+  where d.approved and p.handle is not null and (d.user_id = auth.uid() or d.user_id in (select followee from public.follows where follower = auth.uid()))
+  group by p.handle, p.flag
+  order by meters desc
+$$;
+grant execute on function public.friends_alltime() to authenticated;
 
 create or replace function public.follow_handle(p_handle text) returns void
 language plpgsql security definer set search_path = public as $$
@@ -311,3 +335,10 @@ begin
     end if;
   end if;
 end $$;
+
+-- ---------------------------------------------------------------- lock down the maintenance functions
+-- SECURITY DEFINER functions are executable by PUBLIC by default; only pg_cron (postgres) may run these.
+revoke execute on function public.close_day(date) from public, anon, authenticated;
+revoke execute on function public.recompute_ratings(date) from public, anon, authenticated;
+revoke execute on function public.snapshot_tide(text) from public, anon, authenticated;
+revoke execute on function public.nightly() from public, anon, authenticated;

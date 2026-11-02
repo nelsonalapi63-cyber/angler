@@ -5,8 +5,10 @@ const CACHE_VERSION = 'fathom-v1.0.0';
 const PRECACHE = [
   './', 'index.html', 'styles.css', 'app.js', 'game.js', 'pages.js', 'storage.js', 'charts.js',
   'online.js', 'monetise.js', 'entities.js', 'prompts.js', 'shared/dive.js', 'manifest.json',
-  'privacy.html', 'terms.html', 'refunds.html', 'icons/icon-192.png', 'icons/icon-512.png',
+  'privacy.html', 'terms.html', 'refunds.html', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-512-maskable.png', 'icons/og.png',
 ];
+// The answer bank and schedule must be fresh whenever the network is there, so the day's prompts match the server.
+const NETWORK_FIRST = ['entities.js', 'prompts.js'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -25,6 +27,21 @@ self.addEventListener('fetch', (event) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;          // network only for everything cross-origin
+  const file = url.pathname.split('/').pop();
+  if (NETWORK_FIRST.includes(file)) {
+    event.respondWith(
+      caches.open(CACHE_VERSION).then(async (cache) => {
+        try {
+          const fresh = await fetch(req);
+          if (fresh && fresh.ok) cache.put(req, fresh.clone()).catch(() => null);
+          return fresh;
+        } catch (e) {
+          return (await cache.match(req)) || Response.error();
+        }
+      })
+    );
+    return;
+  }
   event.respondWith(
     caches.open(CACHE_VERSION).then(async (cache) => {
       const cached = await cache.match(req, { ignoreSearch: req.mode === 'navigate' });

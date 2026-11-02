@@ -613,7 +613,8 @@
   "aliases": [
    "angelshark",
    "Squatina",
-   "Squatina squatina"
+   "Squatina squatina",
+   "monkfish shark"
   ],
   "kind": "creature",
   "group": "sharks",
@@ -631,25 +632,14 @@
   "fact": "Marine angelfish are among the most colourful reef fish, and many change their pattern completely as they grow from juvenile to adult."
  },
  {
-  "id": "angelshark",
-  "name": "Angelshark",
-  "aliases": [
-   "angel shark",
-   "Squatina squatina",
-   "monkfish shark"
-  ],
-  "kind": "creature",
-  "group": "sharks",
-  "fact": "Angelsharks are flat, ray-like sharks that bury themselves in sand and lunge upward at passing fish in a split second."
- },
- {
   "id": "anglerfish",
   "name": "Anglerfish",
   "aliases": [
    "angler fish",
    "deep-sea anglerfish",
    "sea devil",
-   "black seadevil"
+   "black seadevil",
+   "angler"
   ],
   "kind": "creature",
   "group": "fish",
@@ -707,17 +697,6 @@
   "kind": "creature",
   "group": "seals",
   "fact": "Antarctic fur seals were nearly wiped out by 19th-century sealers but now breed by the millions on South Georgia."
- },
- {
-  "id": "antarctic-krill",
-  "name": "Antarctic krill",
-  "aliases": [
-   "krill",
-   "Euphausia superba"
-  ],
-  "kind": "creature",
-  "group": "crustaceans",
-  "fact": "Antarctic krill swarm in the Southern Ocean in such numbers that their total weight, roughly 400 million tonnes, rivals that of all humans on Earth."
  },
  {
   "id": "antarctic-minke-whale",
@@ -780,7 +759,9 @@
   "name": "Anthias",
   "aliases": [
    "sea goldie",
-   "lyretail anthias"
+   "lyretail anthias",
+   "scalefin anthias",
+   "Pseudanthias squamipinnis"
   ],
   "kind": "creature",
   "group": "fish",
@@ -811,7 +792,7 @@
   "aliases": [],
   "kind": "place",
   "group": "reefs",
-  "fact": "Apo Reef off Mindoro in the Philippines is the largest atoll-like reef in the country and the second-largest contiguous coral reef in the world."
+  "fact": "Apo Reef off Mindoro in the Philippines is the largest atoll-like reef in the country and is often described as the second-largest contiguous coral reef in the world."
  },
  {
   "id": "ara-san-juan",
@@ -856,7 +837,7 @@
   ],
   "kind": "creature",
   "group": "fish",
-  "fact": "The arapaima of the Amazon must rise to gulp air every few minutes and can grow to about 3 metres long."
+  "fact": "The arapaima of the Amazon must surface regularly to gulp air and has been verified at just over 3 metres long."
  },
  {
   "id": "archelon",
@@ -983,7 +964,8 @@
    "aruana",
    "Asian arowana",
    "silver arowana",
-   "dragon fish"
+   "dragon fish",
+   "Osteoglossum bicirrhosum"
   ],
   "kind": "creature",
   "group": "fish",
@@ -1075,18 +1057,6 @@
   "fact": "The Asian tiger shrimp, a farmed prawn up to 30 centimetres long, has escaped into the Gulf of Mexico and the south-eastern US coast."
  },
  {
-  "id": "atlantic-blue-crab",
-  "name": "Blue crab",
-  "aliases": [
-   "Atlantic blue crab",
-   "Chesapeake blue crab",
-   "Callinectes sapidus"
-  ],
-  "kind": "creature",
-  "group": "crustaceans",
-  "fact": "The blue crab, the famous catch of the Gulf of Mexico and Chesapeake Bay, has invaded the Mediterranean, where it is now a serious pest."
- },
- {
   "id": "atlantic-blue-tang",
   "name": "Atlantic blue tang",
   "aliases": [
@@ -1099,18 +1069,6 @@
   "fact": "The Atlantic blue tang is a Caribbean surgeonfish that is bright yellow as a juvenile and turns deep blue as it grows."
  },
  {
-  "id": "atlantic-bluefin-tuna",
-  "name": "Atlantic bluefin tuna",
-  "aliases": [
-   "bluefin tuna",
-   "bluefin",
-   "Thunnus thynnus"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "Atlantic bluefin tuna can cross the Atlantic in under two months and return to spawn in either the Gulf of Mexico or the Mediterranean."
- },
- {
   "id": "atlantic-bonito",
   "name": "Atlantic bonito",
   "aliases": [
@@ -1120,17 +1078,6 @@
   "kind": "creature",
   "group": "fish",
   "fact": "The Atlantic bonito is a fast, striped, tuna-like schooling fish of the Atlantic and Mediterranean, eaten salted or grilled in Turkey as palamut."
- },
- {
-  "id": "atlantic-cod",
-  "name": "Atlantic cod",
-  "aliases": [
-   "cod",
-   "Gadus morhua"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "Atlantic cod once supported the North Sea's biggest fishery, and a single female can release several million eggs."
  },
  {
   "id": "atlantic-croaker",
@@ -1152,17 +1099,6 @@
   "kind": "creature",
   "group": "fish",
   "fact": "Atlantic halibut can live for 50 years and females take about 10 years to mature, so the species is easily overfished."
- },
- {
-  "id": "atlantic-herring",
-  "name": "Atlantic herring",
-  "aliases": [
-   "herring",
-   "Clupea harengus"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "Atlantic herring form schools of billions in the North Sea and Baltic and communicate at night with bursts of bubbles from their vents."
  },
  {
   "id": "atlantic-horse-mackerel",
@@ -1327,20 +1263,6 @@
   "kind": "creature",
   "group": "dolphins",
   "fact": "The Atlantic white-sided dolphin has a bold yellow-ochre streak on its tail stock and lives in cool North Atlantic waters."
- },
- {
-  "id": "atlantic-wolffish",
-  "name": "Atlantic wolffish",
-  "aliases": [
-   "wolffish",
-   "wolf fish",
-   "seawolf",
-   "ocean catfish",
-   "Anarhichas lupus"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The Atlantic wolffish produces antifreeze proteins to survive icy Arctic water and crushes sea urchins and crabs with its canine-like teeth."
  },
  {
   "id": "atlantis",
@@ -2115,7 +2037,8 @@
   "aliases": [
    "Siamese fighting fish",
    "fighting fish",
-   "Betta splendens"
+   "Betta splendens",
+   "betta fish"
   ],
   "kind": "creature",
   "group": "fish",
@@ -2892,19 +2815,6 @@
   "fact": "Blue rockfish school in the water column of California kelp forests and are among the fish divers see most often there."
  },
  {
-  "id": "blue-sea-star",
-  "name": "Blue sea star",
-  "aliases": [
-   "blue starfish",
-   "blue linckia",
-   "Linckia laevigata",
-   "Linckia"
-  ],
-  "kind": "creature",
-  "group": "echinoderms",
-  "fact": "The blue Linckia sea star of Indo-Pacific reefs can regrow an entire body from one severed arm, a stage known as a 'comet'."
- },
- {
   "id": "blue-shark",
   "name": "Blue shark",
   "aliases": [
@@ -2936,11 +2846,12 @@
   "aliases": [
    "blue sea star",
    "blue Linckia",
-   "Linckia laevigata"
+   "Linckia laevigata",
+   "Linckia"
   ],
   "kind": "creature",
   "group": "echinoderms",
-  "fact": "The blue starfish of Indo-Pacific reefs is a vivid blue and, like other Linckia stars, can regrow a whole new star from a single severed arm."
+  "fact": "The blue starfish of Indo-Pacific reefs is a vivid blue and can regrow lost arms; its close relative Linckia multifora can even grow a whole new star from a single severed arm."
  },
  {
   "id": "blue-stingray",
@@ -3077,17 +2988,6 @@
   "fact": "The bluespotted ribbontail ray has electric-blue spots and two venomous tail spines, and hides under table corals on Red Sea reefs."
  },
  {
-  "id": "bluestreak-cleaner-wrasse",
-  "name": "Bluestreak cleaner wrasse",
-  "aliases": [
-   "cleaner wrasse",
-   "Labroides dimidiatus"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The bluestreak cleaner wrasse runs cleaning stations where bigger fish queue to have parasites picked off, and it can recognise itself in a mirror."
- },
- {
   "id": "bluestripe-snapper",
   "name": "Bluestripe snapper",
   "aliases": [
@@ -3097,20 +2997,6 @@
   "kind": "creature",
   "group": "fish",
   "fact": "The bluestripe snapper, yellow with four blue stripes, schools in hundreds on Indian Ocean and Red Sea reefs."
- },
- {
-  "id": "bluntnose-sixgill-shark",
-  "name": "Bluntnose sixgill shark",
-  "aliases": [
-   "sixgill shark",
-   "sixgill",
-   "cow shark",
-   "Hexanchus griseus",
-   "six-gill shark"
-  ],
-  "kind": "creature",
-  "group": "sharks",
-  "fact": "Most sharks have five gill slits, but the bluntnose sixgill keeps six, a trait of ancient shark lineages, and lives mostly below 200 metres."
  },
  {
   "id": "bluntnose-stingray",
@@ -3202,7 +3088,7 @@
   ],
   "kind": "creature",
   "group": "fish",
-  "fact": "Bombay duck is not a duck but a lizardfish caught in huge numbers off western India, where it is dried on racks and fried."
+  "fact": "Bombay duck is not a duck but a lizardfish caught in huge numbers off western India, where it is dried in the open air and fried."
  },
  {
   "id": "bonaire-national-marine-park",
@@ -3246,18 +3132,6 @@
   "kind": "creature",
   "group": "sharks",
   "fact": "The bonnethead is the only shark known to eat and digest seagrass, which can make up over half of its diet."
- },
- {
-  "id": "bonnethead-shark",
-  "name": "Bonnethead shark",
-  "aliases": [
-   "bonnethead",
-   "shovelhead shark",
-   "Sphyrna tiburo"
-  ],
-  "kind": "creature",
-  "group": "sharks",
-  "fact": "The bonnethead, a small hammerhead of the Gulf of Mexico, is the only shark known to eat and digest seagrass."
  },
  {
   "id": "bony-eared-assfish",
@@ -3342,7 +3216,7 @@
   "aliases": [],
   "kind": "place",
   "group": "trenches",
-  "fact": "The Bougainville Trench lies south of Bougainville Island in the Solomon Sea and reaches more than 9,000 metres deep."
+  "fact": "The Bougainville Trench curves through the northern Solomon Sea west of Bougainville Island, continuing the New Britain Trench, whose Planet Deep exceeds 9,000 metres."
  },
  {
   "id": "bouvet-island",
@@ -3419,18 +3293,6 @@
   "kind": "creature",
   "group": "jellies",
   "fact": "The Australian box jellyfish has 24 eyes and a sting that can stop a human heart within minutes, and it is almost invisible in the water."
- },
- {
-  "id": "boxer-crab",
-  "name": "Boxer crab",
-  "aliases": [
-   "pom-pom crab",
-   "Lybia",
-   "Lybia tessellata"
-  ],
-  "kind": "creature",
-  "group": "crustaceans",
-  "fact": "The boxer crab holds a tiny stinging sea anemone in each claw like a pair of pom-poms and waves them at anything that threatens it."
  },
  {
   "id": "boxfish",
@@ -3522,7 +3384,7 @@
   ],
   "kind": "creature",
   "group": "worms",
-  "fact": "Bristle worms are segmented worms with paddle-like feet fringed with bristles, and they have been collected from the mud at the bottom of the Challenger Deep."
+  "fact": "Bristle worms are segmented worms with paddle-like feet fringed with bristles, and they have been collected from trench floors more than 10,000 metres down."
  },
  {
   "id": "bristlemouth",
@@ -3606,17 +3468,6 @@
   "kind": "creature",
   "group": "fish",
   "fact": "The brook trout is actually a char, with light spots on a dark background, and is the official state fish of several US states."
- },
- {
-  "id": "brown-crab",
-  "name": "Brown crab",
-  "aliases": [
-   "edible crab",
-   "Cancer pagurus"
-  ],
-  "kind": "creature",
-  "group": "crustaceans",
-  "fact": "The brown crab, with its pie-crust shell edge, is the main crab caught in the North Sea and the one usually sold dressed in Britain."
  },
  {
   "id": "brown-pelican",
@@ -3973,21 +3824,7 @@
   ],
   "kind": "creature",
   "group": "fish",
-  "fact": "The California halibut is a left-eyed flounder, though about 40 per cent of individuals turn out right-eyed, a quirk almost unique among flatfish."
- },
- {
-  "id": "california-market-squid",
-  "name": "California market squid",
-  "aliases": [
-   "market squid",
-   "opalescent inshore squid",
-   "Doryteuthis opalescens",
-   "Loligo opalescens",
-   "opalescent squid"
-  ],
-  "kind": "creature",
-  "group": "cephalopods",
-  "fact": "The California market squid lives less than a year, spawns once in huge mass gatherings and supports one of California's most valuable fisheries."
+  "fact": "The California halibut is a left-eyed flounder, yet nearly half of all individuals turn out right-eyed, a quirk almost unique among flatfish."
  },
  {
   "id": "california-sea-lion",
@@ -5036,7 +4873,7 @@
   ],
   "kind": "creature",
   "group": "dolphins",
-  "fact": "The Clymene dolphin of the Atlantic is the only marine mammal known to have arisen as a hybrid, from spinner and striped dolphins."
+  "fact": "The Clymene dolphin of the Atlantic is the only confirmed case of a marine mammal species that arose as a hybrid, from spinner and striped dolphins."
  },
  {
   "id": "cobb-seamount",
@@ -5091,7 +4928,7 @@
   ],
   "kind": "creature",
   "group": "crustaceans",
-  "fact": "The coconut crab is the largest land-living arthropod, climbs trees and cracks coconuts with claws that pinch harder than almost any animal bites."
+  "fact": "The coconut crab is the largest land-living arthropod, climbs trees and cracks coconuts with claws whose pinch, estimated at up to about 3,300 newtons, is stronger than most animals' bites."
  },
  {
   "id": "coconut-octopus",
@@ -5139,18 +4976,6 @@
   "kind": "creature",
   "group": "fish",
   "fact": "The coelacanth was thought extinct for 66 million years until a fisherman landed one off South Africa in 1938; it lives in caves around 200 metres down."
- },
- {
-  "id": "coffin-ray",
-  "name": "Coffin ray",
-  "aliases": [
-   "numbfish",
-   "Australian numbfish",
-   "Hypnos monopterygius"
-  ],
-  "kind": "creature",
-  "group": "rays",
-  "fact": "The coffin ray, or numbfish, of Australia is a stocky electric ray that buries itself in sand and can deliver a strong shock to anyone who steps on it."
  },
  {
   "id": "cog",
@@ -5246,17 +5071,6 @@
   "fact": "Commerson's dolphin, with its black-and-white panda colouring, lives off Patagonia and, oddly, in the far-off Kerguelen Islands."
  },
  {
-  "id": "common-carp",
-  "name": "Common carp",
-  "aliases": [
-   "carp",
-   "Cyprinus carpio"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The common carp, spread from Asia and Europe to waters worldwide, is one of the most damaging invasive fish, muddying lakes as it roots in the bottom."
- },
- {
   "id": "common-cuttlefish",
   "name": "Common cuttlefish",
   "aliases": [
@@ -5268,17 +5082,6 @@
   "kind": "creature",
   "group": "cephalopods",
   "fact": "The common cuttlefish has W-shaped pupils and can send rippling waves of colour across its skin even though it is thought to be colour-blind."
- },
- {
-  "id": "common-dab",
-  "name": "Dab",
-  "aliases": [
-   "common dab",
-   "Limanda limanda"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The dab is a small, rough-skinned flatfish that is one of the most abundant fish on the North Sea floor."
  },
  {
   "id": "common-dolphin",
@@ -5330,19 +5133,6 @@
   "fact": "The common octopus can squeeze through any gap larger than its beak and is a famous escape artist in aquariums and research labs."
  },
  {
-  "id": "common-periwinkle",
-  "name": "Common periwinkle",
-  "aliases": [
-   "periwinkle",
-   "winkle",
-   "Littorina littorea",
-   "Littorina"
-  ],
-  "kind": "creature",
-  "group": "molluscs",
-  "fact": "The common periwinkle is a shore snail that grazes on seaweed and algae; carried from Europe to North America, it is now abundant there too."
- },
- {
   "id": "common-prawn",
   "name": "Common prawn",
   "aliases": [
@@ -5362,30 +5152,6 @@
   "kind": "creature",
   "group": "rays",
   "fact": "The common skate, once abundant in European seas, can grow over 2 metres long and is now critically endangered."
- },
- {
-  "id": "common-snook",
-  "name": "Common snook",
-  "aliases": [
-   "snook",
-   "robalo",
-   "Centropomus undecimalis"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "Common snook spawn in salt water near inlets, and the young grow up in brackish creeks and freshwater rivers before moving back to the coast."
- },
- {
-  "id": "common-sole",
-  "name": "Common sole",
-  "aliases": [
-   "Dover sole",
-   "sole",
-   "Solea solea"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The Dover sole is the classic flatfish of French and English cooking, named for the port that supplied London's restaurants."
  },
  {
   "id": "common-starfish",
@@ -5666,7 +5432,7 @@
   ],
   "kind": "creature",
   "group": "fish",
-  "fact": "The coral trout is a red, blue-spotted grouper of the Great Barrier Reef, not a trout at all, and the most valuable fish in Queensland's reef fishery."
+  "fact": "The coral trout is a red, blue-spotted grouper of the Great Barrier Reef, not a trout at all, and one of the most valuable fish in Queensland's reef fishery."
  },
  {
   "id": "coralline-algae",
@@ -6231,7 +5997,7 @@
   ],
   "kind": "creature",
   "group": "dolphins",
-  "fact": "Dall's porpoise is one of the fastest small cetaceans, throwing up a rooster tail of spray, and Japan's hunt of it is the largest direct hunt of any cetacean."
+  "fact": "Dall's porpoise is one of the fastest small cetaceans, throwing up a rooster tail of spray, and Japan's hunt of it was for decades the largest direct hunt of any cetacean."
  },
  {
   "id": "dampier-strait",
@@ -6442,7 +6208,8 @@
   "aliases": [
    "mobula",
    "mobula ray",
-   "devilfish"
+   "devilfish",
+   "Munk's devil ray"
   ],
   "kind": "creature",
   "group": "rays",
@@ -6669,7 +6436,7 @@
   ],
   "kind": "place",
   "group": "features",
-  "fact": "The Dragon Hole in the South China Sea is the deepest known blue hole, reaching roughly 300 metres down into the reef."
+  "fact": "The Dragon Hole in the South China Sea plunges roughly 300 metres into the reef and was the deepest known blue hole until the Taam Ja' Blue Hole off Mexico was measured deeper in 2024."
  },
  {
   "id": "dragon-moray",
@@ -6755,7 +6522,7 @@
   ],
   "kind": "creature",
   "group": "reptiles",
-  "fact": "Dubois' sea snake of northern Australia is among the most venomous snakes known, yet it is placid and feeds on small reef fish."
+  "fact": "Dubois' sea snake of northern Australia has one of the most toxic venoms of any snake, yet it bites only when provoked and hunts fish and moray eels on the seabed."
  },
  {
   "id": "dugong",
@@ -7387,7 +7154,7 @@
   "aliases": [],
   "kind": "creature",
   "group": "fish",
-  "fact": "The ethereal snailfish was filmed at 8,145 metres in the Mariana Trench in 2014, a wispy, nearly transparent fish that has never been caught."
+  "fact": "The ethereal snailfish was filmed at 8,145 metres in the Mariana Trench in 2014, a wispy, nearly transparent fish known only from video, as none has yet been caught."
  },
  {
   "id": "eugenie-clark",
@@ -7411,17 +7178,6 @@
   "kind": "creature",
   "group": "fish",
   "fact": "The eulachon is a small smelt so oily that a dried fish can be lit like a candle, and it runs from the sea up Pacific north-west rivers each spring."
- },
- {
-  "id": "european-anchovy",
-  "name": "European anchovy",
-  "aliases": [
-   "anchovy",
-   "Engraulis encrasicolus"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The European anchovy supports huge fisheries in the Mediterranean and Black Sea and is cured in salt to make the anchovy fillets on pizzas."
  },
  {
   "id": "european-conger",
@@ -7480,18 +7236,6 @@
   "fact": "The European flying squid ranges from the Arctic to West Africa, and in some years swarms into Norwegian fjords in vast numbers."
  },
  {
-  "id": "european-green-crab",
-  "name": "European green crab",
-  "aliases": [
-   "green crab",
-   "shore crab",
-   "Carcinus maenas"
-  ],
-  "kind": "creature",
-  "group": "crustaceans",
-  "fact": "The European green crab has invaded both coasts of North America, Australia and South Africa, digging up eelgrass and eating young clams."
- },
- {
   "id": "european-hake",
   "name": "European hake",
   "aliases": [
@@ -7525,32 +7269,6 @@
   "fact": "The European perch lives in lakes and rivers and in the brackish Baltic Sea, and has become invasive in Australia as the redfin."
  },
  {
-  "id": "european-plaice",
-  "name": "Plaice",
-  "aliases": [
-   "European plaice",
-   "Pleuronectes platessa"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The plaice, with orange spots on its brown back, is the most important flatfish of the North Sea fishery."
- },
- {
-  "id": "european-sea-bass",
-  "name": "European sea bass",
-  "aliases": [
-   "sea bass",
-   "branzino",
-   "loup de mer",
-   "Dicentrarchus labrax",
-   "bar",
-   "lubina"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The European sea bass, sold as branzino in restaurants, is heavily farmed in the Mediterranean and is one of Europe's favourite white fish."
- },
- {
   "id": "european-spiny-lobster",
   "name": "European spiny lobster",
   "aliases": [
@@ -7562,18 +7280,6 @@
   "kind": "creature",
   "group": "crustaceans",
   "fact": "The European spiny lobster, or langouste, has no claws but long spiny antennae, and is the prized lobster of Mediterranean kitchens."
- },
- {
-  "id": "european-sprat",
-  "name": "Sprat",
-  "aliases": [
-   "European sprat",
-   "brisling",
-   "Sprattus sprattus"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The sprat is a small herring relative abundant in the North Sea and Baltic, smoked and tinned as brisling sardines."
  },
  {
   "id": "european-squid",
@@ -7599,11 +7305,12 @@
  },
  {
   "id": "ev-nautilus",
-  "name": "Nautilus",
+  "name": "Nautilus (research vessel)",
   "aliases": [
    "EV Nautilus",
    "E/V Nautilus",
-   "Exploration Vessel Nautilus"
+   "Exploration Vessel Nautilus",
+   "Nautilus"
   ],
   "kind": "vessel",
   "group": "vessels",
@@ -7995,18 +7702,6 @@
   "kind": "creature",
   "group": "fish",
   "fact": "Flashlight fish have bean-shaped pouches of glowing bacteria under each eye, which they blink by rolling or shuttering the organ."
- },
- {
-  "id": "flatback-sea-turtle",
-  "name": "Flatback sea turtle",
-  "aliases": [
-   "flatback",
-   "flatback turtle",
-   "Natator depressus"
-  ],
-  "kind": "creature",
-  "group": "turtles",
-  "fact": "The flatback sea turtle nests only in Australia and has a flattened shell with upturned edges."
  },
  {
   "id": "flatback-turtle",
@@ -8691,7 +8386,7 @@
   ],
   "kind": "creature",
   "group": "seabirds",
-  "fact": "The gentoo is the fastest-swimming bird, reaching about 36 kilometres per hour, and feeds on krill and fish close to shore."
+  "fact": "The gentoo is the fastest-swimming penguin, reaching about 36 kilometres per hour, and feeds on krill and fish close to shore."
  },
  {
   "id": "geoduck",
@@ -8921,24 +8616,6 @@
   "fact": "The giant larvacean builds a mucus house up to a metre across that filters the deep water and, when abandoned, sinks carbon and microplastics to the seafloor."
  },
  {
-  "id": "giant-manta-ray",
-  "name": "Giant manta ray",
-  "aliases": [
-   "giant manta",
-   "oceanic manta ray",
-   "oceanic manta",
-   "giant oceanic manta ray",
-   "Mobula birostris",
-   "Manta birostris",
-   "manta ray",
-   "manta",
-   "giant oceanic manta"
-  ],
-  "kind": "creature",
-  "group": "rays",
-  "fact": "The giant oceanic manta can span over 7 metres across and is the largest of all rays."
- },
- {
   "id": "giant-moray",
   "name": "Giant moray",
   "aliases": [
@@ -9065,18 +8742,6 @@
   "fact": "The giant trevally of Indian Ocean reefs has been filmed leaping to snatch terns out of the air, and anglers prize its brutal strength."
  },
  {
-  "id": "giant-triton",
-  "name": "Giant triton",
-  "aliases": [
-   "triton's trumpet",
-   "triton",
-   "Charonia tritonis"
-  ],
-  "kind": "creature",
-  "group": "molluscs",
-  "fact": "The giant triton is a half-metre sea snail that hunts crown-of-thorns starfish, and its shell has been blown as a trumpet for thousands of years."
- },
- {
   "id": "giant-tube-worm",
   "name": "Giant tube worm",
   "aliases": [
@@ -9100,7 +8765,7 @@
   ],
   "kind": "creature",
   "group": "cephalopods",
-  "fact": "The giant warty squid of Antarctic waters can reach more than 2 metres in total length and is a major food of sperm whales and toothfish."
+  "fact": "The giant warty squid of Antarctic waters can reach more than 2 metres in total length and is a food of sperm whales and other Southern Ocean predators."
  },
  {
   "id": "gila-trout",
@@ -9111,21 +8776,6 @@
   "kind": "creature",
   "group": "fish",
   "fact": "The Gila trout survives in a handful of mountain streams in New Mexico and Arizona and was among the first fish listed as endangered in the United States."
- },
- {
-  "id": "gilthead-bream",
-  "name": "Gilthead bream",
-  "aliases": [
-   "gilt-head bream",
-   "gilthead seabream",
-   "orata",
-   "dorade",
-   "Sparus aurata",
-   "sea bream"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The gilt-head bream, with a gold bar between its eyes, is one of the Mediterranean's most popular eating fish and is heavily farmed as orata or dorade."
  },
  {
   "id": "gizzard-shad",
@@ -9400,25 +9050,13 @@
    "percebes",
    "Pollicipes pollicipes",
    "goose neck barnacle",
-   "stalked barnacle"
-  ],
-  "kind": "creature",
-  "group": "crustaceans",
-  "fact": "Goose barnacles, percebes in Spain, are gathered from wave-battered rocks and are among the most expensive seafood in Europe; medieval writers thought geese hatched from them."
- },
- {
-  "id": "gooseneck-barnacle",
-  "name": "Gooseneck barnacle",
-  "aliases": [
-   "goose barnacle",
-   "goose neck barnacle",
-   "percebes",
+   "stalked barnacle",
    "leaf barnacle",
    "Pollicipes polymerus"
   ],
   "kind": "creature",
   "group": "crustaceans",
-  "fact": "Gooseneck barnacles cling to wave-battered rocks on a rubbery stalk and are a prized delicacy in Spain and Portugal."
+  "fact": "Goose barnacles, percebes in Spain, are gathered from wave-battered rocks and are among the most expensive seafood in Europe; medieval writers thought geese hatched from them."
  },
  {
   "id": "gorgonian",
@@ -9477,19 +9115,6 @@
   "fact": "The gray angelfish is a large, drab Caribbean angelfish that often follows divers; its juveniles are black with yellow bars."
  },
  {
-  "id": "gray-whale",
-  "name": "Gray whale",
-  "aliases": [
-   "grey whale",
-   "California gray whale",
-   "devil fish",
-   "Eschrichtius robustus"
-  ],
-  "kind": "creature",
-  "group": "whales",
-  "fact": "Gray whales make one of the longest migrations of any mammal, up to about 20,000 kilometres a year between Mexico and the Arctic."
- },
- {
   "id": "grayling",
   "name": "Grayling",
   "aliases": [
@@ -9532,17 +9157,6 @@
   "kind": "place",
   "group": "features",
   "fact": "The Great Bahama Bank is a vast limestone platform so shallow that its turquoise waters are plainly visible from space, with the Tongue of the Ocean cut into it."
- },
- {
-  "id": "great-barracuda",
-  "name": "Great barracuda",
-  "aliases": [
-   "barracuda",
-   "Sphyraena barracuda"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The great barracuda hangs motionless near Caribbean reefs and follows snorkellers out of curiosity, attracted by shiny objects."
  },
  {
   "id": "great-barrier-reef",
@@ -9732,17 +9346,6 @@
   "fact": "The green sawfish is one of the largest sawfish, reported at over 7 metres long, and is now critically endangered."
  },
  {
-  "id": "green-sea-turtle",
-  "name": "Green sea turtle",
-  "aliases": [
-   "green turtle",
-   "Chelonia mydas"
-  ],
-  "kind": "creature",
-  "group": "turtles",
-  "fact": "Green sea turtles are named for the green fat under their shells, a result of their diet of seagrass and algae."
- },
- {
   "id": "green-sea-urchin",
   "name": "Green sea urchin",
   "aliases": [
@@ -9896,7 +9499,8 @@
   "aliases": [
    "gray whale",
    "Eschrichtius robustus",
-   "California gray whale"
+   "California gray whale",
+   "devil fish"
   ],
   "kind": "creature",
   "group": "whales",
@@ -9965,7 +9569,7 @@
   "aliases": [],
   "kind": "place",
   "group": "bays",
-  "fact": "Guanabara Bay is the great bay on which Rio de Janeiro stands, named by Portuguese sailors who mistook it for a river mouth in January 1502."
+  "fact": "Guanabara Bay is the great bay on which Rio de Janeiro stands, named River of January by Portuguese sailors who reached it in January 1502 and, by tradition, took it for a river mouth."
  },
  {
   "id": "guanay-cormorant",
@@ -10271,7 +9875,7 @@
   ],
   "kind": "place",
   "group": "gulfs",
-  "fact": "The Gulf of St Lawrence is the largest estuary in the world, where the St Lawrence River meets the Atlantic, and it freezes over in winter."
+  "fact": "The Gulf of St Lawrence, where the St Lawrence River meets the Atlantic, is one of the largest estuarine systems in the world, and ice covers the whole gulf in January and February."
  },
  {
   "id": "gulf-of-taranto",
@@ -10379,7 +9983,8 @@
   "aliases": [
    "pelican eel",
    "Eurypharynx pelecanoides",
-   "umbrella-mouth gulper"
+   "umbrella-mouth gulper",
+   "pelican gulper"
   ],
   "kind": "creature",
   "group": "fish",
@@ -10750,17 +10355,6 @@
   "fact": "The Hawaiian Islands are the tops of volcanoes built over a hotspot, and Mauna Kea is the tallest mountain on Earth measured from its base on the sea floor."
  },
  {
-  "id": "hawaiian-bobtail-squid",
-  "name": "Hawaiian bobtail squid",
-  "aliases": [
-   "Euprymna scolopes",
-   "bobtail squid"
-  ],
-  "kind": "creature",
-  "group": "cephalopods",
-  "fact": "The Hawaiian bobtail squid houses glowing Vibrio bacteria in a light organ and uses them to erase its own shadow on moonlit nights."
- },
- {
   "id": "hawaiian-emperor-seamount-chain",
   "name": "Hawaiian-Emperor seamount chain",
   "aliases": [
@@ -10792,18 +10386,6 @@
   "kind": "creature",
   "group": "fish",
   "fact": "Hawkfish perch on coral heads using their thick pectoral fins, watching for prey like a hawk before darting out to grab it."
- },
- {
-  "id": "hawksbill-sea-turtle",
-  "name": "Hawksbill sea turtle",
-  "aliases": [
-   "hawksbill",
-   "hawksbill turtle",
-   "Eretmochelys imbricata"
-  ],
-  "kind": "creature",
-  "group": "turtles",
-  "fact": "Hawksbills eat sea sponges that are toxic to most animals, and their patterned shells were the source of 'tortoiseshell'."
  },
  {
   "id": "hawksbill-turtle",
@@ -10852,7 +10434,7 @@
   ],
   "kind": "creature",
   "group": "dolphins",
-  "fact": "Heaviside's dolphin, found only off Namibia and South Africa, carries the misspelled name of a ship's captain who brought a specimen to Britain."
+  "fact": "Heaviside's dolphin, found only off Namibia and South Africa, is named after the wrong man: its specimen came from a Captain Haviside, but was credited to a surgeon called Heaviside."
  },
  {
   "id": "hebrides",
@@ -11376,7 +10958,7 @@
   ],
   "kind": "creature",
   "group": "fish",
-  "fact": "The humpback anglerfish is the classic toothy black angler that appears in Finding Nemo, and the male is about a tenth the length of the female."
+  "fact": "The humpback anglerfish is the classic toothy black seadevil of the deep; females reach about 15 centimetres while the males are only around 2 centimetres long."
  },
  {
   "id": "humpback-dolphin",
@@ -11413,20 +10995,6 @@
   "kind": "creature",
   "group": "whales",
   "fact": "Male humpbacks sing long, complex songs, and the scientific name Megaptera novaeangliae means 'big-winged New Englander'."
- },
- {
-  "id": "humphead-wrasse",
-  "name": "Humphead wrasse",
-  "aliases": [
-   "Napoleon wrasse",
-   "Maori wrasse",
-   "Napoleon fish",
-   "Napoleonfish",
-   "Cheilinus undulatus"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The humphead wrasse can grow to about 2 metres, lives for decades, and crushes and eats toxic prey such as sea hares, boxfish and crown-of-thorns starfish."
  },
  {
   "id": "hydroid",
@@ -11933,7 +11501,7 @@
   ],
   "kind": "creature",
   "group": "seals",
-  "fact": "The Japanese sea lion bred on the coasts of Japan and Korea until hunting wiped it out, with the last confirmed sighting in the 1950s."
+  "fact": "The Japanese sea lion bred on beaches of Japan and Korea until hunting wiped it out; the last reliable sightings were in the 1950s, with a final juvenile reported in 1974."
  },
  {
   "id": "japanese-spanish-mackerel",
@@ -12338,7 +11906,8 @@
    "Alaskan king crab",
    "Alaska king crab",
    "Paralithodes camtschaticus",
-   "taraba-gani"
+   "taraba-gani",
+   "Kamchatka crab"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -12565,7 +12134,7 @@
   "aliases": [],
   "kind": "creature",
   "group": "reptiles",
-  "fact": "Kronosaurus was a Cretaceous pliosaur from Australia and Colombia whose skull alone measured over 2 metres."
+  "fact": "Kronosaurus was a Cretaceous pliosaur from Queensland, Australia, whose skull alone is estimated at over 2 metres long."
  },
  {
   "id": "kuhli-loach",
@@ -13018,26 +12587,14 @@
   "fact": "The leather star has a smooth, leathery skin and is said to smell of garlic when it is lifted from the water."
  },
  {
-  "id": "leatherback-sea-turtle",
-  "name": "Leatherback sea turtle",
-  "aliases": [
-   "leatherback",
-   "leatherback turtle",
-   "leathery turtle",
-   "lute turtle",
-   "Dermochelys coriacea"
-  ],
-  "kind": "creature",
-  "group": "turtles",
-  "fact": "The leatherback is the largest turtle, can weigh over 600 kilograms, and dives to over 1,000 metres hunting jellyfish."
- },
- {
   "id": "leatherback-turtle",
   "name": "Leatherback turtle",
   "aliases": [
    "leatherback",
    "leathery turtle",
-   "Dermochelys coriacea"
+   "Dermochelys coriacea",
+   "Leatherback sea turtle",
+   "lute turtle"
   ],
   "kind": "creature",
   "group": "turtles",
@@ -13142,18 +12699,6 @@
   "kind": "creature",
   "group": "rays",
   "fact": "The lesser electric ray of the western Atlantic is small enough to hold in two hands yet can deliver a shock of around 14 to 37 volts."
- },
- {
-  "id": "lesser-weever",
-  "name": "Lesser weever",
-  "aliases": [
-   "weever fish",
-   "weever",
-   "Echiichthys vipera"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The lesser weever buries itself in North Sea beach sand with venomous spines raised, and stings bathers who tread on it."
  },
  {
   "id": "lettuce-coral",
@@ -13315,7 +12860,8 @@
    "Pterois",
    "Pterois volitans",
    "turkeyfish",
-   "firefish"
+   "firefish",
+   "common lionfish"
   ],
   "kind": "creature",
   "group": "fish",
@@ -13423,18 +12969,6 @@
   "kind": "creature",
   "group": "crustaceans",
   "fact": "Lobsters keep growing throughout their lives by moulting their shells, and some may live for decades."
- },
- {
-  "id": "loggerhead-sea-turtle",
-  "name": "Loggerhead sea turtle",
-  "aliases": [
-   "loggerhead",
-   "loggerhead turtle",
-   "Caretta caretta"
-  ],
-  "kind": "creature",
-  "group": "turtles",
-  "fact": "Loggerheads have massive jaws for crushing clams and crabs and migrate across the whole Pacific from Japan to Mexico."
  },
  {
   "id": "loggerhead-turtle",
@@ -13965,7 +13499,10 @@
    "sea cow",
    "Trichechus",
    "West Indian manatee",
-   "Florida manatee"
+   "Florida manatee",
+   "Caribbean manatee",
+   "Antillean manatee",
+   "Trichechus manatus"
   ],
   "kind": "creature",
   "group": "mammals",
@@ -14026,17 +13563,6 @@
   "fact": "The mangrove monitor is a lizard of Australia and the western Pacific that swims through mangrove swamps and has a salt-excreting gland in its nose."
  },
  {
-  "id": "mangrove-rivulus",
-  "name": "Mangrove rivulus",
-  "aliases": [
-   "mangrove killifish",
-   "Kryptolebias marmoratus"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The mangrove rivulus can live out of water for weeks, breathing through its skin while hiding in damp logs and leaf litter."
- },
- {
   "id": "mangrove-whipray",
   "name": "Mangrove whipray",
   "aliases": [
@@ -14081,7 +13607,10 @@
    "giant manta ray",
    "giant oceanic manta ray",
    "reef manta ray",
-   "oceanic manta"
+   "oceanic manta",
+   "oceanic manta ray",
+   "Manta birostris",
+   "giant oceanic manta"
   ],
   "kind": "creature",
   "group": "rays",
@@ -14176,7 +13705,9 @@
   "name": "Mariana Trench",
   "aliases": [
    "Marianas Trench",
-   "Challenger Deep"
+   "Challenger Deep",
+   "Mariana",
+   "Marianas"
   ],
   "kind": "place",
   "group": "trenches",
@@ -14199,17 +13730,6 @@
   "kind": "person",
   "group": "people",
   "fact": "Marie Tharp drew the first map of the entire ocean floor and spotted the rift valley running down the Mid-Atlantic Ridge, key evidence for continental drift."
- },
- {
-  "id": "marine-angelfish",
-  "name": "Angelfish",
-  "aliases": [
-   "marine angelfish",
-   "Pomacanthidae"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "Marine angelfish are flat, brightly coloured reef fish with a sharp spine on the gill cover that separates them from butterflyfish."
  },
  {
   "id": "marine-flatworm",
@@ -14266,7 +13786,9 @@
   "aliases": [
    "opalescent squid",
    "California market squid",
-   "Doryteuthis opalescens"
+   "Doryteuthis opalescens",
+   "opalescent inshore squid",
+   "Loligo opalescens"
   ],
   "kind": "creature",
   "group": "cephalopods",
@@ -14355,7 +13877,7 @@
   ],
   "kind": "creature",
   "group": "fish",
-  "fact": "The bluecheek butterflyfish is a lemon-yellow Red Sea butterflyfish with a blue-black patch over its eye, usually seen in pairs."
+  "fact": "The masked butterflyfish lives only in the Red Sea and Gulf of Aden, where it is usually seen in pairs sheltering under table corals."
  },
  {
   "id": "masked-crab",
@@ -14470,7 +13992,7 @@
   ],
   "kind": "creature",
   "group": "fish",
-  "fact": "The Mediterranean damselfish is the only damselfish in the Mediterranean, a dark fish whose juveniles are brilliant blue, common in shoals above rocks."
+  "fact": "The Mediterranean damselfish is the only native damselfish in the Mediterranean, a dark fish whose juveniles are brilliant blue, common in shoals above rocks."
  },
  {
   "id": "mediterranean-monk-seal",
@@ -14503,7 +14025,7 @@
   ],
   "kind": "creature",
   "group": "fish",
-  "fact": "The Mediterranean parrotfish is the only parrotfish in the Mediterranean, prized by the Romans, and is spreading north as the sea warms."
+  "fact": "The Mediterranean parrotfish is the only native parrotfish in the Mediterranean, prized by the Romans, and is spreading north as the sea warms."
  },
  {
   "id": "mediterranean-sea",
@@ -14754,24 +14276,12 @@
   "fact": "The Russian submersibles Mir-1 and Mir-2 filmed the Titanic wreck for James Cameron's 1997 film and in 2007 planted a flag on the sea floor at the North Pole."
  },
  {
-  "id": "mobula-ray",
-  "name": "Mobula ray",
-  "aliases": [
-   "devil ray",
-   "mobula",
-   "Munk's devil ray"
-  ],
-  "kind": "creature",
-  "group": "rays",
-  "fact": "Mobula rays, or devil rays, gather in schools of thousands off Mexico and leap metres into the air, flipping and belly-flopping back down."
- },
- {
   "id": "molasses-reef",
   "name": "Molasses Reef",
   "aliases": [],
   "kind": "place",
   "group": "reefs",
-  "fact": "Molasses Reef off Key Largo, Florida, is one of the most visited reefs in the world, lying inside the Florida Keys National Marine Sanctuary."
+  "fact": "Molasses Reef off Key Largo, Florida, lies inside the Florida Keys National Marine Sanctuary and is one of the most popular dive and snorkel sites in the Keys."
  },
  {
   "id": "mole-crab",
@@ -15836,7 +15346,9 @@
    "Pandalus borealis",
    "coldwater prawn",
    "cold-water prawn",
-   "deepwater prawn"
+   "deepwater prawn",
+   "amaebi",
+   "sweet shrimp"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -15862,46 +15374,6 @@
   "kind": "creature",
   "group": "dolphins",
   "fact": "The northern right whale dolphin of the North Pacific has no dorsal fin and skims along the surface in low, long leaps."
- },
- {
-  "id": "northern-shrimp",
-  "name": "Northern shrimp",
-  "aliases": [
-   "northern prawn",
-   "pink shrimp",
-   "coldwater prawn",
-   "deepwater prawn",
-   "Pandalus borealis",
-   "amaebi",
-   "sweet shrimp"
-  ],
-  "kind": "creature",
-  "group": "crustaceans",
-  "fact": "Northern shrimp start life as males and change into females as they age, and they are the main cold-water prawn on sale in Europe."
- },
- {
-  "id": "northern-snakehead",
-  "name": "Northern snakehead",
-  "aliases": [
-   "Channa argus",
-   "snakehead"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The northern snakehead can survive for days out of water if kept moist and has become an invasive species in North America."
- },
- {
-  "id": "norway-lobster",
-  "name": "Norway lobster",
-  "aliases": [
-   "langoustine",
-   "scampi",
-   "Dublin Bay prawn",
-   "Nephrops norvegicus"
-  ],
-  "kind": "creature",
-  "group": "crustaceans",
-  "fact": "The Norway lobster lives in burrows on muddy North Sea floors and is sold as langoustine or scampi."
  },
  {
   "id": "norway-pout",
@@ -15948,7 +15420,8 @@
   "name": "Numbfish",
   "aliases": [
    "coffin ray",
-   "Hypnos monopterygius"
+   "Hypnos monopterygius",
+   "Australian numbfish"
   ],
   "kind": "creature",
   "group": "rays",
@@ -17138,19 +16611,6 @@
   "fact": "A pelican scoops fish in a throat pouch that can hold around 10 litres of water, which it drains before swallowing the catch."
  },
  {
-  "id": "pelican-eel",
-  "name": "Pelican eel",
-  "aliases": [
-   "gulper eel",
-   "umbrella-mouth gulper",
-   "Eurypharynx pelecanoides",
-   "pelican gulper"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The gulper eel, or pelican eel, lives in the deep sea with a mouth far bigger than its body, which it can balloon open to engulf prey."
- },
- {
   "id": "penguin",
   "name": "Penguin",
   "aliases": [],
@@ -17358,7 +16818,7 @@
   ],
   "kind": "creature",
   "group": "fish",
-  "fact": "The Picasso triggerfish wears a pattern of blue, black and yellow stripes that looks painted on, and it grunts when caught."
+  "fact": "The Picasso triggerfish wears a pattern of blue, black and yellow stripes that looks painted on, and it drums by beating its pectoral fins against its swim bladder."
  },
  {
   "id": "pictus-catfish",
@@ -17551,7 +17011,8 @@
   "name": "Piranha",
   "aliases": [
    "red-bellied piranha",
-   "Pygocentrus"
+   "Pygocentrus",
+   "Pygocentrus nattereri"
   ],
   "kind": "creature",
   "group": "fish",
@@ -17610,18 +17071,6 @@
   "fact": "The plain bonito is an unstriped, deep-bodied bonito of the eastern Atlantic and Mediterranean."
  },
  {
-  "id": "plainfin-midshipman",
-  "name": "Plainfin midshipman",
-  "aliases": [
-   "midshipman",
-   "midshipman fish",
-   "Porichthys notatus"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The male plainfin midshipman hums for hours at night to lure females to his nest under a rock, then guards the eggs; the hum has kept houseboat owners awake in California."
- },
- {
   "id": "plankton",
   "name": "Plankton",
   "aliases": [
@@ -17666,19 +17115,6 @@
   "kind": "creature",
   "group": "fish",
   "fact": "Plecos gulp air at the surface and absorb the oxygen through their stomach lining when the water runs low in oxygen."
- },
- {
-  "id": "plecostomus",
-  "name": "Plecostomus",
-  "aliases": [
-   "pleco",
-   "common pleco",
-   "suckermouth catfish",
-   "Hypostomus plecostomus"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The plecostomus, the aquarium 'algae eater', has been released into Florida, Texas and Mexican rivers, where its burrows collapse banks."
  },
  {
   "id": "plesiosaur",
@@ -17769,7 +17205,7 @@
   ],
   "kind": "creature",
   "group": "fish",
-  "fact": "Pollock, a cod relative, produce grunts and knocks with swim-bladder muscles during spawning, much like cod and haddock."
+  "fact": "Pollock, a cod relative, produce thumping sounds with their swim bladder when handled or cornered, a trait shared with cod and haddock, which grunt during spawning."
  },
  {
   "id": "pom-pom-crab",
@@ -18121,7 +17557,8 @@
   "id": "puerto-rico-trench",
   "name": "Puerto Rico Trench",
   "aliases": [
-   "Milwaukee Deep"
+   "Milwaukee Deep",
+   "Puerto Rico"
   ],
   "kind": "place",
   "group": "trenches",
@@ -18352,20 +17789,6 @@
   "fact": "Blackbeard's flagship Queen Anne's Revenge ran aground and was lost off Beaufort, North Carolina, in 1718; its wreck was found in 1996."
  },
  {
-  "id": "queen-conch",
-  "name": "Queen conch",
-  "aliases": [
-   "conch",
-   "pink conch",
-   "Strombus gigas",
-   "Aliger gigas",
-   "Lobatus gigas"
-  ],
-  "kind": "creature",
-  "group": "molluscs",
-  "fact": "The queen conch is a large Caribbean sea snail with a pink-lipped shell that is blown as a horn, and it hops along on a claw-like foot."
- },
- {
   "id": "queen-parrotfish",
   "name": "Queen parrotfish",
   "aliases": [
@@ -18590,22 +18013,13 @@
   "aliases": [
    "two-spot red snapper",
    "twinspot snapper",
-   "Lutjanus bohar"
+   "Lutjanus bohar",
+   "bohar snapper",
+   "bohar"
   ],
   "kind": "creature",
   "group": "fish",
   "fact": "The red bass is a big reef snapper that so often carries ciguatera poison that it is a no-take species in Queensland, banned from being kept or sold."
- },
- {
-  "id": "red-bellied-piranha",
-  "name": "Piranha",
-  "aliases": [
-   "red-bellied piranha",
-   "Pygocentrus nattereri"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The red-bellied piranha of the Amazon has a bite among the strongest for its size of any animal, but mostly scavenges and eats fins."
  },
  {
   "id": "red-cod",
@@ -18684,30 +18098,6 @@
   "kind": "creature",
   "group": "fish",
   "fact": "The red hind is a small Caribbean grouper with red spots that gathers to spawn at traditional sites and is a staple catch in the Virgin Islands."
- },
- {
-  "id": "red-king-crab",
-  "name": "Red king crab",
-  "aliases": [
-   "Paralithodes camtschaticus",
-   "Kamchatka crab",
-   "king crab"
-  ],
-  "kind": "creature",
-  "group": "crustaceans",
-  "fact": "The red king crab can span 1.8 metres leg to leg and has invaded the Barents Sea since Soviet scientists introduced it there in the 1960s."
- },
- {
-  "id": "red-lionfish",
-  "name": "Lionfish",
-  "aliases": [
-   "red lionfish",
-   "Pterois volitans",
-   "common lionfish"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The lionfish, a venomous Indo-Pacific native, was released from aquariums off Florida and has invaded the whole Caribbean and Gulf of Mexico."
  },
  {
   "id": "red-lipped-batfish",
@@ -18895,21 +18285,6 @@
   "kind": "creature",
   "group": "fish",
   "fact": "The regal angelfish, striped in orange, white and blue, is a shy sponge-eater of Indo-Pacific reefs that is notoriously difficult to keep in aquariums."
- },
- {
-  "id": "regal-blue-tang",
-  "name": "Regal blue tang",
-  "aliases": [
-   "blue tang",
-   "palette surgeonfish",
-   "regal tang",
-   "hippo tang",
-   "Dory",
-   "Paracanthurus hepatus"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The regal blue tang, Dory in Finding Nemo, carries a sharp scalpel-like spine on each side of its tail and lives on Indo-Pacific reefs."
  },
  {
   "id": "remora",
@@ -19740,19 +19115,6 @@
   "fact": "Sand hoppers are tiny shrimp-like crustaceans that live in and feed on rotting seaweed washed up along the strandline."
  },
  {
-  "id": "sand-lance",
-  "name": "Sand lance",
-  "aliases": [
-   "sand eel",
-   "sandeel",
-   "sandlance",
-   "Ammodytes"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "Sand lances bury themselves in the seabed at night and are the main food of North Sea puffins, kittiwakes and porpoises."
- },
- {
   "id": "sand-tiger-shark",
   "name": "Sand tiger shark",
   "aliases": [
@@ -20109,7 +19471,10 @@
   "aliases": [
    "European sea bass",
    "branzino",
-   "Dicentrarchus labrax"
+   "Dicentrarchus labrax",
+   "loup de mer",
+   "bar",
+   "lubina"
   ],
   "kind": "creature",
   "group": "fish",
@@ -20133,7 +19498,9 @@
    "gilthead sea bream",
    "gilt-head bream",
    "Sparus aurata",
-   "dorade"
+   "dorade",
+   "gilthead seabream",
+   "orata"
   ],
   "kind": "creature",
   "group": "fish",
@@ -20153,18 +19520,6 @@
   "kind": "creature",
   "group": "molluscs",
   "fact": "Sea butterflies are tiny swimming snails that flap wing-like flaps, and their thin shells are threatened by ocean acidification."
- },
- {
-  "id": "sea-catfish",
-  "name": "Sea catfish",
-  "aliases": [
-   "hardhead catfish",
-   "hardhead sea catfish",
-   "Ariopsis felis"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The hardhead sea catfish of the Gulf of Mexico is an angler's nuisance with venomous spines, and the male broods the eggs in his mouth."
  },
  {
   "id": "sea-chub",
@@ -20252,19 +19607,6 @@
   "kind": "creature",
   "group": "crustaceans",
   "fact": "The sea firefly is a 3-millimetre ostracod that squirts glowing blue mucus; dried ones were used by Japanese soldiers as a dim reading light."
- },
- {
-  "id": "sea-goldie",
-  "name": "Sea goldie",
-  "aliases": [
-   "anthias",
-   "lyretail anthias",
-   "scalefin anthias",
-   "Pseudanthias squamipinnis"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "Sea goldies, the orange anthias that cloud Red Sea reef walls, live in harems, and when the purple male dies the largest female turns into a male."
  },
  {
   "id": "sea-gooseberry",
@@ -20607,16 +19949,6 @@
   "kind": "creature",
   "group": "crustaceans",
   "fact": "The sea slater is a large woodlouse of the splash zone that hides in crevices by day and scavenges over the rocks at night."
- },
- {
-  "id": "sea-slug",
-  "name": "Sea slug",
-  "aliases": [
-   "nudibranch"
-  ],
-  "kind": "creature",
-  "group": "molluscs",
-  "fact": "Sea slugs include nudibranchs that store stinging cells from the anemones they eat and use them in their own defence."
  },
  {
   "id": "sea-snail",
@@ -21141,21 +20473,6 @@
   "fact": "The shortbill spearfish is a slim, fast billfish of the Pacific with a bill barely longer than its lower jaw."
  },
  {
-  "id": "shortfin-mako",
-  "name": "Shortfin mako",
-  "aliases": [
-   "shortfin mako shark",
-   "blue pointer",
-   "bonito shark",
-   "Isurus oxyrinchus",
-   "mako",
-   "mako shark"
-  ],
-  "kind": "creature",
-  "group": "sharks",
-  "fact": "Shortfin makos keep their bodies warmer than the surrounding water, which powers their famous bursts of speed."
- },
- {
   "id": "shovelnose-guitarfish",
   "name": "Shovelnose guitarfish",
   "aliases": [
@@ -21213,19 +20530,6 @@
   "fact": "The Siamese algae eater is valued by aquarists because it is one of the few fish that eats stringy black beard algae."
  },
  {
-  "id": "siamese-fighting-fish",
-  "name": "Siamese fighting fish",
-  "aliases": [
-   "betta",
-   "fighting fish",
-   "Betta splendens",
-   "betta fish"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The male Siamese fighting fish builds a nest of bubbles, wraps the female to collect the eggs in his mouth, spits them into the nest and guards it."
- },
- {
   "id": "sicklefin-lemon-shark",
   "name": "Sicklefin lemon shark",
   "aliases": [
@@ -21266,17 +20570,6 @@
   "kind": "creature",
   "group": "sharks",
   "fact": "Silky sharks get their name from the smooth feel of their skin and are among the most heavily fished sharks in the world."
- },
- {
-  "id": "silver-arowana",
-  "name": "Silver arowana",
-  "aliases": [
-   "Osteoglossum bicirrhosum",
-   "arowana"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The silver arowana of the Amazon can breathe air with its swim bladder, and the male broods the eggs in his mouth."
  },
  {
   "id": "silver-carp",
@@ -21381,7 +20674,9 @@
    "bluntnose sixgill shark",
    "Hexanchus griseus",
    "cow shark",
-   "bluntnose sixgill"
+   "bluntnose sixgill",
+   "sixgill",
+   "six-gill shark"
   ],
   "kind": "creature",
   "group": "sharks",
@@ -21453,7 +20748,7 @@
   ],
   "kind": "creature",
   "group": "echinoderms",
-  "fact": "The slate pencil urchin has thick, blunt reddish spines that were once used as chalk to write on slates."
+  "fact": "The slate pencil urchin's thick, blunt reddish spines look like old-fashioned slate pencils and have been used to make wind chimes and jewellery."
  },
  {
   "id": "sleeper-shark",
@@ -21486,17 +20781,6 @@
   "kind": "creature",
   "group": "fish",
   "fact": "The slender seahorse of the Caribbean and Brazil is a popular aquarium species that comes in yellow, orange, red and black."
- },
- {
-  "id": "slender-snipe-eel",
-  "name": "Slender snipe eel",
-  "aliases": [
-   "snipe eel",
-   "Nemichthys scolopaceus"
-  ],
-  "kind": "creature",
-  "group": "eels",
-  "fact": "The slender snipe eel has bird-like jaws so long and thin that they curve apart and cannot close, and its body reaches 1.5 metres but is only as thick as a finger."
  },
  {
   "id": "slender-tuna",
@@ -21564,7 +20848,7 @@
   ],
   "kind": "creature",
   "group": "molluscs",
-  "fact": "Slit shell snails of deep tropical slopes belong to a family that first appeared more than 500 million years ago, and their shells are prized by collectors."
+  "fact": "Slit shell snails of deep tropical slopes belong to a family with a fossil record back to the Cambrian, around 500 million years ago, and their shells are prized by collectors."
  },
  {
   "id": "sloop",
@@ -21642,7 +20926,7 @@
   ],
   "kind": "creature",
   "group": "fish",
-  "fact": "The smooth handfish of Tasmania was declared extinct in 2020, the first modern marine bony fish to be lost, known from a single specimen collected in 1802."
+  "fact": "The smooth handfish of Tasmania, known from one specimen collected in 1802, was declared extinct in 2020, the first modern marine fish so listed, though the IUCN later reset it to data deficient."
  },
  {
   "id": "smooth-hound",
@@ -21706,7 +20990,8 @@
   "name": "Snakehead",
   "aliases": [
    "Channa",
-   "northern snakehead"
+   "northern snakehead",
+   "Channa argus"
   ],
   "kind": "creature",
   "group": "fish",
@@ -21764,7 +21049,8 @@
   "name": "Snook",
   "aliases": [
    "common snook",
-   "Centropomus undecimalis"
+   "Centropomus undecimalis",
+   "robalo"
   ],
   "kind": "creature",
   "group": "fish",
@@ -22522,7 +21808,7 @@
   ],
   "kind": "creature",
   "group": "sharks",
-  "fact": "The spotted wobbegong grows to about 3 metres and lies camouflaged on Australian reefs, occasionally biting divers who step on it."
+  "fact": "The spotted wobbegong lies camouflaged on Australian reefs, usually under 2 metres long though reported up to about 3, and has bitten people who stepped on or disturbed it."
  },
  {
   "id": "sprat",
@@ -23188,17 +22474,6 @@
   "fact": "The sunflower sea star has up to 24 arms, speeds along on thousands of tube feet and eats sea urchins, but a wasting disease wiped out most of them after 2013."
  },
  {
-  "id": "sunflower-star",
-  "name": "Sunflower star",
-  "aliases": [
-   "sunflower sea star",
-   "Pycnopodia helianthoides"
-  ],
-  "kind": "creature",
-  "group": "echinoderms",
-  "fact": "The sunflower star can have up to 24 arms and a metre-wide span, and was nearly wiped out by sea star wasting disease after 2013."
- },
- {
   "id": "supergiant-amphipod",
   "name": "Supergiant amphipod",
   "aliases": [
@@ -23451,7 +22726,7 @@
   ],
   "kind": "creature",
   "group": "sharks",
-  "fact": "The tasselled wobbegong has a fringe of branching skin lobes around its head and has been photographed swallowing a bamboo shark whole."
+  "fact": "The tasselled wobbegong has a fringe of branching skin lobes around its head, and one was photographed on the Great Barrier Reef with a whole bamboo shark head-first in its jaws."
  },
  {
   "id": "tautog",
@@ -23541,7 +22816,7 @@
   ],
   "kind": "creature",
   "group": "seabirds",
-  "fact": "Thick-billed murres dive deeper than any other flying bird, to over 200 metres, in Arctic and sub-Arctic seas."
+  "fact": "Thick-billed murres of Arctic and sub-Arctic seas are among the deepest-diving flying birds, with dives recorded to 150 metres and beyond."
  },
  {
   "id": "thimble-jellyfish",
@@ -23758,7 +23033,7 @@
   ],
   "kind": "creature",
   "group": "fish",
-  "fact": "The tiger tail seahorse of South-East Asia is named for the dark bands on its tail and was once the mainstay of the Philippine seahorse trade."
+  "fact": "The tiger tail seahorse of South-East Asia is named for the dark bands on its tail and, with the common seahorse, makes up most of the Philippine seahorse catch."
  },
  {
   "id": "tilapia",
@@ -24038,7 +23313,7 @@
   ],
   "kind": "creature",
   "group": "crustaceans",
-  "fact": "Triops tadpole shrimp hatch in temporary pools from eggs that can wait years in dry dust, and their body plan dates back about 220 million years."
+  "fact": "Triops tadpole shrimp hatch in temporary pools from eggs that can wait years in dry dust, and tadpole shrimp that look much like them were already around more than 200 million years ago."
  },
  {
   "id": "tripletail",
@@ -24156,17 +23431,6 @@
   "kind": "place",
   "group": "reefs",
   "fact": "The Tubbataha Reefs in the Philippines' Sulu Sea are two coral atolls so rich in life that they were made a UNESCO World Heritage Site."
- },
- {
-  "id": "tubbataha-reefs-natural-park",
-  "name": "Tubbataha Reefs Natural Park",
-  "aliases": [
-   "Tubbataha",
-   "Tubbataha Reef"
-  ],
-  "kind": "place",
-  "group": "parks",
-  "fact": "Tubbataha, two coral atolls in the middle of the Sulu Sea in the Philippines, can only be dived by liveaboard for a few months each year."
  },
  {
   "id": "tube-anemone",
@@ -24307,20 +23571,6 @@
   "fact": "The Red Sea clownfish, with two white bars on an orange body, is found only in the Red Sea and the Gulf of Aden."
  },
  {
-  "id": "two-spot-red-snapper",
-  "name": "Two-spot red snapper",
-  "aliases": [
-   "bohar snapper",
-   "bohar",
-   "Lutjanus bohar",
-   "red bass",
-   "twinspot snapper"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The two-spot red snapper, or bohar, is a big Indo-Pacific snapper that forms massive spawning schools, and its flesh sometimes carries ciguatera poison."
- },
- {
   "id": "tylosaurus",
   "name": "Tylosaurus",
   "aliases": [],
@@ -24386,14 +23636,15 @@
  },
  {
   "id": "uss-albatross",
-  "name": "Albatross",
+  "name": "Albatross (research ship)",
   "aliases": [
    "USFC Albatross",
-   "USS Albatross"
+   "USS Albatross",
+   "Albatross"
   ],
   "kind": "vessel",
   "group": "vessels",
-  "fact": "The Albatross, launched in 1882, was the first ship built specifically for marine research and dredged up thousands of new species."
+  "fact": "The Albatross, launched in 1882, is often called the first ship built specifically for marine research, and it dredged up thousands of new species."
  },
  {
   "id": "uss-arizona",
@@ -24604,7 +23855,7 @@
   ],
   "kind": "creature",
   "group": "cephalopods",
-  "fact": "The veined squid is the main squid caught around Britain and Ireland, and can hover in place and change colour in an instant."
+  "fact": "The veined squid is one of the main squid caught around Britain and Ireland, and can hover in place and change colour in an instant."
  },
  {
   "id": "velvet-belly-lanternshark",
@@ -24663,7 +23914,7 @@
   ],
   "kind": "creature",
   "group": "crustaceans",
-  "fact": "Vent barnacles grow in dense clusters on vent chimneys, with long bristly feeding legs that host the bacteria they feed on."
+  "fact": "Vent barnacles grow in dense clusters on vent chimneys, with long bristly feeding legs coated in filamentous bacteria that are thought to be part of their diet."
  },
  {
   "id": "vent-clam",
@@ -24871,7 +24122,7 @@
   "aliases": [],
   "kind": "place",
   "group": "ports",
-  "fact": "Vigo, in Galicia, is Europe's biggest fishing port, landing fish from fleets that work the Atlantic as far away as the Falklands."
+  "fact": "Vigo, in Galicia, is one of the biggest fishing ports in the world, landing fish from fleets that work the Atlantic as far away as the Falklands."
  },
  {
   "id": "violet-sea-snail",
@@ -25157,20 +24408,6 @@
   "kind": "place",
   "group": "currents",
   "fact": "The West Australian Current is the cold northward flow on the eastern side of the Indian Ocean gyre, offshore of the warm Leeuwin Current."
- },
- {
-  "id": "west-indian-manatee",
-  "name": "West Indian manatee",
-  "aliases": [
-   "Florida manatee",
-   "Caribbean manatee",
-   "Antillean manatee",
-   "Trichechus manatus",
-   "manatee"
-  ],
-  "kind": "creature",
-  "group": "mammals",
-  "fact": "West Indian manatees crowd into Florida's warm springs in winter because they cannot survive long in water below about 20 degrees Celsius."
  },
  {
   "id": "whale",
@@ -25566,25 +24803,12 @@
    "witch flounder",
    "Torbay sole",
    "grey sole",
-   "Glyptocephalus cynoglossus"
+   "Glyptocephalus cynoglossus",
+   "gray sole"
   ],
   "kind": "creature",
   "group": "fish",
   "fact": "The witch is a long, thin, right-eyed flounder of deep muddy seabeds, sold as Torbay sole in Britain and grey sole in North America."
- },
- {
-  "id": "witch-flounder",
-  "name": "Witch flounder",
-  "aliases": [
-   "witch",
-   "Torbay sole",
-   "grey sole",
-   "gray sole",
-   "Glyptocephalus cynoglossus"
-  ],
-  "kind": "creature",
-  "group": "fish",
-  "fact": "The witch flounder lives on deep muddy seabeds of the North Atlantic and is sold under names like Torbay sole and grey sole."
  },
  {
   "id": "wobbegong",
@@ -25617,7 +24841,9 @@
    "Atlantic wolffish",
    "wolf fish",
    "sea wolf",
-   "Anarhichas lupus"
+   "Anarhichas lupus",
+   "seawolf",
+   "ocean catfish"
   ],
   "kind": "creature",
   "group": "fish",
@@ -25875,12 +25101,12 @@
   "aliases": [
    "yellowtail",
    "yellowtail kingfish",
-   "hamachi",
-   "Seriola lalandi"
+   "Seriola lalandi",
+   "hiramasa"
   ],
   "kind": "creature",
   "group": "fish",
-  "fact": "The yellowtail amberjack is a prized game fish off California, Baja and Australia and is served as hamachi in sushi bars."
+  "fact": "The yellowtail amberjack is a prized game fish off California, Baja and Australia and is served as hiramasa in sushi bars, distinct from the Japanese yellowtail sold as hamachi."
  },
  {
   "id": "yellowtail-blue-damsel",

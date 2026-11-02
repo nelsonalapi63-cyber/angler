@@ -1,42 +1,42 @@
 {
   "day": "2026-11-02",
   "promptIds": [
-    "tide-pool",
-    "atlantic-port",
-    "atlantic-sea",
-    "sunken-ship",
-    "squid-species",
-    "river-dolphin",
-    "vent-life"
+    "aquarium",
+    "crab-species",
+    "makes-light",
+    "migrates",
+    "cetacean-named-after",
+    "cod-family",
+    "research-vessel"
   ],
   "answers": [
     {
-      "typed": "Octopus",
-      "secondsUsed": 0.1
+      "typed": "Oscar",
+      "secondsUsed": 1.2
     },
     {
-      "typed": "New York City",
-      "secondsUsed": 0
+      "typed": "kani",
+      "secondsUsed": 1.1
     },
     {
-      "typed": "Caribbaan Sea",
-      "secondsUsed": 0
+      "typed": "Angleafish",
+      "secondsUsed": 1.1
     },
     {
-      "typed": "Titanic",
-      "secondsUsed": 0
+      "typed": "humpback",
+      "secondsUsed": 1.1
     },
     {
       "typed": "xqzv wppl",
-      "secondsUsed": 0
+      "secondsUsed": 1.1
     },
     {
       "typed": "",
-      "secondsUsed": 0
+      "secondsUsed": 1.1
     },
     {
-      "typed": "Hoff crab",
-      "secondsUsed": 0
+      "typed": "Boaty McBoatface",
+      "secondsUsed": 1.1
     }
   ],
   "depth": 2499,

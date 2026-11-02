@@ -51,8 +51,8 @@ async function planAnswers(page) {
           if (m.entityId === a.entity && m.via === 'fuzzy') { item = { kind: 'typo', typed: typo, entity: a.entity, tier: a.tier }; break; }
         }
         if (!item) { const a = prompt.answers[2]; item = { kind: 'exact', typed: E[a.entity].name, entity: a.entity, tier: a.tier }; }
-      } else if (i === 3) {                                   // a single-word group name such as "mako"
-        const a = ans((x, e) => [e.name].concat(e.aliases || []).some(n => /^[a-z]+$/i.test(n)))[0];
+      } else if (i === 3) {                                   // a single-word group name such as "mako" (generic entities sit at the low tiers)
+        const a = ans((x, e) => (x.tier === 'tidepool' || x.tier === 'baitball') && [e.name].concat(e.aliases || []).some(n => /^[a-z]+$/i.test(n)))[0] || ans((x, e) => [e.name].concat(e.aliases || []).some(n => /^[a-z]+$/i.test(n)))[0];
         if (a) { const w = [E[a.entity].name].concat(E[a.entity].aliases || []).find(n => /^[a-z]+$/i.test(n)); item = { kind: 'group', typed: w, entity: a.entity, tier: a.tier }; }
         else { const b = prompt.answers[3]; item = { kind: 'exact', typed: E[b.entity].name, entity: b.entity, tier: b.tier }; }
       } else if (i === 4) item = { kind: 'garbage', typed: 'xqzv wppl', entity: null, tier: null };
@@ -84,6 +84,7 @@ async function playDive(page, plan, opts) {
     await page.waitForSelector('#answer:not([disabled])');
     const text = await page.textContent('#prompt-text');
     seen.push(text);
+    if (opts && opts.humanPace) await page.waitForTimeout(1100);        // a real person takes a second or more per prompt
     if (opts && opts.shotAt === i) await page.screenshot({ path: path.join(SHOTS, opts.shotName) });
     const typed = plan ? plan[i].typed : await page.evaluate(() => { const P = window.FATHOM_PROMPTS, E = window.FATHOM_ENTITIES; const p = P.find(x => x.text === document.querySelector('#prompt-text').textContent); return E[p.answers[0].entity].name; });
     await page.fill('#answer', typed);
@@ -117,7 +118,7 @@ async function playDive(page, plan, opts) {
   await exposePromptIds(page);
   const plan = await planAnswers(page);
   console.log('daily plan:', plan.map(p => p.kind + ':' + JSON.stringify(p.typed)).join(' | '));
-  await playDive(page, plan, { shotAt: 0, shotName: 'dive-mobile.png', revealShotAt: 2, revealShotName: 'dive-reveal-mobile.png' });
+  await playDive(page, plan, { shotAt: 0, shotName: 'dive-mobile.png', revealShotAt: 2, revealShotName: 'dive-reveal-mobile.png', humanPace: true });
   await page.screenshot({ path: path.join(SHOTS, 'result-mobile.png'), fullPage: true });
 
   const result = await page.evaluate(() => {
@@ -141,7 +142,13 @@ async function playDive(page, plan, opts) {
   await page.click('text=Share');
   await page.waitForSelector('.toast');
   const clip = await page.evaluate(() => navigator.clipboard.readText());
-  assert.ok(/^FATHOM #\d+ · [\d,]+ m · top \d+% · .{7,}$/u.test(clip.split('\n')[0]), 'share text: ' + clip);
+  assert.ok(/^FATHOM #\d+ · [\d,]+ m · .{7,}$/u.test(clip.split('\n')[0]) && !/top \d+%/.test(clip), 'share text carries no demo percentile: ' + clip);
+  assert.ok(result.secondsUsed >= 7, 'recorded dive took a plausible time: ' + result.secondsUsed + ' s');
+  // stats modal opened from the result screen shows its own live countdown
+  await page.click('#btn-stats');
+  await page.waitForSelector('#countdown-modal');
+  await page.waitForFunction(() => /\d\d:\d\d:\d\d/.test(document.getElementById('countdown-modal').textContent));
+  await page.keyboard.press('Escape');
   fs.writeFileSync(path.join(FIXTURES, 'recorded-dive.json'), JSON.stringify({ day: result.dayKey, promptIds: result.promptIds, answers: result.results.map(r => ({ typed: r.typed, secondsUsed: r.secondsUsed })), depth: result.depth, points: result.points, tiers: result.tiers }, null, 2));
 
   // ---- daily is now locked to the result; countdown shows
@@ -206,6 +213,20 @@ async function playDive(page, plan, opts) {
   assert.ok((await page2.textContent('main')).includes('Send your score back'));
   await ctx2.close();
 
+  // ---- menu drawer works (links clickable above the scrim) and the spec's #/challenge/SEED form routes
+  await page.goto(srv.url + '#home'); await page.waitForSelector('main');
+  const stray = await page.evaluate(() => { const m = document.querySelector('.modal'); return m ? m.textContent.slice(0, 160) : null; });
+  assert.strictEqual(stray, null, 'no modal should be open on the home page, found: ' + stray);
+  await page.click('#btn-menu'); await page.waitForSelector('#menu:not([hidden])');
+  await page.click('#menu a[href="#logbook"]');
+  await page.waitForSelector('.tabs');
+  assert.ok((await page.textContent('main h1')).includes('Logbook'));
+  const legacySeed = link.match(/#challenge-([a-z0-9]+)-/)[1];
+  await page.goto(srv.url + '#/challenge/' + legacySeed.toUpperCase() + '-4210');
+  await page.waitForSelector('#answer');
+  assert.ok((await page.textContent('main')).includes('Beat 4,210 m'), 'legacy challenge link (upper-case seed) starts the challenge');
+  assert.strictEqual(await page.textContent('#prompt-text'), seen1[0], 'legacy link serves the same first prompt');
+
   // ---- archive, faq, settings, help, 404, legal pages
   await page.goto(srv.url + '#archive'); await page.waitForSelector('main h1');
   await page.goto(srv.url + '#archive-2020-01-01'); await page.waitForSelector('main h1');
@@ -219,6 +240,10 @@ async function playDive(page, plan, opts) {
   await page.click('.modal .toggle >> nth=0');          // high contrast on
   assert.strictEqual(await page.evaluate(() => document.documentElement.dataset.contrast), 'true');
   await page.click('.modal .toggle >> nth=0');
+  await page.click('.modal button:has-text("Reset")');  // Reset → Cancel keeps Settings open
+  await page.waitForSelector('.modal-wrap.confirm');
+  await page.click('.modal-wrap.confirm button:has-text("Cancel")');
+  assert.ok(await page.$('.modal'), 'settings modal still open after cancelling the reset');
   await page.keyboard.press('Escape');
   await page.click('#btn-menu'); await page.waitForSelector('#menu:not([hidden])'); await page.click('#scrim');
   for (const legal of ['privacy.html', 'terms.html', 'refunds.html']) { const r = await page.goto(srv.url + legal); assert.strictEqual(r.status(), 200); await page.waitForSelector('h1'); }

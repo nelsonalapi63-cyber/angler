@@ -84,7 +84,7 @@
     const user = O && O.user && O.user();
     if (!user || !product.paymentLink) { F().toast('Checkout is not configured yet'); return; }
     const url = new URL(product.paymentLink);
-    url.searchParams.set('client_reference_id', user.id + (product.perPack && packId ? ':' + packId : ''));
+    url.searchParams.set('client_reference_id', user.id + (product.perPack && packId ? '__' + packId : ''));   // Stripe allows only letters, digits, - and _
     if (user.email) url.searchParams.set('prefilled_email', user.email);
     if (O.trackEvent) O.trackEvent('checkout_started', { product: product.id });
     location.href = url.toString();
@@ -98,7 +98,7 @@
     storage.setGoDeeperDay(dayKey);
     const card = el('div', { class: 'card go-deeper' }, [
       el('div', { class: 'row between' }, [el('h3', { text: 'Go deeper' }), el('button', { class: 'link-btn', type: 'button', text: 'Dismiss', onClick: () => card.remove() })]),
-      el('p', { class: 'small', text: 'Locked right now: the full archive, six themed packs' + (flags().ADS_ENABLED ? ', and an ad-free FATHOM' : '') + '. Dive Supporter unlocks all of it in one go.' }),
+      el('p', { class: 'small', text: 'Locked right now: the full archive, ' + F().packs.filter(p => !isPackUnlocked(p.id)).length + ' themed packs' + (flags().ADS_ENABLED ? ', and an ad-free FATHOM' : '') + '. Dive Supporter unlocks all of it in one go.' }),
       el('button', { class: 'btn btn-sm', type: 'button', text: paymentsOff() ? 'See what’s coming' : 'See unlocks', onClick: () => openUnlock('menu') }),
     ]);
     return card;
@@ -147,7 +147,18 @@
     document.body.appendChild(bar);
   }
 
+  function settingsSection() {
+    if (!flags().ADS_ENABLED || adsRemoved()) return null;
+    const { el, storage } = F();
+    const btn = el('button', { class: 'toggle', type: 'button', role: 'switch', 'aria-checked': String(consentGiven()), 'aria-label': 'Allow ads', onClick: () => {
+      const cur = btn.getAttribute('aria-checked') === 'true';
+      storage.updateSettings({ consent: cur ? 'no' : 'yes' });
+      btn.setAttribute('aria-checked', String(!cur));
+    } });
+    return el('div', { class: 'switch' }, [el('div', { html: '<b>Allow ads</b><br><span class="small muted">Ads use cookies to pick what you see. Off means ad space stays empty.</span>' }), btn]);
+  }
+
   function init() { consentBanner(); }
 
-  root.FathomMonetise = { PRODUCTS, ARCHIVE_FREE_DAYS, init, isPackUnlocked, isArchiveUnlocked, hasPurchase, adsRemoved, priceLabel, openUnlock, goDeeperCard, adSlot, checkout };
+  root.FathomMonetise = { PRODUCTS, ARCHIVE_FREE_DAYS, init, isPackUnlocked, isArchiveUnlocked, hasPurchase, adsRemoved, priceLabel, openUnlock, goDeeperCard, adSlot, checkout, settingsSection };
 })(window);

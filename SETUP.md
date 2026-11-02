@@ -17,7 +17,7 @@ To add or fix prompts: edit `data/entities.json` and `data/prompts.json` (ids, a
 
 ## 1. Deploy the static site
 
-GitHub Pages: push the repository, enable Pages from the root of `main`. Cloudflare Pages: connect the repository, no build command, output directory `/`. All paths are relative, so a custom domain or a sub-path both work. Set `SITE_URL` in `app.js` to the final address (it is appended to share text) and bump `CACHE_VERSION` in `sw.js` on every release.
+GitHub Pages: push the repository, enable Pages from the root of `main`. Cloudflare Pages: connect the repository, no build command, output directory `/`. All paths are relative, so a custom domain or a sub-path both work. Set `SITE_URL` in `app.js` to the final address (it is appended to share text), replace the relative `og:image` in `index.html` with the absolute URL (`https://<domain>/icons/og.png`) so link previews work, and bump `CACHE_VERSION` in `sw.js` on every release.
 
 ## 2. Supabase project (accounts, dives, leaderboards)
 
@@ -40,13 +40,13 @@ supabase functions deploy stripe-webhook --no-verify-jwt
 
 5. In `online.js` set `SUPABASE_URL` and `SUPABASE_ANON_KEY`, then flip `LEADERBOARD_ENABLED: true` and `MOCK_ONLINE_DATA: false`. Redeploy the site.
 
-Re-run `node tools/sync-shared.js` and redeploy `submit-dive` whenever the data files change, otherwise the server will reject the day's prompt set.
+Re-run `node build.js`, then `node tools/sync-shared.js`, then redeploy `submit-dive` whenever the data files change. The build freezes every day up to today in `data/schedule.json` and only regenerates future days, so the archive and the server always agree with what people played; the service worker fetches `prompts.js`/`entities.js` network-first so players get the new bank on their next online load.
 
 ## 3. Stripe (purchases)
 
 1. Create four Products with one-time Prices: Dive Supporter $4.99, Archive Pass $2.99, All Packs $4.99, Single pack $1.99 (placeholder prices — change them in `monetise.js` too).
 2. For each, create a Payment Link. In the link's advanced options add metadata `product_id` = `supporter`, `archive`, `packs-all` or `pack`, and set the confirmation page to redirect to `https://<your domain>/?checkout=success` so the site can refresh unlocks and thank the player. Paste each link into the matching `paymentLink` in `monetise.js`.
-3. Developers → Webhooks → add endpoint `https://<ref>.supabase.co/functions/v1/stripe-webhook`, event `checkout.session.completed`. Copy the signing secret into the `STRIPE_WEBHOOK_SECRET` secret above.
+3. Developers → Webhooks → add endpoint `https://<ref>.supabase.co/functions/v1/stripe-webhook`, events `checkout.session.completed` and `charge.refunded` (a refund removes the unlock again). Copy the signing secret into the `STRIPE_WEBHOOK_SECRET` secret above.
 4. Flip `PAYMENTS_ENABLED: true`. Buying requires sign-in; the client passes the user id as `client_reference_id`, the webhook writes the entitlement, and the site refreshes entitlements when the player returns from checkout.
 
 To use Lemon Squeezy instead (a merchant of record that handles sales tax), keep the same `entitlements` table and replace only `supabase/functions/stripe-webhook/index.ts` with a handler for their `order_created` webhook that writes the same row.

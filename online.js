@@ -138,6 +138,13 @@
     session = null; profile = null; entitlementsCache = null;
     saveSession(); F().storage.remove('entitlements');
   }
+  async function refreshRating() {
+    if (!flags.LEADERBOARD_ENABLED || !configured() || !user()) return;
+    try {
+      const rows = await rest('/rest/v1/ratings?select=rating,league,rank,dives,tide&user_id=eq.' + user().id);
+      if (rows && rows[0]) F().storage.set('rating', rows[0]); else F().storage.remove('rating');
+    } catch (e) { /* keep what we have */ }
+  }
   async function refreshEntitlements() {
     if (!flags.PAYMENTS_ENABLED || !configured() || !user()) return entitlements();
     try {
@@ -177,6 +184,7 @@
       answers: record.results.map(r => ({ typed: r.typed || '', secondsUsed: r.secondsUsed })),
       deviceId: storage.deviceId(),
       clientDepth: record.depth,
+      dataVersion: root.FATHOM_DATA_VERSION || null,
     };
     trackEvent('dive_submitted', { depth: record.depth });
     try {
@@ -187,6 +195,13 @@
       storage.enqueue(payload);
       return null;
     }
+  }
+  // The server's verdict (percentile, rank, total) is stored on the day's record so it survives reloads.
+  function rememberCurve(dayKey, res) {
+    if (!res || res.percentile == null) return;
+    const { storage } = F();
+    const rec = storage.getDailyResult(dayKey);
+    if (rec) { rec.online = { percentile: res.percentile, rank: res.rank, total: res.total, depth: res.depth, flagged: !!res.flagged }; storage.saveDailyResult(dayKey, rec); }
   }
   async function drainQueue() {
     if (!flags.LEADERBOARD_ENABLED || !configured()) return;
@@ -204,12 +219,11 @@
   }
 
   // ================================================================ curve & percentile
-  const curveCache = {};      // dayKey -> { at, data }
-  const lastResult = {};      // dayKey -> { percentile, rank }
-  function rememberCurve(dayKey, res) { if (res && res.percentile != null) lastResult[dayKey] = { percentile: res.percentile, rank: res.rank }; }
-  function lastPercentile(record) {
+  const curveCache = {};      // dayKey -> { at, data }   (server data only; demo data is never cached here)
+  function lastPercentile(record) {   // only a percentile the server computed goes into share text
     if (record.mode !== 'daily') return null;
-    if (lastResult[record.dayKey]) return lastResult[record.dayKey].percentile;
+    const rec = F().storage.getDailyResult(record.dayKey) || record;
+    if (rec.online && rec.online.percentile != null) return rec.online.percentile;
     const c = curveCache[record.dayKey];
     return c && c.data && c.data.percentile != null ? c.data.percentile : null;
   }
@@ -253,7 +267,6 @@
     } else {
       const m = mockDaily(record.dayKey);
       const data = { bins: m.bins, total: m.total, median: m.median, percentile: percentileOf(record.depth, m.depths), provisional: true };
-      curveCache[record.dayKey] = { at: Date.now(), data };
       draw(data, true);
     }
     return card;
@@ -366,7 +379,7 @@
       body.innerHTML = '';
       const ul = el('ul', { class: 'list' });
       top.slice(0, BOARD_LIMIT).forEach((r, i) => ul.append(row(i + 1, whoHtml(r), esc(dive.formatMeters(r.depth)) + ' m', Math.round(r.seconds) + ' s')));
-      if (myDepth != null) ul.append(row(myRank, { name: '<b>You</b>' }, esc(dive.formatMeters(myDepth)) + ' m', myRank ? 'your rank' : 'not submitted', true));
+      if (myDepth != null) ul.append(row(myRank, { name: '<b>You</b>' + (user() ? '' : ' <span class="small muted">(anonymous diver)</span>') }, esc(dive.formatMeters(myDepth)) + ' m', myRank ? 'your rank' : 'not submitted', true));
       body.append(ul);
     }
     function drawTide(rows) {
@@ -406,15 +419,14 @@
     }
     (async () => {
       try {
-        const w1 = await rest('/rest/v1/leaderboard_tide?select=handle,flag,rating&order=rating.desc&limit=1');
+        const w1 = await rest('/rest/v1/leaderboard_tide?select=handle,flag,rating&order=rank.asc.nullslast&limit=1');
         if (w1 && w1[0]) head.querySelector('#world-one').innerHTML = 'World #1 · <b>' + esc(w1[0].handle) + '</b> ' + leagueBadge(w1[0].rating);
         if (t === 'today') {
           const rows = await rest('/rest/v1/leaderboard_today?select=handle,flag,depth,seconds_used,rating&day=eq.' + today + '&order=depth.desc,seconds_used.asc&limit=' + BOARD_LIMIT);
           const mine = storage.getDailyResult(today);
-          const lr = lastResult[today];
-          drawToday(rows.map(r => ({ handle: r.handle, flag: r.flag, depth: r.depth, seconds: r.seconds_used, rating: r.rating })), lr ? lr.rank : null, mine ? mine.depth : null);
+          drawToday(rows.map(r => ({ handle: r.handle, flag: r.flag, depth: r.depth, seconds: r.seconds_used, rating: r.rating })), mine && mine.online ? mine.online.rank : null, mine ? mine.depth : null);
         } else if (t === 'tide') {
-          const rows = await rest('/rest/v1/leaderboard_tide?select=handle,flag,rating,dives&order=rating.desc&limit=' + BOARD_LIMIT);
+          const rows = await rest('/rest/v1/leaderboard_tide?select=handle,flag,rating,dives&order=rank.asc.nullslast&limit=' + BOARD_LIMIT);
           drawTide(rows);
         } else if (t === 'alltime') {
           const rows = await rest('/rest/v1/leaderboard_alltime?select=handle,flag,meters&order=meters.desc&limit=' + BOARD_LIMIT);
@@ -424,10 +436,29 @@
           drawAllTime(rows, hall);
         } else {
           if (!user()) return drawFriends([], 'Sign in to follow friends and see them here.');
-          const rows = await rest('/rest/v1/rpc/friends_today', { method: 'POST', body: { p_day: today } });
           const form = el('form', { class: 'row', onSubmit: async (e) => { e.preventDefault(); const h = form.querySelector('input').value.trim(); if (!h) return; try { await rest('/rest/v1/rpc/follow_handle', { method: 'POST', body: { p_handle: h } }); F().toast('Following ' + h); F().navigate('#leaderboard-friends'); } catch (err) { F().toast('No diver with that handle'); } } }, [el('input', { class: 'input', placeholder: 'Follow a handle', 'aria-label': 'Handle to follow' }), el('button', { class: 'btn', type: 'submit', text: 'Follow' })]);
-          drawFriends(rows, rows.length ? 'You and the divers you follow, today.' : 'You are not following anyone yet.');
-          body.prepend(form);
+          const sub = el('div', { class: 'tabs', role: 'tablist' });
+          const subBody = el('div');
+          const drawSub = async (which) => {
+            sub.querySelectorAll('button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.which === which)));
+            subBody.innerHTML = '<p class="small muted">Loading…</p>';
+            try {
+              if (which === 'today') {
+                const rows = await rest('/rest/v1/rpc/friends_today', { method: 'POST', body: { p_day: today } });
+                subBody.innerHTML = ''; const ul = el('ul', { class: 'list' }); rows.forEach((r, i) => ul.append(row(i + 1, whoHtml(r), esc(dive.formatMeters(r.depth)) + ' m'))); subBody.append(rows.length ? ul : el('p', { class: 'small muted', text: 'No dives from you or your friends today yet.' }));
+              } else if (which === 'tide') {
+                const rows = await rest('/rest/v1/rpc/friends_tide', { method: 'POST', body: {} });
+                subBody.innerHTML = ''; const ul = el('ul', { class: 'list' }); rows.forEach((r, i) => ul.append(row(i + 1, whoHtml(r), Number(r.rating).toFixed(1), r.dives + ' dives'))); subBody.append(rows.length ? ul : el('p', { class: 'small muted', text: 'Nobody ranked yet.' }));
+              } else {
+                const rows = await rest('/rest/v1/rpc/friends_alltime', { method: 'POST', body: {} });
+                subBody.innerHTML = ''; const ul = el('ul', { class: 'list' }); rows.forEach((r, i) => ul.append(row(i + 1, whoHtml(r), esc(dive.formatMeters(r.meters)) + ' m'))); subBody.append(rows.length ? ul : el('p', { class: 'small muted', text: 'No metres yet.' }));
+              }
+            } catch (err) { subBody.innerHTML = '<p class="small muted">Could not load this board right now.</p>'; }
+          };
+          for (const [code, label] of [['today', 'Today'], ['tide', 'This Tide'], ['alltime', 'All Time']]) sub.append(el('button', { role: 'tab', dataset: { which: code }, 'aria-selected': 'false', text: label, onClick: () => drawSub(code) }));
+          body.innerHTML = '';
+          body.append(el('p', { class: 'small muted', text: 'You and the divers you follow.' }), form, sub, subBody);
+          drawSub('today');
         }
       } catch (e) {
         body.innerHTML = '<p class="small muted">' + (navigator.onLine ? 'The leaderboard could not be loaded right now.' : 'You are offline — leaderboards need a connection.') + '</p>';
@@ -448,7 +479,8 @@
     if (!user()) return 'Sign in (Settings) to hold a rating and appear on leaderboards. ' + (need ? need + ' more daily dives until you are ranked.' : '');
     const r = F().storage.get('rating', null);
     if (!r) return need ? need + ' more daily dive' + (need === 1 ? '' : 's') + ' until you are ranked.' : 'Your rating appears after tonight’s close.';
-    return '<b>' + r.rating.toFixed(1) + '</b> · ' + esc(leagueFor(r.rating).name) + ' league · world #' + r.rank;
+    if (r.rank == null) return '<b>' + Number(r.rating).toFixed(1) + '</b> provisional · ' + Math.max(0, MIN_RANKED_DAYS - (r.dives || 0)) + ' more scored days until you are ranked.';
+    return '<b>' + Number(r.rating).toFixed(1) + '</b> · ' + esc(leagueFor(Number(r.rating)).name) + ' league · world #' + r.rank;
   }
 
   // ---------------------------------------------------------------- settings section (sign-in, handle, hide, delete)
@@ -505,8 +537,8 @@
     loadSession();
     loadAnalytics();
     handleAuthRedirect().then(async (handled) => {
-      if (handled) { await syncProgressDown(); F().navigate('#home'); }
-      else if (user()) { await loadProfile().catch(() => {}); await refreshEntitlements(); await syncProgressDown(); }
+      if (handled) { await syncProgressDown(); await refreshRating(); F().navigate('#home'); }
+      else if (user()) { await loadProfile().catch(() => {}); await refreshEntitlements(); await syncProgressDown(); await refreshRating(); }
       // back from Stripe Checkout (the Payment Link's confirmation page redirects to ?checkout=success)
       if (/[?&]checkout=success/.test(location.search)) {
         const before = entitlements().length;
@@ -523,7 +555,7 @@
   root.FathomOnline = {
     FLAGS, LEAGUES, MIN_CURVE_DIVES, RATING_WINDOW_DAYS, RATING_BEST_OF, MIN_RANKED_DAYS, HANDLE_RE,
     init, user, entitlements, refreshEntitlements, signIn, signOut, handleProblem, saveProfile, deleteAccount,
-    submitDaily, drainQueue, fetchCurve, curveSection, lastPercentile, percentileOf,
+    submitDaily, drainQueue, fetchCurve, curveSection, lastPercentile, percentileOf, refreshRating,
     leaderboardPage, ratingSummary, settingsSection, trackEvent, leagueFor, mockDaily, mockBoards,
     _rest: rest, _headers: headers, _configured: configured,
   };

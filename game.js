@@ -5,6 +5,9 @@
   // ---------------------------------------------------------------- parameters
   const TIMER_TICK_MS = 100;
   const LOW_TIME_SECONDS = 5;          // timer ring turns red below this
+  const MAX_TYPED_LENGTH = 60;         // same limit as the server
+  const NEXT_GUARD_MS = 450;           // a second Enter right after a reveal must not skip it
+  const AUTO_ADVANCE_ON_TOUCH = false; // on phones the player taps Next, so the keyboard opens inside a user gesture
   const RESULT_LIST_FACT = true;       // show the fact under each prompt on the result screen
   const MODE_LABELS = { daily: 'Daily Dive', free: 'Free Dive', pack: 'Themed Pack', archive: 'Archive Dive', challenge: 'Challenge' };
 
@@ -43,12 +46,13 @@
   function reportHref(prompt, result, record) {
     const { config, dive } = F();
     const subject = 'FATHOM report: ' + prompt.id;
-    const body = 'Prompt: ' + prompt.text + '\nPrompt id: ' + prompt.id + '\nMode: ' + record.mode + (record.dayKey ? ' (' + record.dayKey + ')' : '') +
+    const when = record.dayKey || (record.finishedAt ? record.finishedAt.slice(0, 10) : F().todayKey());
+    const body = 'Prompt: ' + prompt.text + '\nPrompt id: ' + prompt.id + '\nMode: ' + record.mode + ' (' + when + ')' +
       '\nI typed: ' + (result.typed || '(nothing)') + '\nIt scored: ' + (result.tier ? dive.TIER_BY_CODE[result.tier].name : 'miss') +
       '\n\nWhat is wrong (answer missing, wrong tier, wrong fact):\n';
     if (config.REPORT_FORM_URL) {
       const sep = config.REPORT_FORM_URL.indexOf('?') > -1 ? '&' : '?';
-      return config.REPORT_FORM_URL + sep + 'prompt=' + encodeURIComponent(prompt.id) + '&typed=' + encodeURIComponent(result.typed || '') + '&tier=' + encodeURIComponent(result.tier || 'miss') + '&mode=' + encodeURIComponent(record.mode);
+      return config.REPORT_FORM_URL + sep + 'prompt=' + encodeURIComponent(prompt.id) + '&typed=' + encodeURIComponent(result.typed || '') + '&tier=' + encodeURIComponent(result.tier || 'miss') + '&mode=' + encodeURIComponent(record.mode) + '&date=' + encodeURIComponent(when);
     }
     return 'mailto:' + config.FEEDBACK_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
   }
@@ -106,6 +110,7 @@
     const { dive, prompts, toast } = F();
     const parsed = dive.parseChallenge(hash);
     if (!parsed) { toast('That challenge link is not valid — here is a fresh dive.'); return startFree(); }
+    if (root.FathomOnline && root.FathomOnline.trackEvent) root.FathomOnline.trackEvent('challenge_opened', {});
     startDive({ mode: 'challenge', promptIds: dive.freePromptIds(parsed.seed, prompts), seed: parsed.seed, challenge: { depth: parsed.depth, tiers: parsed.tiers } });
   }
 
@@ -176,7 +181,7 @@
     const promptId = state.spec.promptIds[state.idx];
     const prompt = promptsById[promptId];
     state.answered = false;
-    const input = el('input', { class: 'input', id: 'answer', type: 'text', autocomplete: 'off', autocapitalize: 'off', autocorrect: 'off', spellcheck: 'false', enterkeyhint: 'go', placeholder: 'Type one answer…', 'aria-label': 'Your answer', maxlength: '60' });
+    const input = el('input', { class: 'input', id: 'answer', type: 'text', autocomplete: 'off', autocapitalize: 'off', autocorrect: 'off', spellcheck: 'false', enterkeyhint: 'go', placeholder: 'Your answer…', 'aria-label': 'Your answer', 'aria-describedby': 'prompt-text', maxlength: String(MAX_TYPED_LENGTH) });
     const submitBtn = el('button', { class: 'btn btn-primary', type: 'submit', text: 'Dive' });
     const form = el('form', { class: 'answer-form', onSubmit: (e) => { e.preventDefault(); submit(input.value); } }, [input, submitBtn]);
     const allowedMs = remainingMs != null ? Math.max(0, Math.min(remainingMs, dive.SECONDS_PER_PROMPT * 1000)) : dive.SECONDS_PER_PROMPT * 1000;
@@ -190,7 +195,7 @@
     ]);
     const challengeNote = state.spec.challenge && state.spec.challenge.depth ? el('p', { class: 'small', html: 'Beat <b>' + esc(dive.formatMeters(state.spec.challenge.depth)) + ' m</b> to win this challenge.' }) : null;
     state.mainCol.innerHTML = '';
-    state.mainCol.append(head, challengeNote || '', el('h2', { class: 'prompt-text', id: 'prompt-text', text: prompt.text }), form, el('div', { id: 'reveal' }));
+    state.mainCol.append(head, challengeNote || '', el('h2', { class: 'prompt-text', id: 'prompt-text', text: prompt.text }), form, el('div', { id: 'reveal', 'aria-live': 'polite' }));
     state.input = input;
     state.form = form;
     setTimeout(() => input.focus(), 30);
@@ -209,12 +214,12 @@
         const whole = Math.ceil(remaining);
         if (num && whole !== lastWhole) { num.textContent = String(whole); lastWhole = whole; if (whole <= LOW_TIME_SECONDS && whole > 0) F().sound.tick(); }
         if (timerEl) timerEl.classList.toggle('low', remaining <= LOW_TIME_SECONDS);
-        if (remaining <= 0) submit(null);
+        if (remaining <= 0) { const typedSoFar = state.input ? state.input.value.trim() : ''; submit(typedSoFar || null, true); }
       }, TIMER_TICK_MS);
     }
   }
 
-  function submit(typed) {
+  function submit(typed, timedOut) {
     if (!state || state.answered) return;
     const { el, dive, promptsById, entities, charts, storage, config, esc, sound, applyDepthTint } = F();
     state.answered = true;
@@ -224,7 +229,7 @@
     const secondsUsed = Math.min(dive.SECONDS_PER_PROMPT, Math.max(0, (performance.now() - state.promptStart) / 1000));
     const text = typed == null ? '' : String(typed).trim();
     const m = text ? dive.matchAnswer(text, promptIndex(prompt)) : { entityId: null, tier: null, points: 0, via: null };
-    const result = { promptId, typed: text, entityId: m.entityId, tier: m.tier, points: m.points, secondsUsed: Math.round(secondsUsed * 10) / 10, timedOut: typed == null };
+    const result = { promptId, typed: text, entityId: m.entityId, tier: m.tier, points: m.points, secondsUsed: Math.round(secondsUsed * 10) / 10, timedOut: !!timedOut || typed == null };
     state.results.push(result);
     state.points += m.points;
     const prevDepth = state.depth;
@@ -251,26 +256,31 @@
       sound.reveal(m.tier);
     } else {
       state.input.classList.add('shake');
+      const missLabel = typed == null ? '⏱ Out of time' : (text ? '⬛ Not an accepted answer' : '⬛ No answer');
       tile = el('div', { class: 'tile tile-miss', style: '--c: var(--tier-miss)' }, [
         el('div', { class: 'tile-top' }, [
-          el('div', { class: 'tile-name', text: (typed == null ? '⏱ Out of time' : '⬛ Not an accepted answer') }),
+          el('div', { class: 'tile-name', text: missLabel }),
           el('div', { class: 'tile-meters', text: '+0 m' }),
         ]),
         el('div', { class: 'tile-sub', text: hadal ? 'The Hadal answer was ' + hadal.name + '.' : '' }),
       ]);
       factText = hadal ? hadal.fact : '';
       sound.miss();
-      if (typed != null) F().toast('Not an accepted answer');
+      if (typed != null && text) F().toast('Not an accepted answer');
     }
     reveal.innerHTML = '';
     reveal.append(tile);
     if (factText) reveal.append(el('p', { class: 'fact', html: '<b>Did you know?</b> ' + esc(factText) }));
-    const nextBtn = el('button', { class: 'btn btn-primary', type: 'button', text: state.idx + 1 >= dive.PROMPTS_PER_DIVE ? 'See your dive' : 'Next prompt', onClick: next });
+    // a keyboard "click" (Enter/Space, event.detail === 0) within the guard is the player's double Enter — ignore it;
+    // a real tap or mouse click always advances
+    const nextBtn = el('button', { class: 'btn btn-primary', type: 'button', text: state.idx + 1 >= dive.PROMPTS_PER_DIVE ? 'See your dive' : 'Next prompt', onClick: (e) => { if (e.detail === 0 && state && performance.now() - state.revealedAt < NEXT_GUARD_MS) return; next(); } });
     reveal.append(el('div', { class: 'next-row' }, [progressDots(), nextBtn]));
-    nextBtn.focus();
+    state.revealedAt = performance.now();
+    nextBtn.focus({ preventScroll: true });
     charts.updateGauge(state.gauge, state.depth);
     applyDepthTint(state.depth);
-    state.revealTimer = setTimeout(next, config.REVEAL_MS + (m.entityId ? 600 : 300));
+    const touch = root.matchMedia && root.matchMedia('(pointer: coarse)').matches;
+    if (!touch || AUTO_ADVANCE_ON_TOUCH) state.revealTimer = setTimeout(next, config.REVEAL_MS + (m.entityId ? 600 : 300));
   }
 
   function next() {
@@ -290,6 +300,7 @@
       tiers: state.results.map(r => r.tier), secondsUsed: Math.round(state.results.reduce((n, r) => n + r.secondsUsed, 0) * 10) / 10,
       finishedAt: new Date().toISOString(), challenge: s.challenge || null, timerOn: state.timerOn,
     };
+    storage.markPlayed(s.promptIds);
     if (s.mode === 'daily') {
       storage.remove('progress');
       storage.saveDailyResult(s.dayKey, record);
@@ -372,16 +383,6 @@
     }
     nodes.push(actions);
 
-    if (record.mode === 'daily' && root.FathomMonetise) {
-      const gd = root.FathomMonetise.goDeeperCard(record.dayKey);
-      if (gd) nodes.push(gd);
-      const ad = root.FathomMonetise.adSlot('result');
-      if (ad) nodes.push(ad);
-    } else if (record.mode === 'free' && root.FathomMonetise) {
-      const ad = root.FathomMonetise.adSlot('free');       // every third Free Dive, never during a timer
-      if (ad) nodes.push(ad);
-    }
-
     // per prompt breakdown
     const list = el('ul', { class: 'result-list' });
     record.results.forEach((r, i) => {
@@ -406,34 +407,53 @@
       list.append(li);
     });
     nodes.push(el('div', { class: 'card' }, [el('h3', { text: 'Your seven prompts' }), list]));
+    // commercial bits live UNDER the result, never beside a timer
+    if (record.mode === 'daily' && root.FathomMonetise) {
+      const gd = root.FathomMonetise.goDeeperCard(record.dayKey);
+      if (gd) nodes.push(gd);
+      const ad = root.FathomMonetise.adSlot('result');
+      if (ad) nodes.push(ad);
+    } else if (record.mode === 'free' && root.FathomMonetise) {
+      const ad = root.FathomMonetise.adSlot('free');       // every third Free Dive
+      if (ad) nodes.push(ad);
+    }
     nodes.push(el('div', { class: 'row center', style: 'justify-content:center' }, [el('a', { class: 'btn btn-ghost', href: '#logbook', text: 'Open the logbook' }), el('a', { class: 'btn btn-ghost', href: '#home', text: 'Home' })]));
     render(nodes);
-    if (record.mode === 'daily') startCountdown();
+    if (record.mode === 'daily') startCountdown(record.dayKey);
   }
 
   function copyText(text, okMsg) {
     const { toast } = F();
     const done = () => toast(okMsg || 'Copied');
+    const showBox = () => {   // the host refused the clipboard: show the text so the player can copy it by hand
+      const { el, modal } = F();
+      const ta = el('textarea', { class: 'copy-box', readonly: true, 'aria-label': 'Text to copy' });
+      ta.value = text;
+      modal({ title: 'Copy this', body: el('div', {}, [el('p', { class: 'small muted', text: 'Your browser did not allow copying automatically. Select the text below and copy it.' }), ta]) });
+      ta.focus(); ta.select();
+    };
     const fallback = () => {
+      let ok = false;
       try {
         const ta = document.createElement('textarea');
         ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
-        document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); done();
-      } catch (e) { toast('Could not copy — select the text to share it'); }
+        document.body.appendChild(ta); ta.select(); ok = document.execCommand('copy'); ta.remove();
+      } catch (e) { ok = false; }
+      if (ok) done(); else showBox();
     };
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, fallback);
     else fallback();
   }
 
-  function startCountdown() {
+  function startCountdown(dayKey) {
     const { dive, config } = F();
     const tick = () => {
       const node = document.getElementById('countdown');
       if (!node) { if (countdownTimer) clearInterval(countdownTimer); countdownTimer = null; return; }
+      if (dayKey && F().todayKey() !== dayKey) { clearInterval(countdownTimer); countdownTimer = null; F().navigate('#daily'); return; }
       const ms = dive.msUntilNextDay(new Date());
       const h = Math.floor(ms / 3600000), m = Math.floor((ms % 3600000) / 60000), s = Math.floor((ms % 60000) / 1000);
       node.textContent = String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
-      if (ms <= 0) { clearInterval(countdownTimer); countdownTimer = null; F().navigate('#daily'); }
     };
     tick();
     countdownTimer = setInterval(tick, config.COUNTDOWN_TICK_MS);

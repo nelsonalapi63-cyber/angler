@@ -65,7 +65,8 @@ test('points, depth and zones', () => {
 });
 
 function fakePrompts(n) {
-  const groups = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'];
+  const groups = [];
+  for (let g = 0; g < 40; g++) groups.push('g' + g);
   const out = [];
   for (let i = 0; i < n; i++) out.push({ id: 'p' + String(i).padStart(3, '0'), group: groups[i % groups.length], difficulty: (i % 5) + 1, answers: [] });
   return out;
@@ -113,6 +114,29 @@ test('day keys, puzzle numbers and countdown use America/New_York', () => {
   assert.strictEqual(dive.puzzleNumber('2026-11-12'), 11);
   const ms = dive.msUntilNextDay(new Date('2026-11-03T03:30:00Z'));
   assert.strictEqual(ms, 90 * 60 * 1000);
+  // DST: 1 Nov 2026 is the fall-back day (25-hour day), 14 Mar 2027 the spring-forward day (23-hour day)
+  assert.strictEqual(dive.msUntilNextDay(new Date('2026-11-01T04:30:00Z')), 24.5 * 3600 * 1000);
+  assert.strictEqual(dive.msUntilNextDay(new Date('2027-03-14T05:30:00Z')), 22.5 * 3600 * 1000);
+  // exactly at midnight the countdown restarts at a full day, never 0
+  assert.strictEqual(dive.msUntilNextDay(new Date('2026-11-03T05:00:00Z')), 24 * 3600 * 1000);
+});
+
+test('frozen schedule: adding a prompt never changes a day already scheduled', () => {
+  const prompts = fakePrompts(120);
+  const launch = '2026-11-02';
+  const sched = dive.buildSchedule(prompts, {}, launch, dive.keyPlusDays(launch, 30));
+  assert.strictEqual(Object.keys(sched).length, 31);
+  const more = prompts.concat([{ id: 'p999', group: 'zzz', difficulty: 1, answers: [] }]);
+  const regen = dive.buildSchedule(more, sched, dive.keyPlusDays(launch, 10), dive.keyPlusDays(launch, 30));
+  for (let d = 0; d < 10; d++) assert.deepStrictEqual(regen[dive.keyPlusDays(launch, d)], sched[dive.keyPlusDays(launch, d)]);
+  // the brand-new prompt is scheduled soon after the regeneration point (never-used prompts come first)
+  const firstUse = Object.keys(regen).sort().find(k => regen[k].includes('p999'));
+  assert.ok(firstUse && firstUse >= dive.keyPlusDays(launch, 10) && firstUse <= dive.keyPlusDays(launch, 20), 'new prompt used at ' + firstUse);
+  // lookups prefer the frozen schedule, then extend deterministically beyond it
+  assert.deepStrictEqual(dive.dailyPromptIds(dive.keyPlusDays(launch, 5), more, launch, regen), regen[dive.keyPlusDays(launch, 5)]);
+  const beyond = dive.dailyPromptIds(dive.keyPlusDays(launch, 40), more, launch, regen);
+  assert.strictEqual(beyond.length, 7);
+  assert.deepStrictEqual(beyond, dive.dailyPromptIds(dive.keyPlusDays(launch, 40), more, launch, regen));
 });
 
 test('challenge hashes round-trip and reject garbage', () => {
@@ -122,6 +146,7 @@ test('challenge hashes round-trip and reject garbage', () => {
   assert.deepStrictEqual(parsed, { seed: 'k7p2qz', depth: 4210, tiers: ['tidepool', 'reef', 'twilight', null, 'midnight', 'hadal', 'baitball'] });
   assert.deepStrictEqual(dive.parseChallenge('#challenge-k7p2qz'), { seed: 'k7p2qz', depth: 0, tiers: null });
   assert.deepStrictEqual(dive.parseChallenge('#/challenge/k7p2qz-10'), { seed: 'k7p2qz', depth: 10, tiers: null });
+  assert.deepStrictEqual(dive.parseChallenge('#Challenge-K7P2QZ-10'), { seed: 'k7p2qz', depth: 10, tiers: null });
   assert.strictEqual(dive.parseChallenge('#challenge-'), null);
   assert.strictEqual(dive.parseChallenge('#challenge-!!!-abc'), null);
   assert.strictEqual(dive.parseChallenge('#challenge-k7p2qz-4210-99'), null);

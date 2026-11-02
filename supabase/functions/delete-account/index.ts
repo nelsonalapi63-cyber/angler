@@ -2,11 +2,11 @@
 // (profiles, entitlements, progress, dives, daily_rank_points, ratings, follows all cascade from auth.users).
 import { createClient } from "npm:@supabase/supabase-js@2";
 
-const json = (status: number, body: unknown) =>
-  new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "authorization, apikey, content-type" } });
+const CORS = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "authorization, apikey, content-type", "Access-Control-Allow-Methods": "POST, OPTIONS" };
+const json = (status: number, body: unknown) => new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", ...CORS } });
 
 Deno.serve(async (req) => {
-  if (req.method === "OPTIONS") return json(204, {});
+  if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
   if (req.method !== "POST") return json(405, { error: "POST only" });
   const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
   const ANON_KEY = Deno.env.get("SUPABASE_ANON_KEY")!;

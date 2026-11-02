@@ -19,7 +19,6 @@
   const FUZZY_SHORT_DIST = 1;
   const FUZZY_LONG_DIST = 2;                // longer inputs allow 2 edits
   const FUZZY_MIN_LEN = 3;                  // never fuzzy-match tiny inputs
-  const CYCLE_SEED_PREFIX = 'fathom-cycle:';
   const FREE_SEED_PREFIX = 'fathom-free:';
 
   const TIERS = [
@@ -221,12 +220,21 @@
     const d = new Date(t);
     return d.getUTCFullYear() + '-' + String(d.getUTCMonth() + 1).padStart(2, '0') + '-' + String(d.getUTCDate()).padStart(2, '0');
   }
+  // The UTC instant at which the next day begins in the zone (DST-safe: the offset is re-read at the target).
+  function nextMidnightUtc(date, tz) {
+    const now = date || new Date();
+    const next = keyPlusDays(dayKey(now, tz), 1);
+    let guess = keyToUtc(next);
+    for (let i = 0; i < 3; i++) {
+      const p = tzParts(new Date(guess), tz);
+      const wall = Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute, p.second);
+      guess = keyToUtc(next) - (wall - guess);
+    }
+    return guess;
+  }
   function msUntilNextDay(date, tz) {
     const now = date || new Date();
-    const p = tzParts(now, tz);
-    const wallNow = Date.UTC(p.year, p.month - 1, p.day, p.hour, p.minute, p.second);
-    const wallNext = Date.UTC(p.year, p.month - 1, p.day + 1);
-    return Math.max(0, wallNext - wallNow);
+    return Math.max(0, nextMidnightUtc(now, tz) - now.getTime());
   }
 
   // ---------------------------------------------------------------- dive construction
@@ -249,39 +257,58 @@
     return { picked, rest };
   }
 
-  const scheduleCache = new Map();
-  // Replays the schedule deterministically: each cycle shuffles the whole bank, leftovers roll forward.
-  function schedule(prompts, uptoIndex) {
-    const key = prompts.map(p => p.id).join('|');
-    let st = scheduleCache.get(key);
-    if (!st) { st = { days: [], pool: [], cycle: 0 }; scheduleCache.set(key, st); }
-    const promptsById = byId(prompts);
-    const allIds = prompts.map(p => p.id).sort();
-    while (st.days.length <= uptoIndex) {
-      let { picked, rest } = pickDistinctGroups(st.pool, promptsById, PROMPTS_PER_DIVE);
-      if (picked.length < PROMPTS_PER_DIVE) {
-        // start a new cycle: leftovers first, then everything else shuffled
-        const leftovers = st.pool.slice();
-        const inLeft = new Set(leftovers);
-        const fresh = shuffle(allIds.filter(id => !inLeft.has(id)), seededRng(CYCLE_SEED_PREFIX + st.cycle));
-        st.cycle++;
-        st.pool = leftovers.concat(fresh);
-        ({ picked, rest } = pickDistinctGroups(st.pool, promptsById, PROMPTS_PER_DIVE));
-        if (picked.length < PROMPTS_PER_DIVE) {          // tiny bank: allow group repeats
-          picked = st.pool.slice(0, PROMPTS_PER_DIVE);
-          rest = st.pool.slice(PROMPTS_PER_DIVE);
-        }
-      }
-      st.pool = rest;
-      st.days.push(sortByDifficulty(picked, promptsById));
-    }
-    return st.days[uptoIndex];
+  // ---- the daily schedule
+  // Past and present days are frozen in data/schedule.json (shipped as window.FATHOM_SCHEDULE and imported by the
+  // server), so adding prompts never changes a day anyone has played. Days beyond the frozen horizon are generated
+  // on the fly with the same rule: prefer the least recently scheduled prompts (never-scheduled first), break ties
+  // with a per-day seeded shuffle, keep the seven groups distinct, then order by difficulty.
+  function pickDay(key, prompts, promptsById, lastUsed) {
+    const rng = seededRng('fathom-day:' + key);
+    const order = shuffle(prompts.map(p => p.id).sort(), rng);
+    order.sort((a, b) => {
+      const la = lastUsed[a] == null ? -1 : lastUsed[a], lb = lastUsed[b] == null ? -1 : lastUsed[b];
+      return la - lb;                                          // stable: ties keep the shuffled order
+    });
+    let { picked } = pickDistinctGroups(order, promptsById, PROMPTS_PER_DIVE);
+    if (picked.length < PROMPTS_PER_DIVE) picked = order.slice(0, PROMPTS_PER_DIVE);
+    return sortByDifficulty(picked, promptsById);
   }
-
-  function dailyPromptIds(key, prompts, launch) {
+  // Returns a new schedule object: days before `fromKey` copied from `existing`, days from `fromKey` to `toKey` generated.
+  function buildSchedule(prompts, existing, fromKey, toKey) {
+    const promptsById = byId(prompts);
+    const out = {};
+    const lastUsed = {};
+    const keys = Object.keys(existing || {}).sort();
+    let idx = 0;
+    for (const k of keys) {
+      if (k >= fromKey) break;
+      out[k] = existing[k].slice();
+      for (const id of out[k]) lastUsed[id] = idx;
+      idx++;
+    }
+    for (let k = fromKey; k <= toKey; k = keyPlusDays(k, 1)) {
+      out[k] = pickDay(k, prompts, promptsById, lastUsed);
+      for (const id of out[k]) lastUsed[id] = idx;
+      idx++;
+    }
+    return out;
+  }
+  const extendCache = new Map();
+  function dailyPromptIds(key, prompts, launch, schedule) {
     const idx = dayIndex(key, launch);
     if (idx < 0) return null;
-    return schedule(prompts, idx).slice();
+    const sched = schedule || (typeof globalThis !== 'undefined' && globalThis.FATHOM_SCHEDULE) || null;
+    if (sched && sched[key]) return sched[key].slice();
+    // beyond the frozen horizon (or no schedule shipped): extend deterministically from what we have
+    const cacheKey = prompts.map(p => p.id).join('|') + '#' + (sched ? Object.keys(sched).length : 0);
+    let ext = extendCache.get(cacheKey);
+    if (!ext || !ext[key]) {
+      const known = Object.keys(sched || {}).sort();
+      const from = known.length ? keyPlusDays(known[known.length - 1], 1) : (launch || LAUNCH_DATE);
+      ext = buildSchedule(prompts, sched || {}, from, key > from ? key : from);
+      extendCache.set(cacheKey, ext);
+    }
+    return ext[key] ? ext[key].slice() : null;
   }
 
   function freePromptIds(seed, prompts) {
@@ -306,7 +333,7 @@
     return h;
   }
   function parseChallenge(hash) {
-    const m = CHALLENGE_RE.exec(String(hash || '').trim());
+    const m = CHALLENGE_RE.exec(String(hash || '').trim().toLowerCase());
     if (!m) return null;
     return { seed: m[1], depth: m[2] ? Number(m[2]) : 0, tiers: m[3] ? digitsToTiers(m[3]) : null };
   }
@@ -347,8 +374,8 @@
     normalise, pluralForms, levenshtein, buildIndex, matchAnswer,
     depthFor, zoneFor, tierForCode, tiersToEmoji, tiersToDigits, digitsToTiers,
     fnv1a, seededRng, shuffle, randomSeed,
-    dayKey, dayIndex, puzzleNumber, keyPlusDays, msUntilNextDay,
-    dailyPromptIds, freePromptIds, packPromptIds, sortByDifficulty, byId,
+    dayKey, dayIndex, puzzleNumber, keyPlusDays, msUntilNextDay, nextMidnightUtc,
+    dailyPromptIds, buildSchedule, pickDay, freePromptIds, packPromptIds, sortByDifficulty, byId,
     makeChallengeHash, parseChallenge, shareText, formatMeters, scoreSubmission,
   };
 });

@@ -40,7 +40,9 @@
       daily.append(el('div', { class: 'row', style: 'margin-top:12px' }, [el('a', { class: 'btn btn-primary', href: '#daily', text: 'See your dive' }), el('a', { class: 'btn', href: '#free', text: 'Free Dive' })]));
     } else {
       daily.append(el('p', { text: 'Seven ocean prompts, 25 seconds each. The rarer your answer, the deeper you sink. Same seven for everyone today.' }));
-      daily.append(el('div', { class: 'row' }, [el('a', { class: 'btn btn-primary', href: '#daily', text: number > 0 ? 'Start today’s dive' : 'Practice dive' }), el('a', { class: 'btn', href: '#free', text: 'Free Dive' })]));
+      const progress = storage.get('progress', null);
+      const inProgress = progress && progress.mode === 'daily' && progress.dayKey === today;
+      daily.append(el('div', { class: 'row' }, [el('a', { class: 'btn btn-primary', href: '#daily', text: inProgress ? 'Resume today’s dive' : 'Start today’s dive' }), el('a', { class: 'btn', href: '#free', text: 'Free Dive' })]));
     }
     if (streak.current > 1) daily.append(el('p', { class: 'small muted', style: 'margin:12px 0 0', text: streak.current + '-day streak' }));
     nodes.push(daily);
@@ -81,7 +83,7 @@
       const li = el('li', {}, [
         el('a', { class: 'grow', href: '#archive-' + k, html: '<b>FATHOM #' + dive.puzzleNumber(k) + '</b> <span class="muted small">' + esc(niceDate(k)) + '</span>' }),
         rec ? el('span', { class: 'small', html: '<b>' + esc(dive.formatMeters(rec.depth)) + ' m</b>' }) : el('span', { class: 'small muted', text: locked ? '' : 'Not played' }),
-        locked ? el('span', { class: 'lock', text: '🔒 Archive Pass' }) : null,
+        locked ? el('span', { class: 'lock', text: '🔒 Archive Pass ' + (M ? M.priceLabel('archive') : '') }) : null,
       ]);
       list.append(li);
     }
@@ -135,7 +137,8 @@
       for (const e of rows) {
         const entry = lb[e.id];
         const tier = dive.TIER_BY_CODE[entry.bestTier];
-        const seen = (entry.prompts || []).map(id => promptsById[id]).filter(Boolean);
+        const played = storage.playedPrompts();
+        const seen = prompts.filter(p => played[p.id] && p.answers.some(a => a.entity === e.id));
         ul.append(el('li', { style: 'display:block' }, el('details', {}, [
           el('summary', { style: 'display:flex;align-items:center;gap:10px;list-style:none;color:inherit' }, [
             el('span', { class: 'grow', html: '<b>' + esc(e.name) + '</b>' + (entry.bestTier === 'hadal' ? ' <span class="tier tier-hadal" title="Hadal answer">🔱</span>' : '') + '<br><span class="small muted">' + esc(e.group) + ' · first logged ' + esc(niceDate(entry.firstLogged)) + '</span>' }),
@@ -154,7 +157,7 @@
         el('h1', { text: 'Logbook' }),
         el('p', { class: 'small muted', text: 'A field guide you fill in. Every creature, place, person or vessel you answer correctly is logged with its fact and the best tier it ever earned.' }),
         el('div', { class: 'row between' }, [
-          el('div', { html: '<b>' + logged.length + ' of ' + ofKind.length + '</b> <span class="muted small">' + esc(LOGBOOK_TABS.find(t => t.kind === kind).label.toLowerCase()) + ' logged</span>' }),
+          el('div', { html: '<b>' + logged.length.toLocaleString('en-US') + ' of ' + ofKind.length.toLocaleString('en-US') + '</b> <span class="muted small">' + esc(LOGBOOK_TABS.find(t => t.kind === kind).label.toLowerCase()) + ' logged</span>' }),
           el('div', { html: '<span class="tier tier-hadal">🔱 Hadal hunt</span> <b>' + hadalFound + ' of ' + hadalIds.size + '</b>' }),
         ]),
       ]),
@@ -235,11 +238,11 @@
       el('div', { html: charts.distributionBars(counts, todayRec ? dive.zoneFor(todayRec.depth).code : null) }),
       el('h3', { style: 'margin-top:16px', text: 'Rating' }),
       el('p', { class: 'small', html: rank ? rank : 'Rankings go live when FATHOM is online. Your daily dives are saved on this device meanwhile.' }),
-      todayRec ? el('p', { class: 'small muted', html: 'Next dive in <b id="countdown">--:--:--</b>' }) : null,
+      todayRec ? el('p', { class: 'small muted', html: 'Next dive in <b id="countdown-modal">--:--:--</b>' }) : null,
     ]);
     modal({ title: 'My Fathom', body });
     if (todayRec) {
-      const tick = () => { const n = document.getElementById('countdown'); if (!n) return clearInterval(iv); const ms = dive.msUntilNextDay(new Date()); n.textContent = [3600000, 60000, 1000].map((d, i) => String(Math.floor((i === 0 ? ms : ms % (i === 1 ? 3600000 : 60000)) / d)).padStart(2, '0')).join(':'); };
+      const tick = () => { const n = document.getElementById('countdown-modal'); if (!n) return clearInterval(iv); const ms = dive.msUntilNextDay(new Date()); n.textContent = [3600000, 60000, 1000].map((d, i) => String(Math.floor((i === 0 ? ms : ms % (i === 1 ? 3600000 : 60000)) / d)).padStart(2, '0')).join(':'); };
       const iv = setInterval(tick, 1000); tick();
     }
   }
@@ -268,6 +271,7 @@
     ]);
     const O = root.FathomOnline;
     if (O && O.settingsSection) body.append(O.settingsSection());
+    if (root.FathomMonetise && root.FathomMonetise.settingsSection) { const m = root.FathomMonetise.settingsSection(); if (m) body.append(m); }
     body.append(el('p', { class: 'small muted', style: 'margin-top:14px', text: 'Tip: add FATHOM to your home screen from your browser’s share or menu button — it works offline.' }));
     body.append(el('div', { class: 'switch' }, [el('div', { html: '<b>Reset local data</b><br><span class="small muted">Clears results, logbook and settings on this device</span>' }), el('button', { class: 'btn btn-sm', type: 'button', text: 'Reset', onClick: async () => { if (await F().confirmDialog('Clear everything FATHOM has saved on this device?', 'Clear it')) { storage.clearAll(); applySettings(); toast('Local data cleared'); F().navigate('#home'); } } })]));
     modal({ title: 'Settings', body });

@@ -6,7 +6,7 @@ const fs = require('fs'); const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const OUT = path.join(ROOT, 'supabase', 'functions', '_shared');
 fs.mkdirSync(OUT, { recursive: true });
-for (const [src, dst] of [['shared/dive.js', 'dive.js'], ['data/prompts.json', 'prompts.json'], ['data/entities.json', 'entities.json']]) {
+for (const [src, dst] of [['shared/dive.js', 'dive.js'], ['data/prompts.json', 'prompts.json'], ['data/entities.json', 'entities.json'], ['data/schedule.json', 'schedule.json'], ['data/version.json', 'version.json']]) {
   fs.copyFileSync(path.join(ROOT, src), path.join(OUT, dst));
   console.log('copied ' + src + ' -> supabase/functions/_shared/' + dst);
 }

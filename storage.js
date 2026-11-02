@@ -109,6 +109,14 @@
     set('logbook', lb);
   }
 
+  // ---- prompts the player has seen in any mode (for the logbook's "appeared in")
+  function playedPrompts() { return get('played', {}); }
+  function markPlayed(promptIds) {
+    const p = playedPrompts();
+    for (const id of promptIds || []) p[id] = true;
+    set('played', p);
+  }
+
   // ---- misc small flags
   function lastGoDeeperDay() { return get('goDeeperDay', null); }
   function setGoDeeperDay(k) { set('goDeeperDay', k); }
@@ -123,7 +131,7 @@
     settings, updateSettings, DEFAULT_SETTINGS, deviceId,
     allDailyResults, getDailyResult, saveDailyResult,
     getBest, saveBest, freeDiveCount, bumpFreeDiveCount,
-    streak, logbook, logbookAdd, lastGoDeeperDay, setGoDeeperDay,
+    streak, logbook, logbookAdd, playedPrompts, markPlayed, lastGoDeeperDay, setGoDeeperDay,
     queue, enqueue, setQueue,
   };
 });
