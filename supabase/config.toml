@@ -1,0 +1,9 @@
+# FATHOM — Supabase CLI config (only the parts that matter for the functions).
+[functions.submit-dive]
+verify_jwt = true
+
+[functions.delete-account]
+verify_jwt = true
+
+[functions.stripe-webhook]
+verify_jwt = false
