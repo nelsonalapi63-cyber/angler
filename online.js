@@ -507,6 +507,14 @@
     handleAuthRedirect().then(async (handled) => {
       if (handled) { await syncProgressDown(); F().navigate('#home'); }
       else if (user()) { await loadProfile().catch(() => {}); await refreshEntitlements(); await syncProgressDown(); }
+      // back from Stripe Checkout (the Payment Link's confirmation page redirects to ?checkout=success)
+      if (/[?&]checkout=success/.test(location.search)) {
+        const before = entitlements().length;
+        await refreshEntitlements();
+        try { history.replaceState(null, '', siteRoot().split('?')[0] + (location.hash || '#home')); } catch (e) { /* ignore */ }
+        if (entitlements().length > before) { F().toast('Thank you — unlocked'); trackEvent('purchase_completed', {}); }
+        else F().toast('Payment received — unlocks appear in a moment');
+      }
       drainQueue();
     });
     root.addEventListener('online', drainQueue);

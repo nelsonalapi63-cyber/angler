@@ -347,6 +347,9 @@
       if (gd) nodes.push(gd);
       const ad = root.FathomMonetise.adSlot('result');
       if (ad) nodes.push(ad);
+    } else if (record.mode === 'free' && root.FathomMonetise) {
+      const ad = root.FathomMonetise.adSlot('free');       // every third Free Dive, never during a timer
+      if (ad) nodes.push(ad);
     }
 
     // per prompt breakdown

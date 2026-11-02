@@ -45,7 +45,7 @@ Re-run `node tools/sync-shared.js` and redeploy `submit-dive` whenever the data 
 ## 3. Stripe (purchases)
 
 1. Create four Products with one-time Prices: Dive Supporter $4.99, Archive Pass $2.99, All Packs $4.99, Single pack $1.99 (placeholder prices — change them in `monetise.js` too).
-2. For each, create a Payment Link. In the link's advanced options add metadata `product_id` = `supporter`, `archive`, `packs-all` or `pack`. Paste each link into the matching `paymentLink` in `monetise.js`.
+2. For each, create a Payment Link. In the link's advanced options add metadata `product_id` = `supporter`, `archive`, `packs-all` or `pack`, and set the confirmation page to redirect to `https://<your domain>/?checkout=success` so the site can refresh unlocks and thank the player. Paste each link into the matching `paymentLink` in `monetise.js`.
 3. Developers → Webhooks → add endpoint `https://<ref>.supabase.co/functions/v1/stripe-webhook`, event `checkout.session.completed`. Copy the signing secret into the `STRIPE_WEBHOOK_SECRET` secret above.
 4. Flip `PAYMENTS_ENABLED: true`. Buying requires sign-in; the client passes the user id as `client_reference_id`, the webhook writes the entitlement, and the site refreshes entitlements when the player returns from checkout.
 
