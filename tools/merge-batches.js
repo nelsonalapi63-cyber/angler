@@ -13,6 +13,12 @@ const seeds = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'prompt-seeds.j
 const batchDir = process.env.BATCH_DIR ? path.resolve(process.env.BATCH_DIR) : path.join(ROOT, 'data', 'batches');
 const files = fs.readdirSync(batchDir).filter(f => f.endsWith('.json')).sort();
 if (!files.length) { console.error('no batch files'); process.exit(1); }
+// After the first merge, data/entities.json and data/prompts.json are the source of truth (review patches are
+// applied there). Re-merging would overwrite them, so refuse unless asked explicitly.
+if (fs.existsSync(path.join(ROOT, 'data', 'patches')) && !process.argv.includes('--force')) {
+  console.error('data/patches exists: data/*.json has been patched since the merge. Re-run with --force only if you really want to rebuild from the raw batches.');
+  process.exit(1);
+}
 
 const entities = {};        // id -> entity
 const promptAnswers = {};   // promptId -> [{entity, tier}]

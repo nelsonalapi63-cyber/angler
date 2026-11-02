@@ -17,7 +17,7 @@ A static site: vanilla HTML, CSS and JavaScript, no framework, no build step bey
 | `online.js` | feature flags, Supabase REST client, sign-in, dive submission, leaderboards, ratings, analytics, demo data |
 | `monetise.js` | products, unlock modal, "Go deeper" card, ad slots, consent banner |
 | `shared/dive.js` | the one copy of the rules: matching, scoring, depth, zones, seeded dive construction — used by the browser, the tests and the server |
-| `data/*.json` | the answer bank (entities, prompts, packs); `node build.js` writes `entities.js` and `prompts.js` |
+| `data/*.json` | the answer bank (entities, prompts, packs) — the source of truth; `node build.js` writes `entities.js` and `prompts.js`. `data/batches/` holds the raw material the bank was merged from; `data/patches/` holds review corrections applied with `tools/apply-patch.js` |
 | `supabase/` | schema, cron, Edge Functions for Phase 2 |
 | `sw.js`, `manifest.json`, `icons/` | installable, works offline |
 | `tests/` | unit tests (`node --test 'tests/*.test.js'`) and the Playwright run (`node tests/e2e.spec.js`) |
