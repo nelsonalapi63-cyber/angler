@@ -253,7 +253,8 @@
     "entity": "pocket-shark",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "sharks"
  },
  {
   "id": "shark-atlantic",
@@ -1117,7 +1118,8 @@
     "entity": "bowmouth-guitarfish",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "rays"
  },
  {
   "id": "stingray-species",
@@ -1241,7 +1243,9 @@
     "entity": "pelagic-stingray",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "rays",
+  "taxonFilter": "stingray|whipray|whiptail|stingaree|round ray|cowtail|river ray|maskray|fantail|bluespotted|blue spotted|butterfly ray|eagle ray|cownose|devil ray|manta|mobula"
  },
  {
   "id": "flat-seabed-fish",
@@ -1381,7 +1385,9 @@
     "entity": "pancake-batfish",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "flounder|\\bsole\\b|halibut|turbot|plaice|\\bdab\\b|flatfish|tonguefish|\\bbrill\\b|megrim|sanddab|topknot|scaldfish|windowpane|fluke\\b|hogchoker|stargazer|flathead|monkfish|goosefish|anglerfish|batfish|flat ?head"
  },
  {
   "id": "whale-species",
@@ -1525,7 +1531,9 @@
     "entity": "spade-toothed-whale",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "cetaceans",
+  "taxonFilter": "whale|narwhal|beluga|orca"
  },
  {
   "id": "toothed-whale",
@@ -1673,7 +1681,9 @@
     "entity": "shepherds-beaked-whale",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "cetaceans",
+  "taxonFilter": "dolphin|porpoise|beaked whale|sperm whale|killer whale|pilot whale|narwhal|beluga|orca|bottlenose|melon headed|false killer|vaquita|tucuxi|boto|franciscana|baiji|susu|bhulan"
  },
  {
   "id": "polar-cetacean",
@@ -2341,7 +2351,9 @@
     "entity": "clymene-dolphin",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "cetaceans",
+  "taxonFilter": "dolphin|porpoise|orca|killer whale|pilot whale|melon headed|vaquita|tucuxi|boto|franciscana|baiji|susu|bhulan|cochito"
  },
  {
   "id": "river-dolphin",
@@ -2725,7 +2737,8 @@
     "entity": "baikal-seal",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "pinnipeds"
  },
  {
   "id": "marine-mammal-not-cetacean",
@@ -3133,7 +3146,8 @@
     "entity": "short-nosed-sea-snake",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "sea-reptiles"
  },
  {
   "id": "shelled-animal",
@@ -3425,7 +3439,8 @@
     "entity": "rams-horn-squid",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "cephalopods"
  },
  {
   "id": "octopus-species",
@@ -3557,7 +3572,9 @@
     "entity": "argonaut",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "cephalopods",
+  "taxonFilter": "octopus|argonaut|octopod"
  },
  {
   "id": "squid-species",
@@ -3685,7 +3702,9 @@
     "entity": "bigfin-squid",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "cephalopods",
+  "taxonFilter": "squid"
  },
  {
   "id": "tentacles",
@@ -4541,7 +4560,8 @@
     "entity": "pyrosome",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "jellies"
  },
  {
   "id": "venomous",
@@ -4965,7 +4985,9 @@
     "entity": "moses-sole",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "flounder|\\bsole\\b|halibut|turbot|plaice|\\bdab\\b|flatfish|tonguefish|tongue sole|\\bbrill\\b|megrim|sanddab|sand dab|\\bwhiff\\b|topknot|scaldfish|flathead sole|windowpane|fluke\\b|hogchoker|sand flounder"
  },
  {
   "id": "buries-in-sand",
@@ -6481,7 +6503,9 @@
     "entity": "taimen",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "salmon|trout|\\bchar\\b|charr|grayling|whitefish|cisco|huchen|taimen|lenok|inconnu|kokanee|steelhead"
  },
  {
   "id": "breathes-air",
@@ -6901,7 +6925,8 @@
     "entity": "sea-pig",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "echinoderms"
  },
  {
   "id": "filter-feeder",
@@ -10729,7 +10754,9 @@
     "entity": "butterfly-kingfish",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "tuna|mackerel|bonito|wahoo|skipjack|albacore|kawakawa|tunny|seerfish|\\bsierra\\b|\\bcero\\b"
  },
  {
   "id": "cod-family",
@@ -10861,7 +10888,9 @@
     "entity": "burbot",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "\\bcod\\b|codling|haddock|pollock|pollack|whiting|\\bhake\\b|\\bling\\b|burbot|\\bcusk\\b|\\btusk\\b|saithe|coalfish|\\bbib\\b|\\bpout\\b|rockling|grenadier|rattail|tomcod|\\bmora\\b|moras\\b"
  },
  {
   "id": "catfish",
@@ -10997,7 +11026,9 @@
     "entity": "candiru",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "catfish|corydoras|\\bcory\\b|pleco|plecostomus|madtom|bullhead|\\bwels\\b|pangasius|synodontis|banjo|pimelod|candiru|raphael|whiptail cat|loricari|ancistrus|otocinclus|upside down|glass cat|redtail|shovelnose|driftwood|talking cat|woodcat|hoplo"
  },
  {
   "id": "eel",
@@ -11133,7 +11164,9 @@
     "entity": "slender-giant-moray",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "\\beels?\\b|moray|conger|elver|gulper|swallower|wolf ?eel"
  },
  {
   "id": "giant",
@@ -11837,7 +11870,9 @@
     "entity": "mccullochs-anemonefish",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "anemonefish|clownfish|damselfish|\\bdamsel\\b|chromis|sergeant|dascyllus|humbug|garibaldi|demoiselle|\\bpuller\\b|\\bgregory\\b|anemone fish|clown fish"
  },
  {
   "id": "wrasse-parrotfish",
@@ -11989,7 +12024,9 @@
     "entity": "slippery-dick",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "wrasse|parrotfish|parrot fish|hogfish|tuskfish|razorfish|cleaner fish|\\bcoris\\b|flasher|tamarin|thicklip|ballan|corkwing|goldsinny|rock cook|tautog|cunner|sheephead|slippery dick|bluehead|humphead|napoleon|maori"
  },
  {
   "id": "butterfly-angel-tang",
@@ -12141,7 +12178,9 @@
     "entity": "peppermint-angelfish",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "butterflyfish|butterfly fish|angelfish|angel fish|surgeonfish|surgeon fish|\\btangs?\\b|unicornfish|bannerfish|coralfish|coachman|bristletooth|doctorfish"
  },
  {
   "id": "grouper-snapper-bass",
@@ -12293,7 +12332,9 @@
     "entity": "potato-cod",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "grouper|snapper|sea ?bass|striped bass|coral trout|coralgrouper|\\bhind\\b|rockcod|rock cod|jewfish|wreckfish|hapuku|hapuka|soapfish|anthias|basslet|coney\\b|graysby|gag\\b|scamp\\b"
  },
  {
   "id": "seahorse",
@@ -12425,7 +12466,9 @@
     "entity": "ruby-sea-dragon",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "seahorse|sea horse|pipefish|pipehorse|seadragon|sea dragon|ghost pipefish|shrimpfish"
  },
  {
   "id": "puffer-box-trigger",
@@ -12569,7 +12612,9 @@
     "entity": "harlequin-filefish",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "puffer|porcupinefish|porcupine fish|burrfish|boxfish|cowfish|trunkfish|triggerfish|trigger fish|filefish|leatherjacket|ocean sunfish|\\bmola\\b|\\btoby\\b|tobies|blowfish|\\bfugu\\b|balloonfish|toadfish"
  },
  {
   "id": "seabird",
@@ -12713,7 +12758,8 @@
     "entity": "marbled-murrelet",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "seabirds"
  },
  {
   "id": "migrates",
@@ -14585,7 +14631,9 @@
     "entity": "sea-pig",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish|sharks|rays|cephalopods|echinoderms|jellies",
+  "taxonFilter": "\\b(lion|tiger|leopard|zebra|cow|horse|dog|cat|wolf|fox|rabbit|hare|goat|sheep|pig|hog|elephant|rhino|camel|squirrel|mouse|rat|bat|frog|toad|lizard|snake|viper|cobra|parrot|hawk|eagle|owl|peacock|monkey|bear|deer|moose|buffalo|bull|ox|cock|hen|chicken|duck|goose|swan|turkey|butterfly|bee|wasp|ant|spider|scorpion|unicorn|dragon|porcupine|hedgehog|panther|jaguar|cheetah|giraffe|kangaroo|koala|raccoon|badger|weasel|otter|beaver|mole|crocodile|alligator|iguana|chameleon|gecko|robin|sparrow|swallow|crow|raven|finch|cardinal|flamingo|pelican|penguin|ostrich|emu|puffin|pony|donkey|mule|ram|lamb|calf|boar|stag|doe|fawn|lionfish|catfish|dogfish|wolffish|toadfish|frogfish|lizardfish|snakefish|cowfish|hogfish|goatfish|rabbitfish|squirrelfish|batfish|ratfish|parrotfish|hawkfish|surgeonfish|zebrafish|tigerfish|leopardfish|mousefish|elephantfish|unicornfish|dragonfish|porcupinefish|butterflyfish|scorpionfish)\\w*"
  },
  {
   "id": "colour-change",
@@ -15017,7 +15065,9 @@
     "entity": "snipe-eel",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "longnose|long nose|longsnout|long snout|needlefish|halfbeak|pipefish|trumpetfish|cornetfish|snipefish|paddlefish|swordfish|marlin|sailfish|spearfish|sawfish|\\bgars?\\b|garfish|unicornfish|elephantnose|elephant nose|elephant fish|tubesnout|tube snout|snipe eel|spookfish"
  },
  {
   "id": "jumper",
@@ -16033,7 +16083,9 @@
     "entity": "vermilion-snapper",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "\\b(red|blue|green|yellow|black|white|silver|gold|golden|orange|pink|purple|violet|brown|grey|gray|scarlet|crimson|azure|indigo|rosy|ruby|emerald|sapphire|turquoise|lavender|lilac|copper|bronze|olive|cream|ivory|amber|rainbow)\\b"
  },
  {
   "id": "caribbean",
@@ -17649,7 +17701,9 @@
     "entity": "sea-mouse",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish|sharks|rays|cetaceans|pinnipeds|sea-reptiles|cephalopods|jellies|echinoderms",
+  "taxonFilter": "^sea"
  },
  {
   "id": "forage-fish",
@@ -17789,7 +17843,9 @@
     "entity": "grunion",
     "tier": "hadal"
    }
-  ]
+  ],
+  "taxon": "fish",
+  "taxonFilter": "herring|sardine|pilchard|anchovy|anchoveta|sprat|\\bshad\\b|menhaden|capelin|sand ?eel|sand lance|\\bsmelt\\b|silverside|whitebait|alewife|blueback|hilsa|kilka|tyulka|\\bscad\\b"
  },
  {
   "id": "north-sea",

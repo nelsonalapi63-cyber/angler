@@ -16,6 +16,11 @@ function validateData({ allowPartial } = {}) {
   const filled = prompts.filter(p => p.answers && p.answers.length);
   const expected = allowPartial ? filled.map(p => p.id) : seeds.map(s => s.id);
   const res = validateBatch({ entities, prompts: filled }, seeds, {}, expected);
+  if (allowPartial) {       // while the bank is still being topped up, a short answer list is a warning, not a stop
+    const short = res.errors.filter(e => / only \d+ answers, need at least \d+$/.test(e));
+    res.errors = res.errors.filter(e => !short.includes(e));
+    res.warnings.push(...short);
+  }
   const promptIds = new Set(filled.map(p => p.id));
   for (const pack of packs) {
     if (pack.prompts.length !== 7) res.errors.push('pack ' + pack.id + ': needs 7 prompts');

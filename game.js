@@ -1,4 +1,4 @@
-/* FATHOM — the dive itself: prompts, timer, matching, reveal, result screen. */
+/* FATHOM — the dive itself: prompts, timer, guesses, hints, the descent, reveal, result screen. */
 (function (root) {
   'use strict';
 
@@ -9,7 +9,18 @@
   const NEXT_GUARD_MS = 450;           // a second Enter right after a reveal must not skip it
   const AUTO_ADVANCE_ON_TOUCH = false; // on phones the player taps Next, so the keyboard opens inside a user gesture
   const RESULT_LIST_FACT = true;       // show the fact under each prompt on the result screen
-  const MODE_LABELS = { daily: 'Daily Dive', free: 'Free Dive', pack: 'Themed Pack', archive: 'Archive Dive', challenge: 'Challenge' };
+  const TILE_DELAY_FRACTION = 0.35;    // the tier badge appears this far into the descent…
+  const TILE_DELAY_MAX_MS = 900;       // …but never later than this
+  const REJECT_FLASH_MS = 650;         // red flash + shake on a rejected guess
+  const TWITCH_MS = 520;               // the scene twitches on a miss
+  const LANDMARK_LABEL_MS = 1800;      // a passing landmark label stays this long
+  const TUTORIAL_PROMPT_IDS = ['shark-species', 'whale-species', 'tide-pool'];
+  const TUTORIAL_COACH = [
+    'Type the first shark you can think of, then press Dive. There is no timer in the tutorial.',
+    'Rarer answers sink you deeper. Try a whale most people would not say — or press Hint to see the shape of a rare one.',
+    'Last one. A guess that is not accepted does not end the prompt: you can try again until the timer runs out, and a close spelling still counts.',
+  ];
+  const MODE_LABELS = { daily: 'Daily Dive', free: 'Free Dive', pack: 'Themed Pack', archive: 'Archive Dive', challenge: 'Challenge', tutorial: 'Tutorial' };
 
   const F = () => root.Fathom;
   let state = null;          // the live dive
@@ -17,7 +28,7 @@
 
   // ---------------------------------------------------------------- helpers
   function promptIndex(prompt) {
-    if (!prompt._index) prompt._index = F().dive.buildIndex(prompt, F().entities);
+    if (!prompt._index) prompt._index = F().dive.buildIndex(prompt, F().entities, F().taxa);
     return prompt._index;
   }
   function hadalEntity(prompt) {
@@ -35,12 +46,17 @@
     groups.forEach(g => g.names.sort());
     return groups.filter(g => g.names.length);
   }
+  function artNode(ent, size) {
+    if (!ent || !ent.art) return null;
+    return F().el('img', { class: 'art', src: 'data/illustrations/' + ent.id + '.svg', alt: '', width: String(size || 96), height: String(size || 96), loading: 'lazy', decoding: 'async' });
+  }
   function modeLabel(record) {
     const { packsById, dive } = F();
     if (record.mode === 'daily') return 'FATHOM #' + record.number;
     if (record.mode === 'archive') return 'Archive · FATHOM #' + dive.puzzleNumber(record.dayKey);
     if (record.mode === 'pack') return (packsById[record.packId] ? packsById[record.packId].name : 'Pack');
     if (record.mode === 'challenge') return 'Challenge';
+    if (record.mode === 'tutorial') return 'Tutorial';
     return 'Free Dive';
   }
   function reportHref(prompt, result, record) {
@@ -60,19 +76,32 @@
     if (state) {
       if (state.timer) clearInterval(state.timer);
       if (state.revealTimer) clearTimeout(state.revealTimer);
-      state.timer = state.revealTimer = null;
+      if (state.tileTimer) clearTimeout(state.tileTimer);
+      if (state.descent) state.descent();
+      state.timer = state.revealTimer = state.tileTimer = state.descent = null;
     }
     if (countdownTimer) { clearInterval(countdownTimer); countdownTimer = null; }
   }
-  function leaveDive() { clearTimers(); state = null; }
+  function leaveDive() { clearTimers(); state = null; document.body.classList.remove('diving'); }
+  function track(name, props) { if (root.FathomOnline && root.FathomOnline.trackEvent) root.FathomOnline.trackEvent(name, props || {}); }
+
+  // The boot bundle carries only today's and tomorrow's prompts; anything else waits for the full bank.
+  function loadThen(fn) {
+    const { el, render, ensureBank } = F();
+    render(el('div', { class: 'card strong center' }, [el('p', { class: 'muted', text: 'Loading the rest of the ocean…' })]));
+    const hash = location.hash;
+    ensureBank().then(() => { if (location.hash === hash) fn(); })
+      .catch(() => root.FathomPages.message('Could not load the answer bank', 'Check your connection and try again.'));
+  }
 
   // ---------------------------------------------------------------- starting dives
   function startDaily() {
-    const { dive, storage, prompts, toast } = F();
+    const { dive, storage, prompts, schedule } = F();
     const today = F().todayKey();
     const existing = storage.getDailyResult(today);
     if (existing) return resultScreen(existing, { fresh: false });
-    const promptIds = dive.dailyPromptIds(today, prompts, dive.LAUNCH_DATE);
+    const promptIds = dive.dailyPromptIds(today, prompts, dive.LAUNCH_DATE, schedule);
+    if (!F().bankLoaded && !(schedule && schedule[today] && promptIds && F().hasPromptData(promptIds))) return loadThen(startDaily);
     if (!promptIds) return root.FathomPages.message('Not yet', 'FATHOM #1 opens on ' + dive.LAUNCH_DATE + ' (Eastern time). Try a Free Dive meanwhile.');
     // A daily dive that was left half-way (refresh, back button, closed tab) resumes where it was. The prompt that
     // was on screen keeps its original 25-second deadline measured on the wall clock, so reloading never buys time.
@@ -89,14 +118,14 @@
     startDive({ mode: 'free', promptIds: dive.freePromptIds(s, prompts), seed: s });
   }
   function startArchive(dayKey) {
-    const { dive, storage, prompts } = F();
+    const { dive, storage, prompts, schedule } = F();
     const today = F().todayKey();
     if (!/^\d{4}-\d{2}-\d{2}$/.test(dayKey) || dayKey < dive.LAUNCH_DATE || dayKey >= today) return root.FathomPages.archive();
     const M = root.FathomMonetise;
     if (M && !M.isArchiveUnlocked(dayKey)) { root.FathomPages.archive(); M.openUnlock('archive'); return; }
     const existing = (storage.get('archive', {}))[dayKey];
     if (existing) return resultScreen(existing, { fresh: false });
-    startDive({ mode: 'archive', promptIds: dive.dailyPromptIds(dayKey, prompts, dive.LAUNCH_DATE), dayKey, number: dive.puzzleNumber(dayKey) });
+    startDive({ mode: 'archive', promptIds: dive.dailyPromptIds(dayKey, prompts, dive.LAUNCH_DATE, schedule), dayKey, number: dive.puzzleNumber(dayKey) });
   }
   function startPack(packId) {
     const { dive, prompts, packsById } = F();
@@ -110,17 +139,26 @@
     const { dive, prompts, toast } = F();
     const parsed = dive.parseChallenge(hash);
     if (!parsed) { toast('That challenge link is not valid — here is a fresh dive.'); return startFree(); }
-    if (root.FathomOnline && root.FathomOnline.trackEvent) root.FathomOnline.trackEvent('challenge_opened', {});
+    track('challenge_opened');
     startDive({ mode: 'challenge', promptIds: dive.freePromptIds(parsed.seed, prompts), seed: parsed.seed, challenge: { depth: parsed.depth, tiers: parsed.tiers } });
+  }
+  // Three untimed prompts with a coach line each; nothing is saved.
+  function startTutorial() {
+    const ids = TUTORIAL_PROMPT_IDS.filter(id => F().promptsById[id]);
+    if (ids.length < TUTORIAL_PROMPT_IDS.length && !F().bankLoaded) return loadThen(startTutorial);
+    if (!ids.length) return root.FathomPages.message('Tutorial unavailable', 'The tutorial prompts are missing from this build. Start a Free Dive instead.');
+    track('tutorial_started');
+    startDive({ mode: 'tutorial', promptIds: ids });
   }
 
   // ---------------------------------------------------------------- the dive loop
   function startDive(spec) {
-    const { storage, dive, charts } = F();
+    const { storage, dive, charts, sound } = F();
     clearTimers();
-    const timerOn = spec.mode === 'free' ? storage.settings().freeTimer !== false : true;
-    state = { spec, idx: 0, results: [], points: 0, depth: 0, timerOn, timer: null, revealTimer: null, answered: false, promptStart: 0, deadline: 0 };
+    const timerOn = spec.mode === 'tutorial' ? false : spec.mode === 'free' ? storage.settings().freeTimer !== false : true;
+    state = { spec, total: spec.promptIds.length, idx: 0, results: [], points: 0, depth: 0, timerOn, timer: null, revealTimer: null, tileTimer: null, descent: null, answered: false, promptStart: 0, deadline: 0, attempts: 0, hint: null, rejected: [] };
     let remainingMs = null;
+    let carry = null;
     if (spec.resume) {
       state.results = spec.resume.results.slice();
       state.points = state.results.reduce((n, r) => n + (r.points || 0), 0);
@@ -128,18 +166,25 @@
       state.idx = state.results.length;
       if (spec.resume.shownAt && spec.resume.shownIdx === state.idx) {
         remainingMs = dive.SECONDS_PER_PROMPT * 1000 - (Date.now() - spec.resume.shownAt);
+        carry = { attempts: spec.resume.attempts || 0, hint: spec.resume.hint || null, rejected: spec.resume.rejected || [] };
       }
-      if (state.idx >= dive.PROMPTS_PER_DIVE) return finish();
-    } else if (root.FathomOnline && root.FathomOnline.trackEvent) root.FathomOnline.trackEvent('dive_started', { mode: spec.mode });
+      if (state.idx >= state.total) return finish();
+    } else {
+      track('dive_started', { mode: spec.mode });
+      sound.splash();
+    }
     renderDiveShell();
+    F().setSceneDepth(state.depth, false);
     charts.updateGauge(state.gauge, state.depth);
-    F().applyDepthTint(state.depth);
-    if (remainingMs !== null && remainingMs <= 0) { renderPrompt(0); submit(null); return; }
-    renderPrompt(remainingMs);
+    if (remainingMs !== null && remainingMs <= 0) { renderPrompt(0, carry); submit(null, true); return; }
+    renderPrompt(remainingMs, carry);
   }
   function saveProgress(shownAt) {
     if (!state || state.spec.mode !== 'daily') return;
-    F().storage.set('progress', { mode: 'daily', dayKey: state.spec.dayKey, promptIds: state.spec.promptIds, results: state.results, shownIdx: state.idx, shownAt: shownAt || null });
+    F().storage.set('progress', {
+      mode: 'daily', dayKey: state.spec.dayKey, promptIds: state.spec.promptIds, results: state.results, shownIdx: state.idx, shownAt: shownAt || null,
+      attempts: state.attempts || 0, hint: state.hint || null, rejected: state.rejected || [],
+    });
   }
 
   function renderDiveShell() {
@@ -149,14 +194,15 @@
     const gaugeWrap = el('div', { class: 'gauge-wrap', html: charts.gaugeSvg(0, compact) });
     const mainCol = el('div', { class: 'dive-main' });
     render(el('section', { class: 'dive', 'aria-label': 'Dive' }, [gaugeWrap, mainCol]));
+    document.body.classList.add('diving');
     state.gauge = gaugeWrap.querySelector('svg');
     state.mainCol = mainCol;
   }
 
   function progressDots() {
-    const { el, dive } = F();
+    const { el } = F();
     const dots = [];
-    for (let i = 0; i < dive.PROMPTS_PER_DIVE; i++) {
+    for (let i = 0; i < state.total; i++) {
       const r = state.results[i];
       const cls = r ? (r.tier ? 'tier-' + r.tier : 'miss') : (i === state.idx ? 'cur' : '');
       dots.push(el('span', { class: cls, style: r && r.tier ? '--c: var(--tier-' + r.tier + ')' : (r ? '--c: var(--tier-miss)' : ''), 'aria-hidden': 'true' }));
@@ -176,31 +222,46 @@
     return t;
   }
 
-  function renderPrompt(remainingMs) {
-    const { el, dive, promptsById, esc, config } = F();
+  function hintsAllowed() { return state && state.spec.mode !== 'challenge'; }
+
+  function renderPrompt(remainingMs, carry) {
+    const { el, dive, promptsById, esc } = F();
     const promptId = state.spec.promptIds[state.idx];
     const prompt = promptsById[promptId];
     state.answered = false;
+    state.attempts = carry && carry.attempts ? carry.attempts : 0;
+    state.hint = carry && carry.hint ? carry.hint : null;
+    state.rejected = carry && carry.rejected ? carry.rejected.slice() : [];
     const input = el('input', { class: 'input', id: 'answer', type: 'text', autocomplete: 'off', autocapitalize: 'off', autocorrect: 'off', spellcheck: 'false', enterkeyhint: 'go', placeholder: 'Your answer…', 'aria-label': 'Your answer', 'aria-describedby': 'prompt-text', maxlength: String(MAX_TYPED_LENGTH) });
     const submitBtn = el('button', { class: 'btn btn-primary', type: 'submit', text: 'Dive' });
     const form = el('form', { class: 'answer-form', onSubmit: (e) => { e.preventDefault(); submit(input.value); } }, [input, submitBtn]);
+    const suggest = el('div', { id: 'suggest', class: 'suggest', 'aria-live': 'polite' });
+    const reject = el('div', { id: 'reject', class: 'reject-msg', role: 'status' });
+    const hintBtn = hintsAllowed() ? el('button', { class: 'btn btn-sm btn-ghost', type: 'button', id: 'hint-btn', text: '💡 Hint (−' + dive.HINT_COST + ')', onClick: useHint }) : null;
+    const skipBtn = el('button', { class: 'btn btn-sm btn-ghost', type: 'button', id: 'skip-btn', text: 'Skip', 'aria-label': 'Skip this prompt', onClick: () => skip() });
+    const helpRow = el('div', { class: 'help-row' }, [hintBtn, skipBtn, el('span', { class: 'tiny muted grow', text: 'Wrong guesses do not end the prompt' })]);
+    const hintText = el('div', { id: 'hint-text', class: 'hint-text' });
     const allowedMs = remainingMs != null ? Math.max(0, Math.min(remainingMs, dive.SECONDS_PER_PROMPT * 1000)) : dive.SECONDS_PER_PROMPT * 1000;
     const head = el('div', { class: 'dive-head' }, [
       el('div', {}, [
         el('div', { class: 'tiny muted', text: (MODE_LABELS[state.spec.mode] || '') + (state.spec.number ? ' · FATHOM #' + state.spec.number : '') }),
-        el('div', { class: 'small', html: '<b>Prompt ' + (state.idx + 1) + ' of ' + dive.PROMPTS_PER_DIVE + '</b>' }),
+        el('div', { class: 'small', html: '<b>Prompt ' + (state.idx + 1) + ' of ' + state.total + '</b>' }),
         progressDots(),
       ]),
       timerNode(allowedMs / 1000),
     ]);
-    const challengeNote = state.spec.challenge && state.spec.challenge.depth ? el('p', { class: 'small', html: 'Beat <b>' + esc(dive.formatMeters(state.spec.challenge.depth)) + ' m</b> to win this challenge.' }) : null;
+    const challengeNote = state.spec.challenge && state.spec.challenge.depth ? el('p', { class: 'small', html: 'Beat <b>' + esc(dive.formatMeters(state.spec.challenge.depth)) + ' m</b> to win this challenge. No hints.' }) : null;
+    const coach = state.spec.mode === 'tutorial' ? el('p', { class: 'coach', html: '<b>Tutorial ' + (state.idx + 1) + '/' + state.total + ':</b> ' + esc(TUTORIAL_COACH[state.idx] || '') }) : null;
     state.mainCol.innerHTML = '';
-    state.mainCol.append(head, challengeNote || '', el('h2', { class: 'prompt-text', id: 'prompt-text', text: prompt.text }), form, el('div', { id: 'reveal', 'aria-live': 'polite' }));
+    state.mainCol.append(head, challengeNote || '', coach || '', el('h2', { class: 'prompt-text', id: 'prompt-text', text: prompt.text }), suggest, form, reject, helpRow, hintText, el('div', { id: 'reveal', 'aria-live': 'polite' }));
     state.input = input;
     state.form = form;
+    if (state.hint) showHint(state.hint);
+    if (state.attempts) reject.innerHTML = '<b>' + state.attempts + (state.attempts === 1 ? ' guess' : ' guesses') + '</b> not accepted so far — try again';
     setTimeout(() => input.focus(), 30);
     state.promptStart = performance.now();
-    saveProgress(Date.now() - (dive.SECONDS_PER_PROMPT * 1000 - allowedMs));
+    state.shownAt = Date.now() - (dive.SECONDS_PER_PROMPT * 1000 - allowedMs);
+    saveProgress(state.shownAt);
     if (state.timerOn) {
       state.deadline = state.promptStart + allowedMs;
       const arc = state.mainCol.querySelector('.timer .arc');
@@ -212,94 +273,236 @@
         const remaining = Math.max(0, state.deadline - performance.now()) / 1000;
         if (arc) arc.setAttribute('stroke-dashoffset', (C * (1 - remaining / dive.SECONDS_PER_PROMPT)).toFixed(1));
         const whole = Math.ceil(remaining);
-        if (num && whole !== lastWhole) { num.textContent = String(whole); lastWhole = whole; if (whole <= LOW_TIME_SECONDS && whole > 0) F().sound.tick(); }
+        if (num && whole !== lastWhole) { num.textContent = String(whole); lastWhole = whole; if (whole <= LOW_TIME_SECONDS && whole > 0) { F().sound.tick(); F().haptics.buzz('tick'); } }
         if (timerEl) timerEl.classList.toggle('low', remaining <= LOW_TIME_SECONDS);
         if (remaining <= 0) { const typedSoFar = state.input ? state.input.value.trim() : ''; submit(typedSoFar || null, true); }
       }, TIMER_TICK_MS);
     }
   }
 
+  // ---------------------------------------------------------------- hints
+  function useHint() {
+    if (!state || state.answered || state.hint || !hintsAllowed()) return;
+    const { dive, promptsById, entities, toast } = F();
+    const prompt = promptsById[state.spec.promptIds[state.idx]];
+    // seeded per prompt and dive, so a reload (or everyone playing today's dive) sees the same hint
+    const rng = dive.seededRng('hint:' + prompt.id + ':' + (state.spec.dayKey || state.spec.seed || state.spec.packId || 'free'));
+    const h = dive.pickHint(prompt, entities, [], rng);
+    if (!h) { toast('No hint for this one'); return; }
+    state.hint = h;
+    showHint(h);
+    saveProgress(state.shownAt);
+    track('hint_used', { prompt: prompt.id });
+  }
+  function showHint(h) {
+    const { dive, esc } = F();
+    const btn = document.getElementById('hint-btn');
+    if (btn) { btn.disabled = true; btn.textContent = '💡 used'; }
+    const t = document.getElementById('hint-text');
+    const tier = dive.TIER_BY_CODE[h.tier];
+    if (t) t.innerHTML = '<b>' + esc(tier.emoji + ' ' + tier.name) + ' answer:</b> <span class="shape">' + esc(h.shape) + '</span> <span class="muted">(' + h.letters + ' letters · −' + dive.HINT_COST + ' points)</span>';
+    if (state && state.input && !state.answered) state.input.focus();
+  }
+
+  // ---------------------------------------------------------------- answering
   function submit(typed, timedOut) {
     if (!state || state.answered) return;
-    const { el, dive, promptsById, entities, charts, storage, config, esc, sound, applyDepthTint } = F();
+    const { dive, promptsById } = F();
+    const prompt = promptsById[state.spec.promptIds[state.idx]];
+    const text = typed == null ? '' : String(typed).trim();
+    if (!timedOut) {
+      if (!text) { nudge(); return; }
+      const m = dive.matchAnswer(text, promptIndex(prompt));
+      if (!m.entityId) { reject(text, prompt); return; }
+      accept(m, text, false, prompt);
+      return;
+    }
+    const m = text ? dive.matchAnswer(text, promptIndex(prompt)) : null;
+    if (m && m.entityId) accept(m, text, true, prompt);
+    else miss('timeout', text, prompt);
+  }
+  function skip() {
+    if (!state || state.answered) return;
+    const { promptsById } = F();
+    miss('skip', state.input ? state.input.value.trim() : '', promptsById[state.spec.promptIds[state.idx]]);
+  }
+  function nudge() {
+    const input = state.input;
+    input.classList.remove('shake'); void input.offsetWidth; input.classList.add('shake');
+    const msg = document.getElementById('reject');
+    if (msg) msg.textContent = 'Type an answer — or press Skip';
+    input.focus();
+  }
+  // A guess that is not accepted does not end the prompt: shake, flash, clear, keep the timer running.
+  function reject(text, prompt) {
+    const { dive, entities, sound, haptics, esc } = F();
+    state.attempts++;
+    state.rejected.push(text);
+    const input = state.input;
+    input.value = '';
+    input.classList.remove('shake', 'reject'); void input.offsetWidth; input.classList.add('shake', 'reject');
+    setTimeout(() => input.classList.remove('shake', 'reject'), REJECT_FLASH_MS);
+    const msg = document.getElementById('reject');
+    if (msg) msg.innerHTML = '<b>“' + esc(text) + '”</b> is not an accepted answer — try again' + (state.attempts > 1 ? ' <span class="muted">(' + state.attempts + ' tries)</span>' : '');
+    renderChips(dive.suggestAnswers(text, promptIndex(prompt), entities));
+    sound.miss();
+    haptics.buzz('miss');
+    saveProgress(state.shownAt);
+    input.focus();
+  }
+  function renderChips(chips) {
+    const { el } = F();
+    const box = document.getElementById('suggest');
+    if (!box) return;
+    box.innerHTML = '';
+    if (!chips || !chips.length) return;
+    box.append(el('span', { class: 'small muted', text: 'Did you mean' }));
+    for (const c of chips) {
+      box.append(el('button', { class: 'chip-btn', type: 'button', text: c.name, onClick: () => { if (!state || state.answered) return; state.input.value = c.name; box.innerHTML = ''; submit(c.name); } }));
+    }
+  }
+  function lockPrompt() {
     state.answered = true;
     if (state.timer) { clearInterval(state.timer); state.timer = null; }
-    const promptId = state.spec.promptIds[state.idx];
-    const prompt = promptsById[promptId];
-    const secondsUsed = Math.min(dive.SECONDS_PER_PROMPT, Math.max(0, (performance.now() - state.promptStart) / 1000));
-    const text = typed == null ? '' : String(typed).trim();
-    const m = text ? dive.matchAnswer(text, promptIndex(prompt)) : { entityId: null, tier: null, points: 0, via: null };
-    const result = { promptId, typed: text, entityId: m.entityId, tier: m.tier, points: m.points, secondsUsed: Math.round(secondsUsed * 10) / 10, timedOut: !!timedOut || typed == null };
+    state.input.disabled = true;
+    state.form.querySelector('button').disabled = true;
+    ['suggest', 'reject', 'hint-text'].forEach(id => { const n = document.getElementById(id); if (n) n.innerHTML = ''; });
+    const help = state.mainCol.querySelector('.help-row');
+    if (help) help.remove();
+  }
+  function secondsUsed() {
+    const { dive } = F();
+    return Math.round(Math.min(dive.SECONDS_PER_PROMPT, Math.max(0, (performance.now() - state.promptStart) / 1000)) * 10) / 10;
+  }
+  function nextButton(extraDelay) {
+    const { el, config } = F();
+    // a keyboard "click" (Enter/Space, event.detail === 0) within the guard is the player's double Enter — ignore it;
+    // a real tap or mouse click always advances
+    const btn = el('button', { class: 'btn btn-primary', type: 'button', text: state.idx + 1 >= state.total ? 'See your dive' : 'Next prompt', onClick: (e) => { if (e.detail === 0 && state && performance.now() - state.revealedAt < NEXT_GUARD_MS) return; next(); } });
+    state.revealedAt = performance.now();
+    const touch = root.matchMedia && root.matchMedia('(pointer: coarse)').matches;
+    if (!touch || AUTO_ADVANCE_ON_TOUCH) state.revealTimer = setTimeout(next, config.REVEAL_MS + (extraDelay || 0));
+    return btn;
+  }
+
+  // An accepted answer: the whole scene sinks the distance it earned, the gauge counts up, landmarks drift past,
+  // and the tier badge lands part-way down.
+  function accept(m, text, timedOut, prompt) {
+    const { el, dive, entities, charts, storage, esc, sound, haptics, setSceneDepth } = F();
+    lockPrompt();
+    const taxonHit = dive.isTaxonId(m.entityId);
+    const ent = taxonHit ? { id: m.entityId, name: m.name || text, fact: dive.taxonFact(promptIndex(prompt).taxon), kind: 'creature' } : entities[m.entityId];
+    const tier = dive.TIER_BY_CODE[m.tier];
+    const cost = state.hint ? dive.HINT_COST : 0;
+    const earned = Math.max(0, m.points - cost);
+    const result = { promptId: prompt.id, typed: text, entityId: m.entityId, tier: m.tier, points: earned, via: m.via, secondsUsed: secondsUsed(), timedOut: !!timedOut, attempts: state.attempts + 1, hint: !!state.hint, guesses: state.rejected.concat([text]) };
     state.results.push(result);
-    state.points += m.points;
+    state.points += earned;
     const prevDepth = state.depth;
     state.depth = dive.depthFor(state.points);
     saveProgress(null);
-    state.input.disabled = true;
-    state.form.querySelector('button').disabled = true;
+    if (!taxonHit && state.spec.mode !== 'tutorial') storage.logbookAdd(m.entityId, m.tier, m.points, prompt.id, F().todayKey());
+
+    const ms = setSceneDepth(state.depth, true);
+    sound.descend(prevDepth, state.depth, ms);
+    haptics.buzz(m.tier === 'hadal' ? 'hadal' : 'accept');
+    const passing = dive.LANDMARKS.filter(lm => lm.depth > prevDepth && lm.depth <= state.depth);
+    let metersNode = null;
+    let animDepth = prevDepth;
+    state.descent = charts.animateGauge(state.gauge, prevDepth, state.depth, ms, (d) => {
+      animDepth = d;
+      while (passing.length && passing[0].depth <= d) landmarkPass(passing.shift());
+      if (metersNode) metersNode.textContent = '+' + dive.formatMeters(Math.round(d - prevDepth)) + ' m';
+    });
 
     const reveal = state.mainCol.querySelector('#reveal');
+    const showTile = () => {
+      state.tileTimer = null;
+      metersNode = el('div', { class: 'tile-meters', text: '+' + dive.formatMeters(Math.round(animDepth - prevDepth)) + ' m' });
+      const subBits = [ent.name + (m.via === 'fuzzy' ? ' (close enough)' : '') + ' · ' + (cost ? tier.points + ' − ' + cost + ' for the hint = ' + earned : tier.points) + ' points'];
+      if (result.attempts > 1) subBits.push(result.attempts + ' tries');
+      const tile = el('div', { class: 'tile tier-' + m.tier + (m.tier === 'hadal' ? ' hadal' : ''), style: '--c: var(--tier-' + m.tier + ')' }, [
+        el('div', { class: 'tile-top' }, [el('div', { class: 'tile-name', text: tier.emoji + ' ' + tier.name }), metersNode]),
+        el('div', { class: 'tile-sub', text: subBits.join(' · ') }),
+        artNode(ent, 112),
+      ]);
+      reveal.innerHTML = '';
+      reveal.append(tile);
+      if (ent.fact) reveal.append(el('p', { class: 'fact', html: '<b>Did you know?</b> ' + esc(ent.fact) }));
+      if (taxonHit) reveal.append(el('p', { class: 'small muted', text: 'Not on our hand-written list, but a real species — it scores Midnight. Tell us if it deserves a tier of its own.' }));
+      reveal.append(el('div', { class: 'next-row' }, [progressDots(), nextButton(Math.max(0, ms - Math.min(ms, TILE_DELAY_MAX_MS)) + 600)]));
+      reveal.querySelector('.next-row button').focus({ preventScroll: true });
+      if (m.tier === 'hadal') sound.hadal(); else sound.reveal(m.tier);
+    };
+    const tileAt = ms ? Math.min(TILE_DELAY_MAX_MS, ms * TILE_DELAY_FRACTION) : 0;
+    if (tileAt) state.tileTimer = setTimeout(showTile, tileAt); else showTile();
+  }
+
+  function miss(kind, text, prompt) {
+    const { el, dive, esc, sound, haptics } = F();
+    lockPrompt();
+    const guesses = state.rejected.concat(text ? [text] : []);
+    const result = { promptId: prompt.id, typed: guesses.length ? guesses[guesses.length - 1] : '', entityId: null, tier: null, points: 0, secondsUsed: secondsUsed(), timedOut: kind === 'timeout', skipped: kind === 'skip', attempts: guesses.length, hint: !!state.hint, guesses };
+    state.results.push(result);
+    saveProgress(null);
     const hadal = hadalEntity(prompt);
-    let tile, factText;
-    if (m.entityId) {
-      const ent = entities[m.entityId];
-      const tier = dive.TIER_BY_CODE[m.tier];
-      storage.logbookAdd(m.entityId, m.tier, m.points, promptId, F().todayKey());
-      tile = el('div', { class: 'tile tier-' + m.tier, style: '--c: var(--tier-' + m.tier + ')' }, [
-        el('div', { class: 'tile-top' }, [
-          el('div', { class: 'tile-name', text: tier.emoji + ' ' + tier.name }),
-          el('div', { class: 'tile-meters', text: '+' + dive.formatMeters(state.depth - prevDepth) + ' m' }),
-        ]),
-        el('div', { class: 'tile-sub', text: ent.name + (m.via === 'fuzzy' ? ' (close enough)' : '') + ' · ' + tier.points + ' points' }),
-      ]);
-      factText = ent.fact;
-      sound.reveal(m.tier);
-    } else {
-      state.input.classList.add('shake');
-      const missLabel = typed == null ? '⏱ Out of time' : (text ? '⬛ Not an accepted answer' : '⬛ No answer');
-      tile = el('div', { class: 'tile tile-miss', style: '--c: var(--tier-miss)' }, [
-        el('div', { class: 'tile-top' }, [
-          el('div', { class: 'tile-name', text: missLabel }),
-          el('div', { class: 'tile-meters', text: '+0 m' }),
-        ]),
-        el('div', { class: 'tile-sub', text: hadal ? 'The Hadal answer was ' + hadal.name + '.' : '' }),
-      ]);
-      factText = hadal ? hadal.fact : '';
-      sound.miss();
-      if (typed != null && text) F().toast('Not an accepted answer');
-    }
+    const scene = document.getElementById('scene');
+    if (scene) { scene.classList.remove('twitch'); void scene.offsetWidth; scene.classList.add('twitch'); setTimeout(() => scene.classList.remove('twitch'), TWITCH_MS); }
+    sound.miss();
+    haptics.buzz('miss');
+    const label = kind === 'timeout' ? '⏱ Out of time' : '⬛ Skipped';
+    const sub = (text && kind === 'timeout' ? '“' + text + '” was not accepted. ' : '') + (hadal ? 'The Hadal answer was ' + hadal.name + '.' : '');
+    const tile = el('div', { class: 'tile tile-miss', style: '--c: var(--tier-miss)' }, [
+      el('div', { class: 'tile-top' }, [el('div', { class: 'tile-name', text: label }), el('div', { class: 'tile-meters', text: '+0 m' })]),
+      el('div', { class: 'tile-sub', text: sub }),
+      artNode(hadal, 112),
+    ]);
+    const reveal = state.mainCol.querySelector('#reveal');
     reveal.innerHTML = '';
     reveal.append(tile);
-    if (factText) reveal.append(el('p', { class: 'fact', html: '<b>Did you know?</b> ' + esc(factText) }));
-    // a keyboard "click" (Enter/Space, event.detail === 0) within the guard is the player's double Enter — ignore it;
-    // a real tap or mouse click always advances
-    const nextBtn = el('button', { class: 'btn btn-primary', type: 'button', text: state.idx + 1 >= dive.PROMPTS_PER_DIVE ? 'See your dive' : 'Next prompt', onClick: (e) => { if (e.detail === 0 && state && performance.now() - state.revealedAt < NEXT_GUARD_MS) return; next(); } });
-    reveal.append(el('div', { class: 'next-row' }, [progressDots(), nextBtn]));
-    state.revealedAt = performance.now();
-    nextBtn.focus({ preventScroll: true });
-    charts.updateGauge(state.gauge, state.depth);
-    applyDepthTint(state.depth);
-    const touch = root.matchMedia && root.matchMedia('(pointer: coarse)').matches;
-    if (!touch || AUTO_ADVANCE_ON_TOUCH) state.revealTimer = setTimeout(next, config.REVEAL_MS + (m.entityId ? 600 : 300));
+    if (hadal && hadal.fact) reveal.append(el('p', { class: 'fact', html: '<b>Did you know?</b> ' + esc(hadal.fact) }));
+    reveal.append(el('div', { class: 'next-row' }, [progressDots(), nextButton(300)]));
+    reveal.querySelector('.next-row button').focus({ preventScroll: true });
+  }
+
+  // A passing landmark floats up through the water column (a fixed pill, so it never pushes the layout around).
+  function landmarkPass(lm) {
+    const { el, dive, sound } = F();
+    const node = el('div', { class: 'landmark-pass', role: 'status', text: lm.label + ' · ' + dive.formatMeters(lm.depth) + ' m' });
+    node.style.setProperty('--stack', String(document.querySelectorAll('.landmark-pass').length));   // two landmarks in one drop stack, not overlap
+    document.body.appendChild(node);
+    sound.landmark();
+    setTimeout(() => node.remove(), LANDMARK_LABEL_MS);
   }
 
   function next() {
     if (!state) return;
     if (state.revealTimer) { clearTimeout(state.revealTimer); state.revealTimer = null; }
+    if (state.tileTimer) { clearTimeout(state.tileTimer); state.tileTimer = null; }
+    if (state.descent) { state.descent(); state.descent = null; }
+    F().charts.updateGauge(state.gauge, state.depth);
     state.idx++;
-    if (state.idx >= F().dive.PROMPTS_PER_DIVE) return finish();
+    if (state.idx >= state.total) return finish();
     renderPrompt();
   }
 
   function finish() {
-    const { dive, storage, packsById } = F();
+    const { dive, storage } = F();
     const s = state.spec;
     const record = {
       mode: s.mode, dayKey: s.dayKey || null, number: s.number || null, seed: s.seed || null, packId: s.packId || null,
       promptIds: s.promptIds.slice(), results: state.results, points: state.points, depth: state.depth,
       tiers: state.results.map(r => r.tier), secondsUsed: Math.round(state.results.reduce((n, r) => n + r.secondsUsed, 0) * 10) / 10,
+      hints: state.results.filter(r => r.hint).length, attempts: state.results.reduce((n, r) => n + (r.attempts || 0), 0),
       finishedAt: new Date().toISOString(), challenge: s.challenge || null, timerOn: state.timerOn,
     };
+    clearTimers();
+    state = null;
+    if (s.mode === 'tutorial') {
+      storage.updateSettings({ tutorialDone: true });
+      track('tutorial_completed', { depth: record.depth });
+      return resultScreen(record, { fresh: true });
+    }
     storage.markPlayed(s.promptIds);
     if (s.mode === 'daily') {
       storage.remove('progress');
@@ -317,28 +520,44 @@
     } else if (s.mode === 'challenge') {
       storage.saveBest('challenge', s.seed, record);
     }
-    clearTimers();
-    state = null;
-    if (root.FathomOnline && root.FathomOnline.trackEvent) root.FathomOnline.trackEvent('dive_completed', { mode: record.mode, depth: record.depth });
-    resultScreen(record, { fresh: true });
+    track('dive_completed', { mode: record.mode, depth: record.depth });
+    const unlocked = root.FathomAchievements ? root.FathomAchievements.afterDive(record) : [];
+    resultScreen(record, { fresh: true, unlocked });
   }
 
   // ---------------------------------------------------------------- result screen
   function resultScreen(record, opts) {
-    const { el, dive, promptsById, entities, esc, render, toast, config, storage, packsById } = F();
+    const { el, dive, promptsById, entities, esc, render, config, packsById } = F();
+    opts = opts || {};
     clearTimers();
-    F().applyDepthTint(record.depth);
+    document.body.classList.remove('diving');
+    F().setSceneDepth(record.depth, false);
     const zone = dive.zoneFor(record.depth);
     const nodes = [];
+    const tutorial = record.mode === 'tutorial';
 
     const head = el('div', { class: 'card strong center' }, [
-      el('div', { class: 'tiny muted', text: modeLabel(record) + (record.mode === 'free' && record.seed ? ' · ' + record.seed : '') }),
+      el('div', { class: 'tiny muted', text: (tutorial ? 'Tutorial complete' : modeLabel(record)) + (record.mode === 'free' && record.seed ? ' · ' + record.seed : '') }),
       el('div', { class: 'result-depth', html: esc(dive.formatMeters(record.depth)) + '<small>m</small>' }),
       el('div', { html: '<b>' + esc(zone.name) + '</b>' }),
       el('p', { class: 'small muted', text: zone.fact }),
       el('div', { class: 'grid-emoji', 'aria-label': 'Tier grid', text: dive.tiersToEmoji(record.tiers) }),
+      record.hints ? el('p', { class: 'tiny muted', style: 'margin:8px 0 0', text: record.hints + (record.hints === 1 ? ' hint used' : ' hints used') + ' (−' + record.hints * dive.HINT_COST + ' points)' }) : null,
     ]);
     nodes.push(head);
+
+    if (tutorial) {
+      nodes.push(el('div', { class: 'card' }, [
+        el('h3', { text: 'You are ready' }),
+        el('p', { text: 'The real dive has seven prompts and a 25-second timer on each. Same seven for everyone, once a day. Nothing from the tutorial is saved.' }),
+        el('div', { class: 'row' }, [el('a', { class: 'btn btn-primary', href: '#daily', text: 'Start today’s dive' }), el('a', { class: 'btn', href: '#free', text: 'Free Dive' })]),
+      ]));
+    }
+
+    // new badges
+    if (opts.unlocked && opts.unlocked.length && root.FathomAchievements) {
+      nodes.push(root.FathomAchievements.unlockedCard(opts.unlocked));
+    }
 
     // challenge comparison
     if (record.mode === 'challenge' && record.challenge) {
@@ -351,62 +570,70 @@
       nodes.push(el('div', { class: 'card' }, [el('h3', { text: 'Challenge' }), el('p', { text: verdict }), grid, el('div', { class: 'row', style: 'margin-top:10px' }, sendBack)]));
     }
 
-    // bell curve (daily only, when online or mock)
-    if (record.mode === 'daily' && root.FathomOnline && root.FathomOnline.curveSection) {
-      const sec = root.FathomOnline.curveSection(record);
-      if (sec) nodes.push(sec);
+    // bell curve and what others answered (daily only, when online or mock)
+    if (record.mode === 'daily' && root.FathomOnline) {
+      if (root.FathomOnline.curveSection) { const sec = root.FathomOnline.curveSection(record); if (sec) nodes.push(sec); }
+      if (root.FathomOnline.othersSection) { const sec = root.FathomOnline.othersSection(record); if (sec) nodes.push(sec); }
     }
 
     // share / actions
-    const actions = el('div', { class: 'card' });
-    const shareBtn = el('button', { class: 'btn btn-primary', type: 'button', text: 'Share', onClick: () => {
-      const pct = root.FathomOnline && root.FathomOnline.lastPercentile ? root.FathomOnline.lastPercentile(record) : null;
-      const label = record.mode === 'daily' ? null : record.mode === 'pack' ? (packsById[record.packId] ? packsById[record.packId].name + ' pack' : 'Pack') : record.mode === 'challenge' ? 'Challenge' : record.mode === 'archive' ? 'Archive #' + record.number : 'Free Dive';
-      const text = dive.shareText({ number: record.number || dive.puzzleNumber(F().todayKey()), label, depth: record.depth, percentile: record.mode === 'daily' ? pct : null, tiers: record.tiers, siteUrl: config.SITE_URL });
-      copyText(text, 'Copied results to clipboard');
-      if (root.FathomOnline && root.FathomOnline.trackEvent) root.FathomOnline.trackEvent('share_clicked', { mode: record.mode });
-    } });
-    const row = el('div', { class: 'row' }, [shareBtn]);
-    if (record.mode === 'free') {
-      row.append(el('button', { class: 'btn', type: 'button', text: 'Challenge a friend', onClick: () => {
-        copyText(location.href.split('#')[0] + dive.makeChallengeHash(record.seed, record.depth, record.tiers), 'Challenge link copied — send it to a friend');
-        if (root.FathomOnline && root.FathomOnline.trackEvent) root.FathomOnline.trackEvent('challenge_created', {});
-      } }));
+    if (!tutorial) {
+      const actions = el('div', { class: 'card' });
+      const shareBtn = el('button', { class: 'btn btn-primary', type: 'button', text: 'Share results', onClick: () => {
+        const pct = root.FathomOnline && root.FathomOnline.lastPercentile ? root.FathomOnline.lastPercentile(record) : null;
+        const label = record.mode === 'daily' ? null : record.mode === 'pack' ? (packsById[record.packId] ? packsById[record.packId].name + ' pack' : 'Pack') : record.mode === 'challenge' ? 'Challenge' : record.mode === 'archive' ? 'Archive #' + record.number : 'Free Dive';
+        const text = dive.shareText({ number: record.number || dive.puzzleNumber(F().todayKey()), label, depth: record.depth, percentile: record.mode === 'daily' ? pct : null, tiers: record.tiers, siteUrl: config.SITE_URL });
+        copyText(text, 'Copied results to clipboard');
+        track('share_clicked', { mode: record.mode });
+      } });
+      const row = el('div', { class: 'row' }, [shareBtn]);
+      if (root.FathomShare) row.append(el('button', { class: 'btn', type: 'button', text: 'Share as image', onClick: () => { root.FathomShare.open(record); track('share_image', { mode: record.mode }); } }));
+      if (record.mode === 'free') {
+        row.append(el('button', { class: 'btn', type: 'button', text: 'Challenge a friend', onClick: () => {
+          copyText(location.href.split('#')[0] + dive.makeChallengeHash(record.seed, record.depth, record.tiers), 'Challenge link copied — send it to a friend');
+          track('challenge_created');
+        } }));
+      }
+      if (record.mode === 'daily') {
+        const cd = el('p', { class: 'small muted', style: 'margin:12px 0 0', html: 'Next dive in <b id="countdown">--:--:--</b>' });
+        row.append(el('a', { class: 'btn', href: '#free', text: 'Free Dive' }));
+        actions.append(row, cd);
+      } else {
+        row.append(el('a', { class: 'btn', href: record.mode === 'pack' ? '#packs' : '#free', text: record.mode === 'pack' ? 'More packs' : 'Dive again' }));
+        actions.append(row);
+      }
+      nodes.push(actions);
     }
-    if (record.mode === 'daily') {
-      const cd = el('p', { class: 'small muted', style: 'margin:12px 0 0', html: 'Next dive in <b id="countdown">--:--:--</b>' });
-      row.append(el('a', { class: 'btn', href: '#free', text: 'Free Dive' }));
-      actions.append(row, cd);
-    } else {
-      row.append(el('a', { class: 'btn', href: record.mode === 'pack' ? '#packs' : '#free', text: record.mode === 'pack' ? 'More packs' : 'Dive again' }));
-      actions.append(row);
-    }
-    nodes.push(actions);
 
     // per prompt breakdown
     const list = el('ul', { class: 'result-list' });
     record.results.forEach((r, i) => {
       const prompt = promptsById[r.promptId];
       if (!prompt) return;
-      const ent = r.entityId ? entities[r.entityId] : null;
+      const taxonHit = dive.isTaxonId(r.entityId);
+      const ent = r.entityId ? (taxonHit ? { name: r.typed } : entities[r.entityId]) : null;
       const tier = r.tier ? dive.TIER_BY_CODE[r.tier] : null;
       const hadal = hadalEntity(prompt);
+      const meta = [];
+      if (r.attempts > 1) meta.push(r.attempts + ' tries');
+      if (r.hint) meta.push('💡 hint');
       const li = el('li', {}, [
         el('div', { class: 'q', text: (i + 1) + '. ' + prompt.text }),
         el('div', { class: 'a' }, [
-          el('span', { text: ent ? ent.name + (r.typed && dive.normalise(r.typed) !== dive.normalise(ent.name) ? ' (you typed “' + r.typed + '”)' : '') : (r.typed ? '“' + r.typed + '” — not accepted' : (r.timedOut ? 'Out of time' : 'No answer')) }),
-          tier ? el('span', { class: 'chip tier-' + tier.code, style: '--c: var(--tier-' + tier.code + ')', text: tier.emoji + ' ' + tier.name + ' +' + dive.formatMeters(dive.depthFor(tier.points)) + ' m' }) : el('span', { class: 'chip chip-miss', text: '⬛ Miss' }),
+          el('span', { text: ent ? ent.name + (r.typed && dive.normalise(r.typed) !== dive.normalise(ent.name) ? ' (you typed “' + r.typed + '”)' : '') : (r.typed ? '“' + r.typed + '” — not accepted' : (r.timedOut ? 'Out of time' : r.skipped ? 'Skipped' : 'No answer')) }),
+          tier ? el('span', { class: 'chip tier-' + tier.code, style: '--c: var(--tier-' + tier.code + ')', text: tier.emoji + ' ' + tier.name + ' +' + dive.formatMeters(dive.depthFor(r.points != null ? r.points : tier.points)) + ' m' }) : el('span', { class: 'chip chip-miss', text: '⬛ Miss' }),
         ]),
-        hadal ? el('div', { class: 'hadal-answer', html: '<span class="tier tier-hadal">🔱 Hadal:</span> ' + esc(hadal.name) + (RESULT_LIST_FACT ? ' <span class="muted">— ' + esc(hadal.fact) + '</span>' : '') }) : null,
+        meta.length ? el('div', { class: 'tiny muted', text: meta.join(' · ') }) : null,
+        hadal ? el('div', { class: 'hadal-answer' }, [artNode(hadal, 36), el('span', { html: '<span class="tier tier-hadal">🔱 Hadal:</span> ' + esc(hadal.name) + (RESULT_LIST_FACT ? ' <span class="muted">— ' + esc(hadal.fact) + '</span>' : '') })]) : null,
         el('details', {}, [
           el('summary', { text: 'All accepted answers' }),
-          el('div', { class: 'answer-groups', html: answersByTier(prompt).map(g => '<div><span class="tier tier-' + g.tier.code + '">' + g.tier.emoji + ' ' + esc(g.tier.name) + '</span><br>' + g.names.map(esc).join(', ') + '</div>').join('') }),
+          el('div', { class: 'answer-groups', html: answersByTier(prompt).map(g => '<div><span class="tier tier-' + g.tier.code + '">' + g.tier.emoji + ' ' + esc(g.tier.name) + '</span><br>' + g.names.map(esc).join(', ') + '</div>').join('') + (prompt.taxon ? '<div class="small muted">Plus any real species on our ' + esc(dive.taxonGroups(prompt.taxon).join(', ').replace(/-/g, ' ')) + ' reference list' + (dive.taxonGroups(prompt.taxon).length > 1 ? 's' : '') + ' (Midnight).</div>' : '') }),
         ]),
-        el('div', { style: 'margin-top:6px' }, el('a', { class: 'link-btn', href: reportHref(prompt, r, record), target: config.REPORT_FORM_URL ? '_blank' : null, rel: 'noopener', text: 'Report an answer or tier', onClick: () => { if (root.FathomOnline && root.FathomOnline.trackEvent) root.FathomOnline.trackEvent('report_clicked', { prompt: prompt.id }); } })),
+        tutorial ? null : el('div', { style: 'margin-top:6px' }, el('a', { class: 'link-btn', href: reportHref(prompt, r, record), target: config.REPORT_FORM_URL ? '_blank' : null, rel: 'noopener', text: 'Report an answer or tier', onClick: () => track('report_clicked', { prompt: prompt.id }) })),
       ]);
       list.append(li);
     });
-    nodes.push(el('div', { class: 'card' }, [el('h3', { text: 'Your seven prompts' }), list]));
+    nodes.push(el('div', { class: 'card' }, [el('h3', { text: tutorial ? 'Your three prompts' : 'Your seven prompts' }), list]));
     // commercial bits live UNDER the result, never beside a timer
     if (record.mode === 'daily' && root.FathomMonetise) {
       const gd = root.FathomMonetise.goDeeperCard(record.dayKey);
@@ -459,5 +686,5 @@
     countdownTimer = setInterval(tick, config.COUNTDOWN_TICK_MS);
   }
 
-  root.FathomGame = { startDaily, startFree, startArchive, startPack, startChallenge, startDive, resultScreen, leaveDive, copyText, hadalEntity, answersByTier };
+  root.FathomGame = { startDaily, startFree, startArchive, startPack, startChallenge, startTutorial, startDive, resultScreen, leaveDive, copyText, hadalEntity, answersByTier, artNode, TUTORIAL_PROMPT_IDS };
 })(window);

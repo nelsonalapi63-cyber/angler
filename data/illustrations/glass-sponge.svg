@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<ellipse cx="128" cy="230" rx="84" ry="8" fill="#E2B94F"/>
+<polygon points="128,212 134,212 110,234 104,234" fill="#86D9EC"/>
+<polygon points="128,212 134,212 122,234 116,234" fill="#86D9EC"/>
+<polygon points="128,212 134,212 134,234 128,234" fill="#86D9EC"/>
+<polygon points="128,212 134,212 146,234 140,234" fill="#86D9EC"/>
+<polygon points="128,212 134,212 158,234 152,234" fill="#86D9EC"/>
+<path d="M149.7 59.6 149.2 65.7 148.3 73.8 147.2 83 146.4 92.5 145.9 101.6 146 109.6 146.8 117.4 148.1 126.4 149.9 136 151.9 146 153.9 156.1 155.7 165.8 157.1 175.1 158.4 184.1 159.7 192.8 160.9 200.6 161.9 207.2 162.7 212 L101.3 220 100.8 215.1 100.1 208.5 99.3 200.7 98.3 192 97.3 182.9 96.3 174.2 95.3 165.4 94 155.6 92.6 145 91.3 133.8 90.3 122.2 90 110.4 90.6 98.4 92 86.6 93.8 75.5 95.6 65.7 97.1 57.9 98.3 52.4Z" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M148.3 73.8 L90.6 98.4 M95.6 65.7 L145.9 101.6 M145.9 101.6 L91.3 133.8 M90.6 98.4 L148.1 126.4 M148.1 126.4 L95.3 165.4 M91.3 133.8 L153.9 156.1 M153.9 156.1 L98.3 192 M95.3 165.4 L158.4 184.1 M158.4 184.1 L100.8 215.1 M98.3 192 L161.9 207.2" fill="none" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="124" cy="56" rx="27" ry="10" fill="#86D9EC" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="112" cy="56" r="2.5" fill="#0C2A3A"/>
+<circle cx="124" cy="56" r="2.5" fill="#0C2A3A"/>
+<circle cx="136" cy="56" r="2.5" fill="#0C2A3A"/>
+</svg>

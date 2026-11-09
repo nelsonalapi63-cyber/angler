@@ -14,9 +14,13 @@ test('server-side scoring matches the browser for a recorded dive', { skip: !fs.
   const prompts = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'prompts.json'), 'utf8'));
   const entities = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'entities.json'), 'utf8'));
   const byId = Object.fromEntries(entities.map(e => [e.id, e]));
-  // the day's prompt set must be reproducible from the date alone (what submit-dive checks)
-  if (rec.day >= dive.LAUNCH_DATE) assert.deepStrictEqual(dive.dailyPromptIds(rec.day, prompts, dive.LAUNCH_DATE), rec.promptIds);
-  const scored = dive.scoreSubmission({ promptIds: rec.promptIds, answers: rec.answers }, prompts, byId);
+  const schedule = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'data', 'schedule.json'), 'utf8'));
+  const taxaFile = path.join(__dirname, '..', 'data', 'taxa.json');
+  const taxa = fs.existsSync(taxaFile) ? JSON.parse(fs.readFileSync(taxaFile, 'utf8')) : {};
+  // the day's prompt set must be reproducible from the date and the frozen schedule (what submit-dive checks)
+  if (rec.day >= dive.LAUNCH_DATE) assert.deepStrictEqual(dive.dailyPromptIds(rec.day, prompts, dive.LAUNCH_DATE, schedule), rec.promptIds);
+  // answers carry hint flags; the server deducts the hint cost exactly as the browser did
+  const scored = dive.scoreSubmissionFull({ promptIds: rec.promptIds, answers: rec.answers }, prompts, byId, taxa);
   assert.strictEqual(scored.points, rec.points);
   assert.strictEqual(scored.depth, rec.depth);
   assert.deepStrictEqual(scored.tiers, rec.tiers);

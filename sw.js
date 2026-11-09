@@ -1,14 +1,14 @@
 /* FATHOM — service worker. Pre-caches the whole static site, serves cache-first for same-origin files,
  * refreshes the cache in the background so updates arrive on the next load, and never touches
  * cross-origin requests (Supabase, Stripe, ads, analytics). Bump CACHE_VERSION on every release. */
-const CACHE_VERSION = 'fathom-v1.0.0';
+const CACHE_VERSION = 'fathom-v1.1.0';
 const PRECACHE = [
-  './', 'index.html', 'styles.css', 'app.js', 'game.js', 'pages.js', 'storage.js', 'charts.js',
-  'online.js', 'monetise.js', 'entities.js', 'prompts.js', 'shared/dive.js', 'manifest.json',
+  './', 'index.html', 'styles.css', 'app.js', 'game.js', 'pages.js', 'storage.js', 'charts.js', 'achievements.js', 'share.js',
+  'online.js', 'monetise.js', 'boot.js', 'entities.js', 'prompts.js', 'taxa.js', 'shared/dive.js', 'manifest.json',
   'privacy.html', 'terms.html', 'refunds.html', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/icon-512-maskable.png', 'icons/og.png',
 ];
 // The answer bank and schedule must be fresh whenever the network is there, so the day's prompts match the server.
-const NETWORK_FIRST = ['entities.js', 'prompts.js'];
+const NETWORK_FIRST = ['boot.js', 'entities.js', 'prompts.js', 'taxa.js'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(

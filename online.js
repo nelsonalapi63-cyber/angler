@@ -157,20 +157,22 @@
   async function syncProgressUp() {
     if (!configured() || !user()) return;
     const { storage } = F();
-    const payload = { user_id: user().id, daily: storage.allDailyResults(), logbook: storage.logbook(), best: storage.get('best', {}), updated_at: new Date().toISOString() };
+    const payload = { user_id: user().id, daily: storage.allDailyResults(), logbook: storage.logbook(), best: storage.get('best', {}), badges: storage.get('badges', {}), updated_at: new Date().toISOString() };
     try { await rest('/rest/v1/progress?on_conflict=user_id', { method: 'POST', headers: { Prefer: 'resolution=merge-duplicates' }, body: payload }); } catch (e) { /* best effort */ }
   }
   async function syncProgressDown() {
     if (!configured() || !user()) return;
     const { storage } = F();
     try {
-      const rows = await rest('/rest/v1/progress?select=daily,logbook,best&user_id=eq.' + user().id);
+      const rows = await rest('/rest/v1/progress?select=daily,logbook,best,badges&user_id=eq.' + user().id);
       const remote = rows && rows[0];
       if (!remote) return;
       const daily = Object.assign({}, remote.daily || {}, storage.allDailyResults());
       storage.set('daily', daily);
       const lb = Object.assign({}, remote.logbook || {}, storage.logbook());
       storage.set('logbook', lb);
+      const badges = Object.assign({}, remote.badges || {}, storage.get('badges', {}));
+      storage.set('badges', badges);
     } catch (e) { /* ignore */ }
   }
 
@@ -181,7 +183,7 @@
     const payload = {
       day: record.dayKey,
       promptIds: record.promptIds,
-      answers: record.results.map(r => ({ typed: r.typed || '', secondsUsed: r.secondsUsed })),
+      answers: record.results.map(r => ({ typed: r.typed || '', secondsUsed: r.secondsUsed, hint: !!r.hint })),
       deviceId: storage.deviceId(),
       clientDepth: record.depth,
       dataVersion: root.FATHOM_DATA_VERSION || null,
@@ -269,6 +271,76 @@
       const data = { bins: m.bins, total: m.total, median: m.median, percentile: percentileOf(record.depth, m.depths), provisional: true };
       draw(data, true);
     }
+    return card;
+  }
+  // "What others answered today": the three most-given answers per prompt and how many found the Hadal one.
+  // Server: rpc top_answers(p_day) -> [{prompt_id, entity_id, n, total}]; demo: deterministic per day.
+  const TOP_ANSWERS_N = 3;
+  const MIN_OTHERS_DIVES = 30;
+  function mockTopAnswers(dayKey, promptIds) {
+    const { dive, entities, promptsById } = F();
+    const rng = dive.seededRng('mock-answers:' + dayKey);
+    const total = mockDaily(dayKey).total;
+    const out = {};
+    for (const pid of promptIds) {
+      const prompt = promptsById[pid];
+      if (!prompt) continue;
+      const rows = [];
+      let left = total;
+      // answers are given roughly by tier: a Tide Pool answer is said far more often than a Hadal one
+      const weight = { tidepool: 30, baitball: 12, reef: 7, twilight: 3, midnight: 1.2, hadal: 0.5 };
+      const pool = prompt.answers.filter(a => entities[a.entity]).map(a => ({ a, w: weight[a.tier] * (0.5 + rng()) }));
+      const sum = pool.reduce((n, x) => n + x.w, 0) * 1.35;             // the rest are misses
+      for (const x of pool) { const n = Math.round(total * x.w / sum); rows.push({ entityId: x.a.entity, tier: x.a.tier, n }); left -= n; }
+      rows.sort((p, q) => q.n - p.n);
+      const hadal = rows.find(r => r.tier === 'hadal');
+      out[pid] = { total, top: rows.slice(0, TOP_ANSWERS_N), hadal: hadal ? hadal.n : 0, misses: Math.max(0, left) };
+    }
+    return out;
+  }
+  function othersSection(record) {
+    const { el, esc, dive, entities, promptsById } = F();
+    if (!flags.LEADERBOARD_ENABLED && !flags.MOCK_ONLINE_DATA) return null;
+    const card = el('div', { class: 'card' });
+    const head = el('div', { class: 'row between' }, [el('h3', { text: 'What others answered today' })]);
+    const body = el('div', { html: '<p class="small muted">Loading…</p>' });
+    card.append(head, body);
+    const draw = (data, demo) => {
+      if (demo) head.append(el('span', { class: 'badge demo', text: 'demo data' }));
+      body.innerHTML = '';
+      const anyTotal = Object.values(data).map(d => d.total)[0] || 0;
+      if (!anyTotal || anyTotal < MIN_OTHERS_DIVES) { body.append(el('p', { class: 'small muted', text: 'Appears after ' + MIN_OTHERS_DIVES + ' dives today.' })); return; }
+      const ul = el('ul', { class: 'others' });
+      record.results.forEach((r, i) => {
+        const d = data[r.promptId];
+        const prompt = promptsById[r.promptId];
+        if (!d || !prompt) return;
+        const name = (id) => (dive.isTaxonId(id) ? id.slice(6).replace(/-/g, ' ') : (entities[id] ? entities[id].name : id));
+        const pct = (n) => Math.max(1, Math.round(100 * n / d.total)) + '%';
+        const tops = d.top.map(t => '<span class="tier tier-' + t.tier + '">' + esc(name(t.entityId)) + '</span> ' + pct(t.n)).join(' · ');
+        const mine = r.entityId ? '<b>You:</b> ' + esc(name(r.entityId)) + (r.tier ? ' (' + esc(dive.TIER_BY_CODE[r.tier].name) + ')' : '') : '<b>You:</b> miss';
+        ul.append(el('li', {}, [
+          el('div', { class: 'small', html: '<b>' + (i + 1) + '.</b> ' + esc(prompt.text) }),
+          el('div', { class: 'small', html: tops + (d.hadal ? ' · <span class="tier tier-hadal">🔱</span> ' + pct(d.hadal) + ' found the Hadal answer' : '') }),
+          el('div', { class: 'tiny muted', html: mine }),
+        ]));
+      });
+      body.append(ul);
+    };
+    if (flags.LEADERBOARD_ENABLED && configured()) {
+      rest('/rest/v1/rpc/top_answers', { method: 'POST', body: { p_day: record.dayKey } }).then((rows) => {
+        const data = {};
+        for (const row of rows || []) {
+          const d = data[row.prompt_id] || (data[row.prompt_id] = { total: row.total || 0, top: [], hadal: 0, misses: 0 });
+          const p = promptsById[row.prompt_id];
+          const a = p && p.answers.find(x => x.entity === row.entity_id);
+          const tier = a ? a.tier : (dive.isTaxonId(row.entity_id) ? dive.TAXON_TIER : null);
+          if (tier === 'hadal') d.hadal += row.n;
+          if (d.top.length < TOP_ANSWERS_N) d.top.push({ entityId: row.entity_id, tier, n: row.n });
+        }
+        draw(data, false);
+      }).catch(() => { body.innerHTML = '<p class="small muted">Could not load today’s answers right now.</p>'; });
+    } else draw(mockTopAnswers(record.dayKey, record.promptIds), true);
     return card;
   }
   function expandBins(bins) {        // approximate depths from a histogram (bin centres)
@@ -555,7 +627,7 @@
   root.FathomOnline = {
     FLAGS, LEAGUES, MIN_CURVE_DIVES, RATING_WINDOW_DAYS, RATING_BEST_OF, MIN_RANKED_DAYS, HANDLE_RE,
     init, user, entitlements, refreshEntitlements, signIn, signOut, handleProblem, saveProfile, deleteAccount,
-    submitDaily, drainQueue, fetchCurve, curveSection, lastPercentile, percentileOf, refreshRating,
+    submitDaily, drainQueue, fetchCurve, curveSection, othersSection, lastPercentile, percentileOf, refreshRating, syncProgressUp,
     leaderboardPage, ratingSummary, settingsSection, trackEvent, leagueFor, mockDaily, mockBoards,
     _rest: rest, _headers: headers, _configured: configured,
   };

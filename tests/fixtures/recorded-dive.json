@@ -1,42 +1,49 @@
 {
-  "day": "2026-11-02",
+  "day": "2026-11-09",
   "promptIds": [
-    "aquarium",
-    "crab-species",
-    "makes-light",
-    "migrates",
-    "cetacean-named-after",
-    "cod-family",
-    "research-vessel"
+    "shelled-animal",
+    "drifter",
+    "flatfish",
+    "seafloor-feature",
+    "transparent",
+    "tuna-mackerel",
+    "sound"
   ],
   "answers": [
     {
-      "typed": "Oscar",
-      "secondsUsed": 1.2
+      "typed": "Mussel",
+      "secondsUsed": 1.3,
+      "hint": true
     },
     {
-      "typed": "kani",
-      "secondsUsed": 1.1
+      "typed": "jelly",
+      "secondsUsed": 1.1,
+      "hint": false
     },
     {
-      "typed": "Angleafish",
-      "secondsUsed": 1.1
+      "typed": "Flouader",
+      "secondsUsed": 1.2,
+      "hint": false
     },
     {
-      "typed": "humpback",
-      "secondsUsed": 1.1
+      "typed": "Mariana",
+      "secondsUsed": 1.1,
+      "hint": false
+    },
+    {
+      "typed": "Moon jellyfish",
+      "secondsUsed": 1.4,
+      "hint": false
     },
     {
       "typed": "xqzv wppl",
-      "secondsUsed": 1.1
+      "secondsUsed": 1.2,
+      "hint": false
     },
     {
-      "typed": "",
-      "secondsUsed": 1.1
-    },
-    {
-      "typed": "Boaty McBoatface",
-      "secondsUsed": 1.1
+      "typed": "Danionella cerebrum",
+      "secondsUsed": 1.1,
+      "hint": false
     }
   ],
   "depth": 2499,
@@ -46,7 +53,7 @@
     "tidepool",
     "tidepool",
     "tidepool",
-    null,
+    "tidepool",
     null,
     "hadal"
   ]

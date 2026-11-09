@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" stroke="#0C2A3A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M60,98 L42,64 L48,62 L66,96 Z M102,88 L94,50 L100,49 L108,86 Z M150,86 L158,49 L164,50 L156,88 Z M194,100 L212,68 L218,72 L200,104 Z M60,158 L42,192 L48,194 L66,160 Z M102,168 L94,206 L100,207 L108,170 Z M150,170 L158,207 L164,206 L156,168 Z M194,156 L212,188 L218,184 L200,152 Z" fill="#2BD1C6" stroke="none"/>
+<path d="M80,92 L66,56 L72,54 L86,90 Z M126,84 L126,44 L131,44 L131,84 Z M174,92 L186,56 L192,58 L180,96 Z M80,164 L66,200 L72,202 L86,166 Z M126,172 L126,212 L131,212 L131,172 Z M174,164 L186,200 L192,198 L180,160 Z" fill="#FFD24A" stroke="none"/>
+<polygon points="42,122 18,110 20,106 46,118" fill="#E2B94F" stroke-width="4"/>
+<polygon points="42,134 18,146 20,150 46,138" fill="#E2B94F" stroke-width="4"/>
+<ellipse cx="128" cy="128" rx="86" ry="46" fill="#E2B94F"/>
+<ellipse cx="128" cy="128" rx="62" ry="28" fill="#B49BFF"/>
+<path d="M80,104 C78,120 78,136 80,152 M104,101 C102,120 102,136 104,155 M128,100 L128,156 M152,101 C154,120 154,136 152,155 M176,104 C178,120 178,136 176,152" fill="none"/>
+</svg>

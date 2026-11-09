@@ -7,6 +7,7 @@ import promptsRaw from "../_shared/prompts.json" with { type: "json" };
 import entities from "../_shared/entities.json" with { type: "json" };
 import schedule from "../_shared/schedule.json" with { type: "json" };
 import version from "../_shared/version.json" with { type: "json" };
+import taxa from "../_shared/taxa.json" with { type: "json" };
 import { createClient } from "npm:@supabase/supabase-js@2";
 
 // ---------------------------------------------------------------- parameters
@@ -15,7 +16,7 @@ const FLAG_POINTS_AT_LEAST = 600;         // a near-perfect dive…
 const FLAG_IF_SECONDS_UNDER = 20;         // …typed this fast is held for review
 const MAX_TYPED_LENGTH = 60;
 
-type Answer = { typed: string; secondsUsed: number };
+type Answer = { typed: string; secondsUsed: number; hint?: boolean };
 type Body = { day: string; promptIds: string[]; answers: Answer[]; deviceId?: string; clientDepth?: number; dataVersion?: string | null };
 
 // deno-lint-ignore no-explicit-any
@@ -56,16 +57,16 @@ Deno.serve(async (req) => {
     return json(409, { error: "prompt set does not match today — reload to get the current prompts", dataVersion: (version as { version: string }).version });
   }
   if (!Array.isArray(body.answers) || body.answers.length !== dive.PROMPTS_PER_DIVE) return json(400, { error: "need exactly 7 answers" });
-  const answers = body.answers.map((a) => ({ typed: String(a?.typed ?? "").slice(0, MAX_TYPED_LENGTH), secondsUsed: Number(a?.secondsUsed) || 0 }));
+  const answers = body.answers.map((a) => ({ typed: String(a?.typed ?? "").slice(0, MAX_TYPED_LENGTH), secondsUsed: Number(a?.secondsUsed) || 0, hint: a?.hint === true }));
 
-  // --- re-score on the server
-  const scored = dive.scoreSubmission({ promptIds: expected, answers }, prompts, entitiesById);
+  // --- re-score on the server (hint costs deducted, reference-list species accepted at Midnight — same code as the browser)
+  const scored = dive.scoreSubmissionFull({ promptIds: expected, answers }, prompts, entitiesById, taxa);
   if (scored.secondsUsed < MIN_PLAUSIBLE_SECONDS) return json(400, { error: "implausibly fast" });
   const flagged = scored.points >= FLAG_POINTS_AT_LEAST && scored.secondsUsed < FLAG_IF_SECONDS_UNDER;
 
   // --- store (one per diver per day; a duplicate returns the dive already stored)
   const admin = createClient(SUPABASE_URL, SERVICE_KEY);
-  const row = { day: today, user_id: userId, device_id: userId ? null : deviceId, prompt_ids: expected, answers, tiers: scored.tiers, points: scored.points, depth: scored.depth, seconds_used: scored.secondsUsed, flagged, approved: !flagged };
+  const row = { day: today, user_id: userId, device_id: userId ? null : deviceId, prompt_ids: expected, answers, tiers: scored.tiers, points: scored.points, depth: scored.depth, seconds_used: scored.secondsUsed, entity_ids: scored.results.map((r: { entityId: string | null }) => r.entityId), flagged, approved: !flagged };
   const { error } = await admin.from("dives").insert(row);
   let stored = { points: scored.points, depth: scored.depth, tiers: scored.tiers, flagged };
   let duplicate = false;

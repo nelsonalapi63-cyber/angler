@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" stroke="#0C2A3A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M196,148 C228,152 244,182 232,208 C222,226 198,230 186,216 C180,208 182,198 190,196 C192,210 206,214 216,204 C226,190 220,170 204,166 C198,164 194,164 190,168 Z" fill="#F26A4B"/>
+<polygon points="112,104 118,78 130,86 126,110" fill="#F26A4B"/>
+<polygon points="152,138 158,112 172,118 168,142" fill="#F26A4B"/>
+<polygon points="200,162 210,140 222,146 214,168" fill="#F26A4B"/>
+<polygon points="110,142 104,166 118,166 122,148" fill="#F26A4B"/>
+<path d="M136,122 C148,112 168,118 178,136 L166,142 Z" fill="#B49BFF"/>
+<path d="M80,82 C104,86 118,102 134,118 C154,136 176,144 198,150 L190,170 C166,164 140,156 120,140 C104,126 94,112 76,108 Z" fill="#F26A4B"/>
+<polygon points="62,80 72,60 84,78" fill="#F26A4B"/>
+<polygon points="18,100 58,84 60,100 24,110" fill="#F26A4B"/>
+<ellipse cx="74" cy="92" rx="20" ry="15" fill="#F26A4B"/>
+<circle cx="80" cy="90" r="6" fill="#FFD24A"/>
+<circle cx="81" cy="90" r="2.5" fill="#0C2A3A" stroke="none"/>
+<circle cx="100" cy="100" r="3" fill="#86D9EC" stroke="none"/>
+<circle cx="124" cy="120" r="3" fill="#86D9EC" stroke="none"/>
+<circle cx="150" cy="136" r="3" fill="#86D9EC" stroke="none"/>
+<circle cx="176" cy="150" r="3" fill="#86D9EC" stroke="none"/>
+<circle cx="212" cy="178" r="3" fill="#86D9EC" stroke="none"/>
+</svg>

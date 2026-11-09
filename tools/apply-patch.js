@@ -2,7 +2,7 @@
 /* Applies a review patch (data/patches/*.json) to data/entities.json and data/prompts.json, then validates.
  * Patch shape: { facts:{id:fact}, removeFromPrompt:[{prompt,entity}], retier:[{prompt,entity,tier}],
  *                aliasAdd:[{entity,alias}], aliasRemove:[{entity,alias}], rename:{oldId:newId} }
- * Usage: node tools/apply-patch.js data/patches/review.json */
+ * Usage: node tools/apply-patch.js data/patches/review.json [--partial]   (--partial while the bank is still growing) */
 'use strict';
 const fs = require('fs');
 const path = require('path');
@@ -83,7 +83,7 @@ for (const p of prompts) {
 fs.writeFileSync(path.join(ROOT, 'data', 'entities.json'), JSON.stringify(Object.values(byId).sort((a, b) => a.id < b.id ? -1 : 1), null, 1) + '\n');
 fs.writeFileSync(path.join(ROOT, 'data', 'prompts.json'), JSON.stringify(prompts, null, 1) + '\n');
 log.forEach(l => console.log(l));
-const res = validateData({});
+const res = validateData({ allowPartial: process.argv.includes('--partial') });
 for (const e of res.errors) console.log('ERROR: ' + e);
 console.log((res.ok ? 'OK' : 'FAILED') + ' after patch: ' + JSON.stringify(res.counts));
 process.exit(res.ok ? 0 : 1);

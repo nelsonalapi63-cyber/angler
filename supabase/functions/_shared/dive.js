@@ -19,6 +19,12 @@
   const FUZZY_SHORT_DIST = 1;
   const FUZZY_LONG_DIST = 2;                // longer inputs allow 2 edits
   const FUZZY_MIN_LEN = 3;                  // never fuzzy-match tiny inputs
+  const SUGGEST_MIN_LEN = 5;                // "did you mean" needs at least this much typed
+  const SUGGEST_MAX_DIST = 4;               // …and an answer within this many edits (3–4; 1–2 are accepted outright)
+  const SUGGEST_MAX = 2;                    // never more than two chips
+  const TAXON_TIER = 'midnight';            // a species found only on a reference list scores here
+  const HINT_COST = 10;                     // points taken from the prompt when a hint is used
+  const HINT_TIERS = ['twilight', 'midnight', 'hadal'];   // a hint points at a rarer answer
   const FREE_SEED_PREFIX = 'fathom-free:';
 
   const TIERS = [
@@ -110,13 +116,15 @@
   // Precedence when two entities in one prompt share a spelling: a canonical name always beats an alias,
   // and between aliases the lower-tier (more generic) entity wins — "mako" goes to the generic mako shark,
   // not to the shortfin mako listed higher up.
-  function buildIndex(prompt, entitiesById) {
+  // taxa: { groupName: ['Common name', ...] } — a reference list of real species; prompt.taxon names the group and
+  // prompt.taxonFilter (a regex source) limits it (letter prompts). Names already on the prompt are not duplicated.
+  function buildIndex(prompt, entitiesById, taxa) {
     const exact = new Map();
     const list = [];
-    const claim = (form, entityId, tierCode) => {
+    const claim = (form, entityId, tierCode, display) => {
       if (exact.has(form)) return;
-      exact.set(form, { entityId, tier: tierCode });
-      list.push({ form, entityId, tier: tierCode });
+      exact.set(form, { entityId, tier: tierCode, name: display });
+      list.push({ form, entityId, tier: tierCode, name: display });
     };
     const answers = prompt.answers.filter(a => entitiesById[a.entity] && TIER_BY_CODE[a.tier]);
     for (const a of answers) {
@@ -130,7 +138,35 @@
         if (norm) for (const form of pluralForms(norm)) claim(form, a.entity, a.tier);
       }
     }
-    return { promptId: prompt.id, exact, list };
+    const taxonNames = taxa && prompt.taxon ? taxonGroups(prompt.taxon).flatMap(g => taxa[g] || []) : [];
+    if (taxonNames.length) {
+      const filter = prompt.taxonFilter ? new RegExp(prompt.taxonFilter, 'i') : null;
+      for (const raw of taxonNames) {
+        const norm = normalise(raw);
+        if (!norm || (filter && !filter.test(norm))) continue;
+        const id = 'taxon:' + norm.replace(/ /g, '-');
+        for (const form of pluralForms(norm)) claim(form, id, TAXON_TIER, raw);
+      }
+    }
+    return { promptId: prompt.id, exact, list, taxon: prompt.taxon || null };
+  }
+  function isTaxonId(id) { return typeof id === 'string' && id.indexOf('taxon:') === 0; }
+  // "sharks|rays" names a union of reference lists
+  function taxonGroups(taxon) { return String(taxon || '').split('|').map(g => g.trim()).filter(Boolean); }
+  const TAXON_FACTS = {
+    fish: 'A fish species listed on FishBase.', sharks: 'A shark species listed on the World Register of Marine Species.',
+    rays: 'A ray or skate species listed on the World Register of Marine Species.', cetaceans: 'A whale, dolphin or porpoise species listed on the World Register of Marine Species.',
+    pinnipeds: 'A seal or sea lion species listed on the World Register of Marine Species.', 'sea-reptiles': 'A marine reptile species.',
+    seabirds: 'A seabird species.', cephalopods: 'A cephalopod species listed on the World Register of Marine Species.',
+    crustaceans: 'A crustacean species listed on the World Register of Marine Species.', jellies: 'A jellyfish or related species listed on the World Register of Marine Species.',
+    molluscs: 'A mollusc species listed on the World Register of Marine Species.', nudibranchs: 'A sea slug species listed on the World Register of Marine Species.',
+    echinoderms: 'An echinoderm species listed on the World Register of Marine Species.', 'corals-anemones': 'A coral or anemone species listed on the World Register of Marine Species.',
+    seaweeds: 'A seaweed or sea plant species listed on AlgaeBase.', 'deep-sea': 'A deep-sea species listed on the World Register of Marine Species.',
+    'freshwater-fish': 'A freshwater fish species listed on FishBase.', 'sea-creatures': 'A marine species listed on the World Register of Marine Species.',
+  };
+  function taxonFact(taxon) {
+    const groups = taxonGroups(taxon);
+    return (groups.length === 1 && TAXON_FACTS[groups[0]]) || 'A real species from our marine reference lists.';
   }
 
   function matchAnswer(typed, index) {
@@ -138,7 +174,7 @@
     const miss = { entityId: null, tier: null, points: 0, via: null, norm };
     if (!norm) return miss;
     const hit = index.exact.get(norm);
-    if (hit) return { entityId: hit.entityId, tier: hit.tier, points: TIER_BY_CODE[hit.tier].points, via: 'exact', norm };
+    if (hit) return { entityId: hit.entityId, tier: hit.tier, points: TIER_BY_CODE[hit.tier].points, via: 'exact', norm, name: hit.name || null };
     if (norm.length < FUZZY_MIN_LEN) return miss;
     const maxDist = norm.length <= FUZZY_SHORT_MAX_LEN ? FUZZY_SHORT_DIST : FUZZY_LONG_DIST;
     let best = null;
@@ -153,7 +189,57 @@
       }
     }
     if (!best) return miss;
-    return { entityId: best.cand.entityId, tier: best.cand.tier, points: best.pts, via: 'fuzzy', norm, distance: best.d };
+    return { entityId: best.cand.entityId, tier: best.cand.tier, points: best.pts, via: 'fuzzy', norm, distance: best.d, name: best.cand.name || null };
+  }
+
+  // "Did you mean": spelling help for a rejected guess. Returns up to SUGGEST_MAX candidates — never from fewer than
+  // SUGGEST_MIN_LEN typed characters, never for input that is nothing like any answer. A candidate is an answer whose
+  // spelling is 3–4 edits away, or the same words in another order, or missing exactly one word of a longer answer.
+  function suggestAnswers(typed, index, entitiesById) {
+    const norm = normalise(typed);
+    if (norm.length < SUGGEST_MIN_LEN) return [];
+    const typedWords = norm.split(' ');
+    const seen = new Set();
+    const out = [];
+    const display = (cand) => {
+      if (cand.name) return cand.name;
+      const e = entitiesById && entitiesById[cand.entityId];
+      return e ? e.name : cand.form;
+    };
+    const scored = [];
+    for (const cand of index.list) {
+      if (cand.form === norm) continue;
+      const words = cand.form.split(' ');
+      let score = null;
+      const lenDiff = Math.abs(cand.form.length - norm.length);
+      if (lenDiff <= SUGGEST_MAX_DIST) {
+        const d = levenshtein(norm, cand.form);
+        if (d > 0 && d <= SUGGEST_MAX_DIST && d < norm.length / 2) score = d;
+      }
+      if (score == null && words.length > 1 && words.length === typedWords.length && words.slice().sort().join(' ') === typedWords.slice().sort().join(' ')) score = 0.5;
+      if (score == null && words.length === typedWords.length + 1 && typedWords.every(w => words.includes(w))) score = 0.75;
+      if (score != null) scored.push({ cand, score });
+    }
+    scored.sort((a, b) => a.score - b.score || TIER_BY_CODE[a.cand.tier].points - TIER_BY_CODE[b.cand.tier].points);
+    for (const { cand } of scored) {
+      const key = cand.entityId;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      out.push({ name: display(cand), entityId: cand.entityId, tier: cand.tier });
+      if (out.length >= SUGGEST_MAX) break;
+    }
+    return out;
+  }
+
+  // A hint points at one rarer answer the player has not given: returns its first letter and word shape.
+  function pickHint(prompt, entitiesById, alreadyEntityIds, rng) {
+    const pool = prompt.answers.filter(a => HINT_TIERS.includes(a.tier) && entitiesById[a.entity] && !(alreadyEntityIds || []).includes(a.entity));
+    if (!pool.length) return null;
+    const r = rng || Math.random;
+    const a = pool[Math.floor(r() * pool.length)];
+    const name = entitiesById[a.entity].name;
+    const shape = name.split(' ').map((w, i) => (i === 0 ? w[0] + '_'.repeat(Math.max(0, w.length - 1)) : '_'.repeat(w.length))).join(' ');
+    return { entityId: a.entity, tier: a.tier, firstLetter: name[0].toUpperCase(), shape, letters: name.replace(/[^a-z]/gi, '').length };
   }
 
   // ---------------------------------------------------------------- depth & zones
@@ -367,11 +453,30 @@
     }
     return { points, depth: depthFor(points), secondsUsed, results, tiers: results.map(r => r.tier) };
   }
+  // Server-side scoring with hints and multiple guesses: each answer is {typed, secondsUsed, hint?:boolean}; taxa optional.
+  function scoreSubmissionFull(submission, prompts, entitiesById, taxa) {
+    const promptsById = Array.isArray(prompts) ? byId(prompts) : prompts;
+    const ids = submission.promptIds || [];
+    const results = [];
+    let points = 0, secondsUsed = 0;
+    for (let i = 0; i < ids.length; i++) {
+      const prompt = promptsById[ids[i]];
+      const ans = (submission.answers && submission.answers[i]) || { typed: '', secondsUsed: SECONDS_PER_PROMPT };
+      if (!prompt) { results.push({ promptId: ids[i], entityId: null, tier: null, points: 0, typed: ans.typed || '' }); continue; }
+      const m = matchAnswer(ans.typed || '', buildIndex(prompt, entitiesById, taxa));
+      const earned = Math.max(0, m.points - (ans.hint ? HINT_COST : 0));
+      points += earned;
+      secondsUsed += Math.min(SECONDS_PER_PROMPT, Math.max(0, Number(ans.secondsUsed) || 0));
+      results.push({ promptId: ids[i], typed: ans.typed || '', entityId: m.entityId, tier: m.tier, points: earned, via: m.via, hint: !!ans.hint });
+    }
+    return { points, depth: depthFor(points), secondsUsed, results, tiers: results.map(r => r.tier) };
+  }
 
   return {
     PROMPTS_PER_DIVE, SECONDS_PER_PROMPT, CHALLENGER_DEEP_M, TIMEZONE, LAUNCH_DATE, MAX_POINTS, METERS_PER_POINT,
     TIERS, TIER_BY_CODE, MISS, ZONES, LANDMARKS,
-    normalise, pluralForms, levenshtein, buildIndex, matchAnswer,
+    SUGGEST_MIN_LEN, SUGGEST_MAX_DIST, SUGGEST_MAX, TAXON_TIER, HINT_COST, HINT_TIERS,
+    normalise, pluralForms, levenshtein, buildIndex, matchAnswer, suggestAnswers, pickHint, isTaxonId, taxonGroups, taxonFact, scoreSubmissionFull,
     depthFor, zoneFor, tierForCode, tiersToEmoji, tiersToDigits, digitsToTiers,
     fnv1a, seededRng, shuffle, randomSeed,
     dayKey, dayIndex, puzzleNumber, keyPlusDays, msUntilNextDay, nextMidnightUtc,

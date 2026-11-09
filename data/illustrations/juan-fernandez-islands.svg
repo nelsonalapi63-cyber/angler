@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<circle cx="128" cy="128" r="112" fill="#3C6AE0"/>
+<path d="M110 84 C152 68 204 78 220 108 C232 134 212 174 180 180 C146 188 104 170 96 138 C90 112 96 92 110 84 Z" fill="#86D9EC"/>
+<ellipse cx="90" cy="178" rx="24" ry="15" fill="#86D9EC"/>
+<ellipse cx="52" cy="88" rx="26" ry="18" fill="#86D9EC"/>
+<path d="M120 96 C150 84 190 90 206 110 C218 130 200 160 176 166 C150 172 118 160 108 136 C100 116 106 102 120 96 Z" fill="#E2B94F"/>
+<ellipse cx="90" cy="178" rx="15" ry="9" fill="#E2B94F"/>
+<ellipse cx="52" cy="88" rx="17" ry="11" fill="#E2B94F"/>
+<polygon points="154,162 160,162 164,118 158,118" fill="#0C2A3A"/>
+<path d="M160 118 Q132 100 122 112 Q136 120 160 120 Z" fill="#2BD1C6"/>
+<path d="M160 118 Q188 100 198 112 Q184 120 160 120 Z" fill="#2BD1C6"/>
+<path d="M160 118 Q142 90 150 84 Q162 100 162 118 Z" fill="#2BD1C6"/>
+<path d="M160 118 Q178 90 170 84 Q158 100 158 118 Z" fill="#2BD1C6"/>
+</svg>

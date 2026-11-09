@@ -69,6 +69,28 @@
     });
   }
 
+  // The descent: the marker slides and the number counts up over `ms` (ease-out, so the last metres settle slowly).
+  // onFrame(depth) runs every frame with the depth shown so far. Returns a cancel function that jumps to the end.
+  function animateGauge(svg, fromDepth, toDepth, ms, onFrame) {
+    const from = Math.max(0, fromDepth || 0), to = Math.max(0, toDepth || 0);
+    const raf = root.requestAnimationFrame ? root.requestAnimationFrame.bind(root) : (fn) => setTimeout(() => fn(performance.now()), 16);
+    let done = false, handle = null;
+    const finish = () => { if (done) return; done = true; updateGauge(svg, to); if (onFrame) onFrame(to); };
+    if (!ms || ms < 50 || from === to) { finish(); return () => {}; }
+    const start = performance.now();
+    const ease = (t) => 1 - Math.pow(1 - t, 3);
+    const step = (now) => {
+      if (done) return;
+      const t = Math.min(1, (now - start) / ms);
+      const d = Math.round(from + (to - from) * ease(t));
+      updateGauge(svg, d);
+      if (onFrame) onFrame(d);
+      if (t < 1) handle = raf(step); else done = true;
+    };
+    handle = raf(step);
+    return () => { if (!done) { if (root.cancelAnimationFrame && handle != null) root.cancelAnimationFrame(handle); finish(); } };
+  }
+
   // ---------------------------------------------------------------- bell curve
   // data: { bins: [counts per 250 m bin from 0], total, median, playerDepth, percentile, demo }
   function bellCurve(data) {
@@ -150,5 +172,5 @@
     return out + '</div>';
   }
 
-  root.FathomCharts = { gaugeSvg, updateGauge, bellCurve, distributionBars, CURVE_BIN_M };
+  root.FathomCharts = { gaugeSvg, updateGauge, animateGauge, bellCurve, distributionBars, CURVE_BIN_M };
 })(typeof window !== 'undefined' ? window : globalThis);

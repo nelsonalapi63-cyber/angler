@@ -205,6 +205,17 @@ test('taxon safety net accepts listed species at Midnight, filtered for letter p
   assert.strictEqual(dive.matchAnswer('bramble shark', idx2).tier, 'midnight');
   assert.strictEqual(dive.matchAnswer('porbeagle', idx2).entityId, null);              // wrong letter
   assert.ok(dive.taxonFact('sharks').includes('shark'));
+  // a union of groups ("sea creature whose name starts with sea") draws from every list named
+  const union = { id: 'u', taxon: 'sharks|rays', taxonFilter: '^sea', answers: [{ entity: 'blue-shark', tier: 'tidepool' }] };
+  const idx3 = dive.buildIndex(union, entities, Object.assign({ rays: ['Sea pancake', 'Thornback ray'] }, taxa));
+  assert.strictEqual(dive.matchAnswer('sea pancake', idx3).tier, 'midnight');
+  assert.strictEqual(dive.matchAnswer('thornback ray', idx3).entityId, null);
+  assert.deepStrictEqual(dive.taxonGroups('sharks|rays'), ['sharks', 'rays']);
+  assert.ok(dive.taxonFact('sharks|rays').length > 10);
+  // a hint flag costs HINT_COST on the server too, and a taxon hit scores Midnight there as well
+  const scored = dive.scoreSubmissionFull({ promptIds: ['s'], answers: [{ typed: 'porbeagle', secondsUsed: 3, hint: true }] }, [p], entities, taxa);
+  assert.strictEqual(scored.points, dive.TIER_BY_CODE.midnight.points - dive.HINT_COST);
+  assert.strictEqual(scored.tiers[0], 'midnight');
 });
 
 test('did you mean: close spellings and word order, never from short input', () => {

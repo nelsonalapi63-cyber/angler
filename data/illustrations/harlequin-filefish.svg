@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" stroke="#0C2A3A" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M202,108 C220,100 236,106 238,116 C234,124 234,132 238,140 C236,150 220,156 202,148 Z" fill="#FFD24A"/>
+<path d="M136,96 C156,84 186,86 202,100 L198,110 C178,98 156,100 138,106 Z" fill="#86D9EC"/>
+<path d="M136,160 C156,172 186,170 202,156 L198,146 C178,158 156,156 138,150 Z" fill="#86D9EC"/>
+<polygon points="90,100 98,56 106,100" fill="#FFD24A"/>
+<path d="M18,126 C50,112 90,96 140,94 C178,92 208,108 208,128 C208,150 178,166 140,164 C90,164 50,146 18,132 Z" fill="#2BD1C6"/>
+<circle cx="100" cy="112" r="5" fill="#FFD24A" stroke="none"/>
+<circle cx="124" cy="108" r="5" fill="#FFD24A" stroke="none"/>
+<circle cx="148" cy="106" r="5" fill="#FFD24A" stroke="none"/>
+<circle cx="172" cy="110" r="5" fill="#FFD24A" stroke="none"/>
+<circle cx="192" cy="118" r="5" fill="#FFD24A" stroke="none"/>
+<circle cx="108" cy="132" r="5" fill="#FFD24A" stroke="none"/>
+<circle cx="132" cy="130" r="5" fill="#FFD24A" stroke="none"/>
+<circle cx="156" cy="130" r="5" fill="#FFD24A" stroke="none"/>
+<circle cx="180" cy="132" r="5" fill="#FFD24A" stroke="none"/>
+<circle cx="116" cy="150" r="5" fill="#FFD24A" stroke="none"/>
+<circle cx="140" cy="152" r="5" fill="#FFD24A" stroke="none"/>
+<circle cx="164" cy="150" r="5" fill="#FFD24A" stroke="none"/>
+<circle cx="222" cy="128" r="6" fill="#0C2A3A" stroke="none"/>
+<circle cx="84" cy="118" r="7" fill="#EAF4F7"/>
+<circle cx="85" cy="118" r="3" fill="#0C2A3A" stroke="none"/>
+</svg>

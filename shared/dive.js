@@ -138,7 +138,7 @@
         if (norm) for (const form of pluralForms(norm)) claim(form, a.entity, a.tier);
       }
     }
-    const taxonNames = taxa && prompt.taxon ? (taxa[prompt.taxon] || []) : [];
+    const taxonNames = taxa && prompt.taxon ? taxonGroups(prompt.taxon).flatMap(g => taxa[g] || []) : [];
     if (taxonNames.length) {
       const filter = prompt.taxonFilter ? new RegExp(prompt.taxonFilter, 'i') : null;
       for (const raw of taxonNames) {
@@ -151,6 +151,8 @@
     return { promptId: prompt.id, exact, list, taxon: prompt.taxon || null };
   }
   function isTaxonId(id) { return typeof id === 'string' && id.indexOf('taxon:') === 0; }
+  // "sharks|rays" names a union of reference lists
+  function taxonGroups(taxon) { return String(taxon || '').split('|').map(g => g.trim()).filter(Boolean); }
   const TAXON_FACTS = {
     fish: 'A fish species listed on FishBase.', sharks: 'A shark species listed on the World Register of Marine Species.',
     rays: 'A ray or skate species listed on the World Register of Marine Species.', cetaceans: 'A whale, dolphin or porpoise species listed on the World Register of Marine Species.',
@@ -162,7 +164,10 @@
     seaweeds: 'A seaweed or sea plant species listed on AlgaeBase.', 'deep-sea': 'A deep-sea species listed on the World Register of Marine Species.',
     'freshwater-fish': 'A freshwater fish species listed on FishBase.', 'sea-creatures': 'A marine species listed on the World Register of Marine Species.',
   };
-  function taxonFact(taxon) { return TAXON_FACTS[taxon] || 'A species listed on the World Register of Marine Species.'; }
+  function taxonFact(taxon) {
+    const groups = taxonGroups(taxon);
+    return (groups.length === 1 && TAXON_FACTS[groups[0]]) || 'A real species from our marine reference lists.';
+  }
 
   function matchAnswer(typed, index) {
     const norm = normalise(typed);
@@ -471,7 +476,7 @@
     PROMPTS_PER_DIVE, SECONDS_PER_PROMPT, CHALLENGER_DEEP_M, TIMEZONE, LAUNCH_DATE, MAX_POINTS, METERS_PER_POINT,
     TIERS, TIER_BY_CODE, MISS, ZONES, LANDMARKS,
     SUGGEST_MIN_LEN, SUGGEST_MAX_DIST, SUGGEST_MAX, TAXON_TIER, HINT_COST, HINT_TIERS,
-    normalise, pluralForms, levenshtein, buildIndex, matchAnswer, suggestAnswers, pickHint, isTaxonId, taxonFact, scoreSubmissionFull,
+    normalise, pluralForms, levenshtein, buildIndex, matchAnswer, suggestAnswers, pickHint, isTaxonId, taxonGroups, taxonFact, scoreSubmissionFull,
     depthFor, zoneFor, tierForCode, tiersToEmoji, tiersToDigits, digitsToTiers,
     fnv1a, seededRng, shuffle, randomSeed,
     dayKey, dayIndex, puzzleNumber, keyPlusDays, msUntilNextDay, nextMidnightUtc,

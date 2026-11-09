@@ -1,0 +1,777 @@
+{
+ "aliasAdd": [
+  {
+   "entity": "anomalocaris",
+   "alias": "Anomalocaris canadensis"
+  },
+  {
+   "entity": "archelon",
+   "alias": "Archelon ischyros"
+  },
+  {
+   "entity": "basilosaurus",
+   "alias": "Basilosaurus cetoides"
+  },
+  {
+   "entity": "basilosaurus",
+   "alias": "Basilosaurus isis"
+  },
+  {
+   "entity": "cladoselache",
+   "alias": "Cladoselache fyleri"
+  },
+  {
+   "entity": "cretoxyrhina",
+   "alias": "Cretoxyrhina mantelli"
+  },
+  {
+   "entity": "dorudon",
+   "alias": "Dorudon atrox"
+  },
+  {
+   "entity": "dunkleosteus",
+   "alias": "Dunkleosteus terrelli"
+  },
+  {
+   "entity": "elasmosaurus",
+   "alias": "Elasmosaurus platyurus"
+  },
+  {
+   "entity": "hallucigenia",
+   "alias": "Hallucigenia sparsa"
+  },
+  {
+   "entity": "helicoprion",
+   "alias": "Helicoprion bessonowi"
+  },
+  {
+   "entity": "kronosaurus",
+   "alias": "Kronosaurus queenslandicus"
+  },
+  {
+   "entity": "leedsichthys",
+   "alias": "Leedsichthys problematicus"
+  },
+  {
+   "entity": "liopleurodon",
+   "alias": "Liopleurodon ferox"
+  },
+  {
+   "entity": "opabinia",
+   "alias": "Opabinia regalis"
+  },
+  {
+   "entity": "shonisaurus",
+   "alias": "Shonisaurus popularis"
+  },
+  {
+   "entity": "stethacanthus",
+   "alias": "Stethacanthus altonensis"
+  },
+  {
+   "entity": "tylosaurus",
+   "alias": "Tylosaurus proriger"
+  },
+  {
+   "entity": "xiphactinus",
+   "alias": "Xiphactinus audax"
+  },
+  {
+   "entity": "ammonite",
+   "alias": "Ammonoidea"
+  },
+  {
+   "entity": "belemnite",
+   "alias": "Belemnitida"
+  },
+  {
+   "entity": "conodont",
+   "alias": "Conodonta"
+  },
+  {
+   "entity": "ichthyosaur",
+   "alias": "Ichthyosauria"
+  },
+  {
+   "entity": "mosasaur",
+   "alias": "Mosasauridae"
+  },
+  {
+   "entity": "mosasaur",
+   "alias": "Mosasaurus hoffmannii"
+  },
+  {
+   "entity": "placoderm",
+   "alias": "Placodermi"
+  },
+  {
+   "entity": "plesiosaur",
+   "alias": "Plesiosauria"
+  },
+  {
+   "entity": "plesiosaur",
+   "alias": "Plesiosaurus dolichodeirus"
+  },
+  {
+   "entity": "pliosaur",
+   "alias": "Pliosauridae"
+  },
+  {
+   "entity": "pliosaur",
+   "alias": "Pliosaurus brachydeirus"
+  },
+  {
+   "entity": "rudist",
+   "alias": "Hippuritida"
+  },
+  {
+   "entity": "sea-scorpion",
+   "alias": "Eurypterida"
+  },
+  {
+   "entity": "trilobite",
+   "alias": "Trilobita"
+  },
+  {
+   "entity": "blood-star",
+   "alias": "Henricia leviuscula"
+  },
+  {
+   "entity": "clingfish",
+   "alias": "Gobiesocidae"
+  },
+  {
+   "entity": "clingfish",
+   "alias": "Gobiesox maeandricus"
+  },
+  {
+   "entity": "crinoid-shrimp",
+   "alias": "Laomenes"
+  },
+  {
+   "entity": "crinoid-shrimp",
+   "alias": "Laomenes amboinensis"
+  },
+  {
+   "entity": "finger-coral",
+   "alias": "Porites porites"
+  },
+  {
+   "entity": "four-eyed-fish",
+   "alias": "Anableps anableps"
+  },
+  {
+   "entity": "koi",
+   "alias": "Cyprinus rubrofuscus"
+  },
+  {
+   "entity": "koi",
+   "alias": "Cyprinus carpio"
+  },
+  {
+   "entity": "lancelet",
+   "alias": "Cephalochordata"
+  },
+  {
+   "entity": "lancelet",
+   "alias": "Branchiostoma lanceolatum"
+  },
+  {
+   "entity": "lettuce-coral",
+   "alias": "Agaricia agaricites"
+  },
+  {
+   "entity": "mud-lobster",
+   "alias": "Thalassina anomala"
+  },
+  {
+   "entity": "opah",
+   "alias": "Lampris guttatus"
+  },
+  {
+   "entity": "peacock-bass",
+   "alias": "Cichla ocellaris"
+  },
+  {
+   "entity": "pincushion-starfish",
+   "alias": "Culcita novaeguineae"
+  },
+  {
+   "entity": "red-eared-slider",
+   "alias": "Trachemys scripta"
+  },
+  {
+   "entity": "sea-biscuit",
+   "alias": "Clypeaster rosaceus"
+  },
+  {
+   "entity": "sea-daisy",
+   "alias": "Xyloplax medusiformis"
+  },
+  {
+   "entity": "sea-hare",
+   "alias": "Aplysia californica"
+  },
+  {
+   "entity": "sea-slater",
+   "alias": "Ligia oceanica"
+  },
+  {
+   "entity": "silver-dollar",
+   "alias": "Metynnis argenteus"
+  },
+  {
+   "entity": "snipefish",
+   "alias": "Macroramphosus scolopax"
+  },
+  {
+   "entity": "sponge-crab",
+   "alias": "Dromia personata"
+  },
+  {
+   "entity": "sun-coral",
+   "alias": "Tubastraea coccinea"
+  },
+  {
+   "entity": "table-coral",
+   "alias": "Acropora hyacinthus"
+  },
+  {
+   "entity": "trichodesmium",
+   "alias": "Trichodesmium erythraeum"
+  },
+  {
+   "entity": "turtle-barnacle",
+   "alias": "Chelonibia testudinaria"
+  },
+  {
+   "entity": "vent-anemone",
+   "alias": "Marianactis bythios"
+  },
+  {
+   "entity": "giant-petrel",
+   "alias": "Macronectes"
+  },
+  {
+   "entity": "giant-petrel",
+   "alias": "Macronectes giganteus"
+  },
+  {
+   "entity": "giant-petrel",
+   "alias": "Macronectes halli"
+  },
+  {
+   "entity": "molly",
+   "alias": "Poecilia latipinna"
+  },
+  {
+   "entity": "rainbowfish",
+   "alias": "Melanotaenia"
+  },
+  {
+   "entity": "rainbowfish",
+   "alias": "Melanotaenia boesemani"
+  },
+  {
+   "entity": "razor-clam",
+   "alias": "Siliqua patula"
+  },
+  {
+   "entity": "remora",
+   "alias": "Remora remora"
+  },
+  {
+   "entity": "remora",
+   "alias": "Echeneis naucrates"
+  },
+  {
+   "entity": "sand-dollar",
+   "alias": "Clypeasteroida"
+  },
+  {
+   "entity": "sand-dollar",
+   "alias": "Echinarachnius parma"
+  },
+  {
+   "entity": "sand-eel",
+   "alias": "Ammodytidae"
+  },
+  {
+   "entity": "sand-eel",
+   "alias": "Ammodytes tobianus"
+  },
+  {
+   "entity": "shrimp-goby",
+   "alias": "Cryptocentrus cinctus"
+  },
+  {
+   "entity": "shrimpfish",
+   "alias": "Aeoliscus strigatus"
+  },
+  {
+   "entity": "smooth-hound",
+   "alias": "Mustelus mustelus"
+  },
+  {
+   "entity": "smooth-hound",
+   "alias": "Mustelus asterias"
+  },
+  {
+   "entity": "star-coral",
+   "alias": "Montastraea cavernosa"
+  },
+  {
+   "entity": "star-coral",
+   "alias": "Orbicella annularis"
+  },
+  {
+   "entity": "stargazer",
+   "alias": "Astroscopus guttatus"
+  },
+  {
+   "entity": "surfperch",
+   "alias": "Amphistichus argenteus"
+  },
+  {
+   "entity": "synodontis",
+   "alias": "Mochokidae"
+  },
+  {
+   "entity": "synodontis",
+   "alias": "Synodontis eupterus"
+  },
+  {
+   "entity": "tern",
+   "alias": "Sterna"
+  },
+  {
+   "entity": "tern",
+   "alias": "Sterninae"
+  },
+  {
+   "entity": "tern",
+   "alias": "Sterna hirundo"
+  },
+  {
+   "entity": "top-shell",
+   "alias": "Trochidae"
+  },
+  {
+   "entity": "top-shell",
+   "alias": "Calliostoma zizyphinum"
+  },
+  {
+   "entity": "unicornfish",
+   "alias": "Naso unicornis"
+  },
+  {
+   "entity": "upside-down-jellyfish",
+   "alias": "Cassiopea xamachana"
+  },
+  {
+   "entity": "upside-down-jellyfish",
+   "alias": "Cassiopea andromeda"
+  },
+  {
+   "entity": "zombie-worm",
+   "alias": "Osedax mucofloris"
+  },
+  {
+   "entity": "zombie-worm",
+   "alias": "Osedax rubiplumus"
+  },
+  {
+   "entity": "pea-crab",
+   "alias": "Pinnotheridae"
+  },
+  {
+   "entity": "pea-crab",
+   "alias": "Pinnotheres pisum"
+  },
+  {
+   "entity": "albatross",
+   "alias": "Diomedeidae"
+  },
+  {
+   "entity": "albatross",
+   "alias": "Diomedea"
+  },
+  {
+   "entity": "amphipod",
+   "alias": "Amphipoda"
+  },
+  {
+   "entity": "anglerfish",
+   "alias": "Lophiiformes"
+  },
+  {
+   "entity": "baleen-whale",
+   "alias": "Mysticeti"
+  },
+  {
+   "entity": "barnacle",
+   "alias": "Cirripedia"
+  },
+  {
+   "entity": "beaked-whale",
+   "alias": "Ziphiidae"
+  },
+  {
+   "entity": "booby",
+   "alias": "Sula"
+  },
+  {
+   "entity": "bristle-worm",
+   "alias": "Polychaeta"
+  },
+  {
+   "entity": "brittle-star",
+   "alias": "Ophiuroidea"
+  },
+  {
+   "entity": "bryozoan",
+   "alias": "Bryozoa"
+  },
+  {
+   "entity": "clam",
+   "alias": "Bivalvia"
+  },
+  {
+   "entity": "coral",
+   "alias": "Anthozoa"
+  },
+  {
+   "entity": "cormorant",
+   "alias": "Phalacrocoracidae"
+  },
+  {
+   "entity": "cormorant",
+   "alias": "Phalacrocorax"
+  },
+  {
+   "entity": "crab",
+   "alias": "Brachyura"
+  },
+  {
+   "entity": "eagle-ray",
+   "alias": "Myliobatidae"
+  },
+  {
+   "entity": "eel",
+   "alias": "Anguilliformes"
+  },
+  {
+   "entity": "electric-ray",
+   "alias": "Torpediniformes"
+  },
+  {
+   "entity": "electric-ray",
+   "alias": "Torpedinidae"
+  },
+  {
+   "entity": "elephant-seal",
+   "alias": "Mirounga"
+  },
+  {
+   "entity": "feather-star",
+   "alias": "Comatulida"
+  },
+  {
+   "entity": "filefish",
+   "alias": "Monacanthidae"
+  },
+  {
+   "entity": "flatfish",
+   "alias": "Pleuronectiformes"
+  },
+  {
+   "entity": "frigatebird",
+   "alias": "Fregatidae"
+  },
+  {
+   "entity": "frigatebird",
+   "alias": "Fregata"
+  },
+  {
+   "entity": "fur-seal",
+   "alias": "Arctocephalinae"
+  },
+  {
+   "entity": "fur-seal",
+   "alias": "Arctocephalus"
+  },
+  {
+   "entity": "gorgonian",
+   "alias": "Gorgonacea"
+  },
+  {
+   "entity": "gull",
+   "alias": "Laridae"
+  },
+  {
+   "entity": "gull",
+   "alias": "Larus"
+  },
+  {
+   "entity": "heron",
+   "alias": "Ardeidae"
+  },
+  {
+   "entity": "heron",
+   "alias": "Ardea"
+  },
+  {
+   "entity": "hydroid",
+   "alias": "Hydrozoa"
+  },
+  {
+   "entity": "isopod",
+   "alias": "Isopoda"
+  },
+  {
+   "entity": "jellyfish",
+   "alias": "Scyphozoa"
+  },
+  {
+   "entity": "killifish",
+   "alias": "Cyprinodontiformes"
+  },
+  {
+   "entity": "lamp-shell",
+   "alias": "Brachiopoda"
+  },
+  {
+   "entity": "marine-flatworm",
+   "alias": "Polycladida"
+  },
+  {
+   "entity": "marlin",
+   "alias": "Istiophoridae"
+  },
+  {
+   "entity": "marlin",
+   "alias": "Makaira"
+  },
+  {
+   "entity": "monk-seal",
+   "alias": "Monachini"
+  },
+  {
+   "entity": "monk-seal",
+   "alias": "Monachus"
+  },
+  {
+   "entity": "monk-seal",
+   "alias": "Neomonachus"
+  },
+  {
+   "entity": "nematode",
+   "alias": "Nematoda"
+  },
+  {
+   "entity": "nudibranch",
+   "alias": "Nudibranchia"
+  },
+  {
+   "entity": "pelican",
+   "alias": "Pelecanidae"
+  },
+  {
+   "entity": "pelican",
+   "alias": "Pelecanus"
+  },
+  {
+   "entity": "penguin",
+   "alias": "Spheniscidae"
+  },
+  {
+   "entity": "penguin",
+   "alias": "Sphenisciformes"
+  },
+  {
+   "entity": "petrel",
+   "alias": "Procellariidae"
+  },
+  {
+   "entity": "petrel",
+   "alias": "Hydrobatidae"
+  },
+  {
+   "entity": "porpoise",
+   "alias": "Phocoenidae"
+  },
+  {
+   "entity": "prawn",
+   "alias": "Dendrobranchiata"
+  },
+  {
+   "entity": "ribbon-worm",
+   "alias": "Nemertea"
+  },
+  {
+   "entity": "sea-anemone",
+   "alias": "Actiniaria"
+  },
+  {
+   "entity": "sea-lily",
+   "alias": "Crinoidea"
+  },
+  {
+   "entity": "sea-snail",
+   "alias": "Gastropoda"
+  },
+  {
+   "entity": "sea-squirt",
+   "alias": "Ascidiacea"
+  },
+  {
+   "entity": "sea-squirt",
+   "alias": "Tunicata"
+  },
+  {
+   "entity": "sea-star",
+   "alias": "Asteroidea"
+  },
+  {
+   "entity": "sea-turtle",
+   "alias": "Chelonioidea"
+  },
+  {
+   "entity": "shrimp",
+   "alias": "Caridea"
+  },
+  {
+   "entity": "siphonophore",
+   "alias": "Siphonophorae"
+  },
+  {
+   "entity": "sleeper-shark",
+   "alias": "Somniosidae"
+  },
+  {
+   "entity": "sleeper-shark",
+   "alias": "Somniosus"
+  },
+  {
+   "entity": "soft-coral",
+   "alias": "Alcyonacea"
+  },
+  {
+   "entity": "sole",
+   "alias": "Soleidae"
+  },
+  {
+   "entity": "sole",
+   "alias": "Solea"
+  },
+  {
+   "entity": "sponge",
+   "alias": "Porifera"
+  },
+  {
+   "entity": "stingray",
+   "alias": "Dasyatidae"
+  },
+  {
+   "entity": "stingray",
+   "alias": "Myliobatoidei"
+  },
+  {
+   "entity": "sweetlips",
+   "alias": "Plectorhinchus"
+  },
+  {
+   "entity": "tusk-shell",
+   "alias": "Scaphopoda"
+  },
+  {
+   "entity": "whale",
+   "alias": "Cetacea"
+  },
+  {
+   "entity": "feather-duster-worm",
+   "alias": "Sabellidae"
+  },
+  {
+   "entity": "freshwater-eel",
+   "alias": "Anguillidae"
+  },
+  {
+   "entity": "gurnard",
+   "alias": "Triglidae"
+  },
+  {
+   "entity": "larvacean",
+   "alias": "Appendicularia"
+  },
+  {
+   "entity": "mudskipper",
+   "alias": "Oxudercinae"
+  },
+  {
+   "entity": "mushroom-coral",
+   "alias": "Fungiidae"
+  },
+  {
+   "entity": "pistol-shrimp",
+   "alias": "Alpheidae"
+  },
+  {
+   "entity": "sabertooth-fish",
+   "alias": "Evermannellidae"
+  },
+  {
+   "entity": "sawfish",
+   "alias": "Pristidae"
+  },
+  {
+   "entity": "seal",
+   "alias": "Pinnipedia"
+  },
+  {
+   "entity": "shark",
+   "alias": "Selachimorpha"
+  },
+  {
+   "entity": "skate",
+   "alias": "Rajidae"
+  },
+  {
+   "entity": "spiny-lobster",
+   "alias": "Palinuridae"
+  },
+  {
+   "entity": "stalked-jellyfish",
+   "alias": "Staurozoa"
+  },
+  {
+   "entity": "tube-anemone",
+   "alias": "Ceriantharia"
+  },
+  {
+   "entity": "whiplash-squid",
+   "alias": "Mastigoteuthidae"
+  },
+  {
+   "entity": "shearwater",
+   "alias": "Puffinus"
+  },
+  {
+   "entity": "shearwater",
+   "alias": "Puffinus puffinus"
+  },
+  {
+   "entity": "slipper-lobster",
+   "alias": "Scyllaridae"
+  },
+  {
+   "entity": "arowana",
+   "alias": "Scleropages formosus"
+  },
+  {
+   "entity": "bengal-tiger",
+   "alias": "Panthera tigris"
+  }
+ ],
+ "aliasRemove": []
+}

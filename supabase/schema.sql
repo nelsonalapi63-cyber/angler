@@ -46,8 +46,10 @@ create table if not exists public.progress (
   daily jsonb not null default '{}'::jsonb,
   logbook jsonb not null default '{}'::jsonb,
   best jsonb not null default '{}'::jsonb,
+  badges jsonb not null default '{}'::jsonb,
   updated_at timestamptz not null default now()
 );
+alter table public.progress add column if not exists badges jsonb not null default '{}'::jsonb;
 
 create table if not exists public.dives (
   id bigserial primary key,
@@ -62,6 +64,7 @@ create table if not exists public.dives (
   seconds_used numeric not null,
   flagged boolean not null default false,
   approved boolean not null default true,
+  entity_ids text[],                      -- what each prompt resolved to (null = miss); feeds top_answers()
   created_at timestamptz not null default now(),
   check (user_id is not null or device_id is not null)
 );
@@ -342,3 +345,20 @@ revoke execute on function public.close_day(date) from public, anon, authenticat
 revoke execute on function public.recompute_ratings(date) from public, anon, authenticated;
 revoke execute on function public.snapshot_tide(text) from public, anon, authenticated;
 revoke execute on function public.nightly() from public, anon, authenticated;
+
+-- ---------------------------------------------------------------- "what others answered today"
+-- The most-given accepted answers per prompt for a day, with the day's dive count. Anyone may call it; it reveals
+-- nothing about individual divers. (The column is added here too so existing databases pick it up on re-run.)
+alter table public.dives add column if not exists entity_ids text[];
+create or replace function public.top_answers(p_day date)
+returns table (prompt_id text, entity_id text, n bigint, total bigint)
+language sql stable security definer set search_path = public as $$
+  with d as (select prompt_ids, entity_ids from public.dives where day = p_day and approved and entity_ids is not null),
+  t as (select count(*) as total from d),
+  x as (select unnest(prompt_ids) as prompt_id, unnest(entity_ids) as entity_id from d)
+  select x.prompt_id, x.entity_id, count(*) as n, (select total from t) as total
+  from x where x.entity_id is not null
+  group by x.prompt_id, x.entity_id
+  order by x.prompt_id, n desc;
+$$;
+grant execute on function public.top_answers(date) to anon, authenticated;

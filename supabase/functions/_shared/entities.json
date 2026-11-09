@@ -288,7 +288,10 @@
  {
   "id": "albatross",
   "name": "Albatross",
-  "aliases": [],
+  "aliases": [
+   "Diomedeidae",
+   "Diomedea"
+  ],
   "kind": "creature",
   "group": "seabirds",
   "fact": "Albatrosses lock their wings open with a special shoulder tendon and can glide for hours over the ocean without a single flap."
@@ -509,7 +512,8 @@
   "id": "ammonite",
   "name": "Ammonite",
   "aliases": [
-   "ammonoid"
+   "ammonoid",
+   "Ammonoidea"
   ],
   "kind": "creature",
   "group": "cephalopods",
@@ -520,7 +524,8 @@
   "name": "Amphipod",
   "aliases": [
    "hadal amphipod",
-   "scavenging amphipod"
+   "scavenging amphipod",
+   "Amphipoda"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -639,7 +644,8 @@
    "deep-sea anglerfish",
    "sea devil",
    "black seadevil",
-   "angler"
+   "angler",
+   "Lophiiformes"
   ],
   "kind": "creature",
   "group": "fish",
@@ -670,7 +676,9 @@
  {
   "id": "anomalocaris",
   "name": "Anomalocaris",
-  "aliases": [],
+  "aliases": [
+   "Anomalocaris canadensis"
+  ],
   "kind": "creature",
   "group": "arthropods",
   "fact": "Anomalocaris was the top predator of the Cambrian seas about 500 million years ago, a metre-long hunter with grasping front limbs and a circular mouth."
@@ -842,7 +850,9 @@
  {
   "id": "archelon",
   "name": "Archelon",
-  "aliases": [],
+  "aliases": [
+   "Archelon ischyros"
+  ],
   "kind": "creature",
   "group": "turtles",
   "fact": "Archelon was the largest turtle ever, about 4 metres long, and swam the inland sea of Cretaceous North America."
@@ -965,7 +975,8 @@
    "Asian arowana",
    "silver arowana",
    "dragon fish",
-   "Osteoglossum bicirrhosum"
+   "Osteoglossum bicirrhosum",
+   "Scleropages formosus"
   ],
   "kind": "creature",
   "group": "fish",
@@ -1444,7 +1455,8 @@
   "id": "baleen-whale",
   "name": "Baleen whale",
   "aliases": [
-   "mysticete"
+   "mysticete",
+   "Mysticeti"
   ],
   "kind": "creature",
   "group": "whales",
@@ -1605,7 +1617,8 @@
   "aliases": [
    "acorn barnacle",
    "goose barnacle",
-   "gooseneck barnacle"
+   "gooseneck barnacle",
+   "Cirripedia"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -1674,7 +1687,9 @@
   "id": "basilosaurus",
   "name": "Basilosaurus",
   "aliases": [
-   "Zeuglodon"
+   "Zeuglodon",
+   "Basilosaurus cetoides",
+   "Basilosaurus isis"
   ],
   "kind": "creature",
   "group": "whales",
@@ -1851,7 +1866,9 @@
  {
   "id": "beaked-whale",
   "name": "Beaked whale",
-  "aliases": [],
+  "aliases": [
+   "Ziphiidae"
+  ],
   "kind": "creature",
   "group": "whales",
   "fact": "Beaked whales are deep-diving, elusive whales with just one or two pairs of teeth, and some species are known only from stranded animals."
@@ -1906,7 +1923,9 @@
  {
   "id": "belemnite",
   "name": "Belemnite",
-  "aliases": [],
+  "aliases": [
+   "Belemnitida"
+  ],
   "kind": "creature",
   "group": "cephalopods",
   "fact": "Belemnites were squid-like animals with an internal bullet-shaped shell, and their fossils were once thought to be thunderbolts."
@@ -1972,7 +1991,8 @@
   "aliases": [
    "tiger",
    "Sundarbans tiger",
-   "Panthera tigris tigris"
+   "Panthera tigris tigris",
+   "Panthera tigris"
   ],
   "kind": "creature",
   "group": "mammals",
@@ -2568,7 +2588,8 @@
   "name": "Blood star",
   "aliases": [
    "Pacific blood star",
-   "Henricia"
+   "Henricia",
+   "Henricia leviuscula"
   ],
   "kind": "creature",
   "group": "echinoderms",
@@ -3146,7 +3167,9 @@
  {
   "id": "booby",
   "name": "Booby",
-  "aliases": [],
+  "aliases": [
+   "Sula"
+  ],
   "kind": "creature",
   "group": "seabirds",
   "fact": "Boobies are tropical plunge-divers named from the Spanish 'bobo', meaning foolish, because they were so easy for sailors to catch."
@@ -3380,7 +3403,8 @@
   "aliases": [
    "polychaete",
    "polychaete worm",
-   "bristleworm"
+   "bristleworm",
+   "Polychaeta"
   ],
   "kind": "creature",
   "group": "worms",
@@ -3428,7 +3452,8 @@
   "aliases": [
    "ophiuroid",
    "serpent star",
-   "brittlestar"
+   "brittlestar",
+   "Ophiuroidea"
   ],
   "kind": "creature",
   "group": "echinoderms",
@@ -3532,7 +3557,8 @@
   "name": "Bryozoan",
   "aliases": [
    "moss animal",
-   "sea mat"
+   "sea mat",
+   "Bryozoa"
   ],
   "kind": "creature",
   "group": "invertebrates",
@@ -4690,7 +4716,9 @@
  {
   "id": "cladoselache",
   "name": "Cladoselache",
-  "aliases": [],
+  "aliases": [
+   "Cladoselache fyleri"
+  ],
   "kind": "creature",
   "group": "sharks",
   "fact": "Cladoselache is one of the earliest well-known sharks, preserved in Devonian shales around Cleveland, Ohio, about 370 million years old."
@@ -4702,7 +4730,8 @@
    "bivalve",
    "hard clam",
    "soft-shell clam",
-   "littleneck"
+   "littleneck",
+   "Bivalvia"
   ],
   "kind": "creature",
   "group": "molluscs",
@@ -4785,7 +4814,9 @@
   "id": "clingfish",
   "name": "Clingfish",
   "aliases": [
-   "northern clingfish"
+   "northern clingfish",
+   "Gobiesocidae",
+   "Gobiesox maeandricus"
   ],
   "kind": "creature",
   "group": "fish",
@@ -5252,7 +5283,9 @@
  {
   "id": "conodont",
   "name": "Conodont",
-  "aliases": [],
+  "aliases": [
+   "Conodonta"
+  ],
   "kind": "creature",
   "group": "fish",
   "fact": "Conodonts were eel-like early vertebrates known mainly from tiny tooth-like fossils, which geologists use to date rocks."
@@ -5359,7 +5392,8 @@
   "name": "Coral",
   "aliases": [
    "stony coral",
-   "hard coral"
+   "hard coral",
+   "Anthozoa"
   ],
   "kind": "creature",
   "group": "corals",
@@ -5469,7 +5503,9 @@
   "id": "cormorant",
   "name": "Cormorant",
   "aliases": [
-   "shag"
+   "shag",
+   "Phalacrocoracidae",
+   "Phalacrocorax"
   ],
   "kind": "creature",
   "group": "seabirds",
@@ -5569,7 +5605,8 @@
   "id": "crab",
   "name": "Crab",
   "aliases": [
-   "kani"
+   "kani",
+   "Brachyura"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -5650,7 +5687,8 @@
   "id": "cretoxyrhina",
   "name": "Cretoxyrhina",
   "aliases": [
-   "ginsu shark"
+   "ginsu shark",
+   "Cretoxyrhina mantelli"
   ],
   "kind": "creature",
   "group": "sharks",
@@ -5660,7 +5698,9 @@
   "id": "crinoid-shrimp",
   "name": "Crinoid shrimp",
   "aliases": [
-   "feather star shrimp"
+   "feather star shrimp",
+   "Laomenes",
+   "Laomenes amboinensis"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -6388,7 +6428,9 @@
  {
   "id": "dorudon",
   "name": "Dorudon",
-  "aliases": [],
+  "aliases": [
+   "Dorudon atrox"
+  ],
   "kind": "creature",
   "group": "whales",
   "fact": "Dorudon was a 5-metre early whale whose skeletons lie by the hundred in Egypt's Wadi Al-Hitan, the Valley of the Whales."
@@ -6570,7 +6612,9 @@
  {
   "id": "dunkleosteus",
   "name": "Dunkleosteus",
-  "aliases": [],
+  "aliases": [
+   "Dunkleosteus terrelli"
+  ],
   "kind": "creature",
   "group": "fish",
   "fact": "Dunkleosteus was an armoured fish of the Devonian seas that sliced prey with bony blades instead of teeth."
@@ -6716,7 +6760,9 @@
  {
   "id": "eagle-ray",
   "name": "Eagle ray",
-  "aliases": [],
+  "aliases": [
+   "Myliobatidae"
+  ],
   "kind": "creature",
   "group": "rays",
   "fact": "Eagle rays flap their pointed wings to fly through the water and sometimes leap clear of the surface."
@@ -6842,7 +6888,8 @@
   "name": "Eel",
   "aliases": [
    "freshwater eel",
-   "unagi"
+   "unagi",
+   "Anguilliformes"
   ],
   "kind": "creature",
   "group": "fish",
@@ -6885,7 +6932,8 @@
   "id": "elasmosaurus",
   "name": "Elasmosaurus",
   "aliases": [
-   "elasmosaur"
+   "elasmosaur",
+   "Elasmosaurus platyurus"
   ],
   "kind": "creature",
   "group": "reptiles",
@@ -6920,7 +6968,9 @@
    "torpedo ray",
    "torpedo",
    "numbfish",
-   "crampfish"
+   "crampfish",
+   "Torpediniformes",
+   "Torpedinidae"
   ],
   "kind": "creature",
   "group": "rays",
@@ -6953,7 +7003,8 @@
   "id": "elephant-seal",
   "name": "Elephant seal",
   "aliases": [
-   "sea elephant"
+   "sea elephant",
+   "Mirounga"
   ],
   "kind": "creature",
   "group": "seals",
@@ -7441,7 +7492,8 @@
    "fan worm",
    "Sabellastarte",
    "sabellid worm",
-   "feather duster"
+   "feather duster",
+   "Sabellidae"
   ],
   "kind": "creature",
   "group": "worms",
@@ -7450,7 +7502,9 @@
  {
   "id": "feather-star",
   "name": "Feather star",
-  "aliases": [],
+  "aliases": [
+   "Comatulida"
+  ],
   "kind": "creature",
   "group": "echinoderms",
   "fact": "Feather stars are crinoids that cling to reefs with tiny claw-like legs and can swim short distances by waving their feathery arms."
@@ -7530,7 +7584,8 @@
   "name": "Filefish",
   "aliases": [
    "leatherjacket",
-   "foolfish"
+   "foolfish",
+   "Monacanthidae"
   ],
   "kind": "creature",
   "group": "fish",
@@ -7553,7 +7608,9 @@
  {
   "id": "finger-coral",
   "name": "Finger coral",
-  "aliases": [],
+  "aliases": [
+   "Porites porites"
+  ],
   "kind": "creature",
   "group": "corals",
   "fact": "Finger coral grows in stubby, finger-like branches and is a sturdy, common coral in the shallows of Caribbean and Pacific reefs."
@@ -7718,7 +7775,9 @@
  {
   "id": "flatfish",
   "name": "Flatfish",
-  "aliases": [],
+  "aliases": [
+   "Pleuronectiformes"
+  ],
   "kind": "creature",
   "group": "fish",
   "fact": "Flatfish lie on one side on the seabed, and the side facing down loses its colour while the upper side matches the sand."
@@ -7910,7 +7969,8 @@
   "name": "Four-eyed fish",
   "aliases": [
    "four-eyes",
-   "Anableps"
+   "Anableps",
+   "Anableps anableps"
   ],
   "kind": "creature",
   "group": "fish",
@@ -8034,7 +8094,8 @@
   "aliases": [
    "river eel",
    "Anguilla",
-   "anguillid eel"
+   "anguillid eel",
+   "Anguillidae"
   ],
   "kind": "creature",
   "group": "fish",
@@ -8080,7 +8141,9 @@
    "frigate bird",
    "man-o'-war bird",
    "magnificent frigatebird",
-   "great frigatebird"
+   "great frigatebird",
+   "Fregatidae",
+   "Fregata"
   ],
   "kind": "creature",
   "group": "seabirds",
@@ -8127,7 +8190,10 @@
  {
   "id": "fur-seal",
   "name": "Fur seal",
-  "aliases": [],
+  "aliases": [
+   "Arctocephalinae",
+   "Arctocephalus"
+  ],
   "kind": "creature",
   "group": "seals",
   "fact": "Fur seals have a dense double layer of fur that once made them a target for hunters, and they are more closely related to sea lions than to true seals."
@@ -8655,7 +8721,10 @@
   "aliases": [
    "southern giant petrel",
    "northern giant petrel",
-   "stinker"
+   "stinker",
+   "Macronectes",
+   "Macronectes giganteus",
+   "Macronectes halli"
   ],
   "kind": "creature",
   "group": "seabirds",
@@ -9063,7 +9132,8 @@
   "name": "Gorgonian",
   "aliases": [
    "gorgonian coral",
-   "horny coral"
+   "horny coral",
+   "Gorgonacea"
   ],
   "kind": "creature",
   "group": "corals",
@@ -9971,7 +10041,9 @@
    "sea gull",
    "herring gull",
    "great black-backed gull",
-   "black-headed gull"
+   "black-headed gull",
+   "Laridae",
+   "Larus"
   ],
   "kind": "creature",
   "group": "seabirds",
@@ -10030,7 +10102,8 @@
    "tub gurnard",
    "red gurnard",
    "grey gurnard",
-   "Trigla"
+   "Trigla",
+   "Triglidae"
   ],
   "kind": "creature",
   "group": "fish",
@@ -10138,7 +10211,9 @@
  {
   "id": "hallucigenia",
   "name": "Hallucigenia",
-  "aliases": [],
+  "aliases": [
+   "Hallucigenia sparsa"
+  ],
   "kind": "creature",
   "group": "worms",
   "fact": "Hallucigenia, a spiny Cambrian worm from the Burgess Shale, was so strange that scientists first reconstructed it upside down."
@@ -10486,7 +10561,8 @@
   "id": "helicoprion",
   "name": "Helicoprion",
   "aliases": [
-   "buzzsaw shark"
+   "buzzsaw shark",
+   "Helicoprion bessonowi"
   ],
   "kind": "creature",
   "group": "sharks",
@@ -10536,7 +10612,9 @@
   "name": "Heron",
   "aliases": [
    "grey heron",
-   "great blue heron"
+   "great blue heron",
+   "Ardeidae",
+   "Ardea"
   ],
   "kind": "creature",
   "group": "birds",
@@ -11000,7 +11078,8 @@
   "id": "hydroid",
   "name": "Hydroid",
   "aliases": [
-   "stinging hydroid"
+   "stinging hydroid",
+   "Hydrozoa"
   ],
   "kind": "creature",
   "group": "jellies",
@@ -11027,7 +11106,8 @@
   "name": "Ichthyosaur",
   "aliases": [
    "ichthyosaurus",
-   "fish lizard"
+   "fish lizard",
+   "Ichthyosauria"
   ],
   "kind": "creature",
   "group": "reptiles",
@@ -11251,7 +11331,9 @@
  {
   "id": "isopod",
   "name": "Isopod",
-  "aliases": [],
+  "aliases": [
+   "Isopoda"
+  ],
   "kind": "creature",
   "group": "crustaceans",
   "fact": "Isopods, the group that includes woodlice, are found in every ocean habitat, including trench floors deeper than 6,000 metres."
@@ -11573,7 +11655,8 @@
    "sea jelly",
    "medusa",
    "moon jellyfish",
-   "moon jelly"
+   "moon jelly",
+   "Scyphozoa"
   ],
   "kind": "creature",
   "group": "jellies",
@@ -11871,7 +11954,8 @@
   "id": "killifish",
   "name": "Killifish",
   "aliases": [
-   "killie"
+   "killie",
+   "Cyprinodontiformes"
   ],
   "kind": "creature",
   "group": "fish",
@@ -12040,7 +12124,9 @@
   "name": "Koi",
   "aliases": [
    "nishikigoi",
-   "koi carp"
+   "koi carp",
+   "Cyprinus rubrofuscus",
+   "Cyprinus carpio"
   ],
   "kind": "creature",
   "group": "fish",
@@ -12131,7 +12217,9 @@
  {
   "id": "kronosaurus",
   "name": "Kronosaurus",
-  "aliases": [],
+  "aliases": [
+   "Kronosaurus queenslandicus"
+  ],
   "kind": "creature",
   "group": "reptiles",
   "fact": "Kronosaurus was a Cretaceous pliosaur from Queensland, Australia, whose skull alone is estimated at over 2 metres long."
@@ -12314,7 +12402,8 @@
   "name": "Lamp shell",
   "aliases": [
    "lampshell",
-   "brachiopod"
+   "brachiopod",
+   "Brachiopoda"
   ],
   "kind": "creature",
   "group": "invertebrates",
@@ -12343,7 +12432,9 @@
   "name": "Lancelet",
   "aliases": [
    "amphioxus",
-   "Branchiostoma"
+   "Branchiostoma",
+   "Cephalochordata",
+   "Branchiostoma lanceolatum"
   ],
   "kind": "creature",
   "group": "chordates",
@@ -12472,7 +12563,8 @@
   "name": "Larvacean",
   "aliases": [
    "appendicularian",
-   "Oikopleura"
+   "Oikopleura",
+   "Appendicularia"
   ],
   "kind": "creature",
   "group": "plankton",
@@ -12603,7 +12695,9 @@
  {
   "id": "leedsichthys",
   "name": "Leedsichthys",
-  "aliases": [],
+  "aliases": [
+   "Leedsichthys problematicus"
+  ],
   "kind": "creature",
   "group": "fish",
   "fact": "Leedsichthys was a Jurassic filter-feeding fish perhaps 16 metres long, the largest bony fish known to have lived."
@@ -12704,7 +12798,8 @@
   "id": "lettuce-coral",
   "name": "Lettuce coral",
   "aliases": [
-   "Agaricia"
+   "Agaricia",
+   "Agaricia agaricites"
   ],
   "kind": "creature",
   "group": "corals",
@@ -12884,7 +12979,9 @@
  {
   "id": "liopleurodon",
   "name": "Liopleurodon",
-  "aliases": [],
+  "aliases": [
+   "Liopleurodon ferox"
+  ],
   "kind": "creature",
   "group": "reptiles",
   "fact": "Liopleurodon was a Jurassic pliosaur of European seas with a skull well over a metre long, far smaller than the 25-metre giant once shown on television."
@@ -13737,7 +13834,8 @@
   "aliases": [
    "polyclad flatworm",
    "polyclad",
-   "flatworm"
+   "flatworm",
+   "Polycladida"
   ],
   "kind": "creature",
   "group": "worms",
@@ -13797,7 +13895,10 @@
  {
   "id": "marlin",
   "name": "Marlin",
-  "aliases": [],
+  "aliases": [
+   "Istiophoridae",
+   "Makaira"
+  ],
   "kind": "creature",
   "group": "fish",
   "fact": "Marlins are big, spear-nosed billfish among the fastest fish in the ocean; Hemingway's The Old Man and the Sea is the story of a fight with a giant marlin."
@@ -14299,7 +14400,8 @@
   "name": "Molly",
   "aliases": [
    "sailfin molly",
-   "Poecilia"
+   "Poecilia",
+   "Poecilia latipinna"
   ],
   "kind": "creature",
   "group": "fish",
@@ -14328,7 +14430,11 @@
  {
   "id": "monk-seal",
   "name": "Monk seal",
-  "aliases": [],
+  "aliases": [
+   "Monachini",
+   "Monachus",
+   "Neomonachus"
+  ],
   "kind": "creature",
   "group": "seals",
   "fact": "Monk seals are the only seals adapted to warm tropical and subtropical waters, and only two species survive today."
@@ -14460,7 +14566,9 @@
   "id": "mosasaur",
   "name": "Mosasaur",
   "aliases": [
-   "mosasaurus"
+   "mosasaurus",
+   "Mosasauridae",
+   "Mosasaurus hoffmannii"
   ],
   "kind": "creature",
   "group": "reptiles",
@@ -14524,7 +14632,8 @@
   "id": "mud-lobster",
   "name": "Mud lobster",
   "aliases": [
-   "Thalassina"
+   "Thalassina",
+   "Thalassina anomala"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -14535,7 +14644,8 @@
   "name": "Mudskipper",
   "aliases": [
    "Periophthalmus",
-   "mud skipper"
+   "mud skipper",
+   "Oxudercinae"
   ],
   "kind": "creature",
   "group": "fish",
@@ -14601,7 +14711,8 @@
   "id": "mushroom-coral",
   "name": "Mushroom coral",
   "aliases": [
-   "Fungia"
+   "Fungia",
+   "Fungiidae"
   ],
   "kind": "creature",
   "group": "corals",
@@ -14845,7 +14956,8 @@
   "name": "Nematode",
   "aliases": [
    "roundworm",
-   "marine nematode"
+   "marine nematode",
+   "Nematoda"
   ],
   "kind": "creature",
   "group": "worms",
@@ -15399,7 +15511,8 @@
   "id": "nudibranch",
   "name": "Nudibranch",
   "aliases": [
-   "sea slug"
+   "sea slug",
+   "Nudibranchia"
   ],
   "kind": "creature",
   "group": "molluscs",
@@ -15713,7 +15826,9 @@
  {
   "id": "opabinia",
   "name": "Opabinia",
-  "aliases": [],
+  "aliases": [
+   "Opabinia regalis"
+  ],
   "kind": "creature",
   "group": "arthropods",
   "fact": "Opabinia, a Cambrian sea creature with five eyes and a clawed trunk, reportedly drew laughter when first shown to scientists in 1972."
@@ -15723,7 +15838,8 @@
   "name": "Opah",
   "aliases": [
    "moonfish",
-   "Lampris"
+   "Lampris",
+   "Lampris guttatus"
   ],
   "kind": "creature",
   "group": "fish",
@@ -16448,7 +16564,9 @@
   "name": "Pea crab",
   "aliases": [
    "Pinnotheres",
-   "oyster crab"
+   "oyster crab",
+   "Pinnotheridae",
+   "Pinnotheres pisum"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -16472,7 +16590,8 @@
   "name": "Peacock bass",
   "aliases": [
    "tucunaré",
-   "Cichla"
+   "Cichla",
+   "Cichla ocellaris"
   ],
   "kind": "creature",
   "group": "fish",
@@ -16605,7 +16724,10 @@
  {
   "id": "pelican",
   "name": "Pelican",
-  "aliases": [],
+  "aliases": [
+   "Pelecanidae",
+   "Pelecanus"
+  ],
   "kind": "creature",
   "group": "seabirds",
   "fact": "A pelican scoops fish in a throat pouch that can hold around 10 litres of water, which it drains before swallowing the catch."
@@ -16613,7 +16735,10 @@
  {
   "id": "penguin",
   "name": "Penguin",
-  "aliases": [],
+  "aliases": [
+   "Spheniscidae",
+   "Sphenisciformes"
+  ],
   "kind": "creature",
   "group": "seabirds",
   "fact": "Penguins have backward-pointing spines on the tongue and roof of the mouth that stop slippery krill and fish escaping as they swallow."
@@ -16709,7 +16834,9 @@
   "id": "petrel",
   "name": "Petrel",
   "aliases": [
-   "storm petrel"
+   "storm petrel",
+   "Procellariidae",
+   "Hydrobatidae"
   ],
   "kind": "creature",
   "group": "seabirds",
@@ -16892,7 +17019,8 @@
   "aliases": [
    "cushion star",
    "pincushion star",
-   "Culcita"
+   "Culcita",
+   "Culcita novaeguineae"
   ],
   "kind": "creature",
   "group": "echinoderms",
@@ -17024,7 +17152,8 @@
   "aliases": [
    "snapping shrimp",
    "Alpheus",
-   "alpheid shrimp"
+   "alpheid shrimp",
+   "Alpheidae"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -17044,7 +17173,9 @@
  {
   "id": "placoderm",
   "name": "Placoderm",
-  "aliases": [],
+  "aliases": [
+   "Placodermi"
+  ],
   "kind": "creature",
   "group": "fish",
   "fact": "Placoderms, the first jawed fish, wore bony armour on their heads and vanished entirely about 360 million years ago."
@@ -17120,7 +17251,9 @@
   "id": "plesiosaur",
   "name": "Plesiosaur",
   "aliases": [
-   "plesiosaurus"
+   "plesiosaurus",
+   "Plesiosauria",
+   "Plesiosaurus dolichodeirus"
   ],
   "kind": "creature",
   "group": "reptiles",
@@ -17130,7 +17263,9 @@
   "id": "pliosaur",
   "name": "Pliosaur",
   "aliases": [
-   "pliosaurus"
+   "pliosaurus",
+   "Pliosauridae",
+   "Pliosaurus brachydeirus"
   ],
   "kind": "creature",
   "group": "reptiles",
@@ -17361,7 +17496,9 @@
  {
   "id": "porpoise",
   "name": "Porpoise",
-  "aliases": [],
+  "aliases": [
+   "Phocoenidae"
+  ],
   "kind": "creature",
   "group": "dolphins",
   "fact": "Porpoises are small toothed whales with spade-shaped teeth and blunt snouts, unlike the cone-shaped teeth and beaks of dolphins."
@@ -17465,7 +17602,8 @@
   "id": "prawn",
   "name": "Prawn",
   "aliases": [
-   "king prawn"
+   "king prawn",
+   "Dendrobranchiata"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -17901,7 +18039,9 @@
   "name": "Rainbowfish",
   "aliases": [
    "Melanotaeniidae",
-   "Boeseman's rainbowfish"
+   "Boeseman's rainbowfish",
+   "Melanotaenia",
+   "Melanotaenia boesemani"
   ],
   "kind": "creature",
   "group": "fish",
@@ -17980,7 +18120,8 @@
    "razor shell",
    "razorfish",
    "Ensis",
-   "Pacific razor clam"
+   "Pacific razor clam",
+   "Siliqua patula"
   ],
   "kind": "creature",
   "group": "molluscs",
@@ -18063,7 +18204,8 @@
   "name": "Red-eared slider",
   "aliases": [
    "red-eared terrapin",
-   "Trachemys scripta elegans"
+   "Trachemys scripta elegans",
+   "Trachemys scripta"
   ],
   "kind": "creature",
   "group": "reptiles",
@@ -18293,7 +18435,9 @@
    "suckerfish",
    "sharksucker",
    "shark sucker",
-   "Echeneidae"
+   "Echeneidae",
+   "Remora remora",
+   "Echeneis naucrates"
   ],
   "kind": "creature",
   "group": "fish",
@@ -18379,7 +18523,8 @@
   "name": "Ribbon worm",
   "aliases": [
    "nemertean",
-   "bootlace worm"
+   "bootlace worm",
+   "Nemertea"
   ],
   "kind": "creature",
   "group": "worms",
@@ -18778,7 +18923,9 @@
  {
   "id": "rudist",
   "name": "Rudist",
-  "aliases": [],
+  "aliases": [
+   "Hippuritida"
+  ],
   "kind": "creature",
   "group": "molluscs",
   "fact": "Rudists were strange cone-shaped clams that built reefs in Cretaceous seas and died out along with the dinosaurs."
@@ -18800,7 +18947,8 @@
    "Evermannella",
    "Coccorella",
    "sabretooth fish",
-   "sabre-tooth fish"
+   "sabre-tooth fish",
+   "Evermannellidae"
   ],
   "kind": "creature",
   "group": "fish",
@@ -19081,7 +19229,10 @@
  {
   "id": "sand-dollar",
   "name": "Sand dollar",
-  "aliases": [],
+  "aliases": [
+   "Clypeasteroida",
+   "Echinarachnius parma"
+  ],
   "kind": "creature",
   "group": "echinoderms",
   "fact": "Sand dollars are flattened sea urchins, and the bleached white 'shell' found on beaches is the animal's skeleton, or test."
@@ -19095,7 +19246,9 @@
    "lesser sand eel",
    "Ammodytes",
    "sandlance",
-   "launce"
+   "launce",
+   "Ammodytidae",
+   "Ammodytes tobianus"
   ],
   "kind": "creature",
   "group": "fish",
@@ -19264,7 +19417,8 @@
   "name": "Sawfish",
   "aliases": [
    "carpenter shark",
-   "Pristis"
+   "Pristis",
+   "Pristidae"
   ],
   "kind": "creature",
   "group": "rays",
@@ -19436,7 +19590,8 @@
   "id": "sea-anemone",
   "name": "Sea anemone",
   "aliases": [
-   "anemone"
+   "anemone",
+   "Actiniaria"
   ],
   "kind": "creature",
   "group": "cnidarians",
@@ -19484,7 +19639,8 @@
   "id": "sea-biscuit",
   "name": "Sea biscuit",
   "aliases": [
-   "Clypeaster"
+   "Clypeaster",
+   "Clypeaster rosaceus"
   ],
   "kind": "creature",
   "group": "echinoderms",
@@ -19563,7 +19719,8 @@
   "id": "sea-daisy",
   "name": "Sea daisy",
   "aliases": [
-   "Xyloplax"
+   "Xyloplax",
+   "Xyloplax medusiformis"
   ],
   "kind": "creature",
   "group": "echinoderms",
@@ -19638,7 +19795,8 @@
   "name": "Sea hare",
   "aliases": [
    "Aplysia",
-   "California sea hare"
+   "California sea hare",
+   "Aplysia californica"
   ],
   "kind": "creature",
   "group": "molluscs",
@@ -19695,7 +19853,8 @@
   "aliases": [
    "stalked crinoid",
    "crinoid",
-   "feather star"
+   "feather star",
+   "Crinoidea"
   ],
   "kind": "creature",
   "group": "echinoderms",
@@ -19932,7 +20091,8 @@
    "eurypterid",
    "Eurypterus",
    "Pterygotus",
-   "Jaekelopterus"
+   "Jaekelopterus",
+   "Eurypterida"
   ],
   "kind": "creature",
   "group": "arthropods",
@@ -19944,7 +20104,8 @@
   "aliases": [
    "sea roach",
    "rock louse",
-   "Ligia"
+   "Ligia",
+   "Ligia oceanica"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -19957,7 +20118,8 @@
    "snail",
    "marine snail",
    "gastropod",
-   "marine gastropod"
+   "marine gastropod",
+   "Gastropoda"
   ],
   "kind": "creature",
   "group": "molluscs",
@@ -19995,7 +20157,9 @@
   "name": "Sea squirt",
   "aliases": [
    "tunicate",
-   "ascidian"
+   "ascidian",
+   "Ascidiacea",
+   "Tunicata"
   ],
   "kind": "creature",
   "group": "tunicates",
@@ -20006,7 +20170,8 @@
   "name": "Sea star",
   "aliases": [
    "starfish",
-   "star fish"
+   "star fish",
+   "Asteroidea"
   ],
   "kind": "creature",
   "group": "echinoderms",
@@ -20040,7 +20205,8 @@
   "name": "Sea turtle",
   "aliases": [
    "turtle",
-   "marine turtle"
+   "marine turtle",
+   "Chelonioidea"
   ],
   "kind": "creature",
   "group": "turtles",
@@ -20121,7 +20287,8 @@
   "aliases": [
    "true seal",
    "earless seal",
-   "Phocidae"
+   "Phocidae",
+   "Pinnipedia"
   ],
   "kind": "creature",
   "group": "seals",
@@ -20279,7 +20446,8 @@
   "id": "shark",
   "name": "Shark",
   "aliases": [
-   "Selachii"
+   "Selachii",
+   "Selachimorpha"
   ],
   "kind": "creature",
   "group": "sharks",
@@ -20313,7 +20481,9 @@
   "aliases": [
    "Manx shearwater",
    "great shearwater",
-   "Cory's shearwater"
+   "Cory's shearwater",
+   "Puffinus",
+   "Puffinus puffinus"
   ],
   "kind": "creature",
   "group": "seabirds",
@@ -20364,7 +20534,9 @@
  {
   "id": "shonisaurus",
   "name": "Shonisaurus",
-  "aliases": [],
+  "aliases": [
+   "Shonisaurus popularis"
+  ],
   "kind": "creature",
   "group": "reptiles",
   "fact": "Shonisaurus was a Triassic ichthyosaur the size of a bus, and dozens of its skeletons lie together at Berlin-Ichthyosaur State Park in Nevada."
@@ -20488,7 +20660,8 @@
   "name": "Shrimp",
   "aliases": [
    "prawn",
-   "ebi"
+   "ebi",
+   "Caridea"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -20502,7 +20675,8 @@
    "prawn goby",
    "yellow watchman goby",
    "Amblyeleotris",
-   "Cryptocentrus"
+   "Cryptocentrus",
+   "Cryptocentrus cinctus"
   ],
   "kind": "creature",
   "group": "fish",
@@ -20513,7 +20687,8 @@
   "name": "Shrimpfish",
   "aliases": [
    "razorfish",
-   "Centriscidae"
+   "Centriscidae",
+   "Aeoliscus strigatus"
   ],
   "kind": "creature",
   "group": "fish",
@@ -20598,7 +20773,8 @@
   "id": "silver-dollar",
   "name": "Silver dollar",
   "aliases": [
-   "Metynnis"
+   "Metynnis",
+   "Metynnis argenteus"
   ],
   "kind": "creature",
   "group": "fish",
@@ -20649,7 +20825,9 @@
  {
   "id": "siphonophore",
   "name": "Siphonophore",
-  "aliases": [],
+  "aliases": [
+   "Siphonophorae"
+  ],
   "kind": "creature",
   "group": "jellies",
   "fact": "A siphonophore is a chain of specialised clones acting as one animal; one filmed off Western Australia in 2020 was estimated at about 45 metres long."
@@ -20705,7 +20883,8 @@
   "name": "Skate",
   "aliases": [
    "common skate",
-   "Raja"
+   "Raja",
+   "Rajidae"
   ],
   "kind": "creature",
   "group": "rays",
@@ -20753,7 +20932,10 @@
  {
   "id": "sleeper-shark",
   "name": "Sleeper shark",
-  "aliases": [],
+  "aliases": [
+   "Somniosidae",
+   "Somniosus"
+  ],
   "kind": "creature",
   "group": "sharks",
   "fact": "Sleeper sharks are sluggish cold-water sharks of the deep, and the flesh of some species is toxic until it is fermented or dried."
@@ -20822,7 +21004,8 @@
    "Moreton Bay bug",
    "Balmain bug",
    "flathead lobster",
-   "bug"
+   "bug",
+   "Scyllaridae"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -20936,7 +21119,9 @@
    "smooth hound shark",
    "starry smooth-hound",
    "common smooth-hound",
-   "Mustelus"
+   "Mustelus",
+   "Mustelus mustelus",
+   "Mustelus asterias"
   ],
   "kind": "creature",
   "group": "sharks",
@@ -21038,7 +21223,8 @@
   "name": "Snipefish",
   "aliases": [
    "bellowsfish",
-   "Macroramphosus"
+   "Macroramphosus",
+   "Macroramphosus scolopax"
   ],
   "kind": "creature",
   "group": "fish",
@@ -21118,7 +21304,9 @@
  {
   "id": "soft-coral",
   "name": "Soft coral",
-  "aliases": [],
+  "aliases": [
+   "Alcyonacea"
+  ],
   "kind": "creature",
   "group": "corals",
   "fact": "Soft corals have no hard skeleton and sway in the current, supported by tiny limestone needles in their flesh."
@@ -21167,7 +21355,10 @@
  {
   "id": "sole",
   "name": "Sole",
-  "aliases": [],
+  "aliases": [
+   "Soleidae",
+   "Solea"
+  ],
   "kind": "creature",
   "group": "fish",
   "fact": "Soles are oval, right-eyed flatfish named after the Latin word for a sandal, which the Romans thought they resembled."
@@ -21625,7 +21816,8 @@
    "langouste",
    "Caribbean spiny lobster",
    "Panulirus",
-   "sea crayfish"
+   "sea crayfish",
+   "Palinuridae"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -21656,7 +21848,8 @@
   "id": "sponge",
   "name": "Sponge",
   "aliases": [
-   "sea sponge"
+   "sea sponge",
+   "Porifera"
   ],
   "kind": "creature",
   "group": "sponges",
@@ -21668,7 +21861,8 @@
   "aliases": [
    "Dromia",
    "Dromiidae",
-   "dromiid crab"
+   "dromiid crab",
+   "Dromia personata"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -21949,7 +22143,8 @@
   "aliases": [
    "stauromedusa",
    "Haliclystus",
-   "kaleidoscope jellyfish"
+   "kaleidoscope jellyfish",
+   "Staurozoa"
   ],
   "kind": "creature",
   "group": "jellies",
@@ -21962,7 +22157,9 @@
    "great star coral",
    "boulder star coral",
    "Montastraea",
-   "Orbicella"
+   "Orbicella",
+   "Montastraea cavernosa",
+   "Orbicella annularis"
   ],
   "kind": "creature",
   "group": "corals",
@@ -21986,7 +22183,8 @@
    "Uranoscopidae",
    "Uranoscopus",
    "northern stargazer",
-   "Astroscopus"
+   "Astroscopus",
+   "Astroscopus guttatus"
   ],
   "kind": "creature",
   "group": "fish",
@@ -22061,7 +22259,8 @@
   "id": "stethacanthus",
   "name": "Stethacanthus",
   "aliases": [
-   "anvil shark"
+   "anvil shark",
+   "Stethacanthus altonensis"
   ],
   "kind": "creature",
   "group": "sharks",
@@ -22072,7 +22271,9 @@
   "name": "Stingray",
   "aliases": [
    "sting ray",
-   "ray"
+   "ray",
+   "Dasyatidae",
+   "Myliobatoidei"
   ],
   "kind": "creature",
   "group": "rays",
@@ -22437,7 +22638,8 @@
    "orange cup coral",
    "orange sun coral",
    "tube coral",
-   "Tubastraea"
+   "Tubastraea",
+   "Tubastraea coccinea"
   ],
   "kind": "creature",
   "group": "corals",
@@ -22504,7 +22706,8 @@
   "aliases": [
    "seaperch",
    "Embiotocidae",
-   "barred surfperch"
+   "barred surfperch",
+   "Amphistichus argenteus"
   ],
   "kind": "creature",
   "group": "fish",
@@ -22544,7 +22747,9 @@
  {
   "id": "sweetlips",
   "name": "Sweetlips",
-  "aliases": [],
+  "aliases": [
+   "Plectorhinchus"
+  ],
   "kind": "creature",
   "group": "fish",
   "fact": "Sweetlips are reef fish named for their thick, fleshy lips, and their juveniles often look nothing like the adults."
@@ -22611,7 +22816,9 @@
    "squeaker",
    "squeaker catfish",
    "featherfin squeaker",
-   "featherfin catfish"
+   "featherfin catfish",
+   "Mochokidae",
+   "Synodontis eupterus"
   ],
   "kind": "creature",
   "group": "fish",
@@ -22622,7 +22829,8 @@
   "name": "Table coral",
   "aliases": [
    "tabletop coral",
-   "plate coral"
+   "plate coral",
+   "Acropora hyacinthus"
   ],
   "kind": "creature",
   "group": "corals",
@@ -22788,7 +22996,10 @@
   "id": "tern",
   "name": "Tern",
   "aliases": [
-   "common tern"
+   "common tern",
+   "Sterna",
+   "Sterninae",
+   "Sterna hirundo"
   ],
   "kind": "creature",
   "group": "seabirds",
@@ -23166,7 +23377,9 @@
   "aliases": [
    "topshell",
    "top snail",
-   "painted top shell"
+   "painted top shell",
+   "Trochidae",
+   "Calliostoma zizyphinum"
   ],
   "kind": "creature",
   "group": "molluscs",
@@ -23261,7 +23474,8 @@
   "id": "trichodesmium",
   "name": "Trichodesmium",
   "aliases": [
-   "sea sawdust"
+   "sea sawdust",
+   "Trichodesmium erythraeum"
   ],
   "kind": "creature",
   "group": "microbes",
@@ -23291,7 +23505,9 @@
  {
   "id": "trilobite",
   "name": "Trilobite",
-  "aliases": [],
+  "aliases": [
+   "Trilobita"
+  ],
   "kind": "creature",
   "group": "arthropods",
   "fact": "Trilobites crawled the seafloor for about 270 million years and were among the first animals with complex eyes before dying out 252 million years ago."
@@ -23438,7 +23654,8 @@
   "aliases": [
    "cerianthid",
    "tube-dwelling anemone",
-   "Cerianthus"
+   "Cerianthus",
+   "Ceriantharia"
   ],
   "kind": "creature",
   "group": "cnidarians",
@@ -23505,7 +23722,8 @@
   "id": "turtle-barnacle",
   "name": "Turtle barnacle",
   "aliases": [
-   "Chelonibia"
+   "Chelonibia",
+   "Chelonibia testudinaria"
   ],
   "kind": "creature",
   "group": "crustaceans",
@@ -23540,7 +23758,8 @@
   "aliases": [
    "scaphopod",
    "tooth shell",
-   "dentalium"
+   "dentalium",
+   "Scaphopoda"
   ],
   "kind": "creature",
   "group": "molluscs",
@@ -23573,7 +23792,9 @@
  {
   "id": "tylosaurus",
   "name": "Tylosaurus",
-  "aliases": [],
+  "aliases": [
+   "Tylosaurus proriger"
+  ],
   "kind": "creature",
   "group": "reptiles",
   "fact": "Tylosaurus, a mosasaur up to about 13 metres long, rammed prey with its bony snout in the shallow sea that once covered Kansas."
@@ -23605,7 +23826,8 @@
   "aliases": [
    "Naso",
    "unicorn fish",
-   "bluespine unicornfish"
+   "bluespine unicornfish",
+   "Naso unicornis"
   ],
   "kind": "creature",
   "group": "fish",
@@ -23628,7 +23850,9 @@
   "aliases": [
    "Cassiopea",
    "upside down jelly",
-   "mangrove jellyfish"
+   "mangrove jellyfish",
+   "Cassiopea xamachana",
+   "Cassiopea andromeda"
   ],
   "kind": "creature",
   "group": "jellies",
@@ -23897,7 +24121,8 @@
   "name": "Vent anemone",
   "aliases": [
    "Marianactis",
-   "hydrothermal vent anemone"
+   "hydrothermal vent anemone",
+   "Marianactis bythios"
   ],
   "kind": "creature",
   "group": "cnidarians",
@@ -24414,7 +24639,8 @@
   "name": "Whale",
   "aliases": [
    "baleen whale",
-   "great whale"
+   "great whale",
+   "Cetacea"
   ],
   "kind": "creature",
   "group": "whales",
@@ -24491,7 +24717,8 @@
   "aliases": [
    "Mastigoteuthis",
    "whiplash squid",
-   "mastigoteuthid squid"
+   "mastigoteuthid squid",
+   "Mastigoteuthidae"
   ],
   "kind": "creature",
   "group": "cephalopods",
@@ -24897,7 +25124,9 @@
  {
   "id": "xiphactinus",
   "name": "Xiphactinus",
-  "aliases": [],
+  "aliases": [
+   "Xiphactinus audax"
+  ],
   "kind": "creature",
   "group": "fish",
   "fact": "Xiphactinus was a 5-metre fanged fish of the Cretaceous, and one famous fossil contains a whole 2-metre fish swallowed just before it died."
@@ -25283,7 +25512,9 @@
    "Osedax",
    "bone-eating worm",
    "bone worm",
-   "bone-eating snot flower"
+   "bone-eating snot flower",
+   "Osedax mucofloris",
+   "Osedax rubiplumus"
   ],
   "kind": "creature",
   "group": "worms",

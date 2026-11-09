@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<polygon points="208,118 244,94 238,128 244,162 208,138" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="124,90 136,64 160,92" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="166,162 174,182 190,160" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="120,166 126,184 142,168" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M30 128 C46 100 86 88 134 88 C182 88 208 104 216 128 C208 152 182 168 134 168 C86 168 46 156 30 128 Z" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M40 144 C80 170 180 170 216 130 C208 152 182 168 134 168 C86 168 46 156 40 144 Z" fill="#EAF4F7"/>
+<path d="M72 114 q10 -12 20 0 q10 -12 20 0 q10 -12 20 0 q10 -12 20 0 q10 -12 20 0 q10 -12 20 0" fill="none" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M72 132 q10 -12 20 0 q10 -12 20 0 q10 -12 20 0 q10 -12 20 0 q10 -12 20 0 q10 -12 20 0" fill="none" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M82 150 q10 -12 20 0 q10 -12 20 0 q10 -12 20 0 q10 -12 20 0 q10 -12 20 0" fill="none" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="70,146 82,170 102,150" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M60 100 Q72 128 60 156" fill="none" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="48" cy="116" r="8" fill="#EAF4F7"/>
+<circle cx="49" cy="116" r="4.5" fill="#0C2A3A"/>
+<polygon points="32,124 12,108 16,104 36,122" fill="#2BD1C6"/>
+<polygon points="30,130 10,128 10,124 30,126" fill="#2BD1C6"/>
+<polygon points="32,134 14,150 18,154 36,136" fill="#2BD1C6"/>
+</svg>
