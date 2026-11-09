@@ -1,4 +1,4 @@
-// FATHOM — delete-account Edge Function (Deno). Deletes the calling user and every row that references them
+// ANGLER — delete-account Edge Function (Deno). Deletes the calling user and every row that references them
 // (profiles, entitlements, progress, dives, daily_rank_points, ratings, follows all cascade from auth.users).
 import { createClient } from "npm:@supabase/supabase-js@2";
 

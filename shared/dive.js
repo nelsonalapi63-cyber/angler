@@ -66,7 +66,7 @@
 
   function normalise(input) {
     let t = String(input == null ? '' : input);
-    t = t.normalize('NFD').replace(/[̀-ͯ]/g, '');   // strip accents
+    t = t.normalize('NFD').replace(/[\u0300-\u036f]/g, '');   // strip accents (combining marks U+0300–U+036F)
     t = t.toLowerCase();
     t = t.replace(/[’'`´]/g, '');                      // drop apostrophes: "o'neil" -> "oneil"
     t = t.replace(/[^a-z0-9]+/g, ' ').trim().replace(/ +/g, ' ');

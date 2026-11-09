@@ -61,7 +61,9 @@
       "url": "/#leaderboard",
       "violations": 0,
       "rulesPassed": 43,
-      "needsReview": []
+      "needsReview": [
+        "color-contrast"
+      ]
     },
     {
       "screen": "settings",

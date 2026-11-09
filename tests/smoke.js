@@ -9,6 +9,7 @@ const { start } = require('./serve');
   const srv = await start();
   const browser = await chromium.launch();
   const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+  await ctx.addInitScript(() => { try { localStorage.setItem('angler.mock', '1'); } catch (e) { /* ignore */ } });   // demo mode, never the live project
   const page = await ctx.newPage();
   const errors = [];
   page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });

@@ -1,4 +1,4 @@
--- FATHOM — Supabase schema. Run once in the SQL editor (or `supabase db push`).
+-- ANGLER — Supabase schema. Run once in the SQL editor (or `supabase db push`); re-running is safe.
 -- Tables, Row Level Security, public leaderboard views, the daily_curve RPC and the nightly close.
 -- Parameters live in public.fathom_params so they match the client constants.
 
@@ -525,3 +525,17 @@ returns void language sql security definer set search_path = public as $$
   update public.reports set status = p_status where id = p_id and public.is_admin() and p_status in ('new', 'accepted', 'rejected')
 $$;
 grant execute on function public.admin_funnel(int), public.admin_prompt_stats(int), public.admin_rejected_guesses(text, int), public.admin_cohorts(int), public.admin_reports(text), public.admin_set_report(bigint, text), public.is_admin() to authenticated;
+
+-- ================================================================ v2.1: the answer bank lives in the database
+-- tools/upload-bank.js puts prompts, entities, schedule, taxa and the data version here (one row each); the
+-- Edge Functions read it with the service role and cache it. Nothing on the client can read or write it.
+create table if not exists public.bank (
+  key text primary key,
+  data jsonb not null,
+  updated_at timestamptz not null default now()
+);
+alter table public.bank enable row level security;
+revoke all on public.bank from anon, authenticated;
+
+-- the weekly recap is sent at most once per week per diver, whoever triggers the function
+alter table public.profiles add column if not exists last_recap_day date;

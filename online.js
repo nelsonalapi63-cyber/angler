@@ -7,15 +7,18 @@
   const FLAGS = {
     ADS_ENABLED: false,
     PAYMENTS_ENABLED: false,
-    ANALYTICS_ENABLED: false,
-    LEADERBOARD_ENABLED: false,
-    MOCK_ONLINE_DATA: true,      // fills leaderboards and the bell curve with clearly labelled demo data
+    ANALYTICS_ENABLED: true,     // first-party events into the `events` table (anonymous device id, no third party)
+    LEADERBOARD_ENABLED: true,   // accounts, real curves and leaderboards, friends, community packs, reports, sync
+    MOCK_ONLINE_DATA: false,     // true fills leaderboards and the bell curve with clearly labelled demo data
   };
+  // The browser test run forces demo mode so it never touches the live project: tests/e2e.spec.js sets this key
+  // before any page script runs. Handy for a design review too: run localStorage.setItem('angler.mock', '1') and reload.
+  try { if (root.localStorage && root.localStorage.getItem('angler.mock') === '1') { FLAGS.LEADERBOARD_ENABLED = false; FLAGS.ANALYTICS_ENABLED = false; FLAGS.MOCK_ONLINE_DATA = true; } } catch (e) { /* storage blocked */ }
   root.FATHOM_FLAGS = FLAGS;
 
   // ---------------------------------------------------------------- parameters
-  const SUPABASE_URL = '';                 // e.g. 'https://abcdefgh.supabase.co'
-  const SUPABASE_ANON_KEY = '';            // the public anon key (safe to ship; Row Level Security protects data)
+  const SUPABASE_URL = 'https://yxnkzqiyyeqpuwqyqubg.supabase.co';   // Supabase project "angler" (us-east-1)
+  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl4bmt6cWl5eWVxcHV3cXlxdWJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQyNjM5NDUsImV4cCI6MjEwOTgzOTk0NX0.qmnz_FodrVi9jZZcisjDtv9PsUtsmnVdXhZ_078GxgQ';   // the public anon key (safe to ship; Row Level Security protects data)
   const VAPID_PUBLIC_KEY = 'BPcKvRygAEvCb0mJlbscCTHFAVSDJP0wZf3VLG8hEynjMYdrp4ZH75g71CZ56yMU_2mxJgt3MSFZd6v4fYwDAQw'; // public half from `node tools/vapid-keys.js`; the private half lives only in supabase/vapid-private.key (gitignored) and the VAPID_PRIVATE_KEY secret
   const EVENTS_FLUSH_MS = 4000;             // first-party analytics are batched and sent together
   const EVENTS_MAX_BATCH = 20;
@@ -197,12 +200,19 @@
       setSubmitState(record.dayKey, 'ok');
       return res;
     } catch (e) {
+      if (isRejection(e)) { setSubmitState(record.dayKey, 'rejected', rejectionReason(e)); return null; }   // the server said no: retrying cannot change that
       storage.enqueue(payload);
       setSubmitState(record.dayKey, 'failed', e && e.message);
       return null;
     }
   }
-  // Submission state for the result screen: 'ok' | 'failed' | 'pending' | null (offline features off)
+  // A 4xx from submit-dive is a verdict (closed day, wrong prompt set, implausible timing); anything else is a hiccup worth retrying.
+  function isRejection(e) { return !!(e && /^HTTP 4\d\d/.test(e.message || '')); }
+  function rejectionReason(e) {
+    const m = /^HTTP \d+ (.*)$/s.exec((e && e.message) || '');
+    try { const body = JSON.parse(m ? m[1] : ''); return body.error || null; } catch (x) { return null; }
+  }
+  // Submission state for the result screen: 'ok' | 'failed' | 'rejected' | 'pending' | null (offline features off)
   const submitState = {};
   const submitListeners = new Set();
   function setSubmitState(dayKey, state, reason) { submitState[dayKey] = { state, reason: reason || null }; submitListeners.forEach(fn => { try { fn(dayKey); } catch (e) { /* ignore */ } }); }
@@ -224,6 +234,7 @@
       if (!st || st.state === 'ok') { node.textContent = st ? 'Score submitted and verified.' : ''; node.hidden = !st; return; }
       node.hidden = false;
       if (st.state === 'pending') { node.textContent = 'Submitting your dive…'; return; }
+      if (st.state === 'rejected') { node.textContent = 'This dive was not accepted for the leaderboard' + (st.reason ? ' — ' + st.reason : '') + '. Your result is still saved on this device.'; return; }
       node.append('Your score has not reached the server yet' + (navigator.onLine === false ? ' (you are offline)' : '') + '. ');
       node.append(el('button', { class: 'link-btn', type: 'button', text: 'Retry now', onClick: async () => { setSubmitState(record.dayKey, 'pending'); await drainQueue(); if (getSubmitState(record.dayKey).state !== 'ok') setSubmitState(record.dayKey, 'failed'); } }));
       node.append(' It will also retry on its own when you come back.');
@@ -248,7 +259,10 @@
     while (q.length) {
       const item = q[0];
       try { const res = await rest('/functions/v1/submit-dive', { method: 'POST', body: item }); rememberCurve(item.day, res); setSubmitState(item.day, 'ok'); }
-      catch (e) { setSubmitState(item.day, 'failed', e && e.message); break; }
+      catch (e) {
+        if (isRejection(e)) { setSubmitState(item.day, 'rejected', rejectionReason(e)); q = q.slice(1); storage.setQueue(q); continue; }   // drop it: a verdict does not change on retry
+        setSubmitState(item.day, 'failed', e && e.message); break;
+      }
       q = q.slice(1);
       storage.setQueue(q);
     }
@@ -486,7 +500,9 @@
       const ul = el('ul', { class: 'list' });
       top.slice(0, BOARD_LIMIT).forEach((r, i) => ul.append(row(i + 1, whoHtml(r), esc(dive.formatMeters(r.depth)) + ' m', Math.round(r.seconds) + ' s')));
       if (myDepth != null) ul.append(row(myRank, { name: '<b>You</b>' + (user() ? '' : ' <span class="small muted">(anonymous diver)</span>') }, esc(dive.formatMeters(myDepth)) + ' m', myRank ? 'your rank' : 'not submitted', true));
+      if (!top.length && myDepth == null) ul.append(el('li', { class: 'small muted', text: 'Nobody has dived yet today. Play the daily and you will be the first name here.' }));
       body.append(ul);
+      if (!user() && !demo) body.append(el('p', { class: 'small muted', style: 'margin-top:10px' }, ['Anonymous dives count on the curve but show no name. ', el('button', { class: 'link-btn', type: 'button', text: 'Sign in', onClick: signIn }), ' to appear with a handle and keep a rating.']));
     }
     function drawTide(rows) {
       body.innerHTML = '';

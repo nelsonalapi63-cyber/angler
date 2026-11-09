@@ -22,6 +22,11 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # optional: add these three repository secrets and every build also refreshes the answer bank the server scores with
+      SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+      BANK_TOKEN: ${{ secrets.BANK_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -36,6 +41,9 @@ jobs:
           node build.js --dist
           node tools/make-icons.js --og-days
           cp -r icons dist/icons
+      - name: Upload the answer bank to Supabase (so the server scores with the same bank the players see)
+        if: env.SUPABASE_URL != '' && env.BANK_TOKEN != ''
+        run: node tools/upload-bank.js
       - name: Commit the frozen schedule and data version
         if: github.event_name == 'schedule'
         run: |

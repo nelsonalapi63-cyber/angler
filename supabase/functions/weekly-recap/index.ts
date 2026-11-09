@@ -1,8 +1,10 @@
-// ANGLER — weekly-recap Edge Function (Deno). Sunday cron. Emails every opted-in diver a recap of their week:
-// days played, best depth, average percentile, badges count. Sends through Resend (RESEND_API_KEY secret,
-// RECAP_FROM e.g. "ANGLER <recap@yourdomain>"). Opt-in only: profiles.email_optin must be true.
+// ANGLER — weekly-recap Edge Function (Deno). Sunday cron (public.call_function, anon key; the gateway verifies it).
+// Emails every opted-in diver a recap of their week: days played, best depth, average percentile, Hadal answers.
+// Idempotent: runs only on Sundays (UTC) and marks profiles.last_recap_day so a diver gets at most one recap a week,
+// whoever triggers it. Sends through Resend (RESEND_API_KEY secret, RECAP_FROM e.g. "ANGLER <recap@yourdomain>").
+// Opt-in only: profiles.email_optin must be true.
 import { createClient } from "npm:@supabase/supabase-js@2";
-import "../_shared/dive.js";
+import "./dive.js";
 // deno-lint-ignore no-explicit-any
 const dive = (globalThis as any).FathomDive;
 
@@ -16,13 +18,13 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
   if (req.method !== "POST") return json(405, { error: "POST only" });
   const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-  if ((req.headers.get("Authorization") || "") !== "Bearer " + SERVICE_KEY) return json(401, { error: "service role only" });
   const RESEND = Deno.env.get("RESEND_API_KEY"), FROM = Deno.env.get("RECAP_FROM") || "ANGLER <recap@angler.example>";
   if (!RESEND) return json(500, { error: "RESEND_API_KEY not set" });
   const admin = createClient(Deno.env.get("SUPABASE_URL")!, SERVICE_KEY);
   const today = dive.dayKey(new Date());
+  if (new Date().getUTCDay() !== 0) return json(200, { ok: true, sent: 0, skipped: "not Sunday" });
   const weekStart = dive.keyPlusDays(today, -7);
-  const { data: profiles, error } = await admin.from("profiles").select("user_id, handle").eq("email_optin", true).limit(2000);
+  const { data: profiles, error } = await admin.from("profiles").select("user_id, handle").eq("email_optin", true).or("last_recap_day.is.null,last_recap_day.lt." + weekStart).limit(2000);
   if (error) return json(500, { error: error.message });
   let sent = 0;
   for (const p of profiles || []) {
@@ -48,7 +50,7 @@ Deno.serve(async (req) => {
       <p style="color:#4F6C7B;font-size:13px">You get this because you turned on the weekly recap in Settings. Turn it off there any time.</p>
     </div>`;
     const res = await fetch("https://api.resend.com/emails", { method: "POST", headers: { "Authorization": "Bearer " + RESEND, "Content-Type": "application/json" }, body: JSON.stringify({ from: FROM, to: [email], subject: dive.BRAND + " — your week: " + dives.length + " dives, best " + dive.formatMeters(best) + " m", html }) });
-    if (res.ok) sent++;
+    if (res.ok) { sent++; await admin.from("profiles").update({ last_recap_day: today }).eq("user_id", p.user_id); }
   }
   return json(200, { ok: true, sent });
 });

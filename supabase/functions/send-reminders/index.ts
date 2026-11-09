@@ -1,9 +1,10 @@
-// ANGLER — send-reminders Edge Function (Deno). Called hourly by pg_cron. For every subscription whose local hour
-// equals its reminder hour, and whose diver has not played today's dive, send one Web Push notification.
+// ANGLER — send-reminders Edge Function (Deno). Called hourly by pg_cron (public.call_function) with the project's
+// anon key; the gateway verifies the key, and the job is idempotent — one notification per subscription per day,
+// only at the diver's chosen local hour, only if they have not dived yet — so an extra call changes nothing.
 // Secrets: VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY, VAPID_SUBJECT (mailto: or https: contact). Uses npm:web-push.
 import { createClient } from "npm:@supabase/supabase-js@2";
 import webpush from "npm:web-push@3";
-import "../_shared/dive.js";
+import "./dive.js";
 // deno-lint-ignore no-explicit-any
 const dive = (globalThis as any).FathomDive;
 
@@ -20,7 +21,6 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
   if (req.method !== "POST") return json(405, { error: "POST only" });
   const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-  if ((req.headers.get("Authorization") || "") !== "Bearer " + SERVICE_KEY) return json(401, { error: "service role only" });
   const pub = Deno.env.get("VAPID_PUBLIC_KEY"), priv = Deno.env.get("VAPID_PRIVATE_KEY"), subject = Deno.env.get("VAPID_SUBJECT") || "mailto:hello@angler.example";
   if (!pub || !priv) return json(500, { error: "VAPID keys not set" });
   webpush.setVapidDetails(subject, pub, priv);

@@ -17,6 +17,7 @@ fs.mkdirSync(FIXTURES, { recursive: true });
 const TIER_POINTS = { tidepool: 10, baitball: 15, reef: 30, twilight: 60, midnight: 85, hadal: 100 };
 const HINT_COST = 10;
 
+const MOCK_INIT = () => { try { localStorage.setItem('angler.mock', '1'); } catch (e) { /* ignore */ } };   // see FLAGS in online.js
 const errors = [];
 function watch(page, label) {
   page.on('console', m => { if (m.type() === 'error') errors.push(label + ': ' + m.text()); });
@@ -153,6 +154,7 @@ async function playDive(page, plan, opts) {
   const srv = await start();
   const browser = await chromium.launch();
   const mobile = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true, permissions: ['clipboard-read', 'clipboard-write'] });
+  await mobile.addInitScript(MOCK_INIT);           // demo mode: the test run never talks to the live Supabase project
   const page = await mobile.newPage();
   watch(page, 'mobile');
 
@@ -350,6 +352,7 @@ async function playDive(page, plan, opts) {
   const link = await page.evaluate(() => navigator.clipboard.readText());
   assert.ok(/#challenge-[a-z0-9]+-\d+-[0-6]{7}$/.test(link), 'challenge link: ' + link);
   const ctx2 = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  await ctx2.addInitScript(MOCK_INIT);
   const page2 = await ctx2.newPage();
   watch(page2, 'challenge');
   await page2.goto(link);
@@ -433,7 +436,9 @@ async function playDive(page, plan, opts) {
   await mobile.setOffline(false);
 
   // ---- admin.html: owner dashboard renders on demo data (online layer off), guesses drill-down, accept a report, export
-  const apage = await (await browser.newContext({ viewport: { width: 1280, height: 900 } })).newPage();
+  const actx = await browser.newContext({ viewport: { width: 1280, height: 900 } });
+  await actx.addInitScript(MOCK_INIT);
+  const apage = await actx.newPage();
   watch(apage, 'admin');
   await apage.goto(srv.url + 'admin.html');
   await apage.waitForSelector('main h1');
@@ -454,6 +459,7 @@ async function playDive(page, plan, opts) {
 
   // ---- desktop
   const desktop = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+  await desktop.addInitScript(MOCK_INIT);
   const dpage = await desktop.newPage();
   watch(dpage, 'desktop');
   await dpage.goto(srv.url + '#home');

@@ -1,18 +1,24 @@
-# FATHOM — Supabase CLI config (only the parts that matter for the functions).
+# ANGLER — Supabase CLI config (only the parts that matter for the functions).
+# Every function sits behind the gateway's JWT check: the browser calls with the user's session or the anon key,
+# pg_cron calls with the anon key (public.call_function). Only the Stripe webhook turns it off, because Stripe
+# signs its requests instead — and payments are switched off in this release.
 [functions.submit-dive]
 verify_jwt = true
 
 [functions.delete-account]
 verify_jwt = true
 
-[functions.stripe-webhook]
-verify_jwt = false
-
 [functions.push-subscribe]
-verify_jwt = false
+verify_jwt = true
 
 [functions.send-reminders]
-verify_jwt = false
+verify_jwt = true
 
 [functions.weekly-recap]
+verify_jwt = true
+
+[functions.bank-upload]
+verify_jwt = true
+
+[functions.stripe-webhook]
 verify_jwt = false

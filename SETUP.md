@@ -33,19 +33,20 @@ The site address is set once, in `data/site.json` (`siteUrl`). The build writes 
 
 ## 2. Supabase (accounts, dives, leaderboards, sync, friends, community packs, reports, analytics)
 
+**Live project:** `angler` (ref `yxnkzqiyyeqpuwqyqubg`, us-east-1) in the organization "Nelson Alapi Companies.org". The schema, the cron jobs, the six Edge Functions and the answer bank are installed; `online.js` carries its URL and anon key with `LEADERBOARD_ENABLED` and `ANALYTICS_ENABLED` on. What follows is how it was done, for a fresh project or a rebuild.
+
 1. Create a project at supabase.com. Note the Project URL and the anon key (Settings → API).
 2. Authentication → Providers → Google: enable it and paste the Google OAuth client id and secret (create them in Google Cloud Console with the callback URL shown on that page). Authentication → URL Configuration: Site URL = your domain; add it to the redirect allow list.
-3. Database → Extensions: enable `pg_cron` and `pg_net`.
-4. SQL editor: run `supabase/schema.sql`, then `supabase/cron.sql`. Then make yourself the admin:
+3. SQL editor: run `supabase/schema.sql`, then `supabase/cron.sql` after filling in its three `cron_settings` values (project ref, anon key, a random `bank_token`). Then make yourself the admin:
 
 ```sql
 insert into public.admin_emails (email) values ('you@example.com');
 ```
 
-5. Edge Functions — install the Supabase CLI, then:
+4. Edge Functions — install the Supabase CLI, then:
 
 ```
-node tools/sync-shared.js                       # copies shared/dive.js and the data files into supabase/functions/_shared
+node tools/sync-shared.js                       # copies shared/dive.js next to each function that needs it
 supabase login
 supabase link --project-ref <ref>
 supabase functions deploy submit-dive
@@ -53,15 +54,22 @@ supabase functions deploy delete-account
 supabase functions deploy push-subscribe
 supabase functions deploy send-reminders
 supabase functions deploy weekly-recap
+supabase functions deploy bank-upload
 ```
 
 `SUPABASE_URL`, `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` are provided to functions automatically.
 
-6. In `online.js` set `SUPABASE_URL` and `SUPABASE_ANON_KEY`, then set `LEADERBOARD_ENABLED: true`, `ANALYTICS_ENABLED: true`, `MOCK_ONLINE_DATA: false`. Redeploy (push to `main`).
+5. Upload the answer bank — the server scores dives with it, so it must match what the players see:
 
-Re-run `node build.js`, `node tools/sync-shared.js` and redeploy `submit-dive` whenever the data files change, so the server scores with the same bank the players see.
+```
+SUPABASE_URL=https://<ref>.supabase.co SUPABASE_ANON_KEY=<anon key> BANK_TOKEN=<the bank_token you chose> node tools/upload-bank.js
+```
 
-### Secrets
+Add those three as repository secrets (`SUPABASE_URL`, `SUPABASE_ANON_KEY`, `BANK_TOKEN`) and the deploy workflow re-uploads the bank after every build. The token can write the bank and nothing else; the service role key never leaves Supabase.
+
+6. In `online.js` set `SUPABASE_URL` and `SUPABASE_ANON_KEY`, then `LEADERBOARD_ENABLED: true`, `ANALYTICS_ENABLED: true`, `MOCK_ONLINE_DATA: false`. Redeploy (push to `main`). The browser tests keep running in demo mode: they set `localStorage['angler.mock'] = '1'`, which turns the online flags off for that browser only.
+
+### Secrets (Edge Functions → Secrets in the dashboard)
 
 | Secret | Used by | Where it comes from |
 |---|---|---|
@@ -69,22 +77,23 @@ Re-run `node build.js`, `node tools/sync-shared.js` and redeploy `submit-dive` w
 | `VAPID_SUBJECT` | `send-reminders` | `mailto:you@yourdomain` |
 | `RESEND_API_KEY` | `weekly-recap` | resend.com → API Keys, after verifying your sending domain |
 | `RECAP_FROM` | `weekly-recap` | e.g. `ANGLER <recap@yourdomain>` |
-| `SITE_URL` | `weekly-recap`, `send-reminders` | the same value as `data/site.json` |
+| `SITE_URL` | `weekly-recap` | the same value as `data/site.json` |
 
-```
-supabase secrets set VAPID_PUBLIC_KEY=... VAPID_PRIVATE_KEY=... VAPID_SUBJECT=mailto:you@yourdomain
-supabase secrets set RESEND_API_KEY=re_... RECAP_FROM="ANGLER <recap@yourdomain>" SITE_URL=https://yourdomain
-```
+Until the VAPID secrets exist, `send-reminders` answers `VAPID keys not set` and sends nothing; until the Resend secrets exist, `weekly-recap` answers `RESEND_API_KEY not set`. Both are safe to leave for later.
 
 ### Scheduled jobs (`supabase/cron.sql`)
 
 | Job | When | What |
 |---|---|---|
-| `nightly` | 00:05 Eastern (two entries cover winter and summer time) | freezes yesterday's curve, Daily Rank Points, ratings, leagues, Hall of Fame on the 1st |
+| `angler-nightly-winter` / `-summer` | 00:05 Eastern (two entries cover winter and summer time) | freezes yesterday's curve, Daily Rank Points, ratings, leagues, Hall of Fame on the 1st |
 | `angler-reminders` | every hour at :07 | `send-reminders` pushes to divers whose chosen reminder hour it is and who have not dived today |
 | `angler-weekly-recap` | Sunday 15:00 UTC | `weekly-recap` emails the opted-in divers their week |
 
-The two v2 entries call the functions through `pg_net`. Before running `cron.sql`, replace `YOUR-PROJECT-REF` and `YOUR-SERVICE-ROLE-KEY` in its two `alter database … set app.*` lines (Settings → API); the file is safe to re-run.
+The two function jobs call the Edge Functions through `pg_net` with the project's public anon key (read from `public.cron_settings`, which no client can read). Both functions are idempotent — one reminder per subscription per day, one recap per diver per week — so an early or repeated call changes nothing.
+
+### Anti-cheat
+
+`submit-dive` re-scores every dive with the same rules file and bank as the browser, refuses a day that is closed or a prompt set that is not today's, refuses seven answers typed in under 7 seconds, and holds near-perfect dives typed in under 20 seconds for review (`flagged`, off the board until approved). A refused dive is not retried; the result screen says why.
 
 ## 3. Admin dashboard
 
