@@ -3,7 +3,7 @@
  * requests (Supabase, Stripe, ads, analytics). The full answer bank (entities.js, prompts.js, taxa.js — a few MB)
  * is not pre-cached: it is fetched network-first the first time the page needs or warms it, and cached then.
  * Bump CACHE_VERSION on every release. */
-const CACHE_VERSION = 'angler-v2.1.0';
+const CACHE_VERSION = 'angler-v2.1.1';
 const PRECACHE = [
   './', 'index.html', 'styles.css', 'app.js', 'game.js', 'pages.js', 'storage.js', 'charts.js', 'achievements.js', 'share.js',
   'surface.js', 'retain.js', 'social.js', 'online.js', 'monetise.js', 'boot.js', 'shared/dive.js', 'manifest.json',

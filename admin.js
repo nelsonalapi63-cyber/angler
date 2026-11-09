@@ -33,8 +33,21 @@
   const esc = (s) => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   function toast(msg) { const r = document.getElementById('toast-root'); const t = el('div', { class: 'toast', text: msg }); r.appendChild(t); setTimeout(() => t.remove(), 2600); }
   function render(nodes) { const m = document.getElementById('main'); m.innerHTML = ''; (Array.isArray(nodes) ? nodes : [nodes]).forEach(n => n && m.appendChild(n)); }
+  // a minimal modal (the email sign-in dialog uses it)
+  let modalWrap = null;
+  function closeModal() { if (modalWrap) { modalWrap.remove(); modalWrap = null; } }
+  function modal(opts) {
+    closeModal();
+    const box = el('div', { class: 'modal', role: 'dialog', 'aria-modal': 'true', 'aria-label': opts.title || 'Dialog' }, [
+      el('div', { class: 'modal-head' }, [el('h2', { text: opts.title || '' }), el('button', { class: 'icon-btn', type: 'button', 'aria-label': 'Close', text: '\u2715', onClick: closeModal })]),
+      el('div', { class: 'modal-body' }, opts.body),
+    ]);
+    modalWrap = el('div', { class: 'modal-wrap', onClick: (e) => { if (e.target === modalWrap) closeModal(); } }, box);
+    document.body.appendChild(modalWrap);
+  }
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
   // online.js expects window.Fathom with a few helpers
-  root.Fathom = { el, esc, toast, storage, dive, config: {}, navigate: (h) => { location.hash = h; }, todayKey: () => dive.dayKey(new Date()), closeModal: () => {}, modal: () => {}, render };
+  root.Fathom = { el, esc, toast, storage, dive, config: {}, navigate: (h) => { location.hash = h; }, todayKey: () => dive.dayKey(new Date()), closeModal, modal, render };
   const O = root.FathomOnline;
   const live = flags.LEADERBOARD_ENABLED && O && O.configured();
   const fmt = (n) => Number(n || 0).toLocaleString('en-US');
@@ -146,7 +159,7 @@
     if (live) {
       O.init();
       const u = O.user();
-      if (!u) { render(el('div', { class: 'card strong center' }, [el('h1', { text: 'Admin' }), el('p', { text: 'Sign in with the owner account.' }), el('button', { class: 'btn btn-primary', type: 'button', text: 'Sign in', onClick: () => O.signIn() })])); return; }
+      if (!u) { render(el('div', { class: 'card strong center' }, [el('h1', { text: 'Admin' }), el('p', { text: 'Sign in with the owner account.' }), el('div', { class: 'row', style: 'justify-content:center' }, [el('button', { class: 'btn btn-primary', type: 'button', text: 'Google', onClick: () => O.signIn() }), el('button', { class: 'btn', type: 'button', text: 'Email link', onClick: () => O.emailSignInModal() })])])); return; }
       let ok = false; try { ok = await rpc('is_admin'); } catch (e) { ok = false; }
       if (!ok) { render(el('div', { class: 'card strong center' }, [el('h1', { text: 'Not authorised' }), el('p', { class: 'muted', text: (u.email || 'This account') + ' is not in admin_emails.' })])); return; }
     }

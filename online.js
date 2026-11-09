@@ -93,6 +93,32 @@
     if (!configured()) { F().toast('Sign-in is not configured yet'); return; }
     location.href = SUPABASE_URL + '/auth/v1/authorize?provider=google&redirect_to=' + encodeURIComponent(siteRoot());
   }
+  // Email sign-in: Supabase mails a one-time link that lands back on this page with the session in the hash
+  // (handled by handleAuthRedirect). Needs nothing but the project's built-in mailer; the address must be on the
+  // Auth → URL Configuration allow list, which is why Settings shows the address this copy runs at.
+  async function signInWithEmail(email) {
+    if (!configured()) { F().toast('Sign-in is not configured yet'); return false; }
+    const clean = String(email || '').trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean)) { F().toast('That does not look like an email address'); return false; }
+    try {
+      const res = await fetch(SUPABASE_URL + '/auth/v1/otp?redirect_to=' + encodeURIComponent(siteRoot()), { method: 'POST', headers: { apikey: SUPABASE_ANON_KEY, 'Content-Type': 'application/json' }, body: JSON.stringify({ email: clean, create_user: true }) });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      F().toast('Check your inbox — the sign-in link is on its way', 3200);
+      trackEvent('sign_in_link_sent', {});
+      return true;
+    } catch (e) { F().toast('Could not send the link — try again in a minute'); return false; }
+  }
+  function emailSignInModal() {
+    const { el, modal, closeModal } = F();
+    const input = el('input', { class: 'input', type: 'email', autocomplete: 'email', placeholder: 'you@example.com', 'aria-label': 'Email address' });
+    const form = el('form', { class: 'stack', onSubmit: async (e) => { e.preventDefault(); if (await signInWithEmail(input.value)) closeModal(); } }, [
+      el('p', { class: 'small muted', text: 'We email you a one-time link. Open it on this device and you are signed in — no password.' }),
+      input,
+      el('div', { class: 'row' }, [el('button', { class: 'btn btn-primary', type: 'submit', text: 'Send the link' }), el('button', { class: 'btn', type: 'button', text: 'Cancel', onClick: closeModal })]),
+    ]);
+    modal({ title: 'Sign in with email', body: form });
+    setTimeout(() => input.focus(), 50);
+  }
   async function signOut() {
     try { if (configured() && session) await fetch(SUPABASE_URL + '/auth/v1/logout', { method: 'POST', headers: headers() }); } catch (e) { /* ignore */ }
     session = null; profile = null; entitlementsCache = null;
@@ -638,7 +664,8 @@
     }
     const u = user();
     if (!u) {
-      box.append(el('div', { class: 'switch' }, [el('div', { html: '<b>Account</b><br><span class="small muted">Sign in with Google to join leaderboards, hold a rating and sync across devices.</span>' }), el('button', { class: 'btn btn-sm btn-primary', type: 'button', text: 'Sign in', onClick: signIn })]));
+      box.append(el('div', { class: 'switch' }, [el('div', { html: '<b>Account</b><br><span class="small muted">Sign in to join leaderboards, hold a rating and sync across devices.</span>' }), el('div', { class: 'row' }, [el('button', { class: 'btn btn-sm btn-primary', type: 'button', text: 'Google', onClick: signIn }), el('button', { class: 'btn btn-sm', type: 'button', text: 'Email link', onClick: emailSignInModal })])]));
+      box.append(el('p', { class: 'tiny muted', style: 'margin:6px 0 0', text: 'This copy runs at ' + siteRoot() + ' — the address sign-in returns to.' }));
       return box;
     }
     const handleInput = el('input', { type: 'text', value: (profile && profile.handle) || '', placeholder: 'Pick a handle', 'aria-label': 'Handle', maxlength: '16' });
@@ -722,7 +749,7 @@
 
   root.FathomOnline = {
     FLAGS, LEAGUES, MIN_CURVE_DIVES, RATING_WINDOW_DAYS, RATING_BEST_OF, MIN_RANKED_DAYS, HANDLE_RE,
-    init, user, entitlements, refreshEntitlements, signIn, signOut, handleProblem, saveProfile, deleteAccount,
+    init, user, entitlements, refreshEntitlements, signIn, signInWithEmail, emailSignInModal, signOut, handleProblem, saveProfile, deleteAccount,
     submitDaily, drainQueue, submitStatusLine, getSubmitState, fetchCurve, curveSection, othersSection, lastPercentile, percentileOf, refreshRating, syncProgressUp,
     leaderboardPage, ratingSummary, settingsSection, trackEvent, leagueFor, mockDaily, mockBoards,
     _rest: rest, _headers: headers, _configured: configured, rest, configured, VAPID_PUBLIC_KEY,
