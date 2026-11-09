@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ANGLER — admin</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .admin .column { max-width: 960px; }
+    .admin table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    .admin th, .admin td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .admin th { color: var(--muted); font-weight: 600; font-size: .8rem; }
+    .admin td.num, .admin th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .admin .bars { display: grid; grid-template-columns: repeat(auto-fit, minmax(16px, 1fr)); gap: 3px; align-items: end; height: 120px; margin: 10px 0 4px; }
+    .admin .bar { background: var(--accent); border-radius: 3px 3px 0 0; min-height: 2px; position: relative; }
+    .admin .bar.dim { background: var(--tier-midnight); }
+    .admin .bar:hover::after { content: attr(data-label); position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: var(--surface-strong); color: var(--ink); font-size: .7rem; padding: 2px 6px; border-radius: 4px; white-space: nowrap; border: 1px solid var(--line); }
+    .admin .legend { display: flex; gap: 14px; font-size: .8rem; color: var(--muted); }
+    .admin .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: middle; margin-right: 4px; }
+    .admin .grid2 { display: grid; gap: 14px; grid-template-columns: 1fr; }
+    @media (min-width: 760px) { .admin .grid2 { grid-template-columns: 1fr 1fr; } }
+    .admin .status-new { color: var(--gold); } .admin .status-accepted { color: var(--accent-text); } .admin .status-rejected { color: var(--muted); }
+    .admin .miss-bar { height: 6px; background: var(--surface); border-radius: 3px; overflow: hidden; }
+    .admin .miss-bar i { display: block; height: 100%; background: var(--tier-reef); }
+  </style>
+</head>
+<body class="admin">
+  <a class="skip-link" href="#main">Skip to the dashboard</a>
+  <header class="topbar" role="banner">
+    <span></span>
+    <a class="wordmark" href="./#home">ANGLER <span class="badge" style="margin-left:6px">admin</span></a>
+    <span></span>
+  </header>
+  <main id="main" class="column" aria-live="polite"></main>
+  <footer class="site-footer"><a href="./#home">Back to the game</a></footer>
+  <div class="toast-root" id="toast-root" aria-live="polite"></div>
+
+  <script src="shared/dive.js"></script>
+  <script src="storage.js"></script>
+  <script src="entities.js"></script>
+  <script src="prompts.js"></script>
+  <script src="charts.js"></script>
+  <script src="online.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

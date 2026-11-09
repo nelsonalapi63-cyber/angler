@@ -23,6 +23,17 @@ function watch(page, label) {
   page.on('pageerror', e => errors.push(label + ' pageerror: ' + e.message));
   page.on('requestfailed', r => { if (r.url().startsWith('http://127.0.0.1')) errors.push(label + ' request failed: ' + r.url()); });
 }
+// axe-core (vendored in tests/vendor/, MPL-2.0) — every checked screen must have zero violations
+const AXE_SRC = fs.readFileSync(path.join(__dirname, 'vendor', 'axe.min.js'), 'utf8');
+const a11y = [];
+async function axeCheck(page, label) {
+  await page.evaluate((src) => { if (!window.axe) { const s = document.createElement('script'); s.textContent = src; document.head.appendChild(s); } }, AXE_SRC);
+  await page.evaluate(() => Promise.race([Promise.all(document.getAnimations().map(a => a.finished.catch(() => {}))), new Promise(r => setTimeout(r, 1500))]));
+  // Hash routes (#daily, #archive…) are navigation, not same-page anchors, so axe's skip-link rule is pointed at the one real skip link.
+  const res = await page.evaluate(() => { window.axe.configure({ rules: [{ id: 'skip-link', selector: 'a.skip-link' }] }); return window.axe.run(document, { resultTypes: ['violations'] }); });
+  for (const v of res.violations) a11y.push(label + ': ' + v.id + ' [' + v.impact + '] ×' + v.nodes.length + ' — ' + v.help + ' @ ' + v.nodes.slice(0, 3).map(n => n.target.join(' ') + ' (' + (n.failureSummary || '').split('\n').slice(1, 2).join('') + ')').join(' | '));
+  console.log('axe ' + label + ': ' + res.violations.length + ' violations' + (res.violations.length ? '\n  ' + a11y.slice(-res.violations.length).join('\n  ') : ''));
+}
 const bankReady = (page) => page.waitForFunction(() => window.Fathom && window.Fathom.bankLoaded, null, { timeout: 20000 });
 async function skipWelcome(page) {
   await page.waitForSelector('.modal');
@@ -178,15 +189,34 @@ async function playDive(page, plan, opts) {
   await page.waitForSelector('main a[href="#daily"]');
   await page.screenshot({ path: path.join(SHOTS, 'home-mobile.png'), fullPage: true });
   await bankReady(page);
+  await axeCheck(page, 'home');
 
   // ---- daily dive with scripted inputs
   await page.click('main a[href="#daily"]');
   await page.waitForSelector('#answer');
+  await axeCheck(page, 'dive');
   await exposePromptIds(page);
   const plan = await planAnswers(page);
   console.log('daily plan:', plan.map(p => p.kind + ':' + JSON.stringify(p.typed)).join(' | '));
   await playDive(page, plan, { shotAt: 0, shotName: 'dive-mobile.png', revealShotAt: 2, revealShotName: 'dive-reveal-mobile.png', descentShotAt: 6, descentShotName: 'descent-mobile.png', humanPace: true });
   await page.screenshot({ path: path.join(SHOTS, 'result-mobile.png'), fullPage: true });
+  await axeCheck(page, 'result');
+  // every mode offers a challenge; a daily one encodes the day so the friend plays the same seven
+  assert.ok(await page.$('#challenge-btn'), 'challenge button on the daily result');
+  await page.click('#challenge-btn'); await page.waitForSelector('.toast');
+  const dailyLink = await page.evaluate(() => navigator.clipboard.readText());
+  assert.ok(/#challenge-d\d{8}-\d+-[0-6]{7}$/.test(dailyLink), 'daily challenge link carries the day seed: ' + dailyLink);
+  // one-tap report sheet: four kinds, a note, saved locally in demo mode
+  await page.click('button.link-btn:text-is("Report an answer or tier") >> nth=0');
+  await page.waitForSelector('.modal .report-kinds');
+  assert.strictEqual(await page.$$eval('.modal input[name="report-kind"]', r => r.length), 4, 'four report kinds');
+  await page.check('#rk-wrong_fact');
+  await page.fill('.modal .report-note', 'e2e note');
+  await axeCheck(page, 'report sheet');
+  await page.click('.modal button:text-is("Send report")');
+  await page.waitForSelector('.toast');
+  const pendingReports = await page.evaluate(() => window.FathomStorage.get('reportsPending', []));
+  assert.strictEqual(pendingReports.length, 1); assert.strictEqual(pendingReports[0].kind, 'wrong_fact'); assert.strictEqual(pendingReports[0].note, 'e2e note');
 
   const result = await page.evaluate(() => {
     const S = window.FathomStorage, dive = window.FathomDive;
@@ -227,6 +257,9 @@ async function playDive(page, plan, opts) {
   await page.waitForSelector('#countdown-modal');
   await page.waitForFunction(() => /\d\d:\d\d:\d\d/.test(document.getElementById('countdown-modal').textContent));
   assert.ok(await page.$('.modal .badge-wall'), 'badge wall in My ANGLER');
+  assert.ok(await page.$('.modal .heatmap .hm-cell.today[class*="z-"]'), 'calendar heatmap marks today as played');
+  assert.ok(/freeze/i.test(await page.textContent('.modal')), 'streak freeze line in My ANGLER');
+  await axeCheck(page, 'my angler');
   await page.keyboard.press('Escape');
   fs.writeFileSync(path.join(FIXTURES, 'recorded-dive.json'), JSON.stringify({ day: result.dayKey, promptIds: result.promptIds, answers: result.results.map(r => ({ typed: r.typed, secondsUsed: r.secondsUsed, hint: !!r.hint })), depth: result.depth, points: result.points, tiers: result.tiers }, null, 2));
 
@@ -252,6 +285,7 @@ async function playDive(page, plan, opts) {
   const logged = await page.evaluate(() => Object.keys(window.FathomStorage.logbook()).length);
   assert.ok(logged >= 4, 'logbook has the accepted answers, got ' + logged);
   await page.screenshot({ path: path.join(SHOTS, 'logbook-mobile.png') });
+  await axeCheck(page, 'logbook');
   for (const tab of ['plant', 'place', 'person', 'vessel', 'other']) { await page.goto(srv.url + '#logbook-' + tab); await page.waitForSelector('.tabs'); }
   await page.goto(srv.url + '#logbook-badges');
   await page.waitForSelector('.badge-wall');
@@ -268,6 +302,11 @@ async function playDive(page, plan, opts) {
   await page.goto(srv.url + '#leaderboard');
   await page.waitForSelector('.lb-rank');
   await page.screenshot({ path: path.join(SHOTS, 'leaderboard-mobile.png') });
+  await axeCheck(page, 'leaderboard');
+  await page.goto(srv.url + '#leaderboard-friends'); await page.waitForSelector('.tabs');
+  await page.waitForSelector('main .curve', { timeout: 10000 });
+  assert.ok((await page.textContent('main')).includes('demo'), 'friends-only curve is labelled demo');
+  await page.screenshot({ path: path.join(SHOTS, 'friends-mobile.png'), fullPage: true });
 
   // ---- packs: free pack plays, locked pack opens the unlock modal
   await page.goto(srv.url + '#packs');
@@ -280,11 +319,28 @@ async function playDive(page, plan, opts) {
   await page.waitForSelector('#answer');
   await playDive(page, null, {});
   assert.ok((await page.textContent('main')).includes('Sharks'));
+  await page.goto(srv.url + '#packs'); await page.waitForSelector('.list');
+  await page.waitForSelector('a[href^="#pack-community-"]', { timeout: 10000 });
+  assert.ok(await page.$('.pack-builder'), 'suggest-a-pack form on the packs page');
+  await page.click('a[href^="#pack-community-"] >> nth=0');
+  await page.waitForSelector('#answer');
+  assert.ok((await page.textContent('main')).includes('Prompt 1 of 7'), 'a community pack starts a seven-prompt dive');
 
   // ---- free dive → challenge link → second context plays the identical seven (no hint button in a challenge)
   await page.goto(srv.url + '#free');
   await page.waitForSelector('#answer');
   assert.ok(await page.$('#hint-btn'), 'hint button in a free dive');
+  await page.evaluate(() => document.activeElement && document.activeElement.blur());
+  await page.keyboard.press('h'); await page.waitForSelector('#hint-text:not(:empty)');
+  assert.strictEqual(await page.textContent('#hint-btn'), '✦ Lure used', 'H lights the lure when not typing');
+  assert.strictEqual(await page.evaluate(() => document.activeElement.id), 'answer', 'the lure hands focus back to the answer box');
+  await page.evaluate(() => document.activeElement.blur()); await page.waitForTimeout(80);
+  await page.keyboard.press('s'); await page.waitForSelector('.tile.tile-miss');
+  assert.ok((await page.textContent('.tile')).includes('Skipped'), 'S skips when not typing, tile: ' + await page.textContent('.tile') + ' | input: ' + await page.inputValue('#answer') + ' | active: ' + await page.evaluate(() => document.activeElement.tagName));
+  await page.click('.next-row button'); await page.waitForSelector('#answer:not([disabled])');
+  await page.focus('#answer'); await page.keyboard.type('s');          // typing in the box is never a shortcut
+  assert.strictEqual(await page.inputValue('#answer'), 's');
+  await page.goto(srv.url + '#free'); await page.waitForSelector('#answer');
   const seen1 = await playDive(page, null, {});
   await page.click('text=Challenge a friend');
   await page.waitForSelector('.toast');
@@ -337,6 +393,9 @@ async function playDive(page, plan, opts) {
   await page.click('#btn-help'); await page.waitForSelector('.modal'); await page.keyboard.press('Escape');
   await page.click('#btn-settings'); await page.waitForSelector('.modal');
   assert.ok(await page.$('#settings-tutorial'), 'tutorial can be replayed from Settings');
+  assert.ok(await page.$('.modal details.shortcuts'), 'keyboard shortcuts listed in Settings');
+  assert.ok(/Daily reminder/.test(await page.textContent('.modal')), 'reminder time in Settings');
+  await axeCheck(page, 'settings');
   await page.selectOption('.modal select', 'light');
   assert.strictEqual(await page.evaluate(() => document.documentElement.dataset.theme), 'light');
   await page.selectOption('.modal select', 'dark');
@@ -367,6 +426,26 @@ async function playDive(page, plan, opts) {
   await page.waitForSelector('#answer', { timeout: 15000 });
   await mobile.setOffline(false);
 
+  // ---- admin.html: owner dashboard renders on demo data (online layer off), guesses drill-down, accept a report, export
+  const apage = await (await browser.newContext({ viewport: { width: 1280, height: 900 } })).newPage();
+  watch(apage, 'admin');
+  await apage.goto(srv.url + 'admin.html');
+  await apage.waitForSelector('main h1');
+  assert.ok((await apage.textContent('main h1')).includes('ANGLER admin'));
+  assert.strictEqual(await apage.$$eval('main section.card', s => s.length), 4, 'funnel, cohorts, prompts, reports');
+  await apage.click('main section.card button:text-is("Guesses")');
+  await apage.waitForSelector('main h3');
+  assert.ok((await apage.textContent('main h3')).includes('Most-typed rejected guesses'));
+  const newBefore = await apage.$$eval('.status-new', s => s.length);
+  await apage.click('.status-new ~ .row button:text-is("Accept")');
+  await apage.waitForFunction((n) => document.querySelectorAll('.status-new').length === n - 1, newBefore);
+  const [download] = await Promise.all([apage.waitForEvent('download'), apage.click('button:text-is("Export accepted → inbox.json")')]);
+  const inbox = JSON.parse(fs.readFileSync(await download.path(), 'utf8'));
+  assert.ok(Array.isArray(inbox.review) && inbox.review.length >= 1 && Array.isArray(inbox.aliasAdd), 'export is an apply-patch skeleton with a review list');
+  await axeCheck(apage, 'admin');
+  await apage.screenshot({ path: path.join(SHOTS, 'admin.png'), fullPage: false });
+  await apage.context().close();
+
   // ---- desktop
   const desktop = await browser.newContext({ viewport: { width: 1280, height: 800 } });
   const dpage = await desktop.newPage();
@@ -386,5 +465,6 @@ async function playDive(page, plan, opts) {
   srv.close();
   const realErrors = errors.filter(e => !/favicon/.test(e));
   if (realErrors.length) { console.error('CONSOLE ERRORS:\n' + realErrors.join('\n')); process.exit(1); }
-  console.log('e2e OK — zero console errors, screenshots in tests/screenshots/, fixture in tests/fixtures/recorded-dive.json');
+  if (a11y.length) { console.error('AXE VIOLATIONS:\n' + a11y.join('\n')); process.exit(1); }
+  console.log('e2e OK — zero console errors, zero axe violations, screenshots in tests/screenshots/, fixture in tests/fixtures/recorded-dive.json');
 })().catch(e => { console.error(e); process.exit(1); });

@@ -16,8 +16,9 @@
   // ---------------------------------------------------------------- parameters
   const SUPABASE_URL = '';                 // e.g. 'https://abcdefgh.supabase.co'
   const SUPABASE_ANON_KEY = '';            // the public anon key (safe to ship; Row Level Security protects data)
-  const ANALYTICS_SCRIPT_URL = 'https://plausible.io/js/script.js';
-  const ANALYTICS_DOMAIN = '';             // e.g. 'fathom.example'
+  const VAPID_PUBLIC_KEY = 'BPcKvRygAEvCb0mJlbscCTHFAVSDJP0wZf3VLG8hEynjMYdrp4ZH75g71CZ56yMU_2mxJgt3MSFZd6v4fYwDAQw'; // public half from `node tools/vapid-keys.js`; the private half lives only in supabase/vapid-private.key (gitignored) and the VAPID_PRIVATE_KEY secret
+  const EVENTS_FLUSH_MS = 4000;             // first-party analytics are batched and sent together
+  const EVENTS_MAX_BATCH = 20;
   const MIN_CURVE_DIVES = 30;              // the curve appears after this many dives today
   const MAX_GUESSES_SENT = 5;          // rejected guesses per prompt sent with a dive, so missing answers can be mined
   const CURVE_CACHE_MS = 60 * 1000;
@@ -116,7 +117,7 @@
   }
   async function loadProfile() {
     if (!user()) return null;
-    const rows = await rest('/rest/v1/profiles?select=handle,flag,hidden&user_id=eq.' + user().id);
+    const rows = await rest('/rest/v1/profiles?select=handle,flag,hidden,email_optin&user_id=eq.' + user().id);
     profile = rows && rows[0] ? rows[0] : null;
     saveSession();
     return profile;
@@ -281,7 +282,7 @@
     const { el, charts, dive, esc } = F();
     if (!flags.LEADERBOARD_ENABLED && !flags.MOCK_ONLINE_DATA) return null;
     const card = el('div', { class: 'card' });
-    const head = el('div', { class: 'row between' }, [el('h3', { text: 'Today’s divers' })]);
+    const head = el('div', { class: 'row between' }, [el('h2', { class: 'card-title', text: 'Today’s divers' })]);
     card.append(head);
     const body = el('div', { html: '<p class="small muted">Loading today’s curve…</p>' });
     card.append(body);
@@ -335,7 +336,7 @@
     const { el, esc, dive, entities, promptsById } = F();
     if (!flags.LEADERBOARD_ENABLED && !flags.MOCK_ONLINE_DATA) return null;
     const card = el('div', { class: 'card' });
-    const head = el('div', { class: 'row between' }, [el('h3', { text: 'What others answered today' })]);
+    const head = el('div', { class: 'row between' }, [el('h2', { class: 'card-title', text: 'What others answered today' })]);
     const body = el('div', { html: '<p class="small muted">Loading…</p>' });
     card.append(head, body);
     const draw = (data, demo) => {
@@ -497,8 +498,8 @@
       body.innerHTML = '';
       const ul = el('ul', { class: 'list' });
       rows.forEach((r, i) => ul.append(row(i + 1, whoHtml(r), esc(dive.formatMeters(r.meters)) + ' m')));
-      body.append(el('h3', { text: 'Most metres dived' }), ul);
-      body.append(el('h3', { style: 'margin-top:16px', text: 'Hall of Fame' }));
+      body.append(el('h2', { class: 'card-title', text: 'Most metres dived' }), ul);
+      body.append(el('h2', { class: 'card-title', style: 'margin-top:16px', text: 'Hall of Fame' }));
       for (const h of hall) {
         const hul = el('ul', { class: 'list' });
         h.rows.forEach(r => hul.append(row(r.rank, whoHtml(r), r.rating.toFixed(1))));
@@ -632,6 +633,10 @@
       try { await saveProfile({ handle: h }); toast('Handle saved'); } catch (e) { toast(/duplicate|unique|409/i.test(e.message) ? 'That handle is taken' : 'Could not save the handle'); }
     } });
     const flagSel = el('select', { 'aria-label': 'Flag', onChange: async (e) => { try { await saveProfile({ flag: e.target.value }); } catch (err) { toast('Could not save'); } } }, [el('option', { value: '', text: 'No flag' })].concat(MOCK_FLAGS.map(f => el('option', { value: f, text: f, selected: profile && profile.flag === f }))));
+    const recapBtn = el('button', { class: 'toggle', type: 'button', role: 'switch', 'aria-checked': String(!!(profile && profile.email_optin)), 'aria-label': 'Weekly recap email', onClick: async () => {
+      const cur = recapBtn.getAttribute('aria-checked') === 'true';
+      try { await saveProfile({ email_optin: !cur }); recapBtn.setAttribute('aria-checked', String(!cur)); trackEvent(cur ? 'recap_off' : 'recap_on', {}); } catch (e) { toast('Could not save'); }
+    } });
     const hideBtn = el('button', { class: 'toggle', type: 'button', role: 'switch', 'aria-checked': String(!!(profile && profile.hidden)), 'aria-label': 'Hide me from leaderboards', onClick: async () => {
       const cur = hideBtn.getAttribute('aria-checked') === 'true';
       try { await saveProfile({ hidden: !cur }); hideBtn.setAttribute('aria-checked', String(!cur)); } catch (e) { toast('Could not save'); }
@@ -641,23 +646,42 @@
       el('div', { class: 'switch' }, [el('div', { html: '<b>Handle</b><br><span class="small muted">Shown on leaderboards. 3–16 letters, numbers, underscores.</span>' }), el('div', { class: 'row' }, [handleInput, saveBtn])]),
       el('div', { class: 'switch' }, [el('div', { html: '<b>Flag</b><br><span class="small muted">Optional, chosen by you.</span>' }), flagSel]),
       el('div', { class: 'switch' }, [el('div', { html: '<b>Hide me from leaderboards</b><br><span class="small muted">Your dives still count in the daily curve.</span>' }), hideBtn]),
+      el('div', { class: 'switch' }, [el('div', { html: '<b>Weekly recap email</b><br><span class="small muted">Sundays: your dives, best depth, percentile and badges. Off by default.</span>' }), recapBtn]),
       el('div', { class: 'switch' }, [el('div', { html: '<b>Delete my account and data</b><br><span class="small muted">Removes everything stored for you on our server.</span>' }), el('button', { class: 'btn btn-sm', type: 'button', text: 'Delete', onClick: async () => { if (!(await F().confirmDialog('Delete your account and all server data? This cannot be undone.', 'Delete'))) return; try { await deleteAccount(); toast('Account deleted'); } catch (e) { toast('Could not delete right now'); } } })]),
     );
     return box;
   }
 
   // ================================================================ analytics
-  let analyticsLoaded = false;
+  // First-party analytics: events go to our own `events` table (anonymous device id, no IP stored by us, no third-party
+  // script). Batched; flushed with sendBeacon on page hide so nothing is lost.
+  const eventQueue = [];
+  let flushTimer = null;
   function loadAnalytics() {
-    if (!flags.ANALYTICS_ENABLED || !ANALYTICS_DOMAIN || analyticsLoaded) return;
-    analyticsLoaded = true;
-    const s = document.createElement('script');
-    s.defer = true; s.setAttribute('data-domain', ANALYTICS_DOMAIN); s.src = ANALYTICS_SCRIPT_URL;
-    document.head.appendChild(s);
+    if (!flags.ANALYTICS_ENABLED || !configured()) return;
+    trackEvent('visit', { path: location.hash.slice(1).split('-')[0] || 'home', standalone: root.matchMedia && root.matchMedia('(display-mode: standalone)').matches });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) flushEvents(true); });
+    root.addEventListener('pagehide', () => flushEvents(true));
   }
   function trackEvent(name, props) {
-    if (!flags.ANALYTICS_ENABLED) return;
-    try { if (typeof root.plausible === 'function') root.plausible(name, { props: props || {} }); } catch (e) { /* ignore */ }
+    if (!flags.ANALYTICS_ENABLED || !configured()) return;
+    const { storage } = F();
+    eventQueue.push({ device_id: storage.deviceId(), user_id: user() ? user().id : null, name: String(name).slice(0, 40), props: props || {} });
+    if (eventQueue.length >= EVENTS_MAX_BATCH) flushEvents(false);
+    else if (!flushTimer) flushTimer = setTimeout(() => flushEvents(false), EVENTS_FLUSH_MS);
+  }
+  function flushEvents(beacon) {
+    if (flushTimer) { clearTimeout(flushTimer); flushTimer = null; }
+    if (!eventQueue.length) return;
+    const batch = eventQueue.splice(0, eventQueue.length);
+    const url = SUPABASE_URL + '/rest/v1/events';
+    const body = JSON.stringify(batch);
+    if (beacon && navigator.sendBeacon) {
+      // sendBeacon cannot set headers; PostgREST accepts the apikey as a query parameter
+      navigator.sendBeacon(url + '?apikey=' + encodeURIComponent(SUPABASE_ANON_KEY), new Blob([body], { type: 'application/json' }));
+      return;
+    }
+    rest('/rest/v1/events', { method: 'POST', body: batch, headers: { Prefer: 'return=minimal' } }).catch(() => { /* analytics never block anything */ });
   }
 
   // ================================================================ init
@@ -685,6 +709,6 @@
     init, user, entitlements, refreshEntitlements, signIn, signOut, handleProblem, saveProfile, deleteAccount,
     submitDaily, drainQueue, submitStatusLine, getSubmitState, fetchCurve, curveSection, othersSection, lastPercentile, percentileOf, refreshRating, syncProgressUp,
     leaderboardPage, ratingSummary, settingsSection, trackEvent, leagueFor, mockDaily, mockBoards,
-    _rest: rest, _headers: headers, _configured: configured,
+    _rest: rest, _headers: headers, _configured: configured, rest, configured, VAPID_PUBLIC_KEY,
   };
 })(window);

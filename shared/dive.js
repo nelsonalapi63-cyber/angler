@@ -413,7 +413,10 @@
   }
 
   // ---------------------------------------------------------------- challenge links
-  const CHALLENGE_RE = /^#\/?challenge[-\/]([a-z0-9]{4,12})(?:-(\d{1,5}))?(?:-([0-6]{7}))?\/?$/;
+  // seeds: a free-dive seed (4–12 chars), 'd' + YYYYMMDD for a daily/archive day, 'k' + pack index for a themed pack
+  const CHALLENGE_RE = /^#\/?challenge[-\/]([a-z0-9]{2,12})(?:-(\d{1,5}))?(?:-([0-6]{7}))?\/?$/;
+  const DAY_SEED_RE = /^d(\d{4})(\d{2})(\d{2})$/;
+  const PACK_SEED_RE = /^k(\d{1,2})$/;
   function makeChallengeHash(seed, depth, tierCodes) {
     let h = '#challenge-' + seed;
     if (depth != null) h += '-' + Math.max(0, Math.round(depth));
@@ -423,7 +426,25 @@
   function parseChallenge(hash) {
     const m = CHALLENGE_RE.exec(String(hash || '').trim().toLowerCase());
     if (!m) return null;
-    return { seed: m[1], depth: m[2] ? Number(m[2]) : 0, tiers: m[3] ? digitsToTiers(m[3]) : null };
+    const seed = m[1];
+    const day = DAY_SEED_RE.exec(seed);
+    const pack = PACK_SEED_RE.exec(seed);
+    const kind = day ? 'day' : pack ? 'pack' : 'free';
+    if (kind === 'free' && seed.length < 4) return null;
+    return { seed, kind, dayKey: day ? day[1] + '-' + day[2] + '-' + day[3] : null, packIndex: pack ? Number(pack[1]) : null, depth: m[2] ? Number(m[2]) : 0, tiers: m[3] ? digitsToTiers(m[3]) : null };
+  }
+  // The seed that reproduces a finished dive's prompt set, for "Challenge a friend" in every mode.
+  function challengeSeedFor(record, packs) {
+    if (record.mode === 'daily' || record.mode === 'archive') return record.dayKey ? 'd' + record.dayKey.replace(/-/g, '') : null;
+    if (record.mode === 'pack') { const i = (packs || []).findIndex(p => p.id === record.packId); return i >= 0 ? 'k' + i : null; }
+    return record.seed || null;
+  }
+  // The prompt ids a challenge seed stands for (null when the day is outside the schedule or the pack is unknown).
+  function challengePromptIds(parsed, prompts, packs, schedule) {
+    if (!parsed) return null;
+    if (parsed.kind === 'day') return dailyPromptIds(parsed.dayKey, prompts, LAUNCH_DATE, schedule);
+    if (parsed.kind === 'pack') { const pack = (packs || [])[parsed.packIndex]; return pack ? packPromptIds(pack, prompts) : null; }
+    return freePromptIds(parsed.seed, prompts);
   }
 
   // ---------------------------------------------------------------- share text
@@ -483,6 +504,6 @@
     fnv1a, seededRng, shuffle, randomSeed,
     dayKey, dayIndex, puzzleNumber, keyPlusDays, msUntilNextDay, nextMidnightUtc,
     dailyPromptIds, buildSchedule, pickDay, freePromptIds, packPromptIds, sortByDifficulty, byId,
-    makeChallengeHash, parseChallenge, shareText, formatMeters, scoreSubmission,
+    makeChallengeHash, parseChallenge, challengeSeedFor, challengePromptIds, shareText, formatMeters, scoreSubmission,
   };
 });

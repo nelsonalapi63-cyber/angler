@@ -21,7 +21,7 @@ const { validateData } = require('./tools/validate-data.js');
 const dive = require('./shared/dive.js');
 
 const SCHEDULE_DAYS_AHEAD = 400;
-const BOOT_DAYS = 2;                                    // today and tomorrow travel in boot.js
+const BOOT_DAYS = 1;                                    // today travels in boot.js; tomorrow comes with the full bank (cached offline by the service worker)
 const TUTORIAL_PROMPT_IDS = ['shark-species', 'whale-species', 'tide-pool'];   // must match game.js
 
 const ROOT = __dirname;

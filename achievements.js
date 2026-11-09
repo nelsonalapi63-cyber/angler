@@ -67,7 +67,7 @@
   function unlockedCard(list) {
     const { el, esc } = F();
     return el('div', { class: 'card badge-card' }, [
-      el('h3', { text: list.length === 1 ? 'New badge' : 'New badges' }),
+      el('h2', { class: 'card-title', text: list.length === 1 ? 'New badge' : 'New badges' }),
       el('div', { class: 'badge-row' }, list.map(b => el('div', { class: 'badge-item on' }, [el('span', { class: 'badge-emoji', text: b.emoji }), el('div', {}, [el('b', { text: b.name }), el('div', { class: 'small muted', text: b.blurb })])]))),
       el('p', { class: 'small muted', style: 'margin:10px 0 0', html: 'All your badges live in <a href="#logbook-badges">the logbook</a>.' }),
     ]);

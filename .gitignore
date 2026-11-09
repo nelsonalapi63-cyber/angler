@@ -2,3 +2,4 @@ node_modules/
 tests/screenshots/
 *.zip
 .playwright/
+supabase/vapid-private.key

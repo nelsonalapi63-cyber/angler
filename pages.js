@@ -82,6 +82,7 @@
     const progress = storage.get('progress', null);
     const inProgress = !played && progress && progress.mode === 'daily' && progress.dayKey === today;
     const nodes = [];
+    if (root.FathomRetain && root.FathomRetain.atRiskBanner) { const b = root.FathomRetain.atRiskBanner(); if (b) nodes.push(b); }
 
     const body = el('div', { class: 'hero-body' }, [
       el('div', { class: 'hero-kicker', text: 'The daily ocean dive · ' + niceDate(today) }),
@@ -177,7 +178,9 @@
         locked ? el('span', { class: 'lock', text: '🔒 ' + (M ? M.priceLabel('pack') : '') }) : null,
       ]));
     }
-    render([el('div', { class: 'card strong' }, [el('h1', { text: 'Themed Packs' }), el('p', { class: 'small muted', text: 'Seven hand-picked prompts on one theme. Each pack keeps its own best depth.' })]), el('div', { class: 'card' }, list)]);
+    const nodes = [el('div', { class: 'card strong' }, [el('h1', { text: 'Themed Packs' }), el('p', { class: 'small muted', text: 'Seven hand-picked prompts on one theme. Each pack keeps its own best depth.' })]), el('div', { class: 'card' }, list)];
+    render(nodes);
+    if (root.FathomSocial && root.FathomSocial.communitySection) root.FathomSocial.communitySection().then((sec) => { if (sec && document.contains(nodes[1])) nodes[1].after(sec); });
   }
 
   // ---------------------------------------------------------------- logbook
@@ -334,7 +337,10 @@
         el('div', { html: '<b>' + streak.current + '</b><span>Current streak</span>' }),
         el('div', { html: '<b>' + streak.max + '</b><span>Max streak</span>' }),
       ]),
-      el('h3', { text: 'Depth distribution' }),
+      root.FathomRetain ? root.FathomRetain.freezeLine(streak) : null,
+      el('h3', { style: 'margin-top:16px', text: 'Last 12 weeks' }),
+      root.FathomRetain ? root.FathomRetain.heatmap() : null,
+      el('h3', { style: 'margin-top:16px', text: 'Depth distribution' }),
       el('div', { html: charts.distributionBars(counts, todayRec ? dive.zoneFor(todayRec.depth).code : null) }),
       el('h3', { style: 'margin-top:16px', text: 'Badges' }),
       root.FathomAchievements ? root.FathomAchievements.wall({ compact: true }) : null,
@@ -370,6 +376,7 @@
       toggle('High contrast', 'contrast', 'Tiers are always labelled; this strengthens outlines and colours'),
       toggle('Sound and vibration', 'sound', 'Splash, descent hum, tier chimes, a buzz on phones'),
       toggle('Timer in Free Dive', 'freeTimer', 'The Daily Dive is always timed'),
+      root.FathomRetain ? root.FathomRetain.settingsRow() : null,
       el('div', { class: 'switch' }, [el('div', { html: '<b>Tutorial</b><br><span class="small muted">Three untimed prompts; nothing is saved</span>' }), el('a', { class: 'btn btn-sm', href: '#tutorial', id: 'settings-tutorial', text: 'Replay' })]),
       el('details', { class: 'shortcuts' }, [el('summary', { html: '<b>Keyboard shortcuts</b>' }), el('table', { class: 'kbd-table' }, F().SHORTCUTS.map(([k, what]) => el('tr', {}, [el('td', {}, el('kbd', { text: k })), el('td', { text: what })])))]),
     ]);

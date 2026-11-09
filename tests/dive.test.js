@@ -142,15 +142,31 @@ test('frozen schedule: adding a prompt never changes a day already scheduled', (
 test('challenge hashes round-trip and reject garbage', () => {
   const h = dive.makeChallengeHash('k7p2qz', 4210, ['tidepool', 'reef', 'twilight', null, 'midnight', 'hadal', 'baitball']);
   assert.strictEqual(h, '#challenge-k7p2qz-4210-1340562');
+  const free = { seed: 'k7p2qz', kind: 'free', dayKey: null, packIndex: null };
   const parsed = dive.parseChallenge(h);
-  assert.deepStrictEqual(parsed, { seed: 'k7p2qz', depth: 4210, tiers: ['tidepool', 'reef', 'twilight', null, 'midnight', 'hadal', 'baitball'] });
-  assert.deepStrictEqual(dive.parseChallenge('#challenge-k7p2qz'), { seed: 'k7p2qz', depth: 0, tiers: null });
-  assert.deepStrictEqual(dive.parseChallenge('#/challenge/k7p2qz-10'), { seed: 'k7p2qz', depth: 10, tiers: null });
-  assert.deepStrictEqual(dive.parseChallenge('#Challenge-K7P2QZ-10'), { seed: 'k7p2qz', depth: 10, tiers: null });
+  assert.deepStrictEqual(parsed, Object.assign({}, free, { depth: 4210, tiers: ['tidepool', 'reef', 'twilight', null, 'midnight', 'hadal', 'baitball'] }));
+  assert.deepStrictEqual(dive.parseChallenge('#challenge-k7p2qz'), Object.assign({}, free, { depth: 0, tiers: null }));
+  assert.deepStrictEqual(dive.parseChallenge('#/challenge/k7p2qz-10'), Object.assign({}, free, { depth: 10, tiers: null }));
+  assert.deepStrictEqual(dive.parseChallenge('#Challenge-K7P2QZ-10'), Object.assign({}, free, { depth: 10, tiers: null }));
   assert.strictEqual(dive.parseChallenge('#challenge-'), null);
   assert.strictEqual(dive.parseChallenge('#challenge-!!!-abc'), null);
   assert.strictEqual(dive.parseChallenge('#challenge-k7p2qz-4210-99'), null);
+  assert.strictEqual(dive.parseChallenge('#challenge-abc'), null);              // a free seed needs 4 characters
   assert.strictEqual(dive.parseChallenge(undefined), null);
+  // every mode can issue a challenge: a day seed replays that day's seven, a pack seed replays the pack
+  const day = dive.parseChallenge('#challenge-d20261109-4210');
+  assert.strictEqual(day.kind, 'day'); assert.strictEqual(day.dayKey, '2026-11-09'); assert.strictEqual(day.depth, 4210);
+  const pack = dive.parseChallenge('#challenge-k1-99');
+  assert.strictEqual(pack.kind, 'pack'); assert.strictEqual(pack.packIndex, 1);
+  assert.strictEqual(dive.challengeSeedFor({ mode: 'daily', dayKey: '2026-11-09' }), 'd20261109');
+  assert.strictEqual(dive.challengeSeedFor({ mode: 'archive', dayKey: '2026-11-03' }), 'd20261103');
+  assert.strictEqual(dive.challengeSeedFor({ mode: 'pack', packId: 'b' }, [{ id: 'a' }, { id: 'b' }]), 'k1');
+  assert.strictEqual(dive.challengeSeedFor({ mode: 'free', seed: 'zz9qa' }), 'zz9qa');
+  const prompts = fakePrompts(60);
+  const packs = [{ id: 'a', prompts: prompts.slice(0, 7).map(p => p.id) }];
+  assert.deepStrictEqual(dive.challengePromptIds(pack, prompts, packs, {}), null);   // index 1 does not exist
+  assert.strictEqual(dive.challengePromptIds(dive.parseChallenge('#challenge-k0'), prompts, packs, {}).length, 7);
+  assert.deepStrictEqual(dive.challengePromptIds(parsed, prompts, packs, {}), dive.freePromptIds('k7p2qz', prompts));
 });
 
 test('share text', () => {

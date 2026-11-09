@@ -165,9 +165,11 @@
     for (const z of dive.ZONES) {
       const n = counts[z.code] || 0;
       const w = Math.round((n / max) * 100);
-      out += '<div>' + esc(z.name.replace(' zone', '')) + '</div>';
-      out += '<div class="bar' + (z.code === highlightZone ? ' hot' : '') + '"><i style="width:' + Math.max(w, n ? 4 : 0) + '%"></i></div>';
-      out += '<div><b>' + n + '</b></div>';
+      out += '<div role="row" class="dist-row">';
+      out += '<div role="rowheader">' + esc(z.name.replace(' zone', '')) + '</div>';
+      out += '<div role="cell" class="bar' + (z.code === highlightZone ? ' hot' : '') + '" aria-label="' + n + ' dives"><i style="width:' + Math.max(w, n ? 4 : 0) + '%"></i></div>';
+      out += '<div role="cell"><b>' + n + '</b></div>';
+      out += '</div>';
     }
     return out + '</div>';
   }

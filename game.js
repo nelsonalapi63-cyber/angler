@@ -54,7 +54,7 @@
     const { packsById, dive } = F();
     if (record.mode === 'daily') return dive.BRAND + ' #' + record.number;
     if (record.mode === 'archive') return 'Archive · ' + dive.BRAND + ' #' + dive.puzzleNumber(record.dayKey);
-    if (record.mode === 'pack') return (packsById[record.packId] ? packsById[record.packId].name : 'Pack');
+    if (record.mode === 'pack') return record.packName || (packsById[record.packId] ? packsById[record.packId].name : 'Pack');
     if (record.mode === 'challenge') return 'Challenge';
     if (record.mode === 'tutorial') return 'Tutorial';
     return 'Free Dive';
@@ -129,18 +129,51 @@
   }
   function startPack(packId) {
     const { dive, prompts, packsById } = F();
+    if (/^community-/.test(packId) && root.FathomSocial) {
+      return root.FathomSocial.communityPackSpec(packId.replace(/^community-/, '')).then((pack) => {
+        if (!pack) return root.FathomPages.packs();
+        const ids = dive.packPromptIds(pack, prompts);
+        if (ids.length !== dive.PROMPTS_PER_DIVE) return root.FathomPages.message('Pack unavailable', 'This community pack refers to prompts that are not in this build.');
+        startDive({ mode: 'pack', promptIds: ids, packId: pack.id, packName: pack.name });
+      });
+    }
     const pack = packsById[packId];
     if (!pack) return root.FathomPages.packs();
     const M = root.FathomMonetise;
     if (M && !M.isPackUnlocked(packId)) { root.FathomPages.packs(); M.openUnlock('pack', packId); return; }
     startDive({ mode: 'pack', promptIds: dive.packPromptIds(pack, prompts), packId });
   }
+  // A challenge link replays the challenger's exact seven: a free seed, a day ('d20261109' → that daily or archive
+  // dive) or a pack ('k2'). Daily and pack challenges still count as that daily or pack (saved and submitted as usual).
   function startChallenge(hash) {
-    const { dive, prompts, toast } = F();
+    const { dive, prompts, packs, schedule, storage, toast } = F();
     const parsed = dive.parseChallenge(hash);
     if (!parsed) { toast('That challenge link is not valid — here is a fresh dive.'); return startFree(); }
-    track('challenge_opened');
-    startDive({ mode: 'challenge', promptIds: dive.freePromptIds(parsed.seed, prompts), seed: parsed.seed, challenge: { depth: parsed.depth, tiers: parsed.tiers } });
+    const challenge = { depth: parsed.depth, tiers: parsed.tiers, seed: parsed.seed };
+    track('challenge_opened', { kind: parsed.kind });
+    if (parsed.kind === 'day') {
+      const today = F().todayKey();
+      const promptIds = dive.dailyPromptIds(parsed.dayKey, prompts, dive.LAUNCH_DATE, schedule);
+      if (!promptIds || parsed.dayKey > today) { toast('That dive is not open yet — here is a fresh one.'); return startFree(); }
+      if (parsed.dayKey === today) {
+        const existing = storage.getDailyResult(today);
+        if (existing) return resultScreen(Object.assign({}, existing, { challenge }), { fresh: false });
+        return startDive({ mode: 'daily', promptIds, dayKey: today, number: dive.puzzleNumber(today), challenge });
+      }
+      const M = root.FathomMonetise;
+      if (M && !M.isArchiveUnlocked(parsed.dayKey)) { root.FathomPages.archive(); M.openUnlock('archive'); return; }
+      const done = (storage.get('archive', {}))[parsed.dayKey];
+      if (done) return resultScreen(Object.assign({}, done, { challenge }), { fresh: false });
+      return startDive({ mode: 'archive', promptIds, dayKey: parsed.dayKey, number: dive.puzzleNumber(parsed.dayKey), challenge });
+    }
+    if (parsed.kind === 'pack') {
+      const pack = packs[parsed.packIndex];
+      if (!pack) { toast('That pack does not exist — here is a fresh dive.'); return startFree(); }
+      const M = root.FathomMonetise;
+      if (M && !M.isPackUnlocked(pack.id)) { root.FathomPages.packs(); M.openUnlock('pack', pack.id); return; }
+      return startDive({ mode: 'pack', promptIds: dive.packPromptIds(pack, prompts), packId: pack.id, challenge });
+    }
+    startDive({ mode: 'challenge', promptIds: dive.freePromptIds(parsed.seed, prompts), seed: parsed.seed, challenge });
   }
   // Three untimed prompts with a coach line each; nothing is saved.
   function startTutorial() {
@@ -222,7 +255,7 @@
     return t;
   }
 
-  function hintsAllowed() { return state && state.spec.mode !== 'challenge'; }
+  function hintsAllowed() { return !!state && state.spec.mode !== 'challenge' && !state.spec.challenge; }
 
   function renderPrompt(remainingMs, carry) {
     const { el, dive, promptsById, esc } = F();
@@ -250,10 +283,10 @@
       ]),
       timerNode(allowedMs / 1000),
     ]);
-    const challengeNote = state.spec.challenge && state.spec.challenge.depth ? el('p', { class: 'small', html: 'Beat <b>' + esc(dive.formatMeters(state.spec.challenge.depth)) + ' m</b> to win this challenge. No lure.' }) : null;
+    const challengeNote = state.spec.challenge && state.spec.challenge.depth ? el('p', { class: 'small', html: 'Beat <b>' + esc(dive.formatMeters(state.spec.challenge.depth)) + ' m</b> to win this challenge.' + (hintsAllowed() ? '' : ' No lure.') }) : null;
     const coach = state.spec.mode === 'tutorial' ? el('p', { class: 'coach', html: '<b>Tutorial ' + (state.idx + 1) + '/' + state.total + ':</b> ' + esc(TUTORIAL_COACH[state.idx] || '') }) : null;
     state.mainCol.innerHTML = '';
-    state.mainCol.append(head, challengeNote || '', coach || '', el('h2', { class: 'prompt-text', id: 'prompt-text', text: prompt.text }), suggest, form, reject, helpRow, hintText, el('div', { id: 'reveal', 'aria-live': 'polite' }));
+    state.mainCol.append(head, challengeNote || '', coach || '', el('h1', { class: 'prompt-text', id: 'prompt-text', text: prompt.text }), suggest, form, reject, helpRow, hintText, el('div', { id: 'reveal', 'aria-live': 'polite' }));
     state.input = input;
     state.form = form;
     if (state.hint) showHint(state.hint);
@@ -490,7 +523,7 @@
     const { dive, storage } = F();
     const s = state.spec;
     const record = {
-      mode: s.mode, dayKey: s.dayKey || null, number: s.number || null, seed: s.seed || null, packId: s.packId || null,
+      mode: s.mode, dayKey: s.dayKey || null, number: s.number || null, seed: s.seed || null, packId: s.packId || null, packName: s.packName || null,
       promptIds: s.promptIds.slice(), results: state.results, points: state.points, depth: state.depth,
       tiers: state.results.map(r => r.tier), secondsUsed: Math.round(state.results.reduce((n, r) => n + r.secondsUsed, 0) * 10) / 10,
       hints: state.results.filter(r => r.hint).length, attempts: state.results.reduce((n, r) => n + (r.attempts || 0), 0),
@@ -538,7 +571,7 @@
 
     const head = el('div', { class: 'card strong center' }, [
       el('div', { class: 'tiny muted', text: (tutorial ? 'Tutorial complete' : modeLabel(record)) + (record.mode === 'free' && record.seed ? ' · ' + record.seed : '') }),
-      el('div', { class: 'result-depth', html: esc(dive.formatMeters(record.depth)) + '<small>m</small>' }),
+      el('h1', { class: 'result-depth', html: esc(dive.formatMeters(record.depth)) + '<small>m</small>' }),
       el('div', { html: '<b>' + esc(zone.name) + '</b>' }),
       el('p', { class: 'small muted', text: zone.fact }),
       el('div', { class: 'grid-emoji', 'aria-label': 'Tier grid', text: dive.tiersToEmoji(record.tiers) }),
@@ -548,7 +581,7 @@
 
     if (tutorial) {
       nodes.push(el('div', { class: 'card' }, [
-        el('h3', { text: 'You are ready' }),
+        el('h2', { class: 'card-title', text: 'You are ready' }),
         el('p', { text: 'The real dive has seven prompts and a 25-second timer on each. Same seven for everyone, once a day. Nothing from the tutorial is saved.' }),
         el('div', { class: 'row' }, [el('a', { class: 'btn btn-primary', href: '#daily', text: 'Start today’s dive' }), el('a', { class: 'btn', href: '#free', text: 'Free Dive' })]),
       ]));
@@ -559,17 +592,21 @@
       nodes.push(root.FathomAchievements.unlockedCard(opts.unlocked));
     }
 
-    // challenge comparison
-    if (record.mode === 'challenge' && record.challenge) {
+    // challenge comparison (any mode can carry a challenge)
+    const challengeSeed = dive.challengeSeedFor(record, packsById && F().packs);
+    if (record.challenge && record.mode !== 'tutorial') {
       const c = record.challenge;
       const grid = el('div', { class: 'compare-grid' });
       if (c.tiers) grid.append(el('div', {}, [el('span', { class: 'who', text: 'Them' }), el('span', { text: dive.tiersToEmoji(c.tiers) })]));
       grid.append(el('div', {}, [el('span', { class: 'who', text: 'You' }), el('span', { text: dive.tiersToEmoji(record.tiers) })]));
       const verdict = c.depth ? (record.depth > c.depth ? 'You beat ' + dive.formatMeters(c.depth) + ' m.' : record.depth === c.depth ? 'A tie at ' + dive.formatMeters(c.depth) + ' m.' : 'They went deeper: ' + dive.formatMeters(c.depth) + ' m.') : 'Send your score back to compare.';
-      const sendBack = el('button', { class: 'btn btn-primary', type: 'button', text: 'Send your score back', onClick: () => copyText(location.href.split('#')[0] + dive.makeChallengeHash(record.seed, record.depth, record.tiers), 'Challenge link copied') });
-      nodes.push(el('div', { class: 'card' }, [el('h3', { text: 'Challenge' }), el('p', { text: verdict }), grid, el('div', { class: 'row', style: 'margin-top:10px' }, sendBack)]));
+      const sendBack = el('button', { class: 'btn btn-primary', type: 'button', text: 'Send your score back', onClick: () => copyText(location.href.split('#')[0] + dive.makeChallengeHash(challengeSeed || record.seed, record.depth, record.tiers), 'Challenge link copied') });
+      nodes.push(el('div', { class: 'card' }, [el('h2', { class: 'card-title', text: 'Challenge' }), el('p', { text: verdict }), grid, el('div', { class: 'row', style: 'margin-top:10px' }, sendBack)]));
     }
 
+    // social proof + retention
+    if (record.mode === 'daily' && root.FathomSocial && root.FathomSocial.diversLine) { const dl = root.FathomSocial.diversLine(record.dayKey); if (dl) head.append(dl); }
+    if (record.mode === 'daily' && opts.fresh && root.FathomRetain && root.FathomRetain.reminderCard) { const rc = root.FathomRetain.reminderCard(); if (rc) nodes.push(rc); }
     // bell curve and what others answered (daily only, when online or mock)
     if (record.mode === 'daily' && root.FathomOnline) {
       if (root.FathomOnline.curveSection) { const sec = root.FathomOnline.curveSection(record); if (sec) nodes.push(sec); }
@@ -588,10 +625,10 @@
       } });
       const row = el('div', { class: 'row' }, [shareBtn]);
       if (root.FathomShare) row.append(el('button', { class: 'btn', type: 'button', text: 'Share as image', onClick: () => { root.FathomShare.open(record); track('share_image', { mode: record.mode }); } }));
-      if (record.mode === 'free') {
-        row.append(el('button', { class: 'btn', type: 'button', text: 'Challenge a friend', onClick: () => {
-          copyText(location.href.split('#')[0] + dive.makeChallengeHash(record.seed, record.depth, record.tiers), 'Challenge link copied — send it to a friend');
-          track('challenge_created');
+      if (challengeSeed) {
+        row.append(el('button', { class: 'btn', type: 'button', id: 'challenge-btn', text: 'Challenge a friend', onClick: () => {
+          copyText(location.href.split('#')[0] + dive.makeChallengeHash(challengeSeed, record.depth, record.tiers), 'Challenge link copied — send it to a friend');
+          track('challenge_created', { mode: record.mode });
         } }));
       }
       if (record.mode === 'daily') {
@@ -630,11 +667,11 @@
           el('summary', { text: 'All accepted answers' }),
           el('div', { class: 'answer-groups', html: answersByTier(prompt).map(g => '<div><span class="tier tier-' + g.tier.code + '">' + g.tier.emoji + ' ' + esc(g.tier.name) + '</span><br>' + g.names.map(esc).join(', ') + '</div>').join('') + (prompt.taxon ? '<div class="small muted">Plus any real species on our ' + esc(dive.taxonGroups(prompt.taxon).join(', ').replace(/-/g, ' ')) + ' reference list' + (dive.taxonGroups(prompt.taxon).length > 1 ? 's' : '') + ' (Midnight).</div>' : '') }),
         ]),
-        tutorial ? null : el('div', { style: 'margin-top:6px' }, el('a', { class: 'link-btn', href: reportHref(prompt, r, record), target: config.REPORT_FORM_URL ? '_blank' : null, rel: 'noopener', text: 'Report an answer or tier', onClick: () => track('report_clicked', { prompt: prompt.id }) })),
+        tutorial ? null : el('div', { style: 'margin-top:6px' }, root.FathomSocial && root.FathomSocial.reportButton ? root.FathomSocial.reportButton(prompt, r, record, reportHref(prompt, r, record)) : el('a', { class: 'link-btn', href: reportHref(prompt, r, record), target: config.REPORT_FORM_URL ? '_blank' : null, rel: 'noopener', text: 'Report an answer or tier', onClick: () => track('report_clicked', { prompt: prompt.id }) })),
       ]);
       list.append(li);
     });
-    nodes.push(el('div', { class: 'card' }, [el('h3', { text: tutorial ? 'Your three prompts' : 'Your seven prompts' }), list]));
+    nodes.push(el('div', { class: 'card' }, [el('h2', { class: 'card-title', text: tutorial ? 'Your three prompts' : 'Your seven prompts' }), list]));
     // commercial bits live UNDER the result, never beside a timer
     if (record.mode === 'daily' && root.FathomMonetise) {
       const gd = root.FathomMonetise.goDeeperCard(record.dayKey);

@@ -40,16 +40,36 @@ test('still playable when localStorage throws (Review Focus 4)', () => {
   assert.strictEqual(S.settings().sound, true);
 });
 
+const pick = (s) => ({ current: s.current, max: s.max });
 test('streaks count consecutive day keys', () => {
   const S = freshStorage('ok');
   S.saveDailyResult('2026-11-01', { depth: 1 });
   S.saveDailyResult('2026-11-02', { depth: 1 });
   S.saveDailyResult('2026-11-04', { depth: 1 });
-  assert.deepStrictEqual(S.streak('2026-11-04', plus), { current: 1, max: 2 });
+  assert.deepStrictEqual(pick(S.streak('2026-11-04', plus)), { current: 1, max: 2 });
   S.saveDailyResult('2026-11-05', { depth: 1 });
-  assert.deepStrictEqual(S.streak('2026-11-05', plus), { current: 2, max: 2 });
-  assert.deepStrictEqual(S.streak('2026-11-06', plus), { current: 2, max: 2 });  // today not played yet, streak alive
-  assert.deepStrictEqual(S.streak('2026-11-07', plus), { current: 0, max: 2 });  // missed a day
+  assert.deepStrictEqual(pick(S.streak('2026-11-05', plus)), { current: 2, max: 2 });
+  assert.deepStrictEqual(pick(S.streak('2026-11-06', plus)), { current: 2, max: 2 });  // today not played yet, streak alive
+  assert.deepStrictEqual(pick(S.streak('2026-11-07', plus)), { current: 0, max: 2 });  // missed a day, no freeze held
+});
+
+test('a streak freeze is earned at day 7 and spent on the first missed day', () => {
+  const S = freshStorage('ok');
+  for (let i = 1; i <= 7; i++) S.saveDailyResult('2026-11-0' + i, { depth: 1 });
+  let st = S.streak('2026-11-08', plus);
+  assert.deepStrictEqual(pick(st), { current: 7, max: 7 });
+  assert.strictEqual(st.freezes, 1, 'one freeze earned at the 7th day');
+  // 8th missed, 9th played: the freeze covers the 8th
+  S.saveDailyResult('2026-11-09', { depth: 1 });
+  st = S.streak('2026-11-09', plus);
+  assert.deepStrictEqual(pick(st), { current: 9, max: 9 });
+  assert.strictEqual(st.freezes, 0, 'the freeze was spent');
+  // 10th and 11th missed, 12th played: no freeze left, the streak restarts
+  S.saveDailyResult('2026-11-12', { depth: 1 });
+  st = S.streak('2026-11-12', plus);
+  assert.deepStrictEqual(pick(st), { current: 1, max: 9 });
+  // the decision is stable: asking again changes nothing
+  assert.deepStrictEqual(pick(S.streak('2026-11-12', plus)), { current: 1, max: 9 });
 });
 
 test('logbook keeps the best tier and every prompt', () => {

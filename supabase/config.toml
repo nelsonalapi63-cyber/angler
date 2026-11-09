@@ -7,3 +7,12 @@ verify_jwt = true
 
 [functions.stripe-webhook]
 verify_jwt = false
+
+[functions.push-subscribe]
+verify_jwt = false
+
+[functions.send-reminders]
+verify_jwt = false
+
+[functions.weekly-recap]
+verify_jwt = false

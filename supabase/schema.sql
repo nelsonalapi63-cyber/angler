@@ -362,3 +362,166 @@ language sql stable security definer set search_path = public as $$
   order by x.prompt_id, n desc;
 $$;
 grant execute on function public.top_answers(date) to anon, authenticated;
+
+-- ================================================================ v2: retention, social proof, analytics, reports
+-- Everything below is additive; re-running the file is safe.
+
+-- ---------------------------------------------------------------- who is the owner (admin.html)
+-- Put your sign-in email here (or several). is_admin() is what every admin RPC checks.
+create table if not exists public.admin_emails (email text primary key);
+-- insert into public.admin_emails (email) values ('you@example.com');
+create or replace function public.is_admin() returns boolean language sql stable security definer set search_path = public as $$
+  select exists (select 1 from public.admin_emails a where lower(a.email) = lower(coalesce(auth.jwt() ->> 'email', '')))
+$$;
+revoke all on public.admin_emails from anon, authenticated;
+
+-- ---------------------------------------------------------------- live count for the home page
+create or replace function public.divers_today(p_day date)
+returns bigint language sql stable security definer set search_path = public as $$
+  select count(*) from public.dives where day = p_day and approved
+$$;
+grant execute on function public.divers_today(date) to anon, authenticated;
+
+-- ---------------------------------------------------------------- push reminders
+create table if not exists public.push_subscriptions (
+  id bigserial primary key,
+  endpoint text not null unique,
+  p256dh text not null,
+  auth text not null,
+  user_id uuid references auth.users (id) on delete cascade,
+  device_id text,
+  tz text not null default 'America/New_York',   -- IANA time zone of the browser
+  remind_at smallint not null default 19,         -- local hour 0–23
+  last_sent_day date,
+  failures int not null default 0,
+  created_at timestamptz not null default now(),
+  check (user_id is not null or device_id is not null)
+);
+alter table public.push_subscriptions enable row level security;
+-- rows are written by the push-subscribe Edge Function (service role); nobody reads them from the client
+revoke all on public.push_subscriptions from anon, authenticated;
+
+-- ---------------------------------------------------------------- weekly recap email (opt-in)
+alter table public.profiles add column if not exists email_optin boolean not null default false;
+alter table public.profiles add column if not exists streak_freezes int not null default 0;
+
+-- ---------------------------------------------------------------- community packs
+create table if not exists public.community_packs (
+  id uuid primary key default gen_random_uuid(),
+  name text not null check (char_length(name) between 3 and 40),
+  emoji text not null check (char_length(emoji) between 1 and 4),
+  blurb text check (char_length(blurb) <= 120),
+  prompt_ids text[] not null check (array_length(prompt_ids, 1) = 7),
+  author uuid not null references auth.users (id) on delete cascade,
+  approved boolean not null default false,       -- flip this in the Supabase table editor to publish a pack
+  created_at timestamptz not null default now()
+);
+alter table public.community_packs enable row level security;
+drop policy if exists community_packs_read on public.community_packs;
+create policy community_packs_read on public.community_packs for select to anon, authenticated using (approved or author = auth.uid());
+drop policy if exists community_packs_insert on public.community_packs;
+create policy community_packs_insert on public.community_packs for insert to authenticated with check (author = auth.uid());
+create index if not exists community_packs_approved on public.community_packs (approved, created_at desc);
+
+-- ---------------------------------------------------------------- first-party analytics
+create table if not exists public.events (
+  id bigserial primary key,
+  created_at timestamptz not null default now(),
+  device_id text not null check (char_length(device_id) between 6 and 64),
+  user_id uuid,
+  name text not null check (name ~ '^[a-z_]{2,40}$'),
+  props jsonb not null default '{}'::jsonb check (pg_column_size(props) < 2048)
+);
+alter table public.events enable row level security;
+drop policy if exists events_insert on public.events;
+create policy events_insert on public.events for insert to anon, authenticated with check (true);
+-- nobody selects rows directly; admin RPCs aggregate them
+revoke select on public.events from anon, authenticated;
+create index if not exists events_day_name on public.events (created_at, name);
+create index if not exists events_device on public.events (device_id, created_at);
+
+-- ---------------------------------------------------------------- answer and tier reports (replaces the mailto link)
+create table if not exists public.reports (
+  id bigserial primary key,
+  created_at timestamptz not null default now(),
+  device_id text,
+  user_id uuid,
+  day date,
+  prompt_id text not null,
+  entity_id text,
+  typed text check (char_length(typed) <= 80),
+  kind text not null check (kind in ('wrong_tier', 'missing_answer', 'wrong_fact', 'other')),
+  note text check (char_length(note) <= 500),
+  status text not null default 'new' check (status in ('new', 'accepted', 'rejected'))
+);
+alter table public.reports enable row level security;
+drop policy if exists reports_insert on public.reports;
+create policy reports_insert on public.reports for insert to anon, authenticated with check (true);
+revoke select on public.reports from anon, authenticated;
+
+-- ---------------------------------------------------------------- admin RPCs (all check is_admin())
+create or replace function public.admin_funnel(p_days int default 30)
+returns table (day date, visits bigint, dive_started bigint, dive_completed bigint, shared bigint, hints bigint)
+language sql stable security definer set search_path = public as $$
+  select d::date as day,
+    count(distinct device_id) filter (where name = 'visit') as visits,
+    count(*) filter (where name = 'dive_started') as dive_started,
+    count(*) filter (where name = 'dive_completed') as dive_completed,
+    count(*) filter (where name in ('share_clicked', 'share_image')) as shared,
+    count(*) filter (where name = 'hint_used') as hints
+  from generate_series(current_date - (p_days - 1), current_date, interval '1 day') d
+  left join public.events e on e.created_at::date = d::date
+  where public.is_admin()
+  group by d order by d
+$$;
+create or replace function public.admin_prompt_stats(p_days int default 30)
+returns table (prompt_id text, shown bigint, missed bigint, miss_rate numeric, hints bigint)
+language sql stable security definer set search_path = public as $$
+  with x as (
+    select unnest(prompt_ids) as prompt_id, unnest(entity_ids) as entity_id, unnest(array(select (a ->> 'hint')::boolean from jsonb_array_elements(answers) a)) as hinted
+    from public.dives where day >= current_date - p_days and entity_ids is not null
+  )
+  select prompt_id, count(*) as shown, count(*) filter (where entity_id is null) as missed,
+    round(100.0 * count(*) filter (where entity_id is null) / greatest(count(*), 1), 1) as miss_rate,
+    count(*) filter (where hinted) as hints
+  from x where public.is_admin() group by prompt_id order by miss_rate desc, shown desc
+$$;
+create or replace function public.admin_rejected_guesses(p_prompt text, p_days int default 30)
+returns table (guess text, n bigint)
+language sql stable security definer set search_path = public as $$
+  with x as (
+    select p.prompt_id, a.answer
+    from public.dives d,
+      lateral unnest(d.prompt_ids) with ordinality as p(prompt_id, i),
+      lateral jsonb_array_elements(d.answers) with ordinality as a(answer, j)
+    where d.day >= current_date - p_days and p.i = a.j and p.prompt_id = p_prompt
+  )
+  select lower(trim(g)) as guess, count(*) as n
+  from x, lateral jsonb_array_elements_text(coalesce(x.answer -> 'guesses', '[]'::jsonb)) g
+  where public.is_admin() and trim(g) <> ''
+  group by lower(trim(g)) order by n desc, guess limit 40
+$$;
+create or replace function public.admin_cohorts(p_weeks int default 8)
+returns table (cohort_week date, divers bigint, week1 bigint, week2 bigint, week4 bigint)
+language sql stable security definer set search_path = public as $$
+  with first_dive as (
+    select coalesce(user_id::text, device_id) as who, min(day) as first_day from public.dives group by 1
+  ), cohorts as (
+    select who, date_trunc('week', first_day)::date as cohort_week, first_day from first_dive
+    where first_day >= current_date - (p_weeks * 7)
+  )
+  select c.cohort_week, count(*) as divers,
+    count(*) filter (where exists (select 1 from public.dives d where coalesce(d.user_id::text, d.device_id) = c.who and d.day between c.first_day + 7 and c.first_day + 13)) as week1,
+    count(*) filter (where exists (select 1 from public.dives d where coalesce(d.user_id::text, d.device_id) = c.who and d.day between c.first_day + 14 and c.first_day + 20)) as week2,
+    count(*) filter (where exists (select 1 from public.dives d where coalesce(d.user_id::text, d.device_id) = c.who and d.day between c.first_day + 28 and c.first_day + 34)) as week4
+  from cohorts c where public.is_admin() group by c.cohort_week order by c.cohort_week
+$$;
+create or replace function public.admin_reports(p_status text default 'new')
+returns setof public.reports language sql stable security definer set search_path = public as $$
+  select * from public.reports where public.is_admin() and (p_status = 'all' or status = p_status) order by created_at desc limit 500
+$$;
+create or replace function public.admin_set_report(p_id bigint, p_status text)
+returns void language sql security definer set search_path = public as $$
+  update public.reports set status = p_status where id = p_id and public.is_admin() and p_status in ('new', 'accepted', 'rejected')
+$$;
+grant execute on function public.admin_funnel(int), public.admin_prompt_stats(int), public.admin_rejected_guesses(text, int), public.admin_cohorts(int), public.admin_reports(text), public.admin_set_report(bigint, text), public.is_admin() to authenticated;

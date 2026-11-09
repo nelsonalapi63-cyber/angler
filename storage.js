@@ -45,7 +45,7 @@
   }
 
   // ---- settings
-  const DEFAULT_SETTINGS = { theme: 'dark', contrast: false, sound: true, freeTimer: true, seenHowTo: false, consent: null, hintSeen: false };
+  const DEFAULT_SETTINGS = { theme: 'dark', contrast: false, sound: true, freeTimer: true, seenHowTo: false, consent: null, hintSeen: false, remindHour: 19, reminders: false, pushEndpoint: null, askedPush: false };
   function settings() { return Object.assign({}, DEFAULT_SETTINGS, get('settings', {})); }
   function updateSettings(patch) { const s = Object.assign(settings(), patch); set('settings', s); return s; }
 
@@ -81,20 +81,46 @@
   function freeDiveCount() { return get('freeCount', 0); }
   function bumpFreeDiveCount() { const n = freeDiveCount() + 1; set('freeCount', n); return n; }
 
-  // ---- streak (consecutive daily dives, counted on the day keys played)
+  // ---- streak (consecutive daily dives, counted on the day keys played) with streak freezes
+  // A freeze covers one missed day. One is earned at every 7th consecutive day (7, 14, 21…), held up to
+  // FREEZE_CAP, and spent automatically on the first missed day after it. Frozen days are recorded so the
+  // decision never flips later. { freezes: n, frozen: { dayKey: true }, earnedAt: { dayKey: true } }
+  const FREEZE_CAP = 3;
+  const FREEZE_EVERY = 7;
+  function freezeState() { return Object.assign({ freezes: 0, frozen: {}, earnedAt: {} }, get('freeze', {})); }
   function streak(todayKey, keyPlusDays) {
     const all = allDailyResults();
+    const fz = freezeState();
+    const played = (k) => !!all[k] || !!fz.frozen[k];
     const keys = Object.keys(all).sort();
-    if (!keys.length) return { current: 0, max: 0 };
-    let max = 0, run = 0, prev = null;
-    for (const k of keys) {
-      run = (prev && keyPlusDays(prev, 1) === k) ? run + 1 : 1;
-      if (run > max) max = run;
-      prev = k;
+    if (!keys.length) return { current: 0, max: 0, freezes: fz.freezes, frozenToday: false };
+    // spend freezes: walk from the first dive to yesterday; a single missed day between dives is frozen if one is held
+    let changed = false;
+    let k = keys[0];
+    const yesterday = keyPlusDays(todayKey, -1);
+    let run = 0;
+    while (k <= yesterday) {
+      if (all[k]) {
+        run++;
+        if (run % FREEZE_EVERY === 0 && !fz.earnedAt[k] && fz.freezes < FREEZE_CAP) { fz.freezes++; fz.earnedAt[k] = true; changed = true; }
+      } else if (fz.frozen[k]) {
+        run++;                                          // a day already covered by a freeze keeps the run alive
+      } else if (fz.freezes > 0 && all[keyPlusDays(k, 1)] && run > 0) {
+        fz.freezes--; fz.frozen[k] = true; changed = true; run++;   // spend one on a single missed day followed by a dive
+      } else {
+        run = 0;
+      }
+      k = keyPlusDays(k, 1);
     }
-    const last = keys[keys.length - 1];
-    const current = (last === todayKey || keyPlusDays(last, 1) === todayKey) ? run : 0;
-    return { current, max };
+    if (changed) set('freeze', fz);
+    // max over all runs (including frozen days)
+    const allKeys = Object.keys(Object.assign({}, all, fz.frozen)).sort();
+    let max = 0, r = 0, prev = null;
+    for (const d of allKeys) { r = (prev && keyPlusDays(prev, 1) === d) ? r + 1 : 1; if (r > max) max = r; prev = d; }
+    // current run ending today or yesterday
+    let current = 0, cursor = all[todayKey] ? todayKey : yesterday;
+    if (played(cursor)) while (played(cursor)) { current++; cursor = keyPlusDays(cursor, -1); }
+    return { current, max, freezes: fz.freezes, frozenToday: !!fz.frozen[todayKey], cap: FREEZE_CAP, every: FREEZE_EVERY };
   }
 
   // ---- logbook: { entityId: { bestTier, bestPoints, firstLogged, prompts: [] } }
