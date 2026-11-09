@@ -1,4 +1,4 @@
-/* FATHOM — localStorage wrapper. Every call is guarded: a browser that throws on storage
+/* ANGLER — localStorage wrapper. Every call is guarded: a browser that throws on storage
  * (private mode, disabled cookies) still gets a playable game with in-memory state. */
 (function (root, factory) {
   const api = factory(root);

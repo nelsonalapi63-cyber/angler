@@ -1,4 +1,4 @@
-/* FATHOM — SVG charts: the depth gauge, the daily bell curve and the zone distribution bars.
+/* ANGLER — SVG charts: the depth gauge, the daily bell curve and the zone distribution bars.
  * Pure functions returning markup strings (plus one updater for the live gauge). */
 (function (root) {
   'use strict';

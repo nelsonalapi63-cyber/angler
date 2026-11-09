@@ -1,4 +1,4 @@
-# FATHOM — the daily ocean dive
+# ANGLER — the daily ocean dive
 
 Seven ocean prompts a day, 25 seconds each, one typed answer per prompt. Every accepted answer has a rarity tier — Tide Pool, Bait Ball, Reef, Twilight, Midnight, Hadal — and the rarer your answer, the deeper you sink. A perfect dive lands at 10,935 m, the bottom of Challenger Deep.
 

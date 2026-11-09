@@ -1,0 +1,23 @@
+/* GENERATED from app.js mascotSvg by tools/make-icons.js — do not edit; the source of truth is app.js */
+'use strict';
+module.exports = (function mascotSvg(size, opts) {
+  opts = opts || {};
+  const g = opts.glow != null ? String(0.35 + 0.65 * opts.glow) : 'var(--lure-glow, .5)';
+  const flip = opts.face === 'right' ? ' transform="translate(256 0) scale(-1 1)"' : '';
+  return '<svg class="mascot' + (opts.class ? ' ' + opts.class : '') + '" viewBox="0 0 256 256" width="' + size + '" height="' + size + '" aria-hidden="true" focusable="false"><g' + flip + '>' +
+    '<circle cx="62" cy="62" r="38" fill="#FFD24A" style="opacity:calc(' + g + ' * .22)"/>' +
+    '<circle cx="62" cy="62" r="23" fill="#FFD24A" style="opacity:calc(' + g + ' * .5)"/>' +
+    '<circle cx="62" cy="62" r="12" fill="#FFD24A" stroke="#0C2A3A" stroke-width="4"/>' +
+    '<path d="M126 96 C 118 66, 96 50, 72 60" fill="none" stroke="#0C2A3A" stroke-width="7" stroke-linecap="round"/>' +
+    '<path d="M224 128 L 252 104 L 244 150 L 252 196 L 224 172 Z" fill="#B49BFF" stroke="#0C2A3A" stroke-width="5" stroke-linejoin="round"/>' +
+    '<ellipse cx="150" cy="152" rx="78" ry="62" fill="#3C6AE0" stroke="#0C2A3A" stroke-width="5"/>' +
+    '<ellipse cx="158" cy="176" rx="56" ry="28" fill="#86D9EC"/>' +
+    '<path d="M156 92 C 164 66, 186 62, 204 94" fill="#B49BFF" stroke="#0C2A3A" stroke-width="5" stroke-linejoin="round"/>' +
+    '<path d="M166 160 C 182 170, 192 184, 184 194 C 170 190, 156 182, 150 174 Z" fill="#B49BFF" stroke="#0C2A3A" stroke-width="5" stroke-linejoin="round"/>' +
+    '<circle cx="186" cy="124" r="4" fill="#86D9EC"/><circle cx="204" cy="142" r="3" fill="#86D9EC"/><circle cx="170" cy="112" r="3" fill="#86D9EC"/><circle cx="196" cy="162" r="3" fill="#86D9EC"/>' +
+    '<path d="M70 152 C 92 130, 112 118, 130 116 L 130 192 C 110 190, 88 176, 70 152 Z" fill="#0C2A3A"/>' +
+    '<path d="M84 138 l 6 12 l 6 -16 M100 127 l 5 13 l 7 -16 M116 121 l 4 13 l 6 -15 M86 166 l 5 -11 l 6 14 M102 178 l 4 -12 l 6 15 M118 186 l 3 -12 l 6 14" fill="none" stroke="#EAF4F7" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>' +
+    '<circle cx="142" cy="112" r="13" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4"/><circle cx="145" cy="113" r="6" fill="#0C2A3A"/>' +
+    '</g></svg>';
+}
+);

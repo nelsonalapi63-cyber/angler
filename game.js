@@ -1,4 +1,4 @@
-/* FATHOM — the dive itself: prompts, timer, guesses, hints, the descent, reveal, result screen. */
+/* ANGLER — the dive itself: prompts, timer, guesses, the lure, the descent, reveal, result screen. */
 (function (root) {
   'use strict';
 
@@ -17,7 +17,7 @@
   const TUTORIAL_PROMPT_IDS = ['shark-species', 'whale-species', 'tide-pool'];
   const TUTORIAL_COACH = [
     'Type the first shark you can think of, then press Dive. There is no timer in the tutorial.',
-    'Rarer answers sink you deeper. Try a whale most people would not say — or press Hint to see the shape of a rare one.',
+    'Rarer answers sink you deeper. Try a whale most people would not say — or press Lure to light up the shape of a rare one.',
     'Last one. A guess that is not accepted does not end the prompt: you can try again until the timer runs out, and a close spelling still counts.',
   ];
   const MODE_LABELS = { daily: 'Daily Dive', free: 'Free Dive', pack: 'Themed Pack', archive: 'Archive Dive', challenge: 'Challenge', tutorial: 'Tutorial' };
@@ -52,8 +52,8 @@
   }
   function modeLabel(record) {
     const { packsById, dive } = F();
-    if (record.mode === 'daily') return 'FATHOM #' + record.number;
-    if (record.mode === 'archive') return 'Archive · FATHOM #' + dive.puzzleNumber(record.dayKey);
+    if (record.mode === 'daily') return dive.BRAND + ' #' + record.number;
+    if (record.mode === 'archive') return 'Archive · ' + dive.BRAND + ' #' + dive.puzzleNumber(record.dayKey);
     if (record.mode === 'pack') return (packsById[record.packId] ? packsById[record.packId].name : 'Pack');
     if (record.mode === 'challenge') return 'Challenge';
     if (record.mode === 'tutorial') return 'Tutorial';
@@ -61,7 +61,7 @@
   }
   function reportHref(prompt, result, record) {
     const { config, dive } = F();
-    const subject = 'FATHOM report: ' + prompt.id;
+    const subject = dive.BRAND + ' report: ' + prompt.id;
     const when = record.dayKey || (record.finishedAt ? record.finishedAt.slice(0, 10) : F().todayKey());
     const body = 'Prompt: ' + prompt.text + '\nPrompt id: ' + prompt.id + '\nMode: ' + record.mode + ' (' + when + ')' +
       '\nI typed: ' + (result.typed || '(nothing)') + '\nIt scored: ' + (result.tier ? dive.TIER_BY_CODE[result.tier].name : 'miss') +
@@ -102,7 +102,7 @@
     if (existing) return resultScreen(existing, { fresh: false });
     const promptIds = dive.dailyPromptIds(today, prompts, dive.LAUNCH_DATE, schedule);
     if (!F().bankLoaded && !(schedule && schedule[today] && promptIds && F().hasPromptData(promptIds))) return loadThen(startDaily);
-    if (!promptIds) return root.FathomPages.message('Not yet', 'FATHOM #1 opens on ' + dive.LAUNCH_DATE + ' (Eastern time). Try a Free Dive meanwhile.');
+    if (!promptIds) return root.FathomPages.message('Not yet', dive.BRAND + ' #1 opens on ' + dive.LAUNCH_DATE + ' (Eastern time). Try a Free Dive meanwhile.');
     // A daily dive that was left half-way (refresh, back button, closed tab) resumes where it was. The prompt that
     // was on screen keeps its original 25-second deadline measured on the wall clock, so reloading never buys time.
     const progress = storage.get('progress', null);
@@ -237,20 +237,20 @@
     const form = el('form', { class: 'answer-form', onSubmit: (e) => { e.preventDefault(); submit(input.value); } }, [input, submitBtn]);
     const suggest = el('div', { id: 'suggest', class: 'suggest', 'aria-live': 'polite' });
     const reject = el('div', { id: 'reject', class: 'reject-msg', role: 'status' });
-    const hintBtn = hintsAllowed() ? el('button', { class: 'btn btn-sm btn-ghost', type: 'button', id: 'hint-btn', text: '💡 Hint (−' + dive.HINT_COST + ')', onClick: useHint }) : null;
+    const hintBtn = hintsAllowed() ? el('button', { class: 'btn btn-sm btn-ghost', type: 'button', id: 'hint-btn', text: '✦ Lure (−' + dive.HINT_COST + ')', title: 'Light up the first letter of a rarer answer', onClick: useHint }) : null;
     const skipBtn = el('button', { class: 'btn btn-sm btn-ghost', type: 'button', id: 'skip-btn', text: 'Skip', 'aria-label': 'Skip this prompt', onClick: () => skip() });
     const helpRow = el('div', { class: 'help-row' }, [hintBtn, skipBtn, el('span', { class: 'tiny muted grow', text: 'Wrong guesses do not end the prompt' })]);
     const hintText = el('div', { id: 'hint-text', class: 'hint-text' });
     const allowedMs = remainingMs != null ? Math.max(0, Math.min(remainingMs, dive.SECONDS_PER_PROMPT * 1000)) : dive.SECONDS_PER_PROMPT * 1000;
     const head = el('div', { class: 'dive-head' }, [
       el('div', {}, [
-        el('div', { class: 'tiny muted', text: (MODE_LABELS[state.spec.mode] || '') + (state.spec.number ? ' · FATHOM #' + state.spec.number : '') }),
+        el('div', { class: 'tiny muted', text: (MODE_LABELS[state.spec.mode] || '') + (state.spec.number ? ' · ' + dive.BRAND + ' #' + state.spec.number : '') }),
         el('div', { class: 'small', html: '<b>Prompt ' + (state.idx + 1) + ' of ' + state.total + '</b>' }),
         progressDots(),
       ]),
       timerNode(allowedMs / 1000),
     ]);
-    const challengeNote = state.spec.challenge && state.spec.challenge.depth ? el('p', { class: 'small', html: 'Beat <b>' + esc(dive.formatMeters(state.spec.challenge.depth)) + ' m</b> to win this challenge. No hints.' }) : null;
+    const challengeNote = state.spec.challenge && state.spec.challenge.depth ? el('p', { class: 'small', html: 'Beat <b>' + esc(dive.formatMeters(state.spec.challenge.depth)) + ' m</b> to win this challenge. No lure.' }) : null;
     const coach = state.spec.mode === 'tutorial' ? el('p', { class: 'coach', html: '<b>Tutorial ' + (state.idx + 1) + '/' + state.total + ':</b> ' + esc(TUTORIAL_COACH[state.idx] || '') }) : null;
     state.mainCol.innerHTML = '';
     state.mainCol.append(head, challengeNote || '', coach || '', el('h2', { class: 'prompt-text', id: 'prompt-text', text: prompt.text }), suggest, form, reject, helpRow, hintText, el('div', { id: 'reveal', 'aria-live': 'polite' }));
@@ -288,7 +288,7 @@
     // seeded per prompt and dive, so a reload (or everyone playing today's dive) sees the same hint
     const rng = dive.seededRng('hint:' + prompt.id + ':' + (state.spec.dayKey || state.spec.seed || state.spec.packId || 'free'));
     const h = dive.pickHint(prompt, entities, [], rng);
-    if (!h) { toast('No hint for this one'); return; }
+    if (!h) { toast('The lure finds nothing for this one'); return; }
     state.hint = h;
     showHint(h);
     saveProgress(state.shownAt);
@@ -297,10 +297,10 @@
   function showHint(h) {
     const { dive, esc } = F();
     const btn = document.getElementById('hint-btn');
-    if (btn) { btn.disabled = true; btn.textContent = '💡 used'; }
+    if (btn) { btn.disabled = true; btn.textContent = '✦ Lure used'; }
     const t = document.getElementById('hint-text');
     const tier = dive.TIER_BY_CODE[h.tier];
-    if (t) t.innerHTML = '<b>' + esc(tier.emoji + ' ' + tier.name) + ' answer:</b> <span class="shape">' + esc(h.shape) + '</span> <span class="muted">(' + h.letters + ' letters · −' + dive.HINT_COST + ' points)</span>';
+    if (t) t.innerHTML = '<b>' + esc(tier.emoji + ' ' + tier.name) + ' answer lit up:</b> <span class="shape">' + esc(h.shape) + '</span> <span class="muted">(' + h.letters + ' letters · −' + dive.HINT_COST + ' points)</span>';
     if (state && state.input && !state.answered) state.input.focus();
   }
 
@@ -419,7 +419,7 @@
     const showTile = () => {
       state.tileTimer = null;
       metersNode = el('div', { class: 'tile-meters', text: '+' + dive.formatMeters(Math.round(animDepth - prevDepth)) + ' m' });
-      const subBits = [ent.name + (m.via === 'fuzzy' ? ' (close enough)' : '') + ' · ' + (cost ? tier.points + ' − ' + cost + ' for the hint = ' + earned : tier.points) + ' points'];
+      const subBits = [ent.name + (m.via === 'fuzzy' ? ' (close enough)' : '') + ' · ' + (cost ? tier.points + ' − ' + cost + ' for the lure = ' + earned : tier.points) + ' points'];
       if (result.attempts > 1) subBits.push(result.attempts + ' tries');
       const tile = el('div', { class: 'tile tier-' + m.tier + (m.tier === 'hadal' ? ' hadal' : ''), style: '--c: var(--tier-' + m.tier + ')' }, [
         el('div', { class: 'tile-top' }, [el('div', { class: 'tile-name', text: tier.emoji + ' ' + tier.name }), metersNode]),
@@ -542,7 +542,7 @@
       el('div', { html: '<b>' + esc(zone.name) + '</b>' }),
       el('p', { class: 'small muted', text: zone.fact }),
       el('div', { class: 'grid-emoji', 'aria-label': 'Tier grid', text: dive.tiersToEmoji(record.tiers) }),
-      record.hints ? el('p', { class: 'tiny muted', style: 'margin:8px 0 0', text: record.hints + (record.hints === 1 ? ' hint used' : ' hints used') + ' (−' + record.hints * dive.HINT_COST + ' points)' }) : null,
+      record.hints ? el('p', { class: 'tiny muted', style: 'margin:8px 0 0', text: 'Lure used ' + (record.hints === 1 ? 'once' : record.hints + ' times') + ' (−' + record.hints * dive.HINT_COST + ' points)' }) : null,
     ]);
     nodes.push(head);
 
@@ -616,7 +616,7 @@
       const hadal = hadalEntity(prompt);
       const meta = [];
       if (r.attempts > 1) meta.push(r.attempts + ' tries');
-      if (r.hint) meta.push('💡 hint');
+      if (r.hint) meta.push('✦ lure');
       const li = el('li', {}, [
         el('div', { class: 'q', text: (i + 1) + '. ' + prompt.text }),
         el('div', { class: 'a' }, [

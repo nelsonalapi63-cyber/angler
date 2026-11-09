@@ -1,5 +1,5 @@
 'use strict';
-/* FATHOM end-to-end run (spec §8). Usage: node tests/e2e.spec.js
+/* ANGLER end-to-end run (spec §8). Usage: node tests/e2e.spec.js
  * First visit → welcome → the untimed tutorial (nothing saved); the daily with scripted inputs (exact + hint, alias,
  * typo, group word, a near-miss fixed by a "did you mean" chip, garbage then skip, hadal); the descent mid-animation;
  * the share text and the share card; badges; a pack; a challenge link in a second browser context; every page and
@@ -160,7 +160,7 @@ async function playDive(page, plan, opts) {
   await page.waitForSelector('#reject:not(:empty)');
   await page.click('#hint-btn');
   await page.waitForSelector('#hint-text:not(:empty)');
-  assert.strictEqual(await page.textContent('#hint-btn'), '💡 used');
+  assert.strictEqual(await page.textContent('#hint-btn'), '✦ Lure used');
   await page.fill('#answer', 'humpbak whale'); await page.press('#answer', 'Enter');       // a letter off still counts
   await page.waitForSelector('.tile');
   assert.ok((await page.textContent('.tile')).includes('2 tries'));
@@ -214,7 +214,7 @@ async function playDive(page, plan, opts) {
   await page.click('button:has-text("Share results")');
   await page.waitForSelector('.toast');
   const clip = await page.evaluate(() => navigator.clipboard.readText());
-  assert.ok(/^FATHOM #\d+ · [\d,]+ m · .{7,}$/u.test(clip.split('\n')[0]) && !/top \d+%/.test(clip), 'share text carries no demo percentile: ' + clip);
+  assert.ok(/^ANGLER #\d+ · [\d,]+ m · .{7,}$/u.test(clip.split('\n')[0]) && !/top \d+%/.test(clip), 'share text carries no demo percentile: ' + clip);
   await page.click('button:has-text("Share as image")');
   await page.waitForSelector('img.share-card');
   await page.waitForFunction(() => { const i = document.querySelector('img.share-card'); return i && i.complete && i.naturalWidth > 0; });
@@ -226,7 +226,7 @@ async function playDive(page, plan, opts) {
   await page.click('#btn-stats');
   await page.waitForSelector('#countdown-modal');
   await page.waitForFunction(() => /\d\d:\d\d:\d\d/.test(document.getElementById('countdown-modal').textContent));
-  assert.ok(await page.$('.modal .badge-wall'), 'badge wall in My Fathom');
+  assert.ok(await page.$('.modal .badge-wall'), 'badge wall in My ANGLER');
   await page.keyboard.press('Escape');
   fs.writeFileSync(path.join(FIXTURES, 'recorded-dive.json'), JSON.stringify({ day: result.dayKey, promptIds: result.promptIds, answers: result.results.map(r => ({ typed: r.typed, secondsUsed: r.secondsUsed, hint: !!r.hint })), depth: result.depth, points: result.points, tiers: result.tiers }, null, 2));
 
@@ -333,7 +333,7 @@ async function playDive(page, plan, opts) {
   await page.goto(srv.url + '#archive'); await page.waitForSelector('main h1');
   await page.goto(srv.url + '#archive-2020-01-01'); await page.waitForSelector('main h1');
   await page.goto(srv.url + '#faq'); await page.waitForSelector('#contact');
-  await page.goto(srv.url + '#nope'); await page.waitForSelector('main h2');
+  await page.goto(srv.url + '#nope'); await page.waitForSelector('main .empty .mascot');
   await page.click('#btn-help'); await page.waitForSelector('.modal'); await page.keyboard.press('Escape');
   await page.click('#btn-settings'); await page.waitForSelector('.modal');
   assert.ok(await page.$('#settings-tutorial'), 'tutorial can be replayed from Settings');

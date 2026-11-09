@@ -1,4 +1,4 @@
-/* FATHOM — pages and modals that are not the dive itself. */
+/* ANGLER — pages and modals that are not the dive itself. */
 (function (root) {
   'use strict';
 
@@ -37,7 +37,15 @@
     const { el, render } = F();
     render(el('div', { class: 'card strong' }, [el('h2', { text: title }), el('p', { text: text }), el('a', { class: 'btn', href: '#home', text: 'Home' })]));
   }
-  function notFound() { message('Nothing down here', 'That page does not exist. Surface and try the menu.'); }
+  function notFound() {
+    const { el, render } = F();
+    render(el('div', { class: 'card strong' }, [emptyState('Nothing down here', 'That page does not exist. Surface and try the menu.'), el('div', { class: 'row center', style: 'justify-content:center' }, [el('a', { class: 'btn btn-primary', href: '#home', text: 'Home' })])]));
+  }
+  // An empty state with the mascot: title, one line of direction, optional action node.
+  function emptyState(title, text, action) {
+    const { el } = F();
+    return el('div', { class: 'empty' }, [el('div', { html: F().mascotSvg(96, { glow: 0.4 }) }), el('b', { text: title }), el('p', { class: 'small muted', style: 'margin:0 auto;max-width:36ch', text }), action || null]);
+  }
   function hms(ms) { return [3600000, 60000, 1000].map((d, i) => String(Math.floor((i === 0 ? ms : ms % (i === 1 ? 3600000 : 60000)) / d)).padStart(2, '0')).join(':'); }
   // keeps a countdown node ticking until it leaves the document
   function liveCountdown(node) {
@@ -77,8 +85,8 @@
 
     const body = el('div', { class: 'hero-body' }, [
       el('div', { class: 'hero-kicker', text: 'The daily ocean dive · ' + niceDate(today) }),
-      el('h1', { class: 'hero-title', text: 'FATHOM' }),
-      el('p', { class: 'hero-tag', text: 'Seven ocean questions. The rarer your answer, the deeper you dive.' }),
+      el('h1', { class: 'hero-title', text: dive.BRAND }),
+      el('p', { class: 'hero-tag', text: dive.TAGLINE }),
     ]);
     let countdownNode = null;
     if (played) {
@@ -91,15 +99,15 @@
         el('a', { class: 'btn btn-primary btn-big', href: '#daily', text: 'See your dive' }),
         el('a', { class: 'btn btn-big', href: '#free', text: 'Free Dive' }),
       ]));
-      body.append(el('p', { class: 'hero-sub' }, ['FATHOM #' + (number + 1) + ' opens in ', countdownNode]));
+      body.append(el('p', { class: 'hero-sub' }, [dive.BRAND + ' #' + (number + 1) + ' opens in ', countdownNode]));
     } else {
       body.append(el('div', { class: 'hero-cta' }, [
-        el('a', { class: 'btn btn-primary btn-big', href: '#daily', html: (inProgress ? 'Resume FATHOM #' : 'Play FATHOM #') + number }),
+        el('a', { class: 'btn btn-primary btn-big', href: '#daily', html: (inProgress ? 'Resume ' : 'Play ') + dive.BRAND + ' #' + number }),
       ]));
       body.append(el('p', { class: 'hero-sub', text: 'Same seven prompts for everyone today · 25 seconds each · free' }));
     }
     if (streak.current > 1) body.append(el('p', { class: 'hero-streak', text: '🔥 ' + streak.current + '-day streak' }));
-    nodes.push(el('section', { class: 'hero card strong' }, [el('div', { class: 'hero-art', html: heroSvg() }), body]));
+    nodes.push(el('section', { class: 'hero card strong' }, [el('div', { class: 'hero-art', html: heroSvg() + F().mascotSvg(128, { class: 'hero-mascot', face: 'right' }) }), body]));
 
     const lb = Object.keys(storage.logbook()).length;
     const badges = root.FathomAchievements ? root.FathomAchievements.count() : 0;
@@ -129,7 +137,7 @@
     const keys = [];
     for (let k = dive.keyPlusDays(today, -1); k >= dive.LAUNCH_DATE; k = dive.keyPlusDays(k, -1)) keys.push(k);
     if (!keys.length) {
-      nodes.push(el('div', { class: 'card' }, el('p', { text: 'The archive fills up from tomorrow. Today’s dive is on the home page.' })));
+      nodes.push(el('div', { class: 'card' }, emptyState('The archive opens tomorrow', 'Every past daily dive lands here the day after. Today’s dive is on the home page.', el('a', { class: 'btn btn-primary', href: '#daily', text: 'Play today’s dive' }))));
       return render(nodes);
     }
     const live = storage.allDailyResults();
@@ -139,7 +147,7 @@
       const rec = live[k] || arch[k];
       const locked = M && !M.isArchiveUnlocked(k);
       const li = el('li', {}, [
-        el('a', { class: 'grow', href: '#archive-' + k, html: '<b>FATHOM #' + dive.puzzleNumber(k) + '</b> <span class="muted small">' + esc(niceDate(k)) + '</span>' }),
+        el('a', { class: 'grow', href: '#archive-' + k, html: '<b>' + dive.BRAND + ' #' + dive.puzzleNumber(k) + '</b> <span class="muted small">' + esc(niceDate(k)) + '</span>' }),
         rec ? el('span', { class: 'small', html: '<b>' + esc(dive.formatMeters(rec.depth)) + ' m</b>' }) : el('span', { class: 'small muted', text: locked ? '' : 'Not played' }),
         locked ? el('span', { class: 'lock', text: '🔒 Archive Pass ' + (M ? M.priceLabel('archive') : '') }) : null,
       ]);
@@ -200,7 +208,7 @@
       const rows = logged.filter(e => !g || e.group === g).sort((a, b) => a.name.localeCompare(b.name));
       listWrap.innerHTML = '';
       if (!rows.length) {
-        listWrap.append(el('p', { class: 'muted', text: logged.length ? 'Nothing logged in that group yet.' : 'Nothing logged here yet. Every accepted answer you give, in any mode, gets written into this book.' }));
+        listWrap.append(logged.length ? el('p', { class: 'muted', text: 'Nothing logged in that group yet.' }) : emptyState('Nothing logged here yet', 'Every accepted answer you give, in any mode, gets written into this book.', el('a', { class: 'btn btn-primary', href: '#free', text: 'Start a Free Dive' })));
         return;
       }
       const ul = el('ul', { class: 'list' });
@@ -237,7 +245,7 @@
   function leaderboard(tab) {
     const { el, render } = F();
     const O = root.FathomOnline;
-    const body = O && O.leaderboardPage ? O.leaderboardPage(tab) : el('p', { text: 'Leaderboards go live when FATHOM is online.' });
+    const body = O && O.leaderboardPage ? O.leaderboardPage(tab) : el('p', { text: 'Leaderboards go live when ' + F().dive.BRAND + ' is online.' });
     render([el('div', { class: 'card strong' }, [el('h1', { text: 'Leaderboard' }), el('p', { class: 'small muted', text: 'Only daily dives count. Free dives, packs, archive dives and challenges never submit a score.' })]), body]);
     if (O && O.trackEvent) O.trackEvent('leaderboard_opened', { tab: tab || 'today' });
   }
@@ -248,15 +256,15 @@
     const tierRows = dive.TIERS.map(t => '<tr><td><span class="tier tier-' + t.code + '">' + t.emoji + ' ' + esc(t.name) + '</span><br><span class="small muted">' + esc(t.blurb) + '</span></td><td>' + t.points + '</td></tr>').join('');
     render(el('div', { class: 'card strong prose' }, [
       el('h1', { text: 'FAQ' }),
-      el('h2', { text: 'What is FATHOM?' }),
-      el('p', { text: 'A free daily trivia game about fish and the ocean. Seven open prompts, 25 seconds each. Every accepted answer belongs to a rarity tier; the rarer your answer, the more points you earn and the deeper you sink. A perfect dive of seven Hadal answers lands at 10,935 metres, the bottom of Challenger Deep.' }),
+      el('h2', { text: 'What is ' + dive.BRAND + '?' }),
+      el('p', { text: dive.BRAND + ' is a free daily trivia game about fish and the ocean. Seven open prompts, 25 seconds each. Every accepted answer belongs to a rarity tier; the rarer your answer, the more points you earn and the deeper you sink. A perfect dive of seven Hadal answers lands at 10,935 metres, the bottom of Challenger Deep.' }),
       el('h2', { text: 'How are the tiers set?' }),
       el('p', { text: 'Each prompt has a hand-curated list of accepted answers. We tier them by how likely an average person is to say them, from Tide Pool (the first thing anyone says) to Hadal (the single most satisfying answer for that prompt). Tiers start as our best judgement; the "Report an answer or tier" link on every result helps us fix them.' }),
       el('div', { html: '<table class="tier-table">' + tierRows + '</table>' }),
       el('h2', { text: 'What if my answer is not accepted?' }),
       el('p', { text: 'A guess that is not on the list does not end the prompt: the box clears and you can try again until the timer runs out. If you were close to a real answer, up to two spelling suggestions appear above the box — tap one to use it. Scientific names count, and for species prompts any real species on our reference lists scores Midnight even when it is not on our hand-written list.' }),
-      el('h2', { text: 'How do hints work?' }),
-      el('p', { text: 'Once per prompt you can reveal the first letter and word shape of a rarer answer. It costs ' + dive.HINT_COST + ' points off that prompt. Hints are off in challenges, so both players face the same odds.' }),
+      el('h2', { text: 'What is the lure?' }),
+      el('p', { text: 'An anglerfish lights a lure to draw prey out of the dark. Once per prompt you can light yours: it shows the first letter and word shape of a rarer answer, for ' + dive.HINT_COST + ' points off that prompt. The lure is off in challenges, so both players face the same odds.' }),
       el('h2', { text: 'How are the prompts built?' }),
       el('p', { text: 'Every prompt is an ocean fact disguised as a category — you only score if you know the fact. Answer lists come from reference works on fish, marine mammals, invertebrates and ocean geography, and every entry carries one fact we are confident is true. Spelling is forgiving: a letter or two off still counts, group names like "hammerhead" count, and plurals count.' }),
       el('h2', { text: 'How do rankings work?' }),
@@ -264,7 +272,7 @@
       el('h2', { text: 'Privacy' }),
       el('p', { text: 'Free play stays in your browser: your results, streaks, logbook, badges and settings live in local storage on your device, and nothing is sent anywhere. If you sign in, your handle, scores, rating and league are shown on public leaderboards and your progress syncs between devices. You can hide yourself from leaderboards or delete your account and data from Settings.' }),
       el('h2', { text: 'Suggest a prompt' }),
-      el('p', { html: 'Have a prompt with at least 40 good answers? Email <a href="mailto:' + esc(config.FEEDBACK_EMAIL) + '?subject=' + encodeURIComponent('FATHOM prompt idea') + '">' + esc(config.FEEDBACK_EMAIL) + '</a>.' }),
+      el('p', { html: 'Have a prompt with at least 40 good answers? Email <a href="mailto:' + esc(config.FEEDBACK_EMAIL) + '?subject=' + encodeURIComponent(dive.BRAND + ' prompt idea') + '">' + esc(config.FEEDBACK_EMAIL) + '</a>.' }),
       el('h2', { id: 'contact', text: 'Contact' }),
       el('p', { html: 'Anything else: <a href="mailto:' + esc(config.FEEDBACK_EMAIL) + '">' + esc(config.FEEDBACK_EMAIL) + '</a>. Legal pages: <a href="privacy.html">Privacy</a>, <a href="terms.html">Terms</a>, <a href="refunds.html">Refunds</a>.' }),
     ]));
@@ -279,7 +287,7 @@
       '<p>Every accepted answer has a rarity tier. <b>The rarer your answer, the deeper you dive.</b> Skip the first thing that comes to mind.</p>' +
       '<table class="tier-table">' + tierRows + '</table>' +
       '<p class="small" style="margin-top:12px"><b>Example.</b> "Name a shark species." <i>Great white</i> is Tide Pool (10). <i>Goblin shark</i> is the pick every trivia fan reaches for — Bait Ball (15). <i>Porbeagle</i> is Twilight (60). The one Hadal answer might be a shark almost nobody has heard of.</p>' +
-      '<p class="small muted">💡 Hint shows the first letter of a rarer answer for ' + dive.HINT_COST + ' points. Points become depth: a perfect 700-point dive reaches 10,935 m, the bottom of Challenger Deep. A new dive opens every day at midnight Eastern.</p>' +
+      '<p class="small muted">✦ The lure lights up the first letter of a rarer answer for ' + dive.HINT_COST + ' points. Points become depth: a perfect 700-point dive reaches 10,935 m, the bottom of Challenger Deep. A new dive opens every day at midnight Eastern.</p>' +
       '<div class="row"><button class="btn btn-primary" type="button" id="howto-go">Got it</button><a class="btn" href="#tutorial" id="howto-tutorial">Play the tutorial</a></div>' });
     const btn = document.getElementById('howto-go');
     if (btn) btn.addEventListener('click', F().closeModal);
@@ -289,6 +297,7 @@
   function welcomeModal() {
     const { el, modal, closeModal } = F();
     const body = el('div', {}, [
+      el('div', { class: 'center', html: F().mascotSvg(110, { glow: 0.6 }) }),
       el('p', { text: 'Seven ocean questions a day. Type an answer; the rarer it is, the deeper you dive. Same seven for everyone, once a day.' }),
       tierLegend(),
       el('div', { class: 'stack', style: 'margin-top:14px' }, [
@@ -297,7 +306,7 @@
       ]),
       el('p', { class: 'tiny muted', style: 'margin:12px 0 0', text: 'You can replay the tutorial any time from Settings.' }),
     ]);
-    modal({ title: 'Welcome to FATHOM', body });
+    modal({ title: 'Welcome to ' + F().dive.BRAND, body });
   }
 
   function statsModal() {
@@ -325,10 +334,10 @@
       el('h3', { style: 'margin-top:16px', text: 'Badges' }),
       root.FathomAchievements ? root.FathomAchievements.wall({ compact: true }) : null,
       el('h3', { style: 'margin-top:16px', text: 'Rating' }),
-      el('p', { class: 'small', html: rank ? rank : 'Rankings go live when FATHOM is online. Your daily dives are saved on this device meanwhile.' }),
+      el('p', { class: 'small', html: rank ? rank : 'Rankings go live when ' + dive.BRAND + ' is online. Your daily dives are saved on this device meanwhile.' }),
       todayRec ? el('p', { class: 'small muted', html: 'Next dive in <b id="countdown-modal">--:--:--</b>' }) : null,
     ]);
-    modal({ title: 'My Fathom', body });
+    modal({ title: 'My ' + dive.BRAND, body });
     if (todayRec) {
       const tick = () => { const n = document.getElementById('countdown-modal'); if (!n) return clearInterval(iv); n.textContent = hms(dive.msUntilNextDay(new Date())); };
       const iv = setInterval(tick, 1000); tick();
@@ -361,10 +370,10 @@
     const O = root.FathomOnline;
     if (O && O.settingsSection) body.append(O.settingsSection());
     if (root.FathomMonetise && root.FathomMonetise.settingsSection) { const m = root.FathomMonetise.settingsSection(); if (m) body.append(m); }
-    body.append(el('p', { class: 'small muted', style: 'margin-top:14px', text: 'Tip: add FATHOM to your home screen from your browser’s share or menu button — it works offline.' }));
-    body.append(el('div', { class: 'switch' }, [el('div', { html: '<b>Reset local data</b><br><span class="small muted">Clears results, logbook, badges and settings on this device</span>' }), el('button', { class: 'btn btn-sm', type: 'button', text: 'Reset', onClick: async () => { if (await F().confirmDialog('Clear everything FATHOM has saved on this device?', 'Clear it')) { storage.clearAll(); applySettings(); toast('Local data cleared'); F().navigate('#home'); } } })]));
+    body.append(el('p', { class: 'small muted', style: 'margin-top:14px', text: 'Tip: add ' + F().dive.BRAND + ' to your home screen from your browser’s share or menu button — it works offline.' }));
+    body.append(el('div', { class: 'switch' }, [el('div', { html: '<b>Reset local data</b><br><span class="small muted">Clears results, logbook, badges and settings on this device</span>' }), el('button', { class: 'btn btn-sm', type: 'button', text: 'Reset', onClick: async () => { if (await F().confirmDialog('Clear everything ' + F().dive.BRAND + ' has saved on this device?', 'Clear it')) { storage.clearAll(); applySettings(); toast('Local data cleared'); F().navigate('#home'); } } })]));
     modal({ title: 'Settings', body });
   }
 
-  root.FathomPages = { home, archive, packs, logbook, leaderboard, faq, notFound, message, howToModal, welcomeModal, statsModal, settingsModal, niceDate, tierLegend, LOGBOOK_TABS };
+  root.FathomPages = { home, archive, packs, logbook, leaderboard, faq, notFound, message, emptyState, howToModal, welcomeModal, statsModal, settingsModal, niceDate, tierLegend, LOGBOOK_TABS };
 })(window);

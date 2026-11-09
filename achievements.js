@@ -1,4 +1,4 @@
-/* FATHOM — achievements: badges earned by dives, streaks and the logbook. Stored locally ({ badgeId: dayKey })
+/* ANGLER — achievements: badges earned by dives, streaks and the logbook. Stored locally ({ badgeId: dayKey })
  * and synced with the player's progress when signed in. */
 (function (root) {
   'use strict';

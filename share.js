@@ -1,4 +1,4 @@
-/* FATHOM — share card: a PNG of the dive drawn on a canvas, sent with the Web Share API when the browser allows
+/* ANGLER — share card: a PNG of the dive drawn on a canvas, sent with the Web Share API when the browser allows
  * files, otherwise shown in a modal with a download link. Nothing here touches the network. */
 (function (root) {
   'use strict';
@@ -22,8 +22,8 @@
   }
   function label(record) {
     const { dive, packsById } = F();
-    if (record.mode === 'daily') return 'FATHOM #' + record.number;
-    if (record.mode === 'archive') return 'Archive · FATHOM #' + dive.puzzleNumber(record.dayKey);
+    if (record.mode === 'daily') return dive.BRAND + ' #' + record.number;
+    if (record.mode === 'archive') return 'Archive · ' + dive.BRAND + ' #' + dive.puzzleNumber(record.dayKey);
     if (record.mode === 'pack') return (packsById[record.packId] ? packsById[record.packId].name : 'Themed') + ' pack';
     if (record.mode === 'challenge') return 'Challenge';
     return 'Free Dive';
@@ -60,7 +60,7 @@
     ctx.fillStyle = '#EAF4F7';
     ctx.font = '800 56px ' + FONT;
     ctx.textBaseline = 'alphabetic';
-    const word = 'FATHOM';
+    const word = dive.BRAND;
     let x = PAD;
     for (const ch of word) { ctx.fillText(ch, x, PAD + 56); x += ctx.measureText(ch).width + 12; }
     ctx.fillStyle = '#2BD1C6';
@@ -105,9 +105,9 @@
     if (pct != null) ctx.fillText('Top ' + pct + '% of today’s divers', PAD, 1060);
     else ctx.fillText('Can you go deeper?', PAD, 1060);
     ctx.fillStyle = '#EAF4F7'; ctx.font = '500 34px ' + FONT;
-    wrapText(ctx, 'Seven ocean questions a day. The rarer your answer, the deeper you dive.', PAD, 1118, RAIL.x - PAD - 90, 44, 2);
+    wrapText(ctx, dive.TAGLINE, PAD, 1118, RAIL.x - PAD - 90, 44, 2);
     ctx.fillStyle = '#2BD1C6'; ctx.font = '700 36px ' + FONT;
-    ctx.fillText((config.SITE_URL || '').replace(/^https?:\/\//, '') || 'Play FATHOM', PAD, 1228);
+    ctx.fillText((config.SITE_URL || '').replace(/^https?:\/\//, '') || 'Play ' + dive.BRAND, PAD, 1228);
 
     // the rail: zones, landmarks, marker
     const railH = RAIL.bottom - RAIL.top;
@@ -147,7 +147,7 @@
     lines.forEach((l, i) => ctx.fillText(l, x, y + i * lineH));
   }
 
-  function fileName(record) { return 'fathom-' + (record.mode === 'daily' && record.number ? record.number : record.mode) + '.png'; }
+  function fileName(record) { return F().dive.BRAND.toLowerCase() + '-' + (record.mode === 'daily' && record.number ? record.number : record.mode) + '.png'; }
   function shareText(record) {
     const { dive, config } = F();
     const pct = root.FathomOnline && root.FathomOnline.lastPercentile ? root.FathomOnline.lastPercentile(record) : null;
@@ -172,7 +172,7 @@
   }
   function showModal(record, url, text) {
     const { el, modal } = F();
-    const img = el('img', { class: 'share-card', src: url, alt: 'Your FATHOM result card', width: String(W / 2), height: String(H / 2) });
+    const img = el('img', { class: 'share-card', src: url, alt: 'Your ' + F().dive.BRAND + ' result card', width: String(W / 2), height: String(H / 2) });
     const body = el('div', {}, [
       img,
       el('div', { class: 'row', style: 'margin-top:12px' }, [

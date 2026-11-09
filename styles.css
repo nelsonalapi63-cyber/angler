@@ -1,8 +1,11 @@
-/* FATHOM — styles. One column, Wordle-quiet; the page itself sinks darker as you dive. */
+/* ANGLER — styles. One column, Wordle-quiet; the page itself sinks darker as you dive.
+   Type: Outfit (display) and Inter (text), both self-hosted from fonts/fonts.css. */
+@import url("fonts/fonts.css");
 
 :root {
   --col-max: 520px;
-  --font: "Avenir Next", "Segoe UI Variable Text", "Segoe UI", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --font: "Inter", "Segoe UI Variable Text", "Segoe UI", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+  --font-display: "Outfit", "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
   --radius: 12px;
   --radius-sm: 8px;
   --shadow: 0 10px 30px rgba(0, 0, 0, .25);
@@ -90,7 +93,7 @@ body {
 }
 a { color: inherit; }
 button { font: inherit; color: inherit; }
-h1, h2, h3 { margin: 0 0 .4em; line-height: 1.15; letter-spacing: -.01em; }
+h1, h2, h3 { margin: 0 0 .4em; line-height: 1.15; letter-spacing: -.01em; font-family: var(--font-display); font-weight: 700; }
 h1 { font-size: 1.9rem; }
 h2 { font-size: 1.35rem; }
 h3 { font-size: 1.05rem; }
@@ -119,9 +122,11 @@ p { margin: 0 0 .9em; }
 [data-theme="light"] .topbar { background: color-mix(in srgb, var(--bg-depth, var(--bg)) 80%, white); }
 .topbar-right { display: flex; justify-content: flex-end; gap: 2px; }
 .wordmark {
-  font-weight: 800; letter-spacing: .22em; text-decoration: none; font-size: 1.15rem;
-  padding: 6px 10px; position: relative;
+  font-family: var(--font-display); font-weight: 800; letter-spacing: .22em; text-decoration: none; font-size: 1.15rem;
+  padding: 6px 10px 6px 8px; position: relative; display: inline-flex; align-items: center; gap: 6px;
 }
+.wordmark-fish { display: inline-flex; width: 26px; height: 26px; }
+.wordmark-fish svg { width: 26px; height: 26px; display: block; }
 .wordmark::after {
   content: ""; position: absolute; left: 12px; right: 14px; bottom: 4px; height: 3px;
   background: radial-gradient(circle at 25% 50%, var(--accent) 0 40%, transparent 41%) 0 0 / 8px 3px repeat-x;
@@ -285,7 +290,7 @@ p { margin: 0 0 .9em; }
 }
 .tile.tile-miss { color: var(--ink); }
 .tile .tile-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-.tile .tile-name { font-weight: 800; font-size: 1.1rem; }
+.tile .tile-name { font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; }
 .tile .tile-meters { font-weight: 800; white-space: nowrap; }
 .tile .tile-sub { font-size: .9rem; opacity: .9; }
 @keyframes flipIn { from { transform: rotateX(-90deg); opacity: 0; } 60% { transform: rotateX(12deg); opacity: 1; } to { transform: rotateX(0); } }
@@ -298,10 +303,16 @@ p { margin: 0 0 .9em; }
 /* ---------------------------------------------------------------- home */
 .hero { position: relative; overflow: hidden; padding: 0; }
 .hero-art { height: 150px; overflow: hidden; }
-.hero-art svg { display: block; width: 100%; height: 100%; }
+.hero-art > svg:not(.mascot) { display: block; width: 100%; height: 100%; }
 .hero-body { padding: 14px 22px 22px; text-align: center; }
 .hero-kicker { font-size: .8rem; color: var(--muted); letter-spacing: .04em; }
-.hero-title { font-size: 2.9rem; font-weight: 900; letter-spacing: .26em; margin: 4px 0 2px; text-indent: .26em; }
+.hero-title { font-size: 2.9rem; font-weight: 800; letter-spacing: .26em; margin: 4px 0 2px; text-indent: .26em; }
+.hero-art .hero-mascot { position: absolute; left: 4%; top: 14px; width: 124px; height: 124px; pointer-events: none; filter: drop-shadow(0 6px 14px rgba(0,0,0,.35)); animation: bob 5s ease-in-out infinite; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@media (prefers-reduced-motion: reduce) { .hero-mascot { animation: none; } }
+.empty { text-align: center; padding: 20px 12px; }
+.empty .mascot { width: 96px; height: 96px; display: block; margin: 0 auto 8px; }
+.empty b { display: block; font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 4px; }
 .hero-tag { font-size: 1.05rem; margin: 0 auto 16px; max-width: 34ch; }
 .hero-cta { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
 .btn-big { padding: 16px 28px; font-size: 1.1rem; min-height: 54px; }
@@ -346,7 +357,7 @@ p { margin: 0 0 .9em; }
 .others li:first-child { border-top: 0; }
 
 /* ---------------------------------------------------------------- result */
-.result-depth { font-size: 3.2rem; font-weight: 800; letter-spacing: -.03em; line-height: 1; margin: 6px 0 2px; }
+.result-depth { font-family: var(--font-display); font-size: 3.2rem; font-weight: 800; letter-spacing: -.03em; line-height: 1; margin: 6px 0 2px; }
 .result-depth small { font-size: 1.1rem; font-weight: 600; letter-spacing: 0; margin-left: 4px; color: var(--muted); }
 .grid-emoji { font-size: 1.6rem; letter-spacing: .08em; }
 .result-list { list-style: none; margin: 0; padding: 0; }

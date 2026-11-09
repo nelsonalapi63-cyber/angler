@@ -1,4 +1,4 @@
-/* FATHOM — monetisation: products, unlock modal, "Go deeper" card, ad slots, consent banner.
+/* ANGLER — monetisation: products, unlock modal, "Go deeper" card, ad slots, consent banner.
  * Everything here is inert until the flags at the top of online.js are switched on. */
 (function (root) {
   'use strict';
@@ -74,7 +74,7 @@
     const body = el('div', {}, [
       el('p', { class: 'small muted', text: context === 'archive' ? 'Older archive dives need the Archive Pass or Dive Supporter.' : context === 'pack' ? 'This pack is locked. Sharks and Reef Life are always free.' : 'One-time purchases. Any purchase removes ads site-wide.' }),
       el('div', {}, rows),
-      paymentsOff() ? el('p', { class: 'small muted', style: 'margin-top:12px', text: 'Purchases open when FATHOM goes online. Prices shown are placeholders.' }) : null,
+      paymentsOff() ? el('p', { class: 'small muted', style: 'margin-top:12px', text: 'Purchases open when ' + F().dive.BRAND + ' goes online. Prices shown are placeholders.' }) : null,
     ]);
     modal({ title: 'Go deeper', body });
     if (online() && online().trackEvent) online().trackEvent('upgrade_viewed', { context: context || 'menu' });
@@ -98,7 +98,7 @@
     storage.setGoDeeperDay(dayKey);
     const card = el('div', { class: 'card go-deeper' }, [
       el('div', { class: 'row between' }, [el('h3', { text: 'Go deeper' }), el('button', { class: 'link-btn', type: 'button', text: 'Dismiss', onClick: () => card.remove() })]),
-      el('p', { class: 'small', text: 'Locked right now: the full archive, ' + F().packs.filter(p => !isPackUnlocked(p.id)).length + ' themed packs' + (flags().ADS_ENABLED ? ', and an ad-free FATHOM' : '') + '. Dive Supporter unlocks all of it in one go.' }),
+      el('p', { class: 'small', text: 'Locked right now: the full archive, ' + F().packs.filter(p => !isPackUnlocked(p.id)).length + ' themed packs' + (flags().ADS_ENABLED ? ', and an ad-free ' + F().dive.BRAND : '') + '. Dive Supporter unlocks all of it in one go.' }),
       el('button', { class: 'btn btn-sm', type: 'button', text: paymentsOff() ? 'See what’s coming' : 'See unlocks', onClick: () => openUnlock('menu') }),
     ]);
     return card;
@@ -138,7 +138,7 @@
     const { el, storage } = F();
     if (!flags().ADS_ENABLED || adsRemoved() || storage.settings().consent) return;
     const bar = el('div', { class: 'consent', role: 'dialog', 'aria-label': 'Cookie consent' }, [
-      el('p', { class: 'small', style: 'margin:0 0 10px', html: 'FATHOM is free because of ads. Ads use cookies to pick what you see. You can change this any time in Settings. <a href="privacy.html">Privacy policy</a>.' }),
+      el('p', { class: 'small', style: 'margin:0 0 10px', html: F().dive.BRAND + ' is free because of ads. Ads use cookies to pick what you see. You can change this any time in Settings. <a href="privacy.html">Privacy policy</a>.' }),
       el('div', { class: 'row' }, [
         el('button', { class: 'btn btn-sm btn-primary', type: 'button', text: 'Allow ads', onClick: () => { storage.updateSettings({ consent: 'yes' }); bar.remove(); F().navigate(location.hash || '#home'); } }),
         el('button', { class: 'btn btn-sm', type: 'button', text: 'No thanks', onClick: () => { storage.updateSettings({ consent: 'no' }); bar.remove(); } }),

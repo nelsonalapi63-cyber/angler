@@ -155,9 +155,9 @@ test('challenge hashes round-trip and reject garbage', () => {
 
 test('share text', () => {
   const s = dive.shareText({ number: 12, depth: 4210, percentile: 18, tiers: ['tidepool', 'reef', 'twilight', null, 'midnight', 'hadal', 'baitball'] });
-  assert.strictEqual(s, 'FATHOM #12 · 4,210 m · top 18% · 🐚🪸🦑⬛🐙🔱🐠');
+  assert.strictEqual(s, 'ANGLER #12 · 4,210 m · top 18% · 🐚🪸🦑⬛🐙🔱🐠');
   const t = dive.shareText({ number: 1, depth: 0, percentile: null, tiers: [null, null, null, null, null, null, null], siteUrl: 'https://x.y' });
-  assert.strictEqual(t, 'FATHOM #1 · 0 m · ⬛⬛⬛⬛⬛⬛⬛\nhttps://x.y');
+  assert.strictEqual(t, 'ANGLER #1 · 0 m · ⬛⬛⬛⬛⬛⬛⬛\nhttps://x.y');
 });
 
 test('scoreSubmission re-scores typed answers', () => {
@@ -187,7 +187,7 @@ test('shared spellings: canonical name beats alias, lower tier beats higher tier
 
 test('share text can carry a mode label instead of a puzzle number', () => {
   const s = dive.shareText({ number: 3, label: 'Sharks pack', depth: 1000, percentile: null, tiers: [null, null, null, null, null, null, null] });
-  assert.strictEqual(s, 'FATHOM Sharks pack · 1,000 m · ⬛⬛⬛⬛⬛⬛⬛');
+  assert.strictEqual(s, 'ANGLER Sharks pack · 1,000 m · ⬛⬛⬛⬛⬛⬛⬛');
 });
 
 test('taxon safety net accepts listed species at Midnight, filtered for letter prompts', () => {

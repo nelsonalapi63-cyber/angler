@@ -1,11 +1,11 @@
-/* FATHOM — app shell: configuration, DOM helpers, router, menu, modals, toasts, theme, sound. */
+/* ANGLER — app shell: configuration, DOM helpers, router, menu, modals, toasts, theme, sound, mascot. */
 (function (root) {
   'use strict';
 
   // ---------------------------------------------------------------- parameters
   const CONFIG = {
     SITE_URL: '',                       // e.g. 'https://fathom.example' once the site has a domain (added to share text)
-    FEEDBACK_EMAIL: 'hello@fathom.example',
+    FEEDBACK_EMAIL: 'hello@angler.example',
     REPORT_FORM_URL: '',                // if set, "Report an answer" opens this instead of email
     REVEAL_MS: 2600,                    // how long a tier reveal stays before auto-advancing
     SOUND_VOLUME: 0.07,
@@ -17,6 +17,7 @@
     DESCENT_MAX_MS: 2600,               // …capped here
     HAPTICS: { accept: [25], miss: [12, 40, 12], hadal: [40, 30, 40, 30, 140], tick: [8] },
     BANK_FILES: ['entities.js', 'prompts.js', 'taxa.js'],   // the full answer bank, loaded after boot
+    LURE_GLOW_MIN: 0.35,                // the anglerfish's lure at the surface (1 = full glow at Challenger Deep)
     DEPTH_TINT_STOPS: {                 // page background by depth fraction (0 = surface, 1 = Challenger Deep)
       dark:  [[0, '#0F4C5C'], [0.09, '#0B3A52'], [0.37, '#071D33'], [0.55, '#040F1E'], [1, '#02060D']],
       light: [[0, '#D9EEF2'], [0.37, '#B6D3E0'], [0.75, '#90B0C4'], [1, '#7F9DB0']],
@@ -26,6 +27,30 @@
   const dive = root.FathomDive;
   const storage = root.FathomStorage;
   const charts = root.FathomCharts;
+
+  // ---------------------------------------------------------------- the mascot: an original anglerfish whose lure glows with depth
+  // size in px (square). opts.glow forces a glow level 0..1; otherwise the page's --lure-glow (set by depth) applies.
+  // opts.face 'right' mirrors it. opts.class adds a class.
+  function mascotSvg(size, opts) {
+    opts = opts || {};
+    const g = opts.glow != null ? String(0.35 + 0.65 * opts.glow) : 'var(--lure-glow, .5)';
+    const flip = opts.face === 'right' ? ' transform="translate(256 0) scale(-1 1)"' : '';
+    return '<svg class="mascot' + (opts.class ? ' ' + opts.class : '') + '" viewBox="0 0 256 256" width="' + size + '" height="' + size + '" aria-hidden="true" focusable="false"><g' + flip + '>' +
+      '<circle cx="62" cy="62" r="38" fill="#FFD24A" style="opacity:calc(' + g + ' * .22)"/>' +
+      '<circle cx="62" cy="62" r="23" fill="#FFD24A" style="opacity:calc(' + g + ' * .5)"/>' +
+      '<circle cx="62" cy="62" r="12" fill="#FFD24A" stroke="#0C2A3A" stroke-width="4"/>' +
+      '<path d="M126 96 C 118 66, 96 50, 72 60" fill="none" stroke="#0C2A3A" stroke-width="7" stroke-linecap="round"/>' +
+      '<path d="M224 128 L 252 104 L 244 150 L 252 196 L 224 172 Z" fill="#B49BFF" stroke="#0C2A3A" stroke-width="5" stroke-linejoin="round"/>' +
+      '<ellipse cx="150" cy="152" rx="78" ry="62" fill="#3C6AE0" stroke="#0C2A3A" stroke-width="5"/>' +
+      '<ellipse cx="158" cy="176" rx="56" ry="28" fill="#86D9EC"/>' +
+      '<path d="M156 92 C 164 66, 186 62, 204 94" fill="#B49BFF" stroke="#0C2A3A" stroke-width="5" stroke-linejoin="round"/>' +
+      '<path d="M166 160 C 182 170, 192 184, 184 194 C 170 190, 156 182, 150 174 Z" fill="#B49BFF" stroke="#0C2A3A" stroke-width="5" stroke-linejoin="round"/>' +
+      '<circle cx="186" cy="124" r="4" fill="#86D9EC"/><circle cx="204" cy="142" r="3" fill="#86D9EC"/><circle cx="170" cy="112" r="3" fill="#86D9EC"/><circle cx="196" cy="162" r="3" fill="#86D9EC"/>' +
+      '<path d="M70 152 C 92 130, 112 118, 130 116 L 130 192 C 110 190, 88 176, 70 152 Z" fill="#0C2A3A"/>' +
+      '<path d="M84 138 l 6 12 l 6 -16 M100 127 l 5 13 l 7 -16 M116 121 l 4 13 l 6 -15 M86 166 l 5 -11 l 6 14 M102 178 l 4 -12 l 6 15 M118 186 l 3 -12 l 6 14" fill="none" stroke="#EAF4F7" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>' +
+      '<circle cx="142" cy="112" r="13" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4"/><circle cx="145" cy="113" r="6" fill="#0C2A3A"/>' +
+      '</g></svg>';
+  }
 
   // ---------------------------------------------------------------- data
   // boot.js carries today's and tomorrow's prompts (plus the tutorial's) so the page opens fast; the full bank
@@ -197,6 +222,7 @@
     const theme = document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
     const t = Math.min(1, Math.max(0, currentDepthTint / dive.CHALLENGER_DEEP_M));
     document.documentElement.style.setProperty('--bg-depth', mix(CONFIG.DEPTH_TINT_STOPS[theme], t));
+    document.documentElement.style.setProperty('--lure-glow', (CONFIG.LURE_GLOW_MIN + (1 - CONFIG.LURE_GLOW_MIN) * t).toFixed(3));   // the mascot's lure brightens with depth
     const meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', mix(CONFIG.DEPTH_TINT_STOPS[theme], t));
   }
@@ -369,10 +395,12 @@
       config: CONFIG, dive, storage, charts,
       entities: data.entities, prompts: data.prompts, promptsById: data.promptsById, packs: data.packs, packsById: data.packsById, schedule: data.schedule, taxa: data.taxa, bankLoaded: data.full,
       ensureBank, hasPromptData,
-      el, esc, render, navigate, modal, closeModal, confirmDialog, toast, applyDepthTint, applySettings, sound, haptics, setSceneDepth,
+      el, esc, render, navigate, modal, closeModal, confirmDialog, toast, applyDepthTint, applySettings, sound, haptics, setSceneDepth, mascotSvg,
       todayKey: () => dive.dayKey(new Date()),
     };
     applySettings();
+    const fish = document.querySelector('.wordmark-fish');
+    if (fish) fish.innerHTML = mascotSvg(26, { glow: 1 });
     buildScene();
     makeBubbles();
     if (!data.full) setTimeout(() => ensureBank().catch(() => {}), 1500);   // warm the full bank in the background

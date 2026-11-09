@@ -1,4 +1,4 @@
-# FATHOM — setup
+# ANGLER — setup
 
 Phase 1 (what ships now) is a static site: every online flag in `online.js` is off, and `MOCK_ONLINE_DATA` fills the leaderboards and the daily curve with labelled demo data. Nothing below is needed to play.
 

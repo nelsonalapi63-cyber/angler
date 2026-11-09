@@ -1,4 +1,4 @@
-/* FATHOM — service worker. Pre-caches the whole static site, serves cache-first for same-origin files,
+/* ANGLER — service worker. Pre-caches the whole static site, serves cache-first for same-origin files,
  * refreshes the cache in the background so updates arrive on the next load, and never touches
  * cross-origin requests (Supabase, Stripe, ads, analytics). Bump CACHE_VERSION on every release. */
 const CACHE_VERSION = 'fathom-v1.1.0';

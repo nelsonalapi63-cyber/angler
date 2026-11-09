@@ -1,4 +1,4 @@
-/* FATHOM — online layer: feature flags, Supabase REST client (no SDK, no CDN), sign-in, dive submission,
+/* ANGLER — online layer: feature flags, Supabase REST client (no SDK, no CDN), sign-in, dive submission,
  * the daily bell curve, leaderboards and ratings, analytics, and deterministic demo data for mock mode. */
 (function (root) {
   'use strict';
@@ -429,7 +429,7 @@
     const t = TABS.some(x => x[0] === tab) ? tab : 'today';
     const wrap = el('div', { class: 'card' });
     if (!flags.LEADERBOARD_ENABLED && !flags.MOCK_ONLINE_DATA) {
-      wrap.append(el('p', { text: 'Rankings go live when FATHOM is online. Your daily dives are saved on this device meanwhile.' }));
+      wrap.append(el('p', { text: 'Rankings go live when ' + F().dive.BRAND + ' is online. Your daily dives are saved on this device meanwhile.' }));
       return wrap;
     }
     const demo = !flags.LEADERBOARD_ENABLED;
@@ -486,7 +486,7 @@
       if (t === 'today') drawToday(m.top, mine ? m.depths.filter(d => d > mine.depth).length + 1 : null, mine ? mine.depth : null);
       else if (t === 'tide') drawTide(b.tide);
       else if (t === 'alltime') drawAllTime(b.alltime, b.hall);
-      else drawFriends([], 'Follow handles to see your friends here. Following opens when FATHOM is online.');
+      else drawFriends([], 'Follow handles to see your friends here. Following opens when ' + F().dive.BRAND + ' is online.');
       return wrap;
     }
     (async () => {
@@ -546,7 +546,7 @@
     const played = Object.keys(storage.allDailyResults()).length;
     const need = Math.max(0, MIN_RANKED_DAYS - played);
     if (!flags.LEADERBOARD_ENABLED) {
-      return '<span class="badge demo">demo</span> Rankings use demo data until FATHOM is online. ' + (need ? need + ' more daily dive' + (need === 1 ? '' : 's') + ' until you are ranked.' : 'You have enough daily dives to be ranked.');
+      return '<span class="badge demo">demo</span> Rankings use demo data until ' + F().dive.BRAND + ' is online. ' + (need ? need + ' more daily dive' + (need === 1 ? '' : 's') + ' until you are ranked.' : 'You have enough daily dives to be ranked.');
     }
     if (!user()) return 'Sign in (Settings) to hold a rating and appear on leaderboards. ' + (need ? need + ' more daily dives until you are ranked.' : '');
     const r = F().storage.get('rating', null);
@@ -560,7 +560,7 @@
     const { el, esc, storage, toast } = F();
     const box = el('div', { style: 'margin-top:12px' });
     if (!onlineNeeded()) {
-      box.append(el('div', { class: 'switch' }, el('div', { html: '<b>Account</b><br><span class="small muted">Sign-in, leaderboards and purchases open when FATHOM is online. Free play never needs an account.</span>' })));
+      box.append(el('div', { class: 'switch' }, el('div', { html: '<b>Account</b><br><span class="small muted">Sign-in, leaderboards and purchases open when ' + F().dive.BRAND + ' is online. Free play never needs an account.</span>' })));
       return box;
     }
     const u = user();
