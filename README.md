@@ -8,19 +8,26 @@ A static site: vanilla HTML, CSS and JavaScript, no framework, no build step bey
 
 | File | What it does |
 |---|---|
-| `index.html`, `styles.css` | the shell and the look |
-| `app.js` | configuration, router, menu, modals, toasts, theme, sound |
-| `game.js` | the dive: timer, matching, reveal, result screen, share, challenges |
-| `pages.js` | home, archive, packs, logbook, FAQ, stats and settings modals |
+| `index.html`, `styles.css`, `fonts/` | the shell, the look, and the self-hosted Outfit + Inter typefaces (Open Font License) |
+| `app.js` | configuration, router, lazy answer bank, menu, modals, toasts, theme, sound, haptics, keyboard shortcuts, the mascot |
+| `game.js` | the dive: timer, matching, the lure, reveal, descent, result screen, share, challenges, reports |
+| `pages.js` | home, archive, packs, logbook, FAQ, welcome, stats (My ANGLER) and settings |
+| `surface.js` | the canvas animation of the sea surface on the home hero |
+| `retain.js` | push reminders, streak freezes, the streak-at-risk banner, the calendar heatmap, the recap opt-in |
+| `social.js` | the live divers count, community packs (builder and play), the report sheet |
+| `achievements.js`, `share.js` | badges; the share text and the share card image |
 | `charts.js` | depth gauge, daily bell curve, zone distribution |
-| `storage.js` | guarded localStorage: results, streaks, logbook, settings, queue |
-| `online.js` | feature flags, Supabase REST client, sign-in, dive submission, leaderboards, ratings, analytics, demo data |
-| `monetise.js` | products, unlock modal, "Go deeper" card, ad slots, consent banner |
-| `shared/dive.js` | the one copy of the rules: matching, scoring, depth, zones, seeded dive construction — used by the browser, the tests and the server |
-| `data/*.json` | the answer bank (entities, prompts, packs) — the source of truth; `node build.js` writes `entities.js` and `prompts.js`. `data/batches/` holds the raw material the bank was merged from; `data/patches/` holds review corrections applied with `tools/apply-patch.js` |
-| `supabase/` | schema, cron, Edge Functions for Phase 2 |
-| `sw.js`, `manifest.json`, `icons/` | installable, works offline |
-| `tests/` | unit tests (`node --test 'tests/*.test.js'`) and the Playwright run (`node tests/e2e.spec.js`) |
+| `storage.js` | guarded localStorage: results, streaks and freezes, logbook, settings, queues |
+| `online.js` | feature flags, Supabase REST client, sign-in, dive submission with retry, leaderboards, friends, ratings, first-party analytics, demo data |
+| `monetise.js` | products, unlock modal, ad slots, consent banner — all switched off |
+| `admin.html`, `admin.js` | the owner's dashboard: funnel, per-prompt miss rate, rejected guesses, cohorts, report inbox and its export |
+| `shared/dive.js` | the one copy of the rules: matching, scoring, hints, taxa, depth, zones, seeded dive and challenge construction — used by the browser, the tests and the server |
+| `data/` | the answer bank. `prompt-seeds.json` (prompts, `taxon` filters, `min` overrides), `batches/` (answers, aliases, facts, tiers), `taxa/` (reference name lists), `illustrations/` (SVG art for every Hadal answer), `patches/` (corrections), `site.json` (the site address) — `node build.js` writes `boot.js`, `entities.js`, `prompts.js`, `taxa.js`, `robots.txt` and `sitemap.xml` |
+| `tools/` | `add-batch.js`, `validate-batch.js`, `validate-data.js`, `apply-patch.js`, `merge-taxa.js`, `make-icons.js` (mascot icons, favicon, Open Graph images), `vapid-keys.js`, `sync-shared.js` |
+| `supabase/` | schema, cron jobs and Edge Functions (`submit-dive`, `push-subscribe`, `send-reminders`, `weekly-recap`, `delete-account`, `stripe-webhook`) |
+| `sw.js`, `manifest.json`, `icons/`, `404.html` | installable, works offline, deep links on GitHub Pages |
+| `.github/workflows/deploy.yml` | tests, builds `dist/`, freezes the schedule, publishes to GitHub Pages on push and daily |
+| `tests/` | unit tests (`node --test 'tests/*.test.js'`), the Playwright run with axe-core (`node tests/e2e.spec.js`), `serve.js` (`--dist` for a production-style server), `reports/` |
 
 See `SETUP.md` for deployment and switching on accounts, leaderboards, ads and purchases. Every parameter is a named constant at the top of its file.
 

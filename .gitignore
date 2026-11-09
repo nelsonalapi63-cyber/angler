@@ -3,3 +3,5 @@ tests/screenshots/
 *.zip
 .playwright/
 supabase/vapid-private.key
+dist/
+tests/reports/lighthouse-mobile.report.json

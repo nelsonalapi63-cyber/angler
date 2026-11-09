@@ -574,7 +574,7 @@
       el('h1', { class: 'result-depth', html: esc(dive.formatMeters(record.depth)) + '<small>m</small>' }),
       el('div', { html: '<b>' + esc(zone.name) + '</b>' }),
       el('p', { class: 'small muted', text: zone.fact }),
-      el('div', { class: 'grid-emoji', 'aria-label': 'Tier grid', text: dive.tiersToEmoji(record.tiers) }),
+      el('div', { class: 'grid-emoji', role: 'img', 'aria-label': 'Tier grid: ' + record.tiers.map(t => t ? dive.TIER_BY_CODE[t].name : 'miss').join(', '), text: dive.tiersToEmoji(record.tiers) }),
       record.hints ? el('p', { class: 'tiny muted', style: 'margin:8px 0 0', text: 'Lure used ' + (record.hints === 1 ? 'once' : record.hints + ' times') + ' (−' + record.hints * dive.HINT_COST + ' points)' }) : null,
     ]);
     nodes.push(head);

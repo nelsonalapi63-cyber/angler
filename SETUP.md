@@ -12,7 +12,11 @@ node build.js                      # validates data/*.json, writes boot.js, enti
 node tests/serve.js                # http://127.0.0.1:8787/
 node tests/e2e.spec.js             # full browser run with axe-core, screenshots in tests/screenshots/
 node build.js --dist               # production copy in dist/ with CNAME and .nojekyll (what the workflow deploys)
+node tests/serve.js --dist         # serves dist/ with gzip and cache headers, roughly what GitHub Pages sends
+npx lighthouse http://127.0.0.1:8787/ --form-factor=mobile --screenEmulation.mobile --output=html --output-path=tests/reports/lighthouse-mobile.report.html
 ```
+
+The last Lighthouse mobile run (dist build, simulated slow 4G and a 4× slower CPU) scored performance 97, accessibility 100, best practices 100, SEO 100; the report is `tests/reports/lighthouse-mobile.report.html`. The browser run writes `tests/reports/axe-report.json` (axe-core, default rules, zero violations on every screen).
 
 Content lives in `data/prompt-seeds.json` (one entry per prompt, with `taxon`/`taxonFilter` for the taxa safety net and `min` only where 40 answers are impossible), `data/batches/*` (answers, aliases, facts, tiers) and `data/taxa/*.json` (scientific and common names per group, merged by `node tools/merge-taxa.js`). `node tools/add-batch.js` merges a batch, `node tools/validate-data.js` checks the whole bank, `node tools/apply-patch.js data/patches/<file>.json` applies corrections (including the admin inbox export). Past days in `data/schedule.json` are frozen; the build only fills future days.
 

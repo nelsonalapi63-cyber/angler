@@ -123,7 +123,12 @@ if (wantDist) {
   fs.rmSync(dist, { recursive: true, force: true });
   fs.mkdirSync(dist, { recursive: true });
   const copy = (rel) => { const from = path.join(ROOT, rel); if (!fs.existsSync(from)) return; fs.mkdirSync(path.dirname(path.join(dist, rel)), { recursive: true }); fs.cpSync(from, path.join(dist, rel), { recursive: true }); };
-  ['index.html', '404.html', 'styles.css', 'app.js', 'game.js', 'pages.js', 'storage.js', 'charts.js', 'online.js', 'monetise.js', 'achievements.js', 'share.js', 'boot.js', 'entities.js', 'prompts.js', 'taxa.js', 'sw.js', 'manifest.json', 'robots.txt', 'sitemap.xml', 'privacy.html', 'terms.html', 'refunds.html', 'admin.html', 'shared/dive.js', 'fonts', 'icons', 'data/illustrations'].forEach(copy);
+  ['index.html', '404.html', 'styles.css', 'app.js', 'game.js', 'pages.js', 'storage.js', 'charts.js', 'online.js', 'monetise.js', 'achievements.js', 'share.js', 'surface.js', 'retain.js', 'social.js', 'admin.js', 'boot.js', 'entities.js', 'prompts.js', 'taxa.js', 'sw.js', 'manifest.json', 'robots.txt', 'sitemap.xml', 'privacy.html', 'terms.html', 'refunds.html', 'admin.html', 'shared/dive.js', 'fonts', 'icons', 'data/illustrations'].forEach(copy);
+  for (const html of ['index.html', 'admin.html']) {
+    for (const m of fs.readFileSync(path.join(ROOT, html), 'utf8').matchAll(/<script src="([^"]+)"/g)) {
+      if (!fs.existsSync(path.join(dist, m[1]))) throw new Error(html + ' loads ' + m[1] + ' but it is not in the dist list');
+    }
+  }
   fs.writeFileSync(path.join(dist, '.nojekyll'), '');
   if (base) fs.writeFileSync(path.join(dist, 'CNAME'), new URL(base).host + '\n');
   console.log('dist/ written (' + fs.readdirSync(dist).length + ' entries' + (base ? ', CNAME ' + new URL(base).host : ', no CNAME: data/site.json has no siteUrl') + ')');

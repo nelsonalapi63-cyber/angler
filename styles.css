@@ -1,6 +1,5 @@
 /* ANGLER — styles. One column, Wordle-quiet; the page itself sinks darker as you dive.
    Type: Outfit (display) and Inter (text), both self-hosted from fonts/fonts.css. */
-@import url("fonts/fonts.css");
 
 :root {
   --col-max: 520px;
@@ -165,9 +164,10 @@ p { margin: 0 0 .9em; }
   position: fixed; top: 0; left: 0; bottom: 0; width: min(300px, 84vw); z-index: 40;
   background: var(--surface-strong); border-right: 1px solid var(--line); box-shadow: var(--shadow);
   padding: calc(var(--topbar-h) + 8px) 12px 16px; display: flex; flex-direction: column; gap: 2px;
-  transform: translateX(-102%); transition: transform .25s ease;
+  transform: translateX(-102%); transition: transform .25s ease, visibility 0s linear .25s;
+  visibility: hidden;                     /* closed: off-screen AND out of the accessibility tree and tab order */
 }
-.drawer:not([hidden]) { transform: translateX(0); }
+.drawer:not([hidden]) { transform: translateX(0); visibility: visible; transition: transform .25s ease; }
 .drawer a { text-decoration: none; padding: 12px 14px; border-radius: var(--radius-sm); font-weight: 600; }
 .drawer a:hover, .drawer a.active { background: var(--surface); }
 .scrim { position: fixed; inset: 0; background: rgba(0, 0, 0, .45); z-index: 30; }
@@ -223,10 +223,11 @@ p { margin: 0 0 .9em; }
 .lb-val { text-align: right; white-space: nowrap; flex: none; }
 .lb-me { background: var(--surface-strong); border-radius: var(--radius-sm); padding-left: 8px !important; padding-right: 8px !important; box-shadow: inset 0 0 0 1px var(--line); }
 
-.tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 14px; }
+.tabs { display: flex; flex-wrap: nowrap; gap: 2px; border-bottom: 1px solid var(--line); margin-bottom: 14px; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
 .tabs button {
-  background: none; border: 0; border-bottom: 3px solid transparent; padding: 10px 12px; cursor: pointer;
-  font-weight: 600; color: var(--muted); white-space: nowrap;
+  background: none; border: 0; border-bottom: 3px solid transparent; padding: 10px 10px; cursor: pointer;
+  font-weight: 600; color: var(--muted); white-space: nowrap; flex: none;
 }
 .tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
 

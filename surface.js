@@ -1,11 +1,15 @@
 /* ANGLER — the surface: a canvas animation of the top of the sea for the home hero. Slow waves, light rays
  * fanning down, drifting motes. Cheap enough for 60 frames per second on a mid-range phone: one 2D canvas,
- * a handful of paths per frame, device pixel ratio capped at 2, no allocations in the loop. It pauses when
- * the tab is hidden or the canvas leaves the page, and draws a single still frame under prefers-reduced-motion. */
+ * a handful of paths per frame, device pixel ratio capped at 1.5, gradients built once per resize, no allocations
+ * in the loop. If a frame still costs more than its budget (a slow phone, a throttled tab) it drops to 30 frames
+ * per second instead of janking. It pauses when the tab is hidden or the canvas leaves the page, and draws a
+ * single still frame under prefers-reduced-motion. */
 (function (root) {
   'use strict';
 
-  const MAX_DPR = 2;
+  const MAX_DPR = 1.5;
+  const FRAME_BUDGET_MS = 6;                 // average draw time above this → every other frame
+  const BUDGET_SMOOTHING = 0.1;              // exponential moving average weight for the draw-time estimate
   const WAVES = [                           // amplitude px, wavelength px, speed px/s, y offset px, alpha
     { a: 5, l: 170, v: 26, y: 38, alpha: 0.95, width: 3, color: '#2BD1C6' },
     { a: 7, l: 240, v: -18, y: 50, alpha: 0.45, width: 2, color: '#86D9EC' },
@@ -23,7 +27,8 @@
   function mount(canvas) {
     const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) return () => {};
-    let w = 0, h = 0, dpr = 1, raf = 0, running = true, last = 0;
+    let w = 0, h = 0, dpr = 1, raf = 0, running = true, avgDraw = 0, halfRate = false, tick = 0;
+    const rayGradients = [];
     const motes = [];
     const rng = mulberry(7);
     for (let i = 0; i < MOTES; i++) motes.push({ x: rng(), y: rng(), r: 1 + rng() * 2, s: 0.6 + rng() * 0.8, o: 0.15 + rng() * 0.3 });
@@ -34,6 +39,12 @@
       w = Math.max(1, Math.round(rect.width)); h = Math.max(1, Math.round(rect.height));
       canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      rayGradients.length = 0;               // the ray gradients only depend on the height: build them here, not per frame
+      for (let i = 0; i < RAYS; i++) {
+        const g = ctx.createLinearGradient(0, WAVES[0].y, 0, h);
+        g.addColorStop(0, 'rgba(234,244,247,0.20)'); g.addColorStop(1, 'rgba(234,244,247,0)');
+        rayGradients.push(g);
+      }
     }
     function draw(t) {                       // t in seconds
       ctx.clearRect(0, 0, w, h);
@@ -47,9 +58,7 @@
       // light rays
       for (let i = 0; i < RAYS; i++) {
         const base = (i + 0.5) * (w / RAYS) + Math.sin(t * 0.25 + i) * RAY_SWAY;
-        const g = ctx.createLinearGradient(0, wv.y, 0, h);
-        g.addColorStop(0, 'rgba(234,244,247,0.20)'); g.addColorStop(1, 'rgba(234,244,247,0)');
-        ctx.fillStyle = g;
+        ctx.fillStyle = rayGradients[i];
         ctx.beginPath();
         ctx.moveTo(base - 14, wv.y); ctx.lineTo(base + 14, wv.y); ctx.lineTo(base + 70 + Math.sin(t * 0.3 + i) * 10, h); ctx.lineTo(base - 60, h); ctx.closePath(); ctx.fill();
       }
@@ -74,7 +83,13 @@
     function frame(now) {
       if (!running) return;
       if (!canvas.isConnected) { stop(); return; }
-      draw(now / 1000);
+      tick++;
+      if (!halfRate || tick % 2 === 0) {
+        const t0 = performance.now();
+        draw(now / 1000);
+        avgDraw += (performance.now() - t0 - avgDraw) * BUDGET_SMOOTHING;
+        halfRate = avgDraw > FRAME_BUDGET_MS;
+      }
       raf = root.requestAnimationFrame(frame);
     }
     function onVisibility() {

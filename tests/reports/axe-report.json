@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-09",
+  "tool": "axe-core 4.14.0 (tests/vendor/axe.min.js), default rules",
+  "screens": [
+    {
+      "screen": "home",
+      "url": "/#home",
+      "violations": 0,
+      "rulesPassed": 42,
+      "needsReview": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "dive",
+      "url": "/#daily",
+      "violations": 0,
+      "rulesPassed": 43,
+      "needsReview": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "result",
+      "url": "/#daily",
+      "violations": 0,
+      "rulesPassed": 47,
+      "needsReview": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "report sheet",
+      "url": "/#daily",
+      "violations": 0,
+      "rulesPassed": 51,
+      "needsReview": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "my angler",
+      "url": "/#daily",
+      "violations": 0,
+      "rulesPassed": 52,
+      "needsReview": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "logbook",
+      "url": "/#logbook",
+      "violations": 0,
+      "rulesPassed": 50,
+      "needsReview": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "leaderboard",
+      "url": "/#leaderboard",
+      "violations": 0,
+      "rulesPassed": 43,
+      "needsReview": []
+    },
+    {
+      "screen": "settings",
+      "url": "/#nope",
+      "violations": 0,
+      "rulesPassed": 44,
+      "needsReview": []
+    },
+    {
+      "screen": "admin",
+      "url": "/admin.html",
+      "violations": 0,
+      "rulesPassed": 39,
+      "needsReview": [
+        "color-contrast"
+      ]
+    }
+  ]
+}

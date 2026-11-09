@@ -58,7 +58,8 @@
     }
     if (fresh.length) {
       storage.set(STORAGE_KEY, have);
-      fresh.forEach((b, i) => setTimeout(() => toast(b.emoji + ' Badge unlocked: ' + b.name, TOAST_MS), 400 + i * 900));
+      // one toast, however many badges: the result screen lists them all in the "New badges" card
+      setTimeout(() => toast(fresh.length === 1 ? fresh[0].emoji + ' Badge unlocked: ' + fresh[0].name : fresh.map(b => b.emoji).join(' ') + ' ' + fresh.length + ' new badges — see below', TOAST_MS), 400);
       if (root.FathomOnline && root.FathomOnline.trackEvent) root.FathomOnline.trackEvent('badge_unlocked', { ids: fresh.map(b => b.id).join(',') });
       if (root.FathomOnline && root.FathomOnline.syncProgressUp) root.FathomOnline.syncProgressUp();
     }

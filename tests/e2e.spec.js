@@ -26,11 +26,12 @@ function watch(page, label) {
 // axe-core (vendored in tests/vendor/, MPL-2.0) — every checked screen must have zero violations
 const AXE_SRC = fs.readFileSync(path.join(__dirname, 'vendor', 'axe.min.js'), 'utf8');
 const a11y = [];
+const axeReport = { tool: 'axe-core 4.14.0 (tests/vendor/axe.min.js), default rules', screens: [] };
 async function axeCheck(page, label) {
   await page.evaluate((src) => { if (!window.axe) { const s = document.createElement('script'); s.textContent = src; document.head.appendChild(s); } }, AXE_SRC);
   await page.evaluate(() => Promise.race([Promise.all(document.getAnimations().map(a => a.finished.catch(() => {}))), new Promise(r => setTimeout(r, 1500))]));
-  // Hash routes (#daily, #archive…) are navigation, not same-page anchors, so axe's skip-link rule is pointed at the one real skip link.
-  const res = await page.evaluate(() => { window.axe.configure({ rules: [{ id: 'skip-link', selector: 'a.skip-link' }] }); return window.axe.run(document, { resultTypes: ['violations'] }); });
+  const res = await page.evaluate(() => window.axe.run(document, { resultTypes: ['violations', 'passes', 'incomplete'] }));   // every rule, default options
+  axeReport.screens.push({ screen: label, url: page.url().replace(/^http:\/\/127\.0\.0\.1:\d+\//, '/'), violations: res.violations.length, rulesPassed: res.passes.length, needsReview: res.incomplete.map(i => i.id) });
   for (const v of res.violations) a11y.push(label + ': ' + v.id + ' [' + v.impact + '] ×' + v.nodes.length + ' — ' + v.help + ' @ ' + v.nodes.slice(0, 3).map(n => n.target.join(' ') + ' (' + (n.failureSummary || '').split('\n').slice(1, 2).join('') + ')').join(' | '));
   console.log('axe ' + label + ': ' + res.violations.length + ' violations' + (res.violations.length ? '\n  ' + a11y.slice(-res.violations.length).join('\n  ') : ''));
 }
@@ -259,6 +260,7 @@ async function playDive(page, plan, opts) {
   assert.ok(await page.$('.modal .badge-wall'), 'badge wall in My ANGLER');
   assert.ok(await page.$('.modal .heatmap .hm-cell.today[class*="z-"]'), 'calendar heatmap marks today as played');
   assert.ok(/freeze/i.test(await page.textContent('.modal')), 'streak freeze line in My ANGLER');
+  await page.screenshot({ path: path.join(SHOTS, 'my-angler-mobile.png') });
   await axeCheck(page, 'my angler');
   await page.keyboard.press('Escape');
   fs.writeFileSync(path.join(FIXTURES, 'recorded-dive.json'), JSON.stringify({ day: result.dayKey, promptIds: result.promptIds, answers: result.results.map(r => ({ typed: r.typed, secondsUsed: r.secondsUsed, hint: !!r.hint })), depth: result.depth, points: result.points, tiers: result.tiers }, null, 2));
@@ -330,7 +332,8 @@ async function playDive(page, plan, opts) {
   await page.goto(srv.url + '#free');
   await page.waitForSelector('#answer');
   assert.ok(await page.$('#hint-btn'), 'hint button in a free dive');
-  await page.evaluate(() => document.activeElement && document.activeElement.blur());
+  await page.waitForFunction(() => document.activeElement && document.activeElement.id === 'answer');   // the prompt focuses its box shortly after rendering
+  await page.evaluate(() => document.activeElement.blur());
   await page.keyboard.press('h'); await page.waitForSelector('#hint-text:not(:empty)');
   assert.strictEqual(await page.textContent('#hint-btn'), '✦ Lure used', 'H lights the lure when not typing');
   assert.strictEqual(await page.evaluate(() => document.activeElement.id), 'answer', 'the lure hands focus back to the answer box');
@@ -419,6 +422,9 @@ async function playDive(page, plan, opts) {
   await page.waitForFunction(() => navigator.serviceWorker.controller !== null, null, { timeout: 15000 }).catch(() => {});
   await page.reload();
   await page.waitForSelector('main');
+  await page.mouse.click(5, 400);                       // the first touch warms the full bank through the service worker, which caches it
+  await bankReady(page);
+  await page.waitForTimeout(300);                       // let the cache.put calls land
   await mobile.setOffline(true);
   await page.reload();
   await page.waitForSelector('main a[href="#free"]', { timeout: 15000 });
@@ -433,6 +439,7 @@ async function playDive(page, plan, opts) {
   await apage.waitForSelector('main h1');
   assert.ok((await apage.textContent('main h1')).includes('ANGLER admin'));
   assert.strictEqual(await apage.$$eval('main section.card', s => s.length), 4, 'funnel, cohorts, prompts, reports');
+  await apage.screenshot({ path: path.join(SHOTS, 'admin.png'), fullPage: true });
   await apage.click('main section.card button:text-is("Guesses")');
   await apage.waitForSelector('main h3');
   assert.ok((await apage.textContent('main h3')).includes('Most-typed rejected guesses'));
@@ -443,7 +450,6 @@ async function playDive(page, plan, opts) {
   const inbox = JSON.parse(fs.readFileSync(await download.path(), 'utf8'));
   assert.ok(Array.isArray(inbox.review) && inbox.review.length >= 1 && Array.isArray(inbox.aliasAdd), 'export is an apply-patch skeleton with a review list');
   await axeCheck(apage, 'admin');
-  await apage.screenshot({ path: path.join(SHOTS, 'admin.png'), fullPage: false });
   await apage.context().close();
 
   // ---- desktop
@@ -465,6 +471,8 @@ async function playDive(page, plan, opts) {
   srv.close();
   const realErrors = errors.filter(e => !/favicon/.test(e));
   if (realErrors.length) { console.error('CONSOLE ERRORS:\n' + realErrors.join('\n')); process.exit(1); }
+  fs.mkdirSync(path.join(__dirname, 'reports'), { recursive: true });
+  fs.writeFileSync(path.join(__dirname, 'reports', 'axe-report.json'), JSON.stringify(Object.assign({ date: new Date().toISOString().slice(0, 10) }, axeReport), null, 2));
   if (a11y.length) { console.error('AXE VIOLATIONS:\n' + a11y.join('\n')); process.exit(1); }
-  console.log('e2e OK — zero console errors, zero axe violations, screenshots in tests/screenshots/, fixture in tests/fixtures/recorded-dive.json');
+  console.log('e2e OK — zero console errors, zero axe violations, screenshots in tests/screenshots/, axe report in tests/reports/axe-report.json');
 })().catch(e => { console.error(e); process.exit(1); });

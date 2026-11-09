@@ -534,14 +534,13 @@
       else if (t === 'alltime') drawAllTime(b.alltime, b.hall);
       else {
         const demoFriends = m.top.slice(3, 7).map(r => ({ handle: r.handle, flag: r.flag, depth: r.depth, rating: r.rating }));
+        body.innerHTML = '';
         body.append(el('form', { class: 'row', onSubmit: (e) => { e.preventDefault(); F().toast('Following opens when ' + F().dive.BRAND + ' is online'); } }, [el('input', { class: 'input', placeholder: 'Follow a handle', 'aria-label': 'Handle to follow' }), el('button', { class: 'btn', type: 'submit', text: 'Follow' })]));
         const holder = el('div');
         body.append(holder);
-        const saved = body; // drawFriends clears body; draw into the holder instead
         holder.append(el('p', { class: 'small muted', text: 'Demo friends — follow real handles once ' + F().dive.BRAND + ' is online.' }));
         const ul = el('ul', { class: 'list' }); demoFriends.forEach((r, i) => ul.append(row(i + 1, whoHtml(r), esc(dive.formatMeters(r.depth)) + ' m'))); holder.append(ul);
         holder.append(friendsCurve(demoFriends.map(r => r.depth), storage.getDailyResult(today) ? storage.getDailyResult(today).depth : null));
-        void saved;
       }
       return wrap;
     }
@@ -564,6 +563,7 @@
           drawAllTime(rows, hall);
         } else {
           if (!user()) return drawFriends([], 'Sign in to follow friends and see them here.');
+          body.innerHTML = '';
           const form = el('form', { class: 'row', onSubmit: async (e) => { e.preventDefault(); const h = form.querySelector('input').value.trim(); if (!h) return; try { await rest('/rest/v1/rpc/follow_handle', { method: 'POST', body: { p_handle: h } }); F().toast('Following ' + h); F().navigate('#leaderboard-friends'); } catch (err) { F().toast('No diver with that handle'); } } }, [el('input', { class: 'input', placeholder: 'Follow a handle', 'aria-label': 'Handle to follow' }), el('button', { class: 'btn', type: 'submit', text: 'Follow' })]);
           const sub = el('div', { class: 'tabs', role: 'tablist' });
           const subBody = el('div');

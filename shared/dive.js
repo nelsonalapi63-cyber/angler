@@ -156,19 +156,19 @@
   // "sharks|rays" names a union of reference lists
   function taxonGroups(taxon) { return String(taxon || '').split('|').map(g => g.trim()).filter(Boolean); }
   const TAXON_FACTS = {
-    fish: 'A fish species listed on FishBase.', sharks: 'A shark species listed on the World Register of Marine Species.',
-    rays: 'A ray or skate species listed on the World Register of Marine Species.', cetaceans: 'A whale, dolphin or porpoise species listed on the World Register of Marine Species.',
-    pinnipeds: 'A seal or sea lion species listed on the World Register of Marine Species.', 'sea-reptiles': 'A marine reptile species.',
-    seabirds: 'A seabird species.', cephalopods: 'A cephalopod species listed on the World Register of Marine Species.',
-    crustaceans: 'A crustacean species listed on the World Register of Marine Species.', jellies: 'A jellyfish or related species listed on the World Register of Marine Species.',
-    molluscs: 'A mollusc species listed on the World Register of Marine Species.', nudibranchs: 'A sea slug species listed on the World Register of Marine Species.',
-    echinoderms: 'An echinoderm species listed on the World Register of Marine Species.', 'corals-anemones': 'A coral or anemone species listed on the World Register of Marine Species.',
-    seaweeds: 'A seaweed or sea plant species listed on AlgaeBase.', 'deep-sea': 'A deep-sea species listed on the World Register of Marine Species.',
-    'freshwater-fish': 'A freshwater fish species listed on FishBase.', 'sea-creatures': 'A marine species listed on the World Register of Marine Species.',
+    fish: 'A real fish species from our reference list.', sharks: 'A real shark species from our reference list.',
+    rays: 'A real ray or skate species from our reference list.', cetaceans: 'A real whale, dolphin or porpoise species from our reference list.',
+    pinnipeds: 'A real seal or sea lion species from our reference list.', 'sea-reptiles': 'A real marine reptile species from our reference list.',
+    seabirds: 'A real seabird species from our reference list.', cephalopods: 'A real cephalopod species from our reference list.',
+    crustaceans: 'A real crustacean species from our reference list.', jellies: 'A real jellyfish or related species from our reference list.',
+    molluscs: 'A real mollusc species from our reference list.', nudibranchs: 'A real sea slug species from our reference list.',
+    echinoderms: 'A real echinoderm species from our reference list.', 'corals-anemones': 'A real coral, anemone or hydroid species from our reference list.',
+    seaweeds: 'A real seaweed or coastal plant species from our reference list.', 'deep-sea': 'A real deep-sea species from our reference list.',
+    'freshwater-fish': 'A real freshwater fish species from our reference list.', 'sea-creatures': 'A real marine species from our reference list.',
   };
   function taxonFact(taxon) {
     const groups = taxonGroups(taxon);
-    return (groups.length === 1 && TAXON_FACTS[groups[0]]) || 'A real species from our marine reference lists.';
+    return (groups.length === 1 && TAXON_FACTS[groups[0]]) || 'A real species from our reference lists.';
   }
 
   function matchAnswer(typed, index) {

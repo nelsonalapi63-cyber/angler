@@ -57,7 +57,7 @@
   }
   function tierLegend() {
     const { el, dive } = F();
-    return el('div', { class: 'tier-legend', 'aria-label': 'Tiers' }, dive.TIERS.map(t => el('span', { class: 'chip tier-' + t.code, style: '--c: var(--tier-' + t.code + ')', text: t.emoji + ' ' + t.name + ' ' + t.points })));
+    return el('div', { class: 'tier-legend', role: 'list', 'aria-label': 'Tiers' }, dive.TIERS.map(t => el('span', { class: 'chip tier-' + t.code, role: 'listitem', style: '--c: var(--tier-' + t.code + ')', text: t.emoji + ' ' + t.name + ' ' + t.points })));
   }
   function heroSvg() {
     // the surface: light rays fanning down, three wave bands, a few bubbles — all original, all vector

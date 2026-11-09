@@ -16,6 +16,7 @@
     DESCENT_MS_PER_100M: 90,            // …plus this per 100 m of drop…
     DESCENT_MAX_MS: 2600,               // …capped here
     HAPTICS: { accept: [25], miss: [12, 40, 12], hadal: [40, 30, 40, 30, 140], tick: [8] },
+    BANK_WARM_MS: 8000,               // the full bank downloads in the background after this long, or on the first touch
     BANK_FILES: ['entities.js', 'prompts.js', 'taxa.js'],   // the full answer bank, loaded after boot
     LURE_GLOW_MIN: 0.35,                // the anglerfish's lure at the surface (1 = full glow at Challenger Deep)
     DEPTH_TINT_STOPS: {                 // page background by depth fraction (0 = surface, 1 = Challenger Deep)
@@ -133,12 +134,12 @@
   function skeleton(kind) {
     const lines = (n, widths) => Array.from({ length: n }, (_, i) => el('div', { class: 'sk-line', style: 'width:' + widths[i % widths.length] }));
     if (kind === 'list') {
-      return el('div', { class: 'skeleton', 'aria-busy': 'true', 'aria-label': 'Loading' }, [
+      return el('div', { class: 'skeleton', role: 'status', 'aria-busy': 'true', 'aria-label': 'Loading' }, [
         el('div', { class: 'card strong' }, [el('div', { class: 'sk-line sk-title' }), ...lines(2, ['90%', '70%'])]),
         el('div', { class: 'card' }, Array.from({ length: 5 }, () => el('div', { class: 'sk-row' }, [el('div', { class: 'sk-dot' }), el('div', { class: 'sk-line', style: 'width:' + (55 + Math.round(Math.random() * 30)) + '%' })]))),
       ]);
     }
-    return el('div', { class: 'skeleton', 'aria-busy': 'true', 'aria-label': 'Loading' }, [
+    return el('div', { class: 'skeleton', role: 'status', 'aria-busy': 'true', 'aria-label': 'Loading' }, [
       el('div', { class: 'card strong' }, [el('div', { class: 'sk-line', style: 'width:38%' }), el('div', { class: 'sk-line sk-title', style: 'width:84%' }), el('div', { class: 'sk-input' }), ...lines(2, ['60%', '45%'])]),
     ]);
   }
@@ -437,7 +438,12 @@
     if (fish) fish.innerHTML = mascotSvg(26, { glow: 1 });
     buildScene();
     makeBubbles();
-    if (!data.full) setTimeout(() => ensureBank().catch(() => {}), 1500);   // warm the full bank in the background
+    if (!data.full) {                      // warm the full bank once the player has touched the page, or after a quiet spell
+      let warmed = false;
+      const warm = () => { if (warmed) return; warmed = true; ensureBank().catch(() => {}); };
+      ['pointerdown', 'keydown'].forEach(ev => document.addEventListener(ev, warm, { once: true, passive: true }));
+      setTimeout(warm, CONFIG.BANK_WARM_MS);
+    }
     document.getElementById('btn-menu').addEventListener('click', () => (menu().hidden ? openMenu() : closeMenu()));
     document.getElementById('scrim').addEventListener('click', closeMenu);
     document.getElementById('btn-help').addEventListener('click', () => root.FathomPages.howToModal());
