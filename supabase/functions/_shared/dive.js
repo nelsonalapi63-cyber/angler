@@ -156,19 +156,19 @@
   // "sharks|rays" names a union of reference lists
   function taxonGroups(taxon) { return String(taxon || '').split('|').map(g => g.trim()).filter(Boolean); }
   const TAXON_FACTS = {
-    fish: 'A fish species listed on FishBase.', sharks: 'A shark species listed on the World Register of Marine Species.',
-    rays: 'A ray or skate species listed on the World Register of Marine Species.', cetaceans: 'A whale, dolphin or porpoise species listed on the World Register of Marine Species.',
-    pinnipeds: 'A seal or sea lion species listed on the World Register of Marine Species.', 'sea-reptiles': 'A marine reptile species.',
-    seabirds: 'A seabird species.', cephalopods: 'A cephalopod species listed on the World Register of Marine Species.',
-    crustaceans: 'A crustacean species listed on the World Register of Marine Species.', jellies: 'A jellyfish or related species listed on the World Register of Marine Species.',
-    molluscs: 'A mollusc species listed on the World Register of Marine Species.', nudibranchs: 'A sea slug species listed on the World Register of Marine Species.',
-    echinoderms: 'An echinoderm species listed on the World Register of Marine Species.', 'corals-anemones': 'A coral or anemone species listed on the World Register of Marine Species.',
-    seaweeds: 'A seaweed or sea plant species listed on AlgaeBase.', 'deep-sea': 'A deep-sea species listed on the World Register of Marine Species.',
-    'freshwater-fish': 'A freshwater fish species listed on FishBase.', 'sea-creatures': 'A marine species listed on the World Register of Marine Species.',
+    fish: 'A real fish species from our reference list.', sharks: 'A real shark species from our reference list.',
+    rays: 'A real ray or skate species from our reference list.', cetaceans: 'A real whale, dolphin or porpoise species from our reference list.',
+    pinnipeds: 'A real seal or sea lion species from our reference list.', 'sea-reptiles': 'A real marine reptile species from our reference list.',
+    seabirds: 'A real seabird species from our reference list.', cephalopods: 'A real cephalopod species from our reference list.',
+    crustaceans: 'A real crustacean species from our reference list.', jellies: 'A real jellyfish or related species from our reference list.',
+    molluscs: 'A real mollusc species from our reference list.', nudibranchs: 'A real sea slug species from our reference list.',
+    echinoderms: 'A real echinoderm species from our reference list.', 'corals-anemones': 'A real coral, anemone or hydroid species from our reference list.',
+    seaweeds: 'A real seaweed or coastal plant species from our reference list.', 'deep-sea': 'A real deep-sea species from our reference list.',
+    'freshwater-fish': 'A real freshwater fish species from our reference list.', 'sea-creatures': 'A real marine species from our reference list.',
   };
   function taxonFact(taxon) {
     const groups = taxonGroups(taxon);
-    return (groups.length === 1 && TAXON_FACTS[groups[0]]) || 'A real species from our marine reference lists.';
+    return (groups.length === 1 && TAXON_FACTS[groups[0]]) || 'A real species from our reference lists.';
   }
 
   function matchAnswer(typed, index) {
@@ -413,7 +413,10 @@
   }
 
   // ---------------------------------------------------------------- challenge links
-  const CHALLENGE_RE = /^#\/?challenge[-\/]([a-z0-9]{4,12})(?:-(\d{1,5}))?(?:-([0-6]{7}))?\/?$/;
+  // seeds: a free-dive seed (4–12 chars), 'd' + YYYYMMDD for a daily/archive day, 'k' + pack index for a themed pack
+  const CHALLENGE_RE = /^#\/?challenge[-\/]([a-z0-9]{2,12})(?:-(\d{1,5}))?(?:-([0-6]{7}))?\/?$/;
+  const DAY_SEED_RE = /^d(\d{4})(\d{2})(\d{2})$/;
+  const PACK_SEED_RE = /^k(\d{1,2})$/;
   function makeChallengeHash(seed, depth, tierCodes) {
     let h = '#challenge-' + seed;
     if (depth != null) h += '-' + Math.max(0, Math.round(depth));
@@ -423,7 +426,25 @@
   function parseChallenge(hash) {
     const m = CHALLENGE_RE.exec(String(hash || '').trim().toLowerCase());
     if (!m) return null;
-    return { seed: m[1], depth: m[2] ? Number(m[2]) : 0, tiers: m[3] ? digitsToTiers(m[3]) : null };
+    const seed = m[1];
+    const day = DAY_SEED_RE.exec(seed);
+    const pack = PACK_SEED_RE.exec(seed);
+    const kind = day ? 'day' : pack ? 'pack' : 'free';
+    if (kind === 'free' && seed.length < 4) return null;
+    return { seed, kind, dayKey: day ? day[1] + '-' + day[2] + '-' + day[3] : null, packIndex: pack ? Number(pack[1]) : null, depth: m[2] ? Number(m[2]) : 0, tiers: m[3] ? digitsToTiers(m[3]) : null };
+  }
+  // The seed that reproduces a finished dive's prompt set, for "Challenge a friend" in every mode.
+  function challengeSeedFor(record, packs) {
+    if (record.mode === 'daily' || record.mode === 'archive') return record.dayKey ? 'd' + record.dayKey.replace(/-/g, '') : null;
+    if (record.mode === 'pack') { const i = (packs || []).findIndex(p => p.id === record.packId); return i >= 0 ? 'k' + i : null; }
+    return record.seed || null;
+  }
+  // The prompt ids a challenge seed stands for (null when the day is outside the schedule or the pack is unknown).
+  function challengePromptIds(parsed, prompts, packs, schedule) {
+    if (!parsed) return null;
+    if (parsed.kind === 'day') return dailyPromptIds(parsed.dayKey, prompts, LAUNCH_DATE, schedule);
+    if (parsed.kind === 'pack') { const pack = (packs || [])[parsed.packIndex]; return pack ? packPromptIds(pack, prompts) : null; }
+    return freePromptIds(parsed.seed, prompts);
   }
 
   // ---------------------------------------------------------------- share text
@@ -483,6 +504,6 @@
     fnv1a, seededRng, shuffle, randomSeed,
     dayKey, dayIndex, puzzleNumber, keyPlusDays, msUntilNextDay, nextMidnightUtc,
     dailyPromptIds, buildSchedule, pickDay, freePromptIds, packPromptIds, sortByDifficulty, byId,
-    makeChallengeHash, parseChallenge, shareText, formatMeters, scoreSubmission,
+    makeChallengeHash, parseChallenge, challengeSeedFor, challengePromptIds, shareText, formatMeters, scoreSubmission,
   };
 });
