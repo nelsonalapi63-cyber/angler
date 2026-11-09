@@ -1,0 +1,2091 @@
+{
+ "entities": [
+  {
+   "id": "copper-shark",
+   "name": "Copper shark",
+   "aliases": [
+    "bronze whaler",
+    "Carcharhinus brachyurus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Copper sharks, also called bronze whalers, take their name from the bronze sheen of their skin and follow the winter sardine run off South Africa."
+  },
+  {
+   "id": "carpet-shark",
+   "name": "Carpet shark",
+   "aliases": [
+    "carpetshark",
+    "Orectolobiformes"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Carpet sharks are flattened, camouflaged seabed dwellers, an order that includes wobbegongs, nurse sharks and the whale shark."
+  },
+  {
+   "id": "dogfish",
+   "name": "Dogfish",
+   "aliases": [
+    "dogfish shark",
+    "Squalidae"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Dogfish is a name for several small sharks, and the flesh is sold in British chip shops as rock salmon."
+  },
+  {
+   "id": "banded-wobbegong",
+   "name": "Banded wobbegong",
+   "aliases": [
+    "Orectolobus halei",
+    "Gulf wobbegong"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Banded wobbegongs lie camouflaged on the seabed of southern Australia and ambush fish that wander within reach."
+  },
+  {
+   "id": "bluntnose-sixgill-shark",
+   "name": "Bluntnose sixgill shark",
+   "aliases": [
+    "Hexanchus griseus",
+    "bluntnose six-gilled shark"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Bluntnose sixgill sharks have six pairs of gill slits instead of the usual five and rise from deep water at night to feed."
+  },
+  {
+   "id": "crested-bullhead-shark",
+   "name": "Crested bullhead shark",
+   "aliases": [
+    "crested horn shark",
+    "Heterodontus galeatus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Crested bullhead sharks have a ridge above each eye and lay screw-shaped egg cases on the seabed off eastern Australia."
+  },
+  {
+   "id": "chain-catshark",
+   "name": "Chain catshark",
+   "aliases": [
+    "Scyliorhinus retifer"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The chain catshark is named for the chain-like pattern of dark lines on its body, which glows green under blue light."
+  },
+  {
+   "id": "catshark",
+   "name": "Catshark",
+   "aliases": [
+    "cat shark",
+    "Scyliorhinidae"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Catsharks are the largest shark family, with well over a hundred small species, and many lay tough egg cases on the seabed."
+  },
+  {
+   "id": "blackmouth-catshark",
+   "name": "Blackmouth catshark",
+   "aliases": [
+    "Galeus melastomus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The blackmouth catshark has a dark lining inside its mouth and lives on muddy seabeds of the north-east Atlantic and Mediterranean."
+  },
+  {
+   "id": "bignose-shark",
+   "name": "Bignose shark",
+   "aliases": [
+    "Carcharhinus altimus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The bignose shark is a large requiem shark with a long, rounded snout, usually found near the seabed on continental slopes."
+  },
+  {
+   "id": "daggernose-shark",
+   "name": "Daggernose shark",
+   "aliases": [
+    "Isogomphodon oxyrhynchus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The daggernose shark has a long, flat, dagger-shaped snout and lives in muddy waters off northern South America."
+  },
+  {
+   "id": "bigeye-sixgill-shark",
+   "name": "Bigeye sixgill shark",
+   "aliases": [
+    "Hexanchus nakamurai"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Bigeye sixgill sharks have large eyes suited to the dim deep sea and, like their cousins, six pairs of gill slits."
+  },
+  {
+   "id": "brazilian-sharpnose-shark",
+   "name": "Brazilian sharpnose shark",
+   "aliases": [
+    "Rhizoprionodon lalandii"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The Brazilian sharpnose shark is a small coastal shark of the western Atlantic that is caught in large numbers by fisheries."
+  },
+  {
+   "id": "blackspot-shark",
+   "name": "Blackspot shark",
+   "aliases": [
+    "Carcharhinus sealei"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The blackspot shark is a small requiem shark of Indian and western Pacific coasts, named for the dark mark on its second dorsal fin."
+  },
+  {
+   "id": "borneo-shark",
+   "name": "Borneo shark",
+   "aliases": [
+    "Carcharhinus borneensis"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The Borneo shark is a small, rarely seen requiem shark of south-east Asian waters, named for the island of Borneo."
+  },
+  {
+   "id": "bluegray-carpetshark",
+   "name": "Bluegray carpetshark",
+   "aliases": [
+    "blue-grey carpetshark",
+    "Brachaelurus colcloughi"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The bluegray carpetshark is a slender seabed shark found only off the east coast of Australia."
+  },
+  {
+   "id": "broadfin-shark",
+   "name": "Broadfin shark",
+   "aliases": [
+    "Lamiopsis temminckii"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The broadfin shark is a rare requiem shark of Indo-Pacific coasts and estuaries, named for its broad fins."
+  },
+  {
+   "id": "collared-carpetshark",
+   "name": "Collared carpetshark",
+   "aliases": [
+    "Parascyllium collare"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The collared carpetshark is a small, slender shark with a dark collar-like band behind its head, found off Australia."
+  },
+  {
+   "id": "deepwater-catshark",
+   "name": "Deepwater catshark",
+   "aliases": [
+    "Apristurus profundorum"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The deepwater catshark lives on the dark seabed of the western Atlantic at depths well over a kilometre."
+  },
+  {
+   "id": "cloudy-catshark",
+   "name": "Cloudy catshark",
+   "aliases": [
+    "Scyliorhinus torazame"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The cloudy catshark is a small shark of the north-west Pacific that lays egg cases fitted with long curling tendrils."
+  },
+  {
+   "id": "draughtsboard-shark",
+   "name": "Draughtsboard shark",
+   "aliases": [
+    "Cephaloscyllium isabellum",
+    "New Zealand draughtsboard shark"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The draughtsboard shark of New Zealand is a catshark that can gulp water to swell its body when threatened."
+  },
+  {
+   "id": "bass",
+   "name": "Bass",
+   "aliases": [
+    "Morone",
+    "sea bass family"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Bass is a name shared by many unrelated fish, from the sea bass of European coasts to the largemouth bass of North American lakes."
+  },
+  {
+   "id": "bream",
+   "name": "Bream",
+   "aliases": [
+    "Abramis brama",
+    "common bream"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The common bream is a deep-bodied freshwater fish of European lakes and slow rivers that feeds by grubbing in the mud."
+  },
+  {
+   "id": "pike",
+   "name": "Pike",
+   "aliases": [
+    "northern pike",
+    "Esox lucius"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Pike are ambush predators with long, duck-bill-shaped snouts and are top freshwater hunters across the northern hemisphere."
+  },
+  {
+   "id": "perch",
+   "name": "Perch",
+   "aliases": [
+    "European perch",
+    "Perca fluviatilis"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "European perch have dark vertical bars and a spiny dorsal fin, and hunt in shoals in lakes and slow rivers."
+  },
+  {
+   "id": "mullet",
+   "name": "Mullet",
+   "aliases": [
+    "Mugil cephalus",
+    "Mugilidae"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Mullet are schooling fish that feed by sifting mud and algae, and some species leap clear of the water."
+  },
+  {
+   "id": "smelt",
+   "name": "Smelt",
+   "aliases": [
+    "Osmerus eperlanus",
+    "Osmeridae"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "European smelt give off a smell like cucumber, which is how many anglers recognise them."
+  },
+  {
+   "id": "stickleback",
+   "name": "Stickleback",
+   "aliases": [
+    "Gasterosteidae",
+    "Gasterosteus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Male sticklebacks build a nest from plant material and guard the eggs until they hatch."
+  },
+  {
+   "id": "toadfish",
+   "name": "Toadfish",
+   "aliases": [
+    "Batrachoididae",
+    "oyster toadfish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Toadfish make loud grunting and boatwhistle calls by vibrating a muscle against their swim bladder."
+  },
+  {
+   "id": "trevally",
+   "name": "Trevally",
+   "aliases": [
+    "Carangidae",
+    "jack"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Trevally are powerful, fast-swimming reef and open-water predators, and the family also includes jacks and pompanos."
+  },
+  {
+   "id": "triplefin",
+   "name": "Triplefin",
+   "aliases": [
+    "Tripterygiidae"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Triplefins are small reef fish named for their three separate dorsal fins and are especially diverse around New Zealand."
+  },
+  {
+   "id": "tubeshoulder",
+   "name": "Tubeshoulder",
+   "aliases": [
+    "Searsia koefoedi",
+    "Platytroctidae"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Tubeshoulders are deep-sea fish that squirt a cloud of glowing fluid from a tube above each shoulder to confuse predators."
+  }
+ ],
+ "prompts": [
+  {
+   "id": "shark-species-b",
+   "answers": [
+    {
+     "entity": "bull-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "blue-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "basking-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "blacktip-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "cookiecutter-shark",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bonnethead",
+     "tier": "baitball"
+    },
+    {
+     "entity": "dogfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "blacktip-reef-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "caribbean-reef-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "dusky-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "bamboo-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "common-thresher-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "copper-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "carpet-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "banded-wobbegong",
+     "tier": "reef"
+    },
+    {
+     "entity": "bluntnose-sixgill-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "broadnose-sevengill-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "bigeye-thresher-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bramble-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blind-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blacknose-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "crocodile-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cladoselache",
+     "tier": "twilight"
+    },
+    {
+     "entity": "crested-bullhead-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "chain-catshark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "catshark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blackmouth-catshark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bignose-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "daggernose-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cretoxyrhina",
+     "tier": "midnight"
+    },
+    {
+     "entity": "coral-catshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dwarf-lanternshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "birdbeak-dogfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "black-dogfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bigeye-sixgill-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "brazilian-sharpnose-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "blackspot-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "borneo-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bluegray-carpetshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "broadfin-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "collared-carpetshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "deepwater-catshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cloudy-catshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "draughtsboard-shark",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "fish-letter-s",
+   "answers": [
+    {
+     "entity": "salmon",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sardine",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "swordfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sole",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "snapper",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "seahorse",
+     "tier": "baitball"
+    },
+    {
+     "entity": "stonefish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "sailfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "sturgeon",
+     "tier": "reef"
+    },
+    {
+     "entity": "skipjack-tuna",
+     "tier": "reef"
+    },
+    {
+     "entity": "surgeonfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-bass",
+     "tier": "reef"
+    },
+    {
+     "entity": "snook",
+     "tier": "reef"
+    },
+    {
+     "entity": "sockeye-salmon",
+     "tier": "reef"
+    },
+    {
+     "entity": "sprat",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-bream",
+     "tier": "reef"
+    },
+    {
+     "entity": "skate",
+     "tier": "reef"
+    },
+    {
+     "entity": "sculpin",
+     "tier": "reef"
+    },
+    {
+     "entity": "stickleback",
+     "tier": "reef"
+    },
+    {
+     "entity": "sablefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sheepshead",
+     "tier": "twilight"
+    },
+    {
+     "entity": "scorpionfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "stargazer",
+     "tier": "twilight"
+    },
+    {
+     "entity": "squirrelfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sergeant-major",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sailfin-tang",
+     "tier": "twilight"
+    },
+    {
+     "entity": "snailfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sawfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "snakehead",
+     "tier": "twilight"
+    },
+    {
+     "entity": "smelt",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sea-lamprey",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sea-robin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sarcastic-fringehead",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sabertooth-fish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "stoplight-loosejaw",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sea-dragon",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spotted-handfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "smooth-handfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "southern-bluefin-tuna",
+     "tier": "midnight"
+    },
+    {
+     "entity": "striped-marlin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "snowflake-moray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spaghetti-eel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spanish-mackerel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "stout-infantfish",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "fish-letter-b",
+   "answers": [
+    {
+     "entity": "barracuda",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "bluefin-tuna",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "bass",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "bream",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "blobfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "betta",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bonefish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "butterflyfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "blue-tang",
+     "tier": "reef"
+    },
+    {
+     "entity": "boxfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "barramundi",
+     "tier": "reef"
+    },
+    {
+     "entity": "black-marlin",
+     "tier": "reef"
+    },
+    {
+     "entity": "bonito",
+     "tier": "reef"
+    },
+    {
+     "entity": "burbot",
+     "tier": "reef"
+    },
+    {
+     "entity": "bigeye-tuna",
+     "tier": "reef"
+    },
+    {
+     "entity": "bluehead-wrasse",
+     "tier": "reef"
+    },
+    {
+     "entity": "black-sea-bass",
+     "tier": "reef"
+    },
+    {
+     "entity": "bluefish",
+     "tier": "reef"
+    },
+    {
+     "entity": "blenny",
+     "tier": "reef"
+    },
+    {
+     "entity": "bowfin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bichir",
+     "tier": "twilight"
+    },
+    {
+     "entity": "barreleye",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bumphead-parrotfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "banggai-cardinalfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bumblebee-goby",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blue-parrotfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bristlemouth",
+     "tier": "twilight"
+    },
+    {
+     "entity": "barndoor-skate",
+     "tier": "twilight"
+    },
+    {
+     "entity": "beluga-sturgeon",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blacksmith",
+     "tier": "twilight"
+    },
+    {
+     "entity": "black-swallower",
+     "tier": "twilight"
+    },
+    {
+     "entity": "black-ghost-knifefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bargibants-pygmy-seahorse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bobtail-snipe-eel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "blue-antimora",
+     "tier": "midnight"
+    },
+    {
+     "entity": "black-scabbardfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "blue-devil-damselfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bristlenose-pleco",
+     "tier": "midnight"
+    },
+    {
+     "entity": "blackspotted-puffer",
+     "tier": "midnight"
+    },
+    {
+     "entity": "black-molly",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bombay-duck",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bluestripe-snapper",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bony-eared-assfish",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "fish-letter-c",
+   "answers": [
+    {
+     "entity": "carp",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "catfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "cod",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "clownfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "coelacanth",
+     "tier": "baitball"
+    },
+    {
+     "entity": "candiru",
+     "tier": "baitball"
+    },
+    {
+     "entity": "cleaner-wrasse",
+     "tier": "baitball"
+    },
+    {
+     "entity": "cobia",
+     "tier": "reef"
+    },
+    {
+     "entity": "conger-eel",
+     "tier": "reef"
+    },
+    {
+     "entity": "cichlid",
+     "tier": "reef"
+    },
+    {
+     "entity": "chinook-salmon",
+     "tier": "reef"
+    },
+    {
+     "entity": "coho-salmon",
+     "tier": "reef"
+    },
+    {
+     "entity": "cardinalfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "copperband-butterflyfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "capelin",
+     "tier": "reef"
+    },
+    {
+     "entity": "cornetfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "cutthroat-trout",
+     "tier": "reef"
+    },
+    {
+     "entity": "chub-mackerel",
+     "tier": "reef"
+    },
+    {
+     "entity": "coral-trout",
+     "tier": "reef"
+    },
+    {
+     "entity": "cabezon",
+     "tier": "twilight"
+    },
+    {
+     "entity": "crocodilefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "clown-triggerfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cuckoo-wrasse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cunner",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cusk",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cusk-eel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "chain-moray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "clingfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "chimaera",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cutthroat-eel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "corkwing-wrasse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "celestial-pearl-danio",
+     "tier": "midnight"
+    },
+    {
+     "entity": "coral-goby",
+     "tier": "midnight"
+    },
+    {
+     "entity": "crystal-goby",
+     "tier": "midnight"
+    },
+    {
+     "entity": "chili-rasbora",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cuckoo-ray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "clarion-angelfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "clarks-anemonefish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "clown-killifish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cherry-barb",
+     "tier": "midnight"
+    },
+    {
+     "entity": "coral-beauty",
+     "tier": "midnight"
+    },
+    {
+     "entity": "crocodile-icefish",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "fish-letter-p",
+   "answers": [
+    {
+     "entity": "piranha",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "pufferfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "pike",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "perch",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "paddlefish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "pinecone-fish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "porcupinefish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "parrotfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "plaice",
+     "tier": "reef"
+    },
+    {
+     "entity": "pollack",
+     "tier": "reef"
+    },
+    {
+     "entity": "permit",
+     "tier": "reef"
+    },
+    {
+     "entity": "pacific-halibut",
+     "tier": "reef"
+    },
+    {
+     "entity": "pacific-cod",
+     "tier": "reef"
+    },
+    {
+     "entity": "pacific-herring",
+     "tier": "reef"
+    },
+    {
+     "entity": "pacific-sardine",
+     "tier": "reef"
+    },
+    {
+     "entity": "pink-salmon",
+     "tier": "reef"
+    },
+    {
+     "entity": "pilot-fish",
+     "tier": "reef"
+    },
+    {
+     "entity": "pipefish",
+     "tier": "reef"
+    },
+    {
+     "entity": "peacock-bass",
+     "tier": "reef"
+    },
+    {
+     "entity": "patagonian-toothfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pacific-lamprey",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pacific-saury",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pearlfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "picasso-triggerfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "porkfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pinfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pacific-seahorse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "platy",
+     "tier": "twilight"
+    },
+    {
+     "entity": "paradise-fish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pleco",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pygmy-seahorse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pacific-bluefin-tuna",
+     "tier": "twilight"
+    },
+    {
+     "entity": "paedocypris",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pontohs-pygmy-seahorse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pacific-spiny-lumpsucker",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pancake-batfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pygmy-corydoras",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pygmy-sunfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "petrale-sole",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pictus-catfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "piraiba",
+     "tier": "midnight"
+    },
+    {
+     "entity": "peruvian-anchoveta",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pink-vent-fish",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "fish-letter-m",
+   "answers": [
+    {
+     "entity": "mackerel",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "marlin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mahi-mahi",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mullet",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "monkfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "moorish-idol",
+     "tier": "baitball"
+    },
+    {
+     "entity": "mudskipper",
+     "tier": "baitball"
+    },
+    {
+     "entity": "mandarinfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "moray-eel",
+     "tier": "reef"
+    },
+    {
+     "entity": "milkfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "menhaden",
+     "tier": "reef"
+    },
+    {
+     "entity": "mangrove-jack",
+     "tier": "reef"
+    },
+    {
+     "entity": "mutton-snapper",
+     "tier": "reef"
+    },
+    {
+     "entity": "murray-cod",
+     "tier": "reef"
+    },
+    {
+     "entity": "muskellunge",
+     "tier": "reef"
+    },
+    {
+     "entity": "molly",
+     "tier": "reef"
+    },
+    {
+     "entity": "mosquitofish",
+     "tier": "reef"
+    },
+    {
+     "entity": "midshipman",
+     "tier": "reef"
+    },
+    {
+     "entity": "moses-sole",
+     "tier": "reef"
+    },
+    {
+     "entity": "manta-ray",
+     "tier": "reef"
+    },
+    {
+     "entity": "mekong-giant-catfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mbu-puffer",
+     "tier": "twilight"
+    },
+    {
+     "entity": "marbled-lungfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "map-puffer",
+     "tier": "twilight"
+    },
+    {
+     "entity": "medaka",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mediterranean-moray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "moon-wrasse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "man-of-war-fish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mackerel-icefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mexican-golden-trout",
+     "tier": "twilight"
+    },
+    {
+     "entity": "masu-salmon",
+     "tier": "twilight"
+    },
+    {
+     "entity": "megrim",
+     "tier": "twilight"
+    },
+    {
+     "entity": "maroon-clownfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "midnight-parrotfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mangrove-killifish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mediterranean-damselfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mccullochs-anemonefish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "marble-trout",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mackerel-scad",
+     "tier": "midnight"
+    },
+    {
+     "entity": "madtom",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mahseer",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mediterranean-parrotfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mariana-snailfish",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "fish-letter-g",
+   "answers": [
+    {
+     "entity": "goldfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "guppy",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "grouper",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "great-white-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "goblin-shark",
+     "tier": "baitball"
+    },
+    {
+     "entity": "garden-eel",
+     "tier": "baitball"
+    },
+    {
+     "entity": "goliath-grouper",
+     "tier": "baitball"
+    },
+    {
+     "entity": "goby",
+     "tier": "reef"
+    },
+    {
+     "entity": "gar",
+     "tier": "reef"
+    },
+    {
+     "entity": "giant-trevally",
+     "tier": "reef"
+    },
+    {
+     "entity": "grunt",
+     "tier": "reef"
+    },
+    {
+     "entity": "grey-mullet",
+     "tier": "reef"
+    },
+    {
+     "entity": "greenland-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "gourami",
+     "tier": "reef"
+    },
+    {
+     "entity": "grass-carp",
+     "tier": "reef"
+    },
+    {
+     "entity": "grayling",
+     "tier": "reef"
+    },
+    {
+     "entity": "goatfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "guitarfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "giant-snakehead",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gulper-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "grunion",
+     "tier": "twilight"
+    },
+    {
+     "entity": "goliath-tigerfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "golden-dorado",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-moray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "glass-catfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "goonch",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gila-trout",
+     "tier": "twilight"
+    },
+    {
+     "entity": "glassy-sweeper",
+     "tier": "twilight"
+    },
+    {
+     "entity": "green-moray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "galapagos-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-grenadier",
+     "tier": "midnight"
+    },
+    {
+     "entity": "grenadier",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gulper-eel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "glass-eel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "giant-mottled-eel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "galapagos-grouper",
+     "tier": "midnight"
+    },
+    {
+     "entity": "green-sawfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gulf-sturgeon",
+     "tier": "midnight"
+    },
+    {
+     "entity": "glowlight-tetra",
+     "tier": "midnight"
+    },
+    {
+     "entity": "grunt-sculpin",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "fish-letter-t",
+   "answers": [
+    {
+     "entity": "tuna",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "trout",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "tiger-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "tilapia",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "tarpon",
+     "tier": "baitball"
+    },
+    {
+     "entity": "triggerfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "tripod-fish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "turbot",
+     "tier": "reef"
+    },
+    {
+     "entity": "tench",
+     "tier": "reef"
+    },
+    {
+     "entity": "tautog",
+     "tier": "reef"
+    },
+    {
+     "entity": "thresher-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "tope",
+     "tier": "reef"
+    },
+    {
+     "entity": "trevally",
+     "tier": "reef"
+    },
+    {
+     "entity": "tonguefish",
+     "tier": "reef"
+    },
+    {
+     "entity": "trumpetfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "threadfin-butterflyfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "three-spined-stickleback",
+     "tier": "reef"
+    },
+    {
+     "entity": "tiger-barb",
+     "tier": "reef"
+    },
+    {
+     "entity": "tripletail",
+     "tier": "reef"
+    },
+    {
+     "entity": "totoaba",
+     "tier": "reef"
+    },
+    {
+     "entity": "taimen",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tiger-grouper",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tomato-clownfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "titan-triggerfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "telescopefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tasselled-wobbegong",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tawny-nurse-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tiger-puffer",
+     "tier": "twilight"
+    },
+    {
+     "entity": "toadfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "triplefin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "thorny-seahorse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tiger-tail-seahorse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tinkers-butterflyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "transparent-goby",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tidepool-sculpin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "three-band-anemonefish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "two-banded-anemonefish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tiger-shovelnose-catfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tubeshoulder",
+     "tier": "midnight"
+    },
+    {
+     "entity": "thornback-ray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "thorntail-stingray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "trimmatom-nanus",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "fish-letter-a",
+   "answers": [
+    {
+     "entity": "anglerfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "anchovy",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "angelfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "albacore",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "arapaima",
+     "tier": "baitball"
+    },
+    {
+     "entity": "archerfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "arowana",
+     "tier": "baitball"
+    },
+    {
+     "entity": "atlantic-salmon",
+     "tier": "reef"
+    },
+    {
+     "entity": "atlantic-mackerel",
+     "tier": "reef"
+    },
+    {
+     "entity": "atlantic-halibut",
+     "tier": "reef"
+    },
+    {
+     "entity": "alaska-pollock",
+     "tier": "reef"
+    },
+    {
+     "entity": "american-eel",
+     "tier": "reef"
+    },
+    {
+     "entity": "alligator-gar",
+     "tier": "reef"
+    },
+    {
+     "entity": "asian-carp",
+     "tier": "reef"
+    },
+    {
+     "entity": "arctic-char",
+     "tier": "reef"
+    },
+    {
+     "entity": "atlantic-bonito",
+     "tier": "reef"
+    },
+    {
+     "entity": "atlantic-sturgeon",
+     "tier": "reef"
+    },
+    {
+     "entity": "atlantic-blue-tang",
+     "tier": "reef"
+    },
+    {
+     "entity": "achilles-tang",
+     "tier": "reef"
+    },
+    {
+     "entity": "african-lungfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "australian-lungfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "arctic-cod",
+     "tier": "twilight"
+    },
+    {
+     "entity": "antarctic-toothfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "antarctic-silverfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "alewife",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ayu",
+     "tier": "twilight"
+    },
+    {
+     "entity": "arrowtooth-flounder",
+     "tier": "twilight"
+    },
+    {
+     "entity": "allards-clownfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "apache-trout",
+     "tier": "twilight"
+    },
+    {
+     "entity": "african-tigerfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "american-shad",
+     "tier": "twilight"
+    },
+    {
+     "entity": "anthias",
+     "tier": "twilight"
+    },
+    {
+     "entity": "abyssal-grenadier",
+     "tier": "midnight"
+    },
+    {
+     "entity": "arabian-picasso-triggerfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "alligator-pipefish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "atlantic-silverside",
+     "tier": "midnight"
+    },
+    {
+     "entity": "american-plaice",
+     "tier": "midnight"
+    },
+    {
+     "entity": "atlantic-tomcod",
+     "tier": "midnight"
+    },
+    {
+     "entity": "adriatic-trout",
+     "tier": "midnight"
+    },
+    {
+     "entity": "african-sharptooth-catfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "atlantic-croaker",
+     "tier": "midnight"
+    },
+    {
+     "entity": "abyssobrotula",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "fish-letter-r",
+   "answers": [
+    {
+     "entity": "rainbow-trout",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "red-snapper",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "rockfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "roach",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "remora",
+     "tier": "baitball"
+    },
+    {
+     "entity": "roosterfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "ribbon-eel",
+     "tier": "baitball"
+    },
+    {
+     "entity": "red-mullet",
+     "tier": "reef"
+    },
+    {
+     "entity": "red-drum",
+     "tier": "reef"
+    },
+    {
+     "entity": "rabbitfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "rainbowfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "red-grouper",
+     "tier": "reef"
+    },
+    {
+     "entity": "rohu",
+     "tier": "reef"
+    },
+    {
+     "entity": "royal-gramma",
+     "tier": "reef"
+    },
+    {
+     "entity": "rock-beauty",
+     "tier": "reef"
+    },
+    {
+     "entity": "regal-angelfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "round-goby",
+     "tier": "reef"
+    },
+    {
+     "entity": "rainbow-smelt",
+     "tier": "reef"
+    },
+    {
+     "entity": "red-lipped-batfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "ropefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "razor-surgeonfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "red-bass",
+     "tier": "twilight"
+    },
+    {
+     "entity": "red-hind",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rougheye-rockfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "roundnose-grenadier",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rex-sole",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ram-cichlid",
+     "tier": "twilight"
+    },
+    {
+     "entity": "red-sea-bannerfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "red-sea-bream",
+     "tier": "twilight"
+    },
+    {
+     "entity": "raccoon-butterflyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rainbow-parrotfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "round-sardinella",
+     "tier": "midnight"
+    },
+    {
+     "entity": "red-cod",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rock-cook",
+     "tier": "midnight"
+    },
+    {
+     "entity": "round-herring",
+     "tier": "midnight"
+    },
+    {
+     "entity": "redtoothed-triggerfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "red-gurnard",
+     "tier": "midnight"
+    },
+    {
+     "entity": "redtail-catfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "red-scorpionfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "reef-triggerfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ruby-sea-dragon",
+     "tier": "hadal"
+    }
+   ]
+  }
+ ]
+}

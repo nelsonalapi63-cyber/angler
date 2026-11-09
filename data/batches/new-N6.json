@@ -1,0 +1,5292 @@
+{
+ "entities": [
+  {
+   "id": "bondi-beach",
+   "name": "Bondi Beach",
+   "aliases": [
+    "Bondi"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Bondi Beach in Sydney is home to Bondi Surf Bathers' Life Saving Club, founded in 1907 and often called the world's first surf lifesaving club."
+  },
+  {
+   "id": "copacabana-beach",
+   "name": "Copacabana",
+   "aliases": [
+    "Copacabana Beach",
+    "Praia de Copacabana"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Copacabana in Rio de Janeiro is a crescent of sand about four kilometres long, famous for its wave-patterned pavement and New Year's Eve crowds."
+  },
+  {
+   "id": "waikiki",
+   "name": "Waikiki",
+   "aliases": [
+    "Waikiki Beach"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Waikiki Beach in Honolulu was a playground of Hawaiian royalty, and a bronze statue of the surfer Duke Kahanamoku stands beside it."
+  },
+  {
+   "id": "miami-beach",
+   "name": "Miami Beach",
+   "aliases": [
+    "South Beach",
+    "Miami South Beach"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Miami Beach lies on a barrier island in Florida and is known for the Art Deco buildings of its South Beach district."
+  },
+  {
+   "id": "venice-beach",
+   "name": "Venice Beach",
+   "aliases": [
+    "Venice Beach, California"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Venice Beach in Los Angeles began in 1905 as a seaside resort founded by Abbot Kinney and modelled on Venice, Italy."
+  },
+  {
+   "id": "omaha-beach",
+   "name": "Omaha Beach",
+   "aliases": [
+    "Omaha"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Omaha Beach in Normandy was one of the five landing beaches of the Allied invasion on 6 June 1944."
+  },
+  {
+   "id": "maya-bay",
+   "name": "Maya Bay",
+   "aliases": [
+    "Koh Phi Phi Leh beach"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Maya Bay on Ko Phi Phi Leh in Thailand starred in the film The Beach, and was closed to visitors from 2018 until January 2022 to let its coral recover."
+  },
+  {
+   "id": "ipanema-beach",
+   "name": "Ipanema",
+   "aliases": [
+    "Ipanema Beach",
+    "Praia de Ipanema"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Ipanema Beach in Rio de Janeiro inspired the bossa nova song The Girl from Ipanema, written in 1962."
+  },
+  {
+   "id": "whitehaven-beach",
+   "name": "Whitehaven Beach",
+   "aliases": [
+    "Whitehaven"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Whitehaven Beach on Whitsunday Island in Queensland runs for about seven kilometres and is famed for its very pure, bright silica sand."
+  },
+  {
+   "id": "daytona-beach",
+   "name": "Daytona Beach",
+   "aliases": [
+    "Daytona"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Daytona Beach in Florida has such hard-packed sand that cars once raced along it, and stock car racing there led to the creation of NASCAR."
+  },
+  {
+   "id": "myrtle-beach",
+   "name": "Myrtle Beach",
+   "aliases": [],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Myrtle Beach is the centre of South Carolina's Grand Strand, a roughly 60-mile stretch of continuous beach resorts."
+  },
+  {
+   "id": "utah-beach",
+   "name": "Utah Beach",
+   "aliases": [
+    "Utah"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Utah Beach was the westernmost of the D-Day landing beaches, where United States troops came ashore on 6 June 1944."
+  },
+  {
+   "id": "juno-beach",
+   "name": "Juno Beach",
+   "aliases": [
+    "Juno"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Juno Beach was the D-Day landing beach assigned to Canadian forces on 6 June 1944."
+  },
+  {
+   "id": "gold-beach",
+   "name": "Gold Beach",
+   "aliases": [
+    "Gold"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Gold Beach was the central British landing beach on D-Day, next to the village of Arromanches where an artificial Mulberry harbour was built."
+  },
+  {
+   "id": "sword-beach",
+   "name": "Sword Beach",
+   "aliases": [
+    "Sword"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Sword Beach was the easternmost of the D-Day landing beaches, assigned to British forces on 6 June 1944."
+  },
+  {
+   "id": "patong-beach",
+   "name": "Patong Beach",
+   "aliases": [
+    "Patong"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Patong is the busiest resort beach on Phuket in Thailand, and it was struck by the 2004 Indian Ocean tsunami."
+  },
+  {
+   "id": "brighton-beach",
+   "name": "Brighton Beach",
+   "aliases": [
+    "Brighton"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Brighton's famous beach in England is made of pebbles rather than sand and is lined by a pier that opened in 1899."
+  },
+  {
+   "id": "white-beach-boracay",
+   "name": "White Beach, Boracay",
+   "aliases": [
+    "Boracay White Beach",
+    "Boracay"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "White Beach on Boracay in the Philippines stretches for roughly four kilometres along the island's west coast."
+  },
+  {
+   "id": "santa-monica-beach",
+   "name": "Santa Monica Beach",
+   "aliases": [
+    "Santa Monica State Beach",
+    "Santa Monica"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Santa Monica State Beach in California is backed by a pier that opened in 1909 and carries a historic funfair."
+  },
+  {
+   "id": "reynisfjara",
+   "name": "Reynisfjara",
+   "aliases": [
+    "Reynisfjara Beach",
+    "Vik black sand beach",
+    "Black Sand Beach Iceland"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Reynisfjara near Vik in Iceland is a black volcanic sand beach backed by basalt columns and watched over by the Reynisdrangar sea stacks."
+  },
+  {
+   "id": "navagio-beach",
+   "name": "Navagio Beach",
+   "aliases": [
+    "Shipwreck Beach",
+    "Smugglers Cove"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Navagio Beach on Zakynthos in Greece is enclosed by cliffs and holds the rusting wreck of a freighter that ran aground in 1980."
+  },
+  {
+   "id": "grace-bay",
+   "name": "Grace Bay",
+   "aliases": [
+    "Grace Bay Beach"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Grace Bay on Providenciales in the Turks and Caicos Islands is a long beach sheltered by a barrier reef."
+  },
+  {
+   "id": "seven-mile-beach",
+   "name": "Seven Mile Beach",
+   "aliases": [
+    "Grand Cayman Seven Mile Beach"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Despite its name, Seven Mile Beach on Grand Cayman is only about five and a half miles long."
+  },
+  {
+   "id": "anse-source-d-argent",
+   "name": "Anse Source d'Argent",
+   "aliases": [
+    "Source d'Argent"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Anse Source d'Argent on La Digue in the Seychelles is lined with smooth granite boulders and is among the most photographed beaches on Earth."
+  },
+  {
+   "id": "hyams-beach",
+   "name": "Hyams Beach",
+   "aliases": [
+    "Hyams"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Hyams Beach in Jervis Bay, New South Wales, is famed for sand so white and fine that it squeaks underfoot."
+  },
+  {
+   "id": "cable-beach",
+   "name": "Cable Beach",
+   "aliases": [
+    "Cable Beach Broome"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Cable Beach at Broome in Western Australia stretches for about 22 kilometres and is famous for camel rides at sunset."
+  },
+  {
+   "id": "pink-sands-beach",
+   "name": "Pink Sands Beach",
+   "aliases": [
+    "Harbour Island beach",
+    "Pink Sand Beach"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Pink Sands Beach on Harbour Island in the Bahamas gets its blush from the crushed shells of tiny red-shelled organisms."
+  },
+  {
+   "id": "shell-beach-shark-bay",
+   "name": "Shell Beach",
+   "aliases": [
+    "Shell Beach Shark Bay"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Shell Beach in Shark Bay, Western Australia, is made almost entirely of tiny cockle shells and runs for about 60 kilometres."
+  },
+  {
+   "id": "bournemouth-beach",
+   "name": "Bournemouth Beach",
+   "aliases": [
+    "Bournemouth"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Bournemouth Beach on the Dorset coast offers about seven miles of golden sand."
+  },
+  {
+   "id": "cannon-beach",
+   "name": "Cannon Beach",
+   "aliases": [
+    "Haystack Rock beach"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Cannon Beach in Oregon is dominated by Haystack Rock, a sea stack about 72 metres tall."
+  },
+  {
+   "id": "la-concha",
+   "name": "La Concha",
+   "aliases": [
+    "Playa de la Concha",
+    "Concha Beach",
+    "La Concha Beach"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "La Concha in San Sebastian, Spain, takes its name from the scallop-shell shape of the bay it curves around."
+  },
+  {
+   "id": "coxs-bazar-beach",
+   "name": "Cox's Bazar",
+   "aliases": [
+    "Coxs Bazar",
+    "Cox's Bazar Beach"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Cox's Bazar in Bangladesh is a natural sea beach about 120 kilometres long and is often called the longest in the world."
+  },
+  {
+   "id": "camps-bay",
+   "name": "Camps Bay",
+   "aliases": [
+    "Camps Bay Beach"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Camps Bay Beach in Cape Town sits beneath the Twelve Apostles mountain range."
+  },
+  {
+   "id": "muizenberg-beach",
+   "name": "Muizenberg Beach",
+   "aliases": [
+    "Muizenberg"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Muizenberg Beach near Cape Town is known for its colourful Victorian-style bathing huts and its gentle, beginner-friendly surf."
+  },
+  {
+   "id": "elafonissi-beach",
+   "name": "Elafonissi",
+   "aliases": [
+    "Elafonissi Beach"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Elafonissi Beach on Crete has pale pink patches of sand made from crushed shell fragments and a shallow turquoise lagoon."
+  },
+  {
+   "id": "balos-beach",
+   "name": "Balos",
+   "aliases": [
+    "Balos Beach",
+    "Balos Lagoon"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Balos on the north-west tip of Crete is a shallow lagoon beach reached by a long dirt track or by boat from Kissamos."
+  },
+  {
+   "id": "lanikai-beach",
+   "name": "Lanikai Beach",
+   "aliases": [
+    "Lanikai"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Lanikai Beach on Oahu looks out over the twin Mokulua islands off the windward coast."
+  },
+  {
+   "id": "anse-lazio",
+   "name": "Anse Lazio",
+   "aliases": [],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Anse Lazio on Praslin in the Seychelles is a granite-flanked beach regularly named among the best in the world."
+  },
+  {
+   "id": "matira-beach",
+   "name": "Matira Beach",
+   "aliases": [
+    "Matira"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Matira Beach is the main public beach on Bora Bora in French Polynesia, a long white strip with a shallow lagoon."
+  },
+  {
+   "id": "wineglass-bay",
+   "name": "Wineglass Bay",
+   "aliases": [],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Wineglass Bay in Freycinet National Park, Tasmania, is a near-perfect crescent of white sand reached only on foot or by boat."
+  },
+  {
+   "id": "papakolea-green-sand-beach",
+   "name": "Papakolea Beach",
+   "aliases": [
+    "Green Sand Beach",
+    "Papakolea",
+    "Papakolea Green Sand Beach"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Papakolea on the Big Island of Hawaii has green sand because it contains crystals of the volcanic mineral olivine."
+  },
+  {
+   "id": "punaluu-black-sand-beach",
+   "name": "Punalu'u Beach",
+   "aliases": [
+    "Punaluu Beach",
+    "Punaluu Black Sand Beach",
+    "Punalu'u Black Sand Beach"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Punalu'u Beach on Hawaii's Big Island has black sand made of fragmented basalt, and green sea turtles often haul out on it."
+  },
+  {
+   "id": "playa-flamenco",
+   "name": "Playa Flamenco",
+   "aliases": [
+    "Flamenco Beach"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Playa Flamenco on Culebra, Puerto Rico, is a horseshoe bay where rusting military tanks still sit on the sand."
+  },
+  {
+   "id": "rhossili-bay",
+   "name": "Rhossili Bay",
+   "aliases": [
+    "Rhossili"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Rhossili Bay on the Gower Peninsula in Wales is a three-mile beach where the wreck of the Helvetia, lost in 1887, still lies."
+  },
+  {
+   "id": "praia-do-cassino",
+   "name": "Praia do Cassino",
+   "aliases": [
+    "Cassino Beach",
+    "Cassino"
+   ],
+   "kind": "place",
+   "group": "beaches",
+   "fact": "Praia do Cassino in southern Brazil is often claimed as the longest uninterrupted beach in the world, at more than 200 kilometres."
+  },
+  {
+   "id": "pharos-of-alexandria",
+   "name": "Pharos of Alexandria",
+   "aliases": [
+    "Lighthouse of Alexandria",
+    "Alexandria Lighthouse",
+    "Pharos"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "The Pharos of Alexandria was completed around 280 BC, stood roughly 100 metres tall, and was one of the Seven Wonders of the Ancient World."
+  },
+  {
+   "id": "eddystone-lighthouse",
+   "name": "Eddystone Lighthouse",
+   "aliases": [
+    "Eddystone",
+    "Eddystone Light"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Four lighthouses have stood on the Eddystone rocks off Plymouth since 1698, including John Smeaton's pioneering granite tower of 1759."
+  },
+  {
+   "id": "cape-hatteras-lighthouse",
+   "name": "Cape Hatteras Lighthouse",
+   "aliases": [
+    "Cape Hatteras Light",
+    "Cape Hatteras"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Cape Hatteras Lighthouse in North Carolina is the tallest brick lighthouse in the United States and was moved inland in 1999 to escape erosion."
+  },
+  {
+   "id": "portland-head-light",
+   "name": "Portland Head Light",
+   "aliases": [
+    "Portland Head Lighthouse",
+    "Portland Head"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Portland Head Light in Maine was first lit in 1791 and is one of the most photographed lighthouses in the United States."
+  },
+  {
+   "id": "boston-light",
+   "name": "Boston Light",
+   "aliases": [
+    "Boston Harbor Light",
+    "Little Brewster Light"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Boston Light on Little Brewster Island was the first lighthouse built in what became the United States, first lit in 1716."
+  },
+  {
+   "id": "tower-of-hercules",
+   "name": "Tower of Hercules",
+   "aliases": [
+    "Torre de Hercules",
+    "Hercules Tower"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "The Tower of Hercules at A Coruna in Spain is a Roman lighthouse from the first or second century that is still in use, and a UNESCO World Heritage Site."
+  },
+  {
+   "id": "bell-rock-lighthouse",
+   "name": "Bell Rock Lighthouse",
+   "aliases": [
+    "Bell Rock",
+    "Inchcape Rock Lighthouse"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Bell Rock Lighthouse off Angus in Scotland, built by Robert Stevenson and finished in 1810, is the oldest surviving sea-washed lighthouse in the world."
+  },
+  {
+   "id": "fastnet-lighthouse",
+   "name": "Fastnet Lighthouse",
+   "aliases": [
+    "Fastnet Rock",
+    "Fastnet",
+    "Ireland's Teardrop"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Fastnet Rock off the south-west of Ireland carries a granite lighthouse completed in 1904, the tallest and widest rock lighthouse in Britain and Ireland."
+  },
+  {
+   "id": "cordouan-lighthouse",
+   "name": "Cordouan Lighthouse",
+   "aliases": [
+    "Phare de Cordouan",
+    "Cordouan"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Cordouan Lighthouse stands on a rock in the Gironde estuary in France, was completed in 1611, and became a UNESCO World Heritage Site in 2021."
+  },
+  {
+   "id": "bishop-rock-lighthouse",
+   "name": "Bishop Rock Lighthouse",
+   "aliases": [
+    "Bishop Rock"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Bishop Rock off the Isles of Scilly is described as the smallest island in the world with a building on it, and its lighthouse is the outermost in England."
+  },
+  {
+   "id": "longstone-lighthouse",
+   "name": "Longstone Lighthouse",
+   "aliases": [
+    "Longstone Light",
+    "Longstone"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "In 1838 Grace Darling and her father rowed out from Longstone Lighthouse in the Farne Islands to rescue survivors of the wrecked steamship Forfarshire."
+  },
+  {
+   "id": "cape-byron-lighthouse",
+   "name": "Cape Byron Lighthouse",
+   "aliases": [
+    "Cape Byron",
+    "Byron Bay Lighthouse"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Cape Byron Lighthouse in New South Wales was first lit in 1901 and stands near the most easterly point of mainland Australia."
+  },
+  {
+   "id": "peggys-point-lighthouse",
+   "name": "Peggy's Point Lighthouse",
+   "aliases": [
+    "Peggy's Cove Lighthouse",
+    "Peggys Cove Lighthouse",
+    "Peggy's Cove"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Peggy's Point Lighthouse perches on granite rocks at Peggy's Cove in Nova Scotia and is among the most photographed lighthouses in Canada."
+  },
+  {
+   "id": "montauk-point-lighthouse",
+   "name": "Montauk Point Lighthouse",
+   "aliases": [
+    "Montauk Lighthouse",
+    "Montauk Point Light"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Montauk Point Lighthouse on Long Island, New York, was authorised during George Washington's presidency and is among the oldest in the country."
+  },
+  {
+   "id": "lanterna-di-genova",
+   "name": "Lanterna of Genoa",
+   "aliases": [
+    "Lanterna",
+    "La Lanterna",
+    "Genoa Lighthouse",
+    "Lanterna di Genova"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "The Lanterna of Genoa, rebuilt in 1543 and about 77 metres tall, is one of the oldest working lighthouses in the world."
+  },
+  {
+   "id": "hook-head-lighthouse",
+   "name": "Hook Lighthouse",
+   "aliases": [
+    "Hook Head Lighthouse",
+    "Hook Head",
+    "Hook Lighthouse Wexford"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Hook Lighthouse in County Wexford, Ireland, dates from the 13th century and is often described as the oldest operating lighthouse in the world."
+  },
+  {
+   "id": "skerryvore-lighthouse",
+   "name": "Skerryvore Lighthouse",
+   "aliases": [
+    "Skerryvore"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Skerryvore Lighthouse, built by Alan Stevenson and first lit in 1844, is the tallest lighthouse in Scotland at about 48 metres."
+  },
+  {
+   "id": "st-augustine-lighthouse",
+   "name": "St. Augustine Lighthouse",
+   "aliases": [
+    "St Augustine Lighthouse",
+    "Saint Augustine Lighthouse",
+    "St. Augustine Light"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "The black-and-white spiral-striped St. Augustine Lighthouse in Florida dates from 1874 and has 219 steps to its lantern."
+  },
+  {
+   "id": "cape-otway-lighthouse",
+   "name": "Cape Otway Lighthouse",
+   "aliases": [
+    "Cape Otway Light",
+    "Cape Otway"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Cape Otway Lighthouse in Victoria, built in 1848, is the oldest surviving lighthouse on mainland Australia."
+  },
+  {
+   "id": "flannan-isles-lighthouse",
+   "name": "Flannan Isles Lighthouse",
+   "aliases": [
+    "Flannan Isles",
+    "Eilean Mor Lighthouse",
+    "Flannan Isles Light"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "In December 1900 all three keepers of the Flannan Isles Lighthouse in the Outer Hebrides vanished without trace."
+  },
+  {
+   "id": "tillamook-rock-lighthouse",
+   "name": "Tillamook Rock Lighthouse",
+   "aliases": [
+    "Terrible Tilly",
+    "Tillamook Rock Light"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Tillamook Rock Lighthouse off Oregon, nicknamed Terrible Tilly, was lit in 1881 and sits on a wave-battered rock about a mile offshore."
+  },
+  {
+   "id": "minots-ledge-lighthouse",
+   "name": "Minot's Ledge Lighthouse",
+   "aliases": [
+    "Minots Ledge Light",
+    "Minot's Light",
+    "I Love You Lighthouse",
+    "Minots Ledge"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Minot's Ledge Lighthouse off Massachusetts flashes in a 1-4-3 pattern, earning it the nickname the I Love You Light."
+  },
+  {
+   "id": "cape-agulhas-lighthouse",
+   "name": "Cape Agulhas Lighthouse",
+   "aliases": [
+    "Cape Agulhas Light",
+    "Cape Agulhas"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Cape Agulhas Lighthouse in South Africa, built in 1849, stands at the southernmost tip of Africa, where the Atlantic and Indian oceans are said to meet."
+  },
+  {
+   "id": "cape-point-lighthouse",
+   "name": "Cape Point Lighthouse",
+   "aliases": [
+    "Cape Point Light",
+    "Cape Point"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "A new Cape Point Lighthouse was built lower on the cliffs after the Portuguese liner Lusitania was wrecked there in 1911."
+  },
+  {
+   "id": "creach-lighthouse",
+   "name": "Creac'h Lighthouse",
+   "aliases": [
+    "Phare du Creach",
+    "Creach",
+    "Phare du Creac'h",
+    "Ushant Lighthouse"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Creac'h Lighthouse on the French island of Ushant is one of the most powerful lighthouses in the world, with a beam reaching about 60 kilometres."
+  },
+  {
+   "id": "ar-men-lighthouse",
+   "name": "Ar-Men Lighthouse",
+   "aliases": [
+    "Ar-Men",
+    "Ar Men",
+    "Phare d'Ar-Men"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Ar-Men Lighthouse stands on a tiny rock off Brittany and took 14 years to build, from 1867 to 1881, earning the nickname Hell of Hells."
+  },
+  {
+   "id": "muckle-flugga-lighthouse",
+   "name": "Muckle Flugga Lighthouse",
+   "aliases": [
+    "Muckle Flugga"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Muckle Flugga Lighthouse in the Shetland Islands, first lit in 1858, is the northernmost lighthouse in the United Kingdom."
+  },
+  {
+   "id": "cape-reinga-lighthouse",
+   "name": "Cape Reinga Lighthouse",
+   "aliases": [
+    "Cape Reinga"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Cape Reinga Lighthouse marks the northwest tip of New Zealand's North Island, where Maori tradition says spirits depart for the afterlife."
+  },
+  {
+   "id": "pigeon-point-lighthouse",
+   "name": "Pigeon Point Lighthouse",
+   "aliases": [
+    "Pigeon Point Light",
+    "Pigeon Point"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Pigeon Point Lighthouse in California, about 35 metres tall, is among the tallest lighthouses on the United States west coast."
+  },
+  {
+   "id": "heceta-head-lighthouse",
+   "name": "Heceta Head Lighthouse",
+   "aliases": [
+    "Heceta Head Light",
+    "Heceta Head"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Heceta Head Lighthouse sits on a headland on the Oregon coast and was first lit in 1894."
+  },
+  {
+   "id": "jeddah-light",
+   "name": "Jeddah Light",
+   "aliases": [
+    "Jeddah Lighthouse"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Jeddah Light in Saudi Arabia is about 133 metres tall and is among the tallest traditional lighthouses in the world."
+  },
+  {
+   "id": "cape-wrath-lighthouse",
+   "name": "Cape Wrath Lighthouse",
+   "aliases": [
+    "Cape Wrath"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Cape Wrath Lighthouse at the north-west tip of mainland Scotland was built by Robert Stevenson and first lit in 1828."
+  },
+  {
+   "id": "dunnet-head-lighthouse",
+   "name": "Dunnet Head Lighthouse",
+   "aliases": [
+    "Dunnet Head"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Dunnet Head Lighthouse, built by Robert Stevenson in 1831, stands on the most northerly point of mainland Britain."
+  },
+  {
+   "id": "ardnamurchan-lighthouse",
+   "name": "Ardnamurchan Lighthouse",
+   "aliases": [
+    "Ardnamurchan Point",
+    "Ardnamurchan"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Ardnamurchan Lighthouse, built by Alan Stevenson and lit in 1849, marks the most westerly point of mainland Britain."
+  },
+  {
+   "id": "smeatons-tower",
+   "name": "Smeaton's Tower",
+   "aliases": [
+    "Smeatons Tower",
+    "Smeaton Tower"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Smeaton's Tower on Plymouth Hoe is the upper part of the third Eddystone Lighthouse, moved there stone by stone after 1882."
+  },
+  {
+   "id": "les-eclaireurs-lighthouse",
+   "name": "Les Eclaireurs Lighthouse",
+   "aliases": [
+    "Les Eclaireurs",
+    "Lighthouse at the End of the World",
+    "Beagle Channel Lighthouse"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Les Eclaireurs Lighthouse, built in 1920 in the Beagle Channel near Ushuaia, is popularly known as the Lighthouse at the End of the World."
+  },
+  {
+   "id": "san-juan-de-salvamento-lighthouse",
+   "name": "San Juan de Salvamento Lighthouse",
+   "aliases": [
+    "San Juan de Salvamento",
+    "Lighthouse at the End of the World Isla de los Estados"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "The San Juan de Salvamento lighthouse on Staten Island, Argentina, was built in 1884 and inspired Jules Verne's novel The Lighthouse at the End of the World."
+  },
+  {
+   "id": "la-jument-lighthouse",
+   "name": "La Jument Lighthouse",
+   "aliases": [
+    "La Jument",
+    "Phare de la Jument"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "La Jument Lighthouse off Ushant became world famous from a 1989 photograph by Jean Guichard showing a keeper at its door as a huge wave engulfed the tower."
+  },
+  {
+   "id": "cape-disappointment-lighthouse",
+   "name": "Cape Disappointment Lighthouse",
+   "aliases": [
+    "Cape Disappointment Light",
+    "Cape Disappointment"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Cape Disappointment Lighthouse in Washington State, lit in 1856, guards the dangerous mouth of the Columbia River."
+  },
+  {
+   "id": "sambro-island-lighthouse",
+   "name": "Sambro Island Lighthouse",
+   "aliases": [
+    "Sambro Island Light",
+    "Sambro Light"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Sambro Island Light at the entrance to Halifax Harbour in Nova Scotia was first lit in 1758 and is one of the oldest in the Americas."
+  },
+  {
+   "id": "sumburgh-head-lighthouse",
+   "name": "Sumburgh Head Lighthouse",
+   "aliases": [
+    "Sumburgh Head",
+    "Sumburgh Light"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Sumburgh Head Lighthouse at the southern tip of Shetland, built by Robert Stevenson and lit in 1821, overlooks a major seabird colony."
+  },
+  {
+   "id": "kinnaird-head-lighthouse",
+   "name": "Kinnaird Head Lighthouse",
+   "aliases": [
+    "Kinnaird Head",
+    "Kinnaird Head Light"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Kinnaird Head at Fraserburgh was lit in 1787 as the first lighthouse built by the Northern Lighthouse Board in Scotland."
+  },
+  {
+   "id": "mull-of-galloway-lighthouse",
+   "name": "Mull of Galloway Lighthouse",
+   "aliases": [
+    "Mull of Galloway"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Mull of Galloway Lighthouse, built by Robert Stevenson in 1830, marks the southernmost point of Scotland."
+  },
+  {
+   "id": "cape-spartel-lighthouse",
+   "name": "Cape Spartel Lighthouse",
+   "aliases": [
+    "Cape Spartel"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Cape Spartel Lighthouse near Tangier in Morocco was built in 1864 and stands where the Atlantic meets the Strait of Gibraltar."
+  },
+  {
+   "id": "cape-egmont-lighthouse",
+   "name": "Cape Egmont Lighthouse",
+   "aliases": [
+    "Cape Egmont"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Cape Egmont Lighthouse in Taranaki, New Zealand, was moved there in 1881 from Mana Island after its first site proved unsuitable."
+  },
+  {
+   "id": "rubjerg-knude-lighthouse",
+   "name": "Rubjerg Knude Lighthouse",
+   "aliases": [
+    "Rubjerg Knude",
+    "Rubjerg Knude Fyr"
+   ],
+   "kind": "place",
+   "group": "lighthouses",
+   "fact": "Rubjerg Knude Lighthouse in Denmark was lifted onto rails and moved about 70 metres inland in 2019 to save it from a crumbling cliff."
+  },
+  {
+   "id": "monterey-bay-aquarium",
+   "name": "Monterey Bay Aquarium",
+   "aliases": [
+    "Monterey Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Monterey Bay Aquarium opened in 1984 in a former sardine cannery on Cannery Row, California, and is famed for its giant kelp forest exhibit."
+  },
+  {
+   "id": "georgia-aquarium",
+   "name": "Georgia Aquarium",
+   "aliases": [
+    "Atlanta Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Georgia Aquarium in Atlanta opened in 2005 and is known for housing whale sharks, the largest fish in the sea."
+  },
+  {
+   "id": "shedd-aquarium",
+   "name": "Shedd Aquarium",
+   "aliases": [
+    "John G. Shedd Aquarium",
+    "Chicago Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Chicago's Shedd Aquarium opened in 1930 and was the first inland aquarium with a permanent saltwater collection."
+  },
+  {
+   "id": "national-aquarium-baltimore",
+   "name": "National Aquarium",
+   "aliases": [
+    "National Aquarium Baltimore",
+    "Baltimore Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The National Aquarium in Baltimore opened in 1981 on the city's Inner Harbor."
+  },
+  {
+   "id": "new-england-aquarium",
+   "name": "New England Aquarium",
+   "aliases": [
+    "Boston Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The New England Aquarium in Boston opened in 1969 and is built around a huge cylindrical Giant Ocean Tank."
+  },
+  {
+   "id": "okinawa-churaumi-aquarium",
+   "name": "Okinawa Churaumi Aquarium",
+   "aliases": [
+    "Churaumi Aquarium",
+    "Churaumi"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The Kuroshio Sea tank at Okinawa Churaumi Aquarium holds about 7,500 cubic metres of water and has long been home to whale sharks and manta rays."
+  },
+  {
+   "id": "oceanografic-valencia",
+   "name": "L'Oceanografic",
+   "aliases": [
+    "Oceanografic",
+    "Oceanografic Valencia",
+    "Valencia Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "L'Oceanografic in Valencia, opened in 2003 as part of the City of Arts and Sciences, is the largest aquarium in Europe."
+  },
+  {
+   "id": "sea-aquarium-singapore",
+   "name": "S.E.A. Aquarium",
+   "aliases": [
+    "SEA Aquarium",
+    "Singapore Aquarium",
+    "Sentosa Aquarium",
+    "Marine Life Park"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "S.E.A. Aquarium on Singapore's Sentosa island opened in 2012 and is one of the largest aquariums in the world."
+  },
+  {
+   "id": "kaiyukan",
+   "name": "Kaiyukan",
+   "aliases": [
+    "Osaka Aquarium",
+    "Osaka Kaiyukan"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Kaiyukan in Osaka, opened in 1990, centres on a Pacific Ocean tank of about 5,400 cubic metres that includes whale sharks."
+  },
+  {
+   "id": "dubai-aquarium",
+   "name": "Dubai Aquarium",
+   "aliases": [
+    "Dubai Aquarium and Underwater Zoo",
+    "Dubai Mall Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The Dubai Aquarium inside the Dubai Mall holds around 10 million litres of water behind one of the largest acrylic viewing panels ever made."
+  },
+  {
+   "id": "oceanario-de-lisboa",
+   "name": "Oceanario de Lisboa",
+   "aliases": [
+    "Lisbon Oceanarium",
+    "Lisbon Aquarium",
+    "Oceanarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The Oceanario de Lisboa opened in 1998 for Expo 98 and is built around a central tank of about five million litres."
+  },
+  {
+   "id": "aquarium-of-the-pacific",
+   "name": "Aquarium of the Pacific",
+   "aliases": [
+    "Long Beach Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The Aquarium of the Pacific in Long Beach, California, opened in 1998 and focuses on the Pacific Ocean and its wildlife."
+  },
+  {
+   "id": "tennessee-aquarium",
+   "name": "Tennessee Aquarium",
+   "aliases": [
+    "Chattanooga Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The Tennessee Aquarium in Chattanooga opened in 1992 and was the largest freshwater aquarium in the world at the time."
+  },
+  {
+   "id": "vancouver-aquarium",
+   "name": "Vancouver Aquarium",
+   "aliases": [
+    "Stanley Park Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Vancouver Aquarium in Stanley Park opened in 1956 and was Canada's first public aquarium."
+  },
+  {
+   "id": "sea-life-sydney-aquarium",
+   "name": "Sea Life Sydney Aquarium",
+   "aliases": [
+    "Sydney Aquarium",
+    "SEA LIFE Sydney"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Sydney Aquarium at Darling Harbour opened in 1988 and is known for underwater tunnels that run through its shark and ray tanks."
+  },
+  {
+   "id": "two-oceans-aquarium",
+   "name": "Two Oceans Aquarium",
+   "aliases": [
+    "Cape Town Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Two Oceans Aquarium at the V&A Waterfront in Cape Town opened in 1995 and has a large kelp forest exhibit."
+  },
+  {
+   "id": "nausicaa",
+   "name": "Nausicaa",
+   "aliases": [
+    "Nausicaa Boulogne-sur-Mer",
+    "Nausicaa Centre National de la Mer"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Nausicaa in Boulogne-sur-Mer, France, opened in 1991 and was later expanded into one of the largest aquariums in Europe."
+  },
+  {
+   "id": "sea-life-london-aquarium",
+   "name": "London Aquarium",
+   "aliases": [
+    "Sea Life London Aquarium",
+    "Sea Life London",
+    "SEA LIFE London"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The London Aquarium opened in 1997 inside County Hall on the south bank of the Thames."
+  },
+  {
+   "id": "genoa-aquarium",
+   "name": "Aquarium of Genoa",
+   "aliases": [
+    "Acquario di Genova",
+    "Genoa Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The Aquarium of Genoa, designed by Renzo Piano and opened in 1992, is one of the largest aquariums in Europe."
+  },
+  {
+   "id": "sea-life-brighton",
+   "name": "Sea Life Brighton",
+   "aliases": [
+    "Brighton Aquarium",
+    "Brighton Sea Life Centre"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Sea Life Brighton opened in 1872 as the Brighton Aquarium and is the oldest operating aquarium in the world."
+  },
+  {
+   "id": "the-deep-hull",
+   "name": "The Deep",
+   "aliases": [
+    "The Deep Hull",
+    "Deep Aquarium Hull"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The Deep in Hull opened in 2002 at the point where the River Hull meets the Humber estuary."
+  },
+  {
+   "id": "national-marine-aquarium-plymouth",
+   "name": "National Marine Aquarium",
+   "aliases": [
+    "National Marine Aquarium Plymouth",
+    "Plymouth Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The National Marine Aquarium in Plymouth opened in 1998 and is the largest aquarium in the United Kingdom."
+  },
+  {
+   "id": "oceanographic-museum-monaco",
+   "name": "Oceanographic Museum of Monaco",
+   "aliases": [
+    "Musee Oceanographique de Monaco",
+    "Monaco Aquarium",
+    "Oceanographic Museum Monaco"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The Oceanographic Museum of Monaco was opened in 1910 by Prince Albert I and houses a large public aquarium in its cellars."
+  },
+  {
+   "id": "ozeaneum",
+   "name": "Ozeaneum",
+   "aliases": [
+    "Ozeaneum Stralsund"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The Ozeaneum in Stralsund, Germany, opened in 2008 and focuses on the North Sea and Baltic Sea."
+  },
+  {
+   "id": "aquarium-of-the-bay",
+   "name": "Aquarium of the Bay",
+   "aliases": [
+    "San Francisco Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Aquarium of the Bay at Pier 39 in San Francisco has underwater tunnels that show the marine life of San Francisco Bay."
+  },
+  {
+   "id": "shanghai-ocean-aquarium",
+   "name": "Shanghai Ocean Aquarium",
+   "aliases": [
+    "Shanghai Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Shanghai Ocean Aquarium in Pudong opened in 2002 and is known for a long acrylic tunnel through its tanks."
+  },
+  {
+   "id": "ripleys-aquarium-of-canada",
+   "name": "Ripley's Aquarium of Canada",
+   "aliases": [
+    "Toronto Aquarium",
+    "Ripleys Aquarium of Canada"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Ripley's Aquarium of Canada in Toronto opened in 2013 and has a moving walkway through its Dangerous Lagoon shark tunnel."
+  },
+  {
+   "id": "istanbul-aquarium",
+   "name": "Istanbul Aquarium",
+   "aliases": [
+    "Florya Aquarium",
+    "Turkuazoo"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Istanbul Aquarium in the Florya district opened in 2009 under the name Turkuazoo."
+  },
+  {
+   "id": "alaska-sealife-center",
+   "name": "Alaska SeaLife Center",
+   "aliases": [
+    "Seward SeaLife Center"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The Alaska SeaLife Center in Seward opened in 1998, funded partly by settlement money from the Exxon Valdez oil spill."
+  },
+  {
+   "id": "maui-ocean-center",
+   "name": "Maui Ocean Center",
+   "aliases": [],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Maui Ocean Center, opened in 1998, is a Hawaiian marine park and aquarium built around the sea life of the Hawaiian Islands."
+  },
+  {
+   "id": "oregon-coast-aquarium",
+   "name": "Oregon Coast Aquarium",
+   "aliases": [
+    "Newport Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The Oregon Coast Aquarium in Newport, opened in 1992, was home to Keiko, the orca star of the film Free Willy, from 1996 to 1998."
+  },
+  {
+   "id": "mote-marine-aquarium",
+   "name": "Mote Aquarium",
+   "aliases": [
+    "Mote Marine Laboratory and Aquarium",
+    "Mote Marine Laboratory",
+    "Mote Marine"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Mote Aquarium in Sarasota, Florida, grew out of a laboratory founded in 1955 by the shark scientist Eugenie Clark."
+  },
+  {
+   "id": "birch-aquarium",
+   "name": "Birch Aquarium",
+   "aliases": [
+    "Birch Aquarium at Scripps",
+    "Scripps Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Birch Aquarium in La Jolla, California, is the public face of the Scripps Institution of Oceanography."
+  },
+  {
+   "id": "mystic-aquarium",
+   "name": "Mystic Aquarium",
+   "aliases": [
+    "Mystic Aquarium Connecticut"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Mystic Aquarium in Connecticut opened in 1973 and is known for its beluga whales."
+  },
+  {
+   "id": "audubon-aquarium-of-the-americas",
+   "name": "Aquarium of the Americas",
+   "aliases": [
+    "Audubon Aquarium of the Americas",
+    "New Orleans Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The Aquarium of the Americas in New Orleans opened in 1990 on the banks of the Mississippi River."
+  },
+  {
+   "id": "cairns-aquarium",
+   "name": "Cairns Aquarium",
+   "aliases": [
+    "Cairns Aquarium Queensland"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Cairns Aquarium in Queensland opened in 2016 and is dedicated to the wildlife of the Great Barrier Reef and tropical north Queensland."
+  },
+  {
+   "id": "aquarium-barcelona",
+   "name": "Aquarium Barcelona",
+   "aliases": [
+    "L'Aquarium de Barcelona",
+    "Barcelona Aquarium",
+    "Aquarium de Barcelona"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Aquarium Barcelona at Port Vell opened in 1995 and has an 80-metre underwater tunnel."
+  },
+  {
+   "id": "aquario-rio",
+   "name": "AquaRio",
+   "aliases": [
+    "Aquario Rio",
+    "Rio Aquarium",
+    "AquaRio Rio de Janeiro"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "AquaRio in the port of Rio de Janeiro opened in 2016 and is the largest marine aquarium in South America."
+  },
+  {
+   "id": "zoo-aquarium-berlin",
+   "name": "Berlin Zoo Aquarium",
+   "aliases": [
+    "Aquarium Berlin",
+    "Zoo Aquarium Berlin"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The Aquarium at Berlin Zoo opened in 1913 and houses fish, reptiles and insects across several floors."
+  },
+  {
+   "id": "haus-des-meeres",
+   "name": "Haus des Meeres",
+   "aliases": [
+    "Vienna Aquarium",
+    "Haus des Meeres Vienna"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Haus des Meeres in Vienna is an aquarium and terrarium housed in a Second World War anti-aircraft flak tower."
+  },
+  {
+   "id": "bergen-aquarium",
+   "name": "Bergen Aquarium",
+   "aliases": [
+    "Akvariet i Bergen",
+    "Akvariet"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Bergen Aquarium in Norway opened in 1960 and sits on the Nordnes peninsula."
+  },
+  {
+   "id": "aquadom-berlin",
+   "name": "AquaDom",
+   "aliases": [
+    "Aquadom Berlin",
+    "Sea Life Berlin AquaDom"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The AquaDom in Berlin was a cylindrical aquarium about 25 metres tall that burst in December 2022."
+  },
+  {
+   "id": "tokyo-sea-life-park",
+   "name": "Tokyo Sea Life Park",
+   "aliases": [
+    "Kasai Rinkai Suizokuen",
+    "Kasai Rinkai Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Tokyo Sea Life Park in Kasai Rinkai Park is known for a large doughnut-shaped tank of circling tuna."
+  },
+  {
+   "id": "poema-del-mar",
+   "name": "Poema del Mar",
+   "aliases": [
+    "Poema del Mar Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "Poema del Mar in Las Palmas on Gran Canaria opened in 2018 and recreates marine habitats from around the world."
+  },
+  {
+   "id": "aqwa-perth",
+   "name": "AQWA",
+   "aliases": [
+    "Aquarium of Western Australia",
+    "Perth Aquarium"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "AQWA, the Aquarium of Western Australia, opened in 1988 at Hillarys Boat Harbour near Perth and is known for its underwater tunnel."
+  },
+  {
+   "id": "naples-zoological-station-aquarium",
+   "name": "Stazione Zoologica Anton Dohrn aquarium",
+   "aliases": [
+    "Naples Aquarium",
+    "Naples Zoological Station",
+    "Stazione Zoologica Anton Dohrn",
+    "Acquario di Napoli"
+   ],
+   "kind": "place",
+   "group": "aquariums",
+   "fact": "The aquarium of the Stazione Zoologica Anton Dohrn in Naples opened in 1874 and is among the oldest public aquariums still operating."
+  },
+  {
+   "id": "banzai-pipeline",
+   "name": "Banzai Pipeline",
+   "aliases": [
+    "Pipeline",
+    "Pipe",
+    "Banzai",
+    "Ehukai Beach"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Pipeline on Oahu's North Shore breaks in hollow barrels over a shallow reef and hosts the Pipe Masters contest every December."
+  },
+  {
+   "id": "jeffreys-bay",
+   "name": "Jeffreys Bay",
+   "aliases": [
+    "J-Bay",
+    "J Bay",
+    "Supertubes"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Jeffreys Bay in South Africa's Eastern Cape is famed for Supertubes, one of the longest and fastest right-hand waves in the world."
+  },
+  {
+   "id": "malibu-surfrider-beach",
+   "name": "Malibu",
+   "aliases": [
+    "Surfrider Beach",
+    "Malibu Surfrider Beach",
+    "Malibu First Point"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Malibu's Surfrider Beach in California helped launch the 1950s surf craze and inspired the novel and film Gidget."
+  },
+  {
+   "id": "teahupoo",
+   "name": "Teahupo'o",
+   "aliases": [
+    "Teahupoo",
+    "Chopes"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Teahupo'o in Tahiti breaks as a thick, heavy wave over a shallow reef and hosted the surfing events at the Paris 2024 Olympics."
+  },
+  {
+   "id": "huntington-beach",
+   "name": "Huntington Beach",
+   "aliases": [
+    "Surf City",
+    "Surf City USA",
+    "Huntington Beach Pier"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Huntington Beach in California calls itself Surf City USA and hosts the annual US Open of Surfing beside its pier."
+  },
+  {
+   "id": "nazare",
+   "name": "Nazare",
+   "aliases": [
+    "Praia do Norte",
+    "Nazare Portugal"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Nazare in Portugal produces some of the biggest waves ever surfed, driven by a huge underwater canyon that focuses the swell."
+  },
+  {
+   "id": "mavericks",
+   "name": "Mavericks",
+   "aliases": [
+    "Maverick's",
+    "Mavericks Half Moon Bay"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Mavericks breaks about half a mile offshore near Half Moon Bay, California, and produces huge cold-water winter waves."
+  },
+  {
+   "id": "jaws-peahi",
+   "name": "Jaws",
+   "aliases": [
+    "Peahi",
+    "Pe'ahi"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Jaws, or Peahi, on Maui's north shore is where tow-in surfing into giant waves was pioneered in the 1990s."
+  },
+  {
+   "id": "bells-beach",
+   "name": "Bells Beach",
+   "aliases": [
+    "Bells",
+    "Torquay Bells Beach"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Bells Beach in Victoria, Australia, hosts the Rip Curl Pro, one of the longest-running contests in surfing."
+  },
+  {
+   "id": "waimea-bay",
+   "name": "Waimea Bay",
+   "aliases": [
+    "Waimea"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Waimea Bay on Oahu's North Shore hosts the Eddie Aikau big-wave invitational, held only when winter swells are large enough."
+  },
+  {
+   "id": "uluwatu",
+   "name": "Uluwatu",
+   "aliases": [
+    "Ulu",
+    "Uluwatu Bali",
+    "Ulus"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Uluwatu on Bali's Bukit Peninsula is a long left-hand reef break beneath a clifftop sea temple."
+  },
+  {
+   "id": "snapper-rocks",
+   "name": "Snapper Rocks",
+   "aliases": [
+    "Snapper",
+    "Superbank",
+    "The Superbank"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Snapper Rocks on Australia's Gold Coast sits at the head of the Superbank, a sand-bottom point break that can run for several hundred metres."
+  },
+  {
+   "id": "hossegor",
+   "name": "Hossegor",
+   "aliases": [
+    "La Graviere",
+    "Seignosse",
+    "Hossegor France"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Hossegor in south-west France is known for powerful sand-bottomed barrels at La Graviere and has long hosted a world tour contest."
+  },
+  {
+   "id": "lower-trestles",
+   "name": "Trestles",
+   "aliases": [
+    "Lower Trestles",
+    "Trestles San Onofre"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Trestles near San Clemente, California, is a cobblestone point break that has hosted the World Surf League Finals."
+  },
+  {
+   "id": "cloudbreak",
+   "name": "Cloudbreak",
+   "aliases": [
+    "Cloudbreak Fiji",
+    "Tavarua Cloudbreak"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Cloudbreak off Tavarua in Fiji is a powerful left-hand reef wave that has hosted the Fiji Pro."
+  },
+  {
+   "id": "sunset-beach",
+   "name": "Sunset Beach",
+   "aliases": [
+    "Sunset",
+    "Sunset Beach Oahu"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Sunset Beach on Oahu's North Shore is a big, shifting winter wave that hosts the Vans World Cup of Surfing."
+  },
+  {
+   "id": "supertubos",
+   "name": "Supertubos",
+   "aliases": [
+    "Peniche",
+    "Supertubos Peniche",
+    "Super Tubos"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Supertubos at Peniche in Portugal is a fast, hollow beach break that hosts a World Surf League stop."
+  },
+  {
+   "id": "puerto-escondido",
+   "name": "Puerto Escondido",
+   "aliases": [
+    "Zicatela",
+    "Playa Zicatela",
+    "Mexican Pipeline"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Playa Zicatela at Puerto Escondido in Oaxaca, Mexico, is nicknamed the Mexican Pipeline for its heavy barrelling waves."
+  },
+  {
+   "id": "rincon",
+   "name": "Rincon",
+   "aliases": [
+    "Rincon Point",
+    "Queen of the Coast"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Rincon Point on the Santa Barbara and Ventura county line in California is nicknamed the Queen of the Coast for its long right-hand waves."
+  },
+  {
+   "id": "kirra",
+   "name": "Kirra",
+   "aliases": [
+    "Kirra Point"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Kirra at the southern end of the Gold Coast is renowned for a fast, hollow right-hand barrel."
+  },
+  {
+   "id": "margaret-river-main-break",
+   "name": "Margaret River Main Break",
+   "aliases": [
+    "Margaret River",
+    "Margs",
+    "The Box"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "The Main Break at Margaret River in Western Australia is a powerful reef wave that has hosted the Margaret River Pro."
+  },
+  {
+   "id": "ericeira",
+   "name": "Ericeira",
+   "aliases": [
+    "Ribeira d'Ilhas",
+    "Coxos"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Ericeira in Portugal was declared a World Surfing Reserve in 2011, the first in Europe."
+  },
+  {
+   "id": "mundaka",
+   "name": "Mundaka",
+   "aliases": [
+    "Mundaka Basque Country"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Mundaka in Spain's Basque Country is a left-hand river-mouth wave in the Urdaibai estuary, often called the best in Europe."
+  },
+  {
+   "id": "skeleton-bay",
+   "name": "Skeleton Bay",
+   "aliases": [
+    "Skeleton Bay Namibia",
+    "The Wedge Namibia"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Skeleton Bay in Namibia, near Walvis Bay, is known for extremely long, fast left-hand barrels over sand."
+  },
+  {
+   "id": "dungeons",
+   "name": "Dungeons",
+   "aliases": [
+    "Dungeons Hout Bay",
+    "Hout Bay Dungeons"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Dungeons off Hout Bay near Cape Town is a big-wave reef break that produces some of the largest waves surfed in South Africa."
+  },
+  {
+   "id": "g-land",
+   "name": "G-Land",
+   "aliases": [
+    "Grajagan",
+    "Grajagan Bay",
+    "Plengkung"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "G-Land, or Plengkung, on Java's south-east tip is a world-class left-hand reef wave in the Banyuwangi area of Indonesia."
+  },
+  {
+   "id": "padang-padang",
+   "name": "Padang Padang",
+   "aliases": [
+    "Balinese Pipeline",
+    "Padang"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Padang Padang on Bali's Bukit Peninsula, nicknamed the Balinese Pipeline, is a short, hollow and powerful left-hand reef wave."
+  },
+  {
+   "id": "honolua-bay",
+   "name": "Honolua Bay",
+   "aliases": [
+    "Honolua"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Honolua Bay on Maui is a right-hand point break inside a marine life conservation district."
+  },
+  {
+   "id": "hookipa",
+   "name": "Ho'okipa",
+   "aliases": [
+    "Hookipa",
+    "Hookipa Beach Park"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Ho'okipa on Maui's north shore is both a surfing break and one of the world's best-known windsurfing beaches."
+  },
+  {
+   "id": "steamer-lane",
+   "name": "Steamer Lane",
+   "aliases": [
+    "Steamers Lane",
+    "The Lane"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Steamer Lane in Santa Cruz, California, is a long-standing surf spot in the town where Hawaiian princes rode waves in 1885."
+  },
+  {
+   "id": "chicama",
+   "name": "Chicama",
+   "aliases": [
+    "Puerto Malabrigo",
+    "Malabrigo"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Chicama in northern Peru is often claimed to be the longest left-hand wave in the world, with rides of well over a kilometre."
+  },
+  {
+   "id": "ocean-beach-san-francisco",
+   "name": "Ocean Beach",
+   "aliases": [
+    "Ocean Beach San Francisco",
+    "Ocean Beach SF"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Ocean Beach in San Francisco is a cold, powerful beach break that faces the open Pacific beside the Golden Gate."
+  },
+  {
+   "id": "thurso-east",
+   "name": "Thurso East",
+   "aliases": [
+    "Thurso"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Thurso East is a powerful reef break below Thurso Castle in northern Scotland and is widely seen as Scotland's best wave."
+  },
+  {
+   "id": "fistral-beach",
+   "name": "Fistral Beach",
+   "aliases": [
+    "Fistral",
+    "Fistral Newquay"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Fistral Beach in Newquay, Cornwall, is Britain's best-known surfing beach."
+  },
+  {
+   "id": "arugam-bay",
+   "name": "Arugam Bay",
+   "aliases": [
+    "Arugam"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Arugam Bay on Sri Lanka's east coast is known for a long right-hand point break and a surf season from April to September."
+  },
+  {
+   "id": "cloud-9",
+   "name": "Cloud 9",
+   "aliases": [
+    "Cloud Nine",
+    "Cloud 9 Siargao"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Cloud 9 on Siargao in the Philippines is a thick, hollow right-hand reef break served by a famous boardwalk."
+  },
+  {
+   "id": "restaurants-tavarua",
+   "name": "Restaurants",
+   "aliases": [
+    "Restaurants Fiji",
+    "Restaurants Tavarua"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Restaurants is a fast left-hand reef wave on Tavarua in Fiji, close to Cloudbreak."
+  },
+  {
+   "id": "punta-de-lobos",
+   "name": "Punta de Lobos",
+   "aliases": [
+    "Pichilemu"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Punta de Lobos near Pichilemu in Chile is a long left-hand point wave that was declared a World Surfing Reserve in 2013."
+  },
+  {
+   "id": "playa-hermosa",
+   "name": "Playa Hermosa",
+   "aliases": [
+    "Playa Hermosa Costa Rica"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Playa Hermosa near Jaco in Costa Rica is a fast, hollow beach break that has hosted international contests."
+  },
+  {
+   "id": "manu-bay",
+   "name": "Manu Bay",
+   "aliases": [
+    "Raglan",
+    "Raglan Manu Bay"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Manu Bay at Raglan in New Zealand is one of the longest left-hand point breaks in the world and appeared in the 1966 film The Endless Summer."
+  },
+  {
+   "id": "noosa-first-point",
+   "name": "Noosa First Point",
+   "aliases": [
+    "Noosa",
+    "First Point Noosa",
+    "Noosa Heads"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "First Point at Noosa Heads in Queensland is a gentle right-hand point break popular with longboarders."
+  },
+  {
+   "id": "burleigh-heads",
+   "name": "Burleigh Heads",
+   "aliases": [
+    "Burleigh",
+    "Burleigh Point"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Burleigh Heads on Australia's Gold Coast is a classic right-hand point break below a headland national park."
+  },
+  {
+   "id": "lagundri-bay",
+   "name": "Lagundri Bay",
+   "aliases": [
+    "Sorake",
+    "Sorake Beach",
+    "Nias"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Lagundri Bay on the Indonesian island of Nias has a famous right-hand point break found by travelling surfers in the 1970s."
+  },
+  {
+   "id": "macaronis",
+   "name": "Macaronis",
+   "aliases": [
+    "Macaronis Mentawai"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Macaronis is a fast left-hand wave in Indonesia's Mentawai Islands, west of Sumatra."
+  },
+  {
+   "id": "kommetjie",
+   "name": "Kommetjie",
+   "aliases": [
+    "Outer Kom",
+    "Long Beach Kommetjie"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Kommetjie near Cape Town has several surf breaks including the Outer Kom, a big-wave spot on the Atlantic coast."
+  },
+  {
+   "id": "lahinch",
+   "name": "Lahinch",
+   "aliases": [
+    "Lahinch Beach"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Lahinch in County Clare is one of the best-known surf beaches on Ireland's Atlantic coast."
+  },
+  {
+   "id": "byron-bay-the-pass",
+   "name": "The Pass",
+   "aliases": [
+    "Byron Bay",
+    "The Pass Byron Bay",
+    "Byron Bay The Pass"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "The Pass at Byron Bay in New South Wales is a long right-hand point break below Cape Byron."
+  },
+  {
+   "id": "mullaghmore-head",
+   "name": "Mullaghmore Head",
+   "aliases": [
+    "Mullaghmore",
+    "Prowlers"
+   ],
+   "kind": "place",
+   "group": "surf spots",
+   "fact": "Mullaghmore Head in County Sligo, Ireland, breaks into giant slab waves in winter swells and is Ireland's best-known big-wave spot."
+  },
+  {
+   "id": "los-angeles",
+   "name": "Los Angeles",
+   "aliases": [
+    "LA",
+    "Port of Los Angeles",
+    "San Pedro"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "The Port of Los Angeles, with neighbouring Long Beach, forms the busiest container port complex in the United States."
+  },
+  {
+   "id": "san-francisco",
+   "name": "San Francisco",
+   "aliases": [
+    "SF",
+    "San Fran",
+    "Frisco"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "San Francisco grew from a small settlement into a major Pacific port during the 1849 California Gold Rush."
+  },
+  {
+   "id": "sydney",
+   "name": "Sydney",
+   "aliases": [
+    "Port Jackson",
+    "Sydney Harbour"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Sydney grew around Port Jackson, where the First Fleet landed in 1788 to found the first British colony in Australia."
+  },
+  {
+   "id": "tokyo",
+   "name": "Tokyo",
+   "aliases": [
+    "Edo",
+    "Port of Tokyo"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Tokyo sits on Tokyo Bay, an inlet of the Pacific, and was known as Edo until 1868."
+  },
+  {
+   "id": "vancouver",
+   "name": "Vancouver",
+   "aliases": [
+    "Port of Vancouver",
+    "Vancouver BC"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "The Port of Vancouver in British Columbia is the largest and busiest port in Canada."
+  },
+  {
+   "id": "honolulu",
+   "name": "Honolulu",
+   "aliases": [
+    "Port of Honolulu"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Honolulu on Oahu is the main harbour of the Hawaiian Islands and lies close to Pearl Harbor."
+  },
+  {
+   "id": "valparaiso",
+   "name": "Valparaiso",
+   "aliases": [
+    "Valpo"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Valparaiso in Chile was a key stop for ships rounding Cape Horn before the Panama Canal opened in 1914, and its historic quarter is a UNESCO World Heritage Site."
+  },
+  {
+   "id": "auckland",
+   "name": "Auckland",
+   "aliases": [
+    "Port of Auckland"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Auckland sits on a narrow isthmus between two harbours, one opening to the Pacific and one to the Tasman Sea."
+  },
+  {
+   "id": "acapulco",
+   "name": "Acapulco",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Acapulco in Mexico was the Pacific terminus of the Manila galleon trade route, which ran from 1565 to 1815."
+  },
+  {
+   "id": "san-diego",
+   "name": "San Diego",
+   "aliases": [
+    "Port of San Diego"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "San Diego is home to Naval Base San Diego, one of the largest bases of the United States Pacific Fleet."
+  },
+  {
+   "id": "long-beach",
+   "name": "Long Beach",
+   "aliases": [
+    "Port of Long Beach",
+    "Long Beach California"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "The Port of Long Beach in California is one of the two busiest container ports in the United States, alongside Los Angeles."
+  },
+  {
+   "id": "oakland",
+   "name": "Oakland",
+   "aliases": [
+    "Port of Oakland"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "The Port of Oakland on San Francisco Bay was an early West Coast pioneer of container shipping in the 1960s."
+  },
+  {
+   "id": "yokohama",
+   "name": "Yokohama",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Yokohama was opened to foreign trade in 1859 and grew from a fishing village into one of Japan's largest ports."
+  },
+  {
+   "id": "kobe",
+   "name": "Kobe",
+   "aliases": [
+    "Port of Kobe"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Kobe's port was badly damaged by the Great Hanshin earthquake of January 1995 and rebuilt in the years that followed."
+  },
+  {
+   "id": "callao",
+   "name": "Callao",
+   "aliases": [
+    "El Callao"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Callao is the main port of Lima and handles most of Peru's seaborne trade."
+  },
+  {
+   "id": "guayaquil",
+   "name": "Guayaquil",
+   "aliases": [
+    "Port of Guayaquil"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Guayaquil, on the Guayas River estuary, is Ecuador's largest city and its main port."
+  },
+  {
+   "id": "brisbane",
+   "name": "Brisbane",
+   "aliases": [
+    "Port of Brisbane"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "The Port of Brisbane lies at the mouth of the Brisbane River on Moreton Bay in Queensland."
+  },
+  {
+   "id": "panama-city",
+   "name": "Panama City",
+   "aliases": [
+    "Balboa",
+    "Port of Balboa"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Panama City sits at the Pacific entrance to the Panama Canal, where the port of Balboa receives ships coming through the locks."
+  },
+  {
+   "id": "seattle",
+   "name": "Seattle",
+   "aliases": [
+    "Port of Seattle"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Seattle on Puget Sound, an inlet of the Pacific, was the main outfitting port for the 1897 Klondike Gold Rush."
+  },
+  {
+   "id": "osaka",
+   "name": "Osaka",
+   "aliases": [
+    "Port of Osaka"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Osaka on Osaka Bay has been Japan's great merchant port for centuries and is a major container hub."
+  },
+  {
+   "id": "nagoya",
+   "name": "Nagoya",
+   "aliases": [
+    "Port of Nagoya"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "The Port of Nagoya is Japan's largest port by total cargo handled."
+  },
+  {
+   "id": "wellington",
+   "name": "Wellington",
+   "aliases": [
+    "Port of Wellington"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Wellington, the capital of New Zealand, sits on a harbour that opens onto the windy Cook Strait."
+  },
+  {
+   "id": "papeete",
+   "name": "Papeete",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Papeete on Tahiti is the capital and main port of French Polynesia."
+  },
+  {
+   "id": "suva",
+   "name": "Suva",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Suva on the island of Viti Levu is the capital and largest port of Fiji."
+  },
+  {
+   "id": "antofagasta",
+   "name": "Antofagasta",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Antofagasta in northern Chile is a major port for exporting copper from the Atacama Desert mines."
+  },
+  {
+   "id": "iquique",
+   "name": "Iquique",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Iquique in northern Chile was the site of a naval battle on 21 May 1879 during the War of the Pacific."
+  },
+  {
+   "id": "arica",
+   "name": "Arica",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Arica in northern Chile belonged to Peru until the War of the Pacific, and today is a port serving Bolivia's trade."
+  },
+  {
+   "id": "mazatlan",
+   "name": "Mazatlan",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Mazatlan on Mexico's Pacific coast is known for its long seafront promenade and its big annual carnival."
+  },
+  {
+   "id": "prince-rupert",
+   "name": "Prince Rupert",
+   "aliases": [
+    "Port of Prince Rupert"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Prince Rupert in British Columbia is a deep-water port that is among the closest North American ports to Asia."
+  },
+  {
+   "id": "port-moresby",
+   "name": "Port Moresby",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Port Moresby, the capital of Papua New Guinea, was named after the British naval officer John Moresby, who explored the coast in 1873."
+  },
+  {
+   "id": "buenaventura",
+   "name": "Buenaventura",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Buenaventura is Colombia's main port on the Pacific coast."
+  },
+  {
+   "id": "manzanillo",
+   "name": "Manzanillo",
+   "aliases": [
+    "Port of Manzanillo"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Manzanillo in the state of Colima is Mexico's busiest container port."
+  },
+  {
+   "id": "noumea",
+   "name": "Noumea",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Noumea is the capital and main port of the French territory of New Caledonia."
+  },
+  {
+   "id": "lyttelton",
+   "name": "Lyttelton",
+   "aliases": [
+    "Port of Lyttelton"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Lyttelton, set in an extinct volcanic crater on New Zealand's South Island, is the main port for Christchurch."
+  },
+  {
+   "id": "tauranga",
+   "name": "Tauranga",
+   "aliases": [
+    "Port of Tauranga"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "The Port of Tauranga in New Zealand is the largest export port in the country by volume."
+  },
+  {
+   "id": "talcahuano",
+   "name": "Talcahuano",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Talcahuano in central Chile is a major naval base and fishing port on the Bay of Concepcion."
+  },
+  {
+   "id": "san-antonio-chile",
+   "name": "San Antonio",
+   "aliases": [
+    "Puerto San Antonio",
+    "San Antonio Chile"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "San Antonio on Chile's central coast is among the country's busiest ports by cargo."
+  },
+  {
+   "id": "puntarenas",
+   "name": "Puntarenas",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Puntarenas in Costa Rica is a port built on a long, narrow sandy spit that reaches into the Gulf of Nicoya."
+  },
+  {
+   "id": "honiara",
+   "name": "Honiara",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Honiara on Guadalcanal is the capital of the Solomon Islands and was the site of fierce fighting in the 1942 Guadalcanal campaign."
+  },
+  {
+   "id": "port-vila",
+   "name": "Port Vila",
+   "aliases": [
+    "Vila"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Port Vila on the island of Efate is the capital and main port of Vanuatu."
+  },
+  {
+   "id": "apia",
+   "name": "Apia",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Apia on the island of Upolu is the capital of Samoa, and the writer Robert Louis Stevenson spent his final years nearby."
+  },
+  {
+   "id": "lae",
+   "name": "Lae",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Lae in Papua New Guinea is the country's largest cargo port and was the last departure point of Amelia Earhart in 1937."
+  },
+  {
+   "id": "rabaul",
+   "name": "Rabaul",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Rabaul on New Britain in Papua New Guinea was largely buried in ash by the twin volcanic eruptions of 1994."
+  },
+  {
+   "id": "newcastle-australia",
+   "name": "Newcastle",
+   "aliases": [
+    "Port of Newcastle",
+    "Newcastle NSW",
+    "Newcastle New South Wales"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "The Port of Newcastle in New South Wales is the largest coal export port in the world."
+  },
+  {
+   "id": "petropavlovsk-kamchatsky",
+   "name": "Petropavlovsk-Kamchatsky",
+   "aliases": [
+    "Petropavlovsk",
+    "Petropavlovsk Kamchatsky"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Petropavlovsk-Kamchatsky in Russia's Far East was founded in 1740 by Vitus Bering's expedition and sits on Avacha Bay."
+  },
+  {
+   "id": "hakodate",
+   "name": "Hakodate",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Hakodate in Hokkaido was among the first Japanese ports opened to foreign ships, in 1859."
+  },
+  {
+   "id": "corinto",
+   "name": "Corinto",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Corinto is Nicaragua's principal Pacific port."
+  },
+  {
+   "id": "gladstone",
+   "name": "Gladstone",
+   "aliases": [
+    "Port of Gladstone"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Gladstone in Queensland is a deep-water port that ships coal and liquefied natural gas."
+  },
+  {
+   "id": "dutch-harbor",
+   "name": "Dutch Harbor",
+   "aliases": [
+    "Unalaska",
+    "Dutch Harbor Alaska"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Dutch Harbor on Unalaska Island in the Aleutians has ranked among the top fishing ports in the United States by volume of catch for decades."
+  },
+  {
+   "id": "mumbai",
+   "name": "Mumbai",
+   "aliases": [
+    "Bombay"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Mumbai on the Arabian Sea is India's gateway city, where the Gateway of India arch was completed in 1924, and the nearby Nhava Sheva port is the country's biggest for containers."
+  },
+  {
+   "id": "dubai",
+   "name": "Dubai",
+   "aliases": [
+    "Port Rashid"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Dubai on the Persian Gulf is home to Jebel Ali, the largest container port in the Middle East."
+  },
+  {
+   "id": "mombasa",
+   "name": "Mombasa",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Mombasa is Kenya's main port, and Fort Jesus, built by the Portuguese in the 1590s, guards its old harbour."
+  },
+  {
+   "id": "durban",
+   "name": "Durban",
+   "aliases": [
+    "Port of Durban"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Durban on South Africa's east coast has one of the busiest container ports in Africa."
+  },
+  {
+   "id": "colombo",
+   "name": "Colombo",
+   "aliases": [
+    "Port of Colombo"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Colombo, on Sri Lanka's west coast, lies on the main shipping lane between the Suez Canal and the Strait of Malacca."
+  },
+  {
+   "id": "karachi",
+   "name": "Karachi",
+   "aliases": [
+    "Port of Karachi"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Karachi on the Arabian Sea is Pakistan's largest city and its principal port."
+  },
+  {
+   "id": "jeddah",
+   "name": "Jeddah",
+   "aliases": [
+    "Jiddah",
+    "Jeddah Islamic Port"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Jeddah on the Red Sea is Saudi Arabia's main commercial port and the gateway for pilgrims travelling to Mecca."
+  },
+  {
+   "id": "fremantle",
+   "name": "Fremantle",
+   "aliases": [
+    "Port of Fremantle"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Fremantle at the mouth of the Swan River is the main port of Perth, Western Australia."
+  },
+  {
+   "id": "port-louis",
+   "name": "Port Louis",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Port Louis, the capital of Mauritius, was founded by the French in 1735 and remains the island's main port."
+  },
+  {
+   "id": "chennai",
+   "name": "Chennai",
+   "aliases": [
+    "Madras",
+    "Port of Chennai"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Chennai, formerly Madras, grew around Fort St George, founded by the British East India Company in 1639."
+  },
+  {
+   "id": "kolkata",
+   "name": "Kolkata",
+   "aliases": [
+    "Calcutta",
+    "Port of Kolkata"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Kolkata's port stands on the Hooghly River, making it India's only major river port."
+  },
+  {
+   "id": "kochi",
+   "name": "Kochi",
+   "aliases": [
+    "Cochin",
+    "Port of Kochi"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Kochi in Kerala was a centre of the spice trade, and the Portuguese explorer Vasco da Gama died there in 1524."
+  },
+  {
+   "id": "dar-es-salaam",
+   "name": "Dar es Salaam",
+   "aliases": [
+    "Dar"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Dar es Salaam is Tanzania's largest city and main port, and its name is Arabic for haven of peace."
+  },
+  {
+   "id": "maputo",
+   "name": "Maputo",
+   "aliases": [
+    "Lourenco Marques"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Maputo, the capital of Mozambique, stands on Delagoa Bay and was called Lourenco Marques until 1976."
+  },
+  {
+   "id": "muscat",
+   "name": "Muscat",
+   "aliases": [
+    "Mutrah",
+    "Port Sultan Qaboos"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Muscat, the capital of Oman, has been a seafaring port on the Gulf of Oman for many centuries."
+  },
+  {
+   "id": "aden",
+   "name": "Aden",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Aden in Yemen is built inside the crater of an extinct volcano and was a British-ruled port from 1839 to 1967."
+  },
+  {
+   "id": "abu-dhabi",
+   "name": "Abu Dhabi",
+   "aliases": [
+    "Khalifa Port"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Abu Dhabi, the capital of the United Arab Emirates, is built on an island in the Persian Gulf."
+  },
+  {
+   "id": "doha",
+   "name": "Doha",
+   "aliases": [
+    "Hamad Port"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Doha, the capital of Qatar on the Persian Gulf, is served by Hamad Port, a large deep-water port built just to its south."
+  },
+  {
+   "id": "jebel-ali-port",
+   "name": "Jebel Ali Port",
+   "aliases": [
+    "Jebel Ali Free Zone"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Jebel Ali Port near Dubai opened in 1979 and is the largest man-made harbour in the world."
+  },
+  {
+   "id": "salalah",
+   "name": "Salalah",
+   "aliases": [
+    "Port of Salalah"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Salalah in southern Oman is a major container transshipment port and lies in the historic frankincense-producing region."
+  },
+  {
+   "id": "djibouti-city",
+   "name": "Djibouti",
+   "aliases": [
+    "Djibouti City",
+    "Port of Djibouti"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Djibouti sits beside the Bab-el-Mandeb strait and is the main sea outlet for landlocked Ethiopia."
+  },
+  {
+   "id": "mogadishu",
+   "name": "Mogadishu",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Mogadishu is the capital of Somalia and has been a trading port on the Indian Ocean since medieval times."
+  },
+  {
+   "id": "chittagong",
+   "name": "Chittagong",
+   "aliases": [
+    "Chattogram"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Chittagong, now officially Chattogram, is Bangladesh's busiest seaport on the Bay of Bengal."
+  },
+  {
+   "id": "visakhapatnam",
+   "name": "Visakhapatnam",
+   "aliases": [
+    "Vizag",
+    "Visakhapatnam Port"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Visakhapatnam on India's east coast has a natural deep-water harbour and is one of the country's major ports."
+  },
+  {
+   "id": "male",
+   "name": "Male",
+   "aliases": [
+    "Male Maldives"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Male is the capital of the Maldives and one of the most densely populated cities on Earth."
+  },
+  {
+   "id": "toamasina",
+   "name": "Toamasina",
+   "aliases": [
+    "Tamatave"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Toamasina, once known as Tamatave, is Madagascar's main seaport."
+  },
+  {
+   "id": "beira",
+   "name": "Beira",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Beira in Mozambique is a port at the mouth of the Pungwe River that serves the inland countries of southern Africa."
+  },
+  {
+   "id": "richards-bay",
+   "name": "Richards Bay",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Richards Bay in South Africa is home to one of the largest coal export terminals in the world."
+  },
+  {
+   "id": "gqeberha",
+   "name": "Gqeberha",
+   "aliases": [
+    "Port Elizabeth"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Gqeberha, formerly Port Elizabeth, was officially renamed in 2021 and is a major South African port on Algoa Bay."
+  },
+  {
+   "id": "kuwait-city",
+   "name": "Kuwait City",
+   "aliases": [
+    "Shuwaikh Port"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Kuwait City is the capital of Kuwait and sits on the shore of the Persian Gulf."
+  },
+  {
+   "id": "bandar-abbas",
+   "name": "Bandar Abbas",
+   "aliases": [
+    "Shahid Rajaee Port"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Bandar Abbas in Iran stands on the Strait of Hormuz and is the country's main port for container traffic."
+  },
+  {
+   "id": "port-sudan",
+   "name": "Port Sudan",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Port Sudan on the Red Sea was built in the early twentieth century to replace the old port of Suakin and is Sudan's main seaport."
+  },
+  {
+   "id": "banda-aceh",
+   "name": "Banda Aceh",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Banda Aceh at the northern tip of Sumatra was devastated by the Indian Ocean tsunami of 26 December 2004."
+  },
+  {
+   "id": "port-blair",
+   "name": "Port Blair",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Port Blair is the capital of India's Andaman and Nicobar Islands in the Bay of Bengal."
+  },
+  {
+   "id": "yangon",
+   "name": "Yangon",
+   "aliases": [
+    "Rangoon"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Yangon, formerly Rangoon, is Myanmar's largest city and its main seaport on the Andaman Sea coast."
+  },
+  {
+   "id": "galle",
+   "name": "Galle",
+   "aliases": [
+    "Galle Fort"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Galle in Sri Lanka is known for its 16th-century Dutch-built fort, a UNESCO World Heritage Site."
+  },
+  {
+   "id": "trincomalee",
+   "name": "Trincomalee",
+   "aliases": [
+    "Trinco"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Trincomalee on Sri Lanka's north-east coast has one of the finest natural deep-water harbours in the world."
+  },
+  {
+   "id": "gwadar",
+   "name": "Gwadar",
+   "aliases": [
+    "Gwadar Port"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Gwadar in Pakistan's Balochistan province is a deep-sea port on the Arabian Sea developed with Chinese investment."
+  },
+  {
+   "id": "chabahar",
+   "name": "Chabahar",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Chabahar in south-east Iran is the country's only port directly on the open Indian Ocean."
+  },
+  {
+   "id": "mundra",
+   "name": "Mundra",
+   "aliases": [
+    "Mundra Port"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Mundra in Gujarat, India, is the country's largest privately owned commercial port."
+  },
+  {
+   "id": "mangalore",
+   "name": "Mangalore",
+   "aliases": [
+    "Mangaluru",
+    "New Mangalore Port"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Mangalore in Karnataka, India, has a major port that handles much of the country's coffee and iron ore trade."
+  },
+  {
+   "id": "zanzibar-town",
+   "name": "Zanzibar Town",
+   "aliases": [
+    "Stone Town",
+    "Zanzibar City",
+    "Zanzibar"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Stone Town, the old quarter of Zanzibar Town, became a UNESCO World Heritage Site in 2000 and was once a centre of the Indian Ocean spice and slave trades."
+  },
+  {
+   "id": "nacala",
+   "name": "Nacala",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Nacala in Mozambique has one of the deepest natural harbours on the east coast of Africa."
+  },
+  {
+   "id": "victoria-seychelles",
+   "name": "Victoria",
+   "aliases": [
+    "Victoria Seychelles",
+    "Port Victoria"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Victoria, on the island of Mahe, is the capital of the Seychelles and one of the smallest capitals in the world."
+  },
+  {
+   "id": "aqaba",
+   "name": "Aqaba",
+   "aliases": [
+    "Port of Aqaba"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Aqaba at the head of the Gulf of Aqaba is Jordan's only seaport."
+  },
+  {
+   "id": "massawa",
+   "name": "Massawa",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Massawa is Eritrea's main Red Sea port and sits on a coral island linked to the mainland by causeways."
+  },
+  {
+   "id": "berbera",
+   "name": "Berbera",
+   "aliases": [
+    "Port of Berbera"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Berbera on the Gulf of Aden is the main port of Somaliland."
+  },
+  {
+   "id": "darwin",
+   "name": "Darwin",
+   "aliases": [
+    "Port Darwin"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Darwin on Australia's Timor Sea coast was bombed by Japanese aircraft on 19 February 1942."
+  },
+  {
+   "id": "padang",
+   "name": "Padang",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Padang is the largest city on the west coast of Sumatra and a port on the Indian Ocean."
+  },
+  {
+   "id": "port-hedland",
+   "name": "Port Hedland",
+   "aliases": [
+    "Port of Port Hedland"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Port Hedland in Western Australia ships iron ore from the Pilbara and handles more cargo by weight than any other port in Australia."
+  },
+  {
+   "id": "barcelona",
+   "name": "Barcelona",
+   "aliases": [
+    "Port of Barcelona",
+    "Port Vell"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Barcelona's port, crowned by a monument to Columbus, is one of the busiest cruise ports in Europe."
+  },
+  {
+   "id": "marseille",
+   "name": "Marseille",
+   "aliases": [
+    "Marseilles",
+    "Port of Marseille"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Marseille was founded around 600 BC by Greek colonists from Phocaea and is France's largest port."
+  },
+  {
+   "id": "naples",
+   "name": "Naples",
+   "aliases": [
+    "Napoli",
+    "Port of Naples"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Naples sits on a bay beneath Mount Vesuvius and began as the ancient Greek colony of Neapolis."
+  },
+  {
+   "id": "alexandria",
+   "name": "Alexandria",
+   "aliases": [
+    "Port of Alexandria"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Alexandria in Egypt was founded by Alexander the Great in 331 BC and was once home to the Pharos lighthouse."
+  },
+  {
+   "id": "venice",
+   "name": "Venice",
+   "aliases": [
+    "Venezia"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Venice is built on more than a hundred small islands in a lagoon and was a great maritime republic for centuries."
+  },
+  {
+   "id": "piraeus",
+   "name": "Piraeus",
+   "aliases": [
+    "Port of Piraeus"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Piraeus is the port of Athens and was developed by the statesman Themistocles in the fifth century BC."
+  },
+  {
+   "id": "valencia",
+   "name": "Valencia",
+   "aliases": [
+    "Port of Valencia",
+    "Valenciaport"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Valencia is one of the busiest container ports on the Mediterranean."
+  },
+  {
+   "id": "valletta",
+   "name": "Valletta",
+   "aliases": [
+    "La Valletta"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Valletta, the capital of Malta, was founded in 1566 by the Knights of St John after the Great Siege of 1565."
+  },
+  {
+   "id": "genoa",
+   "name": "Genoa",
+   "aliases": [
+    "Genova",
+    "Port of Genoa"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Genoa is Italy's largest port by total cargo and is traditionally named as the birthplace of Christopher Columbus."
+  },
+  {
+   "id": "haifa",
+   "name": "Haifa",
+   "aliases": [
+    "Port of Haifa"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Haifa is Israel's largest port and home to the terraced Bahai Gardens, a UNESCO World Heritage Site."
+  },
+  {
+   "id": "beirut",
+   "name": "Beirut",
+   "aliases": [
+    "Port of Beirut"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Beirut's port was the site of a huge explosion on 4 August 2020 that devastated much of the city."
+  },
+  {
+   "id": "algiers",
+   "name": "Algiers",
+   "aliases": [
+    "Alger"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Algiers, the capital of Algeria, has a historic Casbah that is a UNESCO World Heritage Site."
+  },
+  {
+   "id": "nice",
+   "name": "Nice",
+   "aliases": [
+    "Port of Nice"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Nice on the French Riviera is known for the Promenade des Anglais, which curves along its bay."
+  },
+  {
+   "id": "split",
+   "name": "Split",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Split in Croatia grew around the palace of the Roman emperor Diocletian, built around AD 300."
+  },
+  {
+   "id": "dubrovnik",
+   "name": "Dubrovnik",
+   "aliases": [
+    "Ragusa"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Dubrovnik on Croatia's Adriatic coast is encircled by medieval walls and was once the independent Republic of Ragusa."
+  },
+  {
+   "id": "palma",
+   "name": "Palma",
+   "aliases": [
+    "Palma de Mallorca",
+    "Palma Mallorca"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Palma is the capital and main port of the Spanish island of Mallorca."
+  },
+  {
+   "id": "izmir",
+   "name": "Izmir",
+   "aliases": [
+    "Smyrna"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Izmir in Turkey was the ancient city of Smyrna and is one of the great Aegean ports."
+  },
+  {
+   "id": "port-said",
+   "name": "Port Said",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Port Said was founded in 1859 at the Mediterranean entrance of the Suez Canal, which opened in 1869."
+  },
+  {
+   "id": "malaga",
+   "name": "Malaga",
+   "aliases": [
+    "Port of Malaga"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Malaga on Spain's Costa del Sol was the birthplace of the painter Pablo Picasso in 1881."
+  },
+  {
+   "id": "palermo",
+   "name": "Palermo",
+   "aliases": [
+    "Port of Palermo"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Palermo, the capital of Sicily, was founded by the Phoenicians and later ruled by Arabs and Normans."
+  },
+  {
+   "id": "cagliari",
+   "name": "Cagliari",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Cagliari is the capital and main port of the Italian island of Sardinia."
+  },
+  {
+   "id": "limassol",
+   "name": "Limassol",
+   "aliases": [
+    "Port of Limassol"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Limassol is the main commercial port of Cyprus."
+  },
+  {
+   "id": "antalya",
+   "name": "Antalya",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Antalya on Turkey's southern coast has an old harbour and Hadrian's Gate, built in AD 130 to honour a visit by the emperor."
+  },
+  {
+   "id": "tarragona",
+   "name": "Tarragona",
+   "aliases": [
+    "Tarraco"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Tarragona in Spain was the Roman city of Tarraco, and its Roman ruins are a UNESCO World Heritage Site."
+  },
+  {
+   "id": "cartagena-spain",
+   "name": "Cartagena",
+   "aliases": [
+    "Cartagena Spain",
+    "Cartagena Murcia"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Cartagena in Spain was founded around 227 BC by the Carthaginians as Qart Hadasht and has a long naval history."
+  },
+  {
+   "id": "toulon",
+   "name": "Toulon",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Toulon is the main base of the French Navy in the Mediterranean."
+  },
+  {
+   "id": "livorno",
+   "name": "Livorno",
+   "aliases": [
+    "Leghorn"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Livorno, known in English as Leghorn, is the main seaport of Tuscany."
+  },
+  {
+   "id": "bari",
+   "name": "Bari",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Bari in Apulia holds the relics of Saint Nicholas, brought there by sailors in 1087."
+  },
+  {
+   "id": "tel-aviv-jaffa",
+   "name": "Jaffa",
+   "aliases": [
+    "Tel Aviv",
+    "Tel Aviv-Yafo",
+    "Jaffa Port",
+    "Joppa",
+    "Yafo"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Jaffa is one of the oldest ports in the world and now forms part of Tel Aviv."
+  },
+  {
+   "id": "trieste",
+   "name": "Trieste",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Trieste was the main seaport of the Austro-Hungarian Empire on the Adriatic."
+  },
+  {
+   "id": "rijeka",
+   "name": "Rijeka",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Rijeka is Croatia's largest port."
+  },
+  {
+   "id": "heraklion",
+   "name": "Heraklion",
+   "aliases": [
+    "Iraklion",
+    "Heraklion Crete"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Heraklion is the largest city on Crete and is guarded by a Venetian sea fortress called Koules."
+  },
+  {
+   "id": "tripoli",
+   "name": "Tripoli",
+   "aliases": [
+    "Tripoli Libya"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Tripoli, the capital of Libya, has a long history as a Mediterranean port and an old town dominated by the Red Castle."
+  },
+  {
+   "id": "benghazi",
+   "name": "Benghazi",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Benghazi is the second-largest city in Libya and its main port on the Gulf of Sidra."
+  },
+  {
+   "id": "sfax",
+   "name": "Sfax",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Sfax is Tunisia's second-largest city and a major Mediterranean port."
+  },
+  {
+   "id": "oran",
+   "name": "Oran",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Oran is the second-largest city in Algeria and a major Mediterranean port."
+  },
+  {
+   "id": "annaba",
+   "name": "Annaba",
+   "aliases": [
+    "Bone",
+    "Hippo Regius"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Annaba in Algeria lies beside the ruins of Roman Hippo Regius, where Saint Augustine served as bishop."
+  },
+  {
+   "id": "sousse",
+   "name": "Sousse",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Sousse in Tunisia has a medina that became a UNESCO World Heritage Site in 1988."
+  },
+  {
+   "id": "la-spezia",
+   "name": "La Spezia",
+   "aliases": [
+    "Spezia"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "La Spezia in Liguria is a naval base and the usual gateway to the Cinque Terre villages."
+  },
+  {
+   "id": "civitavecchia",
+   "name": "Civitavecchia",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Civitavecchia is the main seaport of Rome and one of the busiest cruise ports in the Mediterranean."
+  },
+  {
+   "id": "ajaccio",
+   "name": "Ajaccio",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Ajaccio on Corsica was the birthplace of Napoleon Bonaparte in 1769."
+  },
+  {
+   "id": "catania",
+   "name": "Catania",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Catania on the east coast of Sicily lies at the foot of Mount Etna and has been rebuilt after eruptions and earthquakes."
+  },
+  {
+   "id": "kotor",
+   "name": "Kotor",
+   "aliases": [
+    "Bay of Kotor"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Kotor in Montenegro stands at the head of a deep fjord-like bay and its old town is a UNESCO World Heritage Site."
+  },
+  {
+   "id": "durres",
+   "name": "Durres",
+   "aliases": [
+    "Dyrrachium"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Durres is Albania's main port and was founded by Greek colonists as Epidamnos before becoming Roman Dyrrachium."
+  },
+  {
+   "id": "mersin",
+   "name": "Mersin",
+   "aliases": [
+    "Icel"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Mersin is one of Turkey's main Mediterranean ports, on the Cilician coast."
+  },
+  {
+   "id": "latakia",
+   "name": "Latakia",
+   "aliases": [
+    "Lattakia"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Latakia is Syria's main seaport on the Mediterranean."
+  },
+  {
+   "id": "famagusta",
+   "name": "Famagusta",
+   "aliases": [
+    "Gazimagusa"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Famagusta on Cyprus is ringed by Venetian walls and was one of the richest ports in the medieval Mediterranean."
+  },
+  {
+   "id": "ceuta",
+   "name": "Ceuta",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Ceuta is a Spanish port city on the North African coast, facing the Strait of Gibraltar."
+  },
+  {
+   "id": "melilla",
+   "name": "Melilla",
+   "aliases": [],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Melilla is a Spanish port city on the North African coast and has been Spanish since 1497."
+  },
+  {
+   "id": "rhodes",
+   "name": "Rhodes",
+   "aliases": [
+    "Rhodes Town"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Rhodes Town on the Greek island of Rhodes has a medieval old town built by the Knights of St John and listed by UNESCO in 1988."
+  },
+  {
+   "id": "gioia-tauro",
+   "name": "Gioia Tauro",
+   "aliases": [
+    "Port of Gioia Tauro"
+   ],
+   "kind": "place",
+   "group": "ports",
+   "fact": "Gioia Tauro in Calabria is Italy's largest container transshipment port, built in the 1990s."
+  },
+  {
+   "id": "suez-canal",
+   "name": "Suez Canal",
+   "aliases": [
+    "Suez"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Suez Canal, opened in 1869 and about 193 kilometres long, links the Mediterranean and the Red Sea and spares ships the voyage round Africa."
+  },
+  {
+   "id": "panama-canal",
+   "name": "Panama Canal",
+   "aliases": [
+    "Panama"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Panama Canal, opened in August 1914, lifts ships through locks to cross the isthmus between the Atlantic and Pacific oceans."
+  },
+  {
+   "id": "kiel-canal",
+   "name": "Kiel Canal",
+   "aliases": [
+    "Nord-Ostsee-Kanal",
+    "North Sea-Baltic Canal",
+    "Kiel"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Kiel Canal in Germany, opened in 1895, links the North Sea and the Baltic and is one of the busiest artificial waterways in the world."
+  },
+  {
+   "id": "northwest-passage",
+   "name": "Northwest Passage",
+   "aliases": [
+    "North-West Passage",
+    "NW Passage"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Northwest Passage through the Arctic was first fully sailed by Roald Amundsen's ship Gjoa between 1903 and 1906."
+  },
+  {
+   "id": "st-lawrence-seaway",
+   "name": "St. Lawrence Seaway",
+   "aliases": [
+    "Saint Lawrence Seaway",
+    "St Lawrence Seaway"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The St. Lawrence Seaway, opened in 1959, lets ocean-going ships travel from the Atlantic into the Great Lakes."
+  },
+  {
+   "id": "corinth-canal",
+   "name": "Corinth Canal",
+   "aliases": [
+    "Corinth"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Corinth Canal in Greece, opened in 1893, is about 6.3 kilometres long and cuts through rock walls nearly 80 metres high."
+  },
+  {
+   "id": "northern-sea-route",
+   "name": "Northern Sea Route",
+   "aliases": [
+    "NSR",
+    "Northeast Passage",
+    "North-East Passage"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Northern Sea Route runs along Russia's Arctic coast, and the ship Vega made the first full passage of it in 1878 and 1879."
+  },
+  {
+   "id": "welland-canal",
+   "name": "Welland Canal",
+   "aliases": [
+    "Welland"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Welland Canal in Ontario, first opened in 1829, lets ships bypass Niagara Falls between Lake Ontario and Lake Erie."
+  },
+  {
+   "id": "grand-canal-china",
+   "name": "Grand Canal of China",
+   "aliases": [
+    "Grand Canal",
+    "Beijing-Hangzhou Grand Canal",
+    "Great Canal"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "China's Grand Canal, about 1,800 kilometres long, is the longest canal in the world and has been built up over more than a thousand years."
+  },
+  {
+   "id": "makassar-strait",
+   "name": "Makassar Strait",
+   "aliases": [
+    "Strait of Makassar"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Makassar Strait between Borneo and Sulawesi is deep enough for very large ships and lies along the biological Wallace Line."
+  },
+  {
+   "id": "luzon-strait",
+   "name": "Luzon Strait",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Luzon Strait between Taiwan and the Philippines connects the South China Sea with the Pacific Ocean."
+  },
+  {
+   "id": "great-belt",
+   "name": "Great Belt",
+   "aliases": [
+    "Storebaelt",
+    "Store Baelt"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Great Belt in Denmark separates Zealand from Funen and has been crossed by the Great Belt Bridge since 1998."
+  },
+  {
+   "id": "strait-of-kerch",
+   "name": "Strait of Kerch",
+   "aliases": [
+    "Kerch Strait"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Strait of Kerch links the Black Sea with the Sea of Azov, and a road and rail bridge across it opened in 2018 and 2019."
+  },
+  {
+   "id": "strait-of-tiran",
+   "name": "Strait of Tiran",
+   "aliases": [
+    "Tiran Strait",
+    "Straits of Tiran"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Strait of Tiran guards the entrance to the Gulf of Aqaba, and its closure to Israeli shipping in 1967 helped trigger the Six-Day War."
+  },
+  {
+   "id": "mona-passage",
+   "name": "Mona Passage",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Mona Passage between Hispaniola and Puerto Rico is a main route for ships running between the Atlantic and the Panama Canal."
+  },
+  {
+   "id": "manchester-ship-canal",
+   "name": "Manchester Ship Canal",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Manchester Ship Canal, opened in 1894, is about 58 kilometres long and turned Manchester into an inland seaport."
+  },
+  {
+   "id": "houston-ship-channel",
+   "name": "Houston Ship Channel",
+   "aliases": [
+    "Houston Channel"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Houston Ship Channel in Texas runs inland for roughly 80 kilometres and serves one of the busiest ports in the United States."
+  },
+  {
+   "id": "cape-cod-canal",
+   "name": "Cape Cod Canal",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Cape Cod Canal in Massachusetts, opened in 1914, saves ships a long and dangerous trip around the outer cape."
+  },
+  {
+   "id": "beagle-channel",
+   "name": "Beagle Channel",
+   "aliases": [],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Beagle Channel in Tierra del Fuego is named after HMS Beagle and is a route to the port of Ushuaia."
+  },
+  {
+   "id": "straits-of-florida",
+   "name": "Straits of Florida",
+   "aliases": [
+    "Florida Straits",
+    "Strait of Florida",
+    "Florida Strait"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Straits of Florida between Florida and Cuba carry the Gulf Stream and heavy shipping out of the Gulf of Mexico."
+  },
+  {
+   "id": "singapore-strait",
+   "name": "Singapore Strait",
+   "aliases": [
+    "Strait of Singapore"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Singapore Strait is a narrow waterway south of Singapore that links the Strait of Malacca with the South China Sea."
+  },
+  {
+   "id": "rhine-main-danube-canal",
+   "name": "Rhine-Main-Danube Canal",
+   "aliases": [
+    "Main-Danube Canal",
+    "Europa Canal"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Rhine-Main-Danube Canal, opened in 1992, completed a continuous waterway between the North Sea and the Black Sea."
+  },
+  {
+   "id": "white-sea-baltic-canal",
+   "name": "White Sea-Baltic Canal",
+   "aliases": [
+    "White Sea Canal",
+    "Belomorkanal",
+    "Stalin Canal"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The White Sea-Baltic Canal in Russia, opened in 1933, was dug largely by forced labour in the Soviet Gulag system."
+  },
+  {
+   "id": "kanmon-strait",
+   "name": "Kanmon Strait",
+   "aliases": [
+    "Kanmon Straits",
+    "Shimonoseki Strait"
+   ],
+   "kind": "place",
+   "group": "straits",
+   "fact": "The Kanmon Strait between Japan's Honshu and Kyushu islands is only about 600 metres wide at its narrowest yet carries heavy shipping beneath its bridge and tunnels."
+  }
+ ],
+ "prompts": [
+  {
+   "id": "famous-beach",
+   "answers": [
+    {
+     "entity": "bondi-beach",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "copacabana-beach",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "waikiki",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "miami-beach",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "venice-beach",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "omaha-beach",
+     "tier": "baitball"
+    },
+    {
+     "entity": "maya-bay",
+     "tier": "baitball"
+    },
+    {
+     "entity": "ipanema-beach",
+     "tier": "baitball"
+    },
+    {
+     "entity": "whitehaven-beach",
+     "tier": "baitball"
+    },
+    {
+     "entity": "daytona-beach",
+     "tier": "reef"
+    },
+    {
+     "entity": "myrtle-beach",
+     "tier": "reef"
+    },
+    {
+     "entity": "utah-beach",
+     "tier": "reef"
+    },
+    {
+     "entity": "juno-beach",
+     "tier": "reef"
+    },
+    {
+     "entity": "gold-beach",
+     "tier": "reef"
+    },
+    {
+     "entity": "sword-beach",
+     "tier": "reef"
+    },
+    {
+     "entity": "patong-beach",
+     "tier": "reef"
+    },
+    {
+     "entity": "brighton-beach",
+     "tier": "reef"
+    },
+    {
+     "entity": "white-beach-boracay",
+     "tier": "reef"
+    },
+    {
+     "entity": "santa-monica-beach",
+     "tier": "reef"
+    },
+    {
+     "entity": "reynisfjara",
+     "tier": "twilight"
+    },
+    {
+     "entity": "navagio-beach",
+     "tier": "twilight"
+    },
+    {
+     "entity": "grace-bay",
+     "tier": "twilight"
+    },
+    {
+     "entity": "seven-mile-beach",
+     "tier": "twilight"
+    },
+    {
+     "entity": "anse-source-d-argent",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hyams-beach",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cable-beach",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pink-sands-beach",
+     "tier": "twilight"
+    },
+    {
+     "entity": "shell-beach-shark-bay",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bournemouth-beach",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cannon-beach",
+     "tier": "twilight"
+    },
+    {
+     "entity": "la-concha",
+     "tier": "twilight"
+    },
+    {
+     "entity": "coxs-bazar-beach",
+     "tier": "midnight"
+    },
+    {
+     "entity": "camps-bay",
+     "tier": "midnight"
+    },
+    {
+     "entity": "muizenberg-beach",
+     "tier": "midnight"
+    },
+    {
+     "entity": "elafonissi-beach",
+     "tier": "midnight"
+    },
+    {
+     "entity": "balos-beach",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lanikai-beach",
+     "tier": "midnight"
+    },
+    {
+     "entity": "anse-lazio",
+     "tier": "midnight"
+    },
+    {
+     "entity": "matira-beach",
+     "tier": "midnight"
+    },
+    {
+     "entity": "wineglass-bay",
+     "tier": "midnight"
+    },
+    {
+     "entity": "papakolea-green-sand-beach",
+     "tier": "midnight"
+    },
+    {
+     "entity": "punaluu-black-sand-beach",
+     "tier": "midnight"
+    },
+    {
+     "entity": "playa-flamenco",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rhossili-bay",
+     "tier": "midnight"
+    },
+    {
+     "entity": "praia-do-cassino",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "lighthouse",
+   "answers": [
+    {
+     "entity": "pharos-of-alexandria",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "eddystone-lighthouse",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "cape-hatteras-lighthouse",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "portland-head-light",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "boston-light",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "tower-of-hercules",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bell-rock-lighthouse",
+     "tier": "baitball"
+    },
+    {
+     "entity": "fastnet-lighthouse",
+     "tier": "baitball"
+    },
+    {
+     "entity": "cordouan-lighthouse",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bishop-rock-lighthouse",
+     "tier": "reef"
+    },
+    {
+     "entity": "longstone-lighthouse",
+     "tier": "reef"
+    },
+    {
+     "entity": "cape-byron-lighthouse",
+     "tier": "reef"
+    },
+    {
+     "entity": "peggys-point-lighthouse",
+     "tier": "reef"
+    },
+    {
+     "entity": "montauk-point-lighthouse",
+     "tier": "reef"
+    },
+    {
+     "entity": "lanterna-di-genova",
+     "tier": "reef"
+    },
+    {
+     "entity": "hook-head-lighthouse",
+     "tier": "reef"
+    },
+    {
+     "entity": "skerryvore-lighthouse",
+     "tier": "reef"
+    },
+    {
+     "entity": "st-augustine-lighthouse",
+     "tier": "reef"
+    },
+    {
+     "entity": "cape-otway-lighthouse",
+     "tier": "reef"
+    },
+    {
+     "entity": "flannan-isles-lighthouse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tillamook-rock-lighthouse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "minots-ledge-lighthouse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cape-agulhas-lighthouse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cape-point-lighthouse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "creach-lighthouse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ar-men-lighthouse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "muckle-flugga-lighthouse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cape-reinga-lighthouse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pigeon-point-lighthouse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "heceta-head-lighthouse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "jeddah-light",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cape-wrath-lighthouse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "dunnet-head-lighthouse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ardnamurchan-lighthouse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "smeatons-tower",
+     "tier": "midnight"
+    },
+    {
+     "entity": "les-eclaireurs-lighthouse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "san-juan-de-salvamento-lighthouse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "la-jument-lighthouse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cape-disappointment-lighthouse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sambro-island-lighthouse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sumburgh-head-lighthouse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "kinnaird-head-lighthouse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mull-of-galloway-lighthouse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cape-spartel-lighthouse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cape-egmont-lighthouse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rubjerg-knude-lighthouse",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "aquarium-public",
+   "answers": [
+    {
+     "entity": "monterey-bay-aquarium",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "georgia-aquarium",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "shedd-aquarium",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "national-aquarium-baltimore",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "new-england-aquarium",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "okinawa-churaumi-aquarium",
+     "tier": "baitball"
+    },
+    {
+     "entity": "oceanografic-valencia",
+     "tier": "baitball"
+    },
+    {
+     "entity": "sea-aquarium-singapore",
+     "tier": "baitball"
+    },
+    {
+     "entity": "kaiyukan",
+     "tier": "baitball"
+    },
+    {
+     "entity": "dubai-aquarium",
+     "tier": "reef"
+    },
+    {
+     "entity": "oceanario-de-lisboa",
+     "tier": "reef"
+    },
+    {
+     "entity": "aquarium-of-the-pacific",
+     "tier": "reef"
+    },
+    {
+     "entity": "tennessee-aquarium",
+     "tier": "reef"
+    },
+    {
+     "entity": "vancouver-aquarium",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-life-sydney-aquarium",
+     "tier": "reef"
+    },
+    {
+     "entity": "two-oceans-aquarium",
+     "tier": "reef"
+    },
+    {
+     "entity": "nausicaa",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-life-london-aquarium",
+     "tier": "reef"
+    },
+    {
+     "entity": "genoa-aquarium",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-life-brighton",
+     "tier": "twilight"
+    },
+    {
+     "entity": "the-deep-hull",
+     "tier": "twilight"
+    },
+    {
+     "entity": "national-marine-aquarium-plymouth",
+     "tier": "twilight"
+    },
+    {
+     "entity": "oceanographic-museum-monaco",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ozeaneum",
+     "tier": "twilight"
+    },
+    {
+     "entity": "aquarium-of-the-bay",
+     "tier": "twilight"
+    },
+    {
+     "entity": "shanghai-ocean-aquarium",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ripleys-aquarium-of-canada",
+     "tier": "twilight"
+    },
+    {
+     "entity": "istanbul-aquarium",
+     "tier": "twilight"
+    },
+    {
+     "entity": "alaska-sealife-center",
+     "tier": "twilight"
+    },
+    {
+     "entity": "maui-ocean-center",
+     "tier": "twilight"
+    },
+    {
+     "entity": "oregon-coast-aquarium",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mote-marine-aquarium",
+     "tier": "midnight"
+    },
+    {
+     "entity": "birch-aquarium",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mystic-aquarium",
+     "tier": "midnight"
+    },
+    {
+     "entity": "audubon-aquarium-of-the-americas",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cairns-aquarium",
+     "tier": "midnight"
+    },
+    {
+     "entity": "aquarium-barcelona",
+     "tier": "midnight"
+    },
+    {
+     "entity": "aquario-rio",
+     "tier": "midnight"
+    },
+    {
+     "entity": "zoo-aquarium-berlin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "haus-des-meeres",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bergen-aquarium",
+     "tier": "midnight"
+    },
+    {
+     "entity": "aquadom-berlin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tokyo-sea-life-park",
+     "tier": "midnight"
+    },
+    {
+     "entity": "poema-del-mar",
+     "tier": "midnight"
+    },
+    {
+     "entity": "aqwa-perth",
+     "tier": "midnight"
+    },
+    {
+     "entity": "naples-zoological-station-aquarium",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "surf-spot",
+   "answers": [
+    {
+     "entity": "banzai-pipeline",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "jeffreys-bay",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "malibu-surfrider-beach",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "teahupoo",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "huntington-beach",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "nazare",
+     "tier": "baitball"
+    },
+    {
+     "entity": "mavericks",
+     "tier": "baitball"
+    },
+    {
+     "entity": "jaws-peahi",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bells-beach",
+     "tier": "baitball"
+    },
+    {
+     "entity": "waimea-bay",
+     "tier": "reef"
+    },
+    {
+     "entity": "uluwatu",
+     "tier": "reef"
+    },
+    {
+     "entity": "snapper-rocks",
+     "tier": "reef"
+    },
+    {
+     "entity": "hossegor",
+     "tier": "reef"
+    },
+    {
+     "entity": "lower-trestles",
+     "tier": "reef"
+    },
+    {
+     "entity": "cloudbreak",
+     "tier": "reef"
+    },
+    {
+     "entity": "sunset-beach",
+     "tier": "reef"
+    },
+    {
+     "entity": "supertubos",
+     "tier": "reef"
+    },
+    {
+     "entity": "puerto-escondido",
+     "tier": "reef"
+    },
+    {
+     "entity": "rincon",
+     "tier": "reef"
+    },
+    {
+     "entity": "kirra",
+     "tier": "twilight"
+    },
+    {
+     "entity": "margaret-river-main-break",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ericeira",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mundaka",
+     "tier": "twilight"
+    },
+    {
+     "entity": "skeleton-bay",
+     "tier": "twilight"
+    },
+    {
+     "entity": "dungeons",
+     "tier": "twilight"
+    },
+    {
+     "entity": "g-land",
+     "tier": "twilight"
+    },
+    {
+     "entity": "padang-padang",
+     "tier": "twilight"
+    },
+    {
+     "entity": "honolua-bay",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hookipa",
+     "tier": "twilight"
+    },
+    {
+     "entity": "steamer-lane",
+     "tier": "twilight"
+    },
+    {
+     "entity": "chicama",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ocean-beach-san-francisco",
+     "tier": "twilight"
+    },
+    {
+     "entity": "thurso-east",
+     "tier": "midnight"
+    },
+    {
+     "entity": "fistral-beach",
+     "tier": "midnight"
+    },
+    {
+     "entity": "arugam-bay",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cloud-9",
+     "tier": "midnight"
+    },
+    {
+     "entity": "restaurants-tavarua",
+     "tier": "midnight"
+    },
+    {
+     "entity": "punta-de-lobos",
+     "tier": "midnight"
+    },
+    {
+     "entity": "playa-hermosa",
+     "tier": "midnight"
+    },
+    {
+     "entity": "manu-bay",
+     "tier": "midnight"
+    },
+    {
+     "entity": "noosa-first-point",
+     "tier": "midnight"
+    },
+    {
+     "entity": "burleigh-heads",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lagundri-bay",
+     "tier": "midnight"
+    },
+    {
+     "entity": "macaronis",
+     "tier": "midnight"
+    },
+    {
+     "entity": "kommetjie",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lahinch",
+     "tier": "midnight"
+    },
+    {
+     "entity": "byron-bay-the-pass",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mullaghmore-head",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "pacific-port",
+   "answers": [
+    {
+     "entity": "los-angeles",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "san-francisco",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sydney",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "tokyo",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "vancouver",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "honolulu",
+     "tier": "baitball"
+    },
+    {
+     "entity": "valparaiso",
+     "tier": "baitball"
+    },
+    {
+     "entity": "auckland",
+     "tier": "baitball"
+    },
+    {
+     "entity": "acapulco",
+     "tier": "baitball"
+    },
+    {
+     "entity": "san-diego",
+     "tier": "reef"
+    },
+    {
+     "entity": "long-beach",
+     "tier": "reef"
+    },
+    {
+     "entity": "oakland",
+     "tier": "reef"
+    },
+    {
+     "entity": "yokohama",
+     "tier": "reef"
+    },
+    {
+     "entity": "kobe",
+     "tier": "reef"
+    },
+    {
+     "entity": "callao",
+     "tier": "reef"
+    },
+    {
+     "entity": "guayaquil",
+     "tier": "reef"
+    },
+    {
+     "entity": "brisbane",
+     "tier": "reef"
+    },
+    {
+     "entity": "panama-city",
+     "tier": "reef"
+    },
+    {
+     "entity": "seattle",
+     "tier": "reef"
+    },
+    {
+     "entity": "osaka",
+     "tier": "twilight"
+    },
+    {
+     "entity": "nagoya",
+     "tier": "twilight"
+    },
+    {
+     "entity": "wellington",
+     "tier": "twilight"
+    },
+    {
+     "entity": "papeete",
+     "tier": "twilight"
+    },
+    {
+     "entity": "suva",
+     "tier": "twilight"
+    },
+    {
+     "entity": "antofagasta",
+     "tier": "twilight"
+    },
+    {
+     "entity": "iquique",
+     "tier": "twilight"
+    },
+    {
+     "entity": "arica",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mazatlan",
+     "tier": "twilight"
+    },
+    {
+     "entity": "prince-rupert",
+     "tier": "twilight"
+    },
+    {
+     "entity": "port-moresby",
+     "tier": "twilight"
+    },
+    {
+     "entity": "buenaventura",
+     "tier": "twilight"
+    },
+    {
+     "entity": "manzanillo",
+     "tier": "twilight"
+    },
+    {
+     "entity": "noumea",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lyttelton",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tauranga",
+     "tier": "midnight"
+    },
+    {
+     "entity": "talcahuano",
+     "tier": "midnight"
+    },
+    {
+     "entity": "san-antonio-chile",
+     "tier": "midnight"
+    },
+    {
+     "entity": "puntarenas",
+     "tier": "midnight"
+    },
+    {
+     "entity": "honiara",
+     "tier": "midnight"
+    },
+    {
+     "entity": "port-vila",
+     "tier": "midnight"
+    },
+    {
+     "entity": "apia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lae",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rabaul",
+     "tier": "midnight"
+    },
+    {
+     "entity": "newcastle-australia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "petropavlovsk-kamchatsky",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hakodate",
+     "tier": "midnight"
+    },
+    {
+     "entity": "corinto",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gladstone",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dutch-harbor",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "indian-ocean-port",
+   "answers": [
+    {
+     "entity": "mumbai",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "dubai",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mombasa",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "durban",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "colombo",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "karachi",
+     "tier": "baitball"
+    },
+    {
+     "entity": "jeddah",
+     "tier": "baitball"
+    },
+    {
+     "entity": "fremantle",
+     "tier": "baitball"
+    },
+    {
+     "entity": "port-louis",
+     "tier": "baitball"
+    },
+    {
+     "entity": "chennai",
+     "tier": "reef"
+    },
+    {
+     "entity": "kolkata",
+     "tier": "reef"
+    },
+    {
+     "entity": "kochi",
+     "tier": "reef"
+    },
+    {
+     "entity": "dar-es-salaam",
+     "tier": "reef"
+    },
+    {
+     "entity": "maputo",
+     "tier": "reef"
+    },
+    {
+     "entity": "muscat",
+     "tier": "reef"
+    },
+    {
+     "entity": "aden",
+     "tier": "reef"
+    },
+    {
+     "entity": "abu-dhabi",
+     "tier": "reef"
+    },
+    {
+     "entity": "doha",
+     "tier": "reef"
+    },
+    {
+     "entity": "jebel-ali-port",
+     "tier": "reef"
+    },
+    {
+     "entity": "salalah",
+     "tier": "twilight"
+    },
+    {
+     "entity": "djibouti-city",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mogadishu",
+     "tier": "twilight"
+    },
+    {
+     "entity": "chittagong",
+     "tier": "twilight"
+    },
+    {
+     "entity": "visakhapatnam",
+     "tier": "twilight"
+    },
+    {
+     "entity": "male",
+     "tier": "twilight"
+    },
+    {
+     "entity": "toamasina",
+     "tier": "twilight"
+    },
+    {
+     "entity": "beira",
+     "tier": "twilight"
+    },
+    {
+     "entity": "richards-bay",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gqeberha",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kuwait-city",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bandar-abbas",
+     "tier": "twilight"
+    },
+    {
+     "entity": "port-sudan",
+     "tier": "twilight"
+    },
+    {
+     "entity": "banda-aceh",
+     "tier": "midnight"
+    },
+    {
+     "entity": "port-blair",
+     "tier": "midnight"
+    },
+    {
+     "entity": "yangon",
+     "tier": "midnight"
+    },
+    {
+     "entity": "galle",
+     "tier": "midnight"
+    },
+    {
+     "entity": "trincomalee",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gwadar",
+     "tier": "midnight"
+    },
+    {
+     "entity": "chabahar",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mundra",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mangalore",
+     "tier": "midnight"
+    },
+    {
+     "entity": "zanzibar-town",
+     "tier": "midnight"
+    },
+    {
+     "entity": "nacala",
+     "tier": "midnight"
+    },
+    {
+     "entity": "victoria-seychelles",
+     "tier": "midnight"
+    },
+    {
+     "entity": "aqaba",
+     "tier": "midnight"
+    },
+    {
+     "entity": "massawa",
+     "tier": "midnight"
+    },
+    {
+     "entity": "berbera",
+     "tier": "midnight"
+    },
+    {
+     "entity": "darwin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "padang",
+     "tier": "midnight"
+    },
+    {
+     "entity": "port-hedland",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "mediterranean-port",
+   "answers": [
+    {
+     "entity": "barcelona",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "marseille",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "naples",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "alexandria",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "venice",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "piraeus",
+     "tier": "baitball"
+    },
+    {
+     "entity": "valencia",
+     "tier": "baitball"
+    },
+    {
+     "entity": "valletta",
+     "tier": "baitball"
+    },
+    {
+     "entity": "genoa",
+     "tier": "baitball"
+    },
+    {
+     "entity": "haifa",
+     "tier": "reef"
+    },
+    {
+     "entity": "beirut",
+     "tier": "reef"
+    },
+    {
+     "entity": "algiers",
+     "tier": "reef"
+    },
+    {
+     "entity": "nice",
+     "tier": "reef"
+    },
+    {
+     "entity": "split",
+     "tier": "reef"
+    },
+    {
+     "entity": "dubrovnik",
+     "tier": "reef"
+    },
+    {
+     "entity": "palma",
+     "tier": "reef"
+    },
+    {
+     "entity": "izmir",
+     "tier": "reef"
+    },
+    {
+     "entity": "port-said",
+     "tier": "reef"
+    },
+    {
+     "entity": "malaga",
+     "tier": "reef"
+    },
+    {
+     "entity": "palermo",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cagliari",
+     "tier": "twilight"
+    },
+    {
+     "entity": "limassol",
+     "tier": "twilight"
+    },
+    {
+     "entity": "antalya",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tarragona",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cartagena-spain",
+     "tier": "twilight"
+    },
+    {
+     "entity": "toulon",
+     "tier": "twilight"
+    },
+    {
+     "entity": "livorno",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bari",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tel-aviv-jaffa",
+     "tier": "twilight"
+    },
+    {
+     "entity": "trieste",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rijeka",
+     "tier": "twilight"
+    },
+    {
+     "entity": "heraklion",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tripoli",
+     "tier": "midnight"
+    },
+    {
+     "entity": "benghazi",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sfax",
+     "tier": "midnight"
+    },
+    {
+     "entity": "oran",
+     "tier": "midnight"
+    },
+    {
+     "entity": "annaba",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sousse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "la-spezia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "civitavecchia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ajaccio",
+     "tier": "midnight"
+    },
+    {
+     "entity": "catania",
+     "tier": "midnight"
+    },
+    {
+     "entity": "kotor",
+     "tier": "midnight"
+    },
+    {
+     "entity": "durres",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mersin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "latakia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "famagusta",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ceuta",
+     "tier": "midnight"
+    },
+    {
+     "entity": "melilla",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rhodes",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gioia-tauro",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "shipping-route",
+   "answers": [
+    {
+     "entity": "suez-canal",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "panama-canal",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "strait-of-gibraltar",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "english-channel",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "strait-of-hormuz",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "strait-of-malacca",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bosporus",
+     "tier": "baitball"
+    },
+    {
+     "entity": "kiel-canal",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bab-el-mandeb",
+     "tier": "baitball"
+    },
+    {
+     "entity": "strait-of-dover",
+     "tier": "reef"
+    },
+    {
+     "entity": "dardanelles",
+     "tier": "reef"
+    },
+    {
+     "entity": "strait-of-magellan",
+     "tier": "reef"
+    },
+    {
+     "entity": "drake-passage",
+     "tier": "reef"
+    },
+    {
+     "entity": "northwest-passage",
+     "tier": "reef"
+    },
+    {
+     "entity": "taiwan-strait",
+     "tier": "reef"
+    },
+    {
+     "entity": "bering-strait",
+     "tier": "reef"
+    },
+    {
+     "entity": "golden-gate",
+     "tier": "reef"
+    },
+    {
+     "entity": "st-lawrence-seaway",
+     "tier": "reef"
+    },
+    {
+     "entity": "strait-of-messina",
+     "tier": "reef"
+    },
+    {
+     "entity": "corinth-canal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "korea-strait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sunda-strait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lombok-strait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mozambique-channel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "torres-strait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bass-strait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cook-strait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "oresund",
+     "tier": "twilight"
+    },
+    {
+     "entity": "skagerrak",
+     "tier": "twilight"
+    },
+    {
+     "entity": "strait-of-juan-de-fuca",
+     "tier": "twilight"
+    },
+    {
+     "entity": "northern-sea-route",
+     "tier": "twilight"
+    },
+    {
+     "entity": "welland-canal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "grand-canal-china",
+     "tier": "twilight"
+    },
+    {
+     "entity": "makassar-strait",
+     "tier": "midnight"
+    },
+    {
+     "entity": "luzon-strait",
+     "tier": "midnight"
+    },
+    {
+     "entity": "great-belt",
+     "tier": "midnight"
+    },
+    {
+     "entity": "strait-of-kerch",
+     "tier": "midnight"
+    },
+    {
+     "entity": "strait-of-tiran",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mona-passage",
+     "tier": "midnight"
+    },
+    {
+     "entity": "manchester-ship-canal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "houston-ship-channel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cape-cod-canal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "beagle-channel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "straits-of-florida",
+     "tier": "midnight"
+    },
+    {
+     "entity": "singapore-strait",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rhine-main-danube-canal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "white-sea-baltic-canal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "windward-passage",
+     "tier": "midnight"
+    },
+    {
+     "entity": "yucatan-channel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pentland-firth",
+     "tier": "midnight"
+    },
+    {
+     "entity": "strait-of-otranto",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hudson-strait",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lancaster-sound",
+     "tier": "midnight"
+    },
+    {
+     "entity": "kanmon-strait",
+     "tier": "hadal"
+    }
+   ]
+  }
+ ]
+}

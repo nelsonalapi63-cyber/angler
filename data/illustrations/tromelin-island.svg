@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<circle cx="128" cy="128" r="112" fill="#3C6AE0"/>
+<ellipse cx="70" cy="200" rx="20" ry="3" fill="#EAF4F7"/>
+<ellipse cx="180" cy="206" rx="22" ry="3" fill="#EAF4F7"/>
+<path d="M44 150 C70 134 150 130 214 148 C206 168 150 176 120 174 C84 176 56 170 44 150Z" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="90" y="130" width="36" height="18" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="86,130 108,114 130,130" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="176" cy="122" r="6" fill="#EAF4F7"/>
+<circle cx="184" cy="104" r="9" fill="#EAF4F7"/>
+<circle cx="176" cy="84" r="11" fill="#EAF4F7"/>
+<circle cx="188" cy="62" r="10" fill="#EAF4F7"/>
+<rect x="172" y="138" width="16" height="8" fill="#0C2A3A"/>
+<polygon points="40,76 78,76 66,88 52,88" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="58" y="40" width="4" height="36" fill="#0C2A3A"/>
+<polygon points="62,42 62,72 94,72" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

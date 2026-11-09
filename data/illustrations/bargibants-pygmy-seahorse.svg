@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<path d="M120 250 L128 180 L60 110 L30 40 L44 36 L76 96 L104 56 L118 60 L98 108 L124 132 L130 80 L150 74 L146 140 L186 96 L200 50 L216 54 L204 106 L156 168 L146 250Z" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="160" cy="106" rx="0" ry="0" fill="#B49BFF"/>
+<path d="M150 70 C168 56 190 66 190 86 C190 102 178 112 176 130 C176 150 192 160 184 176 C176 192 158 190 156 176 C166 172 164 160 160 148 C156 128 164 116 160 106 C148 98 140 84 150 70Z" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M150 70 L124 74 L128 84 L150 84Z" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="184" cy="96" r="5" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="166" cy="128" r="5" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="172" cy="150" r="5" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="160" cy="114" r="5" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="186" cy="72" r="5" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="166" cy="82" r="5" fill="#0C2A3A"/><circle cx="164.5" cy="80.5" r="1.75" fill="#EAF4F7"/>
+<circle cx="60" cy="100" r="4" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="98" cy="100" r="4" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="40" cy="56" r="4" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="138" cy="100" r="4" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

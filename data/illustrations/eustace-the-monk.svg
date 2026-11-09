@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<rect x="124" y="34" width="6" height="120" fill="#E2B94F"/>
+<path d="M130 44 L196 56 L196 128 L130 140Z" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="158" y="62" width="10" height="66" fill="#F26A4B"/>
+<rect x="138" y="86" width="50" height="10" fill="#F26A4B"/>
+<path d="M26 150 Q128 176 230 150 Q220 196 180 208 L80 208 Q40 196 26 150Z" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M26 150 Q18 134 24 122 Q36 130 40 150Z" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M230 150 Q238 134 232 122 Q220 130 216 150Z" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="60" y1="172" x2="200" y2="172" stroke="#0C2A3A" stroke-width="4" stroke-linecap="round"/>
+<path d="M124 34 L112 20 L124 24Z" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M16 204 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 L240 236 L16 236Z" fill="#3C6AE0"/>
+<path d="M16 218 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 L240 236 L16 236Z" fill="#86D9EC"/>
+</svg>

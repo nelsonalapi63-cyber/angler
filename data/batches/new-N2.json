@@ -1,0 +1,5035 @@
+{
+ "entities": [
+  {
+   "id": "red-reef-lobster",
+   "name": "Red reef lobster",
+   "aliases": [
+    "Enoplometopus occidentalis",
+    "reef lobster",
+    "Enoplometopus"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Unlike true spiny lobsters, reef lobsters carry small pincers on their first three pairs of legs."
+  },
+  {
+   "id": "southern-king-crab",
+   "name": "Southern king crab",
+   "aliases": [
+    "centolla",
+    "Lithodes santolla",
+    "Patagonian king crab"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "The southern king crab lives in the cold waters around Tierra del Fuego and is fished for its large, meaty claws and legs."
+  },
+  {
+   "id": "golden-king-crab",
+   "name": "Golden king crab",
+   "aliases": [
+    "Lithodes aequispinus",
+    "brown king crab"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Golden king crabs live on the cold continental slope of the North Pacific and are caught in deep traps."
+  },
+  {
+   "id": "atlantic-rock-crab",
+   "name": "Atlantic rock crab",
+   "aliases": [
+    "Cancer irroratus",
+    "rock crab"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "The Atlantic rock crab lives along the shores of eastern North America and crushes small shellfish in its strong claws."
+  },
+  {
+   "id": "oilfish",
+   "name": "Oilfish",
+   "aliases": [
+    "Ruvettus pretiosus",
+    "castor oil fish",
+    "Ruvettus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The flesh of the oilfish is rich in waxy esters that humans cannot digest, causing oily diarrhoea, and its sale is banned in Japan."
+  },
+  {
+   "id": "mangrove-horseshoe-crab",
+   "name": "Mangrove horseshoe crab",
+   "aliases": [
+    "Carcinoscorpius rotundicauda",
+    "mangrove king crab"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "The mangrove horseshoe crab can carry tetrodotoxin and has caused fatal poisonings when eaten in South-East Asia."
+  },
+  {
+   "id": "toxic-reef-crab",
+   "name": "Toxic reef crab",
+   "aliases": [
+    "Zosimus aeneus",
+    "devil crab",
+    "Zosimus"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Cooking does not destroy the saxitoxin and tetrodotoxin in this brightly marked Indo-Pacific reef crab, which has killed people who ate it."
+  },
+  {
+   "id": "japanese-ivory-shell",
+   "name": "Japanese ivory shell",
+   "aliases": [
+    "Babylonia japonica",
+    "Babylonia",
+    "ivory shell"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The salivary glands of this edible sea snail contain surugatoxin, which caused outbreaks of poisoning in Japan in the 1960s."
+  },
+  {
+   "id": "shortfin-mako",
+   "name": "Shortfin mako",
+   "aliases": [
+    "shortfin mako shark",
+    "blue pointer",
+    "bonito shark",
+    "Isurus oxyrinchus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Shortfin makos keep their bodies warmer than the surrounding water, which powers their famous bursts of speed."
+  },
+  {
+   "id": "pallid-sturgeon",
+   "name": "Pallid sturgeon",
+   "aliases": [
+    "Scaphirhynchus albus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The pallid sturgeon of the Missouri and Mississippi rivers is a pale, shovel-snouted giant listed as endangered in the United States."
+  },
+  {
+   "id": "kaluga",
+   "name": "Kaluga",
+   "aliases": [
+    "Huso dauricus",
+    "Amur sturgeon",
+    "river beluga"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The kaluga of the Amur river basin is one of the largest freshwater fish in the world and is critically endangered."
+  },
+  {
+   "id": "devils-hole-pupfish",
+   "name": "Devils Hole pupfish",
+   "aliases": [
+    "Cyprinodon diabolis",
+    "Devil's Hole pupfish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The Devils Hole pupfish lives in a single water-filled limestone cave pool in Nevada, one of the smallest ranges of any vertebrate."
+  },
+  {
+   "id": "pineapplefish",
+   "name": "Pineapplefish",
+   "aliases": [
+    "Cleidopus gloriamaris",
+    "pineapple fish",
+    "Cleidopus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The pineapplefish has yellow, black-edged scales that resemble a pineapple's skin and carries glowing bacteria in organs on its lower jaw."
+  },
+  {
+   "id": "peanut-worm",
+   "name": "Peanut worm",
+   "aliases": [
+    "Sipuncula",
+    "Sipunculus",
+    "sipunculan"
+   ],
+   "kind": "creature",
+   "group": "worms",
+   "fact": "When disturbed, a peanut worm pulls its narrow front end into its body, leaving a shape like a peanut."
+  },
+  {
+   "id": "butterfish",
+   "name": "Butterfish",
+   "aliases": [
+    "Peprilus triacanthus",
+    "Atlantic butterfish",
+    "Peprilus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The butterfish of the North Atlantic coast is a small, silvery, oily fish named for its soft, buttery flesh."
+  },
+  {
+   "id": "sea-potato",
+   "name": "Sea potato",
+   "aliases": [
+    "Echinocardium cordatum",
+    "sea-potato urchin"
+   ],
+   "kind": "creature",
+   "group": "echinoderms",
+   "fact": "The sea potato is a heart urchin that lives buried in sand and is named for its rounded, potato-like shape."
+  },
+  {
+   "id": "sea-pork",
+   "name": "Sea pork",
+   "aliases": [
+    "Aplidium stellatum",
+    "Aplidium"
+   ],
+   "kind": "creature",
+   "group": "sea squirts",
+   "fact": "Sea pork is a colonial sea squirt that forms fleshy lumps, and its name comes from a resemblance to salted pork."
+  },
+  {
+   "id": "egg-yolk-jellyfish",
+   "name": "Egg-yolk jellyfish",
+   "aliases": [
+    "Phacellophora camtschatica",
+    "egg yolk jelly"
+   ],
+   "kind": "creature",
+   "group": "jellies",
+   "fact": "The egg-yolk jellyfish has a yellow-orange centre inside a clear bell and feeds mostly on other jellyfish."
+  },
+  {
+   "id": "cabbage-head-jellyfish",
+   "name": "Cabbage head jellyfish",
+   "aliases": [
+    "Cephea cephea",
+    "cauliflower jellyfish",
+    "Cephea"
+   ],
+   "kind": "creature",
+   "group": "jellies",
+   "fact": "The cabbage head jellyfish drifts in warm Indo-Pacific waters, and its frilly arms resemble a cabbage or cauliflower."
+  },
+  {
+   "id": "lemon-peel-angelfish",
+   "name": "Lemon peel angelfish",
+   "aliases": [
+    "Centropyge flavissima",
+    "lemonpeel angelfish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The lemon peel angelfish takes its name from its bright lemon-yellow body, which is marked with a blue ring around the eye."
+  },
+  {
+   "id": "banana-prawn",
+   "name": "Banana prawn",
+   "aliases": [
+    "Fenneropenaeus merguiensis",
+    "Penaeus merguiensis",
+    "white banana prawn"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Banana prawns take their name from their yellowish colour and are a main catch of prawn trawlers in northern Australia."
+  },
+  {
+   "id": "strawberry-anemone",
+   "name": "Strawberry anemone",
+   "aliases": [
+    "Actinia fragacea"
+   ],
+   "kind": "creature",
+   "group": "corals",
+   "fact": "The strawberry anemone is a red anemone of rocky shores whose green-flecked column looks like a strawberry."
+  },
+  {
+   "id": "strawberry-conch",
+   "name": "Strawberry conch",
+   "aliases": [
+    "Conomurex luhuanus",
+    "Strombus luhuanus",
+    "tiger conch"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The strawberry conch is a reef snail with a pink-orange shell opening and eyes on long stalks."
+  },
+  {
+   "id": "chocolate-surgeonfish",
+   "name": "Chocolate surgeonfish",
+   "aliases": [
+    "Acanthurus pyroferus",
+    "mimic surgeonfish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Young chocolate surgeonfish mimic dwarf angelfish, while adults are chocolate brown with an orange patch behind the gill."
+  },
+  {
+   "id": "date-mussel",
+   "name": "Date mussel",
+   "aliases": [
+    "Lithophaga lithophaga",
+    "Lithophaga"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The date mussel, shaped like a date fruit, bores into limestone using chemical secretions."
+  },
+  {
+   "id": "mustard-hill-coral",
+   "name": "Mustard hill coral",
+   "aliases": [
+    "Porites astreoides",
+    "mustard coral"
+   ],
+   "kind": "creature",
+   "group": "corals",
+   "fact": "Mustard hill coral forms yellow-brown mounds and is one of the most common reef-building corals of the Caribbean."
+  },
+  {
+   "id": "candy-crab",
+   "name": "Candy crab",
+   "aliases": [
+    "Hoplophrys oatesii",
+    "soft coral crab"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "The candy crab lives on soft corals of the genus Dendronephthya and copies their pink and white colours as camouflage."
+  },
+  {
+   "id": "chicken-liver-sponge",
+   "name": "Chicken liver sponge",
+   "aliases": [
+    "Chondrilla nucula"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "The chicken liver sponge is a smooth, dark-brown encrusting sponge named for its colour and texture."
+  },
+  {
+   "id": "bread-crumb-sponge",
+   "name": "Breadcrumb sponge",
+   "aliases": [
+    "Halichondria panicea",
+    "bread crumb sponge"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "The breadcrumb sponge grows as crumbly yellow-green crusts on rocky shores of the North Atlantic."
+  },
+  {
+   "id": "butter-clam",
+   "name": "Butter clam",
+   "aliases": [
+    "Saxidomus gigantea",
+    "Washington clam"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Butter clams of the Pacific North-west can hold paralytic shellfish toxins in their siphons for a very long time."
+  },
+  {
+   "id": "lollipop-catshark",
+   "name": "Lollipop catshark",
+   "aliases": [
+    "Cephalurus cephalus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The lollipop catshark is a small deep-water shark of the eastern Pacific with a broad, rounded head like a lollipop."
+  },
+  {
+   "id": "queen-conch",
+   "name": "Queen conch",
+   "aliases": [
+    "Aliger gigas",
+    "Lobatus gigas",
+    "Strombus gigas",
+    "pink conch"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The queen conch has a heavy shell with a flared pink lip and has been a staple food of the Caribbean for centuries."
+  },
+  {
+   "id": "king-scallop",
+   "name": "King scallop",
+   "aliases": [
+    "Pecten maximus",
+    "great scallop"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "King scallops have a row of tiny eyes along the edge of their mantle and swim by clapping their two shells together."
+  },
+  {
+   "id": "queen-scallop",
+   "name": "Queen scallop",
+   "aliases": [
+    "Aequipecten opercularis",
+    "queenie"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Queen scallops, smaller than king scallops, escape danger by clapping their shells to jet through the water."
+  },
+  {
+   "id": "king-prawn",
+   "name": "King prawn",
+   "aliases": [
+    "Melicertus latisulcatus",
+    "western king prawn",
+    "Penaeus latisulcatus"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "King prawns such as the western king prawn are large, commercially important prawns of Australian waters."
+  },
+  {
+   "id": "queenfish",
+   "name": "Queenfish",
+   "aliases": [
+    "Scomberoides commersonnianus",
+    "talang queenfish",
+    "giant queenfish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The queenfish is a fast, silvery fish of Indo-Pacific shallows that often leaps clear of the water while chasing prey."
+  },
+  {
+   "id": "emperor-snapper",
+   "name": "Emperor snapper",
+   "aliases": [
+    "Lutjanus sebae",
+    "emperor red snapper",
+    "Lutjanus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Young emperor snappers wear bold dark bars across a pale body, and the bars fade as they grow into red adults."
+  },
+  {
+   "id": "queen-snapper",
+   "name": "Queen snapper",
+   "aliases": [
+    "Etelis oculatus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The queen snapper is a bright red, large-eyed snapper of the deep Atlantic reef slope."
+  },
+  {
+   "id": "queen-coris",
+   "name": "Queen coris",
+   "aliases": [
+    "Coris formosa"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The queen coris is an Indian Ocean wrasse whose colour and pattern change dramatically as it grows from juvenile to adult."
+  },
+  {
+   "id": "king-ragworm",
+   "name": "King ragworm",
+   "aliases": [
+    "Alitta virens",
+    "Nereis virens",
+    "clam worm",
+    "sandworm"
+   ],
+   "kind": "creature",
+   "group": "worms",
+   "fact": "The king ragworm is a large marine worm that can grow well over half a metre long and is dug by anglers for bait."
+  },
+  {
+   "id": "king-helmet",
+   "name": "King helmet",
+   "aliases": [
+    "Cassis tuberosa",
+    "Cassis"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The king helmet is a heavy-shelled Caribbean sea snail that feeds on sea urchins and sand dollars."
+  },
+  {
+   "id": "queen-helmet",
+   "name": "Queen helmet",
+   "aliases": [
+    "Cassis madagascariensis",
+    "emperor helmet"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The queen helmet is a large sea snail that feeds on sea urchins and whose thick shell has been carved into cameos."
+  },
+  {
+   "id": "emperor-bream",
+   "name": "Emperor bream",
+   "aliases": [
+    "Lethrinidae",
+    "emperor fish",
+    "emperors"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Emperor breams of the family Lethrinidae are Indo-Pacific reef fish with strong jaws for crushing hard-shelled prey."
+  },
+  {
+   "id": "king-eider",
+   "name": "King eider",
+   "aliases": [
+    "Somateria spectabilis"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "Male king eiders have a bright orange shield on the bill, and the species dives for food in cold Arctic seas."
+  },
+  {
+   "id": "king-shag",
+   "name": "King shag",
+   "aliases": [
+    "Leucocarbo carunculatus"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The king shag is a rare cormorant that breeds only in the Marlborough Sounds of New Zealand."
+  },
+  {
+   "id": "yellowtail-kingfish",
+   "name": "Yellowtail kingfish",
+   "aliases": [
+    "Seriola lalandi",
+    "yellowtail amberjack",
+    "hiramasa"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Yellowtail kingfish are fast, powerful predators that are both farmed and prized by sport anglers in the southern hemisphere."
+  },
+  {
+   "id": "king-threadfin",
+   "name": "King threadfin",
+   "aliases": [
+    "Polydactylus macrochir"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The king threadfin of northern Australia begins life as a male and changes into a female as it grows older."
+  },
+  {
+   "id": "blue-king-crab",
+   "name": "Blue king crab",
+   "aliases": [
+    "Paralithodes platypus"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "The blue king crab is a cold-water crab of the North Pacific and Bering Sea and a close relative of the red king crab."
+  },
+  {
+   "id": "kingklip",
+   "name": "Kingklip",
+   "aliases": [
+    "Genypterus capensis"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Kingklip is a long, slender cusk-eel of southern African waters that is prized as food."
+  },
+  {
+   "id": "northern-kingfish",
+   "name": "Northern kingfish",
+   "aliases": [
+    "Menticirrhus saxatilis",
+    "northern kingcroaker",
+    "king whiting"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The northern kingfish is a bottom-feeding member of the drum family found along the Atlantic coast of North America."
+  },
+  {
+   "id": "southern-kingfish",
+   "name": "Southern kingfish",
+   "aliases": [
+    "Menticirrhus americanus",
+    "southern kingcroaker"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The southern kingfish is a bottom-feeding member of the drum family found along the western Atlantic coast."
+  },
+  {
+   "id": "spangled-emperor",
+   "name": "Spangled emperor",
+   "aliases": [
+    "Lethrinus nebulosus",
+    "Lethrinus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The spangled emperor is a widespread Indo-Pacific reef fish and a popular catch for anglers."
+  },
+  {
+   "id": "longnose-emperor",
+   "name": "Longnose emperor",
+   "aliases": [
+    "Lethrinus olivaceus",
+    "longface emperor"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The longnose emperor is an Indo-Pacific reef fish with a long, pointed snout."
+  },
+  {
+   "id": "pink-ear-emperor",
+   "name": "Pink ear emperor",
+   "aliases": [
+    "Lethrinus lentjan",
+    "redspot emperor"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The pink ear emperor is a small emperor named for the pinkish patch on its gill cover."
+  },
+  {
+   "id": "yellowlip-emperor",
+   "name": "Yellowlip emperor",
+   "aliases": [
+    "Lethrinus xanthochilus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The yellowlip emperor is a large Indo-Pacific emperor with bright yellow lips."
+  },
+  {
+   "id": "thumbprint-emperor",
+   "name": "Thumbprint emperor",
+   "aliases": [
+    "Lethrinus harak"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The thumbprint emperor carries a dark blotch on its flank and feeds on sandy flats and seagrass beds around reefs."
+  },
+  {
+   "id": "sky-emperor",
+   "name": "Sky emperor",
+   "aliases": [
+    "Lethrinus mahsena"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The sky emperor is an emperor of the western Indian Ocean that lives around reefs and is fished for food."
+  },
+  {
+   "id": "orange-striped-emperor",
+   "name": "Orange-striped emperor",
+   "aliases": [
+    "Lethrinus obsoletus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The orange-striped emperor is an Indo-Pacific reef fish marked with orange stripes along its flanks."
+  },
+  {
+   "id": "king-george-whiting",
+   "name": "King George whiting",
+   "aliases": [
+    "Sillaginodes punctatus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "King George whiting is a prized food fish of southern Australia, named after King George Sound in Western Australia."
+  },
+  {
+   "id": "cockatoo-waspfish",
+   "name": "Cockatoo waspfish",
+   "aliases": [
+    "Ablabys taenianotus",
+    "leaf scorpionfish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The cockatoo waspfish rocks gently like a drifting leaf, and its tall dorsal fin carries venomous spines."
+  },
+  {
+   "id": "owl-limpet",
+   "name": "Owl limpet",
+   "aliases": [
+    "Lottia gigantea",
+    "giant owl limpet"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The owl limpet tends a private patch of algae on its rock and bulldozes away intruders that threaten it."
+  },
+  {
+   "id": "partridge-tun",
+   "name": "Partridge tun",
+   "aliases": [
+    "Tonna perdix"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The partridge tun is a large sea snail with a thin, speckled shell patterned like a partridge's plumage."
+  },
+  {
+   "id": "pheasant-shell",
+   "name": "Pheasant shell",
+   "aliases": [
+    "Phasianella australis",
+    "Phasianella"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The pheasant shell is a glossy Australian sea snail whose colourful pattern resembles a pheasant's plumage."
+  },
+  {
+   "id": "hawkwing-conch",
+   "name": "Hawkwing conch",
+   "aliases": [
+    "Lobatus raninus",
+    "Strombus raninus"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The hawkwing conch is a small Caribbean conch whose shell lip flares out like a wing."
+  },
+  {
+   "id": "turkey-wing-ark",
+   "name": "Turkey wing ark",
+   "aliases": [
+    "Arca zebra",
+    "zebra ark"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The turkey wing ark is a zebra-striped bivalve that anchors itself to rocks with a tuft of tough threads."
+  },
+  {
+   "id": "cocks-comb-oyster",
+   "name": "Cock's comb oyster",
+   "aliases": [
+    "Lopha cristagalli",
+    "cockscomb oyster"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The cock's comb oyster has a zigzag shell edge like a rooster's comb and lives fixed to coral and rock."
+  },
+  {
+   "id": "pelicans-foot",
+   "name": "Pelican's foot",
+   "aliases": [
+    "Aporrhais pespelecani",
+    "pelican's foot shell"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The pelican's foot is a small European sea snail whose shell lip spreads into webbed fingers like a pelican's foot."
+  },
+  {
+   "id": "peacock-worm",
+   "name": "Peacock worm",
+   "aliases": [
+    "Sabella pavonina"
+   ],
+   "kind": "creature",
+   "group": "worms",
+   "fact": "The peacock worm lives in a tube and spreads a fan of feathery tentacles to catch food particles from the water."
+  },
+  {
+   "id": "dove-snail",
+   "name": "Dove snail",
+   "aliases": [
+    "Columbellidae",
+    "dove shell"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Dove snails of the family Columbellidae are small sea snails, often with brightly patterned shells."
+  },
+  {
+   "id": "canary-rockfish",
+   "name": "Canary rockfish",
+   "aliases": [
+    "Sebastes pinniger"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The canary rockfish is a bright orange fish of the North American Pacific coast that was heavily overfished and then rebuilt."
+  },
+  {
+   "id": "short-tailed-albatross",
+   "name": "Short-tailed albatross",
+   "aliases": [
+    "Phoebastria albatrus"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The short-tailed albatross was feared extinct in the 1940s before a few breeding birds were found on a Japanese island."
+  },
+  {
+   "id": "tufted-puffin",
+   "name": "Tufted puffin",
+   "aliases": [
+    "Fratercula cirrhata"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The tufted puffin breeds around the North Pacific and grows golden head plumes during the breeding season."
+  },
+  {
+   "id": "yellow-eyed-penguin",
+   "name": "Yellow-eyed penguin",
+   "aliases": [
+    "Megadyptes antipodes",
+    "hoiho"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The yellow-eyed penguin, or hoiho, is one of the world's rarest penguins and nests in coastal forest and scrub in southern New Zealand."
+  },
+  {
+   "id": "red-billed-tropicbird",
+   "name": "Red-billed tropicbird",
+   "aliases": [
+    "Phaethon aethereus",
+    "tropicbird"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The red-billed tropicbird has two very long central tail feathers and plunge-dives for flying fish and squid."
+  },
+  {
+   "id": "northern-fulmar",
+   "name": "Northern fulmar",
+   "aliases": [
+    "Fulmarus glacialis",
+    "fulmar"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The northern fulmar defends itself and its chick by spitting a foul-smelling stomach oil at intruders."
+  },
+  {
+   "id": "red-footed-booby",
+   "name": "Red-footed booby",
+   "aliases": [
+    "Sula sula"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The red-footed booby is the smallest booby and, unlike its relatives, usually nests in trees and bushes."
+  },
+  {
+   "id": "wedge-tailed-shearwater",
+   "name": "Wedge-tailed shearwater",
+   "aliases": [
+    "Ardenna pacifica",
+    "Puffinus pacificus"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "Wedge-tailed shearwaters nest in burrows on Pacific islands and make eerie moaning calls at night."
+  },
+  {
+   "id": "sooty-tern",
+   "name": "Sooty tern",
+   "aliases": [
+    "Onychoprion fuscatus",
+    "Sterna fuscata"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "Sooty terns can spend years at sea after fledging, rarely landing on the water, before returning to breed."
+  },
+  {
+   "id": "little-penguin",
+   "name": "Little penguin",
+   "aliases": [
+    "Eudyptula minor",
+    "fairy penguin",
+    "blue penguin"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The little penguin of Australia and New Zealand stands only about 30 centimetres tall and is the smallest penguin."
+  },
+  {
+   "id": "black-browed-albatross",
+   "name": "Black-browed albatross",
+   "aliases": [
+    "Thalassarche melanophris"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "Black-browed albatrosses have a dark smudge over each eye and breed in huge colonies, mainly on the Falkland Islands."
+  },
+  {
+   "id": "bermuda-petrel",
+   "name": "Bermuda petrel",
+   "aliases": [
+    "Pterodroma cahow",
+    "cahow"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The Bermuda petrel, or cahow, was thought extinct for about three centuries until a few nesting pairs were rediscovered in 1951."
+  },
+  {
+   "id": "bay-scallop",
+   "name": "Bay scallop",
+   "aliases": [
+    "Argopecten irradians"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Bay scallops have dozens of tiny blue eyes along their mantle and swim by snapping their shells shut."
+  },
+  {
+   "id": "yesso-scallop",
+   "name": "Yesso scallop",
+   "aliases": [
+    "Mizuhopecten yessoensis",
+    "Japanese scallop",
+    "Patinopecten yessoensis"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The Yesso scallop is intensively farmed in Japan and China and is one of the most widely cultured scallops."
+  },
+  {
+   "id": "mediterranean-mussel",
+   "name": "Mediterranean mussel",
+   "aliases": [
+    "Mytilus galloprovincialis"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The Mediterranean mussel has spread to coasts around the world and is widely farmed for food."
+  },
+  {
+   "id": "black-lip-pearl-oyster",
+   "name": "Black-lip pearl oyster",
+   "aliases": [
+    "Pinctada margaritifera",
+    "black-lipped pearl oyster"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The black-lip pearl oyster produces the dark pearls known as Tahitian pearls."
+  },
+  {
+   "id": "common-cockle",
+   "name": "Common cockle",
+   "aliases": [
+    "Cerastoderma edule"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The common cockle burrows in sandy European shores and can leap away from danger by flicking its muscular foot."
+  },
+  {
+   "id": "olympia-oyster",
+   "name": "Olympia oyster",
+   "aliases": [
+    "Ostrea lurida",
+    "Ostrea conchaphila"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The Olympia oyster is a small, coin-sized oyster native to the Pacific coast of North America."
+  },
+  {
+   "id": "thorny-oyster",
+   "name": "Thorny oyster",
+   "aliases": [
+    "Spondylus",
+    "spiny oyster"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Thorny oysters are spiny, brightly coloured bivalves whose shells were treasured by ancient Andean peoples."
+  },
+  {
+   "id": "angelwing",
+   "name": "Angelwing",
+   "aliases": [
+    "Cyrtopleura costata",
+    "angel wing clam"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The angelwing is a bivalve whose long white shell resembles a pair of wings and which bores into mud and clay."
+  },
+  {
+   "id": "piddock",
+   "name": "Piddock",
+   "aliases": [
+    "Pholas dactylus",
+    "common piddock",
+    "Pholadidae"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The common piddock bores into soft rock and clay and is famously bioluminescent."
+  },
+  {
+   "id": "windowpane-oyster",
+   "name": "Windowpane oyster",
+   "aliases": [
+    "Placuna placenta"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The windowpane oyster has a thin, translucent shell that was once used in place of glass in windows in parts of Asia."
+  },
+  {
+   "id": "file-clam",
+   "name": "File clam",
+   "aliases": [
+    "Limaria hians",
+    "gaping file shell",
+    "flame shell"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The file clam builds a nest of shell and gravel held together by threads and waves long, orange tentacles."
+  },
+  {
+   "id": "flame-scallop",
+   "name": "Flame scallop",
+   "aliases": [
+    "Ctenoides ales",
+    "electric clam",
+    "disco clam"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The flame scallop flashes its mantle edge so that it seems to flicker like a light."
+  },
+  {
+   "id": "horse-mussel",
+   "name": "Horse mussel",
+   "aliases": [
+    "Modiolus modiolus"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Horse mussels form dense beds in cold northern seas that shelter many other animals."
+  },
+  {
+   "id": "bear-paw-clam",
+   "name": "Bear paw clam",
+   "aliases": [
+    "Hippopus hippopus",
+    "horse's hoof clam"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The bear paw clam is a giant clam with a thick, ridged shell that gets part of its food from algae living in its tissues."
+  },
+  {
+   "id": "fluted-giant-clam",
+   "name": "Fluted giant clam",
+   "aliases": [
+    "Tridacna squamosa",
+    "scaly clam"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The fluted giant clam has ruffled scales on its shell and gets much of its food from algae living in its tissues."
+  },
+  {
+   "id": "toheroa",
+   "name": "Toheroa",
+   "aliases": [
+    "Paphies ventricosa"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The toheroa is a prized New Zealand surf clam that is now heavily protected."
+  },
+  {
+   "id": "peruvian-scallop",
+   "name": "Peruvian scallop",
+   "aliases": [
+    "Argopecten purpuratus"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The Peruvian scallop is farmed along the coasts of Peru and Chile."
+  },
+  {
+   "id": "atlantic-sea-scallop",
+   "name": "Atlantic sea scallop",
+   "aliases": [
+    "Placopecten magellanicus",
+    "sea scallop"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The Atlantic sea scallop supports a major fishery off the north-eastern United States."
+  },
+  {
+   "id": "coquina",
+   "name": "Coquina",
+   "aliases": [
+    "Donax variabilis",
+    "wedge clam",
+    "Donax"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Tiny coquina clams repeatedly dig in and out of the sand as waves wash up the beach."
+  },
+  {
+   "id": "pismo-clam",
+   "name": "Pismo clam",
+   "aliases": [
+    "Tivela stultorum"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The Pismo clam is a large clam of the Californian coast named after Pismo Beach."
+  },
+  {
+   "id": "ribbed-mussel",
+   "name": "Atlantic ribbed mussel",
+   "aliases": [
+    "Geukensia demissa",
+    "ribbed mussel"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The Atlantic ribbed mussel lives in salt marshes, wedged among the roots of cordgrass."
+  },
+  {
+   "id": "jingle-shell",
+   "name": "Jingle shell",
+   "aliases": [
+    "Anomia simplex"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Jingle shells are thin, translucent bivalves that cement themselves to rocks and other shells and chime when they are strung together."
+  },
+  {
+   "id": "tuatua",
+   "name": "Tuatua",
+   "aliases": [
+    "Paphies subtriangulata"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The tuatua is a New Zealand surf clam traditionally gathered from sandy beaches."
+  },
+  {
+   "id": "pacific-gaper",
+   "name": "Pacific gaper",
+   "aliases": [
+    "Tresus nuttallii",
+    "gaper clam"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The Pacific gaper is a large clam whose long siphon is too big to pull back inside its shell."
+  },
+  {
+   "id": "shipworm",
+   "name": "Shipworm",
+   "aliases": [
+    "Teredo navalis",
+    "Teredinidae",
+    "Teredo"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Shipworms are bivalves with long, worm-like bodies that bore through wood and once threatened wooden ships."
+  },
+  {
+   "id": "sea-slug",
+   "name": "Sea slug",
+   "aliases": [
+    "Heterobranchia",
+    "Opisthobranchia"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Sea slugs are marine snails that have lost or shrunk their shell, and many are brightly coloured to warn predators of their toxins."
+  },
+  {
+   "id": "california-sea-hare",
+   "name": "California sea hare",
+   "aliases": [
+    "Aplysia californica"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The California sea hare has unusually large nerve cells, which made it a model animal for memory research that earned a Nobel Prize."
+  },
+  {
+   "id": "hooded-nudibranch",
+   "name": "Hooded nudibranch",
+   "aliases": [
+    "Melibe leonina",
+    "lion nudibranch"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The hooded nudibranch spreads a large, fringed hood like a net to trap small crustaceans drifting past."
+  },
+  {
+   "id": "clown-nudibranch",
+   "name": "Clown nudibranch",
+   "aliases": [
+    "Triopha catalinae",
+    "Catalina triopha"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The clown nudibranch is a white sea slug with orange-tipped bumps that feeds on bryozoans along the Pacific coast of North America."
+  },
+  {
+   "id": "frosted-nudibranch",
+   "name": "Frosted nudibranch",
+   "aliases": [
+    "Dirona albolineata"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The frosted nudibranch has white-tipped, feathery gills and can swim by flexing its body from side to side."
+  },
+  {
+   "id": "gaudy-nudibranch",
+   "name": "Gaudy nudibranch",
+   "aliases": [
+    "Ceratosoma trilobatum"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The gaudy nudibranch is a large, brightly coloured sea slug of Indo-Pacific reefs with a ridge along its back."
+  },
+  {
+   "id": "orange-peel-nudibranch",
+   "name": "Orange peel nudibranch",
+   "aliases": [
+    "Tochuina tetraquetra",
+    "Tochuina gigantea"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The orange peel nudibranch is a large, bumpy orange sea slug of the north-eastern Pacific."
+  },
+  {
+   "id": "hopkins-rose",
+   "name": "Hopkins' rose nudibranch",
+   "aliases": [
+    "Hopkinsia rosacea",
+    "Hopkins rose"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Hopkins' rose is a bright pink, fuzzy-looking sea slug of the Pacific coast of North America that feeds on bryozoans."
+  },
+  {
+   "id": "california-blue-dorid",
+   "name": "California blue dorid",
+   "aliases": [
+    "Felimare californiensis",
+    "Hypselodoris californiensis"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The California blue dorid is a deep-blue sea slug marked with yellow, found along the Pacific coast of North America."
+  },
+  {
+   "id": "nembrotha-cristata",
+   "name": "Crested nembrotha",
+   "aliases": [
+    "Nembrotha cristata",
+    "Nembrotha"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The crested nembrotha is a large, boldly coloured Indo-Pacific sea slug that feeds on sea squirts."
+  },
+  {
+   "id": "chromodoris-annae",
+   "name": "Anna's chromodoris",
+   "aliases": [
+    "Chromodoris annae",
+    "Chromodoris"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Anna's chromodoris is a blue nudibranch with a yellow-edged mantle that grazes on sponges on Indo-Pacific reefs."
+  },
+  {
+   "id": "chromodoris-willani",
+   "name": "Willan's chromodoris",
+   "aliases": [
+    "Chromodoris willani"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Willan's chromodoris is a colourful reef nudibranch of the western Pacific that grazes on sponges."
+  },
+  {
+   "id": "chromodoris-kuniei",
+   "name": "Kunie's chromodoris",
+   "aliases": [
+    "Chromodoris kuniei"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Kunie's chromodoris is a brightly coloured sea slug of Indo-Pacific reefs that grazes on sponges."
+  },
+  {
+   "id": "hypselodoris-bullockii",
+   "name": "Bullock's nudibranch",
+   "aliases": [
+    "Hypselodoris bullockii",
+    "Bullock's hypselodoris"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Bullock's nudibranch is a purple Indo-Pacific sea slug with orange gills that feeds on sponges."
+  },
+  {
+   "id": "phyllidia-varicosa",
+   "name": "Varicose phyllidia",
+   "aliases": [
+    "Phyllidia varicosa",
+    "Phyllidia"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The varicose phyllidia is a black sea slug with yellow-tipped bumps that makes toxic chemicals to deter predators."
+  },
+  {
+   "id": "sapsucking-slug",
+   "name": "Sap-sucking slug",
+   "aliases": [
+    "Plakobranchus ocellatus",
+    "sap sucking slug"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The sap-sucking slug keeps the chloroplasts of the algae it eats and uses them to photosynthesise for weeks."
+  },
+  {
+   "id": "wedge-sea-hare",
+   "name": "Wedge sea hare",
+   "aliases": [
+    "Dolabella auricularia"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The wedge sea hare is a large Indo-Pacific sea slug that gave chemists dolastatins, compounds studied as anti-cancer drugs."
+  },
+  {
+   "id": "glass-sea-slug",
+   "name": "Glass sea slug",
+   "aliases": [
+    "Phylliroe bucephala",
+    "Phylliroe"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The glass sea slug is a transparent, free-swimming sea slug that drifts in open water and glows when disturbed."
+  },
+  {
+   "id": "navanax",
+   "name": "Navanax",
+   "aliases": [
+    "Navanax inermis",
+    "California aglaja"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The navanax hunts other sea slugs by following their slime trails across the seabed."
+  },
+  {
+   "id": "spotted-sea-hare",
+   "name": "Spotted sea hare",
+   "aliases": [
+    "Aplysia punctata"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The spotted sea hare of European coasts is named for its ear-like tentacles, and it can release a cloud of purple ink."
+  },
+  {
+   "id": "swimming-eolid",
+   "name": "Swimming eolid",
+   "aliases": [
+    "Pteraeolidia ianthina",
+    "Pteraeolidia"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The swimming eolid houses algae in its feathery gills and can swim by wriggling its body."
+  },
+  {
+   "id": "tritonia-hombergii",
+   "name": "Homberg's tritonia",
+   "aliases": [
+    "Tritonia hombergii",
+    "Tritonia"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Homberg's tritonia is a large cold-water sea slug of the north-east Atlantic that feeds on soft corals called dead man's fingers."
+  },
+  {
+   "id": "berghia-verrucicornis",
+   "name": "Berghia",
+   "aliases": [
+    "Berghia verrucicornis",
+    "Berghia coerulescens"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Berghia sea slugs eat glass anemones, and aquarists keep them to control those pests."
+  },
+  {
+   "id": "janolus-cristatus",
+   "name": "Janolus cristatus",
+   "aliases": [
+    "Janolus"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Janolus cristatus is a sea slug with a bushy crest on its head that feeds on bryozoans."
+  },
+  {
+   "id": "cadlina-laevis",
+   "name": "White Atlantic cadlina",
+   "aliases": [
+    "Cadlina laevis",
+    "Cadlina"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The white Atlantic cadlina is a small white sea slug of cold North Atlantic water that feeds on sponges."
+  },
+  {
+   "id": "onchidoris-bilamellata",
+   "name": "Barnacle-eating nudibranch",
+   "aliases": [
+    "Onchidoris bilamellata",
+    "Onchidoris"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The barnacle-eating nudibranch specialises in feeding on acorn barnacles in cold northern seas."
+  },
+  {
+   "id": "polycera-quadrilineata",
+   "name": "Fourlined polycera",
+   "aliases": [
+    "Polycera quadrilineata",
+    "Polycera"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The fourlined polycera is a small sea slug of North Atlantic shores that feeds on bryozoans."
+  },
+  {
+   "id": "spurilla-neapolitana",
+   "name": "Olive nudibranch",
+   "aliases": [
+    "Spurilla neapolitana",
+    "Spurilla"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The olive nudibranch eats sea anemones and keeps their stinging cells for its own defence."
+  },
+  {
+   "id": "aeolidia-papillosa",
+   "name": "Common grey sea slug",
+   "aliases": [
+    "Aeolidia papillosa",
+    "shaggy mouse",
+    "Aeolidia"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The common grey sea slug eats sea anemones and stores their stinging cells in the tips of its gills."
+  },
+  {
+   "id": "dendronotus-iris",
+   "name": "Rainbow dendronotid",
+   "aliases": [
+    "Dendronotus iris",
+    "rainbow nudibranch",
+    "Dendronotus"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The rainbow dendronotid is one of the largest nudibranchs of the Pacific coast and has branching, frilly gills."
+  },
+  {
+   "id": "limacia-clavigera",
+   "name": "Orange-clubbed sea slug",
+   "aliases": [
+    "Limacia clavigera",
+    "Limacia"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The orange-clubbed sea slug of North Atlantic shores has orange-tipped, club-shaped projections along its body."
+  },
+  {
+   "id": "tambja-verconis",
+   "name": "Verco's nudibranch",
+   "aliases": [
+    "Tambja verconis",
+    "Tambja"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Verco's nudibranch is a brightly coloured sea slug of southern Australian coasts that feeds on bryozoans."
+  },
+  {
+   "id": "phyllodesmium-longicirrum",
+   "name": "Phyllodesmium longicirrum",
+   "aliases": [
+    "Phyllodesmium"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Phyllodesmium sea slugs feed on soft corals and house algae in their long, feathery gills."
+  },
+  {
+   "id": "felimare-picta",
+   "name": "Painted blue dorid",
+   "aliases": [
+    "Felimare picta",
+    "Hypselodoris picta",
+    "Mediterranean blue dorid"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The painted blue dorid is a blue sea slug with yellow lines found from the Mediterranean to the Canary Islands."
+  },
+  {
+   "id": "hydatina-physis",
+   "name": "Green-lined paper bubble",
+   "aliases": [
+    "Hydatina physis",
+    "Hydatina"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The green-lined paper bubble is a sea slug with a thin, delicate bubble-like shell marked with fine green lines."
+  },
+  {
+   "id": "glaucilla-marginata",
+   "name": "Glaucilla",
+   "aliases": [
+    "Glaucilla marginata"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Glaucilla floats at the sea surface and preys on other drifting animals such as blue buttons."
+  },
+  {
+   "id": "pleurobranchaea-californica",
+   "name": "California Pleurobranchaea",
+   "aliases": [
+    "Pleurobranchaea californica"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The California Pleurobranchaea is a predatory sea slug studied for how a simple nervous system makes decisions."
+  },
+  {
+   "id": "elysia-timida",
+   "name": "Elysia timida",
+   "aliases": [
+    "Elysia timida"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Elysia timida is a Mediterranean sea slug that keeps chloroplasts from the algae it eats and uses them to make sugars."
+  },
+  {
+   "id": "leaf-sheep",
+   "name": "Leaf sheep",
+   "aliases": [
+    "Costasiella kuroshimae"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The leaf sheep is a tiny sea slug that keeps chloroplasts from the algae it eats, and its green gills give it the look of a miniature sheep."
+  },
+  {
+   "id": "black-mangrove",
+   "name": "Black mangrove",
+   "aliases": [
+    "Avicennia germinans"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Black mangroves push pencil-like roots up out of the mud to breathe and get rid of salt through their leaves."
+  },
+  {
+   "id": "white-mangrove",
+   "name": "White mangrove",
+   "aliases": [
+    "Laguncularia racemosa"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "White mangroves have two small glands at the base of each leaf stalk that secrete excess salt."
+  },
+  {
+   "id": "grey-mangrove",
+   "name": "Grey mangrove",
+   "aliases": [
+    "Avicennia marina",
+    "gray mangrove"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "The grey mangrove has the widest range of any mangrove, growing from East Africa to New Zealand and south-eastern Australia."
+  },
+  {
+   "id": "shoal-grass",
+   "name": "Shoal grass",
+   "aliases": [
+    "Halodule wrightii"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Shoal grass is a thin-bladed seagrass of the western Atlantic that is often the first to colonise shallow, disturbed sand."
+  },
+  {
+   "id": "manatee-grass",
+   "name": "Manatee grass",
+   "aliases": [
+    "Syringodium filiforme"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Manatee grass has round, noodle-like leaves and is grazed by manatees and sea turtles in the Caribbean."
+  },
+  {
+   "id": "surfgrass",
+   "name": "Surfgrass",
+   "aliases": [
+    "Phyllospadix scouleri",
+    "Scouler's surfgrass"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Surfgrass clings to rocky shores of the north-eastern Pacific and withstands pounding surf rather than rooting in sand."
+  },
+  {
+   "id": "tape-seagrass",
+   "name": "Tape seagrass",
+   "aliases": [
+    "Enhalus acoroides"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Tape seagrass is among the largest seagrasses of the Indo-Pacific, with ribbon-like leaves that can be a metre or more long."
+  },
+  {
+   "id": "nipa-palm",
+   "name": "Nipa palm",
+   "aliases": [
+    "Nypa fruticans",
+    "nipa"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "The nipa palm is a mangrove palm with a creeping, partly underground trunk whose sap is tapped to make sugar and vinegar."
+  },
+  {
+   "id": "buttonwood",
+   "name": "Buttonwood",
+   "aliases": [
+    "Conocarpus erectus"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Buttonwood grows on the landward edge of mangrove forests and gets its name from its small, button-like clusters of fruit."
+  },
+  {
+   "id": "little-neptune-grass",
+   "name": "Little Neptune grass",
+   "aliases": [
+    "Cymodocea nodosa"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Little Neptune grass forms seagrass meadows in the Mediterranean and along the neighbouring Atlantic coast."
+  },
+  {
+   "id": "asiatic-mangrove",
+   "name": "Asiatic mangrove",
+   "aliases": [
+    "Rhizophora mucronata",
+    "loop-root mangrove"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "The Asiatic mangrove props itself on stilt roots and drops long, pencil-shaped seedlings that are already germinated."
+  },
+  {
+   "id": "dwarf-eelgrass",
+   "name": "Dwarf eelgrass",
+   "aliases": [
+    "Zostera noltei",
+    "Zostera noltii"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Dwarf eelgrass grows on the muddy flats of European coasts and is a favourite food of brent geese."
+  },
+  {
+   "id": "noodle-seagrass",
+   "name": "Noodle seagrass",
+   "aliases": [
+    "Syringodium isoetifolium"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Noodle seagrass has round, needle-like leaves and grows in meadows across the Indo-Pacific."
+  },
+  {
+   "id": "narrowleaf-seagrass",
+   "name": "Narrowleaf seagrass",
+   "aliases": [
+    "Halodule uninervis",
+    "narrow-leafed seagrass"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Narrowleaf seagrass has three-pointed leaf tips and is an important food of dugongs."
+  },
+  {
+   "id": "paddle-weed",
+   "name": "Paddle weed",
+   "aliases": [
+    "Halophila ovalis",
+    "spoon grass",
+    "oval-leaf seagrass"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Paddle weed has small, oval leaves on slender stalks and is a favourite food of dugongs."
+  },
+  {
+   "id": "johnsons-seagrass",
+   "name": "Johnson's seagrass",
+   "aliases": [
+    "Halophila johnsonii"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Johnson's seagrass, found only on Florida's east coast, was the first marine plant listed as threatened under the United States Endangered Species Act."
+  },
+  {
+   "id": "wire-weed",
+   "name": "Wire weed",
+   "aliases": [
+    "Amphibolis antarctica"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Wire weed of southern Australia has woody stems topped with tufts of leaves and forms tall underwater meadows."
+  },
+  {
+   "id": "rimurehu",
+   "name": "Rimurehu",
+   "aliases": [
+    "Zostera muelleri",
+    "Muller's eelgrass"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Rimurehu is the Maori name for the eelgrass that forms the main seagrass meadows of New Zealand and southern Australia."
+  },
+  {
+   "id": "thalassia-hemprichii",
+   "name": "Thalassia hemprichii",
+   "aliases": [
+    "tropical eelgrass",
+    "sickle seagrass"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Thalassia hemprichii is the Indo-Pacific cousin of turtle grass, with sickle-shaped leaves grazed by green turtles and dugongs."
+  },
+  {
+   "id": "large-leafed-orange-mangrove",
+   "name": "Large-leafed orange mangrove",
+   "aliases": [
+    "Bruguiera gymnorrhiza"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Bruguiera gymnorrhiza sends knee-like roots looping up out of the mud so that the tree can take in air."
+  },
+  {
+   "id": "cannonball-mangrove",
+   "name": "Cannonball mangrove",
+   "aliases": [
+    "Xylocarpus granatum",
+    "cannonball tree"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "The cannonball mangrove is named for its heavy, round fruit, which looks like a cannonball."
+  },
+  {
+   "id": "mangrove-apple",
+   "name": "Mangrove apple",
+   "aliases": [
+    "Sonneratia alba",
+    "Sonneratia"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Sonneratia alba is a pioneer mangrove whose flowers open at night and are pollinated by bats and moths."
+  },
+  {
+   "id": "river-mangrove",
+   "name": "River mangrove",
+   "aliases": [
+    "Aegiceras corniculatum"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "The river mangrove is a shrubby mangrove that excretes salt through its leaves and has curved, horn-shaped seedlings."
+  },
+  {
+   "id": "sundri",
+   "name": "Sundri",
+   "aliases": [
+    "Heritiera fomes"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "The sundri is thought to have given the Sundarbans mangrove forest its name, and it is now an endangered tree."
+  },
+  {
+   "id": "spotted-mangrove",
+   "name": "Spotted mangrove",
+   "aliases": [
+    "Rhizophora stylosa",
+    "stilted mangrove"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "The spotted mangrove grows on stilt roots along the coasts of northern Australia and the western Pacific."
+  },
+  {
+   "id": "tall-stilt-mangrove",
+   "name": "Tall-stilt mangrove",
+   "aliases": [
+    "Rhizophora apiculata"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "The tall-stilt mangrove is a major source of timber and charcoal in the mangrove forests of South-East Asia."
+  },
+  {
+   "id": "milky-mangrove",
+   "name": "Milky mangrove",
+   "aliases": [
+    "Excoecaria agallocha",
+    "blind-your-eye mangrove"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "The milky mangrove has a sap that can badly irritate the eyes, which earned it the nickname blind-your-eye."
+  },
+  {
+   "id": "spurred-mangrove",
+   "name": "Spurred mangrove",
+   "aliases": [
+    "Ceriops tagal",
+    "Ceriops"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "The bark of the spurred mangrove is rich in tannins and has long been used for dyeing and tanning."
+  },
+  {
+   "id": "west-african-red-mangrove",
+   "name": "West African red mangrove",
+   "aliases": [
+    "Rhizophora racemosa"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Rhizophora racemosa is the dominant red mangrove along the coast of West Africa."
+  },
+  {
+   "id": "tea-mangrove",
+   "name": "Tea mangrove",
+   "aliases": [
+    "Pelliciera rhizophorae"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "The tea mangrove, found on the Pacific coast of the Americas, bears unusually large flowers for a mangrove."
+  },
+  {
+   "id": "mangrove-fern",
+   "name": "Mangrove fern",
+   "aliases": [
+    "Acrostichum aureum",
+    "golden leather fern"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "The mangrove fern is a tall fern that grows at the edges of mangrove forests and can reach several metres in height."
+  },
+  {
+   "id": "widgeon-grass",
+   "name": "Widgeon grass",
+   "aliases": [
+    "Ruppia maritima"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Widgeon grass grows in salty and brackish water around the world and is eaten by waterfowl."
+  },
+  {
+   "id": "japanese-eelgrass",
+   "name": "Japanese eelgrass",
+   "aliases": [
+    "Zostera japonica"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Japanese eelgrass is native to East Asia and has spread to the Pacific coast of North America."
+  },
+  {
+   "id": "halophila-stipulacea",
+   "name": "Halophila stipulacea",
+   "aliases": [
+    "Red Sea seagrass"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Halophila stipulacea, native to the Red Sea and Indian Ocean, has spread to the Mediterranean and Caribbean."
+  },
+  {
+   "id": "halophila-decipiens",
+   "name": "Paddle grass",
+   "aliases": [
+    "Halophila decipiens"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Paddle grass can grow in deeper, dimmer water than most seagrasses."
+  },
+  {
+   "id": "serrated-ribbon-seagrass",
+   "name": "Serrated ribbon seagrass",
+   "aliases": [
+    "Cymodocea serrulata"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Serrated ribbon seagrass has finely toothed leaf tips and grows in shallow waters across the Indo-West Pacific."
+  },
+  {
+   "id": "smooth-ribbon-seagrass",
+   "name": "Smooth ribbon seagrass",
+   "aliases": [
+    "Cymodocea rotundata"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Smooth ribbon seagrass grows in shallow tropical waters of the Indo-West Pacific, often on reef flats."
+  },
+  {
+   "id": "thalassodendron-ciliatum",
+   "name": "Thalassodendron ciliatum",
+   "aliases": [
+    "Thalassodendron"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Thalassodendron ciliatum is a robust seagrass of the Indian Ocean with woody stems that can root into rock."
+  },
+  {
+   "id": "torreys-surfgrass",
+   "name": "Torrey's surfgrass",
+   "aliases": [
+    "Phyllospadix torreyi"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Torrey's surfgrass grows on wave-washed rocky shores of the Pacific coast of North America."
+  },
+  {
+   "id": "cape-eelgrass",
+   "name": "Cape eelgrass",
+   "aliases": [
+    "Zostera capensis"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "Cape eelgrass is the main seagrass of South African estuaries."
+  },
+  {
+   "id": "ribbon-weed",
+   "name": "Ribbon weed",
+   "aliases": [
+    "Posidonia australis",
+    "fibre-ball weed"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "A meadow of ribbon weed in Shark Bay, Western Australia, has been found to be a single clone covering about 180 square kilometres."
+  },
+  {
+   "id": "bath-sponge",
+   "name": "Bath sponge",
+   "aliases": [
+    "Spongia officinalis",
+    "Mediterranean bath sponge"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "The soft, springy skeleton of the bath sponge has been harvested from the Mediterranean for thousands of years for washing."
+  },
+  {
+   "id": "elephant-ear-sponge",
+   "name": "Elephant ear sponge",
+   "aliases": [
+    "Ianthella basta"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "The elephant ear sponge grows as a large, flat fan that can be more than a metre across."
+  },
+  {
+   "id": "yellow-tube-sponge",
+   "name": "Yellow tube sponge",
+   "aliases": [
+    "Aplysina fistularis"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "The yellow tube sponge turns dark purple when it is damaged or lifted out of the water."
+  },
+  {
+   "id": "purple-vase-sponge",
+   "name": "Purple vase sponge",
+   "aliases": [
+    "Niphates digitalis",
+    "lavender vase sponge"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "The purple vase sponge grows in tall, vase-shaped tubes on Caribbean reefs."
+  },
+  {
+   "id": "orange-puffball-sponge",
+   "name": "Orange puffball sponge",
+   "aliases": [
+    "Tethya aurantium",
+    "golden sea orange"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "The orange puffball sponge is a round, orange sponge with a tough surface covered in tiny bumps."
+  },
+  {
+   "id": "boring-sponge",
+   "name": "Boring sponge",
+   "aliases": [
+    "Cliona celata",
+    "red boring sponge"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "The boring sponge dissolves tunnels into limestone, shells and coral and lives hidden inside them."
+  },
+  {
+   "id": "golden-star-tunicate",
+   "name": "Golden star tunicate",
+   "aliases": [
+    "Botryllus schlosseri",
+    "star ascidian"
+   ],
+   "kind": "creature",
+   "group": "sea squirts",
+   "fact": "Colonies of the golden star tunicate form flower-like star shapes, each star made of many linked individuals."
+  },
+  {
+   "id": "club-tunicate",
+   "name": "Club tunicate",
+   "aliases": [
+    "Styela clava"
+   ],
+   "kind": "creature",
+   "group": "sea squirts",
+   "fact": "The club tunicate is a club-shaped sea squirt from the north-west Pacific that has invaded coasts and shellfish farms worldwide."
+  },
+  {
+   "id": "sea-peach",
+   "name": "Sea peach",
+   "aliases": [
+    "Halocynthia pyriformis",
+    "Halocynthia aurantium"
+   ],
+   "kind": "creature",
+   "group": "sea squirts",
+   "fact": "The sea peach is a round, orange-red sea squirt of cold North Atlantic and Pacific waters, shaped like a peach."
+  },
+  {
+   "id": "vase-tunicate",
+   "name": "Vase tunicate",
+   "aliases": [
+    "Ciona intestinalis",
+    "Ciona"
+   ],
+   "kind": "creature",
+   "group": "sea squirts",
+   "fact": "The vase tunicate is a see-through, vase-shaped sea squirt widely used in research and invasive in several regions."
+  },
+  {
+   "id": "violet-tunicate",
+   "name": "Violet tunicate",
+   "aliases": [
+    "Botrylloides violaceus"
+   ],
+   "kind": "creature",
+   "group": "sea squirts",
+   "fact": "The violet tunicate forms bright, crust-like colonies and has spread as an invader to coasts around the world."
+  },
+  {
+   "id": "light-bulb-tunicate",
+   "name": "Light-bulb tunicate",
+   "aliases": [
+    "Clavelina lepadiformis"
+   ],
+   "kind": "creature",
+   "group": "sea squirts",
+   "fact": "The light-bulb tunicate lives in clusters of transparent, bulb-shaped bodies attached to rocks and docks."
+  },
+  {
+   "id": "cloud-sponge",
+   "name": "Cloud sponge",
+   "aliases": [
+    "Aphrocallistes vastus"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "Cloud sponges build glass sponge reefs off the coast of British Columbia."
+  },
+  {
+   "id": "ping-pong-tree-sponge",
+   "name": "Ping-pong tree sponge",
+   "aliases": [
+    "Chondrocladia lampadiglobus"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "The ping-pong tree sponge is a deep-sea carnivorous sponge with branches tipped by ball-shaped structures."
+  },
+  {
+   "id": "azure-vase-sponge",
+   "name": "Azure vase sponge",
+   "aliases": [
+    "Callyspongia plicifera"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "The azure vase sponge is a bright blue, vase-shaped sponge of Caribbean reefs."
+  },
+  {
+   "id": "stinker-sponge",
+   "name": "Stinker sponge",
+   "aliases": [
+    "Ircinia strobilina"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "The stinker sponge gives off a strong, unpleasant smell when it is out of the water."
+  },
+  {
+   "id": "touch-me-not-sponge",
+   "name": "Touch-me-not sponge",
+   "aliases": [
+    "Neofibularia nolitangere"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "Touching the touch-me-not sponge can cause a painful skin rash."
+  },
+  {
+   "id": "stove-pipe-sponge",
+   "name": "Stove-pipe sponge",
+   "aliases": [
+    "Aplysina archeri"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "The stove-pipe sponge grows in long, slender tubes on Caribbean reefs."
+  },
+  {
+   "id": "mermaids-glove",
+   "name": "Mermaid's glove",
+   "aliases": [
+    "Haliclona oculata",
+    "Haliclona"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "Mermaid's glove is a branching sponge of North Atlantic shores whose finger-like lobes give it its name."
+  },
+  {
+   "id": "carpet-sea-squirt",
+   "name": "Carpet sea squirt",
+   "aliases": [
+    "Didemnum vexillum",
+    "Didemnum"
+   ],
+   "kind": "creature",
+   "group": "sea squirts",
+   "fact": "The carpet sea squirt spreads over the seabed in smothering mats and is an invader on coasts around the world."
+  },
+  {
+   "id": "piure",
+   "name": "Piure",
+   "aliases": [
+    "Pyura chilensis"
+   ],
+   "kind": "creature",
+   "group": "sea squirts",
+   "fact": "The piure is a red-fleshed sea squirt of the Chilean coast that is eaten as a local delicacy."
+  },
+  {
+   "id": "red-bait",
+   "name": "Red bait",
+   "aliases": [
+    "Pyura stolonifera",
+    "cunjevoi"
+   ],
+   "kind": "creature",
+   "group": "sea squirts",
+   "fact": "Red bait is a sea squirt of rocky shores in southern Africa and Australia that anglers cut up and use as fishing bait."
+  },
+  {
+   "id": "sea-pineapple",
+   "name": "Sea pineapple",
+   "aliases": [
+    "Halocynthia roretzi",
+    "hoya"
+   ],
+   "kind": "creature",
+   "group": "sea squirts",
+   "fact": "The sea pineapple is a knobbly sea squirt farmed and eaten raw in Japan and Korea."
+  },
+  {
+   "id": "mangrove-tunicate",
+   "name": "Mangrove tunicate",
+   "aliases": [
+    "Ecteinascidia turbinata",
+    "Ecteinascidia"
+   ],
+   "kind": "creature",
+   "group": "sea squirts",
+   "fact": "The mangrove tunicate is the natural source of trabectedin, a compound developed into an anti-cancer drug."
+  },
+  {
+   "id": "hornwrack",
+   "name": "Hornwrack",
+   "aliases": [
+    "Flustra foliacea",
+    "Flustra"
+   ],
+   "kind": "creature",
+   "group": "bryozoans",
+   "fact": "Hornwrack is a bryozoan that forms leaf-like colonies, often washed ashore, with a faint lemon scent."
+  },
+  {
+   "id": "honeycomb-worm",
+   "name": "Honeycomb worm",
+   "aliases": [
+    "Sabellaria alveolata",
+    "Sabellaria"
+   ],
+   "kind": "creature",
+   "group": "worms",
+   "fact": "The honeycomb worm builds reefs from sand grains cemented into honeycomb-like tubes."
+  },
+  {
+   "id": "giant-acorn-barnacle",
+   "name": "Giant acorn barnacle",
+   "aliases": [
+    "Balanus nubilus"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "The giant acorn barnacle of the North Pacific coast is one of the largest barnacles in the world."
+  },
+  {
+   "id": "carnivorous-sponge",
+   "name": "Carnivorous sponge",
+   "aliases": [
+    "Asbestopluma hypogea"
+   ],
+   "kind": "creature",
+   "group": "sponges",
+   "fact": "The carnivorous sponge of Mediterranean caves catches tiny crustaceans on hook-covered spicules instead of filtering the water."
+  }
+ ],
+ "prompts": [
+  {
+   "id": "claws",
+   "answers": [
+    {
+     "entity": "crab",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "lobster",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "hermit-crab",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "king-crab",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "pistol-shrimp",
+     "tier": "baitball"
+    },
+    {
+     "entity": "coconut-crab",
+     "tier": "baitball"
+    },
+    {
+     "entity": "mantis-shrimp",
+     "tier": "baitball"
+    },
+    {
+     "entity": "dungeness-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "blue-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "snow-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "edible-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "stone-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "langoustine",
+     "tier": "reef"
+    },
+    {
+     "entity": "japanese-spider-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "fiddler-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "sally-lightfoot-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "ghost-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "mud-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "spider-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "jonah-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "shore-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "decorator-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "porcelain-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "horseshoe-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "european-lobster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "velvet-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "christmas-island-red-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "chinese-mitten-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "banded-coral-shrimp",
+     "tier": "twilight"
+    },
+    {
+     "entity": "harlequin-shrimp",
+     "tier": "twilight"
+    },
+    {
+     "entity": "yeti-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "squat-lobster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "red-rock-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "kelp-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pea-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gall-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vent-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vent-squat-lobster",
+     "tier": "midnight"
+    },
+    {
+     "entity": "crinoid-squat-lobster",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tasmanian-giant-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sponge-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "arrow-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "horsehair-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "giant-river-prawn",
+     "tier": "midnight"
+    },
+    {
+     "entity": "masked-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spanner-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mud-lobster",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sea-scorpion",
+     "tier": "midnight"
+    },
+    {
+     "entity": "red-reef-lobster",
+     "tier": "midnight"
+    },
+    {
+     "entity": "southern-king-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "golden-king-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "atlantic-rock-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pom-pom-crab",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "poisonous-to-eat",
+   "answers": [
+    {
+     "entity": "pufferfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "oyster",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mussel",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "blue-ringed-octopus",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "barracuda",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "greenland-shark",
+     "tier": "baitball"
+    },
+    {
+     "entity": "moray-eel",
+     "tier": "baitball"
+    },
+    {
+     "entity": "escolar",
+     "tier": "baitball"
+    },
+    {
+     "entity": "scallop",
+     "tier": "reef"
+    },
+    {
+     "entity": "clam",
+     "tier": "reef"
+    },
+    {
+     "entity": "cockle",
+     "tier": "reef"
+    },
+    {
+     "entity": "grouper",
+     "tier": "reef"
+    },
+    {
+     "entity": "red-snapper",
+     "tier": "reef"
+    },
+    {
+     "entity": "tiger-puffer",
+     "tier": "reef"
+    },
+    {
+     "entity": "razor-clam",
+     "tier": "reef"
+    },
+    {
+     "entity": "dungeness-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "herring",
+     "tier": "reef"
+    },
+    {
+     "entity": "greater-amberjack",
+     "tier": "reef"
+    },
+    {
+     "entity": "king-mackerel",
+     "tier": "reef"
+    },
+    {
+     "entity": "green-spotted-puffer",
+     "tier": "twilight"
+    },
+    {
+     "entity": "white-spotted-puffer",
+     "tier": "twilight"
+    },
+    {
+     "entity": "map-puffer",
+     "tier": "twilight"
+    },
+    {
+     "entity": "northern-puffer",
+     "tier": "twilight"
+    },
+    {
+     "entity": "guineafowl-puffer",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blackspotted-puffer",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-trevally",
+     "tier": "twilight"
+    },
+    {
+     "entity": "coral-trout",
+     "tier": "twilight"
+    },
+    {
+     "entity": "napoleon-wrasse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hogfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pacific-sleeper-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mahi-mahi",
+     "tier": "twilight"
+    },
+    {
+     "entity": "oilfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mangrove-horseshoe-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "southern-blue-ringed-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sharpnose-puffer",
+     "tier": "midnight"
+    },
+    {
+     "entity": "porcupinefish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "giant-moray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "parrotfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tuna",
+     "tier": "midnight"
+    },
+    {
+     "entity": "northern-anchovy",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bearded-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "walrus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "surgeonfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "triggerfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "toxic-reef-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "japanese-ivory-shell",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hawksbill-turtle",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "endangered-fish",
+   "answers": [
+    {
+     "entity": "great-white-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "whale-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "hammerhead-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "manta-ray",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sawfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "coelacanth",
+     "tier": "baitball"
+    },
+    {
+     "entity": "napoleon-wrasse",
+     "tier": "baitball"
+    },
+    {
+     "entity": "giant-sea-bass",
+     "tier": "baitball"
+    },
+    {
+     "entity": "oceanic-whitetip-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "basking-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "european-eel",
+     "tier": "reef"
+    },
+    {
+     "entity": "beluga-sturgeon",
+     "tier": "reef"
+    },
+    {
+     "entity": "goliath-grouper",
+     "tier": "reef"
+    },
+    {
+     "entity": "southern-bluefin-tuna",
+     "tier": "reef"
+    },
+    {
+     "entity": "shortfin-mako",
+     "tier": "reef"
+    },
+    {
+     "entity": "angel-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "great-hammerhead",
+     "tier": "reef"
+    },
+    {
+     "entity": "scalloped-hammerhead",
+     "tier": "reef"
+    },
+    {
+     "entity": "seahorse",
+     "tier": "reef"
+    },
+    {
+     "entity": "sturgeon",
+     "tier": "reef"
+    },
+    {
+     "entity": "atlantic-sturgeon",
+     "tier": "twilight"
+    },
+    {
+     "entity": "chinese-sturgeon",
+     "tier": "twilight"
+    },
+    {
+     "entity": "japanese-eel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "american-eel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "nassau-grouper",
+     "tier": "twilight"
+    },
+    {
+     "entity": "totoaba",
+     "tier": "twilight"
+    },
+    {
+     "entity": "atlantic-halibut",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-devil-ray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bigeye-tuna",
+     "tier": "twilight"
+    },
+    {
+     "entity": "porbeagle",
+     "tier": "twilight"
+    },
+    {
+     "entity": "smalltooth-sawfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mekong-giant-catfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bumphead-parrotfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "zebra-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "longfin-mako",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bowmouth-guitarfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "grey-reef-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dusky-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "flapper-skate",
+     "tier": "midnight"
+    },
+    {
+     "entity": "barndoor-skate",
+     "tier": "midnight"
+    },
+    {
+     "entity": "banggai-cardinalfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "knysna-seahorse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spotted-handfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "giant-freshwater-stingray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dusky-grouper",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sevan-trout",
+     "tier": "midnight"
+    },
+    {
+     "entity": "huchen",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sakhalin-taimen",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gila-trout",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lahontan-cutthroat-trout",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bull-trout",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ohrid-trout",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pallid-sturgeon",
+     "tier": "midnight"
+    },
+    {
+     "entity": "kaluga",
+     "tier": "midnight"
+    },
+    {
+     "entity": "devils-hole-pupfish",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "food-name",
+   "answers": [
+    {
+     "entity": "sea-cucumber",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "lemon-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "coconut-crab",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "jellyfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "pancake-batfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "fried-egg-jellyfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "flapjack-octopus",
+     "tier": "baitball"
+    },
+    {
+     "entity": "headless-chicken-monster",
+     "tier": "baitball"
+    },
+    {
+     "entity": "sea-walnut",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-gooseberry",
+     "tier": "reef"
+    },
+    {
+     "entity": "lemon-sole",
+     "tier": "reef"
+    },
+    {
+     "entity": "milkfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "mutton-snapper",
+     "tier": "reef"
+    },
+    {
+     "entity": "potato-cod",
+     "tier": "reef"
+    },
+    {
+     "entity": "tomato-clownfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "cinnamon-clownfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "peppermint-shrimp",
+     "tier": "reef"
+    },
+    {
+     "entity": "spaghetti-eel",
+     "tier": "reef"
+    },
+    {
+     "entity": "strawberry-squid",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-lemon",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sea-biscuit",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pyrosome",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cauliflower-coral",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lettuce-coral",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mushroom-coral",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pea-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "coconut-octopus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "peppermint-angelfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "chocolate-chip-sea-star",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lettuce-sea-slug",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pineapplefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "peanut-worm",
+     "tier": "twilight"
+    },
+    {
+     "entity": "butterfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sea-apple",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sea-potato",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sea-pork",
+     "tier": "midnight"
+    },
+    {
+     "entity": "egg-yolk-jellyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cabbage-head-jellyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lemon-peel-angelfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "banana-prawn",
+     "tier": "midnight"
+    },
+    {
+     "entity": "strawberry-anemone",
+     "tier": "midnight"
+    },
+    {
+     "entity": "strawberry-conch",
+     "tier": "midnight"
+    },
+    {
+     "entity": "chocolate-surgeonfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "date-mussel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mustard-hill-coral",
+     "tier": "midnight"
+    },
+    {
+     "entity": "candy-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "chicken-liver-sponge",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bread-crumb-sponge",
+     "tier": "midnight"
+    },
+    {
+     "entity": "butter-clam",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vent-spaghetti-worm",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lollipop-catshark",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "royal-name",
+   "answers": [
+    {
+     "entity": "king-penguin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "emperor-penguin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "king-crab",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "queen-angelfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "emperor-angelfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "queen-conch",
+     "tier": "baitball"
+    },
+    {
+     "entity": "king-mackerel",
+     "tier": "baitball"
+    },
+    {
+     "entity": "queen-triggerfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "king-angelfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "queen-parrotfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "princess-parrotfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "emperor-shrimp",
+     "tier": "reef"
+    },
+    {
+     "entity": "pharaoh-cuttlefish",
+     "tier": "reef"
+    },
+    {
+     "entity": "king-scallop",
+     "tier": "reef"
+    },
+    {
+     "entity": "queen-scallop",
+     "tier": "reef"
+    },
+    {
+     "entity": "king-prawn",
+     "tier": "reef"
+    },
+    {
+     "entity": "queenfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "emperor-snapper",
+     "tier": "reef"
+    },
+    {
+     "entity": "queen-snapper",
+     "tier": "twilight"
+    },
+    {
+     "entity": "queen-coris",
+     "tier": "twilight"
+    },
+    {
+     "entity": "king-ragworm",
+     "tier": "twilight"
+    },
+    {
+     "entity": "king-helmet",
+     "tier": "twilight"
+    },
+    {
+     "entity": "queen-helmet",
+     "tier": "twilight"
+    },
+    {
+     "entity": "emperor-bream",
+     "tier": "twilight"
+    },
+    {
+     "entity": "king-eider",
+     "tier": "twilight"
+    },
+    {
+     "entity": "king-shag",
+     "tier": "hadal"
+    },
+    {
+     "entity": "yellowtail-kingfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "king-threadfin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blue-king-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kingklip",
+     "tier": "twilight"
+    },
+    {
+     "entity": "golden-king-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "southern-king-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "northern-kingfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "southern-kingfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spangled-emperor",
+     "tier": "midnight"
+    },
+    {
+     "entity": "longnose-emperor",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pink-ear-emperor",
+     "tier": "midnight"
+    },
+    {
+     "entity": "yellowlip-emperor",
+     "tier": "midnight"
+    },
+    {
+     "entity": "thumbprint-emperor",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sky-emperor",
+     "tier": "midnight"
+    },
+    {
+     "entity": "orange-striped-emperor",
+     "tier": "midnight"
+    },
+    {
+     "entity": "king-george-whiting",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "bird-name",
+   "answers": [
+    {
+     "entity": "parrotfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "butterflyfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "eagle-ray",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "roosterfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mantis-shrimp",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "firefly-squid",
+     "tier": "baitball"
+    },
+    {
+     "entity": "hawksbill-turtle",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bumblebee-goby",
+     "tier": "baitball"
+    },
+    {
+     "entity": "sea-robin",
+     "tier": "reef"
+    },
+    {
+     "entity": "goose-barnacle",
+     "tier": "reef"
+    },
+    {
+     "entity": "flamingo-tongue",
+     "tier": "reef"
+    },
+    {
+     "entity": "bird-wrasse",
+     "tier": "reef"
+    },
+    {
+     "entity": "butterfly-ray",
+     "tier": "reef"
+    },
+    {
+     "entity": "copperband-butterflyfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "blue-parrotfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "rainbow-parrotfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "longnose-hawkfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "cuckoo-wrasse",
+     "tier": "reef"
+    },
+    {
+     "entity": "peacock-flounder",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-wasp",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-raven",
+     "tier": "twilight"
+    },
+    {
+     "entity": "snipefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "snipe-eel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cuckoo-ray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "seamoth",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bumphead-parrotfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "stoplight-parrotfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "queen-parrotfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "foureye-butterflyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lined-butterflyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "threadfin-butterflyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "raccoon-butterflyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "birdbeak-dogfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sea-louse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tongue-eating-louse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "whale-louse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sea-firefly",
+     "tier": "midnight"
+    },
+    {
+     "entity": "midnight-parrotfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mediterranean-parrotfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bullethead-parrotfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "masked-butterflyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tinkers-butterflyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "longnose-butterflyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cockatoo-waspfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "owl-limpet",
+     "tier": "midnight"
+    },
+    {
+     "entity": "partridge-tun",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pheasant-shell",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hawkwing-conch",
+     "tier": "midnight"
+    },
+    {
+     "entity": "turkey-wing-ark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cocks-comb-oyster",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pelicans-foot",
+     "tier": "midnight"
+    },
+    {
+     "entity": "peacock-worm",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dove-snail",
+     "tier": "midnight"
+    },
+    {
+     "entity": "canary-rockfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "headless-chicken-monster",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "seabird-species",
+   "answers": [
+    {
+     "entity": "gull",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "penguin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "pelican",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "albatross",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "atlantic-puffin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "blue-footed-booby",
+     "tier": "baitball"
+    },
+    {
+     "entity": "arctic-tern",
+     "tier": "baitball"
+    },
+    {
+     "entity": "wandering-albatross",
+     "tier": "baitball"
+    },
+    {
+     "entity": "frigatebird",
+     "tier": "baitball"
+    },
+    {
+     "entity": "emperor-penguin",
+     "tier": "reef"
+    },
+    {
+     "entity": "king-penguin",
+     "tier": "reef"
+    },
+    {
+     "entity": "gentoo-penguin",
+     "tier": "reef"
+    },
+    {
+     "entity": "adelie-penguin",
+     "tier": "reef"
+    },
+    {
+     "entity": "northern-gannet",
+     "tier": "reef"
+    },
+    {
+     "entity": "cormorant",
+     "tier": "reef"
+    },
+    {
+     "entity": "shearwater",
+     "tier": "reef"
+    },
+    {
+     "entity": "petrel",
+     "tier": "reef"
+    },
+    {
+     "entity": "tern",
+     "tier": "reef"
+    },
+    {
+     "entity": "razorbill",
+     "tier": "reef"
+    },
+    {
+     "entity": "booby",
+     "tier": "reef"
+    },
+    {
+     "entity": "common-guillemot",
+     "tier": "reef"
+    },
+    {
+     "entity": "chinstrap-penguin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "macaroni-penguin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rockhopper-penguin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "african-penguin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "galapagos-penguin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "laysan-albatross",
+     "tier": "twilight"
+    },
+    {
+     "entity": "great-skua",
+     "tier": "twilight"
+    },
+    {
+     "entity": "black-skimmer",
+     "tier": "twilight"
+    },
+    {
+     "entity": "brown-pelican",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kittiwake",
+     "tier": "twilight"
+    },
+    {
+     "entity": "wilsons-storm-petrel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sooty-shearwater",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-petrel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "snow-petrel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "flightless-cormorant",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ivory-gull",
+     "tier": "midnight"
+    },
+    {
+     "entity": "antarctic-prion",
+     "tier": "midnight"
+    },
+    {
+     "entity": "marbled-murrelet",
+     "tier": "midnight"
+    },
+    {
+     "entity": "great-auk",
+     "tier": "midnight"
+    },
+    {
+     "entity": "little-auk",
+     "tier": "midnight"
+    },
+    {
+     "entity": "thick-billed-murre",
+     "tier": "midnight"
+    },
+    {
+     "entity": "inca-tern",
+     "tier": "midnight"
+    },
+    {
+     "entity": "guanay-cormorant",
+     "tier": "midnight"
+    },
+    {
+     "entity": "south-polar-skua",
+     "tier": "midnight"
+    },
+    {
+     "entity": "short-tailed-albatross",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tufted-puffin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "yellow-eyed-penguin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "red-billed-tropicbird",
+     "tier": "midnight"
+    },
+    {
+     "entity": "northern-fulmar",
+     "tier": "midnight"
+    },
+    {
+     "entity": "red-footed-booby",
+     "tier": "midnight"
+    },
+    {
+     "entity": "wedge-tailed-shearwater",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sooty-tern",
+     "tier": "midnight"
+    },
+    {
+     "entity": "little-penguin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "black-browed-albatross",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bermuda-petrel",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "bivalve",
+   "answers": [
+    {
+     "entity": "clam",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "oyster",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mussel",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "scallop",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "cockle",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "giant-clam",
+     "tier": "baitball"
+    },
+    {
+     "entity": "geoduck",
+     "tier": "baitball"
+    },
+    {
+     "entity": "razor-clam",
+     "tier": "baitball"
+    },
+    {
+     "entity": "pacific-oyster",
+     "tier": "reef"
+    },
+    {
+     "entity": "eastern-oyster",
+     "tier": "reef"
+    },
+    {
+     "entity": "european-flat-oyster",
+     "tier": "reef"
+    },
+    {
+     "entity": "green-lipped-mussel",
+     "tier": "reef"
+    },
+    {
+     "entity": "manila-clam",
+     "tier": "reef"
+    },
+    {
+     "entity": "soft-shell-clam",
+     "tier": "reef"
+    },
+    {
+     "entity": "quahog",
+     "tier": "reef"
+    },
+    {
+     "entity": "king-scallop",
+     "tier": "reef"
+    },
+    {
+     "entity": "queen-scallop",
+     "tier": "reef"
+    },
+    {
+     "entity": "pipi",
+     "tier": "reef"
+    },
+    {
+     "entity": "sydney-rock-oyster",
+     "tier": "reef"
+    },
+    {
+     "entity": "ocean-quahog",
+     "tier": "twilight"
+    },
+    {
+     "entity": "surf-clam",
+     "tier": "twilight"
+    },
+    {
+     "entity": "noble-pen-shell",
+     "tier": "twilight"
+    },
+    {
+     "entity": "vent-clam",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bay-scallop",
+     "tier": "twilight"
+    },
+    {
+     "entity": "yesso-scallop",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mediterranean-mussel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "black-lip-pearl-oyster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "common-cockle",
+     "tier": "twilight"
+    },
+    {
+     "entity": "olympia-oyster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "thorny-oyster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "angelwing",
+     "tier": "twilight"
+    },
+    {
+     "entity": "piddock",
+     "tier": "twilight"
+    },
+    {
+     "entity": "vent-mussel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "butter-clam",
+     "tier": "midnight"
+    },
+    {
+     "entity": "date-mussel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "windowpane-oyster",
+     "tier": "midnight"
+    },
+    {
+     "entity": "file-clam",
+     "tier": "midnight"
+    },
+    {
+     "entity": "flame-scallop",
+     "tier": "midnight"
+    },
+    {
+     "entity": "horse-mussel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bear-paw-clam",
+     "tier": "midnight"
+    },
+    {
+     "entity": "fluted-giant-clam",
+     "tier": "midnight"
+    },
+    {
+     "entity": "toheroa",
+     "tier": "midnight"
+    },
+    {
+     "entity": "peruvian-scallop",
+     "tier": "midnight"
+    },
+    {
+     "entity": "atlantic-sea-scallop",
+     "tier": "midnight"
+    },
+    {
+     "entity": "coquina",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pismo-clam",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ribbed-mussel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "jingle-shell",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rudist",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tuatua",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pacific-gaper",
+     "tier": "midnight"
+    },
+    {
+     "entity": "shipworm",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "nudibranch",
+   "answers": [
+    {
+     "entity": "nudibranch",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sea-slug",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sea-hare",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "blue-dragon",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "spanish-dancer",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "lettuce-sea-slug",
+     "tier": "baitball"
+    },
+    {
+     "entity": "sea-angel",
+     "tier": "baitball"
+    },
+    {
+     "entity": "eastern-emerald-elysia",
+     "tier": "baitball"
+    },
+    {
+     "entity": "sea-lemon",
+     "tier": "reef"
+    },
+    {
+     "entity": "opalescent-nudibranch",
+     "tier": "reef"
+    },
+    {
+     "entity": "spanish-shawl",
+     "tier": "reef"
+    },
+    {
+     "entity": "california-sea-hare",
+     "tier": "reef"
+    },
+    {
+     "entity": "hooded-nudibranch",
+     "tier": "reef"
+    },
+    {
+     "entity": "clown-nudibranch",
+     "tier": "reef"
+    },
+    {
+     "entity": "frosted-nudibranch",
+     "tier": "reef"
+    },
+    {
+     "entity": "gaudy-nudibranch",
+     "tier": "reef"
+    },
+    {
+     "entity": "orange-peel-nudibranch",
+     "tier": "reef"
+    },
+    {
+     "entity": "hopkins-rose",
+     "tier": "twilight"
+    },
+    {
+     "entity": "california-blue-dorid",
+     "tier": "twilight"
+    },
+    {
+     "entity": "nembrotha-cristata",
+     "tier": "twilight"
+    },
+    {
+     "entity": "chromodoris-annae",
+     "tier": "twilight"
+    },
+    {
+     "entity": "chromodoris-willani",
+     "tier": "twilight"
+    },
+    {
+     "entity": "chromodoris-kuniei",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hypselodoris-bullockii",
+     "tier": "twilight"
+    },
+    {
+     "entity": "phyllidia-varicosa",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sapsucking-slug",
+     "tier": "twilight"
+    },
+    {
+     "entity": "wedge-sea-hare",
+     "tier": "twilight"
+    },
+    {
+     "entity": "glass-sea-slug",
+     "tier": "twilight"
+    },
+    {
+     "entity": "navanax",
+     "tier": "twilight"
+    },
+    {
+     "entity": "spotted-sea-hare",
+     "tier": "twilight"
+    },
+    {
+     "entity": "swimming-eolid",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tritonia-hombergii",
+     "tier": "midnight"
+    },
+    {
+     "entity": "berghia-verrucicornis",
+     "tier": "midnight"
+    },
+    {
+     "entity": "janolus-cristatus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cadlina-laevis",
+     "tier": "midnight"
+    },
+    {
+     "entity": "onchidoris-bilamellata",
+     "tier": "midnight"
+    },
+    {
+     "entity": "polycera-quadrilineata",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spurilla-neapolitana",
+     "tier": "midnight"
+    },
+    {
+     "entity": "aeolidia-papillosa",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dendronotus-iris",
+     "tier": "midnight"
+    },
+    {
+     "entity": "limacia-clavigera",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tambja-verconis",
+     "tier": "midnight"
+    },
+    {
+     "entity": "phyllodesmium-longicirrum",
+     "tier": "midnight"
+    },
+    {
+     "entity": "felimare-picta",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hydatina-physis",
+     "tier": "midnight"
+    },
+    {
+     "entity": "glaucilla-marginata",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pleurobranchaea-californica",
+     "tier": "midnight"
+    },
+    {
+     "entity": "elysia-timida",
+     "tier": "midnight"
+    },
+    {
+     "entity": "leaf-sheep",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "seagrass-mangrove",
+   "answers": [
+    {
+     "entity": "seagrass",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mangrove",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "eelgrass",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "red-mangrove",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "turtle-grass",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "neptune-grass",
+     "tier": "baitball"
+    },
+    {
+     "entity": "black-mangrove",
+     "tier": "baitball"
+    },
+    {
+     "entity": "white-mangrove",
+     "tier": "baitball"
+    },
+    {
+     "entity": "grey-mangrove",
+     "tier": "reef"
+    },
+    {
+     "entity": "shoal-grass",
+     "tier": "reef"
+    },
+    {
+     "entity": "manatee-grass",
+     "tier": "reef"
+    },
+    {
+     "entity": "surfgrass",
+     "tier": "reef"
+    },
+    {
+     "entity": "tape-seagrass",
+     "tier": "reef"
+    },
+    {
+     "entity": "nipa-palm",
+     "tier": "reef"
+    },
+    {
+     "entity": "buttonwood",
+     "tier": "reef"
+    },
+    {
+     "entity": "little-neptune-grass",
+     "tier": "reef"
+    },
+    {
+     "entity": "asiatic-mangrove",
+     "tier": "reef"
+    },
+    {
+     "entity": "dwarf-eelgrass",
+     "tier": "reef"
+    },
+    {
+     "entity": "noodle-seagrass",
+     "tier": "twilight"
+    },
+    {
+     "entity": "narrowleaf-seagrass",
+     "tier": "twilight"
+    },
+    {
+     "entity": "paddle-weed",
+     "tier": "twilight"
+    },
+    {
+     "entity": "johnsons-seagrass",
+     "tier": "twilight"
+    },
+    {
+     "entity": "wire-weed",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rimurehu",
+     "tier": "twilight"
+    },
+    {
+     "entity": "thalassia-hemprichii",
+     "tier": "twilight"
+    },
+    {
+     "entity": "large-leafed-orange-mangrove",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cannonball-mangrove",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mangrove-apple",
+     "tier": "twilight"
+    },
+    {
+     "entity": "river-mangrove",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sundri",
+     "tier": "twilight"
+    },
+    {
+     "entity": "spotted-mangrove",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tall-stilt-mangrove",
+     "tier": "midnight"
+    },
+    {
+     "entity": "milky-mangrove",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spurred-mangrove",
+     "tier": "midnight"
+    },
+    {
+     "entity": "west-african-red-mangrove",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tea-mangrove",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mangrove-fern",
+     "tier": "midnight"
+    },
+    {
+     "entity": "widgeon-grass",
+     "tier": "midnight"
+    },
+    {
+     "entity": "japanese-eelgrass",
+     "tier": "midnight"
+    },
+    {
+     "entity": "halophila-stipulacea",
+     "tier": "midnight"
+    },
+    {
+     "entity": "halophila-decipiens",
+     "tier": "midnight"
+    },
+    {
+     "entity": "serrated-ribbon-seagrass",
+     "tier": "midnight"
+    },
+    {
+     "entity": "smooth-ribbon-seagrass",
+     "tier": "midnight"
+    },
+    {
+     "entity": "thalassodendron-ciliatum",
+     "tier": "midnight"
+    },
+    {
+     "entity": "torreys-surfgrass",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cape-eelgrass",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ribbon-weed",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "sea-anemone-coral-species",
+   "answers": [
+    {
+     "entity": "coral",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "jellyfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sea-anemone",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "brain-coral",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "staghorn-coral",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "immortal-jellyfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "lions-mane-jellyfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "box-jellyfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "elkhorn-coral",
+     "tier": "reef"
+    },
+    {
+     "entity": "fire-coral",
+     "tier": "reef"
+    },
+    {
+     "entity": "mushroom-coral",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-fan",
+     "tier": "reef"
+    },
+    {
+     "entity": "black-coral",
+     "tier": "reef"
+    },
+    {
+     "entity": "red-coral",
+     "tier": "reef"
+    },
+    {
+     "entity": "soft-coral",
+     "tier": "reef"
+    },
+    {
+     "entity": "beadlet-anemone",
+     "tier": "reef"
+    },
+    {
+     "entity": "snakelocks-anemone",
+     "tier": "reef"
+    },
+    {
+     "entity": "plumose-anemone",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-nettle",
+     "tier": "reef"
+    },
+    {
+     "entity": "cannonball-jellyfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "barrel-jellyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "compass-jellyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "upside-down-jellyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "crystal-jelly",
+     "tier": "twilight"
+    },
+    {
+     "entity": "fried-egg-jellyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blue-blubber-jellyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-green-anemone",
+     "tier": "twilight"
+    },
+    {
+     "entity": "aggregating-anemone",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pillar-coral",
+     "tier": "twilight"
+    },
+    {
+     "entity": "star-coral",
+     "tier": "twilight"
+    },
+    {
+     "entity": "table-coral",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hammer-coral",
+     "tier": "twilight"
+    },
+    {
+     "entity": "torch-coral",
+     "tier": "twilight"
+    },
+    {
+     "entity": "frogspawn-coral",
+     "tier": "twilight"
+    },
+    {
+     "entity": "irukandji-jellyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "black-sea-nettle",
+     "tier": "midnight"
+    },
+    {
+     "entity": "big-red-jellyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spotted-jelly",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mauve-stinger",
+     "tier": "midnight"
+    },
+    {
+     "entity": "nomuras-jellyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "thimble-jellyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "crown-jellyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "flower-hat-jelly",
+     "tier": "midnight"
+    },
+    {
+     "entity": "helmet-jellyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "stalked-jellyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "by-the-wind-sailor",
+     "tier": "midnight"
+    },
+    {
+     "entity": "blue-button",
+     "tier": "midnight"
+    },
+    {
+     "entity": "venus-flytrap-anemone",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vent-anemone",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bubblegum-coral",
+     "tier": "midnight"
+    },
+    {
+     "entity": "organ-pipe-coral",
+     "tier": "midnight"
+    },
+    {
+     "entity": "blue-coral",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lophelia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bamboo-coral",
+     "tier": "midnight"
+    },
+    {
+     "entity": "deepstaria",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "sponge-tunicate",
+   "answers": [
+    {
+     "entity": "sponge",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "coral",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "barnacle",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sea-squirt",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "giant-tube-worm",
+     "tier": "baitball"
+    },
+    {
+     "entity": "venus-flower-basket",
+     "tier": "baitball"
+    },
+    {
+     "entity": "christmas-tree-worm",
+     "tier": "baitball"
+    },
+    {
+     "entity": "giant-barrel-sponge",
+     "tier": "reef"
+    },
+    {
+     "entity": "glass-sponge",
+     "tier": "reef"
+    },
+    {
+     "entity": "goose-barnacle",
+     "tier": "reef"
+    },
+    {
+     "entity": "feather-duster-worm",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-lily",
+     "tier": "reef"
+    },
+    {
+     "entity": "bryozoan",
+     "tier": "reef"
+    },
+    {
+     "entity": "hydroid",
+     "tier": "reef"
+    },
+    {
+     "entity": "oyster",
+     "tier": "reef"
+    },
+    {
+     "entity": "harp-sponge",
+     "tier": "reef"
+    },
+    {
+     "entity": "lamp-shell",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-fan",
+     "tier": "reef"
+    },
+    {
+     "entity": "predatory-tunicate",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bath-sponge",
+     "tier": "twilight"
+    },
+    {
+     "entity": "elephant-ear-sponge",
+     "tier": "twilight"
+    },
+    {
+     "entity": "yellow-tube-sponge",
+     "tier": "twilight"
+    },
+    {
+     "entity": "purple-vase-sponge",
+     "tier": "twilight"
+    },
+    {
+     "entity": "orange-puffball-sponge",
+     "tier": "twilight"
+    },
+    {
+     "entity": "boring-sponge",
+     "tier": "twilight"
+    },
+    {
+     "entity": "golden-star-tunicate",
+     "tier": "twilight"
+    },
+    {
+     "entity": "club-tunicate",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sea-peach",
+     "tier": "twilight"
+    },
+    {
+     "entity": "vase-tunicate",
+     "tier": "twilight"
+    },
+    {
+     "entity": "violet-tunicate",
+     "tier": "twilight"
+    },
+    {
+     "entity": "light-bulb-tunicate",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cloud-sponge",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ping-pong-tree-sponge",
+     "tier": "midnight"
+    },
+    {
+     "entity": "azure-vase-sponge",
+     "tier": "midnight"
+    },
+    {
+     "entity": "stinker-sponge",
+     "tier": "midnight"
+    },
+    {
+     "entity": "touch-me-not-sponge",
+     "tier": "midnight"
+    },
+    {
+     "entity": "stove-pipe-sponge",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mermaids-glove",
+     "tier": "midnight"
+    },
+    {
+     "entity": "carpet-sea-squirt",
+     "tier": "midnight"
+    },
+    {
+     "entity": "piure",
+     "tier": "midnight"
+    },
+    {
+     "entity": "red-bait",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sea-pineapple",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mangrove-tunicate",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hornwrack",
+     "tier": "midnight"
+    },
+    {
+     "entity": "honeycomb-worm",
+     "tier": "midnight"
+    },
+    {
+     "entity": "giant-acorn-barnacle",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vent-barnacle",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cold-seep-tubeworm",
+     "tier": "midnight"
+    },
+    {
+     "entity": "carnivorous-sponge",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "crustacean-species",
+   "answers": [
+    {
+     "entity": "crab",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "lobster",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "shrimp",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "prawn",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "hermit-crab",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mantis-shrimp",
+     "tier": "baitball"
+    },
+    {
+     "entity": "coconut-crab",
+     "tier": "baitball"
+    },
+    {
+     "entity": "krill",
+     "tier": "baitball"
+    },
+    {
+     "entity": "king-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "blue-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "dungeness-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "snow-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "edible-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "langoustine",
+     "tier": "reef"
+    },
+    {
+     "entity": "barnacle",
+     "tier": "reef"
+    },
+    {
+     "entity": "fiddler-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "pistol-shrimp",
+     "tier": "reef"
+    },
+    {
+     "entity": "spiny-lobster",
+     "tier": "reef"
+    },
+    {
+     "entity": "european-lobster",
+     "tier": "reef"
+    },
+    {
+     "entity": "yeti-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "japanese-spider-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-isopod",
+     "tier": "twilight"
+    },
+    {
+     "entity": "copepod",
+     "tier": "twilight"
+    },
+    {
+     "entity": "amphipod",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sally-lightfoot-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ghost-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mud-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "stone-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "christmas-island-red-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "chinese-mitten-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "slipper-lobster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cleaner-shrimp",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tiger-prawn",
+     "tier": "twilight"
+    },
+    {
+     "entity": "decorator-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tasmanian-giant-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "supergiant-amphipod",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hirondellea-gigas",
+     "tier": "midnight"
+    },
+    {
+     "entity": "whale-louse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sea-slater",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pea-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hoff-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "masked-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "velvet-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "red-rock-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "jonah-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spanner-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "harlequin-shrimp",
+     "tier": "midnight"
+    },
+    {
+     "entity": "banded-coral-shrimp",
+     "tier": "midnight"
+    },
+    {
+     "entity": "peppermint-shrimp",
+     "tier": "midnight"
+    },
+    {
+     "entity": "giant-river-prawn",
+     "tier": "midnight"
+    },
+    {
+     "entity": "red-reef-lobster",
+     "tier": "midnight"
+    },
+    {
+     "entity": "southern-king-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "golden-king-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tongue-eating-louse",
+     "tier": "hadal"
+    }
+   ]
+  }
+ ]
+}

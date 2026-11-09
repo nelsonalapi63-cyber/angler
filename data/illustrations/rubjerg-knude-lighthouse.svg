@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<path d="M16 236 L16 170 L150 170 L150 190 L176 190 L176 206 L198 206 L198 222 L240 222 L240 236Z" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="30" y="160" width="150" height="10" fill="#0C2A3A"/>
+<rect x="36" y="170" width="10" height="8" fill="#0C2A3A"/>
+<rect x="90" y="170" width="10" height="8" fill="#0C2A3A"/>
+<rect x="150" y="170" width="10" height="8" fill="#0C2A3A"/>
+<polygon points="66,160 150,160 138,60 78,60" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="72,120 144,120 147,140 69,140" fill="#F26A4B"/>
+<rect x="82" y="52" width="52" height="10" fill="#0C2A3A"/>
+<rect x="86" y="38" width="44" height="16" fill="#FFD24A" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="82,38 134,38 108,18" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="100" cy="160" r="10" fill="#0C2A3A"/>
+<path d="M196 206 L220 206 L226 222 L204 222Z" fill="#E2B94F"/>
+</svg>

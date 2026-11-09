@@ -1,0 +1,4 @@
+{
+  "siteUrl": "",
+  "_comment": "The one place the public address lives. Set it to e.g. https://playangler.com once the domain exists: build.js writes dist/CNAME from it, boot.js carries it to the app (share text, share card, Open Graph tags) and the sitemap uses it. Leave empty while the site only runs on the artifact host or the github.io address."
+}

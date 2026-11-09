@@ -1,0 +1,6082 @@
+{
+ "entities": [
+  {
+   "id": "little-penguin",
+   "name": "Little penguin",
+   "aliases": [
+    "fairy penguin",
+    "little blue penguin",
+    "Eudyptula minor"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The little penguin stands only about 30 centimetres tall and breeds along the southern coasts of Australia, including Phillip Island."
+  },
+  {
+   "id": "australian-fur-seal",
+   "name": "Australian fur seal",
+   "aliases": [
+    "Arctocephalus pusillus doriferus"
+   ],
+   "kind": "creature",
+   "group": "seals",
+   "fact": "The Australian fur seal breeds on rocky islands in Bass Strait, between the Australian mainland and Tasmania."
+  },
+  {
+   "id": "eastern-blue-groper",
+   "name": "Eastern blue groper",
+   "aliases": [
+    "blue groper",
+    "Achoerodus viridis"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The eastern blue groper is the state fish of New South Wales and is protected from fishing there."
+  },
+  {
+   "id": "australian-salmon",
+   "name": "Australian salmon",
+   "aliases": [
+    "Arripis trutta"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Despite its name, the Australian salmon is not a true salmon but a schooling fish of the southern Australian coast."
+  },
+  {
+   "id": "yellow-eyed-penguin",
+   "name": "Yellow-eyed penguin",
+   "aliases": [
+    "hoiho",
+    "Megadyptes antipodes"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The yellow-eyed penguin, or hoiho, is among the rarest penguins and breeds on New Zealand's south-eastern coasts and subantarctic islands."
+  },
+  {
+   "id": "new-zealand-fur-seal",
+   "name": "New Zealand fur seal",
+   "aliases": [
+    "kekeno",
+    "Arctocephalus forsteri"
+   ],
+   "kind": "creature",
+   "group": "seals",
+   "fact": "The New Zealand fur seal, or kekeno, was hunted almost to extinction in the nineteenth century but has since recovered around New Zealand's coasts."
+  },
+  {
+   "id": "australasian-snapper",
+   "name": "Australasian snapper",
+   "aliases": [
+    "snapper",
+    "tamure",
+    "Pagrus auratus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The Australasian snapper, simply called snapper in New Zealand, is a pinkish sea bream that is one of the most popular fish there to catch and eat."
+  },
+  {
+   "id": "northern-royal-albatross",
+   "name": "Northern royal albatross",
+   "aliases": [
+    "royal albatross",
+    "Diomedea sanfordi"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "Taiaroa Head near Dunedin hosts the only mainland breeding colony of royal albatrosses in the world."
+  },
+  {
+   "id": "australasian-gannet",
+   "name": "Australasian gannet",
+   "aliases": [
+    "takapu",
+    "Morus serrator"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "Australasian gannets breed in large colonies such as the one at Cape Kidnappers on New Zealand's North Island."
+  },
+  {
+   "id": "tarakihi",
+   "name": "Tarakihi",
+   "aliases": [
+    "Nemadactylus macropterus",
+    "jackass morwong"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Tarakihi is a silvery, banded fish of New Zealand's coastal waters and one of the country's most commonly eaten fish."
+  },
+  {
+   "id": "hapuku",
+   "name": "Hapuku",
+   "aliases": [
+    "groper",
+    "Polyprion oxygeneios",
+    "hapuka"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The hapuku, or groper, is a large deep-water fish of New Zealand's rocky reefs and continental slope."
+  },
+  {
+   "id": "fiordland-crested-penguin",
+   "name": "Fiordland crested penguin",
+   "aliases": [
+    "tawaki",
+    "Eudyptes pachyrhynchus"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The Fiordland crested penguin, or tawaki, nests under the temperate rainforest of Fiordland and Stewart Island."
+  },
+  {
+   "id": "saddle-wrasse",
+   "name": "Saddle wrasse",
+   "aliases": [
+    "Thalassoma duperrey",
+    "hinalea lauwili"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The saddle wrasse is a colourful fish found only in the Hawaiian Islands and nearby Johnston Atoll, and it is one of the most common fish on Hawaiian reefs."
+  },
+  {
+   "id": "hawaiian-bobtail-squid",
+   "name": "Hawaiian bobtail squid",
+   "aliases": [
+    "Euprymna scolopes"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The Hawaiian bobtail squid hosts glowing bacteria in a special organ that lets it hide its shadow from predators on moonlit nights."
+  },
+  {
+   "id": "green-anaconda",
+   "name": "Green anaconda",
+   "aliases": [
+    "anaconda",
+    "Eunectes murinus",
+    "water boa"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The green anaconda is the heaviest snake in the world and spends most of its life in or beside slow water in the Amazon basin."
+  },
+  {
+   "id": "caiman",
+   "name": "Caiman",
+   "aliases": [
+    "Caimaninae",
+    "Caiman"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "Caimans are South and Central American crocodilians that are close relatives of alligators."
+  },
+  {
+   "id": "capybara",
+   "name": "Capybara",
+   "aliases": [
+    "Hydrochoerus hydrochaeris"
+   ],
+   "kind": "creature",
+   "group": "mammals",
+   "fact": "The capybara is the largest living rodent and is a strong swimmer that can stay submerged for several minutes."
+  },
+  {
+   "id": "giant-otter",
+   "name": "Giant otter",
+   "aliases": [
+    "giant river otter",
+    "Pteronura brasiliensis"
+   ],
+   "kind": "creature",
+   "group": "mammals",
+   "fact": "Giant otters live in noisy family groups and can reach nearly 1.8 metres in length, making them the longest otters."
+  },
+  {
+   "id": "black-caiman",
+   "name": "Black caiman",
+   "aliases": [
+    "Melanosuchus niger"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The black caiman is the largest predator of the Amazon basin and can grow to about 5 metres long."
+  },
+  {
+   "id": "amazonian-manatee",
+   "name": "Amazonian manatee",
+   "aliases": [
+    "Amazon manatee",
+    "Trichechus inunguis"
+   ],
+   "kind": "creature",
+   "group": "mammals",
+   "fact": "The Amazonian manatee is the only manatee that lives entirely in fresh water."
+  },
+  {
+   "id": "red-bellied-piranha",
+   "name": "Red-bellied piranha",
+   "aliases": [
+    "Pygocentrus nattereri",
+    "red piranha"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The red-bellied piranha hunts in shoals and uses razor-sharp, interlocking teeth to slice flesh from its prey."
+  },
+  {
+   "id": "tambaqui",
+   "name": "Tambaqui",
+   "aliases": [
+    "Colossoma macropomum",
+    "black pacu"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The tambaqui follows the flooded forest in the wet season and cracks fallen fruits and nuts with its strong, flat teeth."
+  },
+  {
+   "id": "pacu",
+   "name": "Pacu",
+   "aliases": [
+    "red-bellied pacu",
+    "Piaractus brachypomus",
+    "Colossoma"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Pacu are relatives of piranhas with flat, human-like molars that they use to crush seeds and nuts."
+  },
+  {
+   "id": "spectacled-caiman",
+   "name": "Spectacled caiman",
+   "aliases": [
+    "Caiman crocodilus",
+    "common caiman"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The spectacled caiman is named for a bony ridge between its eyes that looks like the bridge of a pair of spectacles."
+  },
+  {
+   "id": "arrau-turtle",
+   "name": "Giant South American river turtle",
+   "aliases": [
+    "arrau",
+    "arrau turtle",
+    "Podocnemis expansa"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The giant South American river turtle is the largest river turtle in the region, and females gather in large numbers to nest on sandbanks."
+  },
+  {
+   "id": "matamata",
+   "name": "Matamata",
+   "aliases": [
+    "Chelus fimbriata",
+    "mata mata"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The matamata looks like a pile of bark and leaves on the river bed and gulps down fish by suddenly opening its mouth to create suction."
+  },
+  {
+   "id": "black-piranha",
+   "name": "Black piranha",
+   "aliases": [
+    "Serrasalmus rhombeus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The black piranha is among the largest piranhas and is a fierce predator of the Amazon and Orinoco basins."
+  },
+  {
+   "id": "trahira",
+   "name": "Trahira",
+   "aliases": [
+    "Hoplias malabaricus",
+    "wolf fish",
+    "traira"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The trahira is an ambush predator of South American rivers with strong jaws and large teeth."
+  },
+  {
+   "id": "yellow-spotted-river-turtle",
+   "name": "Yellow-spotted river turtle",
+   "aliases": [
+    "Podocnemis unifilis",
+    "tracaja"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The yellow-spotted river turtle is named for the bright yellow spots on the head of the young and of females."
+  },
+  {
+   "id": "rummy-nose-tetra",
+   "name": "Rummy-nose tetra",
+   "aliases": [
+    "Hemigrammus rhodostomus",
+    "rummynose tetra"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The rummy-nose tetra has a bright red nose and swims in tight, synchronised shoals."
+  },
+  {
+   "id": "amazon-leaffish",
+   "name": "Amazon leaffish",
+   "aliases": [
+    "Monocirrhus polyacanthus",
+    "leaf fish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The Amazon leaffish drifts in the water like a dead leaf, then snaps up small fish that come close."
+  },
+  {
+   "id": "nile-tilapia",
+   "name": "Nile tilapia",
+   "aliases": [
+    "Oreochromis niloticus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The Nile tilapia is a mouthbrooding fish native to Africa and is now one of the most widely farmed freshwater fish in the world."
+  },
+  {
+   "id": "mozambique-tilapia",
+   "name": "Mozambique tilapia",
+   "aliases": [
+    "Oreochromis mossambicus",
+    "Java tilapia"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The Mozambique tilapia can tolerate salt water as well as fresh, which has helped it spread to rivers and coasts around the world."
+  },
+  {
+   "id": "freshwater-butterflyfish",
+   "name": "Freshwater butterflyfish",
+   "aliases": [
+    "Pantodon buchholzi",
+    "African butterflyfish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The freshwater butterflyfish lurks at the surface of West and Central African waters with its large fins spread like wings, and can leap clear of the water."
+  },
+  {
+   "id": "electric-yellow-cichlid",
+   "name": "Electric yellow cichlid",
+   "aliases": [
+    "Labidochromis caeruleus",
+    "yellow lab"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The electric yellow cichlid is a bright yellow mouthbrooder found only in Lake Malawi."
+  },
+  {
+   "id": "mbuna",
+   "name": "Mbuna",
+   "aliases": [
+    "Malawi mbuna",
+    "Haplochromini"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Mbuna are the colourful, rock-dwelling cichlids of Lake Malawi, a lake that holds hundreds of cichlid species."
+  },
+  {
+   "id": "tropheus",
+   "name": "Tropheus",
+   "aliases": [
+    "Tropheus moorii"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Tropheus are rock-dwelling cichlids of Lake Tanganyika that come in a remarkable variety of colour forms."
+  },
+  {
+   "id": "frontosa",
+   "name": "Frontosa",
+   "aliases": [
+    "Cyphotilapia frontosa",
+    "humphead cichlid"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The frontosa is a large, banded cichlid of the deep water of Lake Tanganyika, and older males develop a prominent bump on the forehead."
+  },
+  {
+   "id": "peacock-cichlid",
+   "name": "Peacock cichlid",
+   "aliases": [
+    "Aulonocara",
+    "Malawi peacock"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Male peacock cichlids of Lake Malawi flash vivid blue and gold colours as they court females over sandy lake floors."
+  },
+  {
+   "id": "yellowfish",
+   "name": "Yellowfish",
+   "aliases": [
+    "Labeobarbus",
+    "largescale yellowfish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Yellowfish are large minnow relatives of southern African rivers that are prized by fly anglers."
+  },
+  {
+   "id": "vundu",
+   "name": "Vundu",
+   "aliases": [
+    "Heterobranchus longifilis"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The vundu is a large catfish of central and southern African rivers such as the Zambezi, and it can grow well over a metre long."
+  },
+  {
+   "id": "african-pike",
+   "name": "African pike",
+   "aliases": [
+    "Hepsetus odoe",
+    "Kafue pike"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The African pike is a fast, toothy predator of African rivers that guards its nest of foam-bubbles."
+  },
+  {
+   "id": "chambo",
+   "name": "Chambo",
+   "aliases": [
+    "Oreochromis karongae",
+    "Malawi tilapia"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Chambo is the name given to a group of tilapia from Lake Malawi, which are among the favourite food fish in Malawi."
+  },
+  {
+   "id": "kapenta",
+   "name": "Kapenta",
+   "aliases": [
+    "Limnothrissa miodon",
+    "Tanganyika sardine"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Kapenta are tiny sardine-like fish from Lake Tanganyika that were introduced to Lake Kariba in the 1960s, where they now support a large fishery."
+  },
+  {
+   "id": "congo-tetra",
+   "name": "Congo tetra",
+   "aliases": [
+    "Phenacogrammus interruptus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Male Congo tetras of the Congo basin shimmer with rainbow colours and have long, flowing fins."
+  },
+  {
+   "id": "julidochromis",
+   "name": "Julidochromis",
+   "aliases": [
+    "Julidochromis marlieri",
+    "Julie"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Julidochromis are small, striped cichlids that live and breed in rocky crevices in Lake Tanganyika."
+  },
+  {
+   "id": "shell-dweller",
+   "name": "Shell-dwelling cichlid",
+   "aliases": [
+    "Neolamprologus multifasciatus",
+    "shell dweller",
+    "multifasciatus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "This tiny cichlid of Lake Tanganyika lives in empty snail shells on the lake bed and defends a territory of shells like a miniature colony."
+  },
+  {
+   "id": "african-knifefish",
+   "name": "African knifefish",
+   "aliases": [
+    "Xenomystus nigri",
+    "African brown knifefish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The African knifefish swims by rippling a long fin along its belly and can breathe air at the surface."
+  },
+  {
+   "id": "ornate-bichir",
+   "name": "Ornate bichir",
+   "aliases": [
+    "Polypterus ornatipinnis"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The ornate bichir is a primitive-looking African fish that has lungs and can gulp air at the surface."
+  },
+  {
+   "id": "turquoise-killifish",
+   "name": "Turquoise killifish",
+   "aliases": [
+    "Nothobranchius furzeri",
+    "African turquoise killifish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The turquoise killifish lives in seasonal pools in Zimbabwe and Mozambique, and its eggs survive the dry season buried in mud."
+  },
+  {
+   "id": "aba-aba",
+   "name": "Aba aba",
+   "aliases": [
+    "Gymnarchus niloticus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The aba aba swims forwards and backwards with equal ease and senses its surroundings with a weak electric field."
+  },
+  {
+   "id": "african-arowana",
+   "name": "African arowana",
+   "aliases": [
+    "Heterotis niloticus",
+    "African bonytongue",
+    "bonytongue"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The African arowana is a large, air-gulping fish of West and Central African rivers and floodplains."
+  },
+  {
+   "id": "kampango",
+   "name": "Kampango",
+   "aliases": [
+    "Bagrus meridionalis"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The kampango is a large catfish of Lake Malawi and its rivers."
+  },
+  {
+   "id": "dagaa",
+   "name": "Dagaa",
+   "aliases": [
+    "Rastrineobola argentea",
+    "omena",
+    "mukene",
+    "Lake Victoria sardine"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Dagaa are tiny silver fish of Lake Victoria that are dried in the sun and eaten across East Africa."
+  },
+  {
+   "id": "fahaka-puffer",
+   "name": "Fahaka puffer",
+   "aliases": [
+    "Tetraodon lineatus",
+    "Nile puffer",
+    "lineatus puffer"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The fahaka puffer lives in the Nile and other African rivers and can inflate its body with water when threatened."
+  },
+  {
+   "id": "african-moony",
+   "name": "African moony",
+   "aliases": [
+    "Monodactylus sebae",
+    "Sebae moony"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The African moony is a silvery, disc-shaped fish of West African estuaries and rivers that can live in fresh or brackish water."
+  },
+  {
+   "id": "magadi-tilapia",
+   "name": "Magadi tilapia",
+   "aliases": [
+    "Alcolapia grahami",
+    "Lake Magadi tilapia"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The Magadi tilapia lives in hot, caustic soda lagoons beside Kenya's Lake Magadi, where the water can exceed 35 degrees Celsius and is highly alkaline."
+  },
+  {
+   "id": "jamaica",
+   "name": "Jamaica",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Jamaica is the third-largest island of the Greater Antilles and the birthplace of reggae music."
+  },
+  {
+   "id": "barbados",
+   "name": "Barbados",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Barbados is the most easterly of the Caribbean islands and is built largely of coral limestone rather than volcanic rock."
+  },
+  {
+   "id": "aruba",
+   "name": "Aruba",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Aruba lies about 29 kilometres off the coast of Venezuela and is one of the Dutch Caribbean's ABC islands."
+  },
+  {
+   "id": "hispaniola",
+   "name": "Hispaniola",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Hispaniola is shared by Haiti and the Dominican Republic and is the second-largest island in the Caribbean."
+  },
+  {
+   "id": "trinidad",
+   "name": "Trinidad",
+   "aliases": [
+    "Trinidad and Tobago"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Trinidad is the larger island of Trinidad and Tobago and lies only about 11 kilometres off the coast of Venezuela."
+  },
+  {
+   "id": "saint-lucia",
+   "name": "Saint Lucia",
+   "aliases": [
+    "St Lucia",
+    "Saint Lucia island"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Saint Lucia's twin volcanic peaks, the Pitons, rise straight out of the sea and are a World Heritage Site."
+  },
+  {
+   "id": "curacao",
+   "name": "Curaçao",
+   "aliases": [
+    "Curacao"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Curaçao is the largest of the Dutch ABC islands, and the old harbour of its capital Willemstad is a World Heritage Site."
+  },
+  {
+   "id": "antigua",
+   "name": "Antigua",
+   "aliases": [
+    "Antigua and Barbuda"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Antigua is home to Nelson's Dockyard, an eighteenth-century Royal Navy base that is a World Heritage Site."
+  },
+  {
+   "id": "grenada",
+   "name": "Grenada",
+   "aliases": [
+    "Isle of Spice",
+    "Spice Isle"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Grenada is nicknamed the Spice Isle for the nutmeg and mace it grows and exports."
+  },
+  {
+   "id": "martinique",
+   "name": "Martinique",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Martinique is a French island where the eruption of Mont Pelée destroyed the town of Saint-Pierre in 1902."
+  },
+  {
+   "id": "guadeloupe",
+   "name": "Guadeloupe",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Guadeloupe is shaped like a butterfly, with two main islands, Basse-Terre and Grande-Terre, split by a narrow channel."
+  },
+  {
+   "id": "dominica",
+   "name": "Dominica",
+   "aliases": [
+    "Nature Isle"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Dominica, the Nature Isle, is a rugged volcanic island with a flooded fumarole known as the Boiling Lake."
+  },
+  {
+   "id": "saint-kitts",
+   "name": "Saint Kitts",
+   "aliases": [
+    "St Kitts",
+    "Saint Christopher",
+    "Saint Kitts and Nevis"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Saint Kitts is the larger island of Saint Kitts and Nevis, the smallest country in the Americas by area."
+  },
+  {
+   "id": "saint-vincent",
+   "name": "Saint Vincent",
+   "aliases": [
+    "St Vincent",
+    "Saint Vincent and the Grenadines"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Saint Vincent is a volcanic island where the La Soufrière volcano erupted in 2021."
+  },
+  {
+   "id": "tobago",
+   "name": "Tobago",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Tobago is the smaller island of Trinidad and Tobago and is known for the coral gardens of Buccoo Reef."
+  },
+  {
+   "id": "bonaire",
+   "name": "Bonaire",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Bonaire is famed for shore diving, and its coastal waters have been a marine park since 1979."
+  },
+  {
+   "id": "saint-martin",
+   "name": "Saint Martin",
+   "aliases": [
+    "St Martin",
+    "Sint Maarten"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The island of Saint Martin is divided between France and the Netherlands, who have shared it since a treaty in 1648."
+  },
+  {
+   "id": "saint-thomas",
+   "name": "Saint Thomas",
+   "aliases": [
+    "St Thomas",
+    "Charlotte Amalie"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Saint Thomas is one of the US Virgin Islands and its capital, Charlotte Amalie, is a busy cruise port."
+  },
+  {
+   "id": "cayman-islands",
+   "name": "Cayman Islands",
+   "aliases": [
+    "Grand Cayman",
+    "Cayman"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Cayman Islands are made up of Grand Cayman, Little Cayman and Cayman Brac, which rise steeply from very deep water south of Cuba."
+  },
+  {
+   "id": "cozumel",
+   "name": "Cozumel",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Cozumel lies off Mexico's Yucatán coast and is known for drift diving along the Mesoamerican Reef."
+  },
+  {
+   "id": "roatan",
+   "name": "Roatán",
+   "aliases": [
+    "Roatan"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Roatán is the largest of Honduras's Bay Islands and lies beside the Mesoamerican Barrier Reef."
+  },
+  {
+   "id": "isla-margarita",
+   "name": "Isla Margarita",
+   "aliases": [
+    "Margarita Island",
+    "Margarita"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Isla Margarita is Venezuela's largest island and was a centre of pearl fishing in the sixteenth century."
+  },
+  {
+   "id": "tortola",
+   "name": "Tortola",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Tortola is the largest of the British Virgin Islands."
+  },
+  {
+   "id": "saint-croix",
+   "name": "Saint Croix",
+   "aliases": [
+    "St Croix"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Saint Croix is the largest of the US Virgin Islands and was once a Danish sugar colony."
+  },
+  {
+   "id": "saint-john",
+   "name": "Saint John",
+   "aliases": [
+    "St John",
+    "St John Virgin Islands"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Much of Saint John in the US Virgin Islands is protected as the Virgin Islands National Park."
+  },
+  {
+   "id": "anguilla",
+   "name": "Anguilla",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Anguilla is a long, thin, flat coral island whose name is generally said to come from the word for eel."
+  },
+  {
+   "id": "montserrat",
+   "name": "Montserrat",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Montserrat is called the Emerald Isle of the Caribbean, and its Soufrière Hills volcano buried the capital, Plymouth, in the 1990s."
+  },
+  {
+   "id": "nevis",
+   "name": "Nevis",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Nevis is a round volcanic island whose peak is often wreathed in cloud, and Alexander Hamilton was born there."
+  },
+  {
+   "id": "saba",
+   "name": "Saba",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Saba is a tiny Dutch island that is the top of a single volcano, Mount Scenery, the highest point in the Kingdom of the Netherlands."
+  },
+  {
+   "id": "sint-eustatius",
+   "name": "Sint Eustatius",
+   "aliases": [
+    "Statia",
+    "St Eustatius"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Sint Eustatius, known as Statia, was a busy trading port in the eighteenth century and is dominated by the Quill volcano."
+  },
+  {
+   "id": "saint-barthelemy",
+   "name": "Saint Barthélemy",
+   "aliases": [
+    "St Barts",
+    "St Barth",
+    "Saint Barthelemy",
+    "Saint Barths"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Saint Barthélemy is a small French island that belonged to Sweden from 1784 to 1878."
+  },
+  {
+   "id": "bequia",
+   "name": "Bequia",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Bequia is the largest of the Grenadines that belong to Saint Vincent and the Grenadines and is known for traditional wooden boat-building."
+  },
+  {
+   "id": "mustique",
+   "name": "Mustique",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Mustique is a small privately owned island in the Grenadines that is popular with celebrities."
+  },
+  {
+   "id": "carriacou",
+   "name": "Carriacou",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Carriacou is the largest of the Grenadine islands and is known for its boat-building tradition."
+  },
+  {
+   "id": "virgin-gorda",
+   "name": "Virgin Gorda",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Virgin Gorda is home to the Baths, a beach of giant granite boulders that form sea-filled grottoes."
+  },
+  {
+   "id": "jost-van-dyke",
+   "name": "Jost Van Dyke",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Jost Van Dyke is a small British Virgin Island famed for its beach bars, such as the Soggy Dollar Bar."
+  },
+  {
+   "id": "anegada",
+   "name": "Anegada",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Anegada is a flat coral island, unlike the other volcanic British Virgin Islands, and is ringed by Horseshoe Reef, where many ships have wrecked."
+  },
+  {
+   "id": "barbuda",
+   "name": "Barbuda",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Barbuda is the smaller island of Antigua and Barbuda and has a large frigatebird colony at Codrington Lagoon."
+  },
+  {
+   "id": "vieques",
+   "name": "Vieques",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Vieques, off Puerto Rico, is home to Mosquito Bay, whose water glows with bioluminescent plankton."
+  },
+  {
+   "id": "culebra",
+   "name": "Culebra",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Culebra is a small Puerto Rican island with Flamenco Beach and a national wildlife refuge."
+  },
+  {
+   "id": "mona-island",
+   "name": "Mona Island",
+   "aliases": [
+    "Isla de Mona"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Mona Island lies in the Mona Passage between Puerto Rico and Hispaniola and is a nature reserve with giant Mona iguanas."
+  },
+  {
+   "id": "isla-de-la-juventud",
+   "name": "Isla de la Juventud",
+   "aliases": [
+    "Isle of Pines",
+    "Isle of Youth"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Isla de la Juventud is Cuba's largest offshore island and was once called the Isle of Pines."
+  },
+  {
+   "id": "san-andres",
+   "name": "San Andrés",
+   "aliases": [
+    "San Andres",
+    "San Andres Island"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "San Andrés is a Colombian island that lies far closer to Nicaragua than to the Colombian mainland."
+  },
+  {
+   "id": "providencia",
+   "name": "Providencia",
+   "aliases": [
+    "Old Providence",
+    "Providencia Island"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Providencia is a small volcanic Colombian island in the western Caribbean that was once used as a base by the pirate Henry Morgan."
+  },
+  {
+   "id": "utila",
+   "name": "Utila",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Utila is one of Honduras's Bay Islands and is a popular place to learn to dive, with occasional whale shark sightings."
+  },
+  {
+   "id": "guanaja",
+   "name": "Guanaja",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Guanaja is the easternmost of Honduras's Bay Islands and was visited by Christopher Columbus in 1502."
+  },
+  {
+   "id": "little-cayman",
+   "name": "Little Cayman",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Little Cayman is the smallest of the three Cayman Islands and has very few residents."
+  },
+  {
+   "id": "cayman-brac",
+   "name": "Cayman Brac",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Cayman Brac is named after its bluff, which rises about 43 metres, as 'brac' is the Gaelic word for bluff."
+  },
+  {
+   "id": "union-island",
+   "name": "Union Island",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Union Island is one of the Grenadines and a hub for sailors, with its main port at Clifton."
+  },
+  {
+   "id": "mayreau",
+   "name": "Mayreau",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Mayreau is a tiny Grenadine island with no airport and only a few hundred residents."
+  },
+  {
+   "id": "marie-galante",
+   "name": "Marie-Galante",
+   "aliases": [
+    "Marie Galante"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Marie-Galante is a round island of Guadeloupe that was once covered in sugar mills and is known for its rum."
+  },
+  {
+   "id": "la-desirade",
+   "name": "La Désirade",
+   "aliases": [
+    "La Desirade",
+    "Deseada"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "La Désirade, a dry narrow island east of Guadeloupe, was the first land Columbus sighted on his second voyage in 1493."
+  },
+  {
+   "id": "les-saintes",
+   "name": "Les Saintes",
+   "aliases": [
+    "The Saints",
+    "Terre-de-Haut",
+    "Iles des Saintes"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Les Saintes are a cluster of small islands south of Guadeloupe, where the Battle of the Saintes was fought in 1782."
+  },
+  {
+   "id": "navassa-island",
+   "name": "Navassa Island",
+   "aliases": [
+    "Navassa"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Navassa Island is an uninhabited Caribbean island between Jamaica and Haiti that is administered by the United States and claimed by Haiti."
+  },
+  {
+   "id": "madagascar",
+   "name": "Madagascar",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Madagascar is the fourth-largest island in the world, and every species of lemur lives only there."
+  },
+  {
+   "id": "sri-lanka",
+   "name": "Sri Lanka",
+   "aliases": [
+    "Ceylon"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Sri Lanka is a teardrop-shaped island off the southern tip of India, separated from it by the Palk Strait."
+  },
+  {
+   "id": "mauritius",
+   "name": "Mauritius",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Mauritius was the only home of the dodo, a flightless bird that was extinct by the late seventeenth century."
+  },
+  {
+   "id": "bali",
+   "name": "Bali",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Bali is a mainly Hindu island in Indonesia, a country with a Muslim majority, and lies just east of Java."
+  },
+  {
+   "id": "maldives",
+   "name": "Maldives",
+   "aliases": [
+    "Maldive Islands"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Maldives are about a thousand coral islands grouped into atolls, and the country is the lowest-lying on Earth."
+  },
+  {
+   "id": "zanzibar",
+   "name": "Zanzibar",
+   "aliases": [
+    "Unguja"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Zanzibar lies off the coast of Tanzania and was once a centre of the spice and slave trades."
+  },
+  {
+   "id": "reunion",
+   "name": "Réunion",
+   "aliases": [
+    "La Réunion",
+    "Reunion Island",
+    "Reunion"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Réunion is a French island whose volcano, the Piton de la Fournaise, is one of the most active in the world."
+  },
+  {
+   "id": "java",
+   "name": "Java",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Java is the most populous island in the world and is home to Jakarta, the capital of Indonesia."
+  },
+  {
+   "id": "sumatra",
+   "name": "Sumatra",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Sumatra is the sixth-largest island in the world and is home to wild orangutans, tigers, rhinos and elephants."
+  },
+  {
+   "id": "mahe",
+   "name": "Mahé",
+   "aliases": [
+    "Mahe",
+    "Seychelles"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Mahé is the largest island of the Seychelles and is home to its capital, Victoria."
+  },
+  {
+   "id": "lombok",
+   "name": "Lombok",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Lombok lies just east of Bali across the Lombok Strait and is dominated by the volcano Mount Rinjani."
+  },
+  {
+   "id": "komodo",
+   "name": "Komodo",
+   "aliases": [
+    "Komodo Island"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Komodo is the Indonesian island that gave its name to the Komodo dragon, the largest living lizard."
+  },
+  {
+   "id": "phuket",
+   "name": "Phuket",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Phuket is Thailand's largest island and lies in the Andaman Sea."
+  },
+  {
+   "id": "socotra",
+   "name": "Socotra",
+   "aliases": [
+    "Soqotra"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Socotra lies off the Horn of Africa and more than a third of its plant species grow nowhere else, including the dragon's blood tree."
+  },
+  {
+   "id": "diego-garcia",
+   "name": "Diego Garcia",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Diego Garcia is the largest island of the Chagos Archipelago and hosts a joint United States and British military base."
+  },
+  {
+   "id": "christmas-island",
+   "name": "Christmas Island",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Christmas Island, an Australian territory in the Indian Ocean, is famous for the annual migration of millions of red crabs."
+  },
+  {
+   "id": "langkawi",
+   "name": "Langkawi",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Langkawi is an archipelago of about 100 islands in the Andaman Sea off the north-west coast of Malaysia."
+  },
+  {
+   "id": "penang",
+   "name": "Penang",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Penang is an island off the north-west coast of Malaysia, and its capital, George Town, is a World Heritage Site."
+  },
+  {
+   "id": "andaman-islands",
+   "name": "Andaman Islands",
+   "aliases": [
+    "Andamans",
+    "Andaman and Nicobar Islands"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Andaman Islands are an Indian archipelago in the Bay of Bengal, and on North Sentinel Island people live in isolation from the outside world."
+  },
+  {
+   "id": "praslin",
+   "name": "Praslin",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Praslin in the Seychelles is home to the Vallée de Mai, where the coco de mer, the largest seed in the world, grows."
+  },
+  {
+   "id": "la-digue",
+   "name": "La Digue",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "La Digue in the Seychelles is a small island where bicycles and ox carts are still common, and it is known for its granite boulder beaches."
+  },
+  {
+   "id": "grande-comore",
+   "name": "Grande Comore",
+   "aliases": [
+    "Ngazidja",
+    "Comoros"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Grande Comore is the largest island of the Comoros and is dominated by the active volcano Mount Karthala."
+  },
+  {
+   "id": "mayotte",
+   "name": "Mayotte",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Mayotte is a French island in the Comoros archipelago that is encircled by a large coral lagoon."
+  },
+  {
+   "id": "rodrigues",
+   "name": "Rodrigues",
+   "aliases": [
+    "Rodrigues Island"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Rodrigues is a small volcanic island that is part of Mauritius, about 560 kilometres east of the main island."
+  },
+  {
+   "id": "nosy-be",
+   "name": "Nosy Be",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Nosy Be is an island off north-west Madagascar known for its ylang-ylang perfume plantations."
+  },
+  {
+   "id": "pemba-island",
+   "name": "Pemba Island",
+   "aliases": [
+    "Pemba"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Pemba Island lies north of Zanzibar off the coast of Tanzania and is known for its cloves."
+  },
+  {
+   "id": "lamu",
+   "name": "Lamu",
+   "aliases": [
+    "Lamu Island"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Lamu is a Kenyan island with a World Heritage old Swahili town where there are almost no cars and donkeys carry goods."
+  },
+  {
+   "id": "mafia-island",
+   "name": "Mafia Island",
+   "aliases": [
+    "Mafia"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Mafia Island, off Tanzania, has a marine park where whale sharks gather in season."
+  },
+  {
+   "id": "cocos-islands",
+   "name": "Cocos Islands",
+   "aliases": [
+    "Cocos (Keeling) Islands",
+    "Keeling Islands",
+    "Cocos Keeling Islands"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Cocos (Keeling) Islands are two Australian atolls in the Indian Ocean that Charles Darwin visited in 1836 while developing his ideas on atoll formation."
+  },
+  {
+   "id": "nicobar-islands",
+   "name": "Nicobar Islands",
+   "aliases": [
+    "Nicobars",
+    "Great Nicobar"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Nicobar Islands are an Indian chain lying south of the Andaman Islands, not far from the northern tip of Sumatra."
+  },
+  {
+   "id": "nias",
+   "name": "Nias",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Nias is an Indonesian island off the west coast of Sumatra that is known for its world-class surf breaks."
+  },
+  {
+   "id": "flores",
+   "name": "Flores",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Flores is an Indonesian island where the remains of the small extinct human Homo floresiensis, nicknamed the hobbit, were found."
+  },
+  {
+   "id": "sumba",
+   "name": "Sumba",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Sumba is an Indonesian island known for its megalithic tombs and its hand-woven ikat textiles."
+  },
+  {
+   "id": "kerguelen",
+   "name": "Kerguelen Islands",
+   "aliases": [
+    "Kerguelen",
+    "Desolation Islands",
+    "Îles Kerguelen"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Kerguelen Islands are a remote French sub-Antarctic archipelago in the southern Indian Ocean, sometimes called the Desolation Islands."
+  },
+  {
+   "id": "rottnest-island",
+   "name": "Rottnest Island",
+   "aliases": [
+    "Rottnest",
+    "Wadjemup"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Rottnest Island, off Perth in Western Australia, is home to the quokka, a small marsupial that appears to smile."
+  },
+  {
+   "id": "heard-island",
+   "name": "Heard Island",
+   "aliases": [
+    "Heard",
+    "Heard Island and McDonald Islands"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Heard Island is a glaciated Australian sub-Antarctic island with an active volcano, Big Ben, the highest mountain in Australian territory."
+  },
+  {
+   "id": "crozet-islands",
+   "name": "Crozet Islands",
+   "aliases": [
+    "Crozet",
+    "Îles Crozet"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "The Crozet Islands are a French sub-Antarctic archipelago famed for their huge colonies of king penguins."
+  },
+  {
+   "id": "amsterdam-island",
+   "name": "Amsterdam Island",
+   "aliases": [
+    "Île Amsterdam",
+    "Ile Amsterdam"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Amsterdam Island is a remote French volcanic island in the southern Indian Ocean and the only home of the Amsterdam albatross."
+  },
+  {
+   "id": "marion-island",
+   "name": "Marion Island",
+   "aliases": [
+    "Marion"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Marion Island is a South African sub-Antarctic island with a weather station and large colonies of seabirds and seals."
+  },
+  {
+   "id": "bazaruto",
+   "name": "Bazaruto",
+   "aliases": [
+    "Bazaruto Archipelago"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Bazaruto is an island archipelago off Mozambique that is a national park and a refuge for dugongs."
+  },
+  {
+   "id": "ibo-island",
+   "name": "Ibo Island",
+   "aliases": [
+    "Ibo"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Ibo Island lies in Mozambique's Quirimbas Archipelago and has an old Portuguese fort and a tradition of silverwork."
+  },
+  {
+   "id": "sainte-marie",
+   "name": "Sainte-Marie",
+   "aliases": [
+    "Nosy Boraha",
+    "Île Sainte-Marie",
+    "Ile Sainte-Marie",
+    "Saint Mary's Island"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Sainte-Marie, off eastern Madagascar, was a pirate base in the seventeenth and eighteenth centuries, and humpback whales gather there each year."
+  },
+  {
+   "id": "silhouette-island",
+   "name": "Silhouette Island",
+   "aliases": [
+    "Silhouette"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Silhouette Island is a mountainous island in the Seychelles, most of which is a national park."
+  },
+  {
+   "id": "siberut",
+   "name": "Siberut",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Siberut is the largest of the Mentawai Islands off Sumatra and is home to several primates found nowhere else."
+  },
+  {
+   "id": "simeulue",
+   "name": "Simeulue",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Simeulue is an Indonesian island off Sumatra where the local oral tradition of fleeing to high ground after an earthquake saved many lives in the 2004 tsunami."
+  },
+  {
+   "id": "lakshadweep",
+   "name": "Lakshadweep",
+   "aliases": [
+    "Laccadive Islands"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Lakshadweep is an Indian archipelago of coral islands in the Arabian Sea off the coast of Kerala."
+  },
+  {
+   "id": "masirah-island",
+   "name": "Masirah Island",
+   "aliases": [
+    "Masirah"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Masirah is an Omani island that hosts one of the largest nesting populations of loggerhead turtles in the world."
+  },
+  {
+   "id": "dirk-hartog-island",
+   "name": "Dirk Hartog Island",
+   "aliases": [
+    "Dirk Hartog"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Dirk Hartog Island off Western Australia is where the Dutch captain Dirk Hartog left a pewter plate in 1616, the first known European landing on Australia's west coast."
+  },
+  {
+   "id": "moheli",
+   "name": "Mohéli",
+   "aliases": [
+    "Moheli",
+    "Mwali"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Mohéli is the smallest of the Comoros islands and has a marine park where green turtles nest."
+  },
+  {
+   "id": "anjouan",
+   "name": "Anjouan",
+   "aliases": [
+    "Nzwani"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Anjouan is a volcanic island of the Comoros that is steep and green and is known for growing ylang-ylang."
+  },
+  {
+   "id": "fregate-island",
+   "name": "Frégate Island",
+   "aliases": [
+    "Fregate Island",
+    "Fregate"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Frégate Island in the Seychelles helped to save the Seychelles magpie-robin from extinction."
+  },
+  {
+   "id": "europa-island",
+   "name": "Europa Island",
+   "aliases": [
+    "Europa"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Europa Island is an uninhabited French island in the Mozambique Channel where green turtles come to nest."
+  },
+  {
+   "id": "tromelin-island",
+   "name": "Tromelin Island",
+   "aliases": [
+    "Tromelin"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Tromelin is a tiny, flat island east of Madagascar where enslaved people were abandoned in 1761 and the few survivors were rescued about fifteen years later."
+  },
+  {
+   "id": "sicily",
+   "name": "Sicily",
+   "aliases": [
+    "Sicilia"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Sicily is the largest island in the Mediterranean and is home to Mount Etna, one of the most active volcanoes in the world."
+  },
+  {
+   "id": "crete",
+   "name": "Crete",
+   "aliases": [
+    "Kriti"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Crete is the largest Greek island and the birthplace of the Minoan civilisation."
+  },
+  {
+   "id": "malta",
+   "name": "Malta",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Malta's prehistoric stone temples are older than both Stonehenge and the pyramids of Egypt."
+  },
+  {
+   "id": "cyprus",
+   "name": "Cyprus",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Cyprus is the third-largest island in the Mediterranean and, in Greek myth, the birthplace of the goddess Aphrodite."
+  },
+  {
+   "id": "mallorca",
+   "name": "Mallorca",
+   "aliases": [
+    "Majorca"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Mallorca is the largest of Spain's Balearic Islands, and its Serra de Tramuntana mountains are a World Heritage Site."
+  },
+  {
+   "id": "sardinia",
+   "name": "Sardinia",
+   "aliases": [
+    "Sardegna"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Sardinia is the second-largest island in the Mediterranean and is dotted with prehistoric stone towers called nuraghi."
+  },
+  {
+   "id": "corsica",
+   "name": "Corsica",
+   "aliases": [
+    "Corse"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Corsica is a mountainous French island and the birthplace of Napoleon Bonaparte, who was born in Ajaccio in 1769."
+  },
+  {
+   "id": "ibiza",
+   "name": "Ibiza",
+   "aliases": [
+    "Eivissa"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Ibiza is a Balearic island famed for its clubs, and its old walled town, Dalt Vila, is a World Heritage Site."
+  },
+  {
+   "id": "santorini",
+   "name": "Santorini",
+   "aliases": [
+    "Thira",
+    "Thera"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Santorini is a crescent of islands around a flooded volcanic crater left by a huge eruption in the Bronze Age."
+  },
+  {
+   "id": "mykonos",
+   "name": "Mykonos",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Mykonos is a Cycladic island famous for its whitewashed windmills and lively nightlife."
+  },
+  {
+   "id": "rhodes",
+   "name": "Rhodes",
+   "aliases": [
+    "Rodos"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Rhodes was home to the Colossus of Rhodes, a giant bronze statue counted among the Seven Wonders of the ancient world."
+  },
+  {
+   "id": "corfu",
+   "name": "Corfu",
+   "aliases": [
+    "Kerkyra"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Corfu is a Greek island in the Ionian Sea whose old town is a World Heritage Site and which was long ruled by Venice."
+  },
+  {
+   "id": "menorca",
+   "name": "Menorca",
+   "aliases": [
+    "Minorca"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Menorca is the quieter, easternmost island of the Balearics and is a UNESCO biosphere reserve."
+  },
+  {
+   "id": "elba",
+   "name": "Elba",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Elba is the Italian island where Napoleon was first exiled in 1814."
+  },
+  {
+   "id": "capri",
+   "name": "Capri",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Capri lies off the Bay of Naples and is known for its Blue Grotto, a sea cave lit by an eerie blue glow."
+  },
+  {
+   "id": "gozo",
+   "name": "Gozo",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Gozo is the smaller sister island of Malta and has the Ġgantija temples, built around 3600 BC."
+  },
+  {
+   "id": "zakynthos",
+   "name": "Zakynthos",
+   "aliases": [
+    "Zante"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Zakynthos is a Greek island in the Ionian Sea whose beaches are nesting grounds for loggerhead turtles."
+  },
+  {
+   "id": "kefalonia",
+   "name": "Kefalonia",
+   "aliases": [
+    "Cephalonia",
+    "Kefallinia"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Kefalonia is the largest of the Greek Ionian Islands and the setting of the novel Captain Corelli's Mandolin."
+  },
+  {
+   "id": "naxos",
+   "name": "Naxos",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Naxos is the largest island of the Cyclades and has the Portara, a huge marble doorway left from an unfinished temple."
+  },
+  {
+   "id": "kos",
+   "name": "Kos",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Kos is the Greek island traditionally regarded as the birthplace of Hippocrates, the father of medicine."
+  },
+  {
+   "id": "lesbos",
+   "name": "Lesbos",
+   "aliases": [
+    "Lesvos"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Lesbos is the third-largest Greek island and the birthplace of the ancient poet Sappho."
+  },
+  {
+   "id": "formentera",
+   "name": "Formentera",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Formentera is the smallest inhabited island of the Balearics and is reached by ferry from Ibiza."
+  },
+  {
+   "id": "paros",
+   "name": "Paros",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Paros is a Cycladic island whose fine white marble was used to carve the Venus de Milo."
+  },
+  {
+   "id": "milos",
+   "name": "Milos",
+   "aliases": [
+    "Melos"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Milos is the Greek island where the famous statue of Venus de Milo was found in 1820."
+  },
+  {
+   "id": "hydra",
+   "name": "Hydra",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Hydra is a Greek island in the Saronic Gulf where cars are largely banned and donkeys and boats are the main transport."
+  },
+  {
+   "id": "aegina",
+   "name": "Aegina",
+   "aliases": [
+    "Egina"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Aegina is a Greek island in the Saronic Gulf known for its pistachios and the ancient Temple of Aphaia."
+  },
+  {
+   "id": "patmos",
+   "name": "Patmos",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Patmos is the Greek island where, by tradition, Saint John wrote the Book of Revelation."
+  },
+  {
+   "id": "ithaca",
+   "name": "Ithaca",
+   "aliases": [
+    "Ithaki"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Ithaca is the Ionian island usually identified as the home of Odysseus in Homer's epic."
+  },
+  {
+   "id": "lefkada",
+   "name": "Lefkada",
+   "aliases": [
+    "Lefkas",
+    "Lefkas"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Lefkada is a Greek Ionian island joined to the mainland by a causeway and a short floating bridge."
+  },
+  {
+   "id": "ischia",
+   "name": "Ischia",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Ischia is a volcanic island in the Bay of Naples that is famous for its thermal springs."
+  },
+  {
+   "id": "lampedusa",
+   "name": "Lampedusa",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Lampedusa is Italy's southernmost island and lies closer to Tunisia than to Sicily."
+  },
+  {
+   "id": "pantelleria",
+   "name": "Pantelleria",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Pantelleria is a volcanic island between Sicily and Tunisia known for its sweet wine and its vines trained in sunken hollows."
+  },
+  {
+   "id": "hvar",
+   "name": "Hvar",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Hvar is a Croatian island in the Adriatic Sea known for its lavender fields and sunshine."
+  },
+  {
+   "id": "korcula",
+   "name": "Korčula",
+   "aliases": [
+    "Korcula"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Korčula is a Croatian island whose walled old town is claimed as the birthplace of the explorer Marco Polo."
+  },
+  {
+   "id": "djerba",
+   "name": "Djerba",
+   "aliases": [
+    "Jerba"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Djerba is a Tunisian island joined to the mainland by a causeway and is traditionally identified with Homer's land of the Lotus-eaters."
+  },
+  {
+   "id": "brac",
+   "name": "Brač",
+   "aliases": [
+    "Brac"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Brač is a Croatian island whose white limestone was used in building the White House in Washington."
+  },
+  {
+   "id": "krk",
+   "name": "Krk",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Krk is one of the two largest islands in the Adriatic Sea and is joined to the Croatian mainland by a bridge."
+  },
+  {
+   "id": "vis",
+   "name": "Vis",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Vis was closed to foreign visitors as a Yugoslav military base until 1989."
+  },
+  {
+   "id": "mljet",
+   "name": "Mljet",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Mljet is a Croatian island whose western end is a national park with two saltwater lakes."
+  },
+  {
+   "id": "stromboli",
+   "name": "Stromboli",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Stromboli is a volcanic island of the Aeolian chain whose volcano has erupted almost continuously for centuries."
+  },
+  {
+   "id": "lipari",
+   "name": "Lipari",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Lipari is the largest of the Aeolian Islands off the north coast of Sicily."
+  },
+  {
+   "id": "vulcano",
+   "name": "Vulcano",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Vulcano is an Aeolian island whose name gave us the word volcano."
+  },
+  {
+   "id": "favignana",
+   "name": "Favignana",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Favignana is the largest of the Aegadian Islands off western Sicily and was long known for its tuna fishery."
+  },
+  {
+   "id": "ustica",
+   "name": "Ustica",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Ustica is a volcanic island north of Sicily with Italy's first marine reserve, created in 1986."
+  },
+  {
+   "id": "la-maddalena",
+   "name": "La Maddalena",
+   "aliases": [
+    "Maddalena"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "La Maddalena is the main island of an archipelago national park off the north coast of Sardinia."
+  },
+  {
+   "id": "giglio",
+   "name": "Giglio",
+   "aliases": [
+    "Isola del Giglio"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Giglio is a small Italian island off Tuscany where the cruise ship Costa Concordia capsized in 2012."
+  },
+  {
+   "id": "montecristo",
+   "name": "Montecristo",
+   "aliases": [
+    "Monte Cristo"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Montecristo is a small Italian island that gave its name to Alexandre Dumas's novel The Count of Monte Cristo."
+  },
+  {
+   "id": "ponza",
+   "name": "Ponza",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Ponza is the largest of the Pontine Islands, which lie off the Italian coast between Rome and Naples."
+  },
+  {
+   "id": "thasos",
+   "name": "Thasos",
+   "aliases": [
+    "Thassos"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Thasos is a Greek island in the northern Aegean that was famed in antiquity for its marble and gold."
+  },
+  {
+   "id": "samothrace",
+   "name": "Samothrace",
+   "aliases": [
+    "Samothraki"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Samothrace is the Greek island where the statue known as the Winged Victory was found in 1863."
+  },
+  {
+   "id": "chios",
+   "name": "Chios",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Chios is the only place in the world that produces mastic gum, taken from the resin of a local tree."
+  },
+  {
+   "id": "samos",
+   "name": "Samos",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Samos is the Greek island where the mathematician Pythagoras was born."
+  },
+  {
+   "id": "lemnos",
+   "name": "Lemnos",
+   "aliases": [
+    "Limnos"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Lemnos is a northern Aegean island whose harbour at Moudros was a key Allied base in the Gallipoli campaign."
+  },
+  {
+   "id": "karpathos",
+   "name": "Karpathos",
+   "aliases": [],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Karpathos is a long, rugged Greek island between Crete and Rhodes known for its traditional mountain villages."
+  },
+  {
+   "id": "kastellorizo",
+   "name": "Kastellorizo",
+   "aliases": [
+    "Kastelorizo",
+    "Meis"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Kastellorizo is Greece's easternmost inhabited island and lies just off the Turkish coast."
+  },
+  {
+   "id": "gavdos",
+   "name": "Gavdos",
+   "aliases": [
+    "Gavdo"
+   ],
+   "kind": "place",
+   "group": "islands",
+   "fact": "Gavdos, south of Crete, is the southernmost point of Greece and of Europe."
+  },
+  {
+   "id": "united-states",
+   "name": "United States",
+   "aliases": [
+    "USA",
+    "US",
+    "United States of America",
+    "America",
+    "the States"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "The United States has both Atlantic and Pacific coastlines, and Alaska and Hawaii extend its waters far into the northern and central Pacific."
+  },
+  {
+   "id": "brazil",
+   "name": "Brazil",
+   "aliases": [
+    "Brasil"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Brazil has an Atlantic coastline of roughly 7,500 kilometres, and the mighty Amazon river empties into the ocean there."
+  },
+  {
+   "id": "united-kingdom",
+   "name": "United Kingdom",
+   "aliases": [
+    "UK",
+    "Britain",
+    "Great Britain",
+    "England",
+    "U.K."
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "The United Kingdom is made up of Great Britain, Northern Ireland and many smaller islands, and its western shores face the open Atlantic."
+  },
+  {
+   "id": "spain",
+   "name": "Spain",
+   "aliases": [
+    "España"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Spain has Atlantic coastlines in Galicia and around Cádiz as well as a long Mediterranean coast."
+  },
+  {
+   "id": "portugal",
+   "name": "Portugal",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "The whole of mainland Portugal's coast faces the Atlantic, and its sailors launched the Age of Discovery from there."
+  },
+  {
+   "id": "canada",
+   "name": "Canada",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Canada has coastlines on the Atlantic, Pacific and Arctic oceans, giving it the longest coastline of any country."
+  },
+  {
+   "id": "south-africa",
+   "name": "South Africa",
+   "aliases": [
+    "RSA"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "South Africa has both an Atlantic coast, on the west, and an Indian Ocean coast, on the east, and the two oceans meet near Cape Agulhas."
+  },
+  {
+   "id": "morocco",
+   "name": "Morocco",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Morocco has coasts on both the Atlantic Ocean and the Mediterranean Sea, and sits just across the Strait of Gibraltar from Spain."
+  },
+  {
+   "id": "france",
+   "name": "France",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "France has an Atlantic coast running from Brittany to the Spanish border as well as a Mediterranean coast."
+  },
+  {
+   "id": "argentina",
+   "name": "Argentina",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Argentina's Atlantic coast runs for thousands of kilometres from the Río de la Plata south to Tierra del Fuego."
+  },
+  {
+   "id": "norway",
+   "name": "Norway",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Norway's coast is cut by deep fjords and faces the North Atlantic and the Norwegian Sea."
+  },
+  {
+   "id": "uruguay",
+   "name": "Uruguay",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Uruguay's coast runs from the Río de la Plata estuary out to the open Atlantic at the resort of Punta del Este."
+  },
+  {
+   "id": "nigeria",
+   "name": "Nigeria",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Nigeria's southern coast lies on the Gulf of Guinea, an arm of the Atlantic, where the Niger river builds a huge delta."
+  },
+  {
+   "id": "ghana",
+   "name": "Ghana",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Ghana's Atlantic coast on the Gulf of Guinea is lined with old trading forts, including Cape Coast Castle."
+  },
+  {
+   "id": "senegal",
+   "name": "Senegal",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Senegal's capital, Dakar, sits on the Cap-Vert peninsula, the westernmost point of mainland Africa, on the Atlantic."
+  },
+  {
+   "id": "venezuela",
+   "name": "Venezuela",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Venezuela has a long coast on the Caribbean Sea and the Atlantic, where the Orinoco river forms a vast delta."
+  },
+  {
+   "id": "angola",
+   "name": "Angola",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Angola has a long Atlantic coastline, and its capital, Luanda, is a major port."
+  },
+  {
+   "id": "dominican-republic",
+   "name": "Dominican Republic",
+   "aliases": [
+    "Dominican Rep",
+    "DR"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "The Dominican Republic shares the island of Hispaniola with Haiti and has Atlantic shores in the north and Caribbean shores in the south."
+  },
+  {
+   "id": "haiti",
+   "name": "Haiti",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Haiti occupies the western third of Hispaniola, with coasts on both the Atlantic Ocean and the Caribbean Sea."
+  },
+  {
+   "id": "guyana",
+   "name": "Guyana",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Guyana's low, flat Atlantic coast is where most of its people live, many of them below sea level."
+  },
+  {
+   "id": "suriname",
+   "name": "Suriname",
+   "aliases": [
+    "Surinam"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Suriname lies on South America's Atlantic coast, and the old centre of its capital, Paramaribo, is a World Heritage Site."
+  },
+  {
+   "id": "mauritania",
+   "name": "Mauritania",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Mauritania's Atlantic coast includes the Banc d'Arguin National Park, where millions of migratory birds spend the winter."
+  },
+  {
+   "id": "gambia",
+   "name": "Gambia",
+   "aliases": [
+    "The Gambia"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "The Gambia is a narrow country that follows the Gambia River inland from a short Atlantic coast."
+  },
+  {
+   "id": "guinea",
+   "name": "Guinea",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Guinea's capital, Conakry, sits on the Atlantic coast, and the Niger, Senegal and Gambia rivers all rise in its highlands."
+  },
+  {
+   "id": "sierra-leone",
+   "name": "Sierra Leone",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Sierra Leone's capital, Freetown, stands on a large natural harbour on the Atlantic coast."
+  },
+  {
+   "id": "liberia",
+   "name": "Liberia",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Liberia's capital, Monrovia, is an Atlantic port named after the US president James Monroe."
+  },
+  {
+   "id": "cameroon",
+   "name": "Cameroon",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Cameroon's Atlantic coast lies at the corner of the Gulf of Guinea, close to the volcano Mount Cameroon."
+  },
+  {
+   "id": "gabon",
+   "name": "Gabon",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Gabon's Atlantic coast includes beaches where forest elephants and hippos sometimes walk beside the surf."
+  },
+  {
+   "id": "ivory-coast",
+   "name": "Ivory Coast",
+   "aliases": [
+    "Côte d'Ivoire",
+    "Cote d'Ivoire"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Ivory Coast has a coast on the Gulf of Guinea, where Abidjan is one of West Africa's major ports."
+  },
+  {
+   "id": "trinidad-and-tobago",
+   "name": "Trinidad and Tobago",
+   "aliases": [
+    "Trinidad & Tobago"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Trinidad and Tobago is a twin-island nation whose eastern shores face the open Atlantic, only a few kilometres off Venezuela."
+  },
+  {
+   "id": "namibia",
+   "name": "Namibia",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Namibia's Atlantic coast is the Skeleton Coast, where the Namib Desert meets the sea."
+  },
+  {
+   "id": "togo",
+   "name": "Togo",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Togo's coast on the Gulf of Guinea is only about 50 kilometres long."
+  },
+  {
+   "id": "benin",
+   "name": "Benin",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Benin has roughly 120 kilometres of coastline on the Gulf of Guinea."
+  },
+  {
+   "id": "equatorial-guinea",
+   "name": "Equatorial Guinea",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Equatorial Guinea has a mainland coast on the Atlantic and includes the island of Bioko in the Gulf of Guinea."
+  },
+  {
+   "id": "republic-of-the-congo",
+   "name": "Republic of the Congo",
+   "aliases": [
+    "Congo-Brazzaville",
+    "Congo Republic",
+    "Congo"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "The Republic of the Congo has a short Atlantic coast around Pointe-Noire, its second city and main port."
+  },
+  {
+   "id": "guinea-bissau",
+   "name": "Guinea-Bissau",
+   "aliases": [
+    "Guinea Bissau"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Guinea-Bissau's Atlantic coast includes the Bijagós Archipelago, which has more than 80 islands."
+  },
+  {
+   "id": "antigua-and-barbuda",
+   "name": "Antigua and Barbuda",
+   "aliases": [
+    "Antigua & Barbuda"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Antigua and Barbuda is a twin-island nation lying where the Atlantic Ocean meets the Caribbean Sea."
+  },
+  {
+   "id": "democratic-republic-of-the-congo",
+   "name": "Democratic Republic of the Congo",
+   "aliases": [
+    "DRC",
+    "DR Congo",
+    "Congo-Kinshasa",
+    "Zaire"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "The Democratic Republic of the Congo has only about 37 kilometres of Atlantic coast, at the mouth of the Congo River."
+  },
+  {
+   "id": "china",
+   "name": "China",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "China's eastern coast faces the Pacific through the Yellow, East China and South China seas."
+  },
+  {
+   "id": "australia",
+   "name": "Australia",
+   "aliases": [
+    "Oz"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Australia has coastlines on both the Pacific and Indian oceans, and the Great Barrier Reef lies off its Pacific coast."
+  },
+  {
+   "id": "mexico",
+   "name": "Mexico",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Mexico has a long Pacific coast, as well as coasts on the Gulf of Mexico and the Caribbean Sea."
+  },
+  {
+   "id": "russia",
+   "name": "Russia",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Russia's Pacific coast includes the port of Vladivostok and the volcanic Kamchatka Peninsula."
+  },
+  {
+   "id": "indonesia",
+   "name": "Indonesia",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Indonesia is an archipelago of about 17,000 islands with coasts on both the Pacific and Indian oceans."
+  },
+  {
+   "id": "chile",
+   "name": "Chile",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Chile is a ribbon of land about 4,300 kilometres long that has a Pacific coast along its entire western side."
+  },
+  {
+   "id": "peru",
+   "name": "Peru",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Peru's Pacific coast is washed by the cold Humboldt Current, which feeds one of the world's richest fisheries."
+  },
+  {
+   "id": "colombia",
+   "name": "Colombia",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Colombia is the only South American country with coasts on both the Pacific Ocean and the Caribbean Sea."
+  },
+  {
+   "id": "ecuador",
+   "name": "Ecuador",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Ecuador is named after the equator, which crosses it, and it owns the Galápagos Islands in the Pacific."
+  },
+  {
+   "id": "south-korea",
+   "name": "South Korea",
+   "aliases": [
+    "Republic of Korea",
+    "Korea"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "South Korea has coasts on the Yellow Sea, the Korea Strait and the East Sea, which are all part of the Pacific."
+  },
+  {
+   "id": "vietnam",
+   "name": "Vietnam",
+   "aliases": [
+    "Viet Nam"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Vietnam has an S-shaped coastline of more than 3,000 kilometres on the South China Sea."
+  },
+  {
+   "id": "papua-new-guinea",
+   "name": "Papua New Guinea",
+   "aliases": [
+    "PNG"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Papua New Guinea occupies the eastern half of the island of New Guinea and is bordered by the Pacific, and it has over 800 languages."
+  },
+  {
+   "id": "panama",
+   "name": "Panama",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Panama has coasts on both the Pacific Ocean and the Caribbean Sea, linked by the Panama Canal."
+  },
+  {
+   "id": "costa-rica",
+   "name": "Costa Rica",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Costa Rica has coasts on both the Pacific Ocean and the Caribbean Sea and protects a large share of its land as national parks."
+  },
+  {
+   "id": "north-korea",
+   "name": "North Korea",
+   "aliases": [
+    "DPRK"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "North Korea has a Pacific coastline on the Sea of Japan to the east and the Yellow Sea to the west."
+  },
+  {
+   "id": "taiwan",
+   "name": "Taiwan",
+   "aliases": [
+    "Formosa"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Taiwan is an island off the coast of China, and its eastern shore faces the open Pacific."
+  },
+  {
+   "id": "guatemala",
+   "name": "Guatemala",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Guatemala has a Pacific coast of dark volcanic sand backed by a chain of volcanoes."
+  },
+  {
+   "id": "el-salvador",
+   "name": "El Salvador",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "El Salvador is the only Central American country with no Caribbean coast, so its coastline lies entirely on the Pacific."
+  },
+  {
+   "id": "nicaragua",
+   "name": "Nicaragua",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Nicaragua has coasts on both the Pacific and the Caribbean, and Lake Nicaragua lies close to its Pacific shore."
+  },
+  {
+   "id": "malaysia",
+   "name": "Malaysia",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Malaysia has coasts on the Strait of Malacca and the South China Sea, with the Malaysian part of Borneo facing the Pacific side."
+  },
+  {
+   "id": "micronesia",
+   "name": "Federated States of Micronesia",
+   "aliases": [
+    "Micronesia",
+    "FSM",
+    "Micronesia Federated States"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "The Federated States of Micronesia are more than 600 islands scattered across the western Pacific."
+  },
+  {
+   "id": "brunei",
+   "name": "Brunei",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Brunei is a small sultanate on the island of Borneo with a coast on the South China Sea."
+  },
+  {
+   "id": "niue",
+   "name": "Niue",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Niue is a single raised coral island in the South Pacific and one of the largest of its kind in the world."
+  },
+  {
+   "id": "honduras",
+   "name": "Honduras",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Honduras has a short Pacific coast of about 150 kilometres on the Gulf of Fonseca, though most of its coast faces the Caribbean."
+  },
+  {
+   "id": "india",
+   "name": "India",
+   "aliases": [
+    "Bharat"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "India has a coastline of more than 7,000 kilometres on the Arabian Sea, the Bay of Bengal and the Indian Ocean itself."
+  },
+  {
+   "id": "kenya",
+   "name": "Kenya",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Kenya's Indian Ocean coast includes the old port of Mombasa and the Swahili town of Lamu."
+  },
+  {
+   "id": "thailand",
+   "name": "Thailand",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Thailand has a west coast on the Andaman Sea, which is part of the Indian Ocean, as well as a coast on the Gulf of Thailand."
+  },
+  {
+   "id": "tanzania",
+   "name": "Tanzania",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Tanzania's Indian Ocean coast includes Dar es Salaam and the islands of Zanzibar, Pemba and Mafia."
+  },
+  {
+   "id": "mozambique",
+   "name": "Mozambique",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Mozambique has about 2,500 kilometres of Indian Ocean coastline, one of the longest in Africa."
+  },
+  {
+   "id": "somalia",
+   "name": "Somalia",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Somalia has the longest coastline of mainland Africa, about 3,000 kilometres along the Indian Ocean and the Gulf of Aden."
+  },
+  {
+   "id": "oman",
+   "name": "Oman",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Oman's long coast on the Arabian Sea and the Gulf of Oman includes its capital, Muscat."
+  },
+  {
+   "id": "yemen",
+   "name": "Yemen",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Yemen has coasts on the Red Sea, the Gulf of Aden and the Arabian Sea, and it owns the island of Socotra."
+  },
+  {
+   "id": "pakistan",
+   "name": "Pakistan",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Pakistan has an Arabian Sea coast of about 1,000 kilometres, where the port city of Karachi lies."
+  },
+  {
+   "id": "bangladesh",
+   "name": "Bangladesh",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Bangladesh sits on the Bay of Bengal at the delta of the Ganges, Brahmaputra and Meghna rivers."
+  },
+  {
+   "id": "myanmar",
+   "name": "Myanmar",
+   "aliases": [
+    "Burma"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Myanmar has a long coastline on the Bay of Bengal and the Andaman Sea."
+  },
+  {
+   "id": "seychelles",
+   "name": "Seychelles",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "The Seychelles are an archipelago of about 115 islands in the western Indian Ocean."
+  },
+  {
+   "id": "iran",
+   "name": "Iran",
+   "aliases": [
+    "Persia"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Iran has coasts on the Caspian Sea in the north and on the Persian Gulf and the Gulf of Oman in the south."
+  },
+  {
+   "id": "united-arab-emirates",
+   "name": "United Arab Emirates",
+   "aliases": [
+    "UAE",
+    "Emirates"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "The United Arab Emirates has coasts on the Persian Gulf and the Gulf of Oman, with Dubai and Abu Dhabi on the Gulf shore."
+  },
+  {
+   "id": "saudi-arabia",
+   "name": "Saudi Arabia",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Saudi Arabia has coasts on both the Red Sea and the Persian Gulf."
+  },
+  {
+   "id": "egypt",
+   "name": "Egypt",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Egypt has coasts on both the Mediterranean and the Red Sea, joined by the Suez Canal."
+  },
+  {
+   "id": "sudan",
+   "name": "Sudan",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Sudan's only coast is on the Red Sea, where Port Sudan is its main harbour."
+  },
+  {
+   "id": "eritrea",
+   "name": "Eritrea",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Eritrea has a long Red Sea coast that includes the Dahlak Archipelago."
+  },
+  {
+   "id": "djibouti",
+   "name": "Djibouti",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Djibouti lies on the Gulf of Aden at the mouth of the Red Sea, beside the Bab-el-Mandeb strait."
+  },
+  {
+   "id": "qatar",
+   "name": "Qatar",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Qatar is a peninsula that juts out into the Persian Gulf."
+  },
+  {
+   "id": "bahrain",
+   "name": "Bahrain",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Bahrain is an island nation of more than 30 islands in the Persian Gulf."
+  },
+  {
+   "id": "kuwait",
+   "name": "Kuwait",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Kuwait lies at the head of the Persian Gulf."
+  },
+  {
+   "id": "comoros",
+   "name": "Comoros",
+   "aliases": [
+    "Union of the Comoros"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "The Comoros are a volcanic archipelago in the Mozambique Channel between Madagascar and the African mainland."
+  },
+  {
+   "id": "timor-leste",
+   "name": "Timor-Leste",
+   "aliases": [
+    "East Timor"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Timor-Leste occupies the eastern half of the island of Timor, on the Timor Sea."
+  },
+  {
+   "id": "singapore",
+   "name": "Singapore",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Singapore is an island city-state at the southern tip of the Malay Peninsula beside the Strait of Malacca."
+  },
+  {
+   "id": "jordan",
+   "name": "Jordan",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Jordan's only coast, about 26 kilometres on the Gulf of Aqaba, gives it a port on the Red Sea."
+  },
+  {
+   "id": "israel",
+   "name": "Israel",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Israel has a Red Sea coast at Eilat as well as a Mediterranean coast."
+  },
+  {
+   "id": "iraq",
+   "name": "Iraq",
+   "aliases": [],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Iraq's coast on the Persian Gulf is only about 58 kilometres long, and its main port there is Umm Qasr."
+  },
+  {
+   "id": "saint-kitts-and-nevis",
+   "name": "Saint Kitts and Nevis",
+   "aliases": [
+    "St Kitts and Nevis",
+    "St Kitts & Nevis",
+    "Saint Kitts & Nevis"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Saint Kitts and Nevis is a twin-island nation and the smallest country in the Americas by area."
+  },
+  {
+   "id": "saint-vincent-and-the-grenadines",
+   "name": "Saint Vincent and the Grenadines",
+   "aliases": [
+    "St Vincent and the Grenadines",
+    "St Vincent & the Grenadines"
+   ],
+   "kind": "place",
+   "group": "countries",
+   "fact": "Saint Vincent and the Grenadines is made up of the volcanic main island of Saint Vincent and a chain of small islands to its south."
+  }
+ ],
+ "prompts": [
+  {
+   "id": "australia",
+   "answers": [
+    {
+     "entity": "shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "great-white-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "saltwater-crocodile",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "box-jellyfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "clownfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "dolphin",
+     "tier": "baitball"
+    },
+    {
+     "entity": "whale",
+     "tier": "baitball"
+    },
+    {
+     "entity": "sea-turtle",
+     "tier": "baitball"
+    },
+    {
+     "entity": "blue-ringed-octopus",
+     "tier": "baitball"
+    },
+    {
+     "entity": "tiger-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "whale-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "humpback-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "dugong",
+     "tier": "reef"
+    },
+    {
+     "entity": "green-turtle",
+     "tier": "reef"
+    },
+    {
+     "entity": "manta-ray",
+     "tier": "reef"
+    },
+    {
+     "entity": "stonefish",
+     "tier": "reef"
+    },
+    {
+     "entity": "leafy-sea-dragon",
+     "tier": "reef"
+    },
+    {
+     "entity": "little-penguin",
+     "tier": "reef"
+    },
+    {
+     "entity": "orca",
+     "tier": "reef"
+    },
+    {
+     "entity": "giant-clam",
+     "tier": "reef"
+    },
+    {
+     "entity": "blue-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "hammerhead-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bull-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "port-jackson-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "wobbegong",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-cuttlefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "irukandji-jellyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "australian-sea-lion",
+     "tier": "twilight"
+    },
+    {
+     "entity": "australian-fur-seal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "barramundi",
+     "tier": "twilight"
+    },
+    {
+     "entity": "southern-right-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "crown-of-thorns-starfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "portuguese-man-o-war",
+     "tier": "twilight"
+    },
+    {
+     "entity": "flatback-turtle",
+     "tier": "twilight"
+    },
+    {
+     "entity": "coral-trout",
+     "tier": "twilight"
+    },
+    {
+     "entity": "weedy-sea-dragon",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ruby-sea-dragon",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tasmanian-giant-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "epaulette-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "zebra-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sand-tiger-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ornate-wobbegong",
+     "tier": "midnight"
+    },
+    {
+     "entity": "olive-sea-snake",
+     "tier": "midnight"
+    },
+    {
+     "entity": "greater-blue-ringed-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "southern-bluefin-tuna",
+     "tier": "midnight"
+    },
+    {
+     "entity": "black-marlin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "napoleon-wrasse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "potato-cod",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spanish-dancer",
+     "tier": "midnight"
+    },
+    {
+     "entity": "australian-humpback-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "australian-snubfin-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "eastern-blue-groper",
+     "tier": "midnight"
+    },
+    {
+     "entity": "australian-salmon",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dwarf-minke-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spotted-handfish",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "british-waters",
+   "answers": [
+    {
+     "entity": "seal",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "atlantic-puffin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "crab",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "cod",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "jellyfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "basking-shark",
+     "tier": "baitball"
+    },
+    {
+     "entity": "dolphin",
+     "tier": "baitball"
+    },
+    {
+     "entity": "whale",
+     "tier": "baitball"
+    },
+    {
+     "entity": "lobster",
+     "tier": "baitball"
+    },
+    {
+     "entity": "grey-seal",
+     "tier": "reef"
+    },
+    {
+     "entity": "harbour-seal",
+     "tier": "reef"
+    },
+    {
+     "entity": "harbour-porpoise",
+     "tier": "reef"
+    },
+    {
+     "entity": "bottlenose-dolphin",
+     "tier": "reef"
+    },
+    {
+     "entity": "minke-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "orca",
+     "tier": "reef"
+    },
+    {
+     "entity": "atlantic-salmon",
+     "tier": "reef"
+    },
+    {
+     "entity": "mackerel",
+     "tier": "reef"
+    },
+    {
+     "entity": "lions-mane-jellyfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "edible-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "european-lobster",
+     "tier": "reef"
+    },
+    {
+     "entity": "humpback-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "common-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rissos-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "white-beaked-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "northern-gannet",
+     "tier": "twilight"
+    },
+    {
+     "entity": "common-skate",
+     "tier": "twilight"
+    },
+    {
+     "entity": "thornback-ray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "porbeagle",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blue-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "compass-jellyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "moon-jellyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "leatherback-turtle",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ocean-sunfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "herring",
+     "tier": "twilight"
+    },
+    {
+     "entity": "european-conger",
+     "tier": "twilight"
+    },
+    {
+     "entity": "fin-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sperm-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "long-finned-pilot-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "atlantic-white-sided-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spiny-dogfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "small-spotted-catshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "nursehound",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tope",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ballan-wrasse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cuckoo-wrasse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "long-snouted-seahorse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "short-snouted-seahorse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "snakelocks-anemone",
+     "tier": "midnight"
+    },
+    {
+     "entity": "plumose-anemone",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sea-lemon",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lumpsucker",
+     "tier": "midnight"
+    },
+    {
+     "entity": "weever-fish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "greater-pipefish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ormer",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sea-mouse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ocean-quahog",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "new-zealand",
+   "answers": [
+    {
+     "entity": "penguin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "seal",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "dolphin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "orca",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "hectors-dolphin",
+     "tier": "baitball"
+    },
+    {
+     "entity": "whale",
+     "tier": "baitball"
+    },
+    {
+     "entity": "abalone",
+     "tier": "baitball"
+    },
+    {
+     "entity": "giant-squid",
+     "tier": "baitball"
+    },
+    {
+     "entity": "sperm-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "humpback-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "southern-right-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "blue-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "great-white-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "dusky-dolphin",
+     "tier": "reef"
+    },
+    {
+     "entity": "common-dolphin",
+     "tier": "reef"
+    },
+    {
+     "entity": "yellow-eyed-penguin",
+     "tier": "reef"
+    },
+    {
+     "entity": "little-penguin",
+     "tier": "reef"
+    },
+    {
+     "entity": "new-zealand-sea-lion",
+     "tier": "reef"
+    },
+    {
+     "entity": "new-zealand-fur-seal",
+     "tier": "reef"
+    },
+    {
+     "entity": "green-lipped-mussel",
+     "tier": "reef"
+    },
+    {
+     "entity": "mauis-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bottlenose-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "leopard-seal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mako-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "broadnose-sevengill-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blue-cod",
+     "tier": "twilight"
+    },
+    {
+     "entity": "australasian-snapper",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kina",
+     "tier": "twilight"
+    },
+    {
+     "entity": "australian-salmon",
+     "tier": "twilight"
+    },
+    {
+     "entity": "colossal-squid",
+     "tier": "twilight"
+    },
+    {
+     "entity": "northern-royal-albatross",
+     "tier": "twilight"
+    },
+    {
+     "entity": "australasian-gannet",
+     "tier": "twilight"
+    },
+    {
+     "entity": "spiny-lobster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "orange-roughy",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hoki",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tarakihi",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hapuku",
+     "tier": "midnight"
+    },
+    {
+     "entity": "elephant-fish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "fiordland-crested-penguin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "black-coral",
+     "tier": "midnight"
+    },
+    {
+     "entity": "new-zealand-longfin-eel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "inanga",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hourglass-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "short-tail-stingray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ocean-sunfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tope",
+     "tier": "midnight"
+    },
+    {
+     "entity": "arnouxs-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hectors-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pygmy-right-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sea-pen",
+     "tier": "midnight"
+    },
+    {
+     "entity": "red-cod",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spade-toothed-whale",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "florida",
+   "answers": [
+    {
+     "entity": "shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "manatee",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "dolphin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sea-turtle",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "jellyfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "lionfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "goliath-grouper",
+     "tier": "baitball"
+    },
+    {
+     "entity": "barracuda",
+     "tier": "baitball"
+    },
+    {
+     "entity": "stingray",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bottlenose-dolphin",
+     "tier": "reef"
+    },
+    {
+     "entity": "tiger-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "bull-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "nurse-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "hammerhead-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "loggerhead-turtle",
+     "tier": "reef"
+    },
+    {
+     "entity": "green-turtle",
+     "tier": "reef"
+    },
+    {
+     "entity": "tarpon",
+     "tier": "reef"
+    },
+    {
+     "entity": "mahi-mahi",
+     "tier": "reef"
+    },
+    {
+     "entity": "spotted-eagle-ray",
+     "tier": "reef"
+    },
+    {
+     "entity": "manta-ray",
+     "tier": "reef"
+    },
+    {
+     "entity": "portuguese-man-o-war",
+     "tier": "reef"
+    },
+    {
+     "entity": "great-white-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lemon-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blacktip-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bonnethead",
+     "tier": "twilight"
+    },
+    {
+     "entity": "snook",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bonefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "permit",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sailfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cobia",
+     "tier": "twilight"
+    },
+    {
+     "entity": "queen-angelfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "stone-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "caribbean-spiny-lobster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "north-atlantic-right-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hawksbill-turtle",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kemps-ridley-sea-turtle",
+     "tier": "midnight"
+    },
+    {
+     "entity": "leatherback-turtle",
+     "tier": "midnight"
+    },
+    {
+     "entity": "american-crocodile",
+     "tier": "midnight"
+    },
+    {
+     "entity": "atlantic-spotted-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sandbar-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "atlantic-sharpnose-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hogfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mutton-snapper",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gag-grouper",
+     "tier": "midnight"
+    },
+    {
+     "entity": "florida-pompano",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sheepshead",
+     "tier": "midnight"
+    },
+    {
+     "entity": "stoplight-parrotfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "oyster-toadfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "southern-stingray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cownose-ray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "upside-down-jellyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "caribbean-reef-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "conch",
+     "tier": "midnight"
+    },
+    {
+     "entity": "elkhorn-coral",
+     "tier": "midnight"
+    },
+    {
+     "entity": "swordfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "smalltooth-sawfish",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "hawaii",
+   "answers": [
+    {
+     "entity": "sea-turtle",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "humpback-whale",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "dolphin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "whale",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "hawaiian-monk-seal",
+     "tier": "baitball"
+    },
+    {
+     "entity": "spinner-dolphin",
+     "tier": "baitball"
+    },
+    {
+     "entity": "manta-ray",
+     "tier": "baitball"
+    },
+    {
+     "entity": "picasso-triggerfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "green-turtle",
+     "tier": "reef"
+    },
+    {
+     "entity": "tiger-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "yellow-tang",
+     "tier": "reef"
+    },
+    {
+     "entity": "moorish-idol",
+     "tier": "reef"
+    },
+    {
+     "entity": "mahi-mahi",
+     "tier": "reef"
+    },
+    {
+     "entity": "yellowfin-tuna",
+     "tier": "reef"
+    },
+    {
+     "entity": "day-octopus",
+     "tier": "reef"
+    },
+    {
+     "entity": "hawksbill-turtle",
+     "tier": "reef"
+    },
+    {
+     "entity": "sperm-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "bottlenose-dolphin",
+     "tier": "reef"
+    },
+    {
+     "entity": "blue-marlin",
+     "tier": "reef"
+    },
+    {
+     "entity": "moray-eel",
+     "tier": "reef"
+    },
+    {
+     "entity": "wahoo",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-trevally",
+     "tier": "twilight"
+    },
+    {
+     "entity": "galapagos-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "scalloped-hammerhead",
+     "tier": "twilight"
+    },
+    {
+     "entity": "oceanic-whitetip-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "spotted-eagle-ray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kole-tang",
+     "tier": "twilight"
+    },
+    {
+     "entity": "reef-triggerfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "raccoon-butterflyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "short-finned-pilot-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "false-killer-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "whitetip-reef-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "striped-marlin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "slate-pencil-urchin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "melon-headed-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pygmy-killer-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rough-toothed-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "frasers-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cuviers-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cookiecutter-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bigeye-tuna",
+     "tier": "midnight"
+    },
+    {
+     "entity": "achilles-tang",
+     "tier": "midnight"
+    },
+    {
+     "entity": "convict-tang",
+     "tier": "midnight"
+    },
+    {
+     "entity": "threadfin-butterflyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cleaner-wrasse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "saddle-wrasse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sandbar-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bullethead-parrotfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cone-snail",
+     "tier": "midnight"
+    },
+    {
+     "entity": "limpet",
+     "tier": "midnight"
+    },
+    {
+     "entity": "frogfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hawkfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hawaiian-bobtail-squid",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "japan-waters",
+   "answers": [
+    {
+     "entity": "tuna",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "octopus",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "crab",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "whale",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "japanese-spider-crab",
+     "tier": "baitball"
+    },
+    {
+     "entity": "pacific-bluefin-tuna",
+     "tier": "baitball"
+    },
+    {
+     "entity": "japanese-eel",
+     "tier": "baitball"
+    },
+    {
+     "entity": "firefly-squid",
+     "tier": "baitball"
+    },
+    {
+     "entity": "pufferfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-urchin",
+     "tier": "reef"
+    },
+    {
+     "entity": "salmon",
+     "tier": "reef"
+    },
+    {
+     "entity": "sperm-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "orca",
+     "tier": "reef"
+    },
+    {
+     "entity": "minke-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "humpback-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "whale-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "manta-ray",
+     "tier": "reef"
+    },
+    {
+     "entity": "loggerhead-turtle",
+     "tier": "reef"
+    },
+    {
+     "entity": "giant-pacific-octopus",
+     "tier": "reef"
+    },
+    {
+     "entity": "squid",
+     "tier": "reef"
+    },
+    {
+     "entity": "tiger-puffer",
+     "tier": "twilight"
+    },
+    {
+     "entity": "japanese-flying-squid",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pacific-saury",
+     "tier": "twilight"
+    },
+    {
+     "entity": "japanese-sardine",
+     "tier": "twilight"
+    },
+    {
+     "entity": "japanese-spiny-lobster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kuruma-prawn",
+     "tier": "twilight"
+    },
+    {
+     "entity": "snow-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "oarfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "goblin-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "frilled-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "steller-sea-lion",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bairds-beaked-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hammerhead-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "dugong",
+     "tier": "twilight"
+    },
+    {
+     "entity": "megamouth-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "japanese-anchovy",
+     "tier": "midnight"
+    },
+    {
+     "entity": "japanese-horse-mackerel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "japanese-spanish-mackerel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "olive-flounder",
+     "tier": "midnight"
+    },
+    {
+     "entity": "japanese-sea-bass",
+     "tier": "midnight"
+    },
+    {
+     "entity": "alaska-pollock",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ayu",
+     "tier": "midnight"
+    },
+    {
+     "entity": "japanese-sea-cucumber",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dalls-porpoise",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pacific-white-sided-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rissos-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spotted-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ribbon-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "horsehair-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pacific-oyster",
+     "tier": "midnight"
+    },
+    {
+     "entity": "scallop",
+     "tier": "midnight"
+    },
+    {
+     "entity": "abalone",
+     "tier": "midnight"
+    },
+    {
+     "entity": "green-turtle",
+     "tier": "midnight"
+    },
+    {
+     "entity": "japanese-pygmy-seahorse",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "amazon",
+   "answers": [
+    {
+     "entity": "piranha",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "green-anaconda",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "amazon-river-dolphin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "electric-eel",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "caiman",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "arapaima",
+     "tier": "baitball"
+    },
+    {
+     "entity": "candiru",
+     "tier": "baitball"
+    },
+    {
+     "entity": "capybara",
+     "tier": "baitball"
+    },
+    {
+     "entity": "giant-otter",
+     "tier": "baitball"
+    },
+    {
+     "entity": "black-caiman",
+     "tier": "reef"
+    },
+    {
+     "entity": "amazonian-manatee",
+     "tier": "reef"
+    },
+    {
+     "entity": "red-bellied-piranha",
+     "tier": "reef"
+    },
+    {
+     "entity": "tambaqui",
+     "tier": "reef"
+    },
+    {
+     "entity": "pacu",
+     "tier": "reef"
+    },
+    {
+     "entity": "discus",
+     "tier": "reef"
+    },
+    {
+     "entity": "neon-tetra",
+     "tier": "reef"
+    },
+    {
+     "entity": "cardinal-tetra",
+     "tier": "reef"
+    },
+    {
+     "entity": "oscar",
+     "tier": "reef"
+    },
+    {
+     "entity": "freshwater-angelfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "peacock-bass",
+     "tier": "reef"
+    },
+    {
+     "entity": "arowana",
+     "tier": "reef"
+    },
+    {
+     "entity": "spectacled-caiman",
+     "tier": "twilight"
+    },
+    {
+     "entity": "arrau-turtle",
+     "tier": "twilight"
+    },
+    {
+     "entity": "matamata",
+     "tier": "twilight"
+    },
+    {
+     "entity": "black-piranha",
+     "tier": "twilight"
+    },
+    {
+     "entity": "redtail-catfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "piraiba",
+     "tier": "twilight"
+    },
+    {
+     "entity": "payara",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tiger-shovelnose-catfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ocellate-river-stingray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pleco",
+     "tier": "twilight"
+    },
+    {
+     "entity": "corydoras",
+     "tier": "twilight"
+    },
+    {
+     "entity": "south-american-lungfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "black-ghost-knifefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ember-tetra",
+     "tier": "twilight"
+    },
+    {
+     "entity": "green-neon-tetra",
+     "tier": "midnight"
+    },
+    {
+     "entity": "glowlight-tetra",
+     "tier": "midnight"
+    },
+    {
+     "entity": "otocinclus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bristlenose-pleco",
+     "tier": "midnight"
+    },
+    {
+     "entity": "zebra-pleco",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pygmy-corydoras",
+     "tier": "midnight"
+    },
+    {
+     "entity": "banjo-catfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bolivian-river-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "araguaian-river-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "silver-dollar",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dwarf-pencilfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cichlid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "trahira",
+     "tier": "midnight"
+    },
+    {
+     "entity": "yellow-spotted-river-turtle",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rummy-nose-tetra",
+     "tier": "midnight"
+    },
+    {
+     "entity": "amazon-leaffish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bull-shark",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "africa-great-lakes",
+   "answers": [
+    {
+     "entity": "tilapia",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "catfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "nile-perch",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "cichlid",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "african-tigerfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "african-lungfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "electric-catfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "elephantnose-fish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "goliath-tigerfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "nile-tilapia",
+     "tier": "reef"
+    },
+    {
+     "entity": "mozambique-tilapia",
+     "tier": "reef"
+    },
+    {
+     "entity": "synodontis",
+     "tier": "reef"
+    },
+    {
+     "entity": "upside-down-catfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "mbu-puffer",
+     "tier": "reef"
+    },
+    {
+     "entity": "senegal-bichir",
+     "tier": "reef"
+    },
+    {
+     "entity": "ropefish",
+     "tier": "reef"
+    },
+    {
+     "entity": "freshwater-butterflyfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "killifish",
+     "tier": "reef"
+    },
+    {
+     "entity": "climbing-perch",
+     "tier": "reef"
+    },
+    {
+     "entity": "electric-yellow-cichlid",
+     "tier": "reef"
+    },
+    {
+     "entity": "mbuna",
+     "tier": "reef"
+    },
+    {
+     "entity": "african-sharptooth-catfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bichir",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tropheus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "frontosa",
+     "tier": "twilight"
+    },
+    {
+     "entity": "peacock-cichlid",
+     "tier": "twilight"
+    },
+    {
+     "entity": "yellowfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "vundu",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-mottled-eel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "african-pike",
+     "tier": "twilight"
+    },
+    {
+     "entity": "chambo",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kapenta",
+     "tier": "twilight"
+    },
+    {
+     "entity": "congo-tetra",
+     "tier": "twilight"
+    },
+    {
+     "entity": "marbled-lungfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "julidochromis",
+     "tier": "midnight"
+    },
+    {
+     "entity": "shell-dweller",
+     "tier": "midnight"
+    },
+    {
+     "entity": "african-knifefish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ornate-bichir",
+     "tier": "midnight"
+    },
+    {
+     "entity": "turquoise-killifish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "aba-aba",
+     "tier": "midnight"
+    },
+    {
+     "entity": "african-arowana",
+     "tier": "midnight"
+    },
+    {
+     "entity": "kampango",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dagaa",
+     "tier": "midnight"
+    },
+    {
+     "entity": "fahaka-puffer",
+     "tier": "midnight"
+    },
+    {
+     "entity": "african-moony",
+     "tier": "midnight"
+    },
+    {
+     "entity": "magadi-tilapia",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "caribbean-island",
+   "answers": [
+    {
+     "entity": "jamaica",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "cuba",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "puerto-rico",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "barbados",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "aruba",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "hispaniola",
+     "tier": "baitball"
+    },
+    {
+     "entity": "trinidad",
+     "tier": "baitball"
+    },
+    {
+     "entity": "saint-lucia",
+     "tier": "baitball"
+    },
+    {
+     "entity": "curacao",
+     "tier": "baitball"
+    },
+    {
+     "entity": "antigua",
+     "tier": "reef"
+    },
+    {
+     "entity": "grenada",
+     "tier": "reef"
+    },
+    {
+     "entity": "martinique",
+     "tier": "reef"
+    },
+    {
+     "entity": "guadeloupe",
+     "tier": "reef"
+    },
+    {
+     "entity": "dominica",
+     "tier": "reef"
+    },
+    {
+     "entity": "saint-kitts",
+     "tier": "reef"
+    },
+    {
+     "entity": "saint-vincent",
+     "tier": "reef"
+    },
+    {
+     "entity": "tobago",
+     "tier": "reef"
+    },
+    {
+     "entity": "bonaire",
+     "tier": "reef"
+    },
+    {
+     "entity": "saint-martin",
+     "tier": "reef"
+    },
+    {
+     "entity": "saint-thomas",
+     "tier": "reef"
+    },
+    {
+     "entity": "cayman-islands",
+     "tier": "reef"
+    },
+    {
+     "entity": "cozumel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "roatan",
+     "tier": "twilight"
+    },
+    {
+     "entity": "isla-margarita",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tortola",
+     "tier": "twilight"
+    },
+    {
+     "entity": "saint-croix",
+     "tier": "twilight"
+    },
+    {
+     "entity": "saint-john",
+     "tier": "twilight"
+    },
+    {
+     "entity": "anguilla",
+     "tier": "twilight"
+    },
+    {
+     "entity": "montserrat",
+     "tier": "twilight"
+    },
+    {
+     "entity": "nevis",
+     "tier": "twilight"
+    },
+    {
+     "entity": "saba",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sint-eustatius",
+     "tier": "twilight"
+    },
+    {
+     "entity": "saint-barthelemy",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bequia",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mustique",
+     "tier": "twilight"
+    },
+    {
+     "entity": "carriacou",
+     "tier": "midnight"
+    },
+    {
+     "entity": "virgin-gorda",
+     "tier": "midnight"
+    },
+    {
+     "entity": "jost-van-dyke",
+     "tier": "midnight"
+    },
+    {
+     "entity": "anegada",
+     "tier": "midnight"
+    },
+    {
+     "entity": "barbuda",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vieques",
+     "tier": "midnight"
+    },
+    {
+     "entity": "culebra",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mona-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "isla-de-la-juventud",
+     "tier": "midnight"
+    },
+    {
+     "entity": "san-andres",
+     "tier": "midnight"
+    },
+    {
+     "entity": "providencia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "utila",
+     "tier": "midnight"
+    },
+    {
+     "entity": "guanaja",
+     "tier": "midnight"
+    },
+    {
+     "entity": "little-cayman",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cayman-brac",
+     "tier": "midnight"
+    },
+    {
+     "entity": "union-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mayreau",
+     "tier": "midnight"
+    },
+    {
+     "entity": "marie-galante",
+     "tier": "midnight"
+    },
+    {
+     "entity": "la-desirade",
+     "tier": "midnight"
+    },
+    {
+     "entity": "les-saintes",
+     "tier": "midnight"
+    },
+    {
+     "entity": "navassa-island",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "indian-ocean-island",
+   "answers": [
+    {
+     "entity": "madagascar",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sri-lanka",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mauritius",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "bali",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "maldives",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "zanzibar",
+     "tier": "baitball"
+    },
+    {
+     "entity": "reunion",
+     "tier": "baitball"
+    },
+    {
+     "entity": "java",
+     "tier": "baitball"
+    },
+    {
+     "entity": "sumatra",
+     "tier": "baitball"
+    },
+    {
+     "entity": "mahe",
+     "tier": "reef"
+    },
+    {
+     "entity": "lombok",
+     "tier": "reef"
+    },
+    {
+     "entity": "komodo",
+     "tier": "reef"
+    },
+    {
+     "entity": "phuket",
+     "tier": "reef"
+    },
+    {
+     "entity": "socotra",
+     "tier": "reef"
+    },
+    {
+     "entity": "diego-garcia",
+     "tier": "reef"
+    },
+    {
+     "entity": "christmas-island",
+     "tier": "reef"
+    },
+    {
+     "entity": "langkawi",
+     "tier": "reef"
+    },
+    {
+     "entity": "penang",
+     "tier": "reef"
+    },
+    {
+     "entity": "andaman-islands",
+     "tier": "reef"
+    },
+    {
+     "entity": "praslin",
+     "tier": "reef"
+    },
+    {
+     "entity": "la-digue",
+     "tier": "reef"
+    },
+    {
+     "entity": "grande-comore",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mayotte",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rodrigues",
+     "tier": "twilight"
+    },
+    {
+     "entity": "nosy-be",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pemba-island",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lamu",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mafia-island",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cocos-islands",
+     "tier": "twilight"
+    },
+    {
+     "entity": "nicobar-islands",
+     "tier": "twilight"
+    },
+    {
+     "entity": "nias",
+     "tier": "twilight"
+    },
+    {
+     "entity": "flores",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sumba",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kerguelen",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rottnest-island",
+     "tier": "twilight"
+    },
+    {
+     "entity": "heard-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "crozet-islands",
+     "tier": "midnight"
+    },
+    {
+     "entity": "amsterdam-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "marion-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bazaruto",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ibo-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sainte-marie",
+     "tier": "midnight"
+    },
+    {
+     "entity": "aldabra-atoll",
+     "tier": "midnight"
+    },
+    {
+     "entity": "silhouette-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "siberut",
+     "tier": "midnight"
+    },
+    {
+     "entity": "simeulue",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lakshadweep",
+     "tier": "midnight"
+    },
+    {
+     "entity": "masirah-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dirk-hartog-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "moheli",
+     "tier": "midnight"
+    },
+    {
+     "entity": "anjouan",
+     "tier": "midnight"
+    },
+    {
+     "entity": "fregate-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "europa-island",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tromelin-island",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "mediterranean-island",
+   "answers": [
+    {
+     "entity": "sicily",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "crete",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "malta",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "cyprus",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mallorca",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sardinia",
+     "tier": "baitball"
+    },
+    {
+     "entity": "corsica",
+     "tier": "baitball"
+    },
+    {
+     "entity": "ibiza",
+     "tier": "baitball"
+    },
+    {
+     "entity": "santorini",
+     "tier": "baitball"
+    },
+    {
+     "entity": "mykonos",
+     "tier": "reef"
+    },
+    {
+     "entity": "rhodes",
+     "tier": "reef"
+    },
+    {
+     "entity": "corfu",
+     "tier": "reef"
+    },
+    {
+     "entity": "menorca",
+     "tier": "reef"
+    },
+    {
+     "entity": "elba",
+     "tier": "reef"
+    },
+    {
+     "entity": "capri",
+     "tier": "reef"
+    },
+    {
+     "entity": "gozo",
+     "tier": "reef"
+    },
+    {
+     "entity": "zakynthos",
+     "tier": "reef"
+    },
+    {
+     "entity": "kefalonia",
+     "tier": "reef"
+    },
+    {
+     "entity": "naxos",
+     "tier": "reef"
+    },
+    {
+     "entity": "kos",
+     "tier": "reef"
+    },
+    {
+     "entity": "lesbos",
+     "tier": "reef"
+    },
+    {
+     "entity": "formentera",
+     "tier": "twilight"
+    },
+    {
+     "entity": "paros",
+     "tier": "twilight"
+    },
+    {
+     "entity": "milos",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hydra",
+     "tier": "twilight"
+    },
+    {
+     "entity": "aegina",
+     "tier": "twilight"
+    },
+    {
+     "entity": "patmos",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ithaca",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lefkada",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ischia",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lampedusa",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pantelleria",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hvar",
+     "tier": "twilight"
+    },
+    {
+     "entity": "korcula",
+     "tier": "twilight"
+    },
+    {
+     "entity": "djerba",
+     "tier": "twilight"
+    },
+    {
+     "entity": "brac",
+     "tier": "midnight"
+    },
+    {
+     "entity": "krk",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vis",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mljet",
+     "tier": "midnight"
+    },
+    {
+     "entity": "stromboli",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lipari",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vulcano",
+     "tier": "midnight"
+    },
+    {
+     "entity": "favignana",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ustica",
+     "tier": "midnight"
+    },
+    {
+     "entity": "la-maddalena",
+     "tier": "midnight"
+    },
+    {
+     "entity": "giglio",
+     "tier": "midnight"
+    },
+    {
+     "entity": "montecristo",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ponza",
+     "tier": "midnight"
+    },
+    {
+     "entity": "thasos",
+     "tier": "midnight"
+    },
+    {
+     "entity": "samothrace",
+     "tier": "midnight"
+    },
+    {
+     "entity": "chios",
+     "tier": "midnight"
+    },
+    {
+     "entity": "samos",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lemnos",
+     "tier": "midnight"
+    },
+    {
+     "entity": "karpathos",
+     "tier": "midnight"
+    },
+    {
+     "entity": "kastellorizo",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gavdos",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "atlantic-country",
+   "answers": [
+    {
+     "entity": "united-states",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "brazil",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "united-kingdom",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "spain",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "portugal",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "canada",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "ireland",
+     "tier": "baitball"
+    },
+    {
+     "entity": "iceland",
+     "tier": "baitball"
+    },
+    {
+     "entity": "south-africa",
+     "tier": "baitball"
+    },
+    {
+     "entity": "morocco",
+     "tier": "baitball"
+    },
+    {
+     "entity": "france",
+     "tier": "reef"
+    },
+    {
+     "entity": "argentina",
+     "tier": "reef"
+    },
+    {
+     "entity": "norway",
+     "tier": "reef"
+    },
+    {
+     "entity": "uruguay",
+     "tier": "reef"
+    },
+    {
+     "entity": "nigeria",
+     "tier": "reef"
+    },
+    {
+     "entity": "ghana",
+     "tier": "reef"
+    },
+    {
+     "entity": "senegal",
+     "tier": "reef"
+    },
+    {
+     "entity": "bahamas",
+     "tier": "reef"
+    },
+    {
+     "entity": "cuba",
+     "tier": "reef"
+    },
+    {
+     "entity": "venezuela",
+     "tier": "reef"
+    },
+    {
+     "entity": "angola",
+     "tier": "reef"
+    },
+    {
+     "entity": "cape-verde",
+     "tier": "reef"
+    },
+    {
+     "entity": "dominican-republic",
+     "tier": "twilight"
+    },
+    {
+     "entity": "haiti",
+     "tier": "twilight"
+    },
+    {
+     "entity": "guyana",
+     "tier": "twilight"
+    },
+    {
+     "entity": "suriname",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mauritania",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gambia",
+     "tier": "twilight"
+    },
+    {
+     "entity": "guinea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sierra-leone",
+     "tier": "twilight"
+    },
+    {
+     "entity": "liberia",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cameroon",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gabon",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ivory-coast",
+     "tier": "twilight"
+    },
+    {
+     "entity": "barbados",
+     "tier": "twilight"
+    },
+    {
+     "entity": "trinidad-and-tobago",
+     "tier": "twilight"
+    },
+    {
+     "entity": "namibia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "togo",
+     "tier": "midnight"
+    },
+    {
+     "entity": "benin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "equatorial-guinea",
+     "tier": "midnight"
+    },
+    {
+     "entity": "republic-of-the-congo",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sao-tome-and-principe",
+     "tier": "midnight"
+    },
+    {
+     "entity": "guinea-bissau",
+     "tier": "midnight"
+    },
+    {
+     "entity": "antigua-and-barbuda",
+     "tier": "midnight"
+    },
+    {
+     "entity": "democratic-republic-of-the-congo",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "pacific-country",
+   "answers": [
+    {
+     "entity": "united-states",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "japan",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "china",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "australia",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "canada",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mexico",
+     "tier": "baitball"
+    },
+    {
+     "entity": "russia",
+     "tier": "baitball"
+    },
+    {
+     "entity": "philippines",
+     "tier": "baitball"
+    },
+    {
+     "entity": "indonesia",
+     "tier": "baitball"
+    },
+    {
+     "entity": "new-zealand",
+     "tier": "reef"
+    },
+    {
+     "entity": "chile",
+     "tier": "reef"
+    },
+    {
+     "entity": "peru",
+     "tier": "reef"
+    },
+    {
+     "entity": "colombia",
+     "tier": "reef"
+    },
+    {
+     "entity": "ecuador",
+     "tier": "reef"
+    },
+    {
+     "entity": "south-korea",
+     "tier": "reef"
+    },
+    {
+     "entity": "vietnam",
+     "tier": "reef"
+    },
+    {
+     "entity": "papua-new-guinea",
+     "tier": "reef"
+    },
+    {
+     "entity": "fiji",
+     "tier": "reef"
+    },
+    {
+     "entity": "panama",
+     "tier": "reef"
+    },
+    {
+     "entity": "costa-rica",
+     "tier": "reef"
+    },
+    {
+     "entity": "north-korea",
+     "tier": "reef"
+    },
+    {
+     "entity": "taiwan",
+     "tier": "twilight"
+    },
+    {
+     "entity": "guatemala",
+     "tier": "twilight"
+    },
+    {
+     "entity": "el-salvador",
+     "tier": "twilight"
+    },
+    {
+     "entity": "nicaragua",
+     "tier": "twilight"
+    },
+    {
+     "entity": "malaysia",
+     "tier": "twilight"
+    },
+    {
+     "entity": "solomon-islands",
+     "tier": "twilight"
+    },
+    {
+     "entity": "vanuatu",
+     "tier": "twilight"
+    },
+    {
+     "entity": "samoa",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tonga",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kiribati",
+     "tier": "twilight"
+    },
+    {
+     "entity": "palau",
+     "tier": "midnight"
+    },
+    {
+     "entity": "marshall-islands",
+     "tier": "midnight"
+    },
+    {
+     "entity": "micronesia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tuvalu",
+     "tier": "midnight"
+    },
+    {
+     "entity": "nauru",
+     "tier": "midnight"
+    },
+    {
+     "entity": "brunei",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cook-islands",
+     "tier": "midnight"
+    },
+    {
+     "entity": "niue",
+     "tier": "midnight"
+    },
+    {
+     "entity": "honduras",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "indian-ocean-country",
+   "answers": [
+    {
+     "entity": "india",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "australia",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "south-africa",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sri-lanka",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "madagascar",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "indonesia",
+     "tier": "baitball"
+    },
+    {
+     "entity": "maldives",
+     "tier": "baitball"
+    },
+    {
+     "entity": "kenya",
+     "tier": "baitball"
+    },
+    {
+     "entity": "thailand",
+     "tier": "baitball"
+    },
+    {
+     "entity": "tanzania",
+     "tier": "reef"
+    },
+    {
+     "entity": "mozambique",
+     "tier": "reef"
+    },
+    {
+     "entity": "somalia",
+     "tier": "reef"
+    },
+    {
+     "entity": "oman",
+     "tier": "reef"
+    },
+    {
+     "entity": "yemen",
+     "tier": "reef"
+    },
+    {
+     "entity": "pakistan",
+     "tier": "reef"
+    },
+    {
+     "entity": "bangladesh",
+     "tier": "reef"
+    },
+    {
+     "entity": "myanmar",
+     "tier": "reef"
+    },
+    {
+     "entity": "malaysia",
+     "tier": "reef"
+    },
+    {
+     "entity": "mauritius",
+     "tier": "reef"
+    },
+    {
+     "entity": "seychelles",
+     "tier": "reef"
+    },
+    {
+     "entity": "iran",
+     "tier": "reef"
+    },
+    {
+     "entity": "united-arab-emirates",
+     "tier": "twilight"
+    },
+    {
+     "entity": "saudi-arabia",
+     "tier": "twilight"
+    },
+    {
+     "entity": "egypt",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sudan",
+     "tier": "twilight"
+    },
+    {
+     "entity": "eritrea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "djibouti",
+     "tier": "twilight"
+    },
+    {
+     "entity": "qatar",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bahrain",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kuwait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "comoros",
+     "tier": "twilight"
+    },
+    {
+     "entity": "timor-leste",
+     "tier": "midnight"
+    },
+    {
+     "entity": "singapore",
+     "tier": "midnight"
+    },
+    {
+     "entity": "jordan",
+     "tier": "midnight"
+    },
+    {
+     "entity": "israel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "iraq",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "island-nation",
+   "answers": [
+    {
+     "entity": "japan",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "united-kingdom",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "new-zealand",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "philippines",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "iceland",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "cuba",
+     "tier": "baitball"
+    },
+    {
+     "entity": "jamaica",
+     "tier": "baitball"
+    },
+    {
+     "entity": "madagascar",
+     "tier": "baitball"
+    },
+    {
+     "entity": "indonesia",
+     "tier": "baitball"
+    },
+    {
+     "entity": "ireland",
+     "tier": "reef"
+    },
+    {
+     "entity": "sri-lanka",
+     "tier": "reef"
+    },
+    {
+     "entity": "fiji",
+     "tier": "reef"
+    },
+    {
+     "entity": "bahamas",
+     "tier": "reef"
+    },
+    {
+     "entity": "maldives",
+     "tier": "reef"
+    },
+    {
+     "entity": "malta",
+     "tier": "reef"
+    },
+    {
+     "entity": "cyprus",
+     "tier": "reef"
+    },
+    {
+     "entity": "singapore",
+     "tier": "reef"
+    },
+    {
+     "entity": "haiti",
+     "tier": "reef"
+    },
+    {
+     "entity": "dominican-republic",
+     "tier": "reef"
+    },
+    {
+     "entity": "papua-new-guinea",
+     "tier": "reef"
+    },
+    {
+     "entity": "trinidad-and-tobago",
+     "tier": "reef"
+    },
+    {
+     "entity": "barbados",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mauritius",
+     "tier": "twilight"
+    },
+    {
+     "entity": "seychelles",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bahrain",
+     "tier": "twilight"
+    },
+    {
+     "entity": "samoa",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tonga",
+     "tier": "twilight"
+    },
+    {
+     "entity": "vanuatu",
+     "tier": "twilight"
+    },
+    {
+     "entity": "solomon-islands",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kiribati",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tuvalu",
+     "tier": "twilight"
+    },
+    {
+     "entity": "taiwan",
+     "tier": "twilight"
+    },
+    {
+     "entity": "timor-leste",
+     "tier": "twilight"
+    },
+    {
+     "entity": "saint-lucia",
+     "tier": "twilight"
+    },
+    {
+     "entity": "grenada",
+     "tier": "twilight"
+    },
+    {
+     "entity": "marshall-islands",
+     "tier": "midnight"
+    },
+    {
+     "entity": "micronesia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "antigua-and-barbuda",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dominica",
+     "tier": "midnight"
+    },
+    {
+     "entity": "saint-kitts-and-nevis",
+     "tier": "midnight"
+    },
+    {
+     "entity": "saint-vincent-and-the-grenadines",
+     "tier": "midnight"
+    },
+    {
+     "entity": "comoros",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cape-verde",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sao-tome-and-principe",
+     "tier": "midnight"
+    },
+    {
+     "entity": "palau",
+     "tier": "midnight"
+    },
+    {
+     "entity": "nauru",
+     "tier": "hadal"
+    }
+   ]
+  }
+ ]
+}

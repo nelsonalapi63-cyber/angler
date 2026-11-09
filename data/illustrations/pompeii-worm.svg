@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<path d="M150 236 L166 70 Q170 40 200 40 Q232 40 236 70 L240 236Z" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="176" y="24" width="48" height="22" rx="8" fill="#0C2A3A" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="155.2,186.3 69.2,140.3 58.8,159.7 144.8,205.7" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="161.9,140.7 77.9,86.7 66.1,105.3 150.1,159.3" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="170.8,97.3 98.8,41.3 85.2,58.7 157.2,114.7" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="60" cy="146" r="18" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="66" cy="134" r="12" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="52" cy="128" r="10" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="68" cy="92" r="18" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="76" cy="80" r="12" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="60" cy="82" r="10" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="90" cy="46" r="18" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="98" cy="34" r="12" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="82" cy="32" r="10" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="160" cy="190" r="7" fill="#EAF4F7"/>
+<circle cx="166" cy="146" r="7" fill="#EAF4F7"/>
+<circle cx="172" cy="104" r="7" fill="#EAF4F7"/>
+<circle cx="214" cy="214" r="5" fill="#FFD24A"/>
+<circle cx="194" cy="190" r="4" fill="#FFD24A"/>
+<circle cx="220" cy="176" r="4" fill="#FFD24A"/>
+</svg>

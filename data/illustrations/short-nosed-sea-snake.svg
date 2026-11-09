@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<path d="M16 238 L16 214 L40 200 L56 220 L84 196 L108 224 L140 200 L170 220 L200 202 L240 214 L240 238Z" fill="#F26A4B"/>
+<path d="M32 124 C58 80 94 84 118 114 C142 144 182 146 206 100 L222 108 C196 168 140 172 106 138 C86 116 64 114 44 146Z" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="222" cy="102" rx="12" ry="9" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="224" cy="100" r="3" fill="#0C2A3A"/><circle cx="225.5" cy="98.5" r="1.6" fill="#EAF4F7"/>
+<polygon points="32,124 18,140 44,146" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="86" y1="100" x2="92" y2="128" stroke="#0C2A3A" stroke-width="4" stroke-linecap="round"/>
+<line x1="130" y1="130" x2="128" y2="156" stroke="#0C2A3A" stroke-width="4" stroke-linecap="round"/>
+<line x1="168" y1="146" x2="172" y2="122" stroke="#0C2A3A" stroke-width="4" stroke-linecap="round"/>
+<path d="M30 190 C56 150 92 152 116 182 C140 212 182 212 208 168 L224 176 C198 232 140 236 106 204 C86 184 62 182 44 214Z" fill="#2BD1C6" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="222" cy="170" rx="12" ry="9" fill="#2BD1C6" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="224" cy="168" r="3" fill="#0C2A3A"/><circle cx="225.5" cy="166.5" r="1.6" fill="#EAF4F7"/>
+<polygon points="30,190 18,206 44,214" fill="#2BD1C6" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="86" y1="166" x2="92" y2="192" stroke="#0C2A3A" stroke-width="4" stroke-linecap="round"/>
+<line x1="130" y1="198" x2="128" y2="222" stroke="#0C2A3A" stroke-width="4" stroke-linecap="round"/>
+<line x1="168" y1="212" x2="172" y2="186" stroke="#0C2A3A" stroke-width="4" stroke-linecap="round"/>
+</svg>

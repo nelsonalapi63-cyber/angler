@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<path d="M104 70 L112 28 C124 14 132 14 144 28 L152 70Z" fill="#2BD1C6" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M110 64 L128 18 L142 62Z" fill="#2BD1C6"/>
+<polygon points="124,26 134,26 130,12" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M88 90 L24 56 L18 82 L82 130Z" fill="#2BD1C6" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M168 90 L232 56 L238 82 L174 130Z" fill="#2BD1C6" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M92 190 L60 232 L82 238 L112 204Z" fill="#2BD1C6" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M164 190 L196 232 L174 238 L144 204Z" fill="#2BD1C6" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M128 64 C180 64 200 110 196 150 C192 196 160 214 128 214 C96 214 64 196 60 150 C56 110 76 64 128 64Z" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="128,76 150,98 128,122 106,98" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="98,106 118,128 100,152 82,128" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="158,106 174,128 156,152 138,128" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="128,134 148,156 128,184 108,156" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="84,160 100,160 108,186 92,194" fill="#F26A4B"/>
+<polygon points="172,160 156,160 148,186 164,194" fill="#F26A4B"/>
+<circle cx="120" cy="30" r="0.1" fill="#0C2A3A"/><circle cx="119.97" cy="29.97" r="0.034999999999999996" fill="#EAF4F7"/>
+</svg>

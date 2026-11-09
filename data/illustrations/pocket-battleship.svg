@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<path d="M16 168 L240 168 L222 204 L34 204Z" fill="#3C6AE0" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="30" y="150" width="196" height="18" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="84" y="126" width="64" height="24" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="104" y="98" width="28" height="28" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="112" y="70" width="12" height="28" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="96" y="92" width="44" height="8" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="60" y="128" width="20" height="22" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="150" y="128" width="20" height="22" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="174" y="134" width="20" height="16" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="60" y1="134" x2="12" y2="126" stroke="#86D9EC" stroke-width="6" stroke-linecap="round"/>
+<line x1="60" y1="142" x2="12" y2="142" stroke="#86D9EC" stroke-width="6" stroke-linecap="round"/>
+
+<line x1="172" y1="136" x2="224" y2="126" stroke="#86D9EC" stroke-width="6" stroke-linecap="round"/>
+<line x1="172" y1="144" x2="224" y2="138" stroke="#86D9EC" stroke-width="6" stroke-linecap="round"/>
+
+<circle cx="70" cy="186" r="4" fill="#EAF4F7"/>
+<circle cx="100" cy="186" r="4" fill="#EAF4F7"/>
+<circle cx="130" cy="186" r="4" fill="#EAF4F7"/>
+<circle cx="160" cy="186" r="4" fill="#EAF4F7"/>
+<path d="M16 204 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 L240 236 L16 236Z" fill="#86D9EC"/>
+<path d="M16 220 q14 -5 28 0 q14 5 28 0 q14 -5 28 0 q14 5 28 0 q14 -5 28 0 q14 5 28 0 q14 -5 28 0 q14 5 28 0 L240 236 L16 236Z" fill="#3C6AE0"/>
+</svg>

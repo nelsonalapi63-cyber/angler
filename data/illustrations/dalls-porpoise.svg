@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<path d="M186 102 Q200 66 224 56 Q218 86 226 108Z" fill="#86D9EC" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M150 98 L168 64 L188 102Z" fill="#3C6AE0" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M40 144 Q40 104 94 98 Q150 92 190 112 Q216 126 224 142 L240 122 L238 156 L222 166 Q192 176 150 176 Q90 178 54 168 Q40 160 40 144Z" fill="#3C6AE0" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M98 150 Q140 128 196 138 Q214 150 190 168 Q140 176 98 164Z" fill="#EAF4F7"/>
+<path d="M96 156 Q92 186 116 194 Q118 172 126 160Z" fill="#3C6AE0" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="60" cy="128" r="4" fill="#0C2A3A"/><circle cx="61.5" cy="126.5" r="1.6" fill="#EAF4F7"/>
+<line x1="42" y1="146" x2="56" y2="150" stroke="#0C2A3A" stroke-width="4" stroke-linecap="round"/>
+<circle cx="210" cy="70" r="4" fill="#EAF4F7"/>
+<circle cx="230" cy="86" r="3" fill="#EAF4F7"/>
+<circle cx="196" cy="50" r="3" fill="#EAF4F7"/>
+<path d="M16 214 Q40 202 64 214 T112 214 T160 214 T208 214 T240 214 L240 238 L16 238 Z" fill="#2BD1C6"/>
+</svg>

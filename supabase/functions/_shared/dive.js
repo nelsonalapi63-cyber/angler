@@ -1,4 +1,4 @@
-/* FATHOM — shared dive logic.
+/* ANGLER — shared dive logic.
  * One source file used by the browser (plain <script>), Node tests (require)
  * and the Supabase Edge Function (import for side effect, read globalThis.FathomDive).
  */
@@ -14,7 +14,9 @@
   const SECONDS_PER_PROMPT = 25;
   const CHALLENGER_DEEP_M = 10935;          // bottom of the Mariana Trench, metres
   const TIMEZONE = 'America/New_York';      // the day rolls over at midnight Eastern
-  const LAUNCH_DATE = '2026-11-02';         // FATHOM #1
+  const BRAND = 'ANGLER';                   // the game's name — change here and in index.html/manifest/legal pages
+  const TAGLINE = 'Seven ocean questions. The rarer your answer, the deeper you dive.';
+  const LAUNCH_DATE = '2026-11-02';         // ANGLER #1
   const FUZZY_SHORT_MAX_LEN = 6;            // inputs this long or shorter allow 1 edit
   const FUZZY_SHORT_DIST = 1;
   const FUZZY_LONG_DIST = 2;                // longer inputs allow 2 edits
@@ -427,7 +429,7 @@
   // ---------------------------------------------------------------- share text
   function formatMeters(n) { return Math.round(n).toLocaleString('en-US'); }
   function shareText(opts) {
-    const bits = [opts.label ? 'FATHOM ' + opts.label : 'FATHOM #' + opts.number, formatMeters(opts.depth) + ' m'];
+    const bits = [opts.label ? BRAND + ' ' + opts.label : BRAND + ' #' + opts.number, formatMeters(opts.depth) + ' m'];
     if (opts.percentile != null) bits.push('top ' + opts.percentile + '%');
     bits.push(tiersToEmoji(opts.tiers));
     let s = bits.join(' · ');
@@ -473,7 +475,7 @@
   }
 
   return {
-    PROMPTS_PER_DIVE, SECONDS_PER_PROMPT, CHALLENGER_DEEP_M, TIMEZONE, LAUNCH_DATE, MAX_POINTS, METERS_PER_POINT,
+    BRAND, TAGLINE, PROMPTS_PER_DIVE, SECONDS_PER_PROMPT, CHALLENGER_DEEP_M, TIMEZONE, LAUNCH_DATE, MAX_POINTS, METERS_PER_POINT,
     TIERS, TIER_BY_CODE, MISS, ZONES, LANDMARKS,
     SUGGEST_MIN_LEN, SUGGEST_MAX_DIST, SUGGEST_MAX, TAXON_TIER, HINT_COST, HINT_TIERS,
     normalise, pluralForms, levenshtein, buildIndex, matchAnswer, suggestAnswers, pickHint, isTaxonId, taxonGroups, taxonFact, scoreSubmissionFull,

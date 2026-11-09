@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<polygon points="99,98 84,137 31,166 19,235 26,237 38,170 91,143 109,102" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="105,98 94,137 52,166 43,236 50,236 59,170 101,143 115,102" fill="#86D9EC" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="111,99 103,138 72,166 66,236 73,236 80,170 111,142 121,101" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="117,99 112,138 93,167 89,236 96,236 101,169 121,142 127,101" fill="#86D9EC" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="123,100 121,139 114,168 113,236 120,236 122,168 131,141 133,100" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="129,100 131,140 134,168 136,236 143,236 143,168 141,140 139,100" fill="#86D9EC" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="135,101 141,141 155,169 160,236 167,236 163,167 150,139 145,99" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="141,101 151,142 176,169 183,236 190,236 184,167 159,138 151,99" fill="#86D9EC" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="147,102 161,143 197,170 206,236 213,236 204,166 169,137 157,98" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="153,102 171,143 218,170 230,237 237,235 225,166 178,137 163,98" fill="#86D9EC" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M128 20 Q158 40 150 84 Q128 100 106 84 Q98 40 128 20Z" fill="#B49BFF" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M108 52 Q76 40 70 62 Q82 78 108 74Z" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M148 52 Q180 40 186 62 Q174 78 148 74Z" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="128" cy="94" rx="20" ry="14" fill="#86D9EC" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="120" cy="92" r="5" fill="#0C2A3A"/>
+<circle cx="136" cy="92" r="5" fill="#0C2A3A"/>
+</svg>

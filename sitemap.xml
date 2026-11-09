@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://example.invalid/</loc><changefreq>daily</changefreq></url>
+  <url><loc>https://example.invalid/privacy.html</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://example.invalid/terms.html</loc><changefreq>monthly</changefreq></url>
+  <url><loc>https://example.invalid/refunds.html</loc><changefreq>monthly</changefreq></url>
+</urlset>

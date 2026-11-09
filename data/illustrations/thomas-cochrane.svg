@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<rect x="120" y="34" width="6" height="136" fill="#FFD24A"/>
+<rect x="122" y="34" width="4" height="4" fill="#0C2A3A"/>
+<path d="M126 50 Q176 66 168 104 L126 108Z" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M126 112 Q194 124 190 152 L126 156Z" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M120 50 Q78 66 84 104 L120 108Z" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M120 112 Q60 124 64 152 L120 156Z" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M26 164 Q128 190 230 164 Q216 206 180 214 L76 214 Q40 206 26 164Z" fill="#3C6AE0" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<line x1="46" y1="184" x2="210" y2="184" stroke="#FFD24A" stroke-width="5" stroke-linecap="round"/>
+<polygon points="126,34 160,26 126,18" fill="#F26A4B" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="126,24 152,18 126,12" fill="#86D9EC" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="126,34 150,40 126,44" fill="#FFD24A"/>
+<path d="M16 210 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 L240 236 L16 236Z" fill="#86D9EC"/>
+</svg>

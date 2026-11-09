@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<polygon points="200,120 238,92 230,130 238,164 200,138" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="150" cy="128" rx="86" ry="52" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="92" cy="128" rx="56" ry="56" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="36,128 24,120 24,136" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="44,100 30,92 40,110" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="60,80 46,72 56,90" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="86,68 72,60 82,78" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="44,156 30,164 40,146" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="60,176 46,184 56,166" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="86,188 72,196 82,178" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="118,64 104,56 114,74" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="118,192 104,200 114,182" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="80" cy="128" rx="36" ry="34" fill="#E2B94F"/>
+<ellipse cx="130" cy="100" rx="16" ry="10" fill="#3C6AE0"/>
+<ellipse cx="170" cy="150" rx="18" ry="10" fill="#3C6AE0"/>
+<ellipse cx="150" cy="126" rx="14" ry="9" fill="#F26A4B"/>
+<ellipse cx="196" cy="128" rx="12" ry="9" fill="#3C6AE0"/>
+<line x1="40" y1="128" x2="64" y2="128" stroke="#0C2A3A" stroke-width="4" stroke-linecap="round"/>
+<circle cx="84" cy="102" r="5" fill="#0C2A3A"/><circle cx="85.5" cy="100.5" r="1.6" fill="#EAF4F7"/>
+<circle cx="84" cy="154" r="5" fill="#0C2A3A"/><circle cx="85.5" cy="152.5" r="1.6" fill="#EAF4F7"/>
+</svg>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ANGLER — surfacing…</title>
+  <meta name="robots" content="noindex">
+  <!-- GitHub Pages serves this for any path that is not a file. The app routes by hash, so a path like /archive
+       becomes /#archive and a deep link still lands where it meant to. -->
+  <script>
+    (function () {
+      var path = location.pathname.replace(/^\/+|\/+$/g, '');
+      var base = location.pathname.replace(/[^/]*$/, '').replace(/\/+$/, '') || '';
+      var hash = path && /^[a-z0-9-]+$/i.test(path) ? '#' + path.toLowerCase() : '#home';
+      location.replace((base || '') + '/' + (location.search || '') + hash);
+    })();
+  </script>
+  <style>body{font-family:system-ui,sans-serif;background:#0F4C5C;color:#EAF4F7;display:grid;place-items:center;min-height:100vh;margin:0}a{color:#2BD1C6}</style>
+</head>
+<body>
+  <p>Nothing down here. <a href="/#home">Back to ANGLER</a></p>
+</body>
+</html>

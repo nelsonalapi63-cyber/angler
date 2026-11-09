@@ -1,0 +1,3174 @@
+{
+ "entities": [
+  {
+   "id": "roughskin-dogfish",
+   "name": "Roughskin dogfish",
+   "aliases": [
+    "Centroscymnus owstonii",
+    "Owston's dogfish"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The roughskin dogfish is a small shark of the continental slopes that lives at depths of many hundreds of metres."
+  },
+  {
+   "id": "longnose-velvet-dogfish",
+   "name": "Longnose velvet dogfish",
+   "aliases": [
+    "Centroselachus crepidater"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The longnose velvet dogfish lives on the continental slopes of the Atlantic, Indian and Pacific oceans, hundreds of metres below the surface."
+  },
+  {
+   "id": "great-lanternshark",
+   "name": "Great lanternshark",
+   "aliases": [
+    "Etmopterus princeps"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The great lanternshark is a deep North Atlantic shark with light-producing organs on its underside, found thousands of metres down."
+  },
+  {
+   "id": "blackbelly-lanternshark",
+   "name": "Blackbelly lanternshark",
+   "aliases": [
+    "Etmopterus lucifer"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The blackbelly lanternshark is a small deep-water shark that glows faintly from light-producing organs on its dark belly."
+  },
+  {
+   "id": "southern-lanternshark",
+   "name": "Southern lanternshark",
+   "aliases": [
+    "Etmopterus granulosus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The southern lanternshark lives on the deep continental slopes of the Southern Hemisphere and carries light-producing organs on its belly."
+  },
+  {
+   "id": "smalleye-pygmy-shark",
+   "name": "Smalleye pygmy shark",
+   "aliases": [
+    "Squaliolus aliae"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The smalleye pygmy shark is one of the smallest sharks alive, a deep-water species of the Indo-Pacific that stays under 25 centimetres long."
+  },
+  {
+   "id": "bigeye-sixgill-shark",
+   "name": "Bigeye sixgill shark",
+   "aliases": [
+    "Hexanchus nakamurai"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The bigeye sixgill shark has six gill slits on each side and lives on slopes and seamounts at depths of hundreds of metres."
+  },
+  {
+   "id": "ghost-catshark",
+   "name": "Ghost catshark",
+   "aliases": [
+    "Apristurus",
+    "deepwater catshark"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Ghost catsharks, the genus Apristurus, are slim, dark sharks with dozens of species that live on the deep sea floor."
+  },
+  {
+   "id": "iceland-catshark",
+   "name": "Iceland catshark",
+   "aliases": [
+    "Apristurus laurussonii"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The Iceland catshark is a pale, slender shark of the North Atlantic that lives on deep slopes far below the reach of sunlight."
+  },
+  {
+   "id": "lollipop-catshark",
+   "name": "Lollipop catshark",
+   "aliases": [
+    "Cephalurus cephalus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The lollipop catshark of the eastern Pacific has a broad rounded head and a thin tapering body and lives on the deep sea floor."
+  },
+  {
+   "id": "blackmouth-catshark",
+   "name": "Blackmouth catshark",
+   "aliases": [
+    "Galeus melastomus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The blackmouth catshark has a dark lining to its mouth and lives on the deep sea floor of the north-east Atlantic and Mediterranean."
+  },
+  {
+   "id": "shortspine-spurdog",
+   "name": "Shortspine spurdog",
+   "aliases": [
+    "Squalus mitsukurii"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The shortspine spurdog is a small dogfish with a spine in front of each dorsal fin, living on deep slopes and seamounts in many seas."
+  },
+  {
+   "id": "knifetooth-dogfish",
+   "name": "Knifetooth dogfish",
+   "aliases": [
+    "Scymnodon ringens"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The knifetooth dogfish has blade-like lower teeth for cutting chunks from its prey and lives on deep slopes of the eastern Atlantic."
+  },
+  {
+   "id": "draughtsboard-shark",
+   "name": "Draughtsboard shark",
+   "aliases": [
+    "Cephaloscyllium isabellum"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The draughtsboard shark of New Zealand is named for the chequered pattern of bands and blotches on its back."
+  },
+  {
+   "id": "varied-catshark",
+   "name": "Varied catshark",
+   "aliases": [
+    "Parascyllium variolatum"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The varied catshark hides among rocks and reefs off southern Australia and is patterned with dark spots and bands."
+  },
+  {
+   "id": "grey-bamboo-shark",
+   "name": "Grey bamboo shark",
+   "aliases": [
+    "Chiloscyllium griseum",
+    "gray bamboo shark"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The grey bamboo shark is a slim, nocturnal shark that rests on shallow Indo-Pacific reefs and sandy seabeds by day."
+  },
+  {
+   "id": "banded-wobbegong",
+   "name": "Banded wobbegong",
+   "aliases": [
+    "Orectolobus halei",
+    "Gulf wobbegong"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The banded wobbegong is a flattened ambush shark of Australian reefs, camouflaged by bold bands and fringes of skin around its mouth."
+  },
+  {
+   "id": "blonde-ray",
+   "name": "Blonde ray",
+   "aliases": [
+    "Raja brachyura"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The blonde ray is a large skate of the north-east Atlantic with pale, sandy colouring and a pattern of small dark spots."
+  },
+  {
+   "id": "spotted-ray",
+   "name": "Spotted ray",
+   "aliases": [
+    "Raja montagui"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The spotted ray lives on sandy seabeds of the north-east Atlantic and is covered in small dark spots."
+  },
+  {
+   "id": "undulate-ray",
+   "name": "Undulate ray",
+   "aliases": [
+    "Raja undulata"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The undulate ray is named for the wavy dark lines that run across the pale upper side of its body."
+  },
+  {
+   "id": "starry-ray",
+   "name": "Starry ray",
+   "aliases": [
+    "Amblyraja radiata",
+    "thorny skate"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The starry ray, also called the thorny skate, is covered in sharp, star-shaped thorns on its back and tail."
+  },
+  {
+   "id": "big-skate",
+   "name": "Big skate",
+   "aliases": [
+    "Beringraja binoculata"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The big skate of the north-east Pacific carries a pair of large eye-like spots on its wings and can grow over two metres long."
+  },
+  {
+   "id": "winter-skate",
+   "name": "Winter skate",
+   "aliases": [
+    "Leucoraja ocellata"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The winter skate of the north-west Atlantic has an eye-like spot on each wing and lives on sandy and gravelly seabeds."
+  },
+  {
+   "id": "chupare-stingray",
+   "name": "Chupare stingray",
+   "aliases": [
+    "Styracura schmardae"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The chupare stingray lives in the shallow waters of the Caribbean and nearby western Atlantic."
+  },
+  {
+   "id": "longnose-stingray",
+   "name": "Longnose stingray",
+   "aliases": [
+    "Hypanus guttatus"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The longnose stingray has a long pointed snout and lives in coastal waters of the western Atlantic from the Gulf of Mexico to Brazil."
+  },
+  {
+   "id": "estuary-stingray",
+   "name": "Estuary stingray",
+   "aliases": [
+    "Hemitrygon fluviorum"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The estuary stingray lives in estuaries, bays and tidal rivers along the east coast of Australia."
+  },
+  {
+   "id": "white-blotched-river-stingray",
+   "name": "White-blotched river stingray",
+   "aliases": [
+    "Potamotrygon leopoldi",
+    "Xingu river ray"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The white-blotched river stingray lives only in Brazil's Xingu River and has a dark disc covered in pale blotches."
+  },
+  {
+   "id": "bigtooth-river-stingray",
+   "name": "Bigtooth river stingray",
+   "aliases": [
+    "Potamotrygon henlei"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The bigtooth river stingray is a freshwater ray found in the Tocantins-Araguaia river basin of Brazil."
+  },
+  {
+   "id": "cortez-round-stingray",
+   "name": "Cortez round stingray",
+   "aliases": [
+    "Urobatis maculatus",
+    "spotted round ray"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The Cortez round stingray is a small, round-bodied ray found only in the Gulf of California."
+  },
+  {
+   "id": "mekong-freshwater-stingray",
+   "name": "Mekong freshwater stingray",
+   "aliases": [
+    "Hemitrygon laosensis"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The Mekong freshwater stingray lives in the Mekong river system of south-east Asia."
+  },
+  {
+   "id": "sparsely-spotted-stingaree",
+   "name": "Sparsely-spotted stingaree",
+   "aliases": [
+    "Urolophus paucimaculatus"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The sparsely-spotted stingaree is a small round-bodied ray of southern Australian waters that lives on sandy seabeds."
+  },
+  {
+   "id": "yellowback-stingaree",
+   "name": "Yellowback stingaree",
+   "aliases": [
+    "Urolophus sufflavus"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The yellowback stingaree is a small stingray of the eastern Australian coast with a yellowish back."
+  },
+  {
+   "id": "smalleye-stingray",
+   "name": "Smalleye stingray",
+   "aliases": [
+    "Megatrygon microps",
+    "Dasyatis microps"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The smalleye stingray is a large Indo-West Pacific ray with tiny eyes that lives on soft seabeds."
+  },
+  {
+   "id": "banded-stingaree",
+   "name": "Banded stingaree",
+   "aliases": [
+    "Urolophus cruciatus"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The banded stingaree is a small, round-bodied ray of southern Australia with a pattern of dark bands across its back."
+  },
+  {
+   "id": "rosette-river-stingray",
+   "name": "Rosette river stingray",
+   "aliases": [
+    "Potamotrygon schroederi"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The rosette river stingray is a freshwater ray of the Amazon basin marked with a pattern of dark-edged rosettes."
+  },
+  {
+   "id": "smoothback-river-stingray",
+   "name": "Smoothback river stingray",
+   "aliases": [
+    "Potamotrygon orbignyi",
+    "smooth back river stingray"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The smoothback river stingray is a freshwater ray found in rivers of the Amazon and Orinoco basins."
+  },
+  {
+   "id": "ross-sea-killer-whale",
+   "name": "Ross Sea killer whale",
+   "aliases": [
+    "Type C killer whale",
+    "Type C orca"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "The Ross Sea killer whale, or Type C, is a small Antarctic form of killer whale that hunts Antarctic toothfish around the sea ice."
+  },
+  {
+   "id": "pack-ice-killer-whale",
+   "name": "Pack ice killer whale",
+   "aliases": [
+    "Type B killer whale",
+    "Type B orca",
+    "Gerlache killer whale"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "The pack ice killer whale, or Type B, hunts seals around Antarctic ice floes and often looks yellowish from a film of diatoms on its skin."
+  },
+  {
+   "id": "subantarctic-killer-whale",
+   "name": "Subantarctic killer whale",
+   "aliases": [
+    "Type D killer whale",
+    "Type D orca"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "The subantarctic killer whale, or Type D, has a tiny eye patch and a rounded head and was first recognised from a mass stranding in New Zealand in 1955."
+  },
+  {
+   "id": "lahilles-dolphin",
+   "name": "Lahille's dolphin",
+   "aliases": [
+    "Lahille's bottlenose dolphin",
+    "Tursiops gephyreus"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "Lahille's dolphin is a large bottlenose dolphin of estuaries and coasts in southern Brazil, Uruguay and Argentina."
+  },
+  {
+   "id": "burrunan-dolphin",
+   "name": "Burrunan dolphin",
+   "aliases": [
+    "Tursiops australis"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "The Burrunan dolphin lives in sheltered bays and lakes of southern Australia, such as Port Phillip Bay and the Gippsland Lakes."
+  },
+  {
+   "id": "orinoco-river-dolphin",
+   "name": "Orinoco river dolphin",
+   "aliases": [
+    "Inia geoffrensis humboldtiana",
+    "Orinoco pink dolphin"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "The Orinoco river dolphin is the pink river dolphin of the Orinoco basin in Venezuela and Colombia."
+  },
+  {
+   "id": "mahakam-river-dolphin",
+   "name": "Mahakam river dolphin",
+   "aliases": [
+    "Mahakam Irrawaddy dolphin",
+    "Mahakam dolphin"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "The Mahakam river dolphin is a tiny, critically endangered freshwater population of Irrawaddy dolphins in the Mahakam River of Borneo."
+  },
+  {
+   "id": "mekong-dolphin",
+   "name": "Mekong dolphin",
+   "aliases": [
+    "Mekong river dolphin",
+    "Mekong Irrawaddy dolphin"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "The Mekong dolphin is a critically endangered freshwater population of Irrawaddy dolphins that lives in a stretch of the Mekong between Cambodia and Laos."
+  },
+  {
+   "id": "eastern-spinner-dolphin",
+   "name": "Eastern spinner dolphin",
+   "aliases": [
+    "Stenella longirostris orientalis"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "The eastern spinner dolphin of the eastern tropical Pacific often swims above schools of yellowfin tuna."
+  },
+  {
+   "id": "dwarf-spinner-dolphin",
+   "name": "Dwarf spinner dolphin",
+   "aliases": [
+    "Stenella longirostris roseiventris"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "The dwarf spinner dolphin is a small form of spinner dolphin that lives in the shallow seas of south-east Asia and northern Australia."
+  },
+  {
+   "id": "central-american-spinner-dolphin",
+   "name": "Central American spinner dolphin",
+   "aliases": [
+    "Stenella longirostris centroamericana"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "The Central American spinner dolphin is a coastal form of spinner dolphin found off the Pacific shores of Central America."
+  },
+  {
+   "id": "coastal-spotted-dolphin",
+   "name": "Coastal spotted dolphin",
+   "aliases": [
+    "Stenella attenuata graffmani",
+    "eastern Pacific coastal spotted dolphin"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "The coastal spotted dolphin is a nearshore form of the pantropical spotted dolphin found along the Pacific coast of the Americas."
+  },
+  {
+   "id": "guadalupe-fur-seal",
+   "name": "Guadalupe fur seal",
+   "aliases": [
+    "Arctocephalus townsendi"
+   ],
+   "kind": "creature",
+   "group": "seals",
+   "fact": "The Guadalupe fur seal was thought to be extinct until a small colony was rediscovered at Guadalupe Island, Mexico, in the 1950s."
+  },
+  {
+   "id": "juan-fernandez-fur-seal",
+   "name": "Juan Fernandez fur seal",
+   "aliases": [
+    "Juan Fernández fur seal",
+    "Arctocephalus philippii"
+   ],
+   "kind": "creature",
+   "group": "seals",
+   "fact": "The Juan Fernandez fur seal was believed extinct after heavy hunting until it was found again in the 1960s on Chile's Juan Fernandez Islands."
+  },
+  {
+   "id": "subantarctic-fur-seal",
+   "name": "Subantarctic fur seal",
+   "aliases": [
+    "Arctocephalus tropicalis",
+    "Amsterdam fur seal"
+   ],
+   "kind": "creature",
+   "group": "seals",
+   "fact": "The subantarctic fur seal breeds on remote islands of the southern Indian and Atlantic oceans, such as Amsterdam Island and Gough Island."
+  },
+  {
+   "id": "south-american-fur-seal",
+   "name": "South American fur seal",
+   "aliases": [
+    "Arctocephalus australis"
+   ],
+   "kind": "creature",
+   "group": "seals",
+   "fact": "The South American fur seal breeds along the coasts of Peru, Chile, Argentina and Uruguay and the Falkland Islands."
+  },
+  {
+   "id": "new-zealand-fur-seal",
+   "name": "New Zealand fur seal",
+   "aliases": [
+    "Arctocephalus forsteri",
+    "kekeno"
+   ],
+   "kind": "creature",
+   "group": "seals",
+   "fact": "The New Zealand fur seal, known to Maori as the kekeno, breeds around New Zealand and the coasts of southern Australia."
+  },
+  {
+   "id": "saimaa-ringed-seal",
+   "name": "Saimaa ringed seal",
+   "aliases": [
+    "Pusa hispida saimensis",
+    "Saimaa seal"
+   ],
+   "kind": "creature",
+   "group": "seals",
+   "fact": "The Saimaa ringed seal lives only in Finland's freshwater Lake Saimaa and numbers just a few hundred animals."
+  },
+  {
+   "id": "black-guillemot",
+   "name": "Black guillemot",
+   "aliases": [
+    "Cepphus grylle",
+    "tystie"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The black guillemot is a black seabird with white wing patches and bright red feet that nests along rocky Arctic and subarctic coasts."
+  },
+  {
+   "id": "rosss-gull",
+   "name": "Ross's gull",
+   "aliases": [
+    "Rhodostethia rosea",
+    "Ross gull"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "Ross's gull is a small, pink-tinged Arctic gull that breeds in Siberia and spends the winter near the edge of Arctic pack ice."
+  },
+  {
+   "id": "common-eider",
+   "name": "Common eider",
+   "aliases": [
+    "Somateria mollissima",
+    "eider"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The common eider is a sea duck of Arctic and northern coasts whose soft down has long been used to fill quilts."
+  },
+  {
+   "id": "marbled-sea-snake",
+   "name": "Marbled sea snake",
+   "aliases": [
+    "Aipysurus eydouxii"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The marbled sea snake feeds almost entirely on fish eggs and has tiny fangs compared with most other sea snakes."
+  },
+  {
+   "id": "yellow-sea-snake",
+   "name": "Yellow sea snake",
+   "aliases": [
+    "Hydrophis spiralis"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The yellow sea snake is a large, yellow-and-black banded sea snake of the Indian Ocean and western Pacific that gives birth to live young at sea."
+  },
+  {
+   "id": "arabian-gulf-sea-snake",
+   "name": "Arabian Gulf sea snake",
+   "aliases": [
+    "Persian Gulf sea snake",
+    "Hydrophis lapemoides"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The Arabian Gulf sea snake lives in the shallow waters of the Persian Gulf and nearby seas and bears live young in the water."
+  },
+  {
+   "id": "dwarf-sea-snake",
+   "name": "Dwarf sea snake",
+   "aliases": [
+    "Hydrophis caerulescens"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The dwarf sea snake is a small, true sea snake of Indo-Pacific coastal waters that spends its whole life in the sea."
+  },
+  {
+   "id": "viperine-sea-snake",
+   "name": "Viperine sea snake",
+   "aliases": [
+    "Hydrophis viperinus"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The viperine sea snake is a true sea snake of Asian coastal waters with a flattened, paddle-like tail for swimming."
+  },
+  {
+   "id": "jerdons-sea-snake",
+   "name": "Jerdon's sea snake",
+   "aliases": [
+    "Hydrophis jerdonii"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "Jerdon's sea snake is a true sea snake of Indo-Pacific coastal waters that spends its whole life in the sea."
+  },
+  {
+   "id": "new-caledonian-sea-krait",
+   "name": "New Caledonian sea krait",
+   "aliases": [
+    "Laticauda saintgironsi"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The New Caledonian sea krait hunts eels on coral reefs but returns to land to rest, digest and lay its eggs."
+  },
+  {
+   "id": "olive-headed-sea-snake",
+   "name": "Olive-headed sea snake",
+   "aliases": [
+    "Hydrophis major",
+    "Disteira major"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The olive-headed sea snake is a true sea snake of the coral reefs and seagrass beds of northern Australia and New Guinea."
+  },
+  {
+   "id": "black-headed-sea-snake",
+   "name": "Black-headed sea snake",
+   "aliases": [
+    "Hydrophis atriceps"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The black-headed sea snake is a slender true sea snake of south-east Asian coastal waters."
+  },
+  {
+   "id": "spectacled-sea-snake",
+   "name": "Spectacled sea snake",
+   "aliases": [
+    "Hydrophis kingii"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The spectacled sea snake is a true sea snake that lives in the shallow waters off northern Australia."
+  },
+  {
+   "id": "small-headed-sea-snake",
+   "name": "Small-headed sea snake",
+   "aliases": [
+    "Hydrophis macdowelli"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "The small-headed sea snake has a tiny head on a slim neck and lives in the shallow waters off northern Australia."
+  },
+  {
+   "id": "ijimas-sea-snake",
+   "name": "Ijima's sea snake",
+   "aliases": [
+    "Ijima's turtle-headed sea snake",
+    "Emydocephalus ijimae"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "Ijima's turtle-headed sea snake feeds on fish eggs and lives around reefs of the Ryukyu Islands and Taiwan."
+  },
+  {
+   "id": "maori-octopus",
+   "name": "Maori octopus",
+   "aliases": [
+    "Macroctopus maorum",
+    "Māori octopus"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The Maori octopus is a large octopus of New Zealand and southern Australian waters."
+  },
+  {
+   "id": "blue-lined-octopus",
+   "name": "Blue-lined octopus",
+   "aliases": [
+    "Hapalochlaena fasciata"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The blue-lined octopus is a small, highly venomous octopus of Australian waters whose bright blue lines flash when it is threatened."
+  },
+  {
+   "id": "mototi-octopus",
+   "name": "Mototi octopus",
+   "aliases": [
+    "Amphioctopus mototi",
+    "poison ocellate octopus"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The mototi octopus is a small Indo-Pacific octopus that lives on shallow, silty seabeds."
+  },
+  {
+   "id": "atlantic-longarm-octopus",
+   "name": "Atlantic longarm octopus",
+   "aliases": [
+    "Macrotritopus defilippi",
+    "long-armed octopus"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The Atlantic longarm octopus can mimic a swimming flatfish as it glides over sandy seabeds."
+  },
+  {
+   "id": "webfoot-octopus",
+   "name": "Webfoot octopus",
+   "aliases": [
+    "Amphioctopus fangsiao",
+    "Octopus ocellatus",
+    "iidako"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The webfoot octopus is a small octopus of East Asian waters that is caught and eaten in Japan, Korea and China."
+  },
+  {
+   "id": "fourhorn-octopus",
+   "name": "Fourhorn octopus",
+   "aliases": [
+    "Pteroctopus tetracirrhus"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The fourhorn octopus lives on muddy seabeds of the eastern Atlantic and the Mediterranean."
+  },
+  {
+   "id": "pale-octopus",
+   "name": "Pale octopus",
+   "aliases": [
+    "Octopus pallidus"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The pale octopus is a small octopus of the south-eastern Australian coast that lives on sandy and muddy seabeds."
+  },
+  {
+   "id": "southern-sand-octopus",
+   "name": "Southern sand octopus",
+   "aliases": [
+    "Octopus kaurna"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The southern sand octopus lives on sandy seabeds of southern Australia."
+  },
+  {
+   "id": "ornate-octopus",
+   "name": "Ornate octopus",
+   "aliases": [
+    "Callistoctopus ornatus",
+    "white-striped octopus"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The ornate octopus is a night-active Indo-Pacific octopus marked with pale stripes."
+  },
+  {
+   "id": "sevenstar-flying-squid",
+   "name": "Sevenstar flying squid",
+   "aliases": [
+    "Martialia hyadesi"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The sevenstar flying squid is a Southern Ocean squid that is an important food for albatrosses and seals."
+  },
+  {
+   "id": "boreal-clubhook-squid",
+   "name": "Boreal clubhook squid",
+   "aliases": [
+    "Gonatus fabricii"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The boreal clubhook squid is a common squid of Arctic and subarctic waters that is eaten by whales and seals."
+  },
+  {
+   "id": "magister-armhook-squid",
+   "name": "Magister armhook squid",
+   "aliases": [
+    "Berryteuthis magister",
+    "red squid"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The magister armhook squid is an abundant squid of the North Pacific, eaten by seals, seabirds and fish."
+  },
+  {
+   "id": "purpleback-flying-squid",
+   "name": "Purpleback flying squid",
+   "aliases": [
+    "Sthenoteuthis oualaniensis"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The purpleback flying squid has a glowing patch on its back and can glide above the surface of tropical seas."
+  },
+  {
+   "id": "northern-shortfin-squid",
+   "name": "Northern shortfin squid",
+   "aliases": [
+    "Illex illecebrosus"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The northern shortfin squid of the north-west Atlantic lives only about a year and is fished in large numbers."
+  },
+  {
+   "id": "lesser-flying-squid",
+   "name": "Lesser flying squid",
+   "aliases": [
+    "Todaropsis eblanae"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The lesser flying squid lives in the north-east Atlantic and the Mediterranean, mostly close to the seabed."
+  },
+  {
+   "id": "southern-calamari",
+   "name": "Southern calamari",
+   "aliases": [
+    "Sepioteuthis australis",
+    "southern reef squid"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The southern calamari is a large, fast-growing squid of southern Australian and New Zealand waters that is caught for food."
+  },
+  {
+   "id": "common-clubhook-squid",
+   "name": "Common clubhook squid",
+   "aliases": [
+    "Onychoteuthis banksii"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The common clubhook squid has sharp hooks on its tentacle clubs and lives in warm and temperate oceans worldwide."
+  },
+  {
+   "id": "new-zealand-arrow-squid",
+   "name": "New Zealand arrow squid",
+   "aliases": [
+    "Nototodarus sloanii",
+    "Wellington flying squid"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The New Zealand arrow squid is the target of one of the country's biggest squid fisheries."
+  },
+  {
+   "id": "swordtip-squid",
+   "name": "Swordtip squid",
+   "aliases": [
+    "Uroteuthis edulis",
+    "sword-tip squid"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The swordtip squid is a Pacific squid caught for food in Japan and elsewhere in East Asia."
+  },
+  {
+   "id": "atlantic-brief-squid",
+   "name": "Atlantic brief squid",
+   "aliases": [
+    "Lolliguncula brevis"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The Atlantic brief squid is a small squid of the western Atlantic that can tolerate the low salt levels of estuaries."
+  },
+  {
+   "id": "goulds-squid",
+   "name": "Gould's squid",
+   "aliases": [
+    "Nototodarus gouldi",
+    "Gould's arrow squid"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "Gould's squid is an arrow squid of southern Australian waters that is fished commercially."
+  },
+  {
+   "id": "golden-king-crab",
+   "name": "Golden king crab",
+   "aliases": [
+    "Lithodes aequispinus"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "The golden king crab lives on cold, deep seabeds of the North Pacific and is fished for its sweet meat."
+  },
+  {
+   "id": "blue-swimmer-crab",
+   "name": "Blue swimmer crab",
+   "aliases": [
+    "Portunus armatus",
+    "flower crab"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "The blue swimmer crab has paddle-shaped back legs for swimming and is caught for food around Australia and the Indo-Pacific."
+  },
+  {
+   "id": "halloween-crab",
+   "name": "Halloween crab",
+   "aliases": [
+    "Gecarcinus quadratus",
+    "red land crab"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "The Halloween crab is a black-and-orange land crab of Pacific Central America that returns to the sea to release its eggs."
+  },
+  {
+   "id": "western-rock-lobster",
+   "name": "Western rock lobster",
+   "aliases": [
+    "Panulirus cygnus"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "The western rock lobster is a spiny lobster of Western Australia that supports one of the country's most valuable fisheries."
+  },
+  {
+   "id": "southern-rock-lobster",
+   "name": "Southern rock lobster",
+   "aliases": [
+    "Jasus edwardsii",
+    "red rock lobster"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "The southern rock lobster is a spiny lobster of southern Australia and New Zealand that shelters in rocky reefs."
+  },
+  {
+   "id": "banana-prawn",
+   "name": "Banana prawn",
+   "aliases": [
+    "Penaeus merguiensis"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "The banana prawn is a pale, curved prawn of the Indo-West Pacific that is caught in huge numbers in northern Australia."
+  },
+  {
+   "id": "brine-shrimp",
+   "name": "Brine shrimp",
+   "aliases": [
+    "Artemia",
+    "sea monkey"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Brine shrimp are tiny crustaceans that thrive in extremely salty lakes and lagoons where fish cannot survive."
+  },
+  {
+   "id": "amano-shrimp",
+   "name": "Amano shrimp",
+   "aliases": [
+    "Caridina multidentata",
+    "Japanese algae shrimp"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "The Amano shrimp is a small freshwater shrimp of Japan that is kept in aquariums for eating algae."
+  },
+  {
+   "id": "white-spotted-jellyfish",
+   "name": "White-spotted jellyfish",
+   "aliases": [
+    "Phyllorhiza punctata",
+    "Australian spotted jellyfish",
+    "floating bell"
+   ],
+   "kind": "creature",
+   "group": "jellies",
+   "fact": "The white-spotted jellyfish is a bell-shaped jelly speckled with white spots that has spread far beyond its Pacific home."
+  },
+  {
+   "id": "purple-striped-jelly",
+   "name": "Purple-striped jelly",
+   "aliases": [
+    "Chrysaora colorata",
+    "purple-striped jellyfish"
+   ],
+   "kind": "creature",
+   "group": "jellies",
+   "fact": "The purple-striped jelly of the Californian coast has long frilly arms and often lives alongside the jellies it feeds on."
+  },
+  {
+   "id": "textile-cone",
+   "name": "Textile cone",
+   "aliases": [
+    "Conus textile",
+    "cloth of gold cone"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The textile cone is a cone snail patterned like woven cloth that harpoons its prey with venom and can be dangerous to people."
+  },
+  {
+   "id": "bluefire-jellyfish",
+   "name": "Bluefire jellyfish",
+   "aliases": [
+    "Cyanea lamarckii",
+    "blue jellyfish"
+   ],
+   "kind": "creature",
+   "group": "jellies",
+   "fact": "The bluefire jellyfish is a small, bluish relative of the lion's mane that is common around the coasts of north-west Europe."
+  },
+  {
+   "id": "giant-phantom-jelly",
+   "name": "Giant phantom jelly",
+   "aliases": [
+    "Stygiomedusa gigantea"
+   ],
+   "kind": "creature",
+   "group": "jellies",
+   "fact": "The giant phantom jelly is a rarely seen deep-sea jelly with four enormous ribbon-like arms that trail for several metres."
+  },
+  {
+   "id": "caribbean-box-jelly",
+   "name": "Caribbean box jelly",
+   "aliases": [
+    "Tripedalia cystophora"
+   ],
+   "kind": "creature",
+   "group": "jellies",
+   "fact": "The Caribbean box jelly lives among mangrove roots and has 24 eyes, some of which can form images."
+  },
+  {
+   "id": "beroe-comb-jelly",
+   "name": "Beroe comb jelly",
+   "aliases": [
+    "Beroe",
+    "Beroe cucumis"
+   ],
+   "kind": "creature",
+   "group": "jellies",
+   "fact": "Beroe is a sack-shaped comb jelly with no tentacles that swallows other comb jellies whole."
+  },
+  {
+   "id": "english-sole",
+   "name": "English sole",
+   "aliases": [
+    "Parophrys vetulus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Despite its name, the English sole is a flatfish of the north-east Pacific, caught from Alaska to California."
+  },
+  {
+   "id": "rock-sole",
+   "name": "Rock sole",
+   "aliases": [
+    "Lepidopsetta bilineata",
+    "southern rock sole",
+    "northern rock sole"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The rock sole is a Pacific flatfish that lives on gravelly and rocky seabeds from California to the Bering Sea."
+  },
+  {
+   "id": "flathead-sole",
+   "name": "Flathead sole",
+   "aliases": [
+    "Hippoglossoides elassodon"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The flathead sole is a large-mouthed flatfish of the North Pacific, found from California to the Bering Sea."
+  },
+  {
+   "id": "butter-sole",
+   "name": "Butter sole",
+   "aliases": [
+    "Isopsetta isolepis"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The butter sole is a flatfish of the north-east Pacific that lives on sandy and muddy seabeds."
+  },
+  {
+   "id": "yellowtail-flounder",
+   "name": "Yellowtail flounder",
+   "aliases": [
+    "Limanda ferruginea"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The yellowtail flounder is a flatfish of the north-west Atlantic with rusty-red spots and a yellow edge to its tail."
+  },
+  {
+   "id": "kamchatka-flounder",
+   "name": "Kamchatka flounder",
+   "aliases": [
+    "Atheresthes evermanni"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The Kamchatka flounder is a large flatfish of the deep North Pacific and Bering Sea."
+  },
+  {
+   "id": "senegalese-sole",
+   "name": "Senegalese sole",
+   "aliases": [
+    "Solea senegalensis"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The Senegalese sole lives in the eastern Atlantic from the Bay of Biscay to West Africa and is farmed in southern Europe."
+  },
+  {
+   "id": "greenback-flounder",
+   "name": "Greenback flounder",
+   "aliases": [
+    "Rhombosolea tapirina"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The greenback flounder is a flatfish of southern Australia and New Zealand that lives in estuaries and shallow bays."
+  },
+  {
+   "id": "gulf-flounder",
+   "name": "Gulf flounder",
+   "aliases": [
+    "Paralichthys albigutta"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The gulf flounder lives on sandy and muddy seabeds from the Carolinas to the Gulf of Mexico."
+  },
+  {
+   "id": "japan-trench-snailfish",
+   "name": "Japan Trench snailfish",
+   "aliases": [
+    "Pseudoliparis amblystomopsis"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The Japan Trench snailfish is a soft-bodied fish that lives in the Japan Trench at depths of more than 6,000 metres."
+  },
+  {
+   "id": "atacama-snailfish",
+   "name": "Atacama snailfish",
+   "aliases": [
+    "Notoliparis antonbruuni"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The Atacama snailfish lives in the Atacama Trench off Peru and Chile, thousands of metres deeper than most fish can survive."
+  },
+  {
+   "id": "belyaevs-snailfish",
+   "name": "Belyaev's snailfish",
+   "aliases": [
+    "Pseudoliparis belyaevi"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Belyaev's snailfish is a hadal snailfish of the trenches of the north-west Pacific."
+  },
+  {
+   "id": "bathycallisoma",
+   "name": "Bathycallisoma",
+   "aliases": [
+    "Bathycallisoma schellenbergi"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Bathycallisoma schellenbergi is a large scavenging amphipod of the deepest Pacific trenches."
+  },
+  {
+   "id": "bathykermadeca-hadalis",
+   "name": "Bathykermadeca hadalis",
+   "aliases": [
+    "hadal isopod"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Bathykermadeca hadalis is an isopod first found in the Kermadec Trench, living deeper than 6,000 metres."
+  },
+  {
+   "id": "valettietta-gracilis",
+   "name": "Valettietta gracilis",
+   "aliases": [
+    "Valettietta"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Valettietta gracilis is a slender amphipod that lives in trenches of the Pacific, far below the reach of sunlight."
+  },
+  {
+   "id": "galatheanthemum-hadale",
+   "name": "Galatheanthemum hadale",
+   "aliases": [
+    "hadal sea anemone"
+   ],
+   "kind": "creature",
+   "group": "cnidarians",
+   "fact": "Galatheanthemum hadale is a sea anemone recorded from the deep trenches of the Pacific, below 6,000 metres."
+  },
+  {
+   "id": "empress-of-ireland",
+   "name": "RMS Empress of Ireland",
+   "aliases": [
+    "Empress of Ireland"
+   ],
+   "kind": "vessel",
+   "group": "wrecks",
+   "fact": "The ocean liner Empress of Ireland sank in the St Lawrence River in 1914 after a collision in fog, with the loss of more than 1,000 lives."
+  },
+  {
+   "id": "hms-royal-oak",
+   "name": "HMS Royal Oak",
+   "aliases": [
+    "Royal Oak"
+   ],
+   "kind": "vessel",
+   "group": "wrecks",
+   "fact": "The battleship HMS Royal Oak was torpedoed by a U-boat at Scapa Flow in 1939, and her wreck is now a protected war grave."
+  },
+  {
+   "id": "ss-president-coolidge",
+   "name": "SS President Coolidge",
+   "aliases": [
+    "President Coolidge"
+   ],
+   "kind": "vessel",
+   "group": "wrecks",
+   "fact": "The former luxury liner SS President Coolidge sank off Vanuatu in 1942 after striking friendly mines and is now a famous dive site."
+  },
+  {
+   "id": "uss-saratoga",
+   "name": "USS Saratoga",
+   "aliases": [
+    "Saratoga",
+    "USS Saratoga CV-3"
+   ],
+   "kind": "vessel",
+   "group": "wrecks",
+   "fact": "The aircraft carrier USS Saratoga was sunk in the 1946 atomic bomb tests at Bikini Atoll and now lies upright in the lagoon as a dive site."
+  },
+  {
+   "id": "hms-repulse",
+   "name": "HMS Repulse",
+   "aliases": [
+    "Repulse"
+   ],
+   "kind": "vessel",
+   "group": "wrecks",
+   "fact": "The battlecruiser HMS Repulse was sunk by Japanese aircraft off Malaya in December 1941, along with HMS Prince of Wales."
+  },
+  {
+   "id": "rms-rhone",
+   "name": "RMS Rhone",
+   "aliases": [
+    "Rhone",
+    "Royal Mail Steamer Rhone"
+   ],
+   "kind": "vessel",
+   "group": "wrecks",
+   "fact": "The steamer RMS Rhone sank in a hurricane off Salt Island in the British Virgin Islands in 1867 and is now a popular dive site."
+  },
+  {
+   "id": "alvinella-caudata",
+   "name": "Alvinella caudata",
+   "aliases": [
+    "caudata worm"
+   ],
+   "kind": "creature",
+   "group": "worms",
+   "fact": "Alvinella caudata is a close relative of the Pompeii worm that lives on the chimney walls of East Pacific Rise vents."
+  },
+  {
+   "id": "neomphalus",
+   "name": "Neomphalus",
+   "aliases": [
+    "Neomphalus fretterae"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Neomphalus fretterae is a limpet-like snail that grazes on bacteria around vents of the Galapagos Rift and East Pacific Rise."
+  },
+  {
+   "id": "shinkaia-crosnieri",
+   "name": "Shinkaia crosnieri",
+   "aliases": [
+    "Shinkaia",
+    "vent squat lobster of Okinawa"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Shinkaia crosnieri is a squat lobster of Okinawa Trough vents that carries chemosynthetic bacteria on its bristles."
+  },
+  {
+   "id": "mirocaris-fortunata",
+   "name": "Mirocaris fortunata",
+   "aliases": [
+    "Mirocaris",
+    "Mid-Atlantic vent shrimp"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Mirocaris fortunata is a small shrimp that swarms around hydrothermal vents on the Mid-Atlantic Ridge."
+  },
+  {
+   "id": "ophioctenella-acies",
+   "name": "Ophioctenella acies",
+   "aliases": [
+    "Ophioctenella",
+    "vent brittle star"
+   ],
+   "kind": "creature",
+   "group": "echinoderms",
+   "fact": "Ophioctenella acies is a brittle star that gathers in dense swarms around hydrothermal vents of the Mid-Cayman Rise in the Caribbean."
+  },
+  {
+   "id": "pachycara-thermophilum",
+   "name": "Pachycara thermophilum",
+   "aliases": [
+    "Pachycara"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Pachycara thermophilum is an eelpout that lives around hot vents on the Mid-Atlantic Ridge."
+  },
+  {
+   "id": "gigantopelta-chessoia",
+   "name": "Gigantopelta chessoia",
+   "aliases": [
+    "Gigantopelta",
+    "Antarctic vent snail"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Gigantopelta chessoia is a large vent snail found at hydrothermal vents on the East Scotia Ridge in the Southern Ocean."
+  },
+  {
+   "id": "segonzacia-mesatlantica",
+   "name": "Segonzacia mesatlantica",
+   "aliases": [
+    "Segonzacia",
+    "Mid-Atlantic vent crab"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Segonzacia mesatlantica is a crab that lives around hot vents on the Mid-Atlantic Ridge."
+  },
+  {
+   "id": "nautilocaris-saintlaurentae",
+   "name": "Nautilocaris saintlaurentae",
+   "aliases": [
+    "Nautilocaris"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Nautilocaris saintlaurentae is a shrimp that lives around hydrothermal vents in the Lau Basin of the south-west Pacific."
+  },
+  {
+   "id": "austinograea-williamsi",
+   "name": "Austinograea williamsi",
+   "aliases": [
+    "Austinograea",
+    "western Pacific vent crab"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Austinograea williamsi is a crab of hydrothermal vents in the western Pacific."
+  },
+  {
+   "id": "cyanagraea-praedator",
+   "name": "Cyanagraea praedator",
+   "aliases": [
+    "Cyanagraea",
+    "East Pacific Rise vent crab"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Cyanagraea praedator is a crab found around hot vents of the East Pacific Rise."
+  }
+ ],
+ "prompts": [
+  {
+   "id": "shark-deep",
+   "answers": [
+    {
+     "entity": "roughskin-dogfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "longnose-velvet-dogfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "great-lanternshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "blackbelly-lanternshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "southern-lanternshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "smalleye-pygmy-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bigeye-sixgill-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ghost-catshark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "iceland-catshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lollipop-catshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "blackmouth-catshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "shortspine-spurdog",
+     "tier": "midnight"
+    },
+    {
+     "entity": "knifetooth-dogfish",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "shark-reef",
+   "answers": [
+    {
+     "entity": "port-jackson-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "horn-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "swell-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pyjama-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "puffadder-shyshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "blacknose-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "galapagos-bullhead-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sand-tiger-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "draughtsboard-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "varied-catshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "grey-bamboo-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "banded-wobbegong",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "ray-skate-sawfish",
+   "answers": [
+    {
+     "entity": "butterfly-ray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "arctic-skate",
+     "tier": "midnight"
+    },
+    {
+     "entity": "longnose-skate",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lesser-electric-ray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pacific-electric-ray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "blonde-ray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "spotted-ray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "undulate-ray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "starry-ray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "big-skate",
+     "tier": "twilight"
+    },
+    {
+     "entity": "winter-skate",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "stingray-species",
+   "answers": [
+    {
+     "entity": "chupare-stingray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "longnose-stingray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "estuary-stingray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "white-blotched-river-stingray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bigtooth-river-stingray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cortez-round-stingray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mekong-freshwater-stingray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sparsely-spotted-stingaree",
+     "tier": "midnight"
+    },
+    {
+     "entity": "yellowback-stingaree",
+     "tier": "midnight"
+    },
+    {
+     "entity": "smalleye-stingray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "banded-stingaree",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rosette-river-stingray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "smoothback-river-stingray",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "flat-seabed-fish",
+   "answers": [
+    {
+     "entity": "sole",
+     "tier": "reef"
+    },
+    {
+     "entity": "california-halibut",
+     "tier": "twilight"
+    },
+    {
+     "entity": "windowpane-flounder",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sanddab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "petrale-sole",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hogchoker",
+     "tier": "midnight"
+    },
+    {
+     "entity": "american-plaice",
+     "tier": "twilight"
+    },
+    {
+     "entity": "yellowfin-sole",
+     "tier": "midnight"
+    },
+    {
+     "entity": "longnose-batfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pacific-angelshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "thornback-ray",
+     "tier": "twilight"
+    }
+   ]
+  },
+  {
+   "id": "whale-species",
+   "answers": [
+    {
+     "entity": "dwarf-minke-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "southern-bottlenose-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "arnouxs-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "grays-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gervais-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hubbs-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "trues-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "stejnegers-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "andrews-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "shepherds-beaked-whale",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "toothed-whale",
+   "answers": [
+    {
+     "entity": "white-beaked-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "atlantic-white-sided-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "dusky-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rough-toothed-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pantropical-spotted-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "atlantic-spotted-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "heavisides-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "finless-porpoise",
+     "tier": "twilight"
+    },
+    {
+     "entity": "southern-bottlenose-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "arnouxs-beaked-whale",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "polar-cetacean",
+   "answers": [
+    {
+     "entity": "sei-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "cuviers-beaked-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sowerbys-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "andrews-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "southern-right-whale-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "peales-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "commersons-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "north-atlantic-right-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "dwarf-minke-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "right-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "hubbs-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pacific-white-sided-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ross-sea-killer-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pack-ice-killer-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "subantarctic-killer-whale",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "whale-hunted",
+   "answers": [
+    {
+     "entity": "dusky-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ganges-river-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "melon-headed-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pygmy-killer-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rough-toothed-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pacific-white-sided-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "white-beaked-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "blainvilles-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cuviers-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "commersons-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "chilean-dolphin",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "river-dolphin",
+   "answers": [
+    {
+     "entity": "lahilles-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "burrunan-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "orinoco-river-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mahakam-river-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mekong-dolphin",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "dolphin-pacific",
+   "answers": [
+    {
+     "entity": "long-finned-pilot-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "burrunan-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "eastern-spinner-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dwarf-spinner-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "central-american-spinner-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "coastal-spotted-dolphin",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "pinniped",
+   "answers": [
+    {
+     "entity": "japanese-sea-lion",
+     "tier": "midnight"
+    },
+    {
+     "entity": "guadalupe-fur-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "juan-fernandez-fur-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "subantarctic-fur-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "south-american-fur-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "new-zealand-fur-seal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "saimaa-ringed-seal",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "marine-mammal-not-cetacean",
+   "answers": [
+    {
+     "entity": "ribbon-seal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "spotted-seal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "caspian-seal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "new-zealand-sea-lion",
+     "tier": "twilight"
+    },
+    {
+     "entity": "south-american-sea-lion",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cape-fur-seal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "galapagos-fur-seal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "caribbean-monk-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "japanese-sea-lion",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sea-mink",
+     "tier": "midnight"
+    },
+    {
+     "entity": "guadalupe-fur-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "juan-fernandez-fur-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "new-zealand-fur-seal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "subantarctic-fur-seal",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "arctic-animal",
+   "answers": [
+    {
+     "entity": "greenland-cod",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lumpsucker",
+     "tier": "twilight"
+    },
+    {
+     "entity": "snailfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "eelpout",
+     "tier": "midnight"
+    },
+    {
+     "entity": "kittiwake",
+     "tier": "twilight"
+    },
+    {
+     "entity": "black-guillemot",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rosss-gull",
+     "tier": "midnight"
+    },
+    {
+     "entity": "common-eider",
+     "tier": "twilight"
+    },
+    {
+     "entity": "king-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "calanus",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "sea-reptile",
+   "answers": [
+    {
+     "entity": "marbled-sea-snake",
+     "tier": "twilight"
+    },
+    {
+     "entity": "yellow-sea-snake",
+     "tier": "midnight"
+    },
+    {
+     "entity": "arabian-gulf-sea-snake",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dwarf-sea-snake",
+     "tier": "midnight"
+    },
+    {
+     "entity": "viperine-sea-snake",
+     "tier": "midnight"
+    },
+    {
+     "entity": "jerdons-sea-snake",
+     "tier": "midnight"
+    },
+    {
+     "entity": "new-caledonian-sea-krait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "olive-headed-sea-snake",
+     "tier": "midnight"
+    },
+    {
+     "entity": "black-headed-sea-snake",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spectacled-sea-snake",
+     "tier": "midnight"
+    },
+    {
+     "entity": "small-headed-sea-snake",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ijimas-sea-snake",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "shelled-animal",
+   "answers": [
+    {
+     "entity": "moon-snail",
+     "tier": "twilight"
+    },
+    {
+     "entity": "murex",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pacific-oyster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blue-mussel",
+     "tier": "reef"
+    },
+    {
+     "entity": "chambered-nautilus",
+     "tier": "reef"
+    },
+    {
+     "entity": "noble-pen-shell",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lamp-shell",
+     "tier": "midnight"
+    },
+    {
+     "entity": "slipper-limpet",
+     "tier": "midnight"
+    },
+    {
+     "entity": "top-shell",
+     "tier": "midnight"
+    },
+    {
+     "entity": "surf-clam",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "cephalopod",
+   "answers": [
+    {
+     "entity": "wunderpus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "flapjack-octopus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "day-octopus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "piglet-squid",
+     "tier": "twilight"
+    },
+    {
+     "entity": "european-squid",
+     "tier": "twilight"
+    },
+    {
+     "entity": "japanese-flying-squid",
+     "tier": "twilight"
+    },
+    {
+     "entity": "longfin-inshore-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bigfin-reef-squid",
+     "tier": "twilight"
+    },
+    {
+     "entity": "neon-flying-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "diamond-squid",
+     "tier": "twilight"
+    }
+   ]
+  },
+  {
+   "id": "octopus-species",
+   "answers": [
+    {
+     "entity": "glowing-sucker-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "casper-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vent-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "maori-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "blue-lined-octopus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "atlantic-longarm-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "webfoot-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "fourhorn-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pale-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "southern-sand-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ornate-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mototi-octopus",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "squid-species",
+   "answers": [
+    {
+     "entity": "sevenstar-flying-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "boreal-clubhook-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "magister-armhook-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "purpleback-flying-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "northern-shortfin-squid",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lesser-flying-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "southern-calamari",
+     "tier": "twilight"
+    },
+    {
+     "entity": "common-clubhook-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "new-zealand-arrow-squid",
+     "tier": "twilight"
+    },
+    {
+     "entity": "swordtip-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "atlantic-brief-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "goulds-squid",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "tentacles",
+   "answers": [
+    {
+     "entity": "comb-jelly",
+     "tier": "twilight"
+    },
+    {
+     "entity": "compass-jellyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "siphonophore",
+     "tier": "twilight"
+    },
+    {
+     "entity": "by-the-wind-sailor",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blue-button",
+     "tier": "twilight"
+    },
+    {
+     "entity": "aggregating-anemone",
+     "tier": "midnight"
+    },
+    {
+     "entity": "giant-green-anemone",
+     "tier": "twilight"
+    },
+    {
+     "entity": "crystal-jelly",
+     "tier": "twilight"
+    },
+    {
+     "entity": "vent-anemone",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hydroid",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "crab-species",
+   "answers": [
+    {
+     "entity": "golden-king-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blue-swimmer-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "halloween-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "red-rock-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kelp-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mole-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "asian-shore-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "anemone-porcelain-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vent-crab",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "lobster-shrimp",
+   "answers": [
+    {
+     "entity": "western-rock-lobster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "southern-rock-lobster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "banana-prawn",
+     "tier": "twilight"
+    },
+    {
+     "entity": "brine-shrimp",
+     "tier": "reef"
+    },
+    {
+     "entity": "amano-shrimp",
+     "tier": "midnight"
+    },
+    {
+     "entity": "anemone-shrimp",
+     "tier": "twilight"
+    },
+    {
+     "entity": "european-spiny-lobster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-river-prawn",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mud-lobster",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pedersons-cleaner-shrimp",
+     "tier": "midnight"
+    },
+    {
+     "entity": "coleman-shrimp",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vent-shrimp",
+     "tier": "twilight"
+    },
+    {
+     "entity": "alvinocaris-shrimp",
+     "tier": "midnight"
+    },
+    {
+     "entity": "crinoid-squat-lobster",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "eats-krill",
+   "answers": [
+    {
+     "entity": "megamouth-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "right-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "snow-petrel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "antarctic-petrel",
+     "tier": "midnight"
+    },
+    {
+     "entity": "short-tailed-shearwater",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sooty-shearwater",
+     "tier": "twilight"
+    },
+    {
+     "entity": "alaska-pollock",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pink-salmon",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sockeye-salmon",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pacific-herring",
+     "tier": "twilight"
+    },
+    {
+     "entity": "northern-anchovy",
+     "tier": "twilight"
+    }
+   ]
+  },
+  {
+   "id": "edible-shellfish",
+   "answers": [
+    {
+     "entity": "pacific-oyster",
+     "tier": "reef"
+    },
+    {
+     "entity": "eastern-oyster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blue-mussel",
+     "tier": "reef"
+    },
+    {
+     "entity": "dungeness-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "snow-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blue-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "edible-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "stone-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "american-lobster",
+     "tier": "reef"
+    },
+    {
+     "entity": "tiger-prawn",
+     "tier": "twilight"
+    },
+    {
+     "entity": "red-swamp-crayfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ocean-quahog",
+     "tier": "midnight"
+    },
+    {
+     "entity": "veined-rapa-whelk",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "jellyfish",
+   "answers": [
+    {
+     "entity": "siphonophore",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-siphonophore",
+     "tier": "twilight"
+    },
+    {
+     "entity": "dandelion-siphonophore",
+     "tier": "midnight"
+    },
+    {
+     "entity": "doliolid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "white-spotted-jellyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "purple-striped-jelly",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bluefire-jellyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-phantom-jelly",
+     "tier": "midnight"
+    },
+    {
+     "entity": "caribbean-box-jelly",
+     "tier": "midnight"
+    },
+    {
+     "entity": "beroe-comb-jelly",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "venomous",
+   "answers": [
+    {
+     "entity": "banded-sea-krait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "beaked-sea-snake",
+     "tier": "twilight"
+    },
+    {
+     "entity": "olive-sea-snake",
+     "tier": "twilight"
+    },
+    {
+     "entity": "red-scorpionfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lusitanian-toadfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bermuda-fireworm",
+     "tier": "midnight"
+    },
+    {
+     "entity": "greater-blue-ringed-octopus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "southern-blue-ringed-octopus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "textile-cone",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sea-nettle",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mauve-stinger",
+     "tier": "twilight"
+    }
+   ]
+  },
+  {
+   "id": "drifter",
+   "answers": [
+    {
+     "entity": "phytoplankton",
+     "tier": "reef"
+    },
+    {
+     "entity": "diatom",
+     "tier": "twilight"
+    },
+    {
+     "entity": "dinoflagellate",
+     "tier": "twilight"
+    },
+    {
+     "entity": "noctiluca",
+     "tier": "midnight"
+    },
+    {
+     "entity": "crab-larva",
+     "tier": "twilight"
+    },
+    {
+     "entity": "fish-larva",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sea-gooseberry",
+     "tier": "twilight"
+    },
+    {
+     "entity": "compass-jellyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "barrel-jellyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "radiolarian",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dandelion-siphonophore",
+     "tier": "midnight"
+    },
+    {
+     "entity": "coccolithophore",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "flatfish",
+   "answers": [
+    {
+     "entity": "southern-flounder",
+     "tier": "twilight"
+    },
+    {
+     "entity": "english-sole",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rock-sole",
+     "tier": "midnight"
+    },
+    {
+     "entity": "flathead-sole",
+     "tier": "midnight"
+    },
+    {
+     "entity": "butter-sole",
+     "tier": "midnight"
+    },
+    {
+     "entity": "yellowtail-flounder",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kamchatka-flounder",
+     "tier": "midnight"
+    },
+    {
+     "entity": "senegalese-sole",
+     "tier": "twilight"
+    },
+    {
+     "entity": "greenback-flounder",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gulf-flounder",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "buries-in-sand",
+   "answers": [
+    {
+     "entity": "sanddab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tonguefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hogchoker",
+     "tier": "midnight"
+    },
+    {
+     "entity": "california-halibut",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bat-ray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "atlantic-torpedo",
+     "tier": "midnight"
+    },
+    {
+     "entity": "round-stingray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "senorita",
+     "tier": "midnight"
+    },
+    {
+     "entity": "kuhli-loach",
+     "tier": "midnight"
+    },
+    {
+     "entity": "south-american-lungfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pacific-angelshark",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "deep-sea-fish",
+   "answers": [
+    {
+     "entity": "mariana-snailfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "abyssal-grenadier",
+     "tier": "midnight"
+    },
+    {
+     "entity": "blue-antimora",
+     "tier": "midnight"
+    },
+    {
+     "entity": "deep-sea-lizardfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "halosaur",
+     "tier": "midnight"
+    },
+    {
+     "entity": "flabby-whalefish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "giant-grenadier",
+     "tier": "midnight"
+    },
+    {
+     "entity": "roundnose-grenadier",
+     "tier": "midnight"
+    },
+    {
+     "entity": "kermadec-snailfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ethereal-snailfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "long-nosed-chimaera",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hoki",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sablefish",
+     "tier": "twilight"
+    }
+   ]
+  },
+  {
+   "id": "below-1000m",
+   "answers": [
+    {
+     "entity": "giant-grenadier",
+     "tier": "twilight"
+    },
+    {
+     "entity": "roundnose-grenadier",
+     "tier": "midnight"
+    },
+    {
+     "entity": "long-nosed-chimaera",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ethereal-snailfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "kermadec-snailfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "abyssobrotula",
+     "tier": "midnight"
+    },
+    {
+     "entity": "footballfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "humpback-anglerfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "snipe-eel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "black-scabbardfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sablefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pink-vent-fish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vent-tonguefish",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "hadal-animal",
+   "answers": [
+    {
+     "entity": "japan-trench-snailfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "atacama-snailfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "belyaevs-snailfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bathycallisoma",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bathykermadeca-hadalis",
+     "tier": "midnight"
+    },
+    {
+     "entity": "valettietta-gracilis",
+     "tier": "midnight"
+    },
+    {
+     "entity": "galatheanthemum-hadale",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "deep-not-fish",
+   "answers": [
+    {
+     "entity": "flapjack-octopus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "glowing-sucker-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vent-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "piglet-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "glass-squid",
+     "tier": "twilight"
+    },
+    {
+     "entity": "whiplash-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dandelion-siphonophore",
+     "tier": "midnight"
+    },
+    {
+     "entity": "giant-siphonophore",
+     "tier": "twilight"
+    },
+    {
+     "entity": "headless-chicken-monster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "deepstaria",
+     "tier": "midnight"
+    },
+    {
+     "entity": "scaly-foot-snail",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cold-seep-tubeworm",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tomopteris",
+     "tier": "midnight"
+    },
+    {
+     "entity": "basket-star",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "deep-shipwreck",
+   "answers": [
+    {
+     "entity": "ss-thistlegorm",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ss-yongala",
+     "tier": "midnight"
+    },
+    {
+     "entity": "uss-arizona",
+     "tier": "twilight"
+    },
+    {
+     "entity": "wilhelm-gustloff",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hms-erebus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hms-terror",
+     "tier": "twilight"
+    },
+    {
+     "entity": "carpathia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "whydah-gally",
+     "tier": "midnight"
+    },
+    {
+     "entity": "uss-monitor",
+     "tier": "midnight"
+    },
+    {
+     "entity": "empress-of-ireland",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hms-royal-oak",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ss-president-coolidge",
+     "tier": "midnight"
+    },
+    {
+     "entity": "uss-saratoga",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hms-repulse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rms-rhone",
+     "tier": "midnight"
+    }
+   ]
+  },
+  {
+   "id": "vent-life",
+   "answers": [
+    {
+     "entity": "alvinella-caudata",
+     "tier": "midnight"
+    },
+    {
+     "entity": "neomphalus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "shinkaia-crosnieri",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mirocaris-fortunata",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ophioctenella-acies",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pachycara-thermophilum",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gigantopelta-chessoia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "segonzacia-mesatlantica",
+     "tier": "midnight"
+    },
+    {
+     "entity": "austinograea-williamsi",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cyanagraea-praedator",
+     "tier": "midnight"
+    },
+    {
+     "entity": "nautilocaris-saintlaurentae",
+     "tier": "midnight"
+    }
+   ]
+  }
+ ]
+}

@@ -99,13 +99,15 @@
   "id": "river-dolphin",
   "text": "Name a dolphin or porpoise that lives in rivers or estuaries.",
   "group": "dolphins",
-  "difficulty": 4
+  "difficulty": 4,
+  "min": 31
  },
  {
   "id": "dolphin-pacific",
   "text": "Name a dolphin species found in the Pacific Ocean.",
   "group": "dolphins",
-  "difficulty": 2
+  "difficulty": 2,
+  "min": 35
  },
  {
   "id": "pinniped",
@@ -172,13 +174,17 @@
   "id": "crab-species",
   "text": "Name a crab species.",
   "group": "crustaceans",
-  "difficulty": 2
+  "difficulty": 2,
+  "taxon": "crustaceans",
+  "taxonFilter": "crab\\b|crabs\\b"
  },
  {
   "id": "lobster-shrimp",
   "text": "Name a lobster, shrimp, prawn or crayfish species.",
   "group": "crustaceans",
-  "difficulty": 3
+  "difficulty": 3,
+  "taxon": "crustaceans",
+  "taxonFilter": "lobster|shrimp|prawn|crayfish|crawfish|langoustine|scampi|yabby|marron|crawdad"
  },
  {
   "id": "eats-krill",
@@ -190,7 +196,9 @@
   "id": "edible-shellfish",
   "text": "Name a crustacean or mollusc that people eat.",
   "group": "seafood",
-  "difficulty": 1
+  "difficulty": 1,
+  "taxon": "crustaceans|molluscs",
+  "taxonFilter": "crab|lobster|shrimp|prawn|crayfish|langoustine|scampi|oyster|mussel|clam|scallop|cockle|whelk|periwinkle|abalone|conch|limpet|razor|quahog|geoduck"
  },
  {
   "id": "jellyfish",
@@ -229,25 +237,34 @@
   "id": "deep-sea-fish",
   "text": "Name a deep-sea fish.",
   "group": "deep-sea",
-  "difficulty": 2
+  "difficulty": 2,
+  "taxon": "deep-sea",
+  "taxonFilter": "fish|eel|shark|ray|skate|grenadier|rattail|snailfish|hatchet|dragon|angler|viper|lantern|barracudina|lizard|cusk|brotula|halosaur|spookfish|barreleye|fangtooth|oreo|slickhead|smooth-head|whalefish|bristlemouth|gulper|swallower|tripod|cod|hake|sablefish|grenadier"
  },
  {
   "id": "below-1000m",
   "text": "Name a fish found below 1,000 metres.",
   "group": "deep-sea",
-  "difficulty": 3
+  "difficulty": 3,
+  "taxon": "deep-sea",
+  "taxonFilter": "fish|eel|shark|ray|skate|grenadier|rattail|snailfish|hatchet|dragon|angler|viper|lantern|barracudina|lizard|cusk|brotula|halosaur|spookfish|barreleye|fangtooth|oreo|slickhead|whalefish|bristlemouth|gulper|swallower|tripod"
  },
  {
   "id": "hadal-animal",
   "text": "Name an animal that lives in an ocean trench, deeper than 6,000 metres.",
   "group": "trench-life",
-  "difficulty": 5
+  "difficulty": 5,
+  "min": 37,
+  "taxon": "deep-sea",
+  "taxonFilter": "hadal|snailfish|amphipod|cusk|holothurian|cucumber|isopod|polychaete|xenophyophore|trench"
  },
  {
   "id": "deep-not-fish",
   "text": "Name a deep-sea creature that is not a fish.",
   "group": "deep-sea",
-  "difficulty": 3
+  "difficulty": 3,
+  "taxon": "deep-sea",
+  "taxonFilter": "squid|octopus|cucumber|urchin|star|crab|shrimp|amphipod|isopod|worm|jelly|siphonophore|sponge|anemone|coral|snail|clam|mussel|barnacle|lobster|comb|salp|pyrosome|larvacean|vampire|sea pig|sea spider|brittle|crinoid|lily"
  },
  {
   "id": "deep-shipwreck",
@@ -259,7 +276,9 @@
   "id": "vent-life",
   "text": "Name a creature that lives at a hydrothermal vent.",
   "group": "vents",
-  "difficulty": 4
+  "difficulty": 4,
+  "taxon": "deep-sea",
+  "taxonFilter": "vent|tube ?worm|pompeii|yeti|hoff|rimicaris|alviniconcha|bathymodiolus|scaly|snail|clam|mussel|shrimp|crab|octopus|tubeworm|riftia|chimney"
  },
  {
   "id": "makes-light",
@@ -328,7 +347,9 @@
   "id": "coral-type",
   "text": "Name a type of coral.",
   "group": "corals",
-  "difficulty": 3
+  "difficulty": 3,
+  "taxon": "corals-anemones",
+  "taxonFilter": "coral"
  },
  {
   "id": "symbiosis",
@@ -424,7 +445,8 @@
   "id": "seaweed",
   "text": "Name a seaweed, kelp or sea plant.",
   "group": "plants",
-  "difficulty": 3
+  "difficulty": 3,
+  "taxon": "seaweeds"
  },
  {
   "id": "eats-seaweed",
@@ -492,7 +514,8 @@
   "id": "giant",
   "text": "Name an ocean animal that can grow longer than 8 metres.",
   "group": "records",
-  "difficulty": 3
+  "difficulty": 3,
+  "min": 35
  },
  {
   "id": "fast-fish",
@@ -613,13 +636,16 @@
   "id": "plankton",
   "text": "Name a type of plankton or another tiny ocean organism.",
   "group": "plankton",
-  "difficulty": 4
+  "difficulty": 4,
+  "taxon": "jellies|crustaceans",
+  "taxonFilter": "copepod|krill|salp|larvacean|siphonophore|comb jelly|ctenophore|medusa|jelly|pteropod|sea butterfly|amphipod|euphausiid|mysid|cladoceran|ostracod|hyperiid"
  },
  {
   "id": "snail-slug-mollusc",
   "text": "Name a sea snail, sea slug or other shelled mollusc species.",
   "group": "molluscs",
-  "difficulty": 3
+  "difficulty": 3,
+  "taxon": "molluscs|nudibranchs"
  },
  {
   "id": "parent-fish",
@@ -733,7 +759,8 @@
   "id": "freshwater",
   "text": "Name a fish that lives in freshwater lakes or rivers.",
   "group": "freshwater",
-  "difficulty": 1
+  "difficulty": 1,
+  "taxon": "freshwater-fish"
  },
  {
   "id": "game-fish",
@@ -941,7 +968,8 @@
   "id": "blue-fish",
   "text": "Name a fish or sea creature that is mostly blue.",
   "group": "appearance",
-  "difficulty": 2
+  "difficulty": 2,
+  "min": 28
  },
  {
   "id": "red-fish",
@@ -953,7 +981,8 @@
   "id": "yellow-fish",
   "text": "Name a fish or sea creature that is mostly yellow.",
   "group": "appearance",
-  "difficulty": 3
+  "difficulty": 3,
+  "min": 18
  },
  {
   "id": "echolocation",
@@ -1013,31 +1042,38 @@
   "id": "seabird-species",
   "text": "Name a seabird species.",
   "group": "seabirds",
-  "difficulty": 2
+  "difficulty": 2,
+  "taxon": "seabirds"
  },
  {
   "id": "bivalve",
   "text": "Name a clam, oyster, mussel, scallop or other two-shelled mollusc species.",
   "group": "molluscs",
-  "difficulty": 3
+  "difficulty": 3,
+  "taxon": "molluscs",
+  "taxonFilter": "clam|oyster|mussel|scallop|cockle|quahog|razor|geoduck|piddock|shipworm|teredo|ark shell|jingle|tellin|wedge shell|venus|lucine|pen shell|file shell|jewel box|nut shell|donax|coquina|surf clam|gaper|carpet shell|zebra mussel|pearl"
  },
  {
   "id": "nudibranch",
   "text": "Name a sea slug or nudibranch species.",
   "group": "molluscs",
-  "difficulty": 5
+  "difficulty": 5,
+  "taxon": "nudibranchs"
  },
  {
   "id": "seagrass-mangrove",
   "text": "Name a seagrass or mangrove species.",
   "group": "plants",
-  "difficulty": 4
+  "difficulty": 4,
+  "taxon": "seaweeds",
+  "taxonFilter": "grass|mangrove|wrack\\b|weed$"
  },
  {
   "id": "sea-anemone-coral-species",
   "text": "Name a sea anemone, jellyfish or coral species.",
   "group": "corals",
-  "difficulty": 4
+  "difficulty": 4,
+  "taxon": "corals-anemones|jellies"
  },
  {
   "id": "sponge-tunicate",
@@ -1085,7 +1121,9 @@
   "id": "amazon",
   "text": "Name a fish or animal that lives in the Amazon river.",
   "group": "freshwater",
-  "difficulty": 2
+  "difficulty": 2,
+  "taxon": "freshwater-fish",
+  "taxonFilter": "amazon|arapaima|pirarucu|piranha|tambaqui|pacu|arowana|peacock bass|tucunare|dorado|payara|candiru|discus|cardinal tetra|neon tetra|oscar|pleco|corydoras|hatchetfish|knifefish|electric eel|catfish"
  },
  {
   "id": "africa-great-lakes",
@@ -1127,7 +1165,8 @@
   "id": "indian-ocean-country",
   "text": "Name a country with an Indian Ocean coastline.",
   "group": "countries",
-  "difficulty": 2
+  "difficulty": 2,
+  "min": 36
  },
  {
   "id": "island-nation",
@@ -1327,7 +1366,8 @@
   "id": "crustacean-species",
   "text": "Name a crustacean species (crabs, lobsters, shrimps, barnacles and their relatives).",
   "group": "crustaceans",
-  "difficulty": 3
+  "difficulty": 3,
+  "taxon": "crustaceans"
  },
  {
   "id": "whale-letter",
@@ -1335,7 +1375,8 @@
   "group": "names",
   "difficulty": 4,
   "taxon": "cetaceans",
-  "taxonFilter": "whale.*\\b(blue|grey|gray|white|black|pygmy|dwarf|giant|minke|antarctic|arctic|atlantic|pacific|indian|southern|northern|arnoux|baird|bryde|sei|fin|humpback|bowhead|right|sperm|beaked|pilot|killer)\\b|\\b(blue|grey|gray|white|black|pygmy|dwarf|giant|antarctic|arctic|atlantic|pacific|indian|southern|northern|australian|japanese|chilean|peruvian|californian|hawaiian|mediterranean|caribbean|bering|baikal|gulf|andrews|arnoux|bairds|blainville|cuvier|gervais|gray|hector|hubbs|longman|perrin|pygmy|shepherd|sowerby|stejneger|true|deraniyagala|ginkgo|strap|spade)\\b.*whale"
+  "taxonFilter": "whale.*\\b(blue|grey|gray|white|black|pygmy|dwarf|giant|minke|antarctic|arctic|atlantic|pacific|indian|southern|northern|arnoux|baird|bryde|sei|fin|humpback|bowhead|right|sperm|beaked|pilot|killer)\\b|\\b(blue|grey|gray|white|black|pygmy|dwarf|giant|antarctic|arctic|atlantic|pacific|indian|southern|northern|australian|japanese|chilean|peruvian|californian|hawaiian|mediterranean|caribbean|bering|baikal|gulf|andrews|arnoux|bairds|blainville|cuvier|gervais|gray|hector|hubbs|longman|perrin|pygmy|shepherd|sowerby|stejneger|true|deraniyagala|ginkgo|strap|spade)\\b.*whale",
+  "min": 31
  },
  {
   "id": "prehistoric-sea",

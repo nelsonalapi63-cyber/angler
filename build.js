@@ -9,7 +9,9 @@
  *   taxa.js     -> window.FATHOM_TAXA (group -> species names; the safety net for species prompts)
  * It also extends data/schedule.json: days up to and including today stay exactly as they were (so the archive and
  * the server agree with what people played); every later day is regenerated from the current bank, SCHEDULE_DAYS_AHEAD out.
- * Usage: node build.js [--partial]   (--partial skips the 120-prompt floor while the bank is still growing)
+ * It also writes 404.html's redirect target, robots.txt and sitemap.xml from data/site.json, and with --dist copies
+ * the deployable site into dist/ (what the GitHub Pages workflow uploads) with a CNAME file when siteUrl is set.
+ * Usage: node build.js [--partial] [--dist]   (--partial skips the 120-prompt floor while the bank is still growing)
  */
 'use strict';
 const fs = require('fs');
@@ -24,6 +26,9 @@ const TUTORIAL_PROMPT_IDS = ['shark-species', 'whale-species', 'tide-pool'];   /
 
 const ROOT = __dirname;
 const partial = process.argv.includes('--partial');
+const wantDist = process.argv.includes('--dist');
+const site = fs.existsSync(path.join(ROOT, 'data', 'site.json')) ? JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'site.json'), 'utf8')) : { siteUrl: '' };
+const SITE_URL = String(site.siteUrl || '').replace(/\/+$/, '');
 const res = validateData({ allowPartial: partial });
 for (const e of res.errors) console.error('ERROR: ' + e);
 if (!res.ok) { console.error('build aborted: data does not validate'); process.exit(1); }
@@ -96,7 +101,33 @@ for (const p of bootPrompts) {
   }
 }
 const boot = { built: stamp, version, days: Object.keys(bootDays), prompts: bootPrompts, entities: bootEntities, packs, schedule: bootDays, taxa: bootTaxa };
-fs.writeFileSync(path.join(ROOT, 'boot.js'), header + 'window.FATHOM_BOOT = ' + JSON.stringify(boot) + ';\nwindow.FATHOM_DATA_VERSION = ' + JSON.stringify(version) + ';\n');
+fs.writeFileSync(path.join(ROOT, 'boot.js'), header + 'window.FATHOM_SITE = ' + JSON.stringify({ siteUrl: SITE_URL }) + ';\nwindow.FATHOM_BOOT = ' + JSON.stringify(boot) + ';\nwindow.FATHOM_DATA_VERSION = ' + JSON.stringify(version) + ';\n');
+
+// ---- site files that depend on the address: robots.txt, sitemap.xml, the Open Graph tags in index.html
+const base = SITE_URL || '';
+fs.writeFileSync(path.join(ROOT, 'robots.txt'), 'User-agent: *\nAllow: /\n' + (base ? 'Sitemap: ' + base + '/sitemap.xml\n' : ''));
+const pages = ['', 'privacy.html', 'terms.html', 'refunds.html'];
+fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + pages.map(p => '  <url><loc>' + (base || 'https://example.invalid') + '/' + p + '</loc><changefreq>' + (p ? 'monthly' : 'daily') + '</changefreq></url>').join('\n') + '\n</urlset>\n');
+let html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+const ogToday = fs.existsSync(path.join(ROOT, 'icons', 'og', today + '.png')) ? 'icons/og/' + today + '.png' : 'icons/og.png';
+html = html.replace(/<meta property="og:image" content="[^"]*">/, '<meta property="og:image" content="' + (base ? base + '/' : '') + ogToday + '">');
+html = html.replace(/<meta property="og:url" content="[^"]*">\n?/, '');
+if (base) html = html.replace('<meta property="og:type" content="website">', '<meta property="og:type" content="website">\n  <meta property="og:url" content="' + base + '/">');
+html = html.replace(/<link rel="canonical" href="[^"]*">\n?/, '');
+if (base) html = html.replace('<link rel="manifest" href="manifest.json">', '<link rel="canonical" href="' + base + '/">\n  <link rel="manifest" href="manifest.json">');
+fs.writeFileSync(path.join(ROOT, 'index.html'), html);
+
+// ---- dist/: exactly the files the site needs, nothing from data/, tests/ or supabase/
+if (wantDist) {
+  const dist = path.join(ROOT, 'dist');
+  fs.rmSync(dist, { recursive: true, force: true });
+  fs.mkdirSync(dist, { recursive: true });
+  const copy = (rel) => { const from = path.join(ROOT, rel); if (!fs.existsSync(from)) return; fs.mkdirSync(path.dirname(path.join(dist, rel)), { recursive: true }); fs.cpSync(from, path.join(dist, rel), { recursive: true }); };
+  ['index.html', '404.html', 'styles.css', 'app.js', 'game.js', 'pages.js', 'storage.js', 'charts.js', 'online.js', 'monetise.js', 'achievements.js', 'share.js', 'boot.js', 'entities.js', 'prompts.js', 'taxa.js', 'sw.js', 'manifest.json', 'robots.txt', 'sitemap.xml', 'privacy.html', 'terms.html', 'refunds.html', 'admin.html', 'shared/dive.js', 'fonts', 'icons', 'data/illustrations'].forEach(copy);
+  fs.writeFileSync(path.join(dist, '.nojekyll'), '');
+  if (base) fs.writeFileSync(path.join(dist, 'CNAME'), new URL(base).host + '\n');
+  console.log('dist/ written (' + fs.readdirSync(dist).length + ' entries' + (base ? ', CNAME ' + new URL(base).host : ', no CNAME: data/site.json has no siteUrl') + ')');
+}
 
 const kb = (f) => Math.round(fs.statSync(path.join(ROOT, f)).size / 1024) + ' KB';
 console.log('taxon prompts: ' + prompts.filter(p => p.taxon).length + ' of ' + prompts.length + (taxonChanged ? ' (data/prompts.json updated from seeds)' : ''));

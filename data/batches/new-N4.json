@@ -1,0 +1,3554 @@
+{
+ "entities": [
+  {
+   "id": "west-indian-manatee",
+   "name": "West Indian manatee",
+   "aliases": [
+    "Florida manatee",
+    "Caribbean manatee",
+    "Antillean manatee",
+    "Trichechus manatus"
+   ],
+   "kind": "creature",
+   "group": "mammals",
+   "fact": "West Indian manatees crowd into Florida's warm springs in winter because they cannot survive long in water below about 20 degrees Celsius."
+  },
+  {
+   "id": "wedgefish",
+   "name": "Wedgefish",
+   "aliases": [
+    "Rhynchobatus",
+    "giant guitarfish"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "Wedgefish are shark-like rays with a rounded, wedge-shaped snout, and many species are critically endangered because their fins are highly prized."
+  },
+  {
+   "id": "warty-frogfish",
+   "name": "Warty frogfish",
+   "aliases": [
+    "Antennarius maculatus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The warty frogfish dangles a lure on a modified fin spine to tempt prey within reach of its huge mouth."
+  },
+  {
+   "id": "waspfish",
+   "name": "Waspfish",
+   "aliases": [
+    "Tetrarogidae"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Waspfish carry venomous dorsal spines and rest camouflaged against the seabed."
+  },
+  {
+   "id": "walleye-pollock",
+   "name": "Walleye pollock",
+   "aliases": [
+    "Alaska pollock",
+    "Gadus chalcogrammus",
+    "Theragra chalcogramma"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Walleye pollock, sold as Alaska pollock, is among the world's largest fisheries by volume and is the usual fish in fish fingers and imitation crab."
+  },
+  {
+   "id": "western-rock-lobster",
+   "name": "Western rock lobster",
+   "aliases": [
+    "Panulirus cygnus"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "The western rock lobster is a spiny lobster of Western Australia that supports one of the country's most valuable fisheries."
+  },
+  {
+   "id": "white-hake",
+   "name": "White hake",
+   "aliases": [
+    "Urophycis tenuis"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "White hake is a long-bodied relative of the cod found over soft seabeds in the north-west Atlantic."
+  },
+  {
+   "id": "walking-shark",
+   "name": "Walking shark",
+   "aliases": [
+    "Hemiscyllium",
+    "epaulette shark"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Walking sharks wriggle across reef flats and tide pools on their paired fins, and can even cross short stretches of exposed reef."
+  },
+  {
+   "id": "wentletrap",
+   "name": "Wentletrap",
+   "aliases": [
+    "Epitoniidae",
+    "staircase shell"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Wentletraps are sea snails with ladder-like spiral shells, and the name comes from the Dutch word for a spiral staircase."
+  },
+  {
+   "id": "warty-comb-jelly",
+   "name": "Warty comb jelly",
+   "aliases": [
+    "Mnemiopsis leidyi",
+    "sea walnut"
+   ],
+   "kind": "creature",
+   "group": "jellies",
+   "fact": "The warty comb jelly is a see-through, lobed predator that, carried in ships' ballast water, invaded the Black Sea in the 1980s."
+  },
+  {
+   "id": "white-spotted-jellyfish",
+   "name": "White-spotted jellyfish",
+   "aliases": [
+    "Phyllorhiza punctata",
+    "floating bell",
+    "Australian spotted jellyfish"
+   ],
+   "kind": "creature",
+   "group": "jellies",
+   "fact": "The white-spotted jellyfish, native to the western Pacific, has spread to the Gulf of Mexico and elsewhere, where its blooms can clog fishing nets."
+  },
+  {
+   "id": "western-wobbegong",
+   "name": "Western wobbegong",
+   "aliases": [
+    "Orectolobus hutchinsi"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The western wobbegong is a carpet shark of southern Western Australia whose fringed, mottled body camouflages it on the seabed."
+  },
+  {
+   "id": "western-blue-groper",
+   "name": "Western blue groper",
+   "aliases": [
+    "Achoerodus gouldii"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The western blue groper is a very large wrasse of the reefs of southern Australia."
+  },
+  {
+   "id": "wrymouth",
+   "name": "Wrymouth",
+   "aliases": [
+    "Cryptacanthodes maculatus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The wrymouth is an eel-like fish of the north-west Atlantic that lives in burrows in muddy seabed."
+  },
+  {
+   "id": "weasel-shark",
+   "name": "Weasel shark",
+   "aliases": [
+    "Hemigaleidae",
+    "Paragaleus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Weasel sharks are a family of slender sharks found along warm Indo-Pacific and West African coasts."
+  },
+  {
+   "id": "white-spotted-bamboo-shark",
+   "name": "White-spotted bamboo shark",
+   "aliases": [
+    "Chiloscyllium plagiosum",
+    "whitespotted bamboo shark"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The white-spotted bamboo shark is a small, slender Indo-Pacific reef shark that lays egg cases and is common in public aquariums."
+  },
+  {
+   "id": "whitetail-dascyllus",
+   "name": "Whitetail dascyllus",
+   "aliases": [
+    "Dascyllus aruanus",
+    "humbug dascyllus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The whitetail dascyllus shelters in small groups among branching corals on Indo-Pacific reefs."
+  },
+  {
+   "id": "winter-skate",
+   "name": "Winter skate",
+   "aliases": [
+    "Leucoraja ocellata"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The winter skate of the north-west Atlantic has an eye-like spot on each wing and lives on sandy and gravelly seabeds."
+  },
+  {
+   "id": "lugworm",
+   "name": "Lugworm",
+   "aliases": [
+    "Arenicola marina",
+    "sandworm"
+   ],
+   "kind": "creature",
+   "group": "worms",
+   "fact": "Lugworms live in U-shaped burrows in sand and mud, and leave coiled casts on the beach at low tide."
+  },
+  {
+   "id": "lamprey",
+   "name": "Lamprey",
+   "aliases": [
+    "Petromyzontiformes",
+    "Petromyzon"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Lampreys are jawless fish with a sucker mouth ringed with teeth, and several species fasten on to other fish to feed."
+  },
+  {
+   "id": "little-penguin",
+   "name": "Little penguin",
+   "aliases": [
+    "fairy penguin",
+    "little blue penguin",
+    "Eudyptula minor"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "The little penguin stands only about 30 centimetres tall and breeds along the southern coasts of Australia, including Phillip Island."
+  },
+  {
+   "id": "leatherjacket",
+   "name": "Leatherjacket",
+   "aliases": [
+    "Monacanthidae"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Leatherjackets are a family of filefishes with tough, rough skin, found in warm and temperate seas."
+  },
+  {
+   "id": "lookdown",
+   "name": "Lookdown",
+   "aliases": [
+    "Selene vomer"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The lookdown has a steeply sloping, flattened forehead and a deep, silvery, disc-shaped body."
+  },
+  {
+   "id": "lined-surgeonfish",
+   "name": "Lined surgeonfish",
+   "aliases": [
+    "Acanthurus lineatus",
+    "clown surgeonfish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The lined surgeonfish, also called the clown surgeonfish, defends grazing territories on shallow Indo-Pacific reefs with sharp spines at the base of its tail."
+  },
+  {
+   "id": "lyretail-anthias",
+   "name": "Lyretail anthias",
+   "aliases": [
+    "Pseudanthias squamipinnis",
+    "sea goldie"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Lyretail anthias live in large shoals over reefs, and every fish starts life as a female, with the dominant ones later changing into males."
+  },
+  {
+   "id": "leopard-coral-grouper",
+   "name": "Leopard coral grouper",
+   "aliases": [
+    "Plectropomus leopardus",
+    "leopard coral trout"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The leopard coral grouper is a red, blue-spotted predator of the Great Barrier Reef and a major target of its reef fishery."
+  },
+  {
+   "id": "lollipop-catshark",
+   "name": "Lollipop catshark",
+   "aliases": [
+    "Cephalurus cephalus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The lollipop catshark of the eastern Pacific has a broad rounded head and a thin tapering body and lives on the deep sea floor."
+  },
+  {
+   "id": "lions-paw-scallop",
+   "name": "Lion's paw scallop",
+   "aliases": [
+    "Nodipecten subnodosus"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "The lion's paw scallop is a large, ridged scallop of the eastern Pacific, prized as seafood."
+  },
+  {
+   "id": "longbill-spearfish",
+   "name": "Longbill spearfish",
+   "aliases": [
+    "Tetrapturus pfluegeri"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The longbill spearfish is a slender Atlantic billfish with a long, rounded bill."
+  },
+  {
+   "id": "lemon-damselfish",
+   "name": "Lemon damselfish",
+   "aliases": [
+    "Pomacentrus moluccensis"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The lemon damselfish is a bright yellow damselfish that shelters among branching corals on Indo-Pacific reefs."
+  },
+  {
+   "id": "palette-surgeonfish",
+   "name": "Palette surgeonfish",
+   "aliases": [
+    "Paracanthurus hepatus",
+    "blue tang",
+    "regal tang"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The palette surgeonfish, a bright blue Indo-Pacific reef fish, became famous as Dory in the film Finding Nemo."
+  },
+  {
+   "id": "pelican-eel",
+   "name": "Pelican eel",
+   "aliases": [
+    "gulper eel",
+    "umbrella-mouth gulper",
+    "Eurypharynx pelecanoides"
+   ],
+   "kind": "creature",
+   "group": "eels",
+   "fact": "The pelican eel, or gulper eel, has a vast pouch-like mouth on a thin body and lives in the deep sea, where it has been filmed ballooning its head."
+  },
+  {
+   "id": "painted-frogfish",
+   "name": "Painted frogfish",
+   "aliases": [
+    "Antennarius pictus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The painted frogfish can alter its colour over time to match its surroundings and lures prey with a fishing-rod-like spine."
+  },
+  {
+   "id": "pacific-sea-nettle",
+   "name": "Pacific sea nettle",
+   "aliases": [
+    "Chrysaora fuscescens"
+   ],
+   "kind": "creature",
+   "group": "jellies",
+   "fact": "The Pacific sea nettle is a large, long-armed jellyfish of the north-eastern Pacific with a golden-brown bell."
+  },
+  {
+   "id": "purple-striped-jellyfish",
+   "name": "Purple-striped jellyfish",
+   "aliases": [
+    "Chrysaora colorata",
+    "purple-striped jelly"
+   ],
+   "kind": "creature",
+   "group": "jellies",
+   "fact": "The purple-striped jellyfish of Monterey Bay feeds on other jellyfish, especially moon jellies."
+  },
+  {
+   "id": "pacific-blackdragon",
+   "name": "Pacific blackdragon",
+   "aliases": [
+    "Idiacanthus antrostomus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Female Pacific blackdragons have a light-tipped chin barbel and rows of light organs along the body, while the males are tiny and toothless."
+  },
+  {
+   "id": "pacific-viperfish",
+   "name": "Pacific viperfish",
+   "aliases": [
+    "Chauliodus macouni"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The Pacific viperfish has fang-like teeth so long that they curve outside its closed mouth."
+  },
+  {
+   "id": "pacific-hagfish",
+   "name": "Pacific hagfish",
+   "aliases": [
+    "Eptatretus stoutii"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The Pacific hagfish defends itself by releasing slime that swells into a choking gel in seawater."
+  },
+  {
+   "id": "paper-nautilus",
+   "name": "Paper nautilus",
+   "aliases": [
+    "Argonauta",
+    "argonaut"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "Female paper nautiluses, which are in fact octopuses, make a thin papery egg case that they carry with them."
+  },
+  {
+   "id": "pacific-ocean-perch",
+   "name": "Pacific ocean perch",
+   "aliases": [
+    "Sebastes alutus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The Pacific ocean perch is a long-lived rockfish that can reach many decades of age."
+  },
+  {
+   "id": "patagonian-squid",
+   "name": "Patagonian squid",
+   "aliases": [
+    "Doryteuthis gahi",
+    "Falkland calamari"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The Patagonian squid is a major catch in the waters around the Falkland Islands."
+  },
+  {
+   "id": "phantom-jelly",
+   "name": "Phantom jelly",
+   "aliases": [
+    "Stygiomedusa gigantea",
+    "giant phantom jellyfish"
+   ],
+   "kind": "creature",
+   "group": "jellies",
+   "fact": "The phantom jelly is a rarely seen deep-sea giant with ribbon-like oral arms that can stretch up to about 10 metres."
+  },
+  {
+   "id": "pajama-cardinalfish",
+   "name": "Pajama cardinalfish",
+   "aliases": [
+    "Sphaeramia nematoptera",
+    "pyjama cardinalfish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Male pajama cardinalfish incubate the fertilised eggs in their mouths."
+  },
+  {
+   "id": "magellanic-penguin",
+   "name": "Magellanic penguin",
+   "aliases": [
+    "Spheniscus magellanicus"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "Magellanic penguins breed in huge colonies along the coasts of Argentina, Chile and the Falkland Islands."
+  },
+  {
+   "id": "magnificent-sea-anemone",
+   "name": "Magnificent sea anemone",
+   "aliases": [
+    "Heteractis magnifica",
+    "Ritteri anemone"
+   ],
+   "kind": "creature",
+   "group": "anemones",
+   "fact": "The magnificent sea anemone is a favourite host of clownfish on Indo-Pacific reefs."
+  },
+  {
+   "id": "manefish",
+   "name": "Manefish",
+   "aliases": [
+    "Caristiidae"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Manefish are deep-sea fish with a tall, mane-like dorsal fin, and they are sometimes found close to siphonophores and jellyfish."
+  },
+  {
+   "id": "molly-miller",
+   "name": "Molly miller",
+   "aliases": [
+    "Scartella cristata"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The molly miller is a small blenny that lives in tide pools and on shallow rocky shores of the Atlantic."
+  },
+  {
+   "id": "mosshead-warbonnet",
+   "name": "Mosshead warbonnet",
+   "aliases": [
+    "Chirolophis nugator"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The mosshead warbonnet is a small north Pacific fish with a crest of branching, moss-like tentacles on its head."
+  },
+  {
+   "id": "morwong",
+   "name": "Morwong",
+   "aliases": [
+    "Cheilodactylidae"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Morwongs are a family of reef fish of the Southern Hemisphere, caught commercially and by anglers off Australia and New Zealand."
+  },
+  {
+   "id": "mulloway",
+   "name": "Mulloway",
+   "aliases": [
+    "Argyrosomus japonicus",
+    "jewfish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The mulloway is a large, silvery Australian fish, long prized by anglers, that can grow to well over a metre."
+  },
+  {
+   "id": "maori-octopus",
+   "name": "Maori octopus",
+   "aliases": [
+    "Macroctopus maorum",
+    "Māori octopus"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "The Maori octopus is a large octopus of New Zealand and southern Australian waters."
+  },
+  {
+   "id": "short-beaked-common-dolphin",
+   "name": "Short-beaked common dolphin",
+   "aliases": [
+    "Delphinus delphis",
+    "saddleback dolphin"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "Short-beaked common dolphins carry an hourglass pattern of grey, yellow and white on their sides and often gather in very large, fast-moving pods."
+  },
+  {
+   "id": "satos-beaked-whale",
+   "name": "Sato's beaked whale",
+   "aliases": [
+    "Berardius minimus",
+    "Sato's whale"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "Sato's beaked whale is a rarely seen North Pacific species that was only formally described as new to science in 2019."
+  },
+  {
+   "id": "burrunan-dolphin",
+   "name": "Burrunan dolphin",
+   "aliases": [
+    "Tursiops australis"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "The Burrunan dolphin lives in sheltered bays and lakes of southern Australia, such as Port Phillip Bay and the Gippsland Lakes."
+  },
+  {
+   "id": "bottlenose-whale",
+   "name": "Bottlenose whale",
+   "aliases": [
+    "Hyperoodon"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "Bottlenose whales of the genus Hyperoodon are deep-diving beaked whales with a rounded, bulbous forehead."
+  },
+  {
+   "id": "spotted-dolphin",
+   "name": "Spotted dolphin",
+   "aliases": [
+    "Stenella"
+   ],
+   "kind": "creature",
+   "group": "dolphins",
+   "fact": "Spotted dolphins are born plain and gradually develop their spots as they age."
+  },
+  {
+   "id": "squalodon",
+   "name": "Squalodon",
+   "aliases": [
+    "Squalodontidae"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "Squalodon was an extinct toothed whale of the Oligocene and Miocene with triangular, serrated-edged teeth, and its name means shark tooth."
+  },
+  {
+   "id": "shortfin-mako",
+   "name": "Shortfin mako",
+   "aliases": [
+    "shortfin mako shark",
+    "blue pointer",
+    "bonito shark",
+    "Isurus oxyrinchus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Shortfin makos keep their bodies warmer than the surrounding water, which powers their famous bursts of speed."
+  },
+  {
+   "id": "white-shark",
+   "name": "White shark",
+   "aliases": [
+    "white pointer",
+    "Carcharodon carcharias"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The white shark, better known as the great white, can sense the faint electrical fields given off by the muscles of hidden prey."
+  },
+  {
+   "id": "speartooth-shark",
+   "name": "Speartooth shark",
+   "aliases": [
+    "Glyphis glyphis"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The speartooth shark is a rare river shark of northern Australia and Papua New Guinea that moves between rivers, estuaries and the sea."
+  },
+  {
+   "id": "sevengill-shark",
+   "name": "Sevengill shark",
+   "aliases": [
+    "Notorynchus cepedianus",
+    "broadnose sevengill shark"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Sevengill sharks have seven pairs of gill slits where most sharks have five."
+  },
+  {
+   "id": "smalleye-pygmy-shark",
+   "name": "Smalleye pygmy shark",
+   "aliases": [
+    "Squaliolus aliae"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The smalleye pygmy shark is one of the smallest sharks alive, a deep-water species of the Indo-Pacific that stays under 25 centimetres long."
+  },
+  {
+   "id": "spadenose-shark",
+   "name": "Spadenose shark",
+   "aliases": [
+    "Scoliodon laticaudus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The spadenose shark is a small shark of Indo-Pacific coasts, caught in large numbers by local fisheries."
+  },
+  {
+   "id": "sliteye-shark",
+   "name": "Sliteye shark",
+   "aliases": [
+    "Loxodon macrorhinus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The sliteye shark is a slim requiem shark of Indo-Pacific shallows with large, slit-like eyes."
+  },
+  {
+   "id": "southern-sleeper-shark",
+   "name": "Southern sleeper shark",
+   "aliases": [
+    "Somniosus antarcticus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The southern sleeper shark is a large, slow-moving shark of cold southern waters that has been recorded at depths of more than a kilometre."
+  },
+  {
+   "id": "taillight-shark",
+   "name": "Taillight shark",
+   "aliases": [
+    "Euprotomicroides zantedeschia"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The taillight shark is a rarely seen, small deep-water shark with light-producing organs, and only a handful of specimens are known."
+  },
+  {
+   "id": "whiskery-shark",
+   "name": "Whiskery shark",
+   "aliases": [
+    "Furgaleus macki"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The whiskery shark is a slender, bottom-feeding shark of southern Australia named for the barbels beside its nostrils."
+  },
+  {
+   "id": "whaler-shark",
+   "name": "Whaler shark",
+   "aliases": [
+    "Carcharhinus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Whaler shark is the Australian name for sharks of the genus Carcharhinus, which includes bull, blacktip and bronze whalers."
+  },
+  {
+   "id": "snaggletooth-shark",
+   "name": "Snaggletooth shark",
+   "aliases": [
+    "Hemipristis elongata"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The snaggletooth shark has long, hooked, serrated teeth that protrude from its mouth even when it is closed."
+  },
+  {
+   "id": "smooth-dogfish",
+   "name": "Smooth dogfish",
+   "aliases": [
+    "Mustelus canis"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "The smooth dogfish is a small shark of the western Atlantic that crushes crabs and lobsters with flat, pavement-like teeth."
+  },
+  {
+   "id": "atolla-jellyfish",
+   "name": "Atolla jellyfish",
+   "aliases": [
+    "Atolla wyvillei",
+    "Atolla",
+    "crown jellyfish"
+   ],
+   "kind": "creature",
+   "group": "jellies",
+   "fact": "When attacked, the Atolla jellyfish flashes a swirling ring of blue light, a burglar alarm that may attract predators of its attacker."
+  },
+  {
+   "id": "black-seadevil",
+   "name": "Black seadevil",
+   "aliases": [
+    "Melanocetus johnsonii"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Female black seadevils dangle a glowing lure in the dark depths and are far larger than the males."
+  },
+  {
+   "id": "blob-sculpin",
+   "name": "Blob sculpin",
+   "aliases": [
+    "Psychrolutes phrictus"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "The blob sculpin is a soft, gelatinous-looking fish of the deep north-east Pacific that is often mistaken for the blobfish."
+  },
+  {
+   "id": "giant-ostracod",
+   "name": "Giant ostracod",
+   "aliases": [
+    "Gigantocypris"
+   ],
+   "kind": "creature",
+   "group": "crustaceans",
+   "fact": "Giant ostracods are shrimp-like crustaceans inside a bean-shaped shell, up to a few centimetres long, that hunt in the dark deep sea."
+  },
+  {
+   "id": "gonate-squid",
+   "name": "Gonate squid",
+   "aliases": [
+    "Gonatidae",
+    "Gonatus onyx"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "Brooding female gonate squid of the species Gonatus onyx carry their eggs in their arms for months at depth."
+  },
+  {
+   "id": "bathysaurus",
+   "name": "Bathysaurus",
+   "aliases": [
+    "Bathysaurus ferox",
+    "deep-sea lizardfish"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Bathysaurus is a genus of large deep-sea lizardfish that wait on the seabed to ambush prey."
+  },
+  {
+   "id": "bone-eating-worm",
+   "name": "Bone-eating worm",
+   "aliases": [
+    "Osedax",
+    "zombie worm"
+   ],
+   "kind": "creature",
+   "group": "worms",
+   "fact": "Bone-eating worms of the genus Osedax use acid-secreting, root-like tissue to digest the bones of dead whales on the seafloor."
+  },
+  {
+   "id": "pygmy-blue-whale",
+   "name": "Pygmy blue whale",
+   "aliases": [
+    "Balaenoptera musculus brevicauda"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "The pygmy blue whale, a subspecies of the blue whale in the Indian Ocean and South Pacific, is shorter overall and has a proportionally shorter tail section than other blues."
+  },
+  {
+   "id": "antarctic-blue-whale",
+   "name": "Antarctic blue whale",
+   "aliases": [
+    "Balaenoptera musculus intermedia",
+    "southern blue whale"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "The Antarctic blue whale is the largest subspecies of the blue whale and was hunted to a tiny fraction of its former numbers."
+  },
+  {
+   "id": "pygmy-beaked-whale",
+   "name": "Pygmy beaked whale",
+   "aliases": [
+    "Mesoplodon peruvianus",
+    "Peruvian beaked whale",
+    "lesser beaked whale"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "The pygmy beaked whale is one of the smallest beaked whales and was first described from Peruvian waters in the early 1990s."
+  },
+  {
+   "id": "pygmy-brydes-whale",
+   "name": "Pygmy Bryde's whale",
+   "aliases": [
+    "Balaenoptera edeni",
+    "Eden's whale"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "The pygmy Bryde's whale, now often called Eden's whale, is a small baleen whale of warm Indo-Pacific coastal waters."
+  },
+  {
+   "id": "white-whale",
+   "name": "White whale",
+   "aliases": [
+    "Delphinapterus leucas",
+    "beluga"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "White whale is another name for the beluga, whose calves are born dark grey and turn white as they reach adulthood."
+  },
+  {
+   "id": "greenland-right-whale",
+   "name": "Greenland right whale",
+   "aliases": [
+    "Balaena mysticetus",
+    "bowhead"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "Greenland right whale is an old name for the bowhead, an Arctic giant that can live for around two centuries."
+  },
+  {
+   "id": "giant-beaked-whale",
+   "name": "Giant beaked whale",
+   "aliases": [
+    "Berardius bairdii",
+    "Baird's beaked whale"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "The giant beaked whale, also known as Baird's beaked whale, is the largest of the beaked whales, reaching about 12 metres."
+  },
+  {
+   "id": "southern-four-toothed-whale",
+   "name": "Southern four-toothed whale",
+   "aliases": [
+    "Berardius arnuxii",
+    "Arnoux's beaked whale"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "The southern four-toothed whale is a large beaked whale of cold southern seas, named for the two pairs of teeth at the tip of its lower jaw."
+  },
+  {
+   "id": "little-piked-whale",
+   "name": "Little piked whale",
+   "aliases": [
+    "Balaenoptera acutorostrata",
+    "minke"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "Little piked whale is an old name for the minke, one of the smallest of the great rorqual whales."
+  },
+  {
+   "id": "western-gray-whale",
+   "name": "Western gray whale",
+   "aliases": [
+    "Eschrichtius robustus"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "The western gray whale, a population of the north-west Pacific, is critically endangered, with only a few hundred animals left."
+  },
+  {
+   "id": "indo-pacific-beaked-whale",
+   "name": "Indo-Pacific beaked whale",
+   "aliases": [
+    "Indopacetus pacificus",
+    "Longman's beaked whale"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "The Indo-Pacific beaked whale was known for decades only from two skulls and is still one of the rarest large whales."
+  },
+  {
+   "id": "tasman-beaked-whale",
+   "name": "Tasman beaked whale",
+   "aliases": [
+    "Tasmacetus shepherdi",
+    "Shepherd's beaked whale"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "The Tasman beaked whale keeps a full set of functional teeth in both jaws, unlike most beaked whales."
+  },
+  {
+   "id": "bering-sea-beaked-whale",
+   "name": "Bering Sea beaked whale",
+   "aliases": [
+    "Mesoplodon stejnegeri",
+    "Stejneger's beaked whale"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "The Bering Sea beaked whale lives in the cold North Pacific and is rarely seen at sea."
+  },
+  {
+   "id": "chilean-blue-whale",
+   "name": "Chilean blue whale",
+   "aliases": [
+    "Balaenoptera musculus"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "Chilean blue whales feed in the Gulf of Corcovado and nearby waters of southern Chile, an important feeding area for the species."
+  },
+  {
+   "id": "atlantic-gray-whale",
+   "name": "Atlantic gray whale",
+   "aliases": [
+    "Eschrichtius robustus"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "The Atlantic gray whale once lived on both sides of the North Atlantic and was hunted to extinction by about the 1700s."
+  },
+  {
+   "id": "eastern-north-pacific-gray-whale",
+   "name": "Eastern North Pacific gray whale",
+   "aliases": [
+    "Eschrichtius robustus"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "Eastern North Pacific gray whales make one of the longest migrations of any mammal, travelling roughly 16,000 kilometres or more between Alaska and Baja California."
+  },
+  {
+   "id": "ophthalmosaurus",
+   "name": "Ophthalmosaurus",
+   "aliases": [
+    "Ophthalmosaurus icenicus"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "Ophthalmosaurus was a dolphin-shaped Jurassic ichthyosaur with some of the largest eyes, relative to body size, of any known vertebrate."
+  },
+  {
+   "id": "nothosaurus",
+   "name": "Nothosaurus",
+   "aliases": [
+    "Nothosaurus mirabilis"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "Nothosaurus was a long-necked, fish-eating marine reptile of the Triassic that probably hunted in shallow seas and rested on shores."
+  },
+  {
+   "id": "cymbospondylus",
+   "name": "Cymbospondylus",
+   "aliases": [
+    "Cymbospondylus petrinus"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "Cymbospondylus was a very large, eel-like early ichthyosaur of the Triassic, reaching roughly nine metres in length."
+  },
+  {
+   "id": "hesperornis",
+   "name": "Hesperornis",
+   "aliases": [
+    "Hesperornis regalis"
+   ],
+   "kind": "creature",
+   "group": "seabirds",
+   "fact": "Hesperornis was a flightless, toothed seabird of the Cretaceous that swam with powerful legs."
+  },
+  {
+   "id": "platecarpus",
+   "name": "Platecarpus",
+   "aliases": [
+    "Platecarpus tympaniticus"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "Platecarpus was a streamlined mid-sized mosasaur of the Late Cretaceous seas of North America and Europe."
+  },
+  {
+   "id": "thalassomedon",
+   "name": "Thalassomedon",
+   "aliases": [
+    "Thalassomedon haningtoni"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "Thalassomedon was a long-necked plesiosaur of the Cretaceous Western Interior Seaway whose neck made up roughly half of its body length."
+  },
+  {
+   "id": "cryptoclidus",
+   "name": "Cryptoclidus",
+   "aliases": [
+    "Cryptoclidus eurymerus"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "Cryptoclidus was a medium-sized, long-necked plesiosaur of Jurassic Europe with many interlocking, needle-like teeth."
+  },
+  {
+   "id": "rhomaleosaurus",
+   "name": "Rhomaleosaurus",
+   "aliases": [
+    "Rhomaleosaurus cramptoni"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "Rhomaleosaurus was a short-necked, big-headed plesiosaur of Early Jurassic Europe, around seven metres long."
+  },
+  {
+   "id": "hainosaurus",
+   "name": "Hainosaurus",
+   "aliases": [
+    "Hainosaurus bernardi"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "Hainosaurus was a giant mosasaur of the Late Cretaceous, named after the Hainaut region of Belgium where its fossils were found."
+  },
+  {
+   "id": "ptychodus",
+   "name": "Ptychodus",
+   "aliases": [
+    "Ptychodus mortoni"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Ptychodus was a Cretaceous shark with flat, ridged, pavement-like teeth suited to crushing hard-shelled prey."
+  },
+  {
+   "id": "squalicorax",
+   "name": "Squalicorax",
+   "aliases": [
+    "Squalicorax falcatus",
+    "crow shark"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Squalicorax, the crow shark, was a Cretaceous shark whose serrated teeth are found with the bones of the marine reptiles and other animals it scavenged."
+  },
+  {
+   "id": "edestus",
+   "name": "Edestus",
+   "aliases": [
+    "Edestus heinrichi"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Edestus was a Carboniferous relative of sharks known for long, serrated teeth set in curved rows."
+  },
+  {
+   "id": "hybodus",
+   "name": "Hybodus",
+   "aliases": [
+    "Hybodus hauffianus"
+   ],
+   "kind": "creature",
+   "group": "sharks",
+   "fact": "Hybodus was an early shark relative of Triassic to Cretaceous seas that carried a spine in front of each dorsal fin."
+  },
+  {
+   "id": "bothriolepis",
+   "name": "Bothriolepis",
+   "aliases": [
+    "Bothriolepis canadensis"
+   ],
+   "kind": "creature",
+   "group": "fish",
+   "fact": "Bothriolepis was a Devonian armoured placoderm fish with jointed bony pectoral fins, and its fossils are found on many continents."
+  },
+  {
+   "id": "pikaia",
+   "name": "Pikaia",
+   "aliases": [
+    "Pikaia gracilens"
+   ],
+   "kind": "creature",
+   "group": "chordates",
+   "fact": "Pikaia is a Cambrian worm-like animal from the Burgess Shale that had a primitive stiffening rod and is thought to be an early relative of vertebrates."
+  },
+  {
+   "id": "wiwaxia",
+   "name": "Wiwaxia",
+   "aliases": [
+    "Wiwaxia corrugata"
+   ],
+   "kind": "creature",
+   "group": "molluscs",
+   "fact": "Wiwaxia was a Cambrian seafloor grazer from the Burgess Shale covered in overlapping scales and two rows of spines."
+  },
+  {
+   "id": "marrella",
+   "name": "Marrella",
+   "aliases": [
+    "Marrella splendens"
+   ],
+   "kind": "creature",
+   "group": "arthropods",
+   "fact": "Marrella is one of the most common fossils of the Cambrian Burgess Shale, an arthropod with long, backward-pointing head spines."
+  },
+  {
+   "id": "cameroceras",
+   "name": "Cameroceras",
+   "aliases": [
+    "Cameroceras trentonense"
+   ],
+   "kind": "creature",
+   "group": "cephalopods",
+   "fact": "Cameroceras was an Ordovician nautiloid with a straight, cone-shaped shell that may have been several metres long."
+  },
+  {
+   "id": "shastasaurus",
+   "name": "Shastasaurus",
+   "aliases": [
+    "Shastasaurus pacificus"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "Shastasaurus was a large, slender-snouted ichthyosaur of the Late Triassic, named after Shasta County in California."
+  },
+  {
+   "id": "temnodontosaurus",
+   "name": "Temnodontosaurus",
+   "aliases": [
+    "Temnodontosaurus platyodon"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "Temnodontosaurus was a large Early Jurassic ichthyosaur, around nine metres long, with some of the biggest eyes of any known vertebrate."
+  },
+  {
+   "id": "dakosaurus",
+   "name": "Dakosaurus",
+   "aliases": [
+    "Dakosaurus maximus",
+    "Dakosaurus andiniensis"
+   ],
+   "kind": "creature",
+   "group": "reptiles",
+   "fact": "Dakosaurus was a Jurassic sea crocodile relative with a short, deep skull and serrated teeth, and one species was nicknamed Godzilla."
+  },
+  {
+   "id": "desmostylus",
+   "name": "Desmostylus",
+   "aliases": [
+    "Desmostylus hesperus"
+   ],
+   "kind": "creature",
+   "group": "mammals",
+   "fact": "Desmostylus was a bulky, hippo-like marine mammal of Miocene North Pacific coasts whose teeth were built from bundled columns."
+  },
+  {
+   "id": "odobenocetops",
+   "name": "Odobenocetops",
+   "aliases": [
+    "Odobenocetops peruvianus"
+   ],
+   "kind": "creature",
+   "group": "whales",
+   "fact": "Odobenocetops was a Pliocene whale from the coasts of Peru and Chile with a walrus-like face and two tusks, one far longer than the other in males."
+  },
+  {
+   "id": "tullimonstrum",
+   "name": "Tully monster",
+   "aliases": [
+    "Tullimonstrum gregarium"
+   ],
+   "kind": "creature",
+   "group": "fossil animals",
+   "fact": "The Tully monster was a soft-bodied animal about 30 centimetres long with eyes on stalks, known from Illinois fossils, and its place in the tree of life has long been debated."
+  },
+  {
+   "id": "giant-manta-ray",
+   "name": "Giant manta ray",
+   "aliases": [
+    "manta ray",
+    "manta",
+    "oceanic manta ray",
+    "giant oceanic manta",
+    "Mobula birostris"
+   ],
+   "kind": "creature",
+   "group": "rays",
+   "fact": "The giant manta ray can span about 7 metres across and was listed as endangered in 2020 because of fishing for its gill plates."
+  },
+  {
+   "id": "pacific-ocean",
+   "name": "Pacific Ocean",
+   "aliases": [
+    "Pacific"
+   ],
+   "kind": "place",
+   "group": "oceans",
+   "fact": "The Pacific Ocean covers about 165 million square kilometres, more than all of Earth's land combined, making it the largest and deepest ocean."
+  },
+  {
+   "id": "mauna-kea",
+   "name": "Mauna Kea",
+   "aliases": [
+    "Maunakea"
+   ],
+   "kind": "place",
+   "group": "features",
+   "fact": "Measured from its base on the Pacific seabed to its summit, Mauna Kea in Hawaii rises about 10,200 metres, taller than Everest above sea level."
+  },
+  {
+   "id": "seawise-giant",
+   "name": "Seawise Giant",
+   "aliases": [
+    "Knock Nevis",
+    "Happy Giant",
+    "Jahre Viking"
+   ],
+   "kind": "vessel",
+   "group": "vessels",
+   "fact": "Seawise Giant, later renamed Knock Nevis, was the longest ship ever built, at about 458 metres from bow to stern."
+  },
+  {
+   "id": "ahmed-gabr",
+   "name": "Ahmed Gabr",
+   "aliases": [],
+   "kind": "person",
+   "group": "people",
+   "fact": "Egyptian diver Ahmed Gabr set the scuba depth record in 2014, descending to 332.35 metres in the Red Sea off Dahab."
+  },
+  {
+   "id": "gertrude-ederle",
+   "name": "Gertrude Ederle",
+   "aliases": [
+    "Trudy Ederle"
+   ],
+   "kind": "person",
+   "group": "people",
+   "fact": "In 1926 Gertrude Ederle became the first woman to swim the English Channel, finishing in about 14 hours 39 minutes, faster than any man before her."
+  },
+  {
+   "id": "shark-bay-seagrass",
+   "name": "Shark Bay seagrass",
+   "aliases": [
+    "Posidonia australis",
+    "ribbon weed"
+   ],
+   "kind": "plant",
+   "group": "plants",
+   "fact": "The Posidonia australis meadow in Shark Bay, Western Australia, is the largest known plant in the world, covering about 180 square kilometres and some 4,500 years old."
+  },
+  {
+   "id": "typhoon-class-submarine",
+   "name": "Typhoon-class submarine",
+   "aliases": [
+    "Project 941",
+    "Akula"
+   ],
+   "kind": "vessel",
+   "group": "submarines",
+   "fact": "Soviet Typhoon-class submarines, about 175 metres long and roughly 48,000 tonnes submerged, are the largest submarines ever built."
+  },
+  {
+   "id": "vestas-sailrocket-2",
+   "name": "Vestas Sailrocket 2",
+   "aliases": [
+    "Sailrocket"
+   ],
+   "kind": "vessel",
+   "group": "boats",
+   "fact": "Vestas Sailrocket 2 set the world sailing speed record in 2012, reaching about 65 knots, or roughly 121 kilometres per hour, off Walvis Bay in Namibia."
+  },
+  {
+   "id": "mid-ocean-ridge",
+   "name": "Mid-ocean ridge",
+   "aliases": [
+    "oceanic ridge"
+   ],
+   "kind": "place",
+   "group": "features",
+   "fact": "The mid-ocean ridge is a continuous chain of underwater mountains, about 65,000 kilometres long, making it the longest mountain range on Earth."
+  },
+  {
+   "id": "seep-tubeworm",
+   "name": "Seep tubeworm",
+   "aliases": [
+    "Lamellibrachia luymesi"
+   ],
+   "kind": "creature",
+   "group": "worms",
+   "fact": "Seep tubeworms living around cold seeps in the Gulf of Mexico have been aged at over 250 years, making them among the longest-lived animals known."
+  }
+ ],
+ "prompts": [
+  {
+   "id": "sea-creature-letter-w",
+   "answers": [
+    {
+     "entity": "whale",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "walrus",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "whale-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "wahoo",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "whiting",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "wolf-eel",
+     "tier": "baitball"
+    },
+    {
+     "entity": "weedy-sea-dragon",
+     "tier": "baitball"
+    },
+    {
+     "entity": "wunderpus",
+     "tier": "baitball"
+    },
+    {
+     "entity": "wobbegong",
+     "tier": "reef"
+    },
+    {
+     "entity": "wrasse",
+     "tier": "reef"
+    },
+    {
+     "entity": "whelk",
+     "tier": "reef"
+    },
+    {
+     "entity": "weddell-seal",
+     "tier": "reef"
+    },
+    {
+     "entity": "whitetip-reef-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "west-indian-manatee",
+     "tier": "reef"
+    },
+    {
+     "entity": "white-marlin",
+     "tier": "reef"
+    },
+    {
+     "entity": "wolffish",
+     "tier": "reef"
+    },
+    {
+     "entity": "weever-fish",
+     "tier": "reef"
+    },
+    {
+     "entity": "white-sturgeon",
+     "tier": "reef"
+    },
+    {
+     "entity": "weakfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "wreckfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "warsaw-grouper",
+     "tier": "twilight"
+    },
+    {
+     "entity": "windowpane-flounder",
+     "tier": "twilight"
+    },
+    {
+     "entity": "winter-flounder",
+     "tier": "twilight"
+    },
+    {
+     "entity": "whiteleg-shrimp",
+     "tier": "twilight"
+    },
+    {
+     "entity": "wedgefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "warty-frogfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "waspfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "walleye-pollock",
+     "tier": "twilight"
+    },
+    {
+     "entity": "white-hake",
+     "tier": "twilight"
+    },
+    {
+     "entity": "white-spotted-octopus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "walking-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "white-abalone",
+     "tier": "twilight"
+    },
+    {
+     "entity": "winghead-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "wide-band-anemonefish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "white-bonnet-anemonefish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "whites-seahorse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "white-spotted-puffer",
+     "tier": "midnight"
+    },
+    {
+     "entity": "whip-coral-goby",
+     "tier": "midnight"
+    },
+    {
+     "entity": "whale-barnacle",
+     "tier": "midnight"
+    },
+    {
+     "entity": "whale-louse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "west-african-manatee",
+     "tier": "midnight"
+    },
+    {
+     "entity": "wentletrap",
+     "tier": "midnight"
+    },
+    {
+     "entity": "warty-comb-jelly",
+     "tier": "midnight"
+    },
+    {
+     "entity": "white-spotted-jellyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "western-wobbegong",
+     "tier": "midnight"
+    },
+    {
+     "entity": "western-blue-groper",
+     "tier": "midnight"
+    },
+    {
+     "entity": "wrymouth",
+     "tier": "midnight"
+    },
+    {
+     "entity": "weasel-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "white-spotted-bamboo-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "whitetail-dascyllus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "winter-skate",
+     "tier": "midnight"
+    },
+    {
+     "entity": "western-rock-lobster",
+     "tier": "midnight"
+    },
+    {
+     "entity": "whiplash-squid",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "sea-creature-letter-l",
+   "answers": [
+    {
+     "entity": "lobster",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "lionfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "loggerhead-turtle",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "leopard-seal",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "leatherback-turtle",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "leafy-sea-dragon",
+     "tier": "baitball"
+    },
+    {
+     "entity": "lanternfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "lions-mane-jellyfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "lemon-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "leopard-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "limpet",
+     "tier": "reef"
+    },
+    {
+     "entity": "langoustine",
+     "tier": "reef"
+    },
+    {
+     "entity": "lemon-sole",
+     "tier": "reef"
+    },
+    {
+     "entity": "long-finned-pilot-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "lettuce-sea-slug",
+     "tier": "reef"
+    },
+    {
+     "entity": "little-penguin",
+     "tier": "reef"
+    },
+    {
+     "entity": "lugworm",
+     "tier": "reef"
+    },
+    {
+     "entity": "lamprey",
+     "tier": "reef"
+    },
+    {
+     "entity": "lingcod",
+     "tier": "reef"
+    },
+    {
+     "entity": "lanternshark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lancetfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "leatherjacket",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lookdown",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lined-surgeonfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lyretail-anthias",
+     "tier": "twilight"
+    },
+    {
+     "entity": "leopard-coral-grouper",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lumpsucker",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lizardfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "longfin-mako",
+     "tier": "twilight"
+    },
+    {
+     "entity": "long-beaked-common-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lined-seahorse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lane-snapper",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ling",
+     "tier": "twilight"
+    },
+    {
+     "entity": "lollipop-catshark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lions-paw-scallop",
+     "tier": "midnight"
+    },
+    {
+     "entity": "longbill-spearfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lemon-damselfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ladyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "longhorn-cowfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "longnose-hawkfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "leafscale-gulper-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "leaf-scaled-sea-snake",
+     "tier": "midnight"
+    },
+    {
+     "entity": "longmans-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "long-nosed-chimaera",
+     "tier": "midnight"
+    },
+    {
+     "entity": "louvar",
+     "tier": "midnight"
+    },
+    {
+     "entity": "longnose-batfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "longnose-butterflyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lesser-electric-ray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lamp-shell",
+     "tier": "midnight"
+    },
+    {
+     "entity": "lancelet",
+     "tier": "midnight"
+    },
+    {
+     "entity": "little-skate",
+     "tier": "midnight"
+    },
+    {
+     "entity": "long-snouted-seahorse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "larger-pacific-striped-octopus",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "sea-creature-letter-p",
+   "answers": [
+    {
+     "entity": "penguin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "pufferfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "parrotfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "porpoise",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "prawn",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "portuguese-man-o-war",
+     "tier": "baitball"
+    },
+    {
+     "entity": "palette-surgeonfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "pelican-eel",
+     "tier": "baitball"
+    },
+    {
+     "entity": "pilot-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "plaice",
+     "tier": "reef"
+    },
+    {
+     "entity": "pollock",
+     "tier": "reef"
+    },
+    {
+     "entity": "porbeagle",
+     "tier": "reef"
+    },
+    {
+     "entity": "porcupinefish",
+     "tier": "reef"
+    },
+    {
+     "entity": "pipefish",
+     "tier": "reef"
+    },
+    {
+     "entity": "periwinkle",
+     "tier": "reef"
+    },
+    {
+     "entity": "pygmy-seahorse",
+     "tier": "reef"
+    },
+    {
+     "entity": "peacock-mantis-shrimp",
+     "tier": "reef"
+    },
+    {
+     "entity": "pistol-shrimp",
+     "tier": "reef"
+    },
+    {
+     "entity": "pilot-fish",
+     "tier": "reef"
+    },
+    {
+     "entity": "pyjama-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "port-jackson-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pharaoh-cuttlefish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "powder-blue-tang",
+     "tier": "twilight"
+    },
+    {
+     "entity": "picasso-triggerfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pelagic-stingray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pacific-halibut",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pacific-herring",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pacific-sardine",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pink-salmon",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pacific-white-sided-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pantropical-spotted-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "patagonian-toothfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "painted-frogfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pacific-sleeper-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pocket-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pontohs-pygmy-seahorse",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pygmy-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pygmy-sperm-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pygmy-right-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pygmy-killer-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "piglet-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pyrosome",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pom-pom-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pajama-cardinalfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pacific-sea-nettle",
+     "tier": "midnight"
+    },
+    {
+     "entity": "purple-striped-jellyfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pacific-blackdragon",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pacific-viperfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pacific-hagfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "paper-nautilus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pacific-ocean-perch",
+     "tier": "midnight"
+    },
+    {
+     "entity": "patagonian-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "phantom-jelly",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pompeii-worm",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "sea-creature-letter-m",
+   "answers": [
+    {
+     "entity": "manta-ray",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mackerel",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "moray-eel",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "marlin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "manatee",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mimic-octopus",
+     "tier": "baitball"
+    },
+    {
+     "entity": "mandarinfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "moorish-idol",
+     "tier": "baitball"
+    },
+    {
+     "entity": "mako-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "monkfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "mantis-shrimp",
+     "tier": "reef"
+    },
+    {
+     "entity": "moon-jellyfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "minke-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "macaroni-penguin",
+     "tier": "reef"
+    },
+    {
+     "entity": "mahi-mahi",
+     "tier": "reef"
+    },
+    {
+     "entity": "mussel",
+     "tier": "reef"
+    },
+    {
+     "entity": "monk-seal",
+     "tier": "reef"
+    },
+    {
+     "entity": "marine-iguana",
+     "tier": "reef"
+    },
+    {
+     "entity": "mullet",
+     "tier": "reef"
+    },
+    {
+     "entity": "magellanic-penguin",
+     "tier": "reef"
+    },
+    {
+     "entity": "megamouth-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "midshipman",
+     "tier": "twilight"
+    },
+    {
+     "entity": "milkfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "moon-snail",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mud-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "murex",
+     "tier": "twilight"
+    },
+    {
+     "entity": "masked-crab",
+     "tier": "twilight"
+    },
+    {
+     "entity": "magnificent-sea-anemone",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mutton-snapper",
+     "tier": "twilight"
+    },
+    {
+     "entity": "melon-headed-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mediterranean-monk-seal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "marine-otter",
+     "tier": "twilight"
+    },
+    {
+     "entity": "moon-wrasse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "manila-clam",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mauis-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mackerel-icefish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mccullochs-anemonefish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mediterranean-moray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "megrim",
+     "tier": "midnight"
+    },
+    {
+     "entity": "menhaden",
+     "tier": "midnight"
+    },
+    {
+     "entity": "midnight-parrotfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mole-crab",
+     "tier": "midnight"
+    },
+    {
+     "entity": "moses-sole",
+     "tier": "midnight"
+    },
+    {
+     "entity": "munks-devil-ray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "man-of-war-fish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "marbled-electric-ray",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mauve-stinger",
+     "tier": "midnight"
+    },
+    {
+     "entity": "manefish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "molly-miller",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mosshead-warbonnet",
+     "tier": "midnight"
+    },
+    {
+     "entity": "morwong",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mulloway",
+     "tier": "midnight"
+    },
+    {
+     "entity": "maori-octopus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mudskipper",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mariana-snailfish",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "whale-dolphin-letter-s",
+   "answers": [
+    {
+     "entity": "blue-whale",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "humpback-whale",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "bottlenose-dolphin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sperm-whale",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "beluga-whale",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "baiji",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bowhead-whale",
+     "tier": "baitball"
+    },
+    {
+     "entity": "spinner-dolphin",
+     "tier": "baitball"
+    },
+    {
+     "entity": "harbour-porpoise",
+     "tier": "reef"
+    },
+    {
+     "entity": "humpback-dolphin",
+     "tier": "reef"
+    },
+    {
+     "entity": "sei-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "striped-dolphin",
+     "tier": "reef"
+    },
+    {
+     "entity": "southern-right-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "short-beaked-common-dolphin",
+     "tier": "reef"
+    },
+    {
+     "entity": "short-finned-pilot-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "brydes-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "baleen-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "beaked-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "hectors-dolphin",
+     "tier": "reef"
+    },
+    {
+     "entity": "spotted-dolphin",
+     "tier": "reef"
+    },
+    {
+     "entity": "heavisides-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hourglass-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "spectacled-porpoise",
+     "tier": "twilight"
+    },
+    {
+     "entity": "burmeisters-porpoise",
+     "tier": "twilight"
+    },
+    {
+     "entity": "southern-bottlenose-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "southern-right-whale-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blainvilles-beaked-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bottlenose-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "burrunan-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bolivian-river-dolphin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bairds-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "strap-toothed-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sowerbys-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "stejnegers-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "shepherds-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spade-toothed-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hectors-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hubbs-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "satos-beaked-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "squalodon",
+     "tier": "midnight"
+    },
+    {
+     "entity": "basilosaurus",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "shark-letter",
+   "answers": [
+    {
+     "entity": "tiger-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "whale-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "white-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "shortfin-mako",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "thresher-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "wobbegong",
+     "tier": "baitball"
+    },
+    {
+     "entity": "sleeper-shark",
+     "tier": "baitball"
+    },
+    {
+     "entity": "sawshark",
+     "tier": "baitball"
+    },
+    {
+     "entity": "scalloped-hammerhead",
+     "tier": "reef"
+    },
+    {
+     "entity": "smooth-hammerhead",
+     "tier": "reef"
+    },
+    {
+     "entity": "sand-tiger-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "sandbar-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "silky-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "silvertip-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "spinner-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "spiny-dogfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "whitetip-reef-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "tawny-nurse-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "tope",
+     "tier": "reef"
+    },
+    {
+     "entity": "swell-shark",
+     "tier": "reef"
+    },
+    {
+     "entity": "salmon-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sixgill-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "small-spotted-catshark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "smooth-hound",
+     "tier": "twilight"
+    },
+    {
+     "entity": "spotted-wobbegong",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tasselled-wobbegong",
+     "tier": "twilight"
+    },
+    {
+     "entity": "snaggletooth-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "whaler-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "smooth-dogfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "winghead-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "speartooth-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "walking-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "white-spotted-bamboo-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sevengill-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sharpnose-sevengill-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sicklefin-lemon-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "smalltooth-sand-tiger",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spined-pygmy-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "smalleye-pygmy-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spadenose-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sliteye-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "southern-sleeper-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "taillight-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "whiskery-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "weasel-shark",
+     "tier": "midnight"
+    },
+    {
+     "entity": "western-wobbegong",
+     "tier": "midnight"
+    },
+    {
+     "entity": "stethacanthus",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "deep-sea-creature-letter",
+   "answers": [
+    {
+     "entity": "anglerfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "giant-squid",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "goblin-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "blobfish",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "barreleye",
+     "tier": "baitball"
+    },
+    {
+     "entity": "giant-tube-worm",
+     "tier": "baitball"
+    },
+    {
+     "entity": "greenland-shark",
+     "tier": "baitball"
+    },
+    {
+     "entity": "gulper-eel",
+     "tier": "reef"
+    },
+    {
+     "entity": "giant-isopod",
+     "tier": "reef"
+    },
+    {
+     "entity": "glass-sponge",
+     "tier": "reef"
+    },
+    {
+     "entity": "black-swallower",
+     "tier": "reef"
+    },
+    {
+     "entity": "bristlemouth",
+     "tier": "reef"
+    },
+    {
+     "entity": "bigfin-squid",
+     "tier": "reef"
+    },
+    {
+     "entity": "black-seadevil",
+     "tier": "reef"
+    },
+    {
+     "entity": "atolla-jellyfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "amphipod",
+     "tier": "reef"
+    },
+    {
+     "entity": "glass-squid",
+     "tier": "reef"
+    },
+    {
+     "entity": "giant-siphonophore",
+     "tier": "reef"
+    },
+    {
+     "entity": "grenadier",
+     "tier": "reef"
+    },
+    {
+     "entity": "giant-larvacean",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gulper-shark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "glass-octopus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "greenland-halibut",
+     "tier": "twilight"
+    },
+    {
+     "entity": "blob-sculpin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bamboo-coral",
+     "tier": "twilight"
+    },
+    {
+     "entity": "black-coral",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bubblegum-coral",
+     "tier": "twilight"
+    },
+    {
+     "entity": "big-red-jellyfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bloodybelly-comb-jelly",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bobtail-snipe-eel",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-sea-spider",
+     "tier": "twilight"
+    },
+    {
+     "entity": "basket-star",
+     "tier": "twilight"
+    },
+    {
+     "entity": "glowing-sucker-octopus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "abyssal-grenadier",
+     "tier": "midnight"
+    },
+    {
+     "entity": "abyssobrotula",
+     "tier": "midnight"
+    },
+    {
+     "entity": "acanthephyra-shrimp",
+     "tier": "midnight"
+    },
+    {
+     "entity": "alvinocaris-shrimp",
+     "tier": "midnight"
+    },
+    {
+     "entity": "blue-antimora",
+     "tier": "midnight"
+    },
+    {
+     "entity": "black-scabbardfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "black-dogfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "giant-grenadier",
+     "tier": "midnight"
+    },
+    {
+     "entity": "giant-ostracod",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gonate-squid",
+     "tier": "midnight"
+    },
+    {
+     "entity": "greater-forkbeard",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bathysaurus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bone-eating-worm",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "whale-letter",
+   "answers": [
+    {
+     "entity": "blue-whale",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "grey-whale",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "southern-right-whale",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "white-whale",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "antarctic-minke-whale",
+     "tier": "baitball"
+    },
+    {
+     "entity": "north-atlantic-right-whale",
+     "tier": "baitball"
+    },
+    {
+     "entity": "pygmy-sperm-whale",
+     "tier": "baitball"
+    },
+    {
+     "entity": "pygmy-killer-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "dwarf-sperm-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "dwarf-minke-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "northern-bottlenose-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "north-pacific-right-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "long-finned-pilot-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "short-finned-pilot-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "pygmy-blue-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "southern-bottlenose-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "antarctic-blue-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "little-piked-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "greenland-right-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-beaked-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "western-gray-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pygmy-brydes-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "indo-pacific-beaked-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "pygmy-beaked-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "tasman-beaked-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bering-sea-beaked-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "southern-four-toothed-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "chilean-blue-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "atlantic-gray-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "eastern-north-pacific-gray-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pygmy-right-whale",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "prehistoric-sea",
+   "answers": [
+    {
+     "entity": "megalodon",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mosasaur",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "plesiosaur",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "ichthyosaur",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "trilobite",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "dunkleosteus",
+     "tier": "baitball"
+    },
+    {
+     "entity": "ammonite",
+     "tier": "baitball"
+    },
+    {
+     "entity": "liopleurodon",
+     "tier": "baitball"
+    },
+    {
+     "entity": "kronosaurus",
+     "tier": "reef"
+    },
+    {
+     "entity": "elasmosaurus",
+     "tier": "reef"
+    },
+    {
+     "entity": "archelon",
+     "tier": "reef"
+    },
+    {
+     "entity": "tylosaurus",
+     "tier": "reef"
+    },
+    {
+     "entity": "basilosaurus",
+     "tier": "reef"
+    },
+    {
+     "entity": "helicoprion",
+     "tier": "reef"
+    },
+    {
+     "entity": "leedsichthys",
+     "tier": "reef"
+    },
+    {
+     "entity": "anomalocaris",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-scorpion",
+     "tier": "reef"
+    },
+    {
+     "entity": "pliosaur",
+     "tier": "reef"
+    },
+    {
+     "entity": "belemnite",
+     "tier": "reef"
+    },
+    {
+     "entity": "hallucigenia",
+     "tier": "reef"
+    },
+    {
+     "entity": "livyatan",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cretoxyrhina",
+     "tier": "twilight"
+    },
+    {
+     "entity": "opabinia",
+     "tier": "twilight"
+    },
+    {
+     "entity": "xiphactinus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "stethacanthus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cladoselache",
+     "tier": "twilight"
+    },
+    {
+     "entity": "shonisaurus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "dorudon",
+     "tier": "twilight"
+    },
+    {
+     "entity": "placoderm",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rudist",
+     "tier": "twilight"
+    },
+    {
+     "entity": "ophthalmosaurus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "nothosaurus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "cymbospondylus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hesperornis",
+     "tier": "twilight"
+    },
+    {
+     "entity": "platecarpus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "thalassomedon",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cryptoclidus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rhomaleosaurus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hainosaurus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ptychodus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "squalicorax",
+     "tier": "midnight"
+    },
+    {
+     "entity": "edestus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hybodus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bothriolepis",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pikaia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "wiwaxia",
+     "tier": "midnight"
+    },
+    {
+     "entity": "marrella",
+     "tier": "midnight"
+    },
+    {
+     "entity": "cameroceras",
+     "tier": "midnight"
+    },
+    {
+     "entity": "shastasaurus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "temnodontosaurus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "dakosaurus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "desmostylus",
+     "tier": "midnight"
+    },
+    {
+     "entity": "squalodon",
+     "tier": "midnight"
+    },
+    {
+     "entity": "odobenocetops",
+     "tier": "midnight"
+    },
+    {
+     "entity": "tullimonstrum",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "ocean-record",
+   "answers": [
+    {
+     "entity": "blue-whale",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "whale-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "mariana-trench",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "great-barrier-reef",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "greenland-shark",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "pacific-ocean",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "colossal-squid",
+     "tier": "baitball"
+    },
+    {
+     "entity": "ocean-sunfish",
+     "tier": "baitball"
+    },
+    {
+     "entity": "ocean-quahog",
+     "tier": "baitball"
+    },
+    {
+     "entity": "bowhead-whale",
+     "tier": "baitball"
+    },
+    {
+     "entity": "giant-pacific-octopus",
+     "tier": "reef"
+    },
+    {
+     "entity": "arctic-tern",
+     "tier": "reef"
+    },
+    {
+     "entity": "lions-mane-jellyfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "wandering-albatross",
+     "tier": "reef"
+    },
+    {
+     "entity": "southern-elephant-seal",
+     "tier": "reef"
+    },
+    {
+     "entity": "japanese-spider-crab",
+     "tier": "reef"
+    },
+    {
+     "entity": "oarfish",
+     "tier": "reef"
+    },
+    {
+     "entity": "cuviers-beaked-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "emperor-penguin",
+     "tier": "reef"
+    },
+    {
+     "entity": "giant-kelp",
+     "tier": "reef"
+    },
+    {
+     "entity": "bay-of-fundy",
+     "tier": "reef"
+    },
+    {
+     "entity": "herbert-nitsch",
+     "tier": "reef"
+    },
+    {
+     "entity": "mariana-snailfish",
+     "tier": "twilight"
+    },
+    {
+     "entity": "satomis-pygmy-seahorse",
+     "tier": "twilight"
+    },
+    {
+     "entity": "dwarf-lanternshark",
+     "tier": "twilight"
+    },
+    {
+     "entity": "gentoo-penguin",
+     "tier": "twilight"
+    },
+    {
+     "entity": "bootlace-worm",
+     "tier": "twilight"
+    },
+    {
+     "entity": "american-lobster",
+     "tier": "twilight"
+    },
+    {
+     "entity": "sylvia-earle",
+     "tier": "twilight"
+    },
+    {
+     "entity": "uss-samuel-b-roberts",
+     "tier": "twilight"
+    },
+    {
+     "entity": "giant-manta-ray",
+     "tier": "twilight"
+    },
+    {
+     "entity": "star-sucker-pygmy-octopus",
+     "tier": "twilight"
+    },
+    {
+     "entity": "seawise-giant",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mid-ocean-ridge",
+     "tier": "twilight"
+    },
+    {
+     "entity": "mauna-kea",
+     "tier": "twilight"
+    },
+    {
+     "entity": "jacques-mayol",
+     "tier": "twilight"
+    },
+    {
+     "entity": "rougheye-rockfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "stout-infantfish",
+     "tier": "midnight"
+    },
+    {
+     "entity": "glass-sponge",
+     "tier": "midnight"
+    },
+    {
+     "entity": "black-coral",
+     "tier": "midnight"
+    },
+    {
+     "entity": "seep-tubeworm",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ahmed-gabr",
+     "tier": "midnight"
+    },
+    {
+     "entity": "gertrude-ederle",
+     "tier": "midnight"
+    },
+    {
+     "entity": "typhoon-class-submarine",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vestas-sailrocket-2",
+     "tier": "midnight"
+    },
+    {
+     "entity": "red-sea-urchin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "shark-bay-seagrass",
+     "tier": "hadal"
+    }
+   ]
+  },
+  {
+   "id": "sea-turtle-reptile-mammal",
+   "answers": [
+    {
+     "entity": "dolphin",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "whale",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sea-turtle",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "seal",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "orca",
+     "tier": "tidepool"
+    },
+    {
+     "entity": "sea-snake",
+     "tier": "baitball"
+    },
+    {
+     "entity": "marine-iguana",
+     "tier": "baitball"
+    },
+    {
+     "entity": "manatee",
+     "tier": "baitball"
+    },
+    {
+     "entity": "humpback-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "blue-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "sperm-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "bottlenose-dolphin",
+     "tier": "reef"
+    },
+    {
+     "entity": "walrus",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-lion",
+     "tier": "reef"
+    },
+    {
+     "entity": "sea-otter",
+     "tier": "reef"
+    },
+    {
+     "entity": "green-turtle",
+     "tier": "reef"
+    },
+    {
+     "entity": "leatherback-turtle",
+     "tier": "reef"
+    },
+    {
+     "entity": "narwhal",
+     "tier": "reef"
+    },
+    {
+     "entity": "beluga-whale",
+     "tier": "reef"
+    },
+    {
+     "entity": "porpoise",
+     "tier": "reef"
+    },
+    {
+     "entity": "loggerhead-turtle",
+     "tier": "twilight"
+    },
+    {
+     "entity": "hawksbill-turtle",
+     "tier": "twilight"
+    },
+    {
+     "entity": "olive-ridley-sea-turtle",
+     "tier": "twilight"
+    },
+    {
+     "entity": "kemps-ridley-sea-turtle",
+     "tier": "twilight"
+    },
+    {
+     "entity": "elephant-seal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "leopard-seal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "harp-seal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "dugong",
+     "tier": "twilight"
+    },
+    {
+     "entity": "polar-bear",
+     "tier": "twilight"
+    },
+    {
+     "entity": "saltwater-crocodile",
+     "tier": "twilight"
+    },
+    {
+     "entity": "fur-seal",
+     "tier": "twilight"
+    },
+    {
+     "entity": "banded-sea-krait",
+     "tier": "twilight"
+    },
+    {
+     "entity": "yellow-bellied-sea-snake",
+     "tier": "twilight"
+    },
+    {
+     "entity": "minke-whale",
+     "tier": "twilight"
+    },
+    {
+     "entity": "fin-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "grey-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "bowhead-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "sei-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "brydes-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pygmy-sperm-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "pilot-whale",
+     "tier": "midnight"
+    },
+    {
+     "entity": "rissos-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "spinner-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "common-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hectors-dolphin",
+     "tier": "midnight"
+    },
+    {
+     "entity": "vaquita",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hawaiian-monk-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "mediterranean-monk-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "marine-otter",
+     "tier": "midnight"
+    },
+    {
+     "entity": "stellers-sea-cow",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ribbon-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "weddell-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "hooded-seal",
+     "tier": "midnight"
+    },
+    {
+     "entity": "california-sea-lion",
+     "tier": "midnight"
+    },
+    {
+     "entity": "ichthyosaur",
+     "tier": "hadal"
+    }
+   ]
+  }
+ ]
+}

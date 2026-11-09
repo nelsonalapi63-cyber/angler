@@ -107,7 +107,11 @@
       body.append(el('p', { class: 'hero-sub', text: 'Same seven prompts for everyone today · 25 seconds each · free' }));
     }
     if (streak.current > 1) body.append(el('p', { class: 'hero-streak', text: '🔥 ' + streak.current + '-day streak' }));
-    nodes.push(el('section', { class: 'hero card strong' }, [el('div', { class: 'hero-art', html: heroSvg() + F().mascotSvg(128, { class: 'hero-mascot', face: 'right' }) }), body]));
+    const art = el('div', { class: 'hero-art' });
+    const canvas = root.FathomSurface ? el('canvas', { class: 'surface', 'aria-hidden': 'true' }) : null;
+    if (canvas) art.append(canvas); else art.innerHTML = heroSvg();
+    art.insertAdjacentHTML('beforeend', F().mascotSvg(128, { class: 'hero-mascot', face: 'right' }));
+    nodes.push(el('section', { class: 'hero card strong' }, [art, body]));
 
     const lb = Object.keys(storage.logbook()).length;
     const badges = root.FathomAchievements ? root.FathomAchievements.count() : 0;
@@ -125,6 +129,7 @@
     ]));
     if (root.FathomMonetise) { const ad = root.FathomMonetise.adSlot('home'); if (ad) nodes.push(ad); }
     render(nodes);
+    if (canvas) root.FathomSurface.mount(canvas);
     if (countdownNode) liveCountdown(countdownNode);
   }
 
@@ -366,6 +371,7 @@
       toggle('Sound and vibration', 'sound', 'Splash, descent hum, tier chimes, a buzz on phones'),
       toggle('Timer in Free Dive', 'freeTimer', 'The Daily Dive is always timed'),
       el('div', { class: 'switch' }, [el('div', { html: '<b>Tutorial</b><br><span class="small muted">Three untimed prompts; nothing is saved</span>' }), el('a', { class: 'btn btn-sm', href: '#tutorial', id: 'settings-tutorial', text: 'Replay' })]),
+      el('details', { class: 'shortcuts' }, [el('summary', { html: '<b>Keyboard shortcuts</b>' }), el('table', { class: 'kbd-table' }, F().SHORTCUTS.map(([k, what]) => el('tr', {}, [el('td', {}, el('kbd', { text: k })), el('td', { text: what })])))]),
     ]);
     const O = root.FathomOnline;
     if (O && O.settingsSection) body.append(O.settingsSection());

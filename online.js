@@ -19,6 +19,7 @@
   const ANALYTICS_SCRIPT_URL = 'https://plausible.io/js/script.js';
   const ANALYTICS_DOMAIN = '';             // e.g. 'fathom.example'
   const MIN_CURVE_DIVES = 30;              // the curve appears after this many dives today
+  const MAX_GUESSES_SENT = 5;          // rejected guesses per prompt sent with a dive, so missing answers can be mined
   const CURVE_CACHE_MS = 60 * 1000;
   const RATING_WINDOW_DAYS = 30;
   const RATING_BEST_OF = 20;
@@ -183,7 +184,7 @@
     const payload = {
       day: record.dayKey,
       promptIds: record.promptIds,
-      answers: record.results.map(r => ({ typed: r.typed || '', secondsUsed: r.secondsUsed, hint: !!r.hint })),
+      answers: record.results.map(r => ({ typed: r.typed || '', secondsUsed: r.secondsUsed, hint: !!r.hint, guesses: (r.guesses || []).slice(0, MAX_GUESSES_SENT).map(g => String(g).slice(0, 60)) })),
       deviceId: storage.deviceId(),
       clientDepth: record.depth,
       dataVersion: root.FATHOM_DATA_VERSION || null,
@@ -192,11 +193,43 @@
     try {
       const res = await rest('/functions/v1/submit-dive', { method: 'POST', body: payload });
       rememberCurve(record.dayKey, res);
+      setSubmitState(record.dayKey, 'ok');
       return res;
     } catch (e) {
       storage.enqueue(payload);
+      setSubmitState(record.dayKey, 'failed', e && e.message);
       return null;
     }
+  }
+  // Submission state for the result screen: 'ok' | 'failed' | 'pending' | null (offline features off)
+  const submitState = {};
+  const submitListeners = new Set();
+  function setSubmitState(dayKey, state, reason) { submitState[dayKey] = { state, reason: reason || null }; submitListeners.forEach(fn => { try { fn(dayKey); } catch (e) { /* ignore */ } }); }
+  function getSubmitState(dayKey) {
+    if (!flags.LEADERBOARD_ENABLED) return null;
+    const rec = F().storage.getDailyResult(dayKey);
+    if (rec && rec.online) return { state: 'ok' };
+    if (submitState[dayKey]) return submitState[dayKey];
+    return F().storage.queue().some(i => i.day === dayKey) ? { state: 'failed' } : null;
+  }
+  // A line under the result: submitted / failed with Retry / retrying. Returns null when the online layer is off.
+  function submitStatusLine(record) {
+    const { el } = F();
+    if (!flags.LEADERBOARD_ENABLED || record.mode !== 'daily') return null;
+    const node = el('p', { class: 'small submit-status', role: 'status' });
+    const draw = () => {
+      const st = getSubmitState(record.dayKey);
+      node.innerHTML = '';
+      if (!st || st.state === 'ok') { node.textContent = st ? 'Score submitted and verified.' : ''; node.hidden = !st; return; }
+      node.hidden = false;
+      if (st.state === 'pending') { node.textContent = 'Submitting your dive…'; return; }
+      node.append('Your score has not reached the server yet' + (navigator.onLine === false ? ' (you are offline)' : '') + '. ');
+      node.append(el('button', { class: 'link-btn', type: 'button', text: 'Retry now', onClick: async () => { setSubmitState(record.dayKey, 'pending'); await drainQueue(); if (getSubmitState(record.dayKey).state !== 'ok') setSubmitState(record.dayKey, 'failed'); } }));
+      node.append(' It will also retry on its own when you come back.');
+    };
+    submitListeners.add(draw);
+    draw();
+    return node;
   }
   // The server's verdict (percentile, rank, total) is stored on the day's record so it survives reloads.
   function rememberCurve(dayKey, res) {
@@ -213,8 +246,8 @@
     storage.setQueue(q);
     while (q.length) {
       const item = q[0];
-      try { const res = await rest('/functions/v1/submit-dive', { method: 'POST', body: item }); rememberCurve(item.day, res); }
-      catch (e) { break; }
+      try { const res = await rest('/functions/v1/submit-dive', { method: 'POST', body: item }); rememberCurve(item.day, res); setSubmitState(item.day, 'ok'); }
+      catch (e) { setSubmitState(item.day, 'failed', e && e.message); break; }
       q = q.slice(1);
       storage.setQueue(q);
     }
@@ -425,7 +458,7 @@
   // ================================================================ leaderboard page
   const TABS = [['today', 'Today'], ['tide', 'This Tide'], ['alltime', 'All Time'], ['friends', 'Friends']];
   function leaderboardPage(tab) {
-    const { el, esc, dive, storage } = F();
+    const { el, esc, dive, storage, charts } = F();
     const t = TABS.some(x => x[0] === tab) ? tab : 'today';
     const wrap = el('div', { class: 'card' });
     if (!flags.LEADERBOARD_ENABLED && !flags.MOCK_ONLINE_DATA) {
@@ -474,8 +507,20 @@
     }
     function drawFriends(rows, note) {
       body.innerHTML = '';
+      if (!rows || !rows.length) { body.append(root.FathomPages.emptyState('No friends on the board yet', note)); return; }
       body.append(el('p', { class: 'small muted', text: note }));
-      if (rows && rows.length) { const ul = el('ul', { class: 'list' }); rows.forEach((r, i) => ul.append(row(i + 1, whoHtml(r), esc(dive.formatMeters(r.depth)) + ' m'))); body.append(ul); }
+      const ul = el('ul', { class: 'list' }); rows.forEach((r, i) => ul.append(row(i + 1, whoHtml(r), esc(dive.formatMeters(r.depth)) + ' m'))); body.append(ul);
+      body.append(friendsCurve(rows.map(r => r.depth), storage.getDailyResult(today) ? storage.getDailyResult(today).depth : null));
+    }
+    // a bell curve drawn from just your friends' depths today (and yours)
+    function friendsCurve(depths, mine) {
+      const all = depths.slice(); if (mine != null) all.push(mine);
+      if (all.length < 2) return el('p', { class: 'tiny muted', text: 'The friends curve appears once two of you have dived today.' });
+      const bins = []; for (const d of all) { const i = Math.floor(d / charts.CURVE_BIN_M); bins[i] = (bins[i] || 0) + 1; }
+      for (let i = 0; i < bins.length; i++) bins[i] = bins[i] || 0;
+      const sorted = all.slice().sort((a, b) => a - b); const median = sorted[Math.floor(sorted.length / 2)];
+      const pct = mine != null ? Math.round(100 * all.filter(d => d > mine).length / all.length) : null;
+      return el('div', { class: 'friends-curve' }, [el('h4', { text: 'Friends curve · today' }), el('div', { html: charts.bellCurve({ bins, total: all.length, median, playerDepth: mine, percentile: pct }) })]);
     }
 
     if (demo) {
@@ -486,7 +531,17 @@
       if (t === 'today') drawToday(m.top, mine ? m.depths.filter(d => d > mine.depth).length + 1 : null, mine ? mine.depth : null);
       else if (t === 'tide') drawTide(b.tide);
       else if (t === 'alltime') drawAllTime(b.alltime, b.hall);
-      else drawFriends([], 'Follow handles to see your friends here. Following opens when ' + F().dive.BRAND + ' is online.');
+      else {
+        const demoFriends = m.top.slice(3, 7).map(r => ({ handle: r.handle, flag: r.flag, depth: r.depth, rating: r.rating }));
+        body.append(el('form', { class: 'row', onSubmit: (e) => { e.preventDefault(); F().toast('Following opens when ' + F().dive.BRAND + ' is online'); } }, [el('input', { class: 'input', placeholder: 'Follow a handle', 'aria-label': 'Handle to follow' }), el('button', { class: 'btn', type: 'submit', text: 'Follow' })]));
+        const holder = el('div');
+        body.append(holder);
+        const saved = body; // drawFriends clears body; draw into the holder instead
+        holder.append(el('p', { class: 'small muted', text: 'Demo friends — follow real handles once ' + F().dive.BRAND + ' is online.' }));
+        const ul = el('ul', { class: 'list' }); demoFriends.forEach((r, i) => ul.append(row(i + 1, whoHtml(r), esc(dive.formatMeters(r.depth)) + ' m'))); holder.append(ul);
+        holder.append(friendsCurve(demoFriends.map(r => r.depth), storage.getDailyResult(today) ? storage.getDailyResult(today).depth : null));
+        void saved;
+      }
       return wrap;
     }
     (async () => {
@@ -517,7 +572,8 @@
             try {
               if (which === 'today') {
                 const rows = await rest('/rest/v1/rpc/friends_today', { method: 'POST', body: { p_day: today } });
-                subBody.innerHTML = ''; const ul = el('ul', { class: 'list' }); rows.forEach((r, i) => ul.append(row(i + 1, whoHtml(r), esc(dive.formatMeters(r.depth)) + ' m'))); subBody.append(rows.length ? ul : el('p', { class: 'small muted', text: 'No dives from you or your friends today yet.' }));
+                subBody.innerHTML = ''; const ul = el('ul', { class: 'list' }); rows.forEach((r, i) => ul.append(row(i + 1, whoHtml(r), esc(dive.formatMeters(r.depth)) + ' m'))); subBody.append(rows.length ? ul : root.FathomPages.emptyState('No dives from your friends today', 'Follow a handle above, or send a challenge link from any result screen.'));
+                if (rows.length) subBody.append(friendsCurve(rows.map(r => r.depth), storage.getDailyResult(today) ? storage.getDailyResult(today).depth : null));
               } else if (which === 'tide') {
                 const rows = await rest('/rest/v1/rpc/friends_tide', { method: 'POST', body: {} });
                 subBody.innerHTML = ''; const ul = el('ul', { class: 'list' }); rows.forEach((r, i) => ul.append(row(i + 1, whoHtml(r), Number(r.rating).toFixed(1), r.dives + ' dives'))); subBody.append(rows.length ? ul : el('p', { class: 'small muted', text: 'Nobody ranked yet.' }));
@@ -627,7 +683,7 @@
   root.FathomOnline = {
     FLAGS, LEAGUES, MIN_CURVE_DIVES, RATING_WINDOW_DAYS, RATING_BEST_OF, MIN_RANKED_DAYS, HANDLE_RE,
     init, user, entitlements, refreshEntitlements, signIn, signOut, handleProblem, saveProfile, deleteAccount,
-    submitDaily, drainQueue, fetchCurve, curveSection, othersSection, lastPercentile, percentileOf, refreshRating, syncProgressUp,
+    submitDaily, drainQueue, submitStatusLine, getSubmitState, fetchCurve, curveSection, othersSection, lastPercentile, percentileOf, refreshRating, syncProgressUp,
     leaderboardPage, ratingSummary, settingsSection, trackEvent, leagueFor, mockDaily, mockBoards,
     _rest: rest, _headers: headers, _configured: configured,
   };

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<path d="M60 128 L26 106 L26 150Z" fill="#3C6AE0" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<ellipse cx="96" cy="128" rx="44" ry="22" fill="#3C6AE0" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M70 108 Q110 86 160 96 Q230 112 240 128 L130 128Z" fill="#3C6AE0" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M240 128 Q230 150 150 156 Q100 158 70 148Z" fill="#3C6AE0" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M130 128 L240 128" fill="none" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M150 124 L156 112 L162 124 L168 112 L174 124 L180 112 L186 124 L192 112 L198 124Z" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="84" cy="140" r="4" fill="#FFD24A"/><circle cx="102" cy="140" r="4" fill="#FFD24A"/><circle cx="120" cy="140" r="4" fill="#FFD24A"/><circle cx="138" cy="140" r="4" fill="#FFD24A"/><circle cx="156" cy="140" r="4" fill="#FFD24A"/><circle cx="174" cy="140" r="4" fill="#FFD24A"/><circle cx="192" cy="140" r="4" fill="#FFD24A"/><circle cx="210" cy="140" r="4" fill="#FFD24A"/><circle cx="94" cy="126" r="3" fill="#86D9EC"/><circle cx="112" cy="126" r="3" fill="#86D9EC"/><circle cx="130" cy="126" r="3" fill="#86D9EC"/><circle cx="148" cy="126" r="3" fill="#86D9EC"/><circle cx="166" cy="126" r="3" fill="#86D9EC"/><circle cx="184" cy="126" r="3" fill="#86D9EC"/><circle cx="202" cy="126" r="3" fill="#86D9EC"/>
+<circle cx="212" cy="114" r="5" fill="#0C2A3A"/>
+<circle cx="212" cy="114" r="2" fill="#EAF4F7"/>
+<ellipse cx="60" cy="208" rx="18" ry="8" fill="#3C6AE0" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="48" cy="208" r="3" fill="#FFD24A"/>
+<circle cx="70" cy="208" r="3" fill="#FFD24A"/>
+<ellipse cx="190" cy="40" rx="16" ry="7" fill="#3C6AE0" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="184" cy="42" r="3" fill="#FFD24A"/>
+<circle cx="196" cy="42" r="3" fill="#FFD24A"/>
+</svg>

@@ -4,7 +4,7 @@
 
   // ---------------------------------------------------------------- parameters
   const CONFIG = {
-    SITE_URL: '',                       // e.g. 'https://fathom.example' once the site has a domain (added to share text)
+    SITE_URL: (root.FATHOM_SITE && root.FATHOM_SITE.siteUrl) || '',   // from data/site.json via boot.js (share text, share card)
     FEEDBACK_EMAIL: 'hello@angler.example',
     REPORT_FORM_URL: '',                // if set, "Report an answer" opens this instead of email
     REVEAL_MS: 2600,                    // how long a tier reveal stays before auto-advancing
@@ -128,6 +128,40 @@
     (Array.isArray(nodes) ? nodes : [nodes]).forEach(n => n && m.appendChild(n));
     root.scrollTo({ top: 0 });
   }
+
+  // ---------------------------------------------------------------- skeletons (shown while the full bank loads)
+  function skeleton(kind) {
+    const lines = (n, widths) => Array.from({ length: n }, (_, i) => el('div', { class: 'sk-line', style: 'width:' + widths[i % widths.length] }));
+    if (kind === 'list') {
+      return el('div', { class: 'skeleton', 'aria-busy': 'true', 'aria-label': 'Loading' }, [
+        el('div', { class: 'card strong' }, [el('div', { class: 'sk-line sk-title' }), ...lines(2, ['90%', '70%'])]),
+        el('div', { class: 'card' }, Array.from({ length: 5 }, () => el('div', { class: 'sk-row' }, [el('div', { class: 'sk-dot' }), el('div', { class: 'sk-line', style: 'width:' + (55 + Math.round(Math.random() * 30)) + '%' })]))),
+      ]);
+    }
+    return el('div', { class: 'skeleton', 'aria-busy': 'true', 'aria-label': 'Loading' }, [
+      el('div', { class: 'card strong' }, [el('div', { class: 'sk-line', style: 'width:38%' }), el('div', { class: 'sk-line sk-title', style: 'width:84%' }), el('div', { class: 'sk-input' }), ...lines(2, ['60%', '45%'])]),
+    ]);
+  }
+
+  // ---------------------------------------------------------------- keyboard shortcuts
+  // Enter submits and Esc closes (native). Alt+H lights the lure and Alt+S skips at any time; plain H and S do the
+  // same when focus is not in a text field (press Esc first to leave the answer box).
+  const SHORTCUTS = [
+    ['Enter', 'Submit your answer'], ['Esc', 'Close a dialog · leave the answer box'],
+    ['Alt + H', 'Light the lure (H when not typing)'], ['Alt + S', 'Skip the prompt (S when not typing)'],
+    ['?', 'How to play (when not typing)'],
+  ];
+  document.addEventListener('keydown', (e) => {
+    if (e.defaultPrevented || e.ctrlKey || e.metaKey) return;
+    const typing = e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable);
+    const key = e.key.toLowerCase();
+    const game = root.FathomGame;
+    if (key === 'escape' && typing) { e.target.blur(); return; }
+    if (!game) return;
+    if ((key === 'h' && (e.altKey || !typing))) { e.preventDefault(); game.shortcut('lure'); }
+    else if ((key === 's' && (e.altKey || !typing))) { e.preventDefault(); game.shortcut('skip'); }
+    else if (key === '?' && !typing && !document.querySelector('.modal')) { e.preventDefault(); root.FathomPages.howToModal(); }
+  });
 
   // ---------------------------------------------------------------- toast
   function toast(msg, ms) {
@@ -369,7 +403,7 @@
     setSceneDepth(0, false);
     const withBank = (fn) => {
       if (data.full) return fn();
-      render(el('div', { class: 'card strong center' }, [el('p', { class: 'muted', text: 'Loading the rest of the ocean…' })]));
+      render(skeleton(page === 'logbook' || page === 'packs' || page === 'archive' ? 'list' : 'dive'));
       return ensureBank().then(() => { if (currentHash() === hash) fn(); }).catch(() => render(el('div', { class: 'card strong' }, [el('h2', { text: 'Could not load the answer bank' }), el('p', { text: 'Check your connection and try again.' }), el('a', { class: 'btn', href: '#home', text: 'Home' })])));
     };
     switch (page) {
@@ -395,7 +429,7 @@
       config: CONFIG, dive, storage, charts,
       entities: data.entities, prompts: data.prompts, promptsById: data.promptsById, packs: data.packs, packsById: data.packsById, schedule: data.schedule, taxa: data.taxa, bankLoaded: data.full,
       ensureBank, hasPromptData,
-      el, esc, render, navigate, modal, closeModal, confirmDialog, toast, applyDepthTint, applySettings, sound, haptics, setSceneDepth, mascotSvg,
+      el, esc, render, navigate, modal, closeModal, confirmDialog, toast, applyDepthTint, applySettings, sound, haptics, setSceneDepth, mascotSvg, skeleton, SHORTCUTS,
       todayKey: () => dive.dayKey(new Date()),
     };
     applySettings();

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<path d="M16 160 Q20 130 30 120 Q36 150 70 170 L186 170 Q220 150 226 120 Q236 130 240 160 Q220 196 180 204 L76 204 Q36 196 16 160Z" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="126" y="36" width="6" height="134" fill="#E2B94F"/>
+<path d="M70 44 L190 44 L180 120 L80 120Z" fill="#EAF4F7" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M82 62 L176 62 L174 78 L84 78Z" fill="#F26A4B"/>
+<path d="M84 92 L174 92 L172 106 L86 106Z" fill="#3C6AE0"/>
+<rect x="64" y="38" width="132" height="8" fill="#E2B94F" stroke="#0C2A3A" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="57.4,188.5 37.4,224.5 42.6,227.5 62.6,191.5" fill="#E2B94F"/>
+<polygon points="101.2,190.8 85.2,228.8 90.8,231.2 106.8,193.2" fill="#E2B94F"/>
+<polygon points="145.2,193.2 161.2,231.2 166.8,228.8 150.8,190.8" fill="#E2B94F"/>
+<polygon points="187.5,189.6 211.5,227.6 216.5,224.4 192.5,186.4" fill="#E2B94F"/>
+<path d="M16 206 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 q14 -6 28 0 q14 6 28 0 L240 236 L16 236Z" fill="#3C6AE0"/>
+</svg>

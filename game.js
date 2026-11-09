@@ -88,7 +88,7 @@
   // The boot bundle carries only today's and tomorrow's prompts; anything else waits for the full bank.
   function loadThen(fn) {
     const { el, render, ensureBank } = F();
-    render(el('div', { class: 'card strong center' }, [el('p', { class: 'muted', text: 'Loading the rest of the ocean…' })]));
+    render(F().skeleton('dive'));
     const hash = location.hash;
     ensureBank().then(() => { if (location.hash === hash) fn(); })
       .catch(() => root.FathomPages.message('Could not load the answer bank', 'Check your connection and try again.'));
@@ -597,7 +597,8 @@
       if (record.mode === 'daily') {
         const cd = el('p', { class: 'small muted', style: 'margin:12px 0 0', html: 'Next dive in <b id="countdown">--:--:--</b>' });
         row.append(el('a', { class: 'btn', href: '#free', text: 'Free Dive' }));
-        actions.append(row, cd);
+        const status = root.FathomOnline && root.FathomOnline.submitStatusLine ? root.FathomOnline.submitStatusLine(record) : null;
+        actions.append(row, status || '', cd);
       } else {
         row.append(el('a', { class: 'btn', href: record.mode === 'pack' ? '#packs' : '#free', text: record.mode === 'pack' ? 'More packs' : 'Dive again' }));
         actions.append(row);
@@ -686,5 +687,12 @@
     countdownTimer = setInterval(tick, config.COUNTDOWN_TICK_MS);
   }
 
-  root.FathomGame = { startDaily, startFree, startArchive, startPack, startChallenge, startTutorial, startDive, resultScreen, leaveDive, copyText, hadalEntity, answersByTier, artNode, TUTORIAL_PROMPT_IDS };
+  // keyboard shortcuts (wired in app.js): only while a prompt is open
+  function shortcut(what) {
+    if (!state || state.answered) return;
+    if (what === 'lure') useHint();
+    else if (what === 'skip') skip();
+  }
+
+  root.FathomGame = { startDaily, startFree, startArchive, startPack, startChallenge, startTutorial, startDive, resultScreen, leaveDive, copyText, hadalEntity, answersByTier, artNode, shortcut, TUTORIAL_PROMPT_IDS };
 })(window);
