@@ -16,7 +16,7 @@ node tests/serve.js --dist         # serves dist/ with gzip and cache headers, r
 npx lighthouse http://127.0.0.1:8787/ --form-factor=mobile --screenEmulation.mobile --output=html --output-path=tests/reports/lighthouse-mobile.report.html
 ```
 
-The last Lighthouse mobile run (dist build, simulated slow 4G and a 4× slower CPU) scored performance 97, accessibility 100, best practices 100, SEO 100; the report is `tests/reports/lighthouse-mobile.report.html`. The browser run writes `tests/reports/axe-report.json` (axe-core, default rules, zero violations on every screen).
+The last Lighthouse mobile run (dist build, simulated slow 4G and a 4× slower CPU) scored performance 96–97 (total blocking time varies between runs), accessibility 100, best practices 100, SEO 100; the report is `tests/reports/lighthouse-mobile.report.html`. The browser run writes `tests/reports/axe-report.json` (axe-core, default rules, zero violations on every screen).
 
 Content lives in `data/prompt-seeds.json` (one entry per prompt, with `taxon`/`taxonFilter` for the taxa safety net and `min` only where 40 answers are impossible), `data/batches/*` (answers, aliases, facts, tiers) and `data/taxa/*.json` (scientific and common names per group, merged by `node tools/merge-taxa.js`). `node tools/add-batch.js` merges a batch, `node tools/validate-data.js` checks the whole bank, `node tools/apply-patch.js data/patches/<file>.json` applies corrections (including the admin inbox export). Past days in `data/schedule.json` are frozen; the build only fills future days.
 
