@@ -201,6 +201,7 @@ declare
   v_mine int;
   v_rank int;
   v_pct int;
+  v_at_or_above int;
   v_frozen boolean := false;
 begin
   select bins, total, median, frozen into v_bins, v_total, v_median, v_frozen from public.daily_stats where day = p_day and frozen;
@@ -215,9 +216,11 @@ begin
   select depth into v_mine from public.dives where day = p_day and ((auth.uid() is not null and user_id = auth.uid()) or (auth.uid() is null and p_device is not null and device_id = p_device)) limit 1;
   if v_mine is not null and v_total > 0 then
     select count(*) + 1 into v_rank from public.dives where day = p_day and depth > v_mine;
-    select greatest(1, ceil(100.0 * count(*) / v_total)) into v_pct from public.dives where day = p_day and depth >= v_mine;
+    select count(*) into v_at_or_above from public.dives where day = p_day and depth >= v_mine;
+    v_pct := greatest(1, ceil(100.0 * v_at_or_above / v_total));
   end if;
-  return json_build_object('bins', v_bins, 'total', v_total, 'median', v_median, 'percentile', v_pct, 'rank', v_rank, 'frozen', coalesce(v_frozen, false));
+  -- at_or_above lets the browser say "you beat X% of divers" (the share of the others below you); below is the complement
+  return json_build_object('bins', v_bins, 'total', v_total, 'median', v_median, 'percentile', v_pct, 'rank', v_rank, 'at_or_above', v_at_or_above, 'below', case when v_at_or_above is null then null else v_total - v_at_or_above end, 'frozen', coalesce(v_frozen, false));
 end $$;
 grant execute on function public.daily_curve(date, text) to anon, authenticated;
 

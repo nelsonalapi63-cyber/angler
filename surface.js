@@ -1,5 +1,5 @@
 /* ANGLER — the surface: a canvas animation of the top of the sea for the home hero. Slow waves, light rays
- * fanning down, drifting motes. Cheap enough for 60 frames per second on a mid-range phone: one 2D canvas,
+ * fanning down, drifting motes, and the submarine bobbing at the surface, waiting to dive. Cheap enough for 60 frames per second on a mid-range phone: one 2D canvas,
  * a handful of paths per frame, device pixel ratio capped at 1.5, gradients built once per resize, no allocations
  * in the loop. If a frame still costs more than its budget (a slow phone, a throttled tab) it drops to 30 frames
  * per second instead of janking. It pauses when the tab is hidden or the canvas leaves the page, and draws a
@@ -69,6 +69,10 @@
         ctx.strokeStyle = wave.color; ctx.globalAlpha = wave.alpha; ctx.lineWidth = wave.width; ctx.lineCap = 'round'; ctx.stroke();
       }
       ctx.globalAlpha = 1;
+      // the submarine waiting just under the surface, bobbing with the swell (sub.js draws it)
+      if (root.FathomSub && root.FathomSub.drawSub) {
+        root.FathomSub.drawSub(ctx, { x: w * 0.66, y: wv.y + 36 + Math.sin(t * 1.4) * 3, scale: Math.min(0.9, Math.max(0.62, w / 520)), tilt: Math.sin(t * 0.9) * 0.05, t, lamp: 0.16, spin: 3 });
+      }
       // motes drifting up and sideways
       ctx.fillStyle = '#EAF4F7';
       for (const m of motes) {

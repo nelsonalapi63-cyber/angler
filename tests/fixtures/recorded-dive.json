@@ -12,7 +12,7 @@
   "answers": [
     {
       "typed": "Mussel",
-      "secondsUsed": 3,
+      "secondsUsed": 2.9,
       "hint": true
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       "typed": "Flouader",
-      "secondsUsed": 1.2,
+      "secondsUsed": 1.1,
       "hint": false
     },
     {
@@ -31,8 +31,8 @@
       "hint": false
     },
     {
-      "typed": "Moon jellyfish",
-      "secondsUsed": 1.4,
+      "typed": "Barreleye",
+      "secondsUsed": 1.1,
       "hint": false
     },
     {
@@ -46,14 +46,14 @@
       "hint": false
     }
   ],
-  "depth": 2499,
-  "points": 160,
+  "depth": 2734,
+  "points": 175,
   "tiers": [
     "reef",
     "tidepool",
     "tidepool",
     "tidepool",
-    "tidepool",
+    "baitball",
     null,
     "hadal"
   ]

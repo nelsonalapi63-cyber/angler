@@ -92,7 +92,8 @@
   }
 
   // ---------------------------------------------------------------- bell curve
-  // data: { bins: [counts per 250 m bin from 0], total, median, playerDepth, percentile, demo }
+  // data: { bins: [counts per 250 m bin from 0], total, median, playerDepth, beat, rank, early }
+  // With no bins at all (nobody else has dived) the axis and the player's marker still draw.
   function bellCurve(data) {
     const dive = root.FathomDive;
     const max = MAX_DEPTH();
@@ -124,18 +125,20 @@
     }
     const area = 'M' + x(0).toFixed(1) + ' ' + base + ' ' + path.replace(/^M/, 'L') + ' L' + x(nBins * CURVE_BIN_M).toFixed(1) + ' ' + base + ' Z';
 
-    let out = '<svg class="curve" viewBox="0 0 ' + CURVE_W + ' ' + CURVE_H + '" role="img" aria-label="Today\'s depth distribution">';
+    const standing = data.total != null && data.total < 2 ? 'you are the first diver today' : (data.beat != null ? 'you beat ' + data.beat + '% of divers' : '') + (data.rank != null ? (data.beat != null ? ', ' : '') + 'ranked ' + data.rank + ' of ' + data.total : '');
+    const empty = !bins.some(Boolean);
+    let out = '<svg class="curve' + (data.early ? ' early' : '') + (empty ? ' empty' : '') + '" viewBox="0 0 ' + CURVE_W + ' ' + CURVE_H + '" role="img" aria-label="Today\'s depth distribution' + (data.early ? ' (early, based on this week)' : '') + (standing ? ': ' + standing : '') + '">';
     const zoneFill = { sunlight: '#2BD1C6', twilight: '#4C9BE8', midnight: '#3C5BD9', abyss: '#2B3F9E', hadal: '#1B1F5A' };
     for (const z of dive.ZONES) {
       const x1 = x(z.from), x2 = x(Math.min(z.to, max));
       out += '<rect class="zone" x="' + x1.toFixed(1) + '" y="' + CURVE_PAD.top + '" width="' + (x2 - x1).toFixed(1) + '" height="' + (base - CURVE_PAD.top) + '" fill="' + zoneFill[z.code] + '"/>';
     }
-    out += '<path class="area" d="' + area + '"/>';
-    out += '<path class="line" d="' + path + '"/>';
+    if (!empty) { out += '<path class="area" d="' + area + '"/>'; out += '<path class="line" d="' + path + '"/>'; }
     // hover hit-rects with native tooltips
     for (let i = 0; i < nBins; i++) {
       const x1 = x(i * CURVE_BIN_M), x2 = x(Math.min(max, (i + 1) * CURVE_BIN_M));
-      const label = fmt(i * CURVE_BIN_M) + '–' + fmt(Math.min(max, (i + 1) * CURVE_BIN_M)) + ' m: ' + (bins[i] || 0) + (bins[i] === 1 ? ' diver' : ' divers');
+      const n = Math.round(bins[i] || 0);
+      const label = fmt(i * CURVE_BIN_M) + '–' + fmt(Math.min(max, (i + 1) * CURVE_BIN_M)) + ' m: ' + (data.early ? 'about ' : '') + n + (n === 1 ? ' diver' : ' divers');
       out += '<rect x="' + x1.toFixed(1) + '" y="' + CURVE_PAD.top + '" width="' + (x2 - x1).toFixed(1) + '" height="' + (base - CURVE_PAD.top) + '" fill="transparent"><title>' + esc(label) + '</title></rect>';
     }
     // axis labels

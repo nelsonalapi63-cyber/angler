@@ -22,7 +22,8 @@
   const VAPID_PUBLIC_KEY = 'BPcKvRygAEvCb0mJlbscCTHFAVSDJP0wZf3VLG8hEynjMYdrp4ZH75g71CZ56yMU_2mxJgt3MSFZd6v4fYwDAQw'; // public half from `node tools/vapid-keys.js`; the private half lives only in supabase/vapid-private.key (gitignored) and the VAPID_PRIVATE_KEY secret
   const EVENTS_FLUSH_MS = 4000;             // first-party analytics are batched and sent together
   const EVENTS_MAX_BATCH = 20;
-  const MIN_CURVE_DIVES = 30;              // the curve appears after this many dives today
+  const EARLY_CURVE_DIVES = 30;             // under this many dives today the curve borrows this week's shape (labelled "early")
+  const WEEK_SHAPE_DAYS = 7;
   const MAX_GUESSES_SENT = 5;          // rejected guesses per prompt sent with a dive, so missing answers can be mined
   const CURVE_CACHE_MS = 60 * 1000;
   const RATING_WINDOW_DAYS = 30;
@@ -269,13 +270,19 @@
     draw();
     return node;
   }
-  // The server's verdict (percentile, rank, total) is stored on the day's record so it survives reloads.
+  // The server's verdict (rank, total, how many are at or above you) is stored on the day's record so it survives reloads.
   function rememberCurve(dayKey, res) {
-    if (!res || res.percentile == null) return;
-    const { storage } = F();
+    if (!res || res.rank == null) return;
+    const { storage, dive } = F();
     const rec = storage.getDailyResult(dayKey);
-    if (rec) { rec.online = { percentile: res.percentile, rank: res.rank, total: res.total, depth: res.depth, flagged: !!res.flagged }; storage.saveDailyResult(dayKey, rec); }
+    if (rec) {
+      const atOrAbove = res.atOrAbove != null ? res.atOrAbove : res.at_or_above;
+      rec.online = { percentile: res.percentile, rank: res.rank, total: res.total, atOrAbove: atOrAbove != null ? atOrAbove : null, beat: dive.beatPercent({ total: res.total, atOrAbove }), depth: res.depth, flagged: !!res.flagged };
+      storage.saveDailyResult(dayKey, rec);
+      standingListeners.forEach(fn => { try { fn(dayKey, rec.online); } catch (e) { /* ignore */ } });
+    }
   }
+  const standingListeners = new Set();
   async function drainQueue() {
     if (!flags.LEADERBOARD_ENABLED || !configured()) return;
     const { storage } = F();
@@ -294,21 +301,37 @@
     }
   }
 
-  // ================================================================ curve & percentile
+  // ================================================================ curve & standing
   const curveCache = {};      // dayKey -> { at, data }   (server data only; demo data is never cached here)
-  function lastPercentile(record) {   // only a percentile the server computed goes into share text
+  let weekShapeCache = null;  // { at, bins, total }
+  // Where you stand today — { beat, rank, total, early?, demo? } — from the server once it has answered, else the local estimate, else null.
+  function lastStanding(record) {
     if (record.mode !== 'daily') return null;
     const rec = F().storage.getDailyResult(record.dayKey) || record;
-    if (rec.online && rec.online.percentile != null) return rec.online.percentile;
+    if (rec.online && rec.online.rank != null) return { beat: rec.online.beat != null ? rec.online.beat : F().dive.beatPercent(rec.online), rank: rec.online.rank, total: rec.online.total };
     const c = curveCache[record.dayKey];
-    return c && c.data && c.data.percentile != null ? c.data.percentile : null;
+    if (c && c.data && c.data.rank != null) return { beat: F().dive.beatPercent({ total: c.data.total, atOrAbove: c.data.at_or_above }), rank: c.data.rank, total: c.data.total };
+    if (!flags.LEADERBOARD_ENABLED && flags.MOCK_ONLINE_DATA) { const s = mockStanding(record); return Object.assign(s, { demo: true }); }
+    return null;
   }
+  function lastPercentile(record) { const s = lastStanding(record); return s && !s.demo && s.beat != null ? s.beat : null; }
   async function fetchCurve(dayKey) {
     const c = curveCache[dayKey];
     if (c && Date.now() - c.at < CURVE_CACHE_MS) return c.data;
     const data = await rest('/rest/v1/rpc/daily_curve', { method: 'POST', body: { p_day: dayKey, p_device: F().storage.deviceId() } });
     curveCache[dayKey] = { at: Date.now(), data };
     return data;
+  }
+  // The frozen distributions of the last seven days, summed: the shape today's curve borrows while it is early.
+  async function fetchWeekShape() {
+    if (weekShapeCache && Date.now() - weekShapeCache.at < 10 * CURVE_CACHE_MS) return weekShapeCache;
+    const rows = await rest('/rest/v1/daily_stats?select=day,bins,total&frozen=eq.true&order=day.desc&limit=' + WEEK_SHAPE_DAYS);
+    const bins = [];
+    let total = 0;
+    for (const r of rows || []) { (r.bins || []).forEach((n, i) => { bins[i] = (bins[i] || 0) + (n || 0); }); total += r.total || 0; }
+    for (let i = 0; i < bins.length; i++) bins[i] = bins[i] || 0;
+    weekShapeCache = { at: Date.now(), bins, total, days: (rows || []).length };
+    return weekShapeCache;
   }
   function percentileOf(depth, depths) {       // "top X%": share of divers at or above this depth
     const n = depths.length;
@@ -317,35 +340,93 @@
     for (const d of depths) if (d >= depth) atOrAbove++;
     return Math.max(1, Math.round((atOrAbove / n) * 100));
   }
+  function mockStanding(record) {
+    const m = mockDaily(record.dayKey);
+    let atOrAbove = 0, deeper = 0;
+    for (const d of m.depths) { if (d >= record.depth) atOrAbove++; if (d > record.depth) deeper++; }
+    const total = m.total + 1;                      // the demo crowd plus you
+    return { beat: F().dive.beatPercent({ total, atOrAbove: atOrAbove + 1 }), rank: deeper + 1, total };
+  }
+  // scale a borrowed shape so its area matches today's count (or shows as a plain shape when nobody has dived yet)
+  function scaleBins(bins, toTotal) {
+    const sum = bins.reduce((n, v) => n + v, 0) || 1;
+    const k = (toTotal || 100) / sum;
+    return bins.map(v => v * k);
+  }
 
-  function curveSection(record) {
+  // The bell curve, always: today's divers with your marker, "You beat X% of divers today", "Ranked #r of n worldwide".
+  // Under EARLY_CURVE_DIVES dives the frozen shape of the last week stands in, labelled early; alone, you are #1 of 1.
+  function curveSection(record, opts) {
     const { el, charts, dive, esc } = F();
+    opts = opts || {};
     if (!flags.LEADERBOARD_ENABLED && !flags.MOCK_ONLINE_DATA) return null;
-    const card = el('div', { class: 'card' });
+    const card = el('div', { class: 'card curve-card' });
     const head = el('div', { class: 'row between' }, [el('h2', { class: 'card-title', text: 'Today’s divers' })]);
     card.append(head);
     const body = el('div', { html: '<p class="small muted">Loading today’s curve…</p>' });
     card.append(body);
     const draw = (data, demo) => {
-      if (demo) head.append(el('span', { class: 'badge demo', text: 'demo data' }));
+      if (demo && !head.querySelector('.badge')) head.append(el('span', { class: 'badge demo', text: 'demo data' }));
       body.innerHTML = '';
-      if (!data || data.total < MIN_CURVE_DIVES) {
-        body.append(el('p', { class: 'small', html: 'The curve appears after ' + MIN_CURVE_DIVES + ' dives today. So far: <b>' + (data ? data.total : 0) + '</b> dives, and you reached <b>' + esc(dive.formatMeters(record.depth)) + ' m</b>.' }));
-        return;
-      }
-      const pct = data.percentile;
-      body.append(el('div', { html: charts.bellCurve({ bins: data.bins, total: data.total, median: data.median, playerDepth: record.depth, percentile: pct }) }));
-      body.append(el('p', { class: 'small', style: 'margin:8px 0 0', html: '<b>Top ' + pct + '%</b> of ' + data.total.toLocaleString('en-US') + ' divers today · median ' + esc(dive.formatMeters(data.median)) + ' m' + (data.provisional ? ' <span class="muted">(provisional until the day closes)</span>' : '') }));
+      const standing = { beat: data.beat, rank: data.rank, total: data.total, early: !!data.early, demo: !!demo };
+      body.append(el('div', { html: charts.bellCurve({ bins: data.shapeBins || data.bins, total: data.total, median: data.median, playerDepth: record.depth, early: !!data.early, beat: data.beat, rank: data.rank }) }));
+      const line = data.total < 2
+        ? 'You’re the first diver today — <b>#1 of 1</b>.'
+        : (data.beat != null ? 'You beat <b>' + data.beat + '%</b> of divers today' : '') + (data.rank != null ? (data.beat != null ? ' · ' : '') + 'Ranked <b>#' + data.rank + '</b> of ' + Number(data.total).toLocaleString('en-US') + ' worldwide' : '') + (data.median ? ' · median ' + esc(dive.formatMeters(data.median)) + ' m' : '');
+      body.append(el('p', { class: 'small standing-line', style: 'margin:8px 0 0', html: line + (data.early ? ' <span class="muted">· early — based on this week</span>' : data.provisional ? ' <span class="muted">(provisional until the day closes)</span>' : '') }));
+      if (opts.onStanding) opts.onStanding(standing);
     };
     if (flags.LEADERBOARD_ENABLED && configured()) {
-      fetchCurve(record.dayKey).then(d => { if (d && d.percentile == null) d.percentile = percentileOf(record.depth, expandBins(d.bins)); draw(Object.assign({ provisional: true }, d), false); })
-        .catch(() => { body.innerHTML = '<p class="small muted">' + (navigator.onLine ? 'The curve could not be loaded right now.' : 'You are offline — the curve appears when you reconnect.') + '</p>'; });
+      (async () => {
+        try {
+          const d = await fetchCurve(record.dayKey);
+          const total = Number(d.total) || 0;
+          const atOrAbove = d.at_or_above != null ? d.at_or_above : null;
+          const known = lastStanding(record);
+          const data = { bins: d.bins, total, median: d.median, rank: d.rank != null ? d.rank : (known ? known.rank : null), beat: atOrAbove != null ? dive.beatPercent({ total, atOrAbove }) : (known ? known.beat : null), provisional: !d.frozen };
+          if (total < EARLY_CURVE_DIVES) {
+            try { const w = await fetchWeekShape(); if (w.total > 0) { data.shapeBins = scaleBins(w.bins, total); data.early = true; } } catch (e) { /* no week yet: today's few divers draw the curve */ }
+          }
+          draw(data, false);
+        } catch (e) {
+          body.innerHTML = '<p class="small muted">' + (navigator.onLine ? 'The curve could not be loaded right now.' : 'You are offline — the curve appears when you reconnect.') + '</p>';
+        }
+      })();
+      // the server's verdict may land after the curve was drawn: refresh the standing line then
+      standingListeners.add((day) => { if (day === record.dayKey && document.contains(card)) { curveCache[record.dayKey] = null; fetchCurve(record.dayKey).then(d => { const total = Number(d.total) || 0; draw({ bins: d.bins, total, median: d.median, rank: d.rank, beat: d.at_or_above != null ? dive.beatPercent({ total, atOrAbove: d.at_or_above }) : null, provisional: !d.frozen }, false); }).catch(() => {}); } });
     } else {
       const m = mockDaily(record.dayKey);
-      const data = { bins: m.bins, total: m.total, median: m.median, percentile: percentileOf(record.depth, m.depths), provisional: true };
-      draw(data, true);
+      const s = mockStanding(record);
+      draw({ bins: m.bins, total: s.total, median: m.median, rank: s.rank, beat: s.beat, provisional: true }, true);
     }
     return card;
+  }
+  // Today's answer counts per question, for the "Only 4% said that" line: { promptId: { total, counts: { entityId: n } } }
+  async function rarityFor(dayKey, promptIds) {
+    const { dive } = F();
+    const out = {};
+    if (flags.LEADERBOARD_ENABLED && configured()) {
+      const rows = await rest('/rest/v1/rpc/top_answers', { method: 'POST', body: { p_day: dayKey } });
+      for (const row of rows || []) {
+        const d = out[row.prompt_id] || (out[row.prompt_id] = { total: Number(row.total) || 0, counts: {} });
+        d.counts[row.entity_id] = Number(row.n) || 0;
+      }
+      return out;
+    }
+    if (!flags.MOCK_ONLINE_DATA) return out;
+    const m = mockTopAnswers(dayKey, promptIds);
+    for (const pid of Object.keys(m)) { out[pid] = { total: m[pid].total, counts: {} }; for (const r of m[pid].all) out[pid].counts[r.entityId] = r.n; }
+    void dive;
+    return out;
+  }
+  // a one-tap switch for the weekly recap (signed-in players), for the result screen's hooks
+  function recapToggle() {
+    const { el, toast } = F();
+    const btn = el('button', { class: 'toggle', type: 'button', role: 'switch', 'aria-checked': String(!!(profile && profile.email_optin)), 'aria-label': 'Weekly recap email', onClick: async () => {
+      const cur = btn.getAttribute('aria-checked') === 'true';
+      try { await saveProfile({ email_optin: !cur }); btn.setAttribute('aria-checked', String(!cur)); trackEvent(cur ? 'recap_off' : 'recap_on', {}); toast(cur ? 'Recap off' : 'Recap on — see you Sunday'); } catch (e) { toast('Could not save'); }
+    } });
+    return btn;
   }
   // "What others answered today": the three most-given answers per prompt and how many found the Hadal one.
   // Server: rpc top_answers(p_day) -> [{prompt_id, entity_id, n, total}]; demo: deterministic per day.
@@ -368,7 +449,7 @@
       for (const x of pool) { const n = Math.round(total * x.w / sum); rows.push({ entityId: x.a.entity, tier: x.a.tier, n }); left -= n; }
       rows.sort((p, q) => q.n - p.n);
       const hadal = rows.find(r => r.tier === 'hadal');
-      out[pid] = { total, top: rows.slice(0, TOP_ANSWERS_N), hadal: hadal ? hadal.n : 0, misses: Math.max(0, left) };
+      out[pid] = { total, top: rows.slice(0, TOP_ANSWERS_N), all: rows, hadal: hadal ? hadal.n : 0, misses: Math.max(0, left) };
     }
     return out;
   }
@@ -748,9 +829,9 @@
   }
 
   root.FathomOnline = {
-    FLAGS, LEAGUES, MIN_CURVE_DIVES, RATING_WINDOW_DAYS, RATING_BEST_OF, MIN_RANKED_DAYS, HANDLE_RE,
+    FLAGS, LEAGUES, EARLY_CURVE_DIVES, RATING_WINDOW_DAYS, RATING_BEST_OF, MIN_RANKED_DAYS, HANDLE_RE,
     init, user, entitlements, refreshEntitlements, signIn, signInWithEmail, emailSignInModal, signOut, handleProblem, saveProfile, deleteAccount,
-    submitDaily, drainQueue, submitStatusLine, getSubmitState, fetchCurve, curveSection, othersSection, lastPercentile, percentileOf, refreshRating, syncProgressUp,
+    submitDaily, drainQueue, submitStatusLine, getSubmitState, fetchCurve, fetchWeekShape, curveSection, othersSection, lastStanding, lastPercentile, percentileOf, rarityFor, recapToggle, refreshRating, syncProgressUp,
     leaderboardPage, ratingSummary, settingsSection, trackEvent, leagueFor, mockDaily, mockBoards,
     _rest: rest, _headers: headers, _configured: configured, rest, configured, VAPID_PUBLIC_KEY,
   };

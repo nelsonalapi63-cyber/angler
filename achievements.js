@@ -22,7 +22,7 @@
     { id: 'hadal-three', emoji: '🔱', name: 'Three tridents', blurb: 'Three Hadal answers in one dive.', test: (r) => r.tiers.filter(t => t === 'hadal').length >= 3 },
     { id: 'no-miss', emoji: '🧹', name: 'Clean sweep', blurb: 'A dive with no misses.', test: (r) => r.tiers.length >= 7 && r.tiers.every(Boolean) },
     { id: 'full-spectrum', emoji: '🌈', name: 'Full spectrum', blurb: 'Every tier, Tide Pool to Hadal, in one dive.', test: (r) => ['tidepool', 'baitball', 'reef', 'twilight', 'midnight', 'hadal'].every(t => r.tiers.includes(t)) },
-    { id: 'quick', emoji: '⚡', name: 'Quick draw', blurb: 'A timed seven-prompt dive in under 60 seconds.', test: (r) => r.timerOn && r.tiers.length >= 7 && r.secondsUsed < 60 && r.depth > 0 },
+    { id: 'quick', emoji: '⚡', name: 'Quick draw', blurb: 'A timed seven-question dive in under 60 seconds.', test: (r) => r.timerOn && r.tiers.length >= 7 && r.secondsUsed < 60 && r.depth > 0 },
     { id: 'second-wind', emoji: '🌬️', name: 'Second wind', blurb: 'Land an answer after two rejected guesses.', test: (r) => r.results.some(x => x.entityId && (x.attempts || 1) >= 3) },
     { id: 'unaided', emoji: '🧭', name: 'Unaided', blurb: 'A Daily Dive past 2,000 m with no hints.', test: (r) => r.mode === 'daily' && r.depth >= 2000 && !(r.hints > 0) },
     { id: 'streak-3', emoji: '🔥', name: 'Three in a row', blurb: 'A 3-day daily streak.', test: (r, c) => c.streak >= 3 },

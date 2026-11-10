@@ -7,9 +7,7 @@
       "url": "/#home",
       "violations": 0,
       "rulesPassed": 42,
-      "needsReview": [
-        "color-contrast"
-      ]
+      "needsReview": []
     },
     {
       "screen": "dive",
@@ -17,7 +15,8 @@
       "violations": 0,
       "rulesPassed": 43,
       "needsReview": [
-        "color-contrast"
+        "color-contrast",
+        "label-content-name-mismatch"
       ]
     },
     {
@@ -61,7 +60,9 @@
       "url": "/#leaderboard",
       "violations": 0,
       "rulesPassed": 43,
-      "needsReview": []
+      "needsReview": [
+        "color-contrast"
+      ]
     },
     {
       "screen": "settings",

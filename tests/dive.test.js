@@ -170,9 +170,9 @@ test('challenge hashes round-trip and reject garbage', () => {
 });
 
 test('share text', () => {
-  const s = dive.shareText({ number: 12, depth: 4210, percentile: 18, tiers: ['tidepool', 'reef', 'twilight', null, 'midnight', 'hadal', 'baitball'] });
-  assert.strictEqual(s, 'ANGLER #12 · 4,210 m · top 18% · 🐚🪸🦑⬛🐙🔱🐠');
-  const t = dive.shareText({ number: 1, depth: 0, percentile: null, tiers: [null, null, null, null, null, null, null], siteUrl: 'https://x.y' });
+  const s = dive.shareText({ number: 12, depth: 4210, beat: 82, rank: 18, total: 100, tiers: ['tidepool', 'reef', 'twilight', null, 'midnight', 'hadal', 'baitball'] });
+  assert.strictEqual(s, 'ANGLER #12 · 4,210 m · beat 82% · #18 of 100 · 🐚🪸🦑⬛🐙🔱🐠');
+  const t = dive.shareText({ number: 1, depth: 0, tiers: [null, null, null, null, null, null, null], siteUrl: 'https://x.y' });
   assert.strictEqual(t, 'ANGLER #1 · 0 m · ⬛⬛⬛⬛⬛⬛⬛\nhttps://x.y');
 });
 
@@ -228,7 +228,7 @@ test('taxon safety net accepts listed species at Midnight, filtered for letter p
   assert.strictEqual(dive.matchAnswer('thornback ray', idx3).entityId, null);
   assert.deepStrictEqual(dive.taxonGroups('sharks|rays'), ['sharks', 'rays']);
   assert.ok(dive.taxonFact('sharks|rays').length > 10);
-  // a hint flag costs HINT_COST on the server too, and a taxon hit scores Midnight there as well
+  // a hint flag is honoured on the server too (free since v3), and a taxon hit scores Midnight there as well
   const scored = dive.scoreSubmissionFull({ promptIds: ['s'], answers: [{ typed: 'porbeagle', secondsUsed: 3, hint: true }] }, [p], entities, taxa);
   assert.strictEqual(scored.points, dive.TIER_BY_CODE.midnight.points - dive.HINT_COST);
   assert.strictEqual(scored.tiers[0], 'midnight');
@@ -253,7 +253,7 @@ test('did you mean: close spellings and word order, never from short input', () 
   assert.deepStrictEqual(dive.suggestAnswers('whale', idx, ents).map(s => s.name), ['Whale shark']);
 });
 
-test('hints point at a rarer unanswered answer and cost HINT_COST', () => {
+test('hints point at a rarer unanswered answer and are free', () => {
   const ents = { a: { id: 'a', name: 'Alpha fish', aliases: [] }, b: { id: 'b', name: 'Bravo eel', aliases: [] }, c: { id: 'c', name: 'Charlie', aliases: [] } };
   const p = { id: 'h', answers: [{ entity: 'a', tier: 'tidepool' }, { entity: 'b', tier: 'midnight' }, { entity: 'c', tier: 'hadal' }] };
   const h = dive.pickHint(p, ents, ['c'], () => 0);
@@ -264,5 +264,5 @@ test('hints point at a rarer unanswered answer and cost HINT_COST', () => {
   const scored = dive.scoreSubmissionFull({ promptIds: ['h'], answers: [{ typed: 'bravo eel', secondsUsed: 5, hint: true }] }, [p], ents);
   assert.strictEqual(scored.points, 85 - dive.HINT_COST);
   const scored2 = dive.scoreSubmissionFull({ promptIds: ['h'], answers: [{ typed: 'alpha fish', secondsUsed: 5, hint: true }] }, [p], ents);
-  assert.strictEqual(scored2.points, 0);   // 10 - 10, never below zero
+  assert.strictEqual(scored2.points, 10);  // the hint costs nothing
 });

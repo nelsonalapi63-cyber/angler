@@ -65,9 +65,9 @@
   async function communitySection() {
     const { el, esc, storage, dive, promptsById } = F();
     if (!live() && !demo()) return null;
-    const sec = el('div', { class: 'card' }, [el('h2', { class: 'card-title', text: 'Community packs' }), el('p', { class: 'small muted', text: 'Seven prompts picked by a player, published once approved.' })]);
+    const sec = el('div', { class: 'card' }, [el('h2', { class: 'card-title', text: 'Community packs' }), el('p', { class: 'small muted', text: 'Seven questions picked by a player, published once approved.' })]);
     const packs = (await communityPacks()).filter(p => p.approved && p.prompt_ids.every(id => promptsById[id]));
-    if (!packs.length) sec.append(root.FathomPages.emptyState('No community packs yet', 'Be the first: pick seven prompts below.'));
+    if (!packs.length) sec.append(root.FathomPages.emptyState('No community packs yet', 'Be the first: pick seven questions below.'));
     else {
       const ul = el('ul', { class: 'list' });
       for (const p of packs) {
@@ -87,13 +87,13 @@
   function builder() {
     const { el, esc, prompts, toast } = F();
     const user = O() && O().user ? O().user() : null;
-    const wrap = el('details', { class: 'pack-builder' }, [el('summary', { html: '<b>Suggest a pack</b> <span class="small muted">— seven prompts of your choosing</span>' })]);
+    const wrap = el('details', { class: 'pack-builder' }, [el('summary', { html: '<b>Suggest a pack</b> <span class="small muted">— seven questions of your choosing</span>' })]);
     if (!user && live()) { wrap.append(el('p', { class: 'small muted', text: 'Sign in (Settings) to suggest a pack.' })); return wrap; }
     const chosen = [];
     const name = el('input', { class: 'input', placeholder: 'Pack name (3–40 characters)', maxlength: '40', 'aria-label': 'Pack name' });
     const emoji = el('input', { class: 'input', placeholder: '🐟', maxlength: '4', 'aria-label': 'Pack emoji', style: 'max-width:80px' });
     const blurb = el('input', { class: 'input', placeholder: 'One line about it (optional)', maxlength: '120', 'aria-label': 'Blurb' });
-    const search = el('input', { class: 'input', placeholder: 'Search prompts…', 'aria-label': 'Search prompts' });
+    const search = el('input', { class: 'input', placeholder: 'Search questions…', 'aria-label': 'Search questions' });
     const results = el('div', { class: 'pb-results', role: 'listbox' });
     const picked = el('ol', { class: 'pb-picked' });
     const count = el('span', { class: 'small muted', text: '0 of 7 chosen' });
@@ -108,14 +108,14 @@
       results.innerHTML = '';
       if (q.length < 2) return;
       prompts.filter(p => p.text.toLowerCase().includes(q) && !chosen.includes(p)).slice(0, PACK_SEARCH_MAX).forEach(p => {
-        results.append(el('button', { class: 'pb-result', type: 'button', role: 'option', text: p.text, onClick: () => { if (chosen.length >= 7) return toast('Seven prompts make a pack'); chosen.push(p); search.value = ''; redrawResults(); redrawPicked(); } }));
+        results.append(el('button', { class: 'pb-result', type: 'button', role: 'option', text: p.text, onClick: () => { if (chosen.length >= 7) return toast('Seven questions make a pack'); chosen.push(p); search.value = ''; redrawResults(); redrawPicked(); } }));
       });
     };
     search.addEventListener('input', redrawResults);
     const submit = el('button', { class: 'btn btn-primary', type: 'button', text: 'Submit for approval', disabled: true, onClick: async () => {
       const n = name.value.trim(), e = emoji.value.trim() || '🐟';
       if (n.length < 3) return toast('Give the pack a name (3 characters or more)');
-      if (chosen.length !== 7) return toast('Pick exactly seven prompts');
+      if (chosen.length !== 7) return toast('Pick exactly seven questions');
       const row = { name: n, emoji: e, blurb: blurb.value.trim() || null, prompt_ids: chosen.map(p => p.id) };
       if (!live()) { toast('Pack submissions open when ' + F().dive.BRAND + ' is online'); return; }
       try {

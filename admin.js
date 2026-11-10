@@ -101,12 +101,12 @@
         el('div', { html: '<b>' + fmt(sh) + '</b><span>Shared · ' + pct(sh, c) + '</span>' }),
       ]),
       barChart(d.funnel, 'visits', 'dive_completed', r => r.day + ': ' + fmt(r.visits) + ' visits'),
-      el('div', { class: 'legend' }, [el('span', { html: '<i style="background:var(--accent)"></i>visits' }), el('span', { html: '<i style="background:var(--tier-midnight)"></i>completed dives' }), el('span', { text: 'Lure used ' + fmt(h) + ' times (' + pct(h, c * 7) + ' of prompts)' })]),
+      el('div', { class: 'legend' }, [el('span', { html: '<i style="background:var(--accent)"></i>visits' }), el('span', { html: '<i style="background:var(--tier-midnight)"></i>completed dives' }), el('span', { text: 'Hint used ' + fmt(h) + ' times (' + pct(h, c * 7) + ' of questions)' })]),
     ]);
   }
   function promptSection(d) {
     const box = el('div');
-    const table = el('table', {}, [el('thead', {}, el('tr', {}, [el('th', { text: 'Prompt' }), el('th', { class: 'num', text: 'Shown' }), el('th', { class: 'num', text: 'Missed' }), el('th', { text: 'Miss rate' }), el('th', { class: 'num', text: 'Lure' }), el('th', { text: 'Rejected guesses' })])),
+    const table = el('table', {}, [el('thead', {}, el('tr', {}, [el('th', { text: 'Question' }), el('th', { class: 'num', text: 'Shown' }), el('th', { class: 'num', text: 'Missed' }), el('th', { text: 'Miss rate' }), el('th', { class: 'num', text: 'Hint' }), el('th', { text: 'Rejected guesses' })])),
       el('tbody', {}, d.stats.map(r => el('tr', {}, [
         el('td', { html: '<b>' + esc((promptsById[r.prompt_id] || {}).text || r.prompt_id) + '</b><br><span class="tiny muted">' + esc(r.prompt_id) + '</span>' }),
         el('td', { class: 'num', text: fmt(r.shown) }), el('td', { class: 'num', text: fmt(r.missed) }),
@@ -114,7 +114,7 @@
         el('td', { class: 'num', text: fmt(r.hints) }),
         el('td', {}, el('button', { class: 'btn btn-sm', type: 'button', text: 'Guesses', onClick: async () => { const rows = await d.guesses(r.prompt_id); box.innerHTML = ''; box.append(el('h3', { text: 'Most-typed rejected guesses · ' + ((promptsById[r.prompt_id] || {}).text || r.prompt_id) }), el('p', { class: 'small muted', text: 'What players typed that was not accepted. Real answers hiding here become aliases or new entities; nonsense tells you the prompt is unclear.' }), rows.length ? el('table', {}, [el('thead', {}, el('tr', {}, [el('th', { text: 'Guess' }), el('th', { class: 'num', text: 'Times' })])), el('tbody', {}, rows.map(g => el('tr', {}, [el('td', { text: g.guess }), el('td', { class: 'num', text: fmt(g.n) })])))]) : el('p', { class: 'muted', text: 'No rejected guesses recorded for this prompt yet.' })); box.scrollIntoView({ behavior: 'smooth', block: 'start' }); } })),
       ])))]);
-    return el('section', { class: 'card' }, [el('h2', { text: 'Prompts · miss rate and lure use' }), el('p', { class: 'small muted', text: 'A high miss rate with many rejected guesses usually means answers are missing from the list; a high miss rate with few guesses means the prompt is too hard or unclear.' }), el('div', { style: 'overflow:auto' }, table), box]);
+    return el('section', { class: 'card' }, [el('h2', { text: 'Questions · miss rate and hint use' }), el('p', { class: 'small muted', text: 'A high miss rate with many rejected guesses usually means answers are missing from the list; a high miss rate with few guesses means the question is too hard or unclear.' }), el('div', { style: 'overflow:auto' }, table), box]);
   }
   function cohortSection(d) {
     return el('section', { class: 'card' }, [el('h2', { text: 'Retention by cohort' }), el('p', { class: 'small muted', text: 'Divers grouped by the week of their first dive; the share who dived again in week 1, 2 and 4.' }),
@@ -151,7 +151,7 @@
       toast(accepted.length + ' accepted reports exported — save as data/patches/inbox.json and run node tools/apply-patch.js');
     } });
     return el('section', { class: 'card' }, [el('div', { class: 'row between' }, [el('h2', { text: 'Report inbox' }), exportBtn]), el('p', { class: 'small muted', text: 'What players flagged from result screens. Accept what is right, then export; the file is a patch skeleton for tools/apply-patch.js with the accepted reports listed under review.' }),
-      el('div', { style: 'overflow:auto' }, el('table', {}, [el('thead', {}, el('tr', {}, [el('th', { text: 'When · kind' }), el('th', { text: 'Prompt' }), el('th', { text: 'Note' }), el('th', { text: 'Status' })])), list]))]);
+      el('div', { style: 'overflow:auto' }, el('table', {}, [el('thead', {}, el('tr', {}, [el('th', { text: 'When · kind' }), el('th', { text: 'Question' }), el('th', { text: 'Note' }), el('th', { text: 'Status' })])), list]))]);
   }
 
   // ---------------------------------------------------------------- boot

@@ -105,5 +105,6 @@ Deno.serve(async (req) => {
   const total = curve?.total ?? 0;
   const percentile = total ? Math.max(1, Math.ceil((100 * (atOrAbove ?? 1)) / total)) : null;
 
-  return json(200, { ...stored, percentile, rank: (deeper ?? 0) + 1, total, duplicate, dataVersion: b.version });
+  // the browser turns atOrAbove into "you beat X% of divers": the share of the OTHER divers below you
+  return json(200, { ...stored, percentile, rank: (deeper ?? 0) + 1, total, atOrAbove: atOrAbove ?? null, below: total ? total - (atOrAbove ?? 0) : 0, duplicate, dataVersion: b.version });
 });

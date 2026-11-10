@@ -21,7 +21,7 @@
     ['#tutorial', '🎓', 'Tutorial', 'One minute, no timer'],
   ];
   const HOW_IT_WORKS = [
-    ['1', 'Answer', 'Seven prompts, 25 seconds each. Type one answer; a wrong guess lets you try again.'],
+    ['1', 'Answer', 'Seven questions, 25 seconds each. Type one answer; a wrong guess lets you try again.'],
     ['2', 'Sink', 'Every accepted answer has a rarity tier. The rarer it is, the further you sink.'],
     ['3', 'Compare', 'See where you landed on today’s bell curve, climb the leaderboard, share your dive.'],
   ];
@@ -84,6 +84,7 @@
     const nodes = [];
     if (root.FathomRetain && root.FathomRetain.atRiskBanner) { const b = root.FathomRetain.atRiskBanner(); if (b) nodes.push(b); }
 
+    // the five-second test: motion in the art, the sub waiting at the surface, one line, one big button
     const body = el('div', { class: 'hero-body' }, [
       el('div', { class: 'hero-kicker', text: 'The daily ocean dive · ' + niceDate(today) }),
       el('h1', { class: 'hero-title', text: dive.BRAND }),
@@ -103,9 +104,9 @@
       body.append(el('p', { class: 'hero-sub' }, [dive.BRAND + ' #' + (number + 1) + ' opens in ', countdownNode]));
     } else {
       body.append(el('div', { class: 'hero-cta' }, [
-        el('a', { class: 'btn btn-primary btn-big', href: '#daily', html: (inProgress ? 'Resume ' : 'Play ') + dive.BRAND + ' #' + number }),
+        el('a', { class: 'btn btn-primary btn-big btn-dive-now', href: '#daily', html: (inProgress ? 'Resume the dive' : 'Dive') + ' <span class="hero-num">' + dive.BRAND + ' #' + number + '</span>' }),
       ]));
-      body.append(el('p', { class: 'hero-sub', text: 'Same seven prompts for everyone today · 25 seconds each · free' }));
+      body.append(el('p', { class: 'hero-sub', text: dive.PROMPTS_PER_DIVE + ' questions today · ' + dive.SECONDS_PER_PROMPT + ' seconds each · same seven for everyone · free' }));
     }
     if (streak.current > 1) body.append(el('p', { class: 'hero-streak', text: '🔥 ' + streak.current + '-day streak' }));
     const art = el('div', { class: 'hero-art' });
@@ -178,7 +179,7 @@
         locked ? el('span', { class: 'lock', text: '🔒 ' + (M ? M.priceLabel('pack') : '') }) : null,
       ]));
     }
-    const nodes = [el('div', { class: 'card strong' }, [el('h1', { text: 'Themed Packs' }), el('p', { class: 'small muted', text: 'Seven hand-picked prompts on one theme. Each pack keeps its own best depth.' })]), el('div', { class: 'card' }, list)];
+    const nodes = [el('div', { class: 'card strong' }, [el('h1', { text: 'Themed Packs' }), el('p', { class: 'small muted', text: 'Seven hand-picked questions on one theme. Each pack keeps its own best depth.' })]), el('div', { class: 'card' }, list)];
     render(nodes);
     if (root.FathomSocial && root.FathomSocial.communitySection) root.FathomSocial.communitySection().then((sec) => { if (sec && document.contains(nodes[1])) nodes[1].after(sec); });
   }
@@ -265,22 +266,22 @@
     render(el('div', { class: 'card strong prose' }, [
       el('h1', { text: 'FAQ' }),
       el('h2', { text: 'What is ' + dive.BRAND + '?' }),
-      el('p', { text: dive.BRAND + ' is a free daily trivia game about fish and the ocean. Seven open prompts, 25 seconds each. Every accepted answer belongs to a rarity tier; the rarer your answer, the more points you earn and the deeper you sink. A perfect dive of seven Hadal answers lands at 10,935 metres, the bottom of Challenger Deep.' }),
+      el('p', { text: dive.BRAND + ' is a free daily trivia game about fish and the ocean. Seven open questions, 25 seconds each. Every accepted answer belongs to a rarity tier; the rarer your answer, the more points you earn and the deeper your submarine sinks. A perfect dive of seven Hadal answers lands at 10,935 metres, the bottom of Challenger Deep.' }),
       el('h2', { text: 'How are the tiers set?' }),
-      el('p', { text: 'Each prompt has a hand-curated list of accepted answers. We tier them by how likely an average person is to say them, from Tide Pool (the first thing anyone says) to Hadal (the single most satisfying answer for that prompt). Tiers start as our best judgement; the "Report an answer or tier" link on every result helps us fix them.' }),
+      el('p', { text: 'Each question has a hand-curated list of accepted answers. We tier them by how likely an average person is to say them, from Tide Pool (the first thing anyone says) to Hadal (the single most satisfying answer for that question). Tiers start as our best judgement; the "Report an answer or tier" link on every result helps us fix them.' }),
       el('div', { html: '<table class="tier-table">' + tierRows + '</table>' }),
       el('h2', { text: 'What if my answer is not accepted?' }),
-      el('p', { text: 'A guess that is not on the list does not end the prompt: the box clears and you can try again until the timer runs out. If you were close to a real answer, up to two spelling suggestions appear above the box — tap one to use it. Scientific names count, and for species prompts any real species on our reference lists scores Midnight even when it is not on our hand-written list.' }),
-      el('h2', { text: 'What is the lure?' }),
-      el('p', { text: 'An anglerfish lights a lure to draw prey out of the dark. Once per prompt you can light yours: it shows the first letter and word shape of a rarer answer, for ' + dive.HINT_COST + ' points off that prompt. The lure is off in challenges, so both players face the same odds.' }),
-      el('h2', { text: 'How are the prompts built?' }),
-      el('p', { text: 'Every prompt is an ocean fact disguised as a category — you only score if you know the fact. Answer lists come from reference works on fish, marine mammals, invertebrates and ocean geography, and every entry carries one fact we are confident is true. Spelling is forgiving: a letter or two off still counts, group names like "hammerhead" count, and plurals count.' }),
+      el('p', { text: 'A guess that is not on the list does not end the question: the box clears and you can try again until the timer runs out. If you were close to a real answer, spelling suggestions appear above the box — tap one to use it. Scientific names count, and for species questions any real species on our reference lists scores Midnight even when it is not on our hand-written list.' }),
+      el('h2', { text: 'What is the hint?' }),
+      el('p', { text: 'An anglerfish lights a lure to draw prey out of the dark. Once per dive you can light yours: the Hint box shows the first letter and word shape of a rarer answer to the question you are on. It costs nothing, and it is off in challenges, so both players face the same odds.' }),
+      el('h2', { text: 'How are the questions built?' }),
+      el('p', { text: 'Every question is an ocean fact disguised as a category — you only score if you know the fact. Answer lists come from reference works on fish, marine mammals, invertebrates and ocean geography, and every entry carries one fact we are confident is true. Spelling is forgiving: a letter or two off still counts (three on long names), plurals count, and generic words are optional — "tuna fish" counts for tuna and "hammerhead" for the hammerhead shark, as long as only one answer fits.' }),
       el('h2', { text: 'How do rankings work?' }),
       el('p', { text: 'Only the Daily Dive counts. When the online features are switched on, your dive is re-scored on our server, placed on the day’s bell curve, and turned into a percentile. Each closed day gives you Daily Rank Points equal to your percentile; your rating is the average of your best 20 days in the last 30, and your league (Sunlight to Hadal) follows your rating. A Tide is one calendar month; the top 10 of each Tide go into the Hall of Fame.' }),
       el('h2', { text: 'Privacy' }),
       el('p', { text: 'Free play stays in your browser: your results, streaks, logbook, badges and settings live in local storage on your device, and nothing is sent anywhere. If you sign in, your handle, scores, rating and league are shown on public leaderboards and your progress syncs between devices. You can hide yourself from leaderboards or delete your account and data from Settings.' }),
-      el('h2', { text: 'Suggest a prompt' }),
-      el('p', { html: 'Have a prompt with at least 40 good answers? Email <a href="mailto:' + esc(config.FEEDBACK_EMAIL) + '?subject=' + encodeURIComponent(dive.BRAND + ' prompt idea') + '">' + esc(config.FEEDBACK_EMAIL) + '</a>.' }),
+      el('h2', { text: 'Suggest a question' }),
+      el('p', { html: 'Have a question with at least 40 good answers? Email <a href="mailto:' + esc(config.FEEDBACK_EMAIL) + '?subject=' + encodeURIComponent(dive.BRAND + ' question idea') + '">' + esc(config.FEEDBACK_EMAIL) + '</a>.' }),
       el('h2', { id: 'contact', text: 'Contact' }),
       el('p', { html: 'Anything else: <a href="mailto:' + esc(config.FEEDBACK_EMAIL) + '">' + esc(config.FEEDBACK_EMAIL) + '</a>. Legal pages: <a href="privacy.html">Privacy</a>, <a href="terms.html">Terms</a>, <a href="refunds.html">Refunds</a>.' }),
     ]));
@@ -291,11 +292,11 @@
     const { el, modal, dive, esc } = F();
     const tierRows = dive.TIERS.map(t => '<tr><td><span class="tier tier-' + t.code + '">' + t.emoji + ' ' + esc(t.name) + '</span> <span class="small muted">' + esc(t.blurb) + '</span></td><td>' + t.points + '</td></tr>').join('') + '<tr><td>⬛ Miss <span class="small muted">out of time, or skipped</span></td><td>0</td></tr>';
     modal({ title: 'How to play', body:
-      '<p>Seven ocean prompts. 25 seconds each. Type an answer and press Enter — a guess that is not accepted lets you try again.</p>' +
+      '<p>Seven ocean questions. 25 seconds each. Type an answer and press Enter — a guess that is not accepted lets you try again.</p>' +
       '<p>Every accepted answer has a rarity tier. <b>The rarer your answer, the deeper you dive.</b> Skip the first thing that comes to mind.</p>' +
       '<table class="tier-table">' + tierRows + '</table>' +
       '<p class="small" style="margin-top:12px"><b>Example.</b> "Name a shark species." <i>Great white</i> is Tide Pool (10). <i>Goblin shark</i> is the pick every trivia fan reaches for — Bait Ball (15). <i>Porbeagle</i> is Twilight (60). The one Hadal answer might be a shark almost nobody has heard of.</p>' +
-      '<p class="small muted">✦ The lure lights up the first letter of a rarer answer for ' + dive.HINT_COST + ' points. Points become depth: a perfect 700-point dive reaches 10,935 m, the bottom of Challenger Deep. A new dive opens every day at midnight Eastern.</p>' +
+      '<p class="small muted">✦ One free hint per dive lights up the first letter and shape of a rarer answer. Points become depth: a perfect 700-point dive takes your submarine to 10,935 m, the bottom of Challenger Deep. A new dive opens every day at midnight Eastern.</p>' +
       '<div class="row"><button class="btn btn-primary" type="button" id="howto-go">Got it</button><a class="btn" href="#tutorial" id="howto-tutorial">Play the tutorial</a></div>' });
     const btn = document.getElementById('howto-go');
     if (btn) btn.addEventListener('click', F().closeModal);
@@ -374,10 +375,10 @@
     const body = el('div', {}, [
       el('div', { class: 'switch' }, [el('div', { html: '<b>Theme</b>' }), theme]),
       toggle('High contrast', 'contrast', 'Tiers are always labelled; this strengthens outlines and colours'),
-      toggle('Sound and vibration', 'sound', 'Splash, descent hum, tier chimes, a buzz on phones'),
+      toggle('Sound and vibration', 'sound', 'Splash, descent hum, tier chimes, a buzz on phones — the dive screen has a one-tap mute too'),
       toggle('Timer in Free Dive', 'freeTimer', 'The Daily Dive is always timed'),
       root.FathomRetain ? root.FathomRetain.settingsRow() : null,
-      el('div', { class: 'switch' }, [el('div', { html: '<b>Tutorial</b><br><span class="small muted">Three untimed prompts; nothing is saved</span>' }), el('a', { class: 'btn btn-sm', href: '#tutorial', id: 'settings-tutorial', text: 'Replay' })]),
+      el('div', { class: 'switch' }, [el('div', { html: '<b>Tutorial</b><br><span class="small muted">Three untimed questions; nothing is saved</span>' }), el('a', { class: 'btn btn-sm', href: '#tutorial', id: 'settings-tutorial', text: 'Replay' })]),
       el('details', { class: 'shortcuts' }, [el('summary', { html: '<b>Keyboard shortcuts</b>' }), el('table', { class: 'kbd-table' }, F().SHORTCUTS.map(([k, what]) => el('tr', {}, [el('td', {}, el('kbd', { text: k })), el('td', { text: what })])))]),
     ]);
     const O = root.FathomOnline;

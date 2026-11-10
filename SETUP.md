@@ -46,7 +46,8 @@ insert into public.admin_emails (email) values ('you@example.com');
 4. Edge Functions — install the Supabase CLI, then:
 
 ```
-node tools/sync-shared.js                       # copies shared/dive.js next to each function that needs it
+node tools/check-leniency.js                    # the matching rules applied to every answer: name collisions must be zero before the rules ship
+node tools/sync-shared.js                       # copies shared/dive.js next to each function that needs it (redeploy submit-dive after every rules change)
 supabase login
 supabase link --project-ref <ref>
 supabase functions deploy submit-dive
@@ -97,7 +98,7 @@ The two function jobs call the Edge Functions through `pg_net` with the project'
 
 ## 3. Admin dashboard
 
-`admin.html` is deployed with the site but shows nothing to anyone who is not in `admin_emails` (every `admin_*` RPC checks `is_admin()` on the server). Sign in with the Google account you inserted. It shows the funnel, per-prompt miss rate and lure use, the most-typed rejected guesses per prompt, retention cohorts and the report inbox. Accept the reports that are right, then **Export accepted → inbox.json**, save the download as `data/patches/inbox.json`, fill the mechanical sections from its `review` list, run `node tools/apply-patch.js data/patches/inbox.json`, `node build.js`, commit.
+`admin.html` is deployed with the site but shows nothing to anyone who is not in `admin_emails` (every `admin_*` RPC checks `is_admin()` on the server). Sign in with the Google account you inserted. It shows the funnel, per-question miss rate and hint use, the most-typed rejected guesses per question, retention cohorts and the report inbox. Accept the reports that are right, then **Export accepted → inbox.json**, save the download as `data/patches/inbox.json`, fill the mechanical sections from its `review` list, run `node tools/apply-patch.js data/patches/inbox.json`, `node build.js`, commit.
 
 ## 4. Ads and payments
 

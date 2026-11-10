@@ -15,7 +15,7 @@ const FIXTURES = path.join(__dirname, 'fixtures');
 fs.mkdirSync(SHOTS, { recursive: true });
 fs.mkdirSync(FIXTURES, { recursive: true });
 const TIER_POINTS = { tidepool: 10, baitball: 15, reef: 30, twilight: 60, midnight: 85, hadal: 100 };
-const HINT_COST = 10;
+const HINT_COST = 0;                 // v3: the one hint per dive is free
 
 const MOCK_INIT = () => { try { localStorage.setItem('angler.mock', '1'); } catch (e) { /* ignore */ } };   // see FLAGS in online.js
 const errors = [];
@@ -119,12 +119,12 @@ async function playDive(page, plan, opts) {
   const total = (opts && opts.total) || 7;
   for (let i = 0; i < total; i++) {
     await page.waitForSelector('#answer:not([disabled])');
-    const text = await page.textContent('#prompt-text');
+    const text = await page.textContent('#question-text');
     seen.push(text);
     if (opts && opts.humanPace) await page.waitForTimeout(1100);        // a real person takes a second or more per prompt
     if (opts && opts.shotAt === i) await page.screenshot({ path: path.join(SHOTS, opts.shotName) });
     const item = plan ? plan[i] : null;
-    const typed = item ? item.typed : await page.evaluate(() => { const P = window.FATHOM_PROMPTS, E = window.FATHOM_ENTITIES; const p = P.find(x => x.text === document.querySelector('#prompt-text').textContent); return E[p.answers[0].entity].name; });
+    const typed = item ? item.typed : await page.evaluate(() => { const P = window.FATHOM_PROMPTS, E = window.FATHOM_ENTITIES; const p = P.find(x => x.text === document.querySelector('#question-text').textContent); return E[p.answers[0].entity].name; });
     if (item && item.hint) { await page.click('#hint-btn'); await page.waitForSelector('#hint-text:not(:empty)'); }
     await page.fill('#answer', typed);
     await page.press('#answer', 'Enter');
@@ -144,10 +144,103 @@ async function playDive(page, plan, opts) {
     if (opts && opts.descentShotAt === i) { await page.waitForTimeout(900); await page.screenshot({ path: path.join(SHOTS, opts.descentShotName) }); }
     await page.waitForSelector('.tile');
     if (opts && opts.revealShotAt === i) await page.screenshot({ path: path.join(SHOTS, opts.revealShotName) });
+    if (opts && opts.onAnswer) await opts.onAnswer(i);
     await page.click('.next-row button');
   }
   await page.waitForSelector('.result-depth');
   return seen;
+}
+
+// The dive screen is two columns at every width: the water column on the left, the question and answer box to its right.
+async function assertTwoColumns(page, label) {
+  const box = await page.evaluate(() => {
+    const r = (sel) => { const e = document.querySelector(sel); const b = e.getBoundingClientRect(); return { left: b.left, right: b.right, top: b.top, bottom: b.bottom, width: b.width, height: b.height }; };
+    return { scene: r('#dive-scene'), main: r('.dive-main'), answer: r('#answer'), question: r('#question-text'), vw: innerWidth, vh: innerHeight };
+  });
+  assert.ok(box.scene.right <= box.main.left + 1, label + ': the scene sits left of the question column');
+  assert.ok(box.scene.width >= 96 && box.scene.width <= box.vw * 0.42, label + ': scene width ' + Math.round(box.scene.width) + ' of ' + box.vw);
+  assert.ok(box.scene.height >= 300, label + ': the scene is tall (' + Math.round(box.scene.height) + ' px)');
+  assert.ok(box.answer.top > box.question.top && box.answer.bottom <= box.vh, label + ': the answer box is under the question and on screen');
+  const centre = (box.answer.top + box.answer.bottom) / 2;
+  assert.ok(centre > box.vh * 0.3 && centre < box.vh * 0.8, label + ': the answer box sits around the middle of the column (' + Math.round(centre) + ' of ' + box.vh + ')');
+}
+
+// Video → GIF with the system ffmpeg (two-pass palette, 8 fps, 320 px wide). Returns false when ffmpeg is missing.
+function videoToGif(video, out, fps) {
+  const { spawnSync } = require('child_process');
+  const have = spawnSync('ffmpeg', ['-version']);
+  if (have.error) return false;
+  const vf = 'fps=' + fps + ',scale=300:-1:flags=lanczos';
+  const pal = out + '.palette.png';
+  const a = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', video, '-vf', vf + ',palettegen=max_colors=96', pal]);
+  if (a.status !== 0) { console.error(String(a.stderr).slice(-400)); return false; }
+  const b = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', video, '-i', pal, '-lavfi', vf + ' [x]; [x][1:v] paletteuse=dither=bayer:bayer_scale=4', '-loop', '0', out]);
+  fs.rmSync(pal, { force: true });
+  if (b.status !== 0) { console.error(String(b.stderr).slice(-400)); return false; }
+  return true;
+}
+
+// A cold visitor: lands, sees motion within five seconds, taps the one big Dive button, answers seven questions (one
+// skipped) and reaches a result that offers the return hooks. Every answer must change something visible on screen.
+async function coldVisitorWalkthrough(browser, srv) {
+  const videoDir = path.join(__dirname, 'screenshots', '.video');
+  fs.rmSync(videoDir, { recursive: true, force: true }); fs.mkdirSync(videoDir, { recursive: true });
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1, isMobile: true, hasTouch: true, recordVideo: { dir: videoDir, size: { width: 390, height: 844 } } });
+  await ctx.addInitScript(MOCK_INIT);
+  const page = await ctx.newPage();
+  watch(page, 'cold visitor');
+  const t0 = Date.now();
+  await page.goto(srv.url);
+  await page.waitForSelector('.modal');
+  await page.click('#welcome-skip');
+  await page.waitForSelector('.hero-art canvas');
+  // motion within five seconds of landing: the hero canvas changes between two frames
+  const a = await page.evaluate(() => document.querySelector('.hero-art canvas').toDataURL());
+  await page.waitForTimeout(350);
+  const b = await page.evaluate(() => document.querySelector('.hero-art canvas').toDataURL());
+  assert.ok(a !== b, 'the landing scene moves');
+  assert.ok(Date.now() - t0 < 5000, 'motion seen within 5 s of landing (' + (Date.now() - t0) + ' ms)');
+  const hero = await page.textContent('.hero');
+  assert.ok(/7 questions/.test(hero), 'the hero states today\'s question count');
+  assert.strictEqual(await page.$$eval('.hero .btn-primary', b => b.length), 1, 'one big Dive button');
+  const above = await page.evaluate(() => { const h = document.querySelector('.how'); return h ? h.getBoundingClientRect().top : 9999; });
+  assert.ok(above > 844 * 0.8, '"How it works" is below the fold on a phone (top at ' + Math.round(above) + ')');
+  await page.click('.hero .btn-primary');
+  await page.waitForSelector('#answer:not([disabled])');
+  await bankReady(page);
+  const snapshot = async () => page.evaluate(() => document.querySelector('main').innerText + '|' + document.getElementById('dive-scene').dataset.depth + '|' + document.getElementById('dive-scene').dataset.effect);
+  let lastDepth = 0;
+  for (let i = 0; i < 7; i++) {
+    await page.waitForSelector('#answer:not([disabled])');
+    await page.waitForTimeout(900);
+    const before = await snapshot();
+    if (i === 3) { await page.click('#skip-btn'); }
+    else {
+      const answer = await page.evaluate((k) => { const P = window.FATHOM_PROMPTS, E = window.FATHOM_ENTITIES; const p = P.find(x => x.text === document.querySelector('#question-text').textContent); const pick = p.answers[Math.min(k * 2, p.answers.length - 1)]; return E[pick.entity].name; }, i);
+      await page.fill('#answer', answer); await page.press('#answer', 'Enter');
+    }
+    await page.waitForSelector('.tile');
+    await page.waitForTimeout(700);
+    const after = await snapshot();
+    assert.notStrictEqual(after, before, 'answer ' + (i + 1) + ' changed what is on screen');
+    const depth = Number(await page.getAttribute('#dive-scene', 'data-depth'));
+    if (i === 3) assert.strictEqual(depth, lastDepth, 'a skip does not sink the sub');
+    else await page.waitForFunction((d) => Number(document.getElementById('dive-scene').dataset.depth) > d, lastDepth, { timeout: 6000 });
+    lastDepth = Number(await page.getAttribute('#dive-scene', 'data-depth'));
+    await page.waitForTimeout(600);
+    await page.click('.next-row button');
+  }
+  await page.waitForSelector('.result-depth');
+  await page.waitForTimeout(1600);
+  const hooks = await page.evaluate(() => ({ countdown: !!document.querySelector('#countdown'), streak: /\d-day streak/.test(document.querySelector('.hooks').textContent), challenge: !!document.querySelector('#challenge-btn'), recap: /recap/i.test(document.querySelector('.hooks').textContent) }));
+  assert.deepStrictEqual(hooks, { countdown: true, streak: true, challenge: true, recap: true }, 'the result offers the return hooks: ' + JSON.stringify(hooks));
+  assert.ok(/#\d+ — the daily ocean dive/.test(await page.title()), 'the puzzle number is in the title: ' + await page.title());
+  const video = page.video();
+  await ctx.close();                                     // the video file is complete once the context closes
+  const gif = path.join(__dirname, 'screenshots', 'dive.gif');
+  const webm = await video.path();
+  if (videoToGif(webm, gif, 6)) console.log('dive.gif: ' + Math.round(fs.statSync(gif).size / 1024) + ' KB from ' + Math.round(fs.statSync(webm).size / 1024) + ' KB of video'); else console.log('dive.gif skipped (ffmpeg not available); video kept in tests/screenshots/.video');
+  fs.rmSync(videoDir, { recursive: true, force: true });
 }
 
 (async () => {
@@ -174,12 +267,15 @@ async function playDive(page, plan, opts) {
   await page.waitForSelector('#reject:not(:empty)');
   await page.click('#hint-btn');
   await page.waitForSelector('#hint-text:not(:empty)');
-  assert.strictEqual(await page.textContent('#hint-btn'), '✦ Lure used');
+  assert.strictEqual((await page.textContent('#hint-btn')).trim(), 'Hint used');
   await page.fill('#answer', 'humpbak whale'); await page.press('#answer', 'Enter');       // a letter off still counts
   await page.waitForSelector('.tile');
   assert.ok((await page.textContent('.tile')).includes('2 tries'));
   await page.click('.next-row button');
   await page.waitForSelector('#answer:not([disabled])');
+  assert.ok(await page.$('#hint-btn[disabled]'), 'one hint per dive: the box is spent on the next question too');
+  assert.strictEqual((await page.textContent('#hint-btn')).trim(), 'Hint used');
+  assert.ok(!/\bprompt\b/i.test(await page.textContent('main')), 'players never read the word "prompt"');
   await page.click('#skip-btn');
   await page.waitForSelector('.tile');
   assert.ok((await page.textContent('.tile')).includes('Skipped'));
@@ -198,11 +294,43 @@ async function playDive(page, plan, opts) {
   await page.click('main a[href="#daily"]');
   await page.waitForSelector('#answer');
   await axeCheck(page, 'dive');
+  await assertTwoColumns(page, 'phone');
   await exposePromptIds(page);
   const plan = await planAnswers(page);
   console.log('daily plan:', plan.map(p => p.kind + ':' + JSON.stringify(p.typed)).join(' | '));
-  await playDive(page, plan, { shotAt: 0, shotName: 'dive-mobile.png', revealShotAt: 2, revealShotName: 'dive-reveal-mobile.png', descentShotAt: 6, descentShotName: 'descent-mobile.png', humanPace: true });
+  const depthsSeen = [];
+  await playDive(page, plan, { shotAt: 0, shotName: 'dive-mobile.png', revealShotAt: 2, revealShotName: 'dive-reveal-mobile.png', descentShotAt: 6, descentShotName: 'hadal-moment.png', humanPace: true, onAnswer: async (i) => {
+    // the submarine is the single depth display: it sinks on an accepted answer and stalls on a skip
+    const item = plan[i];
+    if (item.kind === 'garbage+skip') {
+      assert.strictEqual(await page.getAttribute('#dive-scene', 'data-effect'), 'stall', 'a skip makes the sub stall');
+    } else {
+      // the sub is still sinking when the tile lands; wait for it to settle before reading the depth
+      await page.waitForFunction((n) => { const d = document.getElementById('dive-scene').dataset; return Number(d.depth) > n && d.effect !== 'descend'; }, depthsSeen.length ? depthsSeen[depthsSeen.length - 1] : -1, { timeout: 8000 });
+    }
+    depthsSeen.push(Number(await page.getAttribute('#dive-scene', 'data-depth')));
+    if (i === 0) {
+      assert.ok((await page.textContent('#radio')).length > 0 && (await page.textContent('#radio')).length < 60, 'the pilot radios a short line: ' + await page.textContent('#radio'));
+      assert.ok(/said that|anyone says|clever pick|solid answer|uncommon|specialist|one best/i.test(await page.textContent('.rarity')), 'the rarity line: ' + await page.textContent('.rarity'));
+    }
+  } });
+  assert.ok(depthsSeen[6] > depthsSeen[0] && depthsSeen[5] === depthsSeen[4], 'depth grows on accepts and holds on the skip: ' + depthsSeen.join(','));
   await page.screenshot({ path: path.join(SHOTS, 'result-mobile.png'), fullPage: true });
+  await page.waitForSelector('.curve-card .curve');
+  await (await page.$('.curve-card')).screenshot({ path: path.join(SHOTS, 'result-curve.png') });
+  assert.ok(/You beat \d+% of divers today/.test(await page.textContent('.curve-card')), 'the curve card says what share of divers you beat');
+  assert.ok(/Ranked #\d+ of [\d,]+ worldwide/.test(await page.textContent('.curve-card')), 'and your rank in the world');
+  assert.ok(/You beat \d+%/.test(await page.textContent('#standing')), 'the verdict repeats the standing');
+  assert.ok(await page.$('#result-scene canvas'), 'the sub rests on the result screen');
+  // the curve exists for every crowd size: alone, early, and with a crowd (the chart is a pure function of the data)
+  const curveStates = await page.evaluate(() => {
+    const C = window.FathomCharts;
+    window.FathomGame.drawStanding({ total: 1, rank: 1 });
+    const alone = document.getElementById('standing').textContent;
+    return { alone, empty: /class="curve[^"]*empty/.test(C.bellCurve({ bins: [], total: 0, playerDepth: 1200 })), early: /class="curve early/.test(C.bellCurve({ bins: [2, 5, 9, 4, 1], total: 3, playerDepth: 1200, early: true, beat: 50, rank: 2 })) };
+  });
+  assert.ok(/first diver today — #1 of 1/.test(curveStates.alone), 'alone: ' + curveStates.alone);
+  assert.ok(curveStates.empty && curveStates.early, 'empty and early curve variants render');
   await axeCheck(page, 'result');
   // every mode offers a challenge; a daily one encodes the day so the friend plays the same seven
   assert.ok(await page.$('#challenge-btn'), 'challenge button on the daily result');
@@ -247,7 +375,7 @@ async function playDive(page, plan, opts) {
   await page.click('button:has-text("Share results")');
   await page.waitForSelector('.toast');
   const clip = await page.evaluate(() => navigator.clipboard.readText());
-  assert.ok(/^ANGLER #\d+ · [\d,]+ m · .{7,}$/u.test(clip.split('\n')[0]) && !/top \d+%/.test(clip), 'share text carries no demo percentile: ' + clip);
+  assert.ok(/^ANGLER #\d+ · [\d,]+ m · .{7,}$/u.test(clip.split('\n')[0]) && !/beat \d+%|#\d+ of/.test(clip), 'share text carries no demo standing: ' + clip);
   await page.click('button:has-text("Share as image")');
   await page.waitForSelector('img.share-card');
   await page.waitForFunction(() => { const i = document.querySelector('img.share-card'); return i && i.complete && i.naturalWidth > 0; });
@@ -328,7 +456,7 @@ async function playDive(page, plan, opts) {
   assert.ok(await page.$('.pack-builder'), 'suggest-a-pack form on the packs page');
   await page.click('a[href^="#pack-community-"] >> nth=0');
   await page.waitForSelector('#answer');
-  assert.ok((await page.textContent('main')).includes('Prompt 1 of 7'), 'a community pack starts a seven-prompt dive');
+  assert.ok((await page.textContent('main')).includes('Question 1 of 7'), 'a community pack starts a seven-question dive');
 
   // ---- free dive → challenge link → second context plays the identical seven (no hint button in a challenge)
   await page.goto(srv.url + '#free');
@@ -337,8 +465,8 @@ async function playDive(page, plan, opts) {
   await page.waitForFunction(() => document.activeElement && document.activeElement.id === 'answer');   // the prompt focuses its box shortly after rendering
   await page.evaluate(() => document.activeElement.blur());
   await page.keyboard.press('h'); await page.waitForSelector('#hint-text:not(:empty)');
-  assert.strictEqual(await page.textContent('#hint-btn'), '✦ Lure used', 'H lights the lure when not typing');
-  assert.strictEqual(await page.evaluate(() => document.activeElement.id), 'answer', 'the lure hands focus back to the answer box');
+  assert.strictEqual((await page.textContent('#hint-btn')).trim(), 'Hint used', 'H uses the hint when not typing');
+  assert.strictEqual(await page.evaluate(() => document.activeElement.id), 'answer', 'the hint hands focus back to the answer box');
   await page.evaluate(() => document.activeElement.blur()); await page.waitForTimeout(80);
   await page.keyboard.press('s'); await page.waitForSelector('.tile.tile-miss');
   assert.ok((await page.textContent('.tile')).includes('Skipped'), 'S skips when not typing, tile: ' + await page.textContent('.tile') + ' | input: ' + await page.inputValue('#answer') + ' | active: ' + await page.evaluate(() => document.activeElement.tagName));
@@ -377,7 +505,7 @@ async function playDive(page, plan, opts) {
   await page.goto(srv.url + '#/challenge/' + legacySeed.toUpperCase() + '-4210');
   await page.waitForSelector('#answer');
   assert.ok((await page.textContent('main')).includes('Beat 4,210 m'), 'legacy challenge link (upper-case seed) starts the challenge');
-  assert.strictEqual(await page.textContent('#prompt-text'), seen1[0], 'legacy link serves the same first prompt');
+  assert.strictEqual(await page.textContent('#question-text'), seen1[0], 'legacy link serves the same first prompt');
 
   // ---- daily resume: a rejected guess and a hint survive a reload (fresh context, second day is not needed: use progress directly)
   // (covered by unit tests of saveProgress shape; here: the timer keeps running after a rejected guess)
@@ -468,10 +596,30 @@ async function playDive(page, plan, opts) {
   await bankReady(dpage);
   await dpage.goto(srv.url + '#free');
   await dpage.waitForSelector('#answer');
+  await assertTwoColumns(dpage, 'desktop');
   await dpage.fill('#answer', 'nothing at all'); await dpage.press('#answer', 'Enter'); await dpage.waitForSelector('#reject:not(:empty)');
   await dpage.screenshot({ path: path.join(SHOTS, 'dive-desktop.png') });
   await dpage.click('#skip-btn'); await dpage.waitForSelector('.tile');
   await desktop.close();
+
+  // ---- reduced motion: the sub jumps to its new depth (with a short fade) and nothing keeps moving
+  const calm = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
+  await calm.addInitScript(MOCK_INIT);
+  const cpage = await calm.newPage();
+  watch(cpage, 'reduced motion');
+  await cpage.goto(srv.url + '#free'); await skipWelcome(cpage); await cpage.waitForSelector('#answer:not([disabled])');
+  const calmAnswer = await cpage.evaluate(() => { const P = window.FATHOM_PROMPTS, E = window.FATHOM_ENTITIES; const p = P.find(x => x.text === document.querySelector('#question-text').textContent); return E[p.answers[0].entity].name; });
+  await cpage.fill('#answer', calmAnswer); await cpage.press('#answer', 'Enter');
+  await cpage.waitForFunction(() => Number(document.getElementById('dive-scene').dataset.depth) > 0, null, { timeout: 1500 });
+  await cpage.waitForTimeout(900);
+  const f1 = await cpage.evaluate(() => document.querySelector('#dive-scene canvas').toDataURL());
+  await cpage.waitForTimeout(400);
+  const f2 = await cpage.evaluate(() => document.querySelector('#dive-scene canvas').toDataURL());
+  assert.strictEqual(f1, f2, 'under reduced motion the water column is still once the sub has settled');
+  await calm.close();
+
+  // ---- the engagement walk-through: a cold visitor, landing to finished dive, recorded as tests/screenshots/dive.gif
+  await coldVisitorWalkthrough(browser, srv);
 
   await browser.close();
   srv.close();

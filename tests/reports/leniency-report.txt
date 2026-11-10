@@ -1,0 +1,173 @@
+ANGLER leniency collision report — 2026-11-10
+rules: optional group words (fish, shark, whale, dolphin, porpoise, seal, turtle, crab, lobster, shrimp, squid, octopus, ray, eel, jellyfish, jelly, bird, coral, sponge, snail, clam, oyster, mussel, worm, star); spaced glued names; unambiguous only; typos 1 edit for 4–6 letters, 2 edits for 7–11 letters, 3 edits for 12+ letters; never under 4 letters
+checked 10247 answers across 211 questions (4748 entities, 59102 reference names)
+
+NAME COLLISIONS (must be zero): 0
+
+ALIAS COLLISIONS (shared aliases go to the more generic answer by design; review): 483
+  shark-species: "scalloped hammerhead" (hammerhead-shark) → scalloped-hammerhead via exact
+  shark-species: "great hammerhead" (hammerhead-shark) → great-hammerhead via exact
+  shark-species: "smooth hammerhead" (hammerhead-shark) → smooth-hammerhead via exact
+  shark-species: "leopard shark" (zebra-shark) → leopard-shark via exact
+  shark-species: "common thresher" (common-thresher-shark) → thresher-shark via exact
+  shark-species: "fox shark" (common-thresher-shark) → thresher-shark via exact
+  shark-species: "Alopias vulpinus" (common-thresher-shark) → thresher-shark via exact
+  shark-atlantic: "scalloped hammerhead" (hammerhead-shark) → scalloped-hammerhead via exact
+  shark-atlantic: "great hammerhead" (hammerhead-shark) → great-hammerhead via exact
+  shark-atlantic: "smooth hammerhead" (hammerhead-shark) → smooth-hammerhead via exact
+  shark-atlantic: "common thresher" (common-thresher-shark) → thresher-shark via exact
+  shark-atlantic: "fox shark" (common-thresher-shark) → thresher-shark via exact
+  shark-atlantic: "Alopias vulpinus" (common-thresher-shark) → thresher-shark via exact
+  shark-deep: "velvet belly lanternshark" (lanternshark) → velvet-belly-lanternshark via exact
+  shark-deep: "velvet belly" (velvet-belly-lanternshark) → lanternshark via exact
+  shark-deep: "Etmopterus spinax" (velvet-belly-lanternshark) → lanternshark via exact
+  shark-live-young: "scalloped hammerhead" (hammerhead-shark) → scalloped-hammerhead via exact
+  shark-live-young: "great hammerhead" (hammerhead-shark) → great-hammerhead via exact
+  shark-live-young: "smooth hammerhead" (hammerhead-shark) → smooth-hammerhead via exact
+  shark-live-young: "common thresher" (common-thresher-shark) → thresher-shark via exact
+  shark-live-young: "fox shark" (common-thresher-shark) → thresher-shark via exact
+  shark-live-young: "Alopias vulpinus" (common-thresher-shark) → thresher-shark via exact
+  shark-reef: "scalloped hammerhead" (hammerhead-shark) → scalloped-hammerhead via exact
+  shark-reef: "great hammerhead" (hammerhead-shark) → great-hammerhead via exact
+  shark-reef: "spotted wobbegong" (wobbegong) → spotted-wobbegong via exact
+  shark-reef: "tasselled wobbegong" (wobbegong) → tasselled-wobbegong via exact
+  shark-reef: "bamboo shark" (brownbanded-bamboo-shark) → bamboo-shark via exact
+  ray-skate-sawfish: "reef manta ray" (manta-ray) → reef-manta-ray via exact
+  ray-skate-sawfish: "common skate" (skate) → common-skate via exact
+  ray-skate-sawfish: "eagle ray" (spotted-eagle-ray) → eagle-ray via exact
+  ray-skate-sawfish: "reef manta" (reef-manta-ray) → manta-ray via exact
+  ray-skate-sawfish: "Mobula alfredi" (reef-manta-ray) → manta-ray via exact
+  flat-seabed-fish: "Pleuronectiformes" (flatfish) → flounder via exact
+  flat-seabed-fish: "sole" (dover-sole) → sole via exact
+  flat-seabed-fish: "fluke" (summer-flounder) → flounder via exact
+  flat-seabed-fish: "halibut" (pacific-halibut) → halibut via exact
+  flat-seabed-fish: "flounder" (european-flounder) → flounder via exact
+  whale-species: "North Atlantic right whale" (right-whale) → north-atlantic-right-whale via exact
+  whale-species: "southern right whale" (right-whale) → southern-right-whale via exact
+  whale-species: "right whale" (north-atlantic-right-whale) → right-whale via exact
+  whale-species: "minke whale" (antarctic-minke-whale) → minke-whale via exact
+  whale-species: "minke" (antarctic-minke-whale) → minke-whale via exact
+  polar-cetacean: "minke whale" (antarctic-minke-whale) → minke-whale via exact
+  polar-cetacean: "minke" (antarctic-minke-whale) → minke-whale via exact
+  polar-cetacean: "right whale" (north-atlantic-right-whale) → right-whale via exact
+  polar-cetacean: "North Atlantic right whale" (right-whale) → north-atlantic-right-whale via exact
+  polar-cetacean: "southern right whale" (right-whale) → southern-right-whale via exact
+  whale-hunted: "North Atlantic right whale" (right-whale) → north-atlantic-right-whale via exact
+  whale-hunted: "southern right whale" (right-whale) → southern-right-whale via exact
+  whale-hunted: "right whale" (north-atlantic-right-whale) → right-whale via exact
+  whale-hunted: "minke whale" (antarctic-minke-whale) → minke-whale via exact
+  whale-hunted: "minke" (antarctic-minke-whale) → minke-whale via exact
+  dolphin-porpoise: "humpback dolphin" (indian-ocean-humpback-dolphin) → humpback-dolphin via exact
+  river-dolphin: "humpback dolphin" (indian-ocean-humpback-dolphin) → humpback-dolphin via exact
+  pinniped: "California sea lion" (sea-lion) → california-sea-lion via exact
+  pinniped: "Zalophus californianus" (california-sea-lion) → sea-lion via exact
+  pinniped: "sea lion" (california-sea-lion) → sea-lion via exact
+  pinniped: "elephant seal" (northern-elephant-seal) → elephant-seal via exact
+  pinniped: "elephant seal" (southern-elephant-seal) → elephant-seal via exact
+  pinniped: "monk seal" (mediterranean-monk-seal) → monk-seal via exact
+  pinniped: "sea lion" (galapagos-sea-lion) → sea-lion via exact
+  pinniped: "fur seal" (galapagos-fur-seal) → fur-seal via exact
+  marine-mammal-not-cetacean: "California sea lion" (sea-lion) → california-sea-lion via exact
+  marine-mammal-not-cetacean: "Zalophus californianus" (california-sea-lion) → sea-lion via exact
+  marine-mammal-not-cetacean: "sea lion" (california-sea-lion) → sea-lion via exact
+  marine-mammal-not-cetacean: "elephant seal" (northern-elephant-seal) → elephant-seal via exact
+  marine-mammal-not-cetacean: "elephant seal" (southern-elephant-seal) → elephant-seal via exact
+  marine-mammal-not-cetacean: "monk seal" (mediterranean-monk-seal) → monk-seal via exact
+  marine-mammal-not-cetacean: "sea lion" (galapagos-sea-lion) → sea-lion via exact
+  marine-mammal-not-cetacean: "fur seal" (galapagos-fur-seal) → fur-seal via exact
+  sea-reptile: "sea krait" (sea-snake) → sea-krait via exact
+  sea-reptile: "banded sea krait" (sea-snake) → banded-sea-krait via exact
+  sea-reptile: "olive sea snake" (sea-snake) → olive-sea-snake via exact
+  sea-reptile: "yellow-bellied sea snake" (sea-snake) → yellow-bellied-sea-snake via exact
+  sea-reptile: "Laticauda" (sea-krait) → sea-snake via exact
+  sea-reptile: "banded sea krait" (sea-krait) → banded-sea-krait via exact
+  sea-reptile: "Laticauda colubrina" (sea-krait) → banded-sea-krait via exact
+  shelled-animal: "Pacific oyster" (oyster) → pacific-oyster via exact
+  shelled-animal: "chambered nautilus" (nautilus) → chambered-nautilus via exact
+  shelled-animal: "blue mussel" (mussel) → blue-mussel via exact
+  … 403 more
+
+AMBIGUOUS SHORT FORMS (offered as "did you mean" chips): 1116
+  ray-skate-sawfish: "devil" → devil-ray | taxon:devil-fish
+  ray-skate-sawfish: "devils" → devil-ray | taxon:devil-fish
+  ray-skate-sawfish: "banjo" → taxon:banjo-ray | taxon:banjo-shark
+  ray-skate-sawfish: "banjos" → taxon:banjo-ray | taxon:banjo-shark
+  toothed-whale: "common" → harbour-porpoise | common-dolphin
+  toothed-whale: "commons" → harbour-porpoise | common-dolphin
+  toothed-whale: "mauis" → taxon:maui-dolphin | taxon:mauis-dolphin
+  whale-hunted: "common" → common-dolphin | harbour-porpoise
+  whale-hunted: "commons" → common-dolphin | harbour-porpoise
+  whale-hunted: "black" → burmeisters-porpoise | chilean-dolphin
+  whale-hunted: "blacks" → burmeisters-porpoise | chilean-dolphin
+  cetacean-named-after: "black" → burmeisters-porpoise | chilean-dolphin
+  cetacean-named-after: "blacks" → burmeisters-porpoise | chilean-dolphin
+  dolphin-porpoise: "common" → common-dolphin | harbour-porpoise
+  dolphin-porpoise: "commons" → common-dolphin | harbour-porpoise
+  dolphin-porpoise: "black" → burmeisters-porpoise | chilean-dolphin
+  dolphin-porpoise: "blacks" → burmeisters-porpoise | chilean-dolphin
+  dolphin-porpoise: "yangtze" → baiji | yangtze-finless-porpoise
+  dolphin-porpoise: "yangtzes" → baiji | yangtze-finless-porpoise
+  river-dolphin: "yangtze" → baiji | yangtze-finless-porpoise
+  river-dolphin: "yangtzes" → baiji | yangtze-finless-porpoise
+  sea-reptile: "ridley" → taxon:ridley-sea-turtle | taxon:ridley-turtle
+  sea-reptile: "ridleys" → taxon:ridley-sea-turtle | taxon:ridley-turtle
+  shelled-animal: "king" → king-crab | geoduck
+  shelled-animal: "kings" → king-crab | geoduck
+  shelled-animal: "rock" → oyster | spiny-lobster
+  shelled-animal: "rocks" → oyster | spiny-lobster
+  shelled-animal: "marine" → sea-turtle | sea-snail
+  shelled-animal: "marines" → sea-turtle | sea-snail
+  cephalopod: "giant" → giant-squid | taxon:giant-octopus
+  cephalopod: "giants" → giant-squid | taxon:giant-octopus
+  cephalopod: "common" → common-octopus | european-squid
+  cephalopod: "commons" → common-octopus | european-squid
+  cephalopod: "caribbean reef" → caribbean-reef-squid | taxon:caribbean-reef-octopus
+  cephalopod: "caribbean reefs" → caribbean-reef-squid | taxon:caribbean-reef-octopus
+  cephalopod: "caribbean reeves" → caribbean-reef-squid | taxon:caribbean-reef-octopus
+  cephalopod: "glass" → glass-squid | glass-octopus
+  cephalopod: "glasses" → glass-squid | glass-octopus
+  cephalopod: "reef" → caribbean-reef-squid | taxon:reef-octopus
+  cephalopod: "reefs" → caribbean-reef-squid | taxon:reef-octopus
+  cephalopod: "reeves" → caribbean-reef-squid | taxon:reef-octopus
+  cephalopod: "veined" → coconut-octopus | taxon:veined-squid
+  cephalopod: "veineds" → coconut-octopus | taxon:veined-squid
+  cephalopod: "angel" → taxon:angel-octopus | taxon:angel-squid
+  cephalopod: "angels" → taxon:angel-octopus | taxon:angel-squid
+  cephalopod: "common pacific" → taxon:common-pacific-octopus | taxon:common-pacific-squid
+  cephalopod: "common pacifics" → taxon:common-pacific-octopus | taxon:common-pacific-squid
+  cephalopod: "dana" → taxon:dana-octopus | taxon:dana-squid
+  cephalopod: "danas" → taxon:dana-octopus | taxon:dana-squid
+  cephalopod: "grass" → taxon:grass-octopus | taxon:grass-squid
+  cephalopod: "grasses" → taxon:grass-octopus | taxon:grass-squid
+  cephalopod: "pygmy" → taxon:pygmy-octopus | taxon:pygmy-squid
+  cephalopod: "pygmies" → taxon:pygmy-octopus | taxon:pygmy-squid
+  cephalopod: "pygmys" → taxon:pygmy-octopus | taxon:pygmy-squid
+  cephalopod: "umbrella" → taxon:umbrella-octopus | taxon:umbrella-squid
+  cephalopod: "umbrellas" → taxon:umbrella-octopus | taxon:umbrella-squid
+  cephalopod: "warty" → taxon:warty-octopus | taxon:warty-squid
+  cephalopod: "warties" → taxon:warty-octopus | taxon:warty-squid
+  cephalopod: "wartys" → taxon:warty-octopus | taxon:warty-squid
+  tentacles: "giant" → giant-squid | lions-mane-jellyfish
+  tentacles: "giants" → giant-squid | lions-mane-jellyfish
+  tentacles: "moon" → jellyfish | moon-jellyfish
+  tentacles: "moons" → jellyfish | moon-jellyfish
+  crab-species: "devils" → velvet-crab | taxon:devils-crab
+  crab-species: "flowers" → blue-swimmer-crab | taxon:flowers-crab
+  lobster-shrimp: "spiny" → spiny-lobster | taxon:spiny-shrimp
+  lobster-shrimp: "spinies" → spiny-lobster | taxon:spiny-shrimp
+  lobster-shrimp: "spinys" → spiny-lobster | taxon:spiny-shrimp
+  lobster-shrimp: "squat" → squat-lobster | sexy-shrimp
+  lobster-shrimp: "squats" → squat-lobster | sexy-shrimp
+  lobster-shrimp: "amanos" → amano-shrimp | taxon:amanos-shrimp
+  lobster-shrimp: "northern" → american-lobster | northern-prawn
+  lobster-shrimp: "northerns" → american-lobster | northern-prawn
+  lobster-shrimp: "rock" → spiny-lobster | taxon:rock-shrimp
+  lobster-shrimp: "rocks" → spiny-lobster | taxon:rock-shrimp
+  lobster-shrimp: "common" → european-lobster | brown-shrimp
+  lobster-shrimp: "commons" → european-lobster | brown-shrimp
+  lobster-shrimp: "red rock" → southern-rock-lobster | taxon:red-rock-shrimp
+  lobster-shrimp: "red rocks" → southern-rock-lobster | taxon:red-rock-shrimp
+  lobster-shrimp: "arafura" → taxon:arafura-lobster | taxon:arafura-shrimp
+  … 1036 more
+
+REJECTED GUESSES: skipped — set SUPABASE_URL, SUPABASE_ANON_KEY and ADMIN_JWT to include the rejected guesses

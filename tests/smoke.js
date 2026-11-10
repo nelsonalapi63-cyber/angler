@@ -18,16 +18,16 @@ const { start } = require('./serve');
   fs.mkdirSync(shots, { recursive: true });
 
   await page.goto(srv.url + '#home');
-  await page.waitForSelector('.modal');          // how-to on first visit
+  await page.waitForSelector('.modal');          // welcome on first visit
   await page.screenshot({ path: path.join(shots, 'smoke-howto.png') });
-  await page.click('#howto-go');
+  await page.click('#welcome-skip');
   await page.screenshot({ path: path.join(shots, 'smoke-home.png') });
 
   await page.click('main a[href="#daily"]');
   await page.waitForSelector('#answer');
   const data = await page.evaluate(() => {
     const ids = Array.from(document.querySelectorAll('.progress-dots span')).length;
-    return { prompt: document.querySelector('#prompt-text').textContent, ids };
+    return { prompt: document.querySelector('#question-text').textContent, ids };
   });
   console.log('first prompt:', data.prompt);
   await page.screenshot({ path: path.join(shots, 'smoke-dive-1.png') });
@@ -35,7 +35,7 @@ const { start } = require('./serve');
   for (let i = 0; i < 7; i++) {
     const answer = await page.evaluate((i) => {
       const P = window.FATHOM_PROMPTS, E = window.FATHOM_ENTITIES;
-      const text = document.querySelector('#prompt-text').textContent;
+      const text = document.querySelector('#question-text').textContent;
       const prompt = P.find(p => p.text === text);
       const pick = prompt.answers[Math.min(i * 3, prompt.answers.length - 1)];
       return i === 4 ? 'zzzz nothing' : E[pick.entity].name;

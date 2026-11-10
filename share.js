@@ -99,10 +99,11 @@
     const hadal = tiers.filter(t => t === 'hadal').length, misses = tiers.filter(t => !t).length;
     ctx.fillText((hadal ? hadal + ' Hadal · ' : '') + (tiers.length - misses) + ' of ' + tiers.length + ' accepted' + (record.hints ? ' · ' + record.hints + (record.hints === 1 ? ' hint' : ' hints') : ''), PAD, by + bw + 52);
 
-    // percentile (server-verified only) and the invitation
-    const pct = root.FathomOnline && root.FathomOnline.lastPercentile ? root.FathomOnline.lastPercentile(record) : null;
+    // where you stand (server-verified only) and the invitation
+    const st = root.FathomOnline && root.FathomOnline.lastStanding ? root.FathomOnline.lastStanding(record) : null;
     ctx.fillStyle = '#FFD24A'; ctx.font = '800 44px ' + FONT;
-    if (pct != null) ctx.fillText('Top ' + pct + '% of today’s divers', PAD, 1060);
+    if (st && !st.demo && st.total != null && st.total < 2) ctx.fillText('First diver of the day', PAD, 1060);
+    else if (st && !st.demo && st.beat != null) ctx.fillText('Beat ' + st.beat + '% of today’s divers' + (st.rank != null ? ' · #' + st.rank + ' of ' + st.total : ''), PAD, 1060);
     else ctx.fillText('Can you go deeper?', PAD, 1060);
     ctx.fillStyle = '#EAF4F7'; ctx.font = '500 34px ' + FONT;
     wrapText(ctx, dive.TAGLINE, PAD, 1118, RAIL.x - PAD - 90, 44, 2);
@@ -125,8 +126,12 @@
     }
     ctx.textAlign = 'left';
     const my = RAIL.top + frac * railH;
-    ctx.beginPath(); ctx.arc(RAIL.x + RAIL.w / 2, my, 20, 0, Math.PI * 2); ctx.fillStyle = '#FFD24A'; ctx.fill();
-    ctx.lineWidth = 5; ctx.strokeStyle = '#0C2A3A'; ctx.stroke();
+    if (root.FathomSub && root.FathomSub.drawSub) {        // the submarine at its final depth, headlamp brighter the deeper it went
+      root.FathomSub.drawSub(ctx, { x: RAIL.x + RAIL.w / 2, y: my, scale: 1.05, tilt: 0, t: 0, lamp: root.FathomSub.lampStrength(depth) * 0.8, spin: 0 });
+    } else {
+      ctx.beginPath(); ctx.arc(RAIL.x + RAIL.w / 2, my, 20, 0, Math.PI * 2); ctx.fillStyle = '#FFD24A'; ctx.fill();
+      ctx.lineWidth = 5; ctx.strokeStyle = '#0C2A3A'; ctx.stroke();
+    }
     return canvas;
   }
   // Greedy word wrap onto at most maxLines lines; the last line is clipped with an ellipsis if the text runs on.
@@ -150,8 +155,9 @@
   function fileName(record) { return F().dive.BRAND.toLowerCase() + '-' + (record.mode === 'daily' && record.number ? record.number : record.mode) + '.png'; }
   function shareText(record) {
     const { dive, config } = F();
-    const pct = root.FathomOnline && root.FathomOnline.lastPercentile ? root.FathomOnline.lastPercentile(record) : null;
-    return dive.shareText({ number: record.number || dive.puzzleNumber(F().todayKey()), label: record.mode === 'daily' ? null : label(record), depth: record.depth, percentile: record.mode === 'daily' ? pct : null, tiers: record.tiers, siteUrl: config.SITE_URL });
+    const st = record.mode === 'daily' && root.FathomOnline && root.FathomOnline.lastStanding ? root.FathomOnline.lastStanding(record) : null;
+    const live = st && !st.demo ? st : null;
+    return dive.shareText({ number: record.number || dive.puzzleNumber(F().todayKey()), label: record.mode === 'daily' ? null : label(record), depth: record.depth, beat: live ? live.beat : null, rank: live ? live.rank : null, total: live ? live.total : null, tiers: record.tiers, siteUrl: config.SITE_URL });
   }
 
   // Opens the system share sheet with the PNG when the browser can share files; otherwise a modal with the image.

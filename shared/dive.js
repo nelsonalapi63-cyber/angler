@@ -17,16 +17,20 @@
   const BRAND = 'ANGLER';                   // the game's name — change here and in index.html/manifest/legal pages
   const TAGLINE = 'Seven ocean questions. The rarer your answer, the deeper you dive.';
   const LAUNCH_DATE = '2026-11-02';         // ANGLER #1
-  const FUZZY_SHORT_MAX_LEN = 6;            // inputs this long or shorter allow 1 edit
-  const FUZZY_SHORT_DIST = 1;
-  const FUZZY_LONG_DIST = 2;                // longer inputs allow 2 edits
-  const FUZZY_MIN_LEN = 3;                  // never fuzzy-match tiny inputs
+  const FUZZY_BANDS = [[4, 6, 1], [7, 11, 2], [12, Infinity, 3]];   // [min letters, max letters, edits allowed] of the typed input
+  const FUZZY_MIN_LETTERS = 4;              // never fuzzy-match inputs under four letters
   const SUGGEST_MIN_LEN = 5;                // "did you mean" needs at least this much typed
-  const SUGGEST_MAX_DIST = 4;               // …and an answer within this many edits (3–4; 1–2 are accepted outright)
-  const SUGGEST_MAX = 2;                    // never more than two chips
+  const SUGGEST_EXTRA_DIST = 2;             // …and an answer within this many edits beyond what is accepted outright
+  const SUGGEST_MAX = 2;                    // never more than two spelling chips
+  const AMBIGUOUS_MAX = 3;                  // …but every answer a short form could mean is offered (up to this many)
   const TAXON_TIER = 'midnight';            // a species found only on a reference list scores here
-  const HINT_COST = 10;                     // points taken from the prompt when a hint is used
+  const HINT_COST = 0;                      // the hint is free (one per dive, enforced by the game)
   const HINT_TIERS = ['twilight', 'midnight', 'hadal'];   // a hint points at a rarer answer
+  // Generic group words: optional at the end of a typed answer when the bank name does not carry one ("tuna fish"
+  // → Tuna) and optional in the bank name when the player leaves it out ("hammerhead" → Hammerhead shark). A group
+  // word glued into a name (starfish, clownfish) stays required, though the spaced form ("star fish") is accepted.
+  const GROUP_WORDS = ['fish', 'shark', 'whale', 'dolphin', 'porpoise', 'seal', 'turtle', 'crab', 'lobster', 'shrimp', 'squid', 'octopus', 'ray', 'eel', 'jellyfish', 'jelly', 'bird', 'coral', 'sponge', 'snail', 'clam', 'oyster', 'mussel', 'worm', 'star'];
+  const GROUP_CORE_MIN_LETTERS = 4;         // what is left after the group word must be at least this long to count
   const FREE_SEED_PREFIX = 'fathom-free:';
 
   const TIERS = [
@@ -91,6 +95,52 @@
     return Array.from(out);
   }
 
+  // ---- group words
+  const GROUP_FORMS = new Map();            // 'sharks' -> 'shark' (every plural of every group word)
+  for (const g of GROUP_WORDS) for (const f of pluralForms(g)) GROUP_FORMS.set(f, g);
+  const GROUP_BY_LENGTH = GROUP_WORDS.slice().sort((a, b) => b.length - a.length);   // longest suffix first: "jellyfish" before "fish"
+  const letterCount = (norm) => norm.replace(/ /g, '').length;
+  // "hammerhead shark" -> { core: 'hammerhead', group: 'shark' }; "green sea turtle" -> { core: 'green', group: 'sea turtle' }; else null
+  function splitGroup(norm) {
+    const words = norm.split(' ');
+    if (words.length < 2 || !GROUP_FORMS.has(words[words.length - 1])) return null;
+    let n = words.length - 1;
+    let group = GROUP_FORMS.get(words[n]);
+    if (n >= 2 && words[n - 1] === 'sea') { n--; group = 'sea ' + group; }
+    const core = words.slice(0, n).join(' ');
+    return { core, group };
+  }
+  // a core must be substantial and must not itself be a group word ("whale shark" does not answer to "whale")
+  const coreOk = (core) => !!core && letterCount(core) >= GROUP_CORE_MIN_LETTERS && !GROUP_FORMS.has(core);
+  // "tunafish" -> "tuna fish", "moonjellyfish" -> "moon jellyfish"; null when the last word is not glued to a group word
+  function deglue(norm) {
+    const words = norm.split(' ');
+    const last = words[words.length - 1];
+    for (const g of GROUP_BY_LENGTH) {
+      for (const suffix of pluralForms(g)) {
+        if (last.length > suffix.length + 2 && last.endsWith(suffix)) {
+          const prefix = last.slice(0, -suffix.length);
+          if (prefix.length < 3) continue;
+          return words.slice(0, -1).concat([prefix, suffix]).join(' ');
+        }
+      }
+    }
+    return null;
+  }
+  // every form a typed answer may stand for once group words are treated as optional, most literal first
+  function groupForms(norm) {
+    const out = [];
+    const s = splitGroup(norm);
+    if (s && coreOk(s.core)) out.push(s.core);
+    const d = deglue(norm);
+    if (d) {
+      out.push(d);
+      const s2 = splitGroup(d);
+      if (s2 && coreOk(s2.core)) out.push(s2.core);
+    }
+    return out;
+  }
+
   // Edit distance where a swapped pair of adjacent letters ("graet") counts as ONE edit
   // (optimal string alignment distance) — the typo model people actually make.
   function levenshtein(a, b) {
@@ -120,25 +170,30 @@
   // not to the shortfin mako listed higher up.
   // taxa: { groupName: ['Common name', ...] } — a reference list of real species; prompt.taxon names the group and
   // prompt.taxonFilter (a regex source) limits it (letter prompts). Names already on the prompt are not duplicated.
+  // Group-word variants come last and never displace a real spelling: "hammerhead" is registered for "Hammerhead
+  // shark" only if no answer is called "hammerhead"; and a short form two answers would both claim ("blue" for Blue
+  // shark and Blue whale) is kept in index.ambiguous so the game can offer both instead of guessing.
   function buildIndex(prompt, entitiesById, taxa) {
     const exact = new Map();
     const list = [];
-    const claim = (form, entityId, tierCode, display) => {
+    const variants = new Map();         // short form -> claim, or null once two answers have claimed it
+    const bases = [];                   // every real spelling, to derive variants from
+    const claim = (form, entityId, tierCode, display, kind) => {
       if (exact.has(form)) return;
-      exact.set(form, { entityId, tier: tierCode, name: display });
-      list.push({ form, entityId, tier: tierCode, name: display });
+      exact.set(form, { entityId, tier: tierCode, name: display, kind: kind || 'name' });
+      list.push({ form, entityId, tier: tierCode, name: display, kind: kind || 'name' });
+    };
+    const base = (norm, entityId, tierCode, display, kind) => {
+      if (!norm) return;
+      for (const form of pluralForms(norm)) claim(form, entityId, tierCode, display, kind);
+      const owner = exact.get(norm);
+      if (owner && owner.entityId === entityId) bases.push({ norm, entityId, tier: tierCode, name: display });   // a spelling already owned by another answer (a reference-list duplicate of a hand-listed name) derives no variants
     };
     const answers = prompt.answers.filter(a => entitiesById[a.entity] && TIER_BY_CODE[a.tier]);
-    for (const a of answers) {
-      const norm = normalise(entitiesById[a.entity].name);
-      if (norm) for (const form of pluralForms(norm)) claim(form, a.entity, a.tier);
-    }
+    for (const a of answers) base(normalise(entitiesById[a.entity].name), a.entity, a.tier, undefined, 'name');
     const byTier = answers.slice().sort((x, y) => TIER_BY_CODE[x.tier].points - TIER_BY_CODE[y.tier].points);
     for (const a of byTier) {
-      for (const raw of (entitiesById[a.entity].aliases || [])) {
-        const norm = normalise(raw);
-        if (norm) for (const form of pluralForms(norm)) claim(form, a.entity, a.tier);
-      }
+      for (const raw of (entitiesById[a.entity].aliases || [])) base(normalise(raw), a.entity, a.tier, undefined, 'alias');
     }
     const taxonNames = taxa && prompt.taxon ? taxonGroups(prompt.taxon).flatMap(g => taxa[g] || []) : [];
     if (taxonNames.length) {
@@ -146,11 +201,27 @@
       for (const raw of taxonNames) {
         const norm = normalise(raw);
         if (!norm || (filter && !filter.test(norm))) continue;
-        const id = 'taxon:' + norm.replace(/ /g, '-');
-        for (const form of pluralForms(norm)) claim(form, id, TAXON_TIER, raw);
+        base(norm, 'taxon:' + norm.replace(/ /g, '-'), TAXON_TIER, raw, 'taxon');
       }
     }
-    return { promptId: prompt.id, exact, list, taxon: prompt.taxon || null };
+    const variant = (form, b) => {
+      if (exact.has(form)) return;                                   // a real spelling always wins
+      const cur = variants.get(form);
+      if (cur === undefined) variants.set(form, [b]);
+      else if (cur && !cur.some(x => x.entityId === b.entityId)) cur.push(b);
+    };
+    for (const b of bases) {
+      const s = splitGroup(b.norm);
+      if (s && coreOk(s.core)) for (const form of pluralForms(s.core)) variant(form, b);       // "hammerhead shark" -> hammerhead(s)
+      const d = deglue(b.norm);
+      if (d) for (const form of pluralForms(d)) variant(form, b);                               // "starfish" -> star fish(es)
+    }
+    const ambiguous = new Map();
+    for (const [form, claims] of variants) {
+      if (claims.length === 1) claim(form, claims[0].entityId, claims[0].tier, claims[0].name, 'variant');
+      else ambiguous.set(form, claims.slice().sort((x, y) => TIER_BY_CODE[x.tier].points - TIER_BY_CODE[y.tier].points).map(c => ({ entityId: c.entityId, tier: c.tier, name: c.name || (entitiesById[c.entityId] ? entitiesById[c.entityId].name : form) })));
+    }
+    return { promptId: prompt.id, exact, list, ambiguous, taxon: prompt.taxon || null };
   }
   function isTaxonId(id) { return typeof id === 'string' && id.indexOf('taxon:') === 0; }
   // "sharks|rays" names a union of reference lists
@@ -171,23 +242,40 @@
     return (groups.length === 1 && TAXON_FACTS[groups[0]]) || 'A real species from our reference lists.';
   }
 
+  // How many edits a typed answer may be from a real spelling: by the letters typed (spaces do not count).
+  function fuzzyBudget(norm) {
+    const n = letterCount(norm);
+    if (n < FUZZY_MIN_LETTERS) return 0;
+    for (const [lo, hi, edits] of FUZZY_BANDS) if (n >= lo && n <= hi) return edits;
+    return 0;
+  }
+  const VARIANT_RANK = { name: 0, alias: 1, taxon: 2, variant: 3 };
   function matchAnswer(typed, index) {
     const norm = normalise(typed);
     const miss = { entityId: null, tier: null, points: 0, via: null, norm };
     if (!norm) return miss;
+    const found = (hit, via) => ({ entityId: hit.entityId, tier: hit.tier, points: TIER_BY_CODE[hit.tier].points, via, norm, name: hit.name || null });
     const hit = index.exact.get(norm);
-    if (hit) return { entityId: hit.entityId, tier: hit.tier, points: TIER_BY_CODE[hit.tier].points, via: 'exact', norm, name: hit.name || null };
-    if (norm.length < FUZZY_MIN_LEN) return miss;
-    const maxDist = norm.length <= FUZZY_SHORT_MAX_LEN ? FUZZY_SHORT_DIST : FUZZY_LONG_DIST;
+    if (hit) return found(hit, hit.kind === 'variant' ? 'group' : 'exact');
+    const ambiguous = index.ambiguous || new Map();
+    if (ambiguous.has(norm)) return Object.assign(miss, { ambiguous: ambiguous.get(norm) });
+    for (const form of groupForms(norm)) {                 // "tuna fish" -> tuna, "tunafish" -> tuna fish -> tuna
+      const h = index.exact.get(form);
+      if (h) return found(h, 'group');
+      if (ambiguous.has(form)) return Object.assign(miss, { ambiguous: ambiguous.get(form) });
+    }
+    const maxDist = fuzzyBudget(norm);
+    if (!maxDist) return miss;
     let best = null;
     for (const cand of index.list) {
       if (Math.abs(cand.form.length - norm.length) > maxDist) continue;
       const d = levenshtein(norm, cand.form);
       if (d > maxDist) continue;
       const lenDiff = Math.abs(cand.form.length - norm.length);
+      const rank = VARIANT_RANK[cand.kind] || 0;
       const pts = TIER_BY_CODE[cand.tier].points;
-      if (!best || d < best.d || (d === best.d && (lenDiff < best.lenDiff || (lenDiff === best.lenDiff && pts < best.pts)))) {
-        best = { cand, d, lenDiff, pts };
+      if (!best || d < best.d || (d === best.d && (lenDiff < best.lenDiff || (lenDiff === best.lenDiff && (rank < best.rank || (rank === best.rank && pts < best.pts)))))) {
+        best = { cand, d, lenDiff, rank, pts };
       }
     }
     if (!best) return miss;
@@ -199,24 +287,30 @@
   // spelling is 3–4 edits away, or the same words in another order, or missing exactly one word of a longer answer.
   function suggestAnswers(typed, index, entitiesById) {
     const norm = normalise(typed);
-    if (norm.length < SUGGEST_MIN_LEN) return [];
-    const typedWords = norm.split(' ');
-    const seen = new Set();
-    const out = [];
     const display = (cand) => {
       if (cand.name) return cand.name;
       const e = entitiesById && entitiesById[cand.entityId];
       return e ? e.name : cand.form;
     };
+    // a short form that fits several answers: offer every one of them, most common first
+    const ambiguous = index.ambiguous || new Map();
+    for (const form of [norm].concat(groupForms(norm))) {
+      if (ambiguous.has(form)) return ambiguous.get(form).slice(0, AMBIGUOUS_MAX).map(c => ({ name: display(c), entityId: c.entityId, tier: c.tier }));
+    }
+    if (norm.length < SUGGEST_MIN_LEN) return [];
+    const typedWords = norm.split(' ');
+    const seen = new Set();
+    const out = [];
+    const maxSuggest = fuzzyBudget(norm) + SUGGEST_EXTRA_DIST;
     const scored = [];
     for (const cand of index.list) {
-      if (cand.form === norm) continue;
+      if (cand.form === norm || cand.kind === 'variant') continue;
       const words = cand.form.split(' ');
       let score = null;
       const lenDiff = Math.abs(cand.form.length - norm.length);
-      if (lenDiff <= SUGGEST_MAX_DIST) {
+      if (lenDiff <= maxSuggest) {
         const d = levenshtein(norm, cand.form);
-        if (d > 0 && d <= SUGGEST_MAX_DIST && d < norm.length / 2) score = d;
+        if (d > 0 && d <= maxSuggest && d < norm.length / 2) score = d;
       }
       if (score == null && words.length > 1 && words.length === typedWords.length && words.slice().sort().join(' ') === typedWords.slice().sort().join(' ')) score = 0.5;
       if (score == null && words.length === typedWords.length + 1 && typedWords.every(w => words.includes(w))) score = 0.75;
@@ -449,13 +543,22 @@
 
   // ---------------------------------------------------------------- share text
   function formatMeters(n) { return Math.round(n).toLocaleString('en-US'); }
+  // opts: { number | label, depth, tiers, beat?, rank?, total?, siteUrl? } — beat/rank/total only once the server has answered
   function shareText(opts) {
     const bits = [opts.label ? BRAND + ' ' + opts.label : BRAND + ' #' + opts.number, formatMeters(opts.depth) + ' m'];
-    if (opts.percentile != null) bits.push('top ' + opts.percentile + '%');
+    if (opts.beat != null) bits.push('beat ' + opts.beat + '%');
+    if (opts.rank != null && opts.total != null) bits.push('#' + opts.rank + ' of ' + opts.total);
     bits.push(tiersToEmoji(opts.tiers));
     let s = bits.join(' · ');
     if (opts.siteUrl) s += '\n' + opts.siteUrl;
     return s;
+  }
+  // "You beat X% of divers today": the share of the OTHER divers who did not reach your depth. null until someone else dives.
+  function beatPercent(c) {
+    const total = Number(c && c.total) || 0;
+    if (total < 2 || c.atOrAbove == null) return null;
+    const below = Math.max(0, total - Number(c.atOrAbove));
+    return Math.round(100 * below / (total - 1));
   }
 
   // ---------------------------------------------------------------- server-side scoring
@@ -498,8 +601,9 @@
   return {
     BRAND, TAGLINE, PROMPTS_PER_DIVE, SECONDS_PER_PROMPT, CHALLENGER_DEEP_M, TIMEZONE, LAUNCH_DATE, MAX_POINTS, METERS_PER_POINT,
     TIERS, TIER_BY_CODE, MISS, ZONES, LANDMARKS,
-    SUGGEST_MIN_LEN, SUGGEST_MAX_DIST, SUGGEST_MAX, TAXON_TIER, HINT_COST, HINT_TIERS,
+    SUGGEST_MIN_LEN, SUGGEST_EXTRA_DIST, SUGGEST_MAX, AMBIGUOUS_MAX, TAXON_TIER, HINT_COST, HINT_TIERS, GROUP_WORDS, FUZZY_BANDS, FUZZY_MIN_LETTERS,
     normalise, pluralForms, levenshtein, buildIndex, matchAnswer, suggestAnswers, pickHint, isTaxonId, taxonGroups, taxonFact, scoreSubmissionFull,
+    splitGroup, deglue, groupForms, fuzzyBudget, beatPercent,
     depthFor, zoneFor, tierForCode, tiersToEmoji, tiersToDigits, digitsToTiers,
     fnv1a, seededRng, shuffle, randomSeed,
     dayKey, dayIndex, puzzleNumber, keyPlusDays, msUntilNextDay, nextMidnightUtc,

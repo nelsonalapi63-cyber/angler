@@ -11,10 +11,6 @@
     SOUND_VOLUME: 0.07,
     BUBBLE_COUNT: 7,
     COUNTDOWN_TICK_MS: 1000,
-    SCENE_PX_PER_M: 0.35,               // how far the background scrolls per metre of depth (the descent)
-    DESCENT_BASE_MS: 700,               // descent animation: base duration…
-    DESCENT_MS_PER_100M: 90,            // …plus this per 100 m of drop…
-    DESCENT_MAX_MS: 2600,               // …capped here
     HAPTICS: { accept: [25], miss: [12, 40, 12], hadal: [40, 30, 40, 30, 140], tick: [8] },
     BANK_WARM_MS: 8000,               // the full bank downloads in the background after this long, or on the first touch
     BANK_FILES: ['entities.js', 'prompts.js', 'taxa.js'],   // the full answer bank, loaded after boot
@@ -149,7 +145,7 @@
   // same when focus is not in a text field (press Esc first to leave the answer box).
   const SHORTCUTS = [
     ['Enter', 'Submit your answer'], ['Esc', 'Close a dialog · leave the answer box'],
-    ['Alt + H', 'Light the lure (H when not typing)'], ['Alt + S', 'Skip the prompt (S when not typing)'],
+    ['Alt + H', 'Use your hint (H when not typing)'], ['Alt + S', 'Skip the question (S when not typing)'],
     ['?', 'How to play (when not typing)'],
   ];
   document.addEventListener('keydown', (e) => {
@@ -268,45 +264,9 @@
     applyDepthTint(currentDepthTint);
   }
 
-  // ---------------------------------------------------------------- the scene: a tall column behind everything that scrolls up as you sink
-  let sceneEl = null;
-  function buildScene() {
-    sceneEl = document.getElementById('scene');
-    if (!sceneEl) return;
-    const px = CONFIG.SCENE_PX_PER_M;
-    const total = Math.round(dive.CHALLENGER_DEEP_M * px);
-    const col = el('div', { class: 'scene-col', style: 'height:' + (total + 1400) + 'px' });
-    for (let m = 500; m < dive.CHALLENGER_DEEP_M; m += 500) {
-      col.appendChild(el('div', { class: 'scene-tick' + (m % 1000 === 0 ? ' major' : ''), style: 'top:' + Math.round(m * px) + 'px', text: m % 1000 === 0 ? dive.formatMeters(m) + ' m' : '' }));
-    }
-    for (const lm of dive.LANDMARKS) {
-      col.appendChild(el('div', { class: 'scene-landmark', style: 'top:' + Math.round(lm.depth * px) + 'px', html: '<span>' + esc(lm.label) + ' · ' + esc(dive.formatMeters(lm.depth)) + ' m</span>' }));
-    }
-    for (let i = 0; i < 40; i++) {
-      col.appendChild(el('i', { class: 'scene-mote', style: 'top:' + Math.round(Math.random() * total) + 'px;left:' + Math.round(Math.random() * 100) + '%;opacity:' + (0.15 + Math.random() * 0.35).toFixed(2) + ';transform:scale(' + (0.5 + Math.random()).toFixed(2) + ')' }));
-    }
-    sceneEl.innerHTML = '';
-    sceneEl.appendChild(col);
-  }
-  let sceneDepth = 0;
-  // Move the scene to a depth. Returns the duration used so callers can time badges and sounds to it.
-  function setSceneDepth(depth, animate) {
-    const d = Math.max(0, depth || 0);
-    const drop = Math.abs(d - sceneDepth);
-    const reduced = root.matchMedia && root.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const ms = animate && !reduced ? Math.min(CONFIG.DESCENT_MAX_MS, CONFIG.DESCENT_BASE_MS + CONFIG.DESCENT_MS_PER_100M * drop / 100) : 0;
-    sceneDepth = d;
-    if (sceneEl) {
-      const col = sceneEl.firstChild;
-      if (col) {
-        col.style.transition = ms ? 'transform ' + ms + 'ms cubic-bezier(.25,.6,.3,1)' : 'none';
-        col.style.transform = 'translateY(' + (-Math.round(d * CONFIG.SCENE_PX_PER_M)) + 'px)';
-      }
-    }
-    document.documentElement.style.setProperty('--descent-ms', ms + 'ms');
-    applyDepthTint(d);
-    return ms;
-  }
+  // ---------------------------------------------------------------- depth on the page: the water column (sub.js) is the one depth display during a dive;
+  // the page itself only darkens with depth. Kept as setSceneDepth for every caller that just wants the tint.
+  function setSceneDepth(depth) { applyDepthTint(Math.max(0, depth || 0)); return 0; }
 
   // ---------------------------------------------------------------- sound (synthesised, no files) and haptics
   let audioCtx = null;
@@ -401,7 +361,10 @@
     const param = dash > -1 ? raw.slice(dash + 1) : '';
     document.querySelectorAll('#menu a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + page));
     if (hash.indexOf('access_token=') > -1 || hash.indexOf('error=') > -1) { return; } // handled by online.js on load
-    setSceneDepth(0, false);
+    setSceneDepth(0);
+    // the puzzle number in the tab title, so a returning player sees which day it is
+    const number = dive.puzzleNumber(dive.dayKey(new Date()));
+    document.title = dive.BRAND + (number >= 1 ? ' #' + number : '') + ' — the daily ocean dive';
     const withBank = (fn) => {
       if (data.full) return fn();
       render(skeleton(page === 'logbook' || page === 'packs' || page === 'archive' ? 'list' : 'dive'));
@@ -436,7 +399,6 @@
     applySettings();
     const fish = document.querySelector('.wordmark-fish');
     if (fish) fish.innerHTML = mascotSvg(26, { glow: 1 });
-    buildScene();
     makeBubbles();
     if (!data.full) {                      // warm the full bank once the player has touched the page, or after a quiet spell
       let warmed = false;
