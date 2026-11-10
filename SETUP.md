@@ -68,6 +68,8 @@ SUPABASE_URL=https://<ref>.supabase.co SUPABASE_ANON_KEY=<anon key> BANK_TOKEN=<
 
 Add those three as repository secrets (`SUPABASE_URL`, `SUPABASE_ANON_KEY`, `BANK_TOKEN`) and the deploy workflow re-uploads the bank after every build. The token can write the bank and nothing else; the service role key never leaves Supabase.
 
+   v3 note: `daily_curve` now also returns `at_or_above` and `below` (the browser turns them into "You beat X% of divers today"); re-run the `daily_curve` block of `schema.sql` on a project created before v3. The hint is free (`HINT_COST = 0` in `shared/dive.js`) and limited to one per dive by the game itself.
+
 6. In `online.js` set `SUPABASE_URL` and `SUPABASE_ANON_KEY`, then `LEADERBOARD_ENABLED: true`, `ANALYTICS_ENABLED: true`, `MOCK_ONLINE_DATA: false`. Redeploy (push to `main`). The browser tests keep running in demo mode: they set `localStorage['angler.mock'] = '1'`, which turns the online flags off for that browser only.
 
 ### Secrets (Edge Functions → Secrets in the dashboard)
