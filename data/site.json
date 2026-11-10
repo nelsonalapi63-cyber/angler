@@ -1,4 +1,4 @@
 {
-  "siteUrl": "",
-  "_comment": "The one place the public address lives. Set it to e.g. https://playangler.com once the domain exists: build.js writes dist/CNAME from it, boot.js carries it to the app (share text, share card, Open Graph tags) and the sitemap uses it. Leave empty while the site only runs on the artifact host or the github.io address."
+  "siteUrl": "https://nelsonalapi63.github.io/angler",
+  "_comment": "The one place the public address lives. build.js carries it to the app (share text, share card, Open Graph tags), the sitemap and robots.txt; for a custom domain (not a github.io address) it also writes dist/CNAME. Change it here when the game moves to its own domain, e.g. https://playangler.com."
 }

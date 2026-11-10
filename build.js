@@ -10,7 +10,7 @@
  * It also extends data/schedule.json: days up to and including today stay exactly as they were (so the archive and
  * the server agree with what people played); every later day is regenerated from the current bank, SCHEDULE_DAYS_AHEAD out.
  * It also writes 404.html's redirect target, robots.txt and sitemap.xml from data/site.json, and with --dist copies
- * the deployable site into dist/ (what the GitHub Pages workflow uploads) with a CNAME file when siteUrl is set.
+ * the deployable site into dist/ (what the GitHub Pages workflow uploads) with a CNAME file when siteUrl is a custom domain.
  * Usage: node build.js [--partial] [--dist]   (--partial skips the 120-prompt floor while the bank is still growing)
  */
 'use strict';
@@ -130,8 +130,9 @@ if (wantDist) {
     }
   }
   fs.writeFileSync(path.join(dist, '.nojekyll'), '');
-  if (base) fs.writeFileSync(path.join(dist, 'CNAME'), new URL(base).host + '\n');
-  console.log('dist/ written (' + fs.readdirSync(dist).length + ' entries' + (base ? ', CNAME ' + new URL(base).host : ', no CNAME: data/site.json has no siteUrl') + ')');
+  const customDomain = base && !/\.github\.io$/i.test(new URL(base).host);   // a CNAME file only for a domain of your own
+  if (customDomain) fs.writeFileSync(path.join(dist, 'CNAME'), new URL(base).host + '\n');
+  console.log('dist/ written (' + fs.readdirSync(dist).length + ' entries, site ' + (base || '(unset)') + (customDomain ? ', CNAME ' + new URL(base).host : ', no CNAME') + ')');
 }
 
 const kb = (f) => Math.round(fs.statSync(path.join(ROOT, f)).size / 1024) + ' KB';

@@ -43,7 +43,7 @@ Deno.serve(async (req) => {
     const { data: days } = s.user_id ? await dq.eq("user_id", s.user_id) : await dq.eq("device_id", s.device_id);
     let streak = 0, cursor = dive.keyPlusDays(today, -1);
     for (const d of days || []) { if (d.day === cursor) { streak++; cursor = dive.keyPlusDays(cursor, -1); } else break; }
-    const payload = JSON.stringify({ title: dive.BRAND + " #" + number + " is open", body: streak ? "Your streak is " + streak + " — keep it alive before midnight." : "Seven new ocean questions are waiting.", url: "/#daily", tag: "angler-daily" });
+    const payload = JSON.stringify({ title: dive.BRAND + " #" + number + " is open", body: streak ? "Your streak is " + streak + " — keep it alive before midnight." : "Seven new ocean questions are waiting.", url: "./#daily", tag: "angler-daily" });
     try {
       await webpush.sendNotification({ endpoint: s.endpoint, keys: { p256dh: s.p256dh, auth: s.auth } }, payload, { TTL: 6 * 3600 });
       await admin.from("push_subscriptions").update({ last_sent_day: today, failures: 0 }).eq("id", s.id);

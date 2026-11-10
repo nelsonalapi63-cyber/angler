@@ -22,7 +22,7 @@ Content lives in `data/prompt-seeds.json` (one entry per prompt, with `taxon`/`t
 
 ## 1. Deploy on your domain
 
-The site address is set once, in `data/site.json` (`siteUrl`). The build writes it into share text, `canonical`, `og:image`, `sitemap.xml`, `robots.txt` and the `CNAME` file in `dist/`.
+The site address is set once, in `data/site.json` (`siteUrl`) — currently `https://nelsonalapi63.github.io/angler`. The build writes it into share text, `canonical`, `og:image`, `sitemap.xml` and `robots.txt`; for a domain of your own (anything that is not a github.io address) it also writes the `CNAME` file in `dist/`.
 
 1. Create a GitHub repository and push `main`.
 2. Repository → Settings → Pages → Source: **GitHub Actions**. `.github/workflows/deploy.yml` runs on every push to `main` and daily at 00:05 Eastern (05:05 UTC): tests, `node build.js --dist`, `node tools/make-icons.js --og-days` (30 per-day Open Graph images), commits the frozen schedule, and publishes `dist/`.
@@ -36,7 +36,7 @@ The site address is set once, in `data/site.json` (`siteUrl`). The build writes 
 **Live project:** `angler` (ref `yxnkzqiyyeqpuwqyqubg`, us-east-1) in the organization "Nelson Alapi Companies.org". The schema, the cron jobs, the six Edge Functions and the answer bank are installed; `online.js` carries its URL and anon key with `LEADERBOARD_ENABLED` and `ANALYTICS_ENABLED` on. What follows is how it was done, for a fresh project or a rebuild.
 
 1. Create a project at supabase.com. Note the Project URL and the anon key (Settings → API).
-2. Authentication → Providers → Google: enable it and paste the Google OAuth client id and secret (create them in Google Cloud Console with the callback URL shown on that page). Authentication → URL Configuration: Site URL = your domain; add it to the redirect allow list.
+2. Authentication → URL Configuration: Site URL = the site address (`https://nelsonalapi63.github.io/angler/`), and add it to the Redirect URLs (plus any other address the game runs at, e.g. the claude.ai artifact). This is where the email sign-in link and Google send the player back to. Optional: Authentication → Providers → Google — enable it and paste a Google OAuth client id and secret (created in Google Cloud Console with the callback URL shown on that page); the email link works without it.
 3. SQL editor: run `supabase/schema.sql`, then `supabase/cron.sql` after filling in its three `cron_settings` values (project ref, anon key, a random `bank_token`). Then make yourself the admin:
 
 ```sql
@@ -77,7 +77,7 @@ Add those three as repository secrets (`SUPABASE_URL`, `SUPABASE_ANON_KEY`, `BAN
 | `VAPID_SUBJECT` | `send-reminders` | `mailto:you@yourdomain` |
 | `RESEND_API_KEY` | `weekly-recap` | resend.com → API Keys, after verifying your sending domain |
 | `RECAP_FROM` | `weekly-recap` | e.g. `ANGLER <recap@yourdomain>` |
-| `SITE_URL` | `weekly-recap` | the same value as `data/site.json` |
+| `SITE_URL` | `weekly-recap` | the same value as `data/site.json` (`https://nelsonalapi63.github.io/angler`) |
 
 Until the VAPID secrets exist, `send-reminders` answers `VAPID keys not set` and sends nothing; until the Resend secrets exist, `weekly-recap` answers `RESEND_API_KEY not set`. Both are safe to leave for later.
 

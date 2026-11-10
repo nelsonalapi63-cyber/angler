@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://nelsonalapi63.github.io/angler/sitemap.xml
