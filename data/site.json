@@ -1,4 +1,4 @@
 {
-  "siteUrl": "https://nelsonalapi63.github.io/angler",
+  "siteUrl": "https://nelsonalapi63-cyber.github.io/angler",
   "_comment": "The one place the public address lives. build.js carries it to the app (share text, share card, Open Graph tags), the sitemap and robots.txt; for a custom domain (not a github.io address) it also writes dist/CNAME. Change it here when the game moves to its own domain, e.g. https://playangler.com."
 }
