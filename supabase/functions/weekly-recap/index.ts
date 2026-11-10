@@ -18,7 +18,7 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
   if (req.method !== "POST") return json(405, { error: "POST only" });
   const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-  const RESEND = Deno.env.get("RESEND_API_KEY"), FROM = Deno.env.get("RECAP_FROM") || "ANGLER <recap@angler.example>";
+  const RESEND = Deno.env.get("RESEND_API_KEY"), FROM = Deno.env.get("RECAP_FROM") || "ANGLER <nelsonalapi63@gmail.com>";
   if (!RESEND) return json(500, { error: "RESEND_API_KEY not set" });
   const admin = createClient(Deno.env.get("SUPABASE_URL")!, SERVICE_KEY);
   const today = dive.dayKey(new Date());

@@ -21,7 +21,7 @@ Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: CORS });
   if (req.method !== "POST") return json(405, { error: "POST only" });
   const SERVICE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-  const pub = Deno.env.get("VAPID_PUBLIC_KEY"), priv = Deno.env.get("VAPID_PRIVATE_KEY"), subject = Deno.env.get("VAPID_SUBJECT") || "mailto:hello@angler.example";
+  const pub = Deno.env.get("VAPID_PUBLIC_KEY"), priv = Deno.env.get("VAPID_PRIVATE_KEY"), subject = Deno.env.get("VAPID_SUBJECT") || "mailto:nelsonalapi63@gmail.com";
   if (!pub || !priv) return json(500, { error: "VAPID keys not set" });
   webpush.setVapidDetails(subject, pub, priv);
   const admin = createClient(Deno.env.get("SUPABASE_URL")!, SERVICE_KEY);

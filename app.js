@@ -5,7 +5,7 @@
   // ---------------------------------------------------------------- parameters
   const CONFIG = {
     SITE_URL: (root.FATHOM_SITE && root.FATHOM_SITE.siteUrl) || '',   // from data/site.json via boot.js (share text, share card)
-    FEEDBACK_EMAIL: 'hello@angler.example',
+    FEEDBACK_EMAIL: 'nelsonalapi63@gmail.com',
     REPORT_FORM_URL: '',                // if set, "Report an answer" opens this instead of email
     REVEAL_MS: 2600,                    // how long a tier reveal stays before auto-advancing
     SOUND_VOLUME: 0.07,
