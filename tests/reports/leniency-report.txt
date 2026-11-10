@@ -1,10 +1,10 @@
 ANGLER leniency collision report — 2026-11-10
 rules: optional group words (fish, shark, whale, dolphin, porpoise, seal, turtle, crab, lobster, shrimp, squid, octopus, ray, eel, jellyfish, jelly, bird, coral, sponge, snail, clam, oyster, mussel, worm, star); spaced glued names; unambiguous only; typos 1 edit for 4–6 letters, 2 edits for 7–11 letters, 3 edits for 12+ letters; never under 4 letters
-checked 10247 answers across 211 questions (4748 entities, 59102 reference names)
+checked 17708 answers across 246 questions (9683 entities, 59102 reference names)
 
 NAME COLLISIONS (must be zero): 0
 
-ALIAS COLLISIONS (shared aliases go to the more generic answer by design; review): 483
+ALIAS COLLISIONS (shared aliases go to the more generic answer by design; review): 558
   shark-species: "scalloped hammerhead" (hammerhead-shark) → scalloped-hammerhead via exact
   shark-species: "great hammerhead" (hammerhead-shark) → great-hammerhead via exact
   shark-species: "smooth hammerhead" (hammerhead-shark) → smooth-hammerhead via exact
@@ -15,6 +15,7 @@ ALIAS COLLISIONS (shared aliases go to the more generic answer by design; review
   shark-atlantic: "scalloped hammerhead" (hammerhead-shark) → scalloped-hammerhead via exact
   shark-atlantic: "great hammerhead" (hammerhead-shark) → great-hammerhead via exact
   shark-atlantic: "smooth hammerhead" (hammerhead-shark) → smooth-hammerhead via exact
+  shark-atlantic: "dogfish" (spiny-dogfish) → bowfin via exact
   shark-atlantic: "common thresher" (common-thresher-shark) → thresher-shark via exact
   shark-atlantic: "fox shark" (common-thresher-shark) → thresher-shark via exact
   shark-atlantic: "Alopias vulpinus" (common-thresher-shark) → thresher-shark via exact
@@ -32,6 +33,7 @@ ALIAS COLLISIONS (shared aliases go to the more generic answer by design; review
   shark-reef: "spotted wobbegong" (wobbegong) → spotted-wobbegong via exact
   shark-reef: "tasselled wobbegong" (wobbegong) → tasselled-wobbegong via exact
   shark-reef: "bamboo shark" (brownbanded-bamboo-shark) → bamboo-shark via exact
+  shark-reef: "Whitespotted bamboo shark" (white-spotted-catshark) → bamboo-shark via exact
   ray-skate-sawfish: "reef manta ray" (manta-ray) → reef-manta-ray via exact
   ray-skate-sawfish: "common skate" (skate) → common-skate via exact
   ray-skate-sawfish: "eagle ray" (spotted-eagle-ray) → eagle-ray via exact
@@ -82,16 +84,14 @@ ALIAS COLLISIONS (shared aliases go to the more generic answer by design; review
   sea-reptile: "Laticauda" (sea-krait) → sea-snake via exact
   sea-reptile: "banded sea krait" (sea-krait) → banded-sea-krait via exact
   sea-reptile: "Laticauda colubrina" (sea-krait) → banded-sea-krait via exact
-  shelled-animal: "Pacific oyster" (oyster) → pacific-oyster via exact
-  shelled-animal: "chambered nautilus" (nautilus) → chambered-nautilus via exact
-  shelled-animal: "blue mussel" (mussel) → blue-mussel via exact
-  … 403 more
+  sea-reptile: "Green sea turtle" (pacific-green-turtle) → green-turtle via exact
+  … 478 more
 
-AMBIGUOUS SHORT FORMS (offered as "did you mean" chips): 1116
+AMBIGUOUS SHORT FORMS (offered as "did you mean" chips): 1282
   ray-skate-sawfish: "devil" → devil-ray | taxon:devil-fish
   ray-skate-sawfish: "devils" → devil-ray | taxon:devil-fish
-  ray-skate-sawfish: "banjo" → taxon:banjo-ray | taxon:banjo-shark
-  ray-skate-sawfish: "banjos" → taxon:banjo-ray | taxon:banjo-shark
+  ray-skate-sawfish: "banjo" → banjo-ray | taxon:banjo-shark
+  ray-skate-sawfish: "banjos" → banjo-ray | taxon:banjo-shark
   toothed-whale: "common" → harbour-porpoise | common-dolphin
   toothed-whale: "commons" → harbour-porpoise | common-dolphin
   toothed-whale: "mauis" → taxon:maui-dolphin | taxon:mauis-dolphin
@@ -109,8 +109,12 @@ AMBIGUOUS SHORT FORMS (offered as "did you mean" chips): 1116
   dolphin-porpoise: "yangtzes" → baiji | yangtze-finless-porpoise
   river-dolphin: "yangtze" → baiji | yangtze-finless-porpoise
   river-dolphin: "yangtzes" → baiji | yangtze-finless-porpoise
+  arctic-animal: "common" → blue-mussel | common-starfish
+  arctic-animal: "commons" → blue-mussel | common-starfish
   sea-reptile: "ridley" → taxon:ridley-sea-turtle | taxon:ridley-turtle
   sea-reptile: "ridleys" → taxon:ridley-sea-turtle | taxon:ridley-turtle
+  shelled-animal: "green" → green-turtle | green-lipped-mussel
+  shelled-animal: "greens" → green-turtle | green-lipped-mussel
   shelled-animal: "king" → king-crab | geoduck
   shelled-animal: "kings" → king-crab | geoduck
   shelled-animal: "rock" → oyster | spiny-lobster
@@ -126,6 +130,9 @@ AMBIGUOUS SHORT FORMS (offered as "did you mean" chips): 1116
   cephalopod: "caribbean reeves" → caribbean-reef-squid | taxon:caribbean-reef-octopus
   cephalopod: "glass" → glass-squid | glass-octopus
   cephalopod: "glasses" → glass-squid | glass-octopus
+  cephalopod: "pygmy" → pygmy-octopus | taxon:pygmy-squid
+  cephalopod: "pygmies" → pygmy-octopus | taxon:pygmy-squid
+  cephalopod: "pygmys" → pygmy-octopus | taxon:pygmy-squid
   cephalopod: "reef" → caribbean-reef-squid | taxon:reef-octopus
   cephalopod: "reefs" → caribbean-reef-squid | taxon:reef-octopus
   cephalopod: "reeves" → caribbean-reef-squid | taxon:reef-octopus
@@ -139,9 +146,6 @@ AMBIGUOUS SHORT FORMS (offered as "did you mean" chips): 1116
   cephalopod: "danas" → taxon:dana-octopus | taxon:dana-squid
   cephalopod: "grass" → taxon:grass-octopus | taxon:grass-squid
   cephalopod: "grasses" → taxon:grass-octopus | taxon:grass-squid
-  cephalopod: "pygmy" → taxon:pygmy-octopus | taxon:pygmy-squid
-  cephalopod: "pygmies" → taxon:pygmy-octopus | taxon:pygmy-squid
-  cephalopod: "pygmys" → taxon:pygmy-octopus | taxon:pygmy-squid
   cephalopod: "umbrella" → taxon:umbrella-octopus | taxon:umbrella-squid
   cephalopod: "umbrellas" → taxon:umbrella-octopus | taxon:umbrella-squid
   cephalopod: "warty" → taxon:warty-octopus | taxon:warty-squid
@@ -151,6 +155,11 @@ AMBIGUOUS SHORT FORMS (offered as "did you mean" chips): 1116
   tentacles: "giants" → giant-squid | lions-mane-jellyfish
   tentacles: "moon" → jellyfish | moon-jellyfish
   tentacles: "moons" → jellyfish | moon-jellyfish
+  tentacles: "caribbean reef" → caribbean-reef-squid | caribbean-reef-octopus
+  tentacles: "caribbean reefs" → caribbean-reef-squid | caribbean-reef-octopus
+  tentacles: "caribbean reeves" → caribbean-reef-squid | caribbean-reef-octopus
+  tentacles: "common" → common-octopus | european-squid | moon-jellyfish
+  tentacles: "commons" → common-octopus | european-squid | moon-jellyfish
   crab-species: "devils" → velvet-crab | taxon:devils-crab
   crab-species: "flowers" → blue-swimmer-crab | taxon:flowers-crab
   lobster-shrimp: "spiny" → spiny-lobster | taxon:spiny-shrimp
@@ -159,15 +168,6 @@ AMBIGUOUS SHORT FORMS (offered as "did you mean" chips): 1116
   lobster-shrimp: "squat" → squat-lobster | sexy-shrimp
   lobster-shrimp: "squats" → squat-lobster | sexy-shrimp
   lobster-shrimp: "amanos" → amano-shrimp | taxon:amanos-shrimp
-  lobster-shrimp: "northern" → american-lobster | northern-prawn
-  lobster-shrimp: "northerns" → american-lobster | northern-prawn
-  lobster-shrimp: "rock" → spiny-lobster | taxon:rock-shrimp
-  lobster-shrimp: "rocks" → spiny-lobster | taxon:rock-shrimp
-  lobster-shrimp: "common" → european-lobster | brown-shrimp
-  lobster-shrimp: "commons" → european-lobster | brown-shrimp
-  lobster-shrimp: "red rock" → southern-rock-lobster | taxon:red-rock-shrimp
-  lobster-shrimp: "red rocks" → southern-rock-lobster | taxon:red-rock-shrimp
-  lobster-shrimp: "arafura" → taxon:arafura-lobster | taxon:arafura-shrimp
-  … 1036 more
+  … 1202 more
 
 REJECTED GUESSES: skipped — set SUPABASE_URL, SUPABASE_ANON_KEY and ADMIN_JWT to include the rejected guesses

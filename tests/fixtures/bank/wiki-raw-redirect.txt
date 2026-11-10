@@ -1,0 +1,5 @@
+#REDIRECT [[Bull shark]]
+
+{{Redirect category shell|1=
+{{R from scientific name|fish}}
+}}

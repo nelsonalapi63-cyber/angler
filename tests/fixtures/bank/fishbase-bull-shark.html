@@ -1,0 +1,711 @@
+
+
+    <!-- Display Cookie Consent Banner -->
+    <link rel="stylesheet" type="text/css" href="/css/cookie-consent.css">
+
+    <div id="cookie-consent-container" style="display:none;">
+        <div id="cookie-consent-banner">
+            <div class="cookie-consent-banner-item">
+                <p>
+                   This website uses cookies to enhance your browsing experience and ensure the functionality of our site. For more detailed information about the types of cookies we use and how we protect your privacy, please visit our <a href='../cookieMoreinfo.php' target='_blank'>Privacy Information</a> page.
+                </p>
+            </div>
+            <div class="cookie-consent-banner-item">
+                <button id="accept-all">Accept All</button>
+                <button id="accept-necessary">Accept Necessary Cookies Only</button>
+                <button id="cookie-settings">Cookie Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Cookie Settings Dialog -->
+    <div id="cookie-settings-dialog">
+        <span id="close-dialog">&times;</span>
+        <h3>Cookie Settings</h3>
+        <p>This website uses different types of cookies to enhance your experience. Please select your preferences below:</p>
+
+        <label>
+           <div class="cookie-categ">
+                <span>Strictly Necessary</span>
+                <label class="switch">
+
+                    <input type="checkbox" id="necessary-toggle" checked disabled>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <p>
+                These cookies are essential for the website to function properly. They include session cookies, which help maintain your session while you navigate the site, as well as cookies that remember your language preferences and other essential functionalities. Without these cookies, certain features of the website cannot be provided.
+            </p>
+        </label>
+
+        <label>
+            <div class="cookie-categ">
+                <span>Performance</span>
+                <label class="switch">
+                    <input type="checkbox" id="performance-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <p>
+                These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. For example, we use Google Analytics to generate web statistics, which helps us improve our website's performance and user experience. These cookies may track information such as the pages visited, time spent on the site, and any errors encountered.
+            </p>
+        </label>
+
+        <button id="save-close">Save and Close</button>
+    </div>
+    <script src='/libs/jquery/scripts/cookie.js'></script>
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+	<meta property="og:title" content="Carcharhinus leucas summary page" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://www.fishbase.us/summary/Carcharhinus-leucas.html" />
+	<meta property="og:image" content="https://www.fishbase.us/images/thumbnails/jpg/tn_Caleu_u1.jpg" />
+	<meta property="og:site_name" content="FishBase" />
+	<meta property="fb:app_id" content="149230358545215" />
+
+	<meta charset="utf-8">
+	<meta name='keywords' content="Carcharhinus leucas, Bull shark, , Requiem sharks, gamefish , maturity">
+	<title>Carcharhinus leucas,  Bull shark  : fisheries, gamefish</title>
+	<link rel="stylesheet" href="/fishbase.css" type="text/css">
+	<link rel="stylesheet" href="/css/speciessummary_layout.css" type="text/css">
+
+	<link rel="stylesheet" href="/css/spsum.css" type="text/css">
+	<link href="/libs/jquery/css/jquery-ui-custom.css" rel="stylesheet" type="text/css"/>
+	<script language="javascript" src="/includes/ajax/ajax.js"></script>
+	<script type="text/javascript" src="/libs/jquery/jquery.js"></script>
+	<script src='/libs/jquery/jquery-ui-min.js'></script>
+	<script src='/libs/jquery/scripts/speciessummary.js'></script>
+	<script src="/jquery/ImageAspectRatio.js"></script>
+	<!--
+	<script>
+	  window.fbAsyncInit = function() {
+		FB.init({
+		  appId      : '149230358545215', // App ID
+		  channelUrl : 'https://www.fishbase.us/channel.php', // Channel File
+		  status     : true, // check login status
+		  cookie     : true, // enable cookies to allow the server to access the session
+		  xfbml      : true  // parse XFBML
+		});
+		// Track likes in google analytics
+		FB.Event.subscribe('edge.create', function(targetUrl) {
+			_gaq.push(['_trackSocial', 'facebook', 'like', targetUrl]);
+		});
+		// Track unlikes in google analytics
+		FB.Event.subscribe('edge.remove', function(targetUrl) {
+		  _gaq.push(['_trackSocial', 'facebook', 'unlike', targetUrl]);
+		});
+		// Track Share in google analytics
+		FB.Event.subscribe('message.send', function(targetUrl) {
+		  _gaq.push(['_trackSocial', 'facebook', 'send', targetUrl]);
+		});
+		// Additional initialization code here
+	  };
+
+	  // Load the SDK Asynchronously
+	  (function(d){
+		 var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		 if (d.getElementById(id)) {return;}
+		 js = d.createElement('script'); js.id = id; js.async = true;
+		 js.src = "//connect.facebook.net/en_US/all.js";
+		 ref.parentNode.insertBefore(js, ref);
+	   }(document));
+	</script>
+
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=149230358545215";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+	-->
+	</head>
+
+<body>
+	<!-- AD section -->
+	<div id="ss-ad">
+			</div>
+
+	<div id="ss-container">
+		<!-- Search Box -->
+		<div id="search-box" title="Search FishBase" style="display:none">
+			<p>Common name (e.g. trout)</p>
+			<form name="fn_comnames" action="/ComNames/CommonNameSearchList.php" method="post">
+				<input type="hidden" name="crit1_fieldname" value="COMNAMES.ComName">
+				<input type="hidden" name="lang" value="English">
+				<input type="hidden" name="resultPage" value="1" />
+				<input type="hidden" name="crit1_fieldtype" value="CHAR">
+
+				<select name="crit1_operator" size="1">
+					<option value="CONTAINS">contains</option>
+					<option value="BEGINS_WITH">begins with</option>
+					<option value="BEGINS_WITH">begins with</option>
+					<option value="ENDS_WITH">ends with</option>
+					<option value="EQUAL" selected>is</option>
+				</select>
+				<input type="text" name="CommonName" id="CommonName" value=""/>
+				<input type="submit" value="search" />
+			</form>
+
+			<p>Genus + Species (e.g. Gadus morhua)</p>
+			<form name="fn_genspec" action="/Nomenclature/ScientificNameSearchList.php?" method="post">
+				<input name="gs" id="gs" size="35" value=""/>
+				<input type="hidden" name="group" value="summary" />
+				<input type="submit" value="search"/>
+			</form>
+		</div>
+		<!-- Top Menu -->
+		<div id="ss-topmenu" class="slabel7">
+			<!-- <fb:like href="https://www.fishbase.us/summary/Carcharhinus-leucas.html" layout="button_count" width="50" ref="top_sspage"></fb:like> -->
+			<!-- Begin Mod 03/15/17 Shelumiel Ortiz
+			<a href='https://fishbase.us/donate/donate.php'  ><img src='/images/gifs/DonateButton.gif' width='90' alt=''></a>
+			End Mod 03/15/17 Shelumiel Ortiz -->
+			<div>
+				
+		<div id='ss-heading'>
+		<div class='logo'>
+		<a href='/search.php'>
+			<img src='/images/png/fb3.png' alt='Back to search' title='Go back to Search page'>
+		</a>
+		</div>
+		<nav>
+		<ul class='menu-list'>
+			<li class='menu-item'>
+				<a href='#' title='About this page' style='min-height: 23px;'>About this page <span class='arrow'>▾</span></a>
+				<ul class='submenu'>
+					<li><a href='/manual/English/fishbasethe_SPECIES_table.htm' title='More Info on species'>More Info</a></li>
+					<li><a href='/manual/French/FishBaseNomenclature.htm#00358710' title='Plus d info'>Plus d'info</a></li>
+					<li><a href='/manual/Portuguese/Nomenclature.htm#The_Species_table' title='Mais info'>Mais info</a></li>
+				</ul>
+			</li>
+			<li class='menu-item'>
+				<a href='#' title='Languages' style='min-height: 23px;'>Languages <span class='arrow'>▾</span></a>
+				<ul class='submenu'>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=arabic' title='Arabic'>Arabic</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=bahasa' title='Bahasa Malay/Indonesian'>Bahasa Malay/Indonesian</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=bangla' title='Bangla'>Bangla</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=scchinese' title='Simplified Chinese'>Chinese(Si)</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=chinese' title='Traditional Chinese'>Chinese(Tr)</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=german' title='German'>Deutsch</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=English' title='English'>English</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=spanish' title='Spanish'>Español</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=farsi' title='Farsi'>Farsi</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=french' title='French'>Français</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=greek' title='Greek'>Greek</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=hindi' title='Hindi'>Hindi</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=italian' title='Italian'>Italiano</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=japanese' title='Japanese'>Japanese</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=laos' title='Lao'>Lao</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=dutch' title='Dutch'>Nederlands</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=portuguese' title='Portuguese-Brasil'>Português(Br)</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=portuguese_po' title='Portuguese-Portugal'>Português(Pt)</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=russian' title='Russian'>Russian</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=swedish' title='Swedish'>Swedish</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=thai' title='Thai'>Thai</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=vietnamese' title='Vietnamese'>Vietnamese</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=873&lang=myanmar' title='Myanmar'>Myanmar</a></li>
+				</ul>
+			</li>
+			<li class='menu-item'>
+				<a href='#' title='Send us a Feedback' style='min-height: 23px;'>User feedbacks <span class='arrow'>▾</span></a>
+				<ul class='submenu'>
+					<li><a href='javascript:document.mailx.submit()' title='Send us your Comments & Corrections'>Comments & Corrections&emsp13;</a></li>
+					<li><a href='../facebooklinks.php' title='Explore our community support' target='_blank'>Facebook</a></li>
+				</ul>
+			</li>
+			<li class='menu-item'>
+				<a href='../summary/citation.php' title='How to cite FishBase' style='min-height: 23px;'>Citation</a>
+			</li>
+			<li class='menu-item'>
+				<a href='#' title='Uploads Carcharhinus leucas' style='min-height: 23px;'>Uploads <span class='arrow'>▾</span></a>
+				<ul class='submenu'>
+					<li><a href='https://www.fishbase.us/FishWatcher/url_addform.php?speccode=873' title='Attach your web site to this page'>Attach website</a></li>
+					<li><a href='https://www.fishbase.us/tools/UploadPhoto/start.php?speccode=873' title='Upload photo -  Carcharhinus leucas'>Upload photo</a></li>
+					<li><a href='/tools/UploadVideo/start_info.php?speccode=873' title='Upload video - Carcharhinus leucas'>Upload video</a></li>
+					<li><a href='https://www.fishbase.us/tools/upload-ref/start.php?speccode=873'>Upload references&emsp13;</a></li>
+					<li><a href='https://www.fishbase.us/FishWatcher/checkpassword.php?Genus=Carcharhinus&Species=leucas&vtable=contribution_a'>Fish Watcher</a></li>
+				</ul>
+			</li>
+			<li class='menu-item'>
+				<a fref='#' title='Restricted - Carcharhinus leucas' style='min-height: 23px;'>Related species <span class='arrow'>▾</span></a>
+				<ul class='submenu'><li><a style = 'width:168px;' href='/summary/SpeciesSummary.php?genusname=Carcharhinus&speciesname=amboinensis' title='Similar species of Carcharhinus leucas'><i>Carcharhinus amboinensis</i></a></li>
+					<li><a style = 'width:168px;' href='../identification/SpeciesList.php?genus=Carcharhinus' title='Species in Carcharhinus'>Species in <i>Carcharhinus</i></a></li>
+					<li><a style = 'width:168px;' href='/identification/SpeciesList.php?famcode=11&areacode=&spines=&fins=' title='Species in Carcharhinidae'>Species in <i>Carcharhinidae</a></i></li>
+				<li style='background: #02CDE5; text-align:center;'>- Classification -</li>
+						<li><a style = 'width:168px;' href='/summary/FamilySummary.php?ID=11' class='sciname' title='Family'>Carcharhinidae</a></li>
+						<li><a style = 'width:168px;' href='/summary/OrdersSummary.php?order=Carcharhiniformes' class='sciname' title='Order'>Carcharhiniformes</a></li>
+						<li><a style = 'width:168px; color:#D9D9D9;' href='#' class='sciname' title='Class'>Elasmobranchii</a></li>
+						<li><a style = 'width:168px; color:#D9D9D9;' href='#' class='sciname' title='Phylum'>Chordata</a></li>
+						<li><a style = 'width:168px; color:#D9D9D9;' href='#' class='sciname' title='Kingdom'>Animalia</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<div class='logo'>
+		<a id='search-button' href='#'>
+		<img src='/images/png/search-logo-new.png' alt='Search' title='Search names'>
+		</a>
+	</div>
+	<div  class='logo'>
+		<a href='https://www.facebook.com/FishBaseProject/' target='_blank'>
+			<img src='/images/png/search-fb.png' height='35' border='0'/>
+		</a>
+	</div>
+	<div  class='logo'>
+		<a href='/donate/donate.php'><img src='/images/gifs/DonateButton.gif' width='90' alt=''></a>
+	</div>
+	</div>			</div>
+		</div>
+
+		<!-- Sci name, Author, FBname section -->
+		<div id="ss-sciname">
+			<h1>
+				<span class='sciname'><b><a href='http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatget.asp?genid=816' alt='Catalog of Fishes - Genera' title='Catalog of Fishes - Genera' target='_blank'>Carcharhinus</a></b></span> <span class='sciname'><b><a href='http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatget.asp?spid=26330' alt='Catalog of Fishes - Species' title='Catalog of Fishes - Species' target='_blank'>leucas</a></b></span> (<span class='sheader6 noLinkDesign'>Valenciennes</b></span>, <span class='sheader6 noLinkDesign'><a href='http://researcharchive.calacademy.org/research/ichthyology/catalog/getref.asp?id=3069' alt='Catalog of Fishes - References' title='Catalog of Fishes - References' target='_blank'>1839</a></span>)			</h1>
+			<span class='sheader2'>
+				Bull shark			</span>
+		</div>
+		<!-- Map and photo container -->
+
+		
+		<div id="ss-photomap-container">
+							<!-- Aquamaps -->
+				<div id="ss-map">
+					Add your observation in <a href='https://www.fishbase.us/FishWatcher/checkpassword.php?Genus=Carcharhinus&Species=leucas&vtable=contribution_a'>Fish Watcher</a><div class="aquamaps"><center>
+<table border='1' cellpadding='2' cellspacing='0' style='font-size : xx-small; font-family : Arial;' width = '350'>
+	<tr>
+		<td align='center'>
+<a href='#' onmouseover='javascript:document.getElementById(&quot;pix&quot;).src=&quot;/images/aquamaps/native/pic_Fis-23059.jpg&quot;'>
+Native range</a> |
+	<a href='#' onmouseover='javascript:document.getElementById(&quot;pix&quot;).src=&quot;/images/aquamaps/suitable/pic_Fis-23059.jpg&quot;'>
+	All suitable habitat</a> |
+	<a href='#' onmouseover='javascript:document.getElementById(&quot;pix&quot;).src=&quot;/images/aquamaps/pointmap/pic_Fis-23059.jpg&quot;'>
+	Point map</a> |
+	<a href='#' onmouseover='javascript:document.getElementById(&quot;pix&quot;).src=&quot;/images/aquamaps/2050/pic_Fis-23059.jpg&quot;'>
+	Year 2050</a></td>
+	</tr>
+	<tr>
+		<td align='center'>
+			<a target='am_Fis-23059' href='//www.aquamaps.org/preMap.php?cache=1&SpecID=Fis-23059'>
+				<img id='pix' src='/images/aquamaps/native/pic_Fis-23059.jpg' alt=''>
+			</a>
+		</td>
+	</tr>
+	<tr>
+		<td align='center' style='font-size : xx-small;'>This map was computer-generated and has not yet been reviewed.</td>
+	</tr>
+	<tr>
+		<td align='center' style='font-size : xx-small;'><font style='font-family : Arial;'>
+		<a target='fb_Fis-23059' href='http:///summary/SpeciesSummary.php?genusname=Carcharhinus&speciesname=leucas'><i>Carcharhinus leucas</i></a>
+		&nbsp;
+		<a target='am_org' href='http://www.aquamaps.org'>AquaMaps</a>
+		&nbsp;
+		Data sources: 	<a target='gbif_Fis-23059' href='http://data.gbif.org/occurrences/searchProviders.htm?c[0].s=0&c[0].p=0&c[0].o=Carcharhinus leucas&c[1].s=28&c[1].p=0&c[1].o=0'>GBIF</a>
+						<a target='obis_Fis-23059' href='http://www.iobis.org/OBISWEB/ObisControllerServlet?category=all&names=data&tableName=0&searchName=105792&x=51&y=9'>OBIS</a>
+		</font></td>
+	</tr>
+</table></center></div>				</div>
+
+						<!-- Species Photo -->
+						<div id="ss-photo">
+				<span>
+					Upload your <a href='https://www.fishbase.us/tools/UploadPhoto/start.php?speccode=873'>photos</a>&nbsp;and&nbsp;<a href='/tools/UploadVideo/start_info.php?speccode=873'>videos</a><BR />				</span>
+				<span class="slabel8">
+				<a href='../photos/ThumbnailsSummary.php?ID=873'>Pictures</a> | <a href='/videos/SpeciesVideos.php?speccode=873'>
+					Videos |</a> <a href='../photos/SpeciesStampsList.php?speccode=873'>Stamps, coins, misc.</a> | <a href='https://www.google.com/images?hl=en&q=Carcharhinus+leucas&btnG=Search+Images&gbv=2'>Google image</a><div><a style='text-decoration:none;' href='/photos/ThumbnailsSummary.php?ID=873'><img style='margin-top: 25px; margin-bottom: 0;' name='prefimage' src='/images/thumbnails/jpg/tn_Caleu_u1.jpg' title ='Image of Carcharhinus leucas (Bull shark)' alt='Image of Carcharhinus leucas (Bull shark)' border='0' ></a></div><span class='sciname slabel8'>Carcharhinus leucas</span><br/><span class='slabelPicAuthor' >
+					Picture by 
+					<a href='/collaborators/CollaboratorSummary.php?ID=50'>
+					Randall, J.E.</a><br />
+					</span><!--<script src="/libs/jquery/jquery.js"></script>-->
+<link rel="stylesheet" href="/css/swipeslider.css">
+<script src="/libs/jquery/swipeslider/swipeslider.min.js"></script>
+<script>
+$(window).load(function() {
+	if($("#ss-photo-full").length > 0){			//the photo is full width
+		$('#image-slider').swipeslider({sliderHeight:'27%', autoPlayTimeout: 8000});
+	}else{
+		$('#image-slider').swipeslider({sliderHeight:'52%', autoPlayTimeout: 8000});
+	}
+});
+</script>
+<style>
+.swipslider{
+	max-width: 310px;
+	margin:	auto;
+}
+
+</style>					<!--<span class='sciname'>
+											</span>
+					<br/>
+					<span class="slabel8">
+											</span>-->
+				</span>
+			</div> <!-- ss-photo -->
+		</div> <!-- ss-photomap-container -->
+
+		<!-- Main Content -->
+		<div id="ss-main">
+			<p> <!-- CLASSIFICATION / NAMES -->
+			<h1 class='slabel sleft bottomBorder'>
+				Classification / Names  				<span class="addLinks"> <!-- not bold -->
+				<span class='slabel1 '><a href='/ComNames/CommonNamesList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&StockCode=889' alt='Common names for Carcharhinus leucas' title='Common names for Carcharhinus leucas' target='_blank'>Common names</a></span> | <span class='slabel1 '><a href='../Nomenclature/SynonymsList.php?ID=873&SynCode=23059&GenusName=Carcharhinus&SpeciesName=leucas' alt='Synonyms for Carcharhinus leucas' title='Synonyms for Carcharhinus leucas' target='_blank'>Synonyms</a></span> | Catalog of Fishes(<A href='http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatget.asp?genid=816' target='_blank'>genus</A>, <A href='http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatget.asp?spid=26330' target='_blank'>species</A>) | <span class='slabel1'><a href='http://www.itis.gov/servlet/SingleRpt/SingleRpt?search_topic=TSN&search_value=160275' target='_blank'>ITIS</a></span> | <span class='slabel1'><a href='http://www.catalogueoflife.org/col/search/all/key/Carcharhinus+leucas/match/1' target='_blank'>CoL</a></span> | <a href='http://www.marinespecies.org/aphia.php?p=taxdetails&id=105792' target='_blank'>WoRMS</a> | <span class='slabel1 '><a href='http://www.cloffa.ird.fr/table/taxon2/?idfishbase=873' alt='Cloffa for Carcharhinus leucas' title='Cloffa for Carcharhinus leucas' target='_blank'>Cloffa</a></span>				</span>
+			</h1>
+				<div class="smallSpace">
+				Elasmobranchii (sharks and rays) > <span class='slabel1 '><a href='/summary/OrdersSummary.php?order=Carcharhiniformes' alt='Carcharhiniformes for Carcharhinus leucas' title='Carcharhiniformes for Carcharhinus leucas' target='_blank'>Carcharhiniformes</a></span> (Ground sharks) > <span class='slabel1 '><a href='/summary/FamilySummary.php?ID=11' alt='Carcharhinidae for Carcharhinus leucas' title='Carcharhinidae for Carcharhinus leucas' target='_blank'>Carcharhinidae</a></span> (Requiem sharks)<br/>						<span>
+							<!-- [START] 02/2022 Mirror Update, incorporated ETYFish in etymology by VCAgbay -->
+							Etymology: <span style="font-style: italic;">Carcharhinus:</span> <span><i>karcharos</i> (Gr.), sharp or jagged; <i>rhinus</i>, an ancient name for sharks, from <i>rhine</i> (Gr.), rasp, both words alluding to a shark's jagged, rasp-like skin (<a href="https://etyfish.org/ETYFish_Carcharhinidae.pdf" target="_blank">See ETYFish</a>)</span>;&nbsp;<span style="font-style: italic;">leucas:</span> <span>From <i>leukos</i> (Gr.), white, referring to its body color, usually grayish with white underside [authorship often attributed to Müller & Henle, who published Valenciennes’ description] (<a href="https://etyfish.org/ETYFish_Carcharhinidae.pdf" target="_blank">See ETYFish</a>)</span>.<br>						</span>
+					</div>
+			</p>
+			
+			<!-- start Environment / Climate / Range -->
+			<p>
+				<h1 class='slabel bottomBorder'>
+					Environment: milieu / climate zone / depth range / distribution range					<span class="addLinks">
+						<span class='slabel1 '><a href='../Ecology/FishEcologySummary.php?StockCode=889&GenusName=Carcharhinus&SpeciesName=leucas' alt='Ecology for Carcharhinus leucas' title='Ecology for Carcharhinus leucas' target='_blank'>Ecology</a></span>					</span>
+				</h1>
+				<div class="smallSpace">
+				<span>
+					Marine; freshwater; brackish;  reef-associated; amphidromous (Ref. <A href='../references/FBRefSummary.php?ID=51243'>51243</A>); depth range 1 - 164 m (Ref. <A href='../references/FBRefSummary.php?ID=106604'>106604</A>), usually 1 - 30 m (Ref. <A href='../references/FBRefSummary.php?ID=55183'>55183</A>). Subtropical; 42&deg;N -   39&deg;S, 180&deg;W -   180&deg;E (Ref. <A href='../references/FBRefSummary.php?ID=55182'>55182</A>)				</span>
+				</div>
+			</p>
+
+			<!-- start Distribution -->
+			<p>
+				<h1 class='slabel bottomBorder'>
+					Distribution					<span class ='addLinks'>
+					<span class='slabel1 '><a href='/country/CountryList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas' alt='Territories for Carcharhinus leucas' title='Territories for Carcharhinus leucas' target='_blank'>Territories</a></span> | <span class='slabel1 '><a href='../country/FaoAreaList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11&StockCode=889&Scientific=Carcharhinus+leucas' alt='FAO areas for Carcharhinus leucas' title='FAO areas for Carcharhinus leucas' target='_blank'>FAO areas</a></span> | <span class='slabel1 '><a href='../TrophicEco/EcosysList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas' alt='Ecosystems for Carcharhinus leucas' title='Ecosystems for Carcharhinus leucas' target='_blank'>Ecosystems</a></span> | <span class='slabel1 '><a href='../museum/OccurrencesList.php?genus=Carcharhinus&species=leucas' alt='Occurrences for Carcharhinus leucas' title='Occurrences for Carcharhinus leucas' target='_blank'>Occurrences</a></span> | <a href='/map/OccurrenceMapList.php?genus=Carcharhinus&species=leucas'>Point map</a> | <span class='slabel1 ' style='color:gray;'>Introductions</span> | <span class='slabel1 '><a href='http://www.poissons-afrique.ird.fr/faunafri/index.svg?agg=idst&idfb=873' alt='Faunafri for Carcharhinus leucas' title='Faunafri for Carcharhinus leucas' target='_blank'>Faunafri</a></span>				</span>
+				</h1>
+				<div class="smallSpace">
+				<span>
+					Cosmopolitan in tropical and subtropical waters (Ref. <a href='../references/FBRefSummary.php?ID=81283'>81283</a>): widespread in warm oceans, rivers and lakes (Ref. <a href='../references/FBRefSummary.php?ID=4716'>4716</a>). Western Atlantic:  Massachusetts, USA to Argentina (Ref. <a href='../references/FBRefSummary.php?ID=58839'>58839</a>); eastern Atlantic:  Morocco, Senegal to Angola (Ref. <a href='../references/FBRefSummary.php?ID=81283'>81283</a>, <a href='../references/FBRefSummary.php?ID=81623'>81623</a>); Indo-Pacific:  Kenya and South Africa to India, then, Viet Nam to Australia; southern Baja California, Mexico to Ecuador and possibly occurring in Peru. Africa: in freshwater found in rivers of West Africa from Gambia River to Ogowe River (Ref. <a href='../references/FBRefSummary.php?ID=81283'>81283</a>) and in the Cuanza in Angola (Ref. <a href='../references/FBRefSummary.php?ID=120641'>120641</a>).
+Sympatric with <i>Carcharhinus amboinensis</i>, <i>Glyphis gangeticus</i>.<BR />				</span>
+				</div>
+			</p>
+
+			<p><!-- start Length at First Maturity/Size/Weight/Age -->
+				<h1 class='slabel bottomBorder'>
+					Length at first maturity / Size / Weight / Age<br />				</h1>
+				<div class="smallSpace">
+				<span>
+					Maturity: L<sub>m</sub> <a href=../Reproduction/MaturityList.php?ID=873>201.0</a>, range 180 -  230 cm<BR /> Max length : 360 cm TL male/unsexed; (Ref. <A href='../references/FBRefSummary.php?ID=85726'>85726</A>); 400.0 cm TL (female); common length : 260 cm TL male/unsexed; (Ref. <A href='../references/FBRefSummary.php?ID=9253'>9253</A>); max. published weight: 316.5 kg (Ref. <A href='../references/FBRefSummary.php?ID=40637'>40637</A>); max. reported age: 32 years (Ref. <A href='../references/FBRefSummary.php?ID=42004'>42004</A>)				</span>
+				</div>
+			</p>
+
+			<!-- start Morphology -->
+						<p>
+				<h1 class='slabel bottomBorder'>
+					Short description					<span class="addLinks">
+					<span class='slabel1 '><a href='../keys/ListIDKeys.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas' alt='Identification keys for Carcharhinus leucas' title='Identification keys for Carcharhinus leucas' target='_blank'>Identification keys</a></span> | <span class='slabel1 '><a href='../physiology/MorphDataList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas' alt='Morphology for Carcharhinus leucas' title='Morphology for Carcharhinus leucas' target='_blank'>Morphology</a></span> | <span class='slabel1 '><a href='../physiology/MorphMetList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas' alt='Morphometrics for Carcharhinus leucas' title='Morphometrics for Carcharhinus leucas' target='_blank'>Morphometrics</a></span>					</span>
+				</h1>
+				<div class="smallSpace">
+				<span>
+					<a href=../glossary/Glossary.php?language=english&sc=is&q=dorsal%20fin>Dorsal</a> <a href=../glossary/Glossary.php?language=english&sc=is&q=spine>spines</a> (total): 0; <a href=../glossary/Glossary.php?language=english&sc=is&q=anal%20fin>Anal</a> <a href=../glossary/Glossary.php?language=english&sc=is&q=spine>spines</a>: 0. Diagnosis: <i>Carcharhinus leucas</i> is a massive shark with a short, broad and blunt snout, small eyes and triangular saw-edged upper teeth, and lack of interdorsal ridge, characters which are sufficient to distinguish this species (Ref. <a href='../references/FBRefSummary.php?ID=26938'>26938</a>).
+<br>Body shape&nbsp;(<a href="#" onClick='window.open("/images/png/BodyShapes.png","bshape","height=551,width=409")'>shape guide</a>): fusiform / normal.				</span>
+				</div>
+			</p>
+			
+			<!-- Start Biology -->
+			<p>
+			<form action='/glossary/Glossary.php' method='get'>
+			<div class='sleft'>
+				<h1 class='slabel bottomBorder'>
+					Biology					<span class="floatRight">
+						<span class='uploads'>
+				&nbsp;&nbsp;&nbsp;
+				Glossary
+				<input  type='text' name='q' id='q' size='10' maxlength='25' />
+				</span>
+				<span class='submit slabel6'>
+				<input  type='submit' value='Search'> (e.g.  epibenthic)
+				</span>
+			<BR />					</span>
+				</h1>
+			</div>
+
+			</form>
+			<div class="smallSpace">
+			<span>
+				A coastal and freshwater shark inhabiting shallow waters especially in bays, estuaries, rivers, and lakes (Ref. <a href='../references/FBRefSummary.php?ID=244'>244</a>). It readily penetrates far up rivers and hypersaline bays and littoral lagoons (Ref. <a href='../references/FBRefSummary.php?ID=9997'>9997</a>, <a href='../references/FBRefSummary.php?ID=44894'>44894</a>, <a href='../references/FBRefSummary.php?ID=81283'>81283</a>). Capable of covering great distances (up to 180 kilometers in 24 hours), moving between fresh and brackish water at random (Ref. <a href='../references/FBRefSummary.php?ID=44894'>44894</a>). Adults often found near estuaries and freshwater inflows to the sea;  young enter rivers and may be found hundreds of km from the sea (Ref. <a href='../references/FBRefSummary.php?ID=4967'>4967</a>, <a href='../references/FBRefSummary.php?ID=44894'>44894</a>, <a href='../references/FBRefSummary.php?ID=58304'>58304</a>). Feeds on bony fishes, other sharks, rays, mantis shrimps, crabs, squid, sea snails, sea urchins, mammalian carrion, sea turtles, and occasionally garbage (Ref. <a href='../references/FBRefSummary.php?ID=244'>244</a>, <a href='../references/FBRefSummary.php?ID=5578'>5578</a>, <a href='../references/FBRefSummary.php?ID=44894'>44894</a>). Viviparous (Ref. <a href='../references/FBRefSummary.php?ID=50449'>50449</a>). Gives birth to litters of up to 13 young (Ref. <a href='../references/FBRefSummary.php?ID=26938'>26938</a>, <a href='../references/FBRefSummary.php?ID=44894'>44894</a>). Size at birth is 56-81 cm TL (Ref. <a href='../references/FBRefSummary.php?ID=81623'>81623</a>). Sexual maturity is attained after 10-15 years (at a length between 160-200 centimeters) (Ref. <a href='../references/FBRefSummary.php?ID=44894'>44894</a>). Though not commercially important, this species is a good food fish (Ref. <a href='../references/FBRefSummary.php?ID=12484'>12484</a>). Utilized fresh, fresh-frozen or smoked for human consumption, fins for soup, hide for leather, liver for oil, and carcass for fishmeal (Ref. <a href='../references/FBRefSummary.php?ID=244'>244</a>). Very hardy and lives well in captivity (Ref. <a href='../references/FBRefSummary.php?ID=244'>244</a>). This large shark is potentially dangerous to man (Ref. <a href='../references/FBRefSummary.php?ID=81283'>81283</a>), probably the most dangerous species of tropical shark (Ref. <a href='../references/FBRefSummary.php?ID=244'>244</a>), and it is repeatedly implicated in attacks on humans (Ref. <a href='../references/FBRefSummary.php?ID=4967'>4967</a>, <a href='../references/FBRefSummary.php?ID=44894'>44894</a>); attacks in fresh water are rare (Ref. <a href='../references/FBRefSummary.php?ID=44894'>44894</a>).			</span>
+			</div>
+			</p>
+
+			<!-- start Reproduction -->
+			<p>
+				<h1 class='slabel bottomBorder'>
+					Life cycle and mating behavior					<span class ='addLinks'>
+					<span class='slabel1 '><a href='/Reproduction/MaturityList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11' alt='Maturity for Carcharhinus leucas' title='Maturity for Carcharhinus leucas' target='_blank'>Maturity</a></span> | <span class='slabel1 '><a href='../Reproduction/FishReproSummary.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11&StockCode=889' alt='Reproduction for Carcharhinus leucas' title='Reproduction for Carcharhinus leucas' target='_blank'>Reproduction</a></span> | <span class='slabel1 '><a href='/Reproduction/SpawningList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11&StockCode=889' alt='Spawning for Carcharhinus leucas' title='Spawning for Carcharhinus leucas' target='_blank'>Spawning</a></span> | <span class='slabel1 ' style='color:gray;'>Eggs</span> | <span class='slabel1 '><a href='/Reproduction/FecundityList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11&StockCode=889' alt='Fecundity for Carcharhinus leucas' title='Fecundity for Carcharhinus leucas' target='_blank'>Fecundity</a></span> | <span class='slabel1 ' style='color:gray;'>Larvae</span>				</span>
+				</h1>
+				<div class="smallSpace">
+				<span>
+				Viviparpous, with a yolk-sac placenta, 1-13 young in a litter.  Size at birth about 60 cm TL (Ref. <a href='../references/FBRefSummary.php?ID=9997'>9997</a>).  In the western North Atlantic off Florida  and the Gulf of Mexico, and off South Africa, young are born in late spring or early summer.  Off Nicaragua, females may have young throughout the year, with a peak in spring and early summer.  Estimated gestation period is 10 to 11 months (Ref. <a href='../references/FBRefSummary.php?ID=244'>244</a>).  Distinct pairing with embrace (Ref. <a href='../references/FBRefSummary.php?ID=205'>205</a>).  Females often have courtship scars, but males are rarely seen with fighting scars (Ref. <a href='../references/FBRefSummary.php?ID=244'>244</a>).				</span>
+				</div>
+			</p>
+
+
+
+			<p> <!-- Main Reference -->
+				<h1 class='slabel bottomBorder'>
+					Main reference  					<span class='slabel1 addLinks'>
+						<span class='slabel1 '><a href='https://www.fishbase.us/tools/upload-ref/start.php?speccode=873' alt='Upload your references for Carcharhinus leucas' title='Upload your references for Carcharhinus leucas' target='_blank'>Upload your references</a></span> | <span class='slabel1 '><a href='/references/SummaryRefList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas' alt='References for Carcharhinus leucas' title='References for Carcharhinus leucas' target='_blank'>References</a></span> | Coordinator : <a href="/collaborators/CollaboratorSummary.php?id=134">Compagno, Leonard J.V.</a> | <span class='slabel1 '><a href='/collaborators/CollaboratorsList.php?ID=873&Genus=Carcharhinus&Species=leucas' alt='Collaborators for Carcharhinus leucas' title='Collaborators for Carcharhinus leucas' target='_blank'>Collaborators</a></span><BR />					</span>
+				</h1>
+				<div class="smallSpace">
+				<span>
+					<b>Compagno, L.J.V.</b>, 1984. FAO Species Catalogue. Vol. 4. Sharks of the world. An annotated and illustrated catalogue of shark species known to date. Part 2 - Carcharhiniformes. FAO Fish. Synop. 125(4/2):251-655. Rome: FAO. (Ref. <A href='../references/FBRefSummary.php?ID=244'>244</A>)<BR />				</span>
+				</div>
+			</p>
+
+			<!-- Start IUCN redlist status -->
+			<p>
+							<div class='sleft sonehalf'>
+					<h1 class='slabel bottomBorder'>
+						IUCN Red List Status   (Ref. <A href='../references/FBRefSummary.php?ID=130435'>130435</A>: Version 2025-2 (Global))<BR />					</h1>
+					<div class="smallSpace">
+					<span>
+						<span class='box' style='background-color:#ff0000'>&nbsp;</span><span class=&quot;black&quot;>&nbsp;<a class=&quot;black&quot; href=https://www.iucnredlist.org/species/39372/2910670 target=&quot;_blank&quot;>Vulnerable (VU)</a></span>&nbsp;(A2bcd); Date assessed: <span class='black'>24 November 2020</span>					</span>
+					</div><br>
+				</div>
+					<!-- CITES  -->
+			<div class=''>
+				<h1 class='slabel bottomBorder'>
+					CITES  <BR />
+				</h1>
+				<div class="smallSpace">
+				<span>
+					Appendix II: <a href='http://www.cites.org/eng/app/appendices.php'>International trade monitored</a>				</span>
+				</div><br>
+			</div>
+			<!--Begin Mod 10/16/17 Shelumiel Ortiz-->
+			<!--CMS -->
+			<div class='sonehalf'>
+				<h1 class='slabel bottomBorder'>
+					CMS (Ref. <A href='../references/FBRefSummary.php?ID=116361'>116361</A>)<BR />				</h1>
+				<div class="smallSpace">
+				<span>
+					Not Evaluated				</span>
+				</div><br>
+			</div>
+			<!--End Mod 10/16/17 Shelumiel Ortiz-->
+
+			<!-- Threat to humans -->
+			<div class='rlalign sonehalf'>
+				<h1 class='slabel bottomBorder'>
+					Threat to humans  <BR />				</h1>
+				<div class="smallSpace">
+				<span>
+					<span class='box' style='background-color:#ff0000'>&nbsp;</span> Traumatogenic (Ref. <A href='/references/FBRefSummary.php?ID=4690'>4690</A>)				</span>
+				</div>
+			</div><br>
+			</p>
+			<br><br><br><br>
+			<!-- Start human uses-->
+			<p>
+				<h1 class='slabel bottomBorder'>
+					Human uses  				</h1>
+				<div class="smallSpace">
+				<span>
+					Fisheries: commercial; gamefish: yes				</span>
+				</div>
+
+				<div class="smallSpace">
+				<span>
+					FAO - Fisheries: <a target='_blank' href='https://www.fao.org/fishery/statistics-query/en?dataset=capture&timeseries=capture_quantity' title='FAO Capture Production'>landings search</a>; Publication: <a href='http://www.fao.org/fishery/publications/query/Carcharhinus leucas,Bull shark*,Requin bouledogue*' title='FAO publications' target='_blank'>search</a>  | <a href='https://www.fishsource.org/fishbase_query?genus=Carcharhinus&specific_descriptor=leucas' target='_blank' title='Information for Carcharhinus leucas fisheries on FishSource'>FishSource</a> | <span class='slabel1'><a href='http://www.seaaroundus.org/data/#/taxa/600873' target='_blank'>Sea Around Us</a></span>				</span>
+				</div><br>
+			</p>
+			<!-- Start CITES -->
+						<!-- start More Information -->
+			<div id='ss-moreinfo-container'>
+				<p>
+					<h1 class='slabel bottomBorder'>
+						More information					</h1>
+					<div class="form-cont">
+						<div class="col-cont">
+							<div class="categ">
+								<span class="categ-title"> Trophic ecology </span><br>
+								<span class='slabel1 categlink'><a href='../TrophicEco/FoodItemsList.php?vstockcode=889&genus=Carcharhinus&species=leucas' alt='Food items (preys) for Carcharhinus leucas' title='Food items (preys) for Carcharhinus leucas' target='_blank'>Food items (preys)</a></span><BR />								<span class='slabel1 categlink'><a href='/TrophicEco/DietCompoList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11&StockCode=889' alt='Diet composition for Carcharhinus leucas' title='Diet composition for Carcharhinus leucas' target='_blank'>Diet composition</a></span><BR />								<span class='slabel1 categlink' style='color:gray;'>Food consumption</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Food rations</span><BR />								<span class='slabel1 categlink'><a href='../TrophicEco/PredatorList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas' alt='Predators for Carcharhinus leucas' title='Predators for Carcharhinus leucas' target='_blank'>Predators</a></span><BR />							</div>
+							<div class="categ">
+								<span class="categ-title"> Ecology </span><br>
+								<span class='slabel1 categlink'><a href='../Ecology/FishEcologySummary.php?StockCode=889&GenusName=Carcharhinus&SpeciesName=leucas' alt='Ecology for Carcharhinus leucas' title='Ecology for Carcharhinus leucas' target='_blank'>Ecology</a></span><BR />								<!-- <span class='slabel1 categlink' style='color:gray;'>
+									Home ranges
+								</span><br> -->
+							</div>
+							<div class="categ">
+								<span class="categ-title"> Population dynamics </span><br>
+								<span class='slabel1 categlink'><a href='/popdyn/PopGrowthList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11' alt='Growth parameters for Carcharhinus leucas' title='Growth parameters for Carcharhinus leucas' target='_blank'>Growth parameters</a></span><BR />								<span class='slabel1 categlink'><a href='/popdyn/PopCharList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11' alt='Max. ages / sizes for Carcharhinus leucas' title='Max. ages / sizes for Carcharhinus leucas' target='_blank'>Max. ages / sizes</a></span><BR />								<span class='slabel1 categlink'><a href='/popdyn/LWRelationshipList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11' alt='Length-weight rel. for Carcharhinus leucas' title='Length-weight rel. for Carcharhinus leucas' target='_blank'>Length-weight rel.</a></span><BR />								<span class='slabel1 categlink'><a href='../popdyn/LLRelationshipList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11' alt='Length-length rel. for Carcharhinus leucas' title='Length-length rel. for Carcharhinus leucas' target='_blank'>Length-length rel.</a></span><BR />								<span class='slabel1 categlink' style='color:gray;'>Length-frequencies</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Mass conversion</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Recruitment</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Abundance</span><BR />							</div>
+						</div>
+						<div class="col-cont">
+							<div class="categ">
+								<span class="categ-title"> Life cycle </span><br>
+								<span class='slabel1 categlink'><a href='../Reproduction/FishReproSummary.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11&StockCode=889' alt='Reproduction for Carcharhinus leucas' title='Reproduction for Carcharhinus leucas' target='_blank'>Reproduction</a></span><BR />								<span class='slabel1 categlink'><a href='/Reproduction/MaturityList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11' alt='Maturity for Carcharhinus leucas' title='Maturity for Carcharhinus leucas' target='_blank'>Maturity</a></span><BR />								<span class='slabel1 categlink' style='color:gray;'>Maturity/Gills rel.</span><BR />								<span class='slabel1 categlink'><a href='/Reproduction/FecundityList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11&StockCode=889' alt='Fecundity for Carcharhinus leucas' title='Fecundity for Carcharhinus leucas' target='_blank'>Fecundity</a></span><BR />								<span class='slabel1 categlink'><a href='/Reproduction/SpawningList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11&StockCode=889' alt='Spawning for Carcharhinus leucas' title='Spawning for Carcharhinus leucas' target='_blank'>Spawning</a></span><BR />								<span class='slabel1 categlink' style='color:gray;'>Spawning aggregations</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Eggs</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Egg development</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Larvae</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Larval dynamics</span><BR />							</div>
+							<div class="categ">
+								<span class="categ-title"> Distribution </span><br>
+								<span class='slabel1 categlink'><a href='/country/CountryList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas' alt='Territories for Carcharhinus leucas' title='Territories for Carcharhinus leucas' target='_blank'>Territories</a></span><BR />								<span class='slabel1 categlink'><a href='../country/FaoAreaList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11&StockCode=889&Scientific=Carcharhinus+leucas' alt='FAO areas for Carcharhinus leucas' title='FAO areas for Carcharhinus leucas' target='_blank'>FAO areas</a></span><BR />								<span class='slabel1 categlink'><a href='../TrophicEco/EcosysList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas' alt='Ecosystems for Carcharhinus leucas' title='Ecosystems for Carcharhinus leucas' target='_blank'>Ecosystems</a></span><BR />								<span class='slabel1 categlink'><a href='../museum/OccurrencesList.php?genus=Carcharhinus&species=leucas' alt='Occurrences for Carcharhinus leucas' title='Occurrences for Carcharhinus leucas' target='_blank'>Occurrences</a></span><BR />								<span class='slabel1 categlink' style='color:gray;'>Introductions</span><BR />								<span class='slabel1 categlink'><a href='../bruvs/BruvsSurveyBySpecies.php?ID=873' alt='BRUVS - Videos for Carcharhinus leucas' title='BRUVS - Videos for Carcharhinus leucas' target='_blank'>BRUVS - Videos</a></span><BR />							</div>
+						</div>
+						<div class="col-cont">
+							<div class="categ">
+								<span class="categ-title"> Anatomy </span><br>
+								<span class='slabel1 categlink' style='color:gray;'>Gill area</span><BR />								<span class='slabel1 categlink'><a href='../physiology/BrainsDataList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&fc=11' alt='Brain for Carcharhinus leucas' title='Brain for Carcharhinus leucas' target='_blank'>Brain</a></span><BR />								<span class='slabel1 categlink' style='color:gray;'>Otolith</span><BR />							</div>
+							<div class="categ">
+								<span class="categ-title"> Physiology </span><br>
+								<span class='slabel1 categlink' style='color:gray;'>Body composition</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Nutrients</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Oxygen consumption</span><BR />								<span class='slabel1 categlink'><a href='../physiology/SwimTypeList.php?ID=873' alt='Swimming type for Carcharhinus leucas' title='Swimming type for Carcharhinus leucas' target='_blank'>Swimming type</a></span><BR />								<span class='slabel1 categlink'><a href='../physiology/SpeedList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas' alt='Swimming speed for Carcharhinus leucas' title='Swimming speed for Carcharhinus leucas' target='_blank'>Swimming speed</a></span><BR />								<span class='slabel1 categlink' style='color:gray;'>Visual pigments</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Fish sound</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Diseases & Parasites</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Toxicity (LC50s)</span><BR />							</div>
+							<div class="categ">
+								<span class="categ-title"> Genetics </span><br>
+								<span class='slabel1 categlink' style='color:gray;'>Genome</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Genetics</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Heterozygosity</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Heritability</span><BR />								<span class='slabel1 categlink'><a href='/Genetics/GeneticDiversityList.php?ID=873' alt='Genetic Diversity for Carcharhinus leucas' title='Genetic Diversity for Carcharhinus leucas' target='_blank'>Genetic Diversity</a></span><BR />							</div>
+						</div>
+						<div class="col-cont">
+							<div class="categ">
+								<span class="categ-title"> Human related </span><br>
+								<span class='slabel1 categlink' style='color:gray;'>Aquaculture systems</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Aquaculture profiles</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Strains</span><BR />								<span class='slabel1 categlink' style='color:gray;'>Ciguatera cases</span><BR />								<span class='slabel1 categlink'><a href='../photos/SpeciesStampsList.php?speccode=873' alt='Stamps, coins, misc. for Carcharhinus leucas' title='Stamps, coins, misc. for Carcharhinus leucas' target='_blank'>Stamps, coins, misc.</a></span><BR />							</div>
+							<div class="categ">
+								<span class="categ-title"> Outreach </span><br>
+								<span class='slabel1 categlink'><a href='/collaborators/CollaboratorsList.php?ID=873&Genus=Carcharhinus&Species=leucas' alt='Collaborators for Carcharhinus leucas' title='Collaborators for Carcharhinus leucas' target='_blank'>Collaborators</a></span><BR />							</div>
+							<div class="categ">
+								<span class="categ-title"> Taxonomy </span><br>
+								<span class='slabel1 categlink'><a href='/ComNames/CommonNamesList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&StockCode=889' alt='Common names for Carcharhinus leucas' title='Common names for Carcharhinus leucas' target='_blank'>Common names</a></span><BR />								<span class='slabel1 categlink'><a href='../Nomenclature/SynonymsList.php?ID=873&SynCode=23059&GenusName=Carcharhinus&SpeciesName=leucas' alt='Synonyms for Carcharhinus leucas' title='Synonyms for Carcharhinus leucas' target='_blank'>Synonyms</a></span><BR />								<span class='slabel1 categlink'><a href='../physiology/MorphDataList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas' alt='Morphology for Carcharhinus leucas' title='Morphology for Carcharhinus leucas' target='_blank'>Morphology</a></span><BR />								<span class='slabel1 categlink'><a href='../physiology/MorphMetList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas' alt='Morphometrics for Carcharhinus leucas' title='Morphometrics for Carcharhinus leucas' target='_blank'>Morphometrics</a></span><BR />								<span class='slabel1 categlink'><a href='../photos/ThumbnailsSummary.php?ID=873' alt='Pictures for Carcharhinus leucas' title='Pictures for Carcharhinus leucas' target='_blank'>Pictures</a></span><BR />							</div>
+							<div class="categ">
+								<span class="categ-title"> References </span><br>
+								<span class='slabel1 categlink'><a href='/references/SummaryRefList.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas' alt='References for Carcharhinus leucas' title='References for Carcharhinus leucas' target='_blank'>References</a></span><BR />							</div>
+						</div>
+					</div>
+				</p>
+			</div>
+			<!-- start Tools -->
+			<p>
+				<h1 class='slabel bottomBorder fontSize10'>Tools<BR /></h1>
+				<div class="smallSpace">
+				<span>
+					<span class='slabel1 '><a href='../FieldGuide/FieldGuideSummary.php?GenusName=Carcharhinus&SpeciesName=leucas&pda=1&sps=' alt='E-book for Carcharhinus leucas' title='E-book for Carcharhinus leucas' target='_blank'>E-book</a></span> | <span class='slabel1 '><a href='../FieldGuide/FieldGuideSummary.php?GenusName=Carcharhinus&SpeciesName=leucas&sps=&print=' alt='Field guide for Carcharhinus leucas' title='Field guide for Carcharhinus leucas' target='_blank'>Field guide</a></span> | <span class='slabel1 '><a href='../keys/ListIDKeys.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas' alt='Identification keys for Carcharhinus leucas' title='Identification keys for Carcharhinus leucas' target='_blank'>Identification keys</a></span> | <span class='slabel1 '><a href='../report/LFAnalysis_step01.php?speccode=873' alt='Length-frequency wizard for Carcharhinus leucas' title='Length-frequency wizard for Carcharhinus leucas' target='_blank'>Length-frequency wizard</a></span> | <span class='slabel1 '><a href='/popdyn/KeyFactsSummary_1.php?ID=873&GenusName=Carcharhinus&SpeciesName=leucas&vStockCode=889&fc=11' alt='Life-history tool for Carcharhinus leucas' title='Life-history tool for Carcharhinus leucas' target='_blank'>Life-history tool</a></span> | <span class='slabel1 '><a href='../map/OccurrenceMapList.php?genus=Carcharhinus&species=leucas' alt='Point map for Carcharhinus leucas' title='Point map for Carcharhinus leucas' target='_blank'>Point map</a></span> | 						<!--a href="/tools/Classification/ClassificationTree.php?genus=Carcharhinus&species=leucas#Carcharhinusleucas"> Classification Tree</a-->
+						<span class='slabel1 '><a href='http://www.fishbase.us/CatchMSY/intro.php?genus=Carcharhinus&species=leucas' alt='Catch-MSY for Carcharhinus leucas' title='Catch-MSY for Carcharhinus leucas' target='_blank'>Catch-MSY</a></span> | 				</span>
+				</div>
+			</p>
+			<!-- start Special reports -->
+			<p>
+				<h1 class='slabel bottomBorder fontSize10'>Special reports<BR /> </h1>
+				<div class="smallSpace">
+				<span>
+					<span class='slabel1 '><a href='/Aquaculture/AquamaintList.php?speccode=873&fbx=&rde=' alt='Check for Aquarium maintenance for Carcharhinus leucas' title='Check for Aquarium maintenance for Carcharhinus leucas' target='_blank'>Check for Aquarium maintenance</a></span> | <span class='slabel1 '><a href='/summary/FactSheetList.php?speccode=873&src=1' alt='Check for Species Fact Sheets for Carcharhinus leucas' title='Check for Species Fact Sheets for Carcharhinus leucas' target='_blank'>Check for Species Fact Sheets</a></span> | <span class='slabel1 '><a href='/summary/FactSheetList.php?speccode=873&src=2' alt='Check for Aquaculture Fact Sheets for Carcharhinus leucas' title='Check for Aquaculture Fact Sheets for Carcharhinus leucas' target='_blank'>Check for Aquaculture Fact Sheets</a></span>				</span>
+				</div>
+			</p>
+			<!-- Start Download Zone / Download XML : Kit Elloran -->
+			<p>
+				<h1 class='slabel bottomBorder'>Download XML<BR /></h1>
+				<div class="smallSpace">
+				<span>
+					<span class='slabel1 '><a href='../webservice/summary/fb/showXML.php?identifier=FB-873&ProviderDbase=03' alt='Summary page for Carcharhinus leucas' title='Summary page for Carcharhinus leucas' target='_blank'>Summary page</a></span> | <span class='slabel1 '><a href='../webservice/Occurrence/PointData.php?Genus=Carcharhinus&Species=leucas' alt='Point data for Carcharhinus leucas' title='Point data for Carcharhinus leucas' target='_blank'>Point data</a></span> | <span class='slabel1 '><a href='../webservice/comnames/ComNamesXML.php?Genus=Carcharhinus&Species=leucas' alt='Common names for Carcharhinus leucas' title='Common names for Carcharhinus leucas' target='_blank'>Common names</a></span> | <span class='slabel1 '><a href='../webservice/photos/FishPicsList.php?Genus=Carcharhinus&Species=leucas&type=' alt='Photos for Carcharhinus leucas' title='Photos for Carcharhinus leucas' target='_blank'>Photos</a></span>				</span>
+				</div>
+			</p>
+			<!-- start Internet Sources -->
+			<p>
+				<h1 class='slabel bottomBorder fontSize10'>
+					Internet sources<BR />				</h1>
+				<div class="smallSpace">
+				<span>
+					AFORO (otoliths) | <a href='http://aquaticcommons.org/cgi/search/archive/advanced?keywords=Carcharhinus+leucas' target='_blank'>Aquatic Commons</a> | <span class='slabel1'><a href='http://www.biodiversitylibrary.org/search?SearchTerm=Carcharhinus+leucas#/names' target='_blank'>BHL</a></span> | <span class='slabel1'><a href='http://www.cloffa.ird.fr/table/taxon2/?idfishbase=873' target='_blank'>Cloffa</a></span> | <span class='slabel1'><a href='https://www.fishbase.us/FishWatcher/SpeciesURLList.php?speccode=873' target='_blank'>Websites from users</a></span> | <span class='slabel1'><a href='https://www.fishbase.us/FishWatcher/CollectionsList.php?speccode=873&what=Species' target='_blank'>Check FishWatcher</a></span> | <span class='slabel1'><a href='https://science-libraries.canada.ca/eng/search/?q=Carcharhinus+leucas' target='_blank'>CISTI</a></span> | <a href='http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatmain.asp' target='_blank'>Catalog of Fishes</a>: <A href='http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatget.asp?genid=816' target='_blank'>genus</A>, <A href='http://researcharchive.calacademy.org/research/ichthyology/catalog/fishcatget.asp?spid=26330' target='_blank'>species</A> | <span class='slabel1'><a href='http://www.discoverlife.org/20/q?search=Carcharhinus+leucas&b=FB873' target='_blank'>DiscoverLife</a></span> | <a href="//doris.ffessm.fr/fiche2.asp?fiche_numero=1801" target="_blank">DORIS</a> | <span class='slabel1'><a href='#' onClick='javascript:document.forms.fn_ecotox.submit()' target='_blank'>ECOTOX</a></span> | FAO - Fisheries: <a target='_blank' href='https://www.fao.org/fishery/statistics-query/en?dataset=capture&timeseries=capture_quantity' title='FAO Capture Production'>landings search</a>; Publication: <a href='http://www.fao.org/fishery/publications/query/Carcharhinus leucas,Bull shark*,Requin bouledogue*' title='FAO publications' target='_blank'>search</a>  | <span class='slabel1'><a href='http://www.poissons-afrique.ird.fr/faunafri/index.svg?agg=idst&idfb=873' target='_blank'>Faunafri</a></span> | <a href='http://www.fishipedia.fr/fr/poissons/carcharhinus-leucas' target='_blank'>Fishipedia</a> | <span class='slabel1'>Fishtrace</span> | <a href='http://www.globalbioticinteractions.org/?interactionType=interactsWith&sourceTaxon=FBC%3AFB%3ASpecCode%3A873' target='_blank'>GloBI</a> | <a href='http://gomexsi.tamucc.edu/' target='_blank'> GoMexSI </a><a href='http://gomexsi.tamucc.edu/query-database/taxonomic/?subjectName=FBC%3AFB%3ASpecCode%3A873&allInteractions=on&findPrey=on&filterPrey=&findPredators=on&filterPredators=&serviceType=rest&action=rhm_data_query873' target='_blank'> (interaction data)</a> | <span class='slabel1'><a href='https://books.google.com/books?ie=UTF-8&q=%22Carcharhinus+leucas%22 OR %22Bull+shark%22&btnG=Search' target='_blank'>Google Books</a></span> | <span class='slabel1'><a href='https://scholar.google.com/scholar?q=%22Carcharhinus+leucas%22 OR %22Bull+shark%22&ie=UTF-8&oe=UTF-8&hl=en&btnG=Search' target='_blank'>Google Scholar</a></span> | <span class='slabel1'><a href='https://www.google.com/search?q=%22Carcharhinus+leucas%22+%22Bull+shark%22&time=7&x=44&y=7' target='_blank'>Google</a></span> | <a href="https://igfa.org/Records/Fish-Records.aspx?Fish=Shark, bull&LC=ATR">IGFA World Record</a> | <span class='slabel1'><a href='../topic/NatDBaseList.php?ID=873&fbGenus=Carcharhinus&fbSpecies=leucas&LDB=' target='_blank'>National databases</a></span> | <span class='slabel1'><a href='https://www.onezoom.org/life/@Carcharhinus_leucas' target='_blank'>OneZoom</a></span> | <span class='slabel1'><a href='https://tree.opentreeoflife.org/opentree/argus/opentree15.1@ott93302' target='_blank'>Open Tree of Life</a></span> | <a href='http://oto.biodiv.tw/eng/showmulti.php?sc=Carcharhinus+leucas' target='_blank'>Otolith Atlas of Taiwan Fishes</a> | <span class='slabel1'><a href='https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pubmed&term=Carcharhinus+leucas' target='_blank'>PubMed</a></span> | <a href='http://www.reeflifesurvey.com/species/Carcharhinus-leucas' target='_blank'>Reef Life Survey</a> | Socotra Atlas | <span class='slabel1'><a href='https://treebase.org/treebase-web/search/taxonSearch.html' target='_blank'>TreeBase</a></span> | <span class='slabel1'><a href='http://tolweb.org/tree?group=' target='_blank'>Tree of Life</a></span> | Wikipedia: <span class='slabel1'><a href='https://en.wikipedia.org/wiki/Special:Search?search=Carcharhinus+leucas&go=Go' target='_blank'>Go</a></span>, <span class='slabel1'><a href='https://en.wikipedia.org/wiki/Special:Search?search=Carcharhinus+leucas&fulltext=Search' target='_blank'>Search</a></span> |  | <span class='slabel1'><a href='http://www.organismnames.com/query.htm?q=Carcharhinus+leucas&Submit.x=20&Submit.y=7&searchType=simple&so=a0' target='_blank'>Zoological Record</a></span>				</span>
+				</div>
+			</p>
+			<!-- Estimation -->
+			<p>
+				<h1 class='slabel bottomBorder'>
+					Estimates based on models				</h1>
+
+				<table id="estimates_model">
+					<tr class="em_row">
+						<td class="emlabel">
+							Phylogenetic diversity index <br>(Ref. <a href='../references/FBRefSummary.php?ID=82804' target='_blank'>82804</a>)						</td>
+						<td class="emvalue">
+							PD<sub>50</sub> = 0.5000&nbsp;[Uniqueness, from 0.5 = low to 2.0 = high].						</td>
+					</tr>
+										<tr class="em_row">
+						<td class="emlabel">
+							Bayesian length-weight
+						</td>
+						<td class="emvalue">
+							a=0.00501 (0.00406 - 0.00618), b=3.06 (3.02 - 3.10), in cm total length, based on LWR estimates for this species (Ref. <A href='../references/FBRefSummary.php?ID=93245'>93245</A>).						</td>
+					</tr>
+										<tr class="em_row">
+						<td class="emlabel">
+							Trophic level  <br>(Ref. <a 	href='../manual/English/fishbasetrophic_ecology00002692.htm'>69278</a>)						</td>
+						<td class="emvalue">
+							4.3 &nbsp; &plusmn;0.5 se; based on diet studies.						</td>
+					</tr>
+															<tr class="em_row">
+						<td class="emlabel">
+							Resilience <br>(Ref. <a href='../references/FBRefSummary.php?ID=120179' target='_blank'>120179</a>)						</td>
+						<td class="emvalue">
+							Very Low, minimum population doubling time more than 14 years (K=0.04-0.15; tm=6-21; tmax=32; Fec=1-13).						</td>
+					</tr>
+																				<tr class="em_row">
+						<td class="emlabel">
+						Fishing Vulnerability<br>(Ref. <A href='../references/FBRefSummary.php?ID=59153'>59153</A>)						</td>
+						<td class="emvalue">
+						Very high vulnerability (82 of 100). <a class='info' title='<div class="legend">
+	<div class="categ"><b>Legend</b></div>
+		<div class="item"><span class="range">&nbsp;0 &lt; value &le; 25</span>: Low vulnerability</div>
+		<div class="item"><span class="range">25 &lt; value &le; 35</span>: Low to moderate vulnerability</div>
+		<div class="item"><span class="range">35 &lt; value &le; 45</span>: Moderate vulnerability</div>
+		<div class="item"><span class="range">45 &lt; value &le; 55</span>: Moderate to high vulnerability</div>
+		<div class="item"><span class="range">55 &lt; value &le; 65</span>: High vulnerability</div>
+		<div class="item"><span class="range">65 &lt; value &le; 75</span>: High to very high vulnerability</div>
+		<div class="item"><span class="range">&emsp;&emsp;&emsp;&emsp;&emsp;value &gt; 75</span>: Very high vulnerability</div>
+	</div>'>&#128712;</a>						</td>
+					</tr>
+																				<tr class="em_row">
+						<td class="emlabel">
+						Price category<br>(Ref. <A href='../references/FBRefSummary.php?ID=80766'>80766</A>)						</td>
+						<td class="emvalue">
+							<span id="pricecateg">
+								<a href="#price" onclick="getDetails('../includes/ajax/price.js.php?id=873', 'pricecateg'); return false;">
+								Medium</a></span>.
+						</td>
+					</tr>
+															<tr class="em_row">
+						<td class="emlabel">
+							Nutrients<br>(Ref. <A href='../references/FBRefSummary.php?ID=124155'>124155</A>)						</td>
+						<td class="emvalue">
+							Calcium = 2.56 [0.48, 14.67] mg/100g; Iron = 0.304 [0.074, 0.932] mg/100g; Protein = 23 [20, 25] %; Omega3 = 0.151 [0.052, 0.397] g/100g; Selenium = 17.1 [5.0, 54.8] μg/100g; VitaminA = 28 [7, 105] μg/100g; Zinc = 0.431 [0.202, 0.866] mg/100g (wet weight); 						</td>
+					</tr>
+									</table>
+			</p>
+		</div> <!-- Main Content -->
+
+		<!-- Footer -->
+		<div id="ss-footer">
+			<!-- [START] For GDPR compliance, modified by VCAgbay 03/2022 -->
+						<!-- [END] For GDPR compliance, modified by VCAgbay 03/2022 -->
+			<!--
+			<div class='ss-moreinfo'>
+				<fb:like href="https://www.fishbase.us/summary/" send="true" layout="button_count" width="400" show_faces="true" ref="bottom_sspage"></fb:like>
+			</div>
+			-->
+			<!--- Random Species --->
+			<hr>
+			<div class='slabel7 calign'>
+				<a href='/summary/RandomSpecies.php'>Random Species</a>			</div>
+
+			<div class="sfooter">
+						<div class="onethird lalign"><a href="/search.php">Back to Search</a></div>
+						<div class="onethird calign">
+	<form name='mailx' method='post' action='https://fishbase.ca/mail/MailForm.php'>
+		<input type='hidden' name='code' value='5'>
+		<input type='hidden' name='pagefrom' value='http://www.fishbase.se/summary/Carcharhinus-leucas.html - Stockholm, Sweden'>
+		<a href='javascript:document.mailx.submit()'>Comments & Corrections</a>
+	</form>
+	</div>
+						<div class="onethird ralign"><a href="#">Back to Top</a></div>
+					</div>
+			<div class="sleft slabel7 ss-clearboth" style="display:none">
+				<BR />Accessed through: <b>Not available</b><div class='sleft'>
+								<span class='sleft slabel7'>FishBase mirror site : <strong>Stockholm, Sweden</strong></span>
+							</div>Page last modified by : <a href="/collaborators/CollaboratorSummary.php?id=321">mrius-barile</a> - 20 July 2016<FORM name='fn_ecotox' target='_blank' action='https://cfpub.epa.gov/ecotox/quick_query.htm' method='post' style='visibility : hidden;'>
+		<input type='hidden'name='rbSpecSearchKing' value='ANIMAL'>
+		<input type='hidden' name='txAdvancedSpecEntries' value='Carcharhinus leucas'>
+		<input type='hidden' name='rbSpecSearchGroup' value='SCIENTIFICNAME'>
+		<input type='hidden' name='rbSpecSearchType' value='CONTAINS'>
+		</FORM><span class='slabel7' >Total processing time for the page : 0.0443 seconds</span>			</div>
+		</div>
+	</div> <!--- close ss-container -->
+	</body>
+</html>

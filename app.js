@@ -58,13 +58,14 @@
     prompts: root.FATHOM_PROMPTS || (boot ? boot.prompts : []),
     packs: root.FATHOM_PACKS || (boot ? boot.packs : []),
     schedule: root.FATHOM_SCHEDULE || (boot ? boot.schedule : {}),
+    frozen: root.FATHOM_FROZEN || (boot ? boot.frozen || {} : {}),     // v4: the answer sets of days already played
     taxa: root.FATHOM_TAXA || (boot ? boot.taxa : {}),
     full: !!root.FATHOM_PROMPTS,
   };
   function refreshIndexes() {
     data.promptsById = dive.byId(data.prompts);
     data.packsById = Object.fromEntries(data.packs.map(p => [p.id, p]));
-    if (root.Fathom) Object.assign(root.Fathom, { entities: data.entities, prompts: data.prompts, promptsById: data.promptsById, packs: data.packs, packsById: data.packsById, schedule: data.schedule, taxa: data.taxa, bankLoaded: data.full });
+    if (root.Fathom) Object.assign(root.Fathom, { entities: data.entities, prompts: data.prompts, promptsById: data.promptsById, packs: data.packs, packsById: data.packsById, schedule: data.schedule, frozen: data.frozen, taxa: data.taxa, bankLoaded: data.full });
   }
   refreshIndexes();
   let bankPromise = null;
@@ -84,6 +85,7 @@
         data.prompts = root.FATHOM_PROMPTS || data.prompts;
         data.packs = root.FATHOM_PACKS || data.packs;
         data.schedule = root.FATHOM_SCHEDULE || data.schedule;
+        data.frozen = root.FATHOM_FROZEN || data.frozen;
         data.taxa = root.FATHOM_TAXA || data.taxa;
         data.full = true;
         refreshIndexes();
@@ -304,6 +306,10 @@
     hadal() { [784, 988, 1175, 1568].forEach((f, i) => setTimeout(() => playTone(f, 320, 'triangle'), i * 110)); },
     miss() { playTone(140, 260, 'sawtooth'); },
     tick() { playTone(880, 40, 'square'); },
+    // Duel: the puffer's quickening tick, the pop, and the pass
+    duelTick(urgency) { playTone(660 + 400 * Math.min(1, urgency || 0), 30, 'square', CONFIG.SOUND_VOLUME * 0.7); },
+    pop() { noiseBurst(220, CONFIG.SOUND_VOLUME * 2); playTone(90, 300, 'sawtooth'); },
+    pass() { playTone(523, 60, 'sine', CONFIG.SOUND_VOLUME * 0.8); setTimeout(() => playTone(659, 80, 'sine', CONFIG.SOUND_VOLUME * 0.8), 70); },
     landmark() { playTone(587, 90, 'sine', CONFIG.SOUND_VOLUME * 0.7); },
     // the descent hum: a low tone that slides deeper with the dive
     descend(fromDepth, toDepth, ms) {
@@ -383,6 +389,7 @@
       case 'stats': pages.home(); return pages.statsModal();
       case 'faq': return pages.faq();
       case 'challenge': return withBank(() => game.startChallenge(hash));
+      case 'duel': return withBank(() => root.FathomDuelUI.open(param));
       default: return pages.notFound();
     }
   }
@@ -391,7 +398,7 @@
   function init() {
     root.Fathom = {
       config: CONFIG, dive, storage, charts,
-      entities: data.entities, prompts: data.prompts, promptsById: data.promptsById, packs: data.packs, packsById: data.packsById, schedule: data.schedule, taxa: data.taxa, bankLoaded: data.full,
+      entities: data.entities, prompts: data.prompts, promptsById: data.promptsById, packs: data.packs, packsById: data.packsById, schedule: data.schedule, frozen: data.frozen, taxa: data.taxa, bankLoaded: data.full,
       ensureBank, hasPromptData,
       el, esc, render, navigate, modal, closeModal, confirmDialog, toast, applyDepthTint, applySettings, sound, haptics, setSceneDepth, mascotSvg, skeleton, SHORTCUTS,
       todayKey: () => dive.dayKey(new Date()),

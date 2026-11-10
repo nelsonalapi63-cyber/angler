@@ -14,6 +14,7 @@
   const DATE_FMT = { weekday: 'short', day: 'numeric', month: 'short' };
   const HOME_TILES = [
     ['#free', '🌊', 'Free Dive', 'Random seven, any time'],
+    ['#duel', '🐡', 'Duel', 'Pass the puffer — 2 to 8 players'],
     ['#packs', '🪸', 'Themed Packs', 'Sharks, Deep Sea, Reef Life…'],
     ['#archive', '🗓', 'Archive', 'Replay past daily dives'],
     ['#leaderboard', '🏆', 'Leaderboard', 'Today, this Tide, all time'],
@@ -271,17 +272,20 @@
       el('p', { text: 'Each question has a hand-curated list of accepted answers. We tier them by how likely an average person is to say them, from Tide Pool (the first thing anyone says) to Hadal (the single most satisfying answer for that question). Tiers start as our best judgement; the "Report an answer or tier" link on every result helps us fix them.' }),
       el('div', { html: '<table class="tier-table">' + tierRows + '</table>' }),
       el('h2', { text: 'What if my answer is not accepted?' }),
-      el('p', { text: 'A guess that is not on the list does not end the question: the box clears and you can try again until the timer runs out. If you were close to a real answer, spelling suggestions appear above the box — tap one to use it. Scientific names count, and for species questions any real species on our reference lists scores Midnight even when it is not on our hand-written list.' }),
+      el('p', { text: 'A guess that is not on the list does not end the question: you can try again until the timer runs out. A small typo is corrected for you — "humpbak whale" is accepted as Humpback whale, the box shows the right spelling and the reveal says so. A bigger slip is not accepted outright: the box asks "Did you mean to spell …?" and Yes (or Enter, when there is one suggestion) submits that spelling while No clears the box and the timer keeps running. Scientific names count, and for species questions any real species on our reference lists scores Midnight even when it is not on our hand-written list.' }),
       el('h2', { text: 'What is the hint?' }),
       el('p', { text: 'An anglerfish lights a lure to draw prey out of the dark. Once per dive you can light yours: the Hint box shows the first letter and word shape of a rarer answer to the question you are on. It costs nothing, and it is off in challenges, so both players face the same odds.' }),
       el('h2', { text: 'How are the questions built?' }),
-      el('p', { text: 'Every question is an ocean fact disguised as a category — you only score if you know the fact. Answer lists come from reference works on fish, marine mammals, invertebrates and ocean geography, and every entry carries one fact we are confident is true. Spelling is forgiving: a letter or two off still counts (three on long names), plurals count, and generic words are optional — "tuna fish" counts for tuna and "hammerhead" for the hammerhead shark, as long as only one answer fits.' }),
+      el('p', { text: 'Every question is an ocean fact disguised as a category — you only score if you know the fact. Every live question has at least 75 hand-curated answers, each a real species, place, vessel or person with one specific fact and the reference it came from (FishBase, SeaLifeBase, WoRMS, NOAA, Wikipedia or a named book). A question that cannot reach 75 is retired, never scheduled again, and the days it was played on keep the answer sets they had. Spelling is forgiving: a letter or two off still counts (three on long names), plurals count, and generic words are optional — "tuna fish" counts for tuna and "hammerhead" for the hammerhead shark, as long as only one answer fits.' }),
+      el('h2', { id: 'duel', text: 'Duel' }),
+      el('p', { text: 'Duel is pass-the-puffer for two to eight players. Create a room and share its four-letter code or link; the host starts the duel once two or more divers have joined. Every round is one question, never repeated in the match. Whoever holds the pufferfish types an answer nobody has said yet and the puffer passes to the next player — but its hidden fuse, drawn between 10 and 30 seconds, keeps counting as it goes round, and a pass with under 8 seconds left only tops it up to 8. The puffer wobbles once it could pop at any moment.' }),
+      el('p', { text: 'When it pops on you, you lose one of your two air tanks, the round ends and the next question starts with the player after you. Out of tanks, you watch. The last one floating wins. Repeats are refused ("Already said — Whale shark (Nish)") and so are non-answers, with the same spelling help as the daily dive. Rarity still shows — the tier flashes and every diver’s submarine sinks on a shared depth rail — but it never decides a duel. Pass-and-play works on one device with no account; online rooms are private (no public matchmaking, no bots) and run while the online features are on. Signed-in divers get duels played and won on their profile.' }),
       el('h2', { text: 'How do rankings work?' }),
       el('p', { text: 'Only the Daily Dive counts. When the online features are switched on, your dive is re-scored on our server, placed on the day’s bell curve, and turned into a percentile. Each closed day gives you Daily Rank Points equal to your percentile; your rating is the average of your best 20 days in the last 30, and your league (Sunlight to Hadal) follows your rating. A Tide is one calendar month; the top 10 of each Tide go into the Hall of Fame.' }),
       el('h2', { text: 'Privacy' }),
       el('p', { text: 'Free play stays in your browser: your results, streaks, logbook, badges and settings live in local storage on your device, and nothing is sent anywhere. If you sign in, your handle, scores, rating and league are shown on public leaderboards and your progress syncs between devices. You can hide yourself from leaderboards or delete your account and data from Settings.' }),
       el('h2', { text: 'Suggest a question' }),
-      el('p', { html: 'Have a question with at least 40 good answers? Email <a href="mailto:' + esc(config.FEEDBACK_EMAIL) + '?subject=' + encodeURIComponent(dive.BRAND + ' question idea') + '">' + esc(config.FEEDBACK_EMAIL) + '</a>.' }),
+      el('p', { html: 'Have a question with at least 75 good answers? Email <a href="mailto:' + esc(config.FEEDBACK_EMAIL) + '?subject=' + encodeURIComponent(dive.BRAND + ' question idea') + '">' + esc(config.FEEDBACK_EMAIL) + '</a>.' }),
       el('h2', { id: 'contact', text: 'Contact' }),
       el('p', { html: 'Anything else: <a href="mailto:' + esc(config.FEEDBACK_EMAIL) + '">' + esc(config.FEEDBACK_EMAIL) + '</a>. Legal pages: <a href="privacy.html">Privacy</a>, <a href="terms.html">Terms</a>, <a href="refunds.html">Refunds</a>.' }),
     ]));
@@ -331,6 +335,7 @@
     const todayRec = all[today];
     const O = root.FathomOnline;
     const rank = O && O.ratingSummary ? O.ratingSummary() : null;
+    const prof = O && O.profile ? O.profile() : null;                 // signed in: duel_played / duel_wins come with the profile
     const body = el('div', {}, [
       el('div', { class: 'stat-grid' }, [
         el('div', { html: '<b>' + played + '</b><span>Dives played</span>' }),
@@ -347,6 +352,8 @@
       root.FathomAchievements ? root.FathomAchievements.wall({ compact: true }) : null,
       el('h3', { style: 'margin-top:16px', text: 'Rating' }),
       el('p', { class: 'small', html: rank ? rank : 'Rankings go live when ' + dive.BRAND + ' is online. Your daily dives are saved on this device meanwhile.' }),
+      prof && prof.duel_played ? el('h3', { style: 'margin-top:16px', text: 'Duel' }) : null,
+      prof && prof.duel_played ? el('p', { class: 'small', text: prof.duel_played + (prof.duel_played === 1 ? ' duel' : ' duels') + ' played · ' + (prof.duel_wins || 0) + ' won — last one floating.' }) : null,
       todayRec ? el('p', { class: 'small muted', html: 'Next dive in <b id="countdown-modal">--:--:--</b>' }) : null,
     ]);
     modal({ title: 'My ' + dive.BRAND, body });

@@ -54,6 +54,9 @@
   }
   function subScreenY(depth, viewH) { return Math.round(SURFACE_PAD + Math.max(0, depth) * PX_PER_M - cameraOffset(depth, viewH)); }
   function descentMs(dropM) { return dropM > 0 ? Math.round(Math.min(DESCENT_MAX_MS, DESCENT_BASE_MS + DESCENT_MS_PER_100M * dropM / 100)) : 0; }
+  // v4: when the descent takes the whole screen it always lasts 2–3 s, whatever the drop (a tide-pool nudge is still a scene)
+  const TAKEOVER_MIN_MS = 2000, TAKEOVER_MAX_MS = 3000, TAKEOVER_FULL_DROP_M = 3000;
+  function takeoverMs(dropM) { return Math.round(TAKEOVER_MIN_MS + (TAKEOVER_MAX_MS - TAKEOVER_MIN_MS) * Math.min(1, Math.max(0, dropM) / TAKEOVER_FULL_DROP_M)); }
   function ease(t) { return 1 - Math.pow(1 - t, 3); }
   function hexToRgb(h) { const n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
   function mixStops(depth) {
@@ -528,7 +531,7 @@
         label(); invalidate();
         return 0;
       }
-      const ms = descentMs(to - from);
+      const ms = o && o.ms > 0 ? Math.round(o.ms) : descentMs(to - from);
       st.tween = { from, to, start: now, ms, tier: o && o.tier };
       if (o && o.tier === 'hadal') { st.effects.speed = now + Math.min(SPEED_MS, ms); st.effects.flash = now + FLASH_MS; }
       invalidate();
@@ -561,7 +564,7 @@
   }
 
   return {
-    PX_PER_M, SUB_FRAC, SURFACE_PAD, FLOOR_PAD, DESCENT_MAX_MS, MAX_MOVERS, PALETTE, SILHOUETTES, CREATURES, LANDMARK_LABELS,
-    columnHeight, cameraOffset, subScreenY, descentMs, ease, waterColor, lampStrength, zoneCodeAt, creaturesFor, subTilt, drawSub, mount,
+    PX_PER_M, SUB_FRAC, SURFACE_PAD, FLOOR_PAD, DESCENT_MAX_MS, TAKEOVER_MIN_MS, TAKEOVER_MAX_MS, MAX_MOVERS, PALETTE, SILHOUETTES, CREATURES, LANDMARK_LABELS,
+    columnHeight, cameraOffset, subScreenY, descentMs, takeoverMs, ease, waterColor, lampStrength, zoneCodeAt, creaturesFor, subTilt, drawSub, mount,
   };
 });

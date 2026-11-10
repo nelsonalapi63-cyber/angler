@@ -59,7 +59,8 @@
   "group": "whales",
   "difficulty": 1,
   "taxon": "cetaceans",
-  "taxonFilter": "whale|narwhal|beluga|orca"
+  "taxonFilter": "whale|narwhal|beluga|orca",
+  "retired": true
  },
  {
   "id": "toothed-whale",
@@ -67,25 +68,29 @@
   "group": "whales",
   "difficulty": 3,
   "taxon": "cetaceans",
-  "taxonFilter": "dolphin|porpoise|beaked whale|sperm whale|killer whale|pilot whale|narwhal|beluga|orca|bottlenose|melon headed|false killer|vaquita|tucuxi|boto|franciscana|baiji|susu|bhulan"
+  "taxonFilter": "dolphin|porpoise|beaked whale|sperm whale|killer whale|pilot whale|narwhal|beluga|orca|bottlenose|melon headed|false killer|vaquita|tucuxi|boto|franciscana|baiji|susu|bhulan",
+  "retired": true
  },
  {
   "id": "polar-cetacean",
   "text": "Name a whale, dolphin or porpoise that lives in cold polar waters.",
   "group": "whales",
-  "difficulty": 3
+  "difficulty": 3,
+  "retired": true
  },
  {
   "id": "whale-hunted",
   "text": "Name a whale, dolphin or porpoise that has been hunted by humans.",
   "group": "whales",
-  "difficulty": 3
+  "difficulty": 3,
+  "retired": true
  },
  {
   "id": "cetacean-named-after",
   "text": "Name a whale, dolphin or porpoise named after a person or a place.",
   "group": "whales",
-  "difficulty": 4
+  "difficulty": 4,
+  "retired": true
  },
  {
   "id": "dolphin-porpoise",
@@ -93,34 +98,39 @@
   "group": "dolphins",
   "difficulty": 1,
   "taxon": "cetaceans",
-  "taxonFilter": "dolphin|porpoise|orca|killer whale|pilot whale|melon headed|vaquita|tucuxi|boto|franciscana|baiji|susu|bhulan|cochito"
+  "taxonFilter": "dolphin|porpoise|orca|killer whale|pilot whale|melon headed|vaquita|tucuxi|boto|franciscana|baiji|susu|bhulan|cochito",
+  "retired": true
  },
  {
   "id": "river-dolphin",
   "text": "Name a dolphin or porpoise that lives in rivers or estuaries.",
   "group": "dolphins",
   "difficulty": 4,
-  "min": 31
+  "min": 31,
+  "retired": true
  },
  {
   "id": "dolphin-pacific",
   "text": "Name a dolphin species found in the Pacific Ocean.",
   "group": "dolphins",
   "difficulty": 2,
-  "min": 35
+  "min": 35,
+  "retired": true
  },
  {
   "id": "pinniped",
   "text": "Name a seal, sea lion or walrus species.",
   "group": "seals",
   "difficulty": 2,
-  "taxon": "pinnipeds"
+  "taxon": "pinnipeds",
+  "retired": true
  },
  {
   "id": "marine-mammal-not-cetacean",
   "text": "Name a marine mammal that is not a whale, dolphin or porpoise.",
   "group": "seals",
-  "difficulty": 2
+  "difficulty": 2,
+  "retired": true
  },
  {
   "id": "arctic-animal",
@@ -190,7 +200,8 @@
   "id": "eats-krill",
   "text": "Name an animal that eats krill.",
   "group": "food-web",
-  "difficulty": 2
+  "difficulty": 2,
+  "retired": true
  },
  {
   "id": "edible-shellfish",
@@ -256,7 +267,8 @@
   "difficulty": 5,
   "min": 37,
   "taxon": "deep-sea",
-  "taxonFilter": "hadal|snailfish|amphipod|cusk|holothurian|cucumber|isopod|polychaete|xenophyophore|trench"
+  "taxonFilter": "hadal|snailfish|amphipod|cusk|holothurian|cucumber|isopod|polychaete|xenophyophore|trench",
+  "retired": true
  },
  {
   "id": "deep-not-fish",
@@ -278,7 +290,8 @@
   "group": "vents",
   "difficulty": 4,
   "taxon": "deep-sea",
-  "taxonFilter": "vent|tube ?worm|pompeii|yeti|hoff|rimicaris|alviniconcha|bathymodiolus|scaly|snail|clam|mussel|shrimp|crab|octopus|tubeworm|riftia|chimney"
+  "taxonFilter": "vent|tube ?worm|pompeii|yeti|hoff|rimicaris|alviniconcha|bathymodiolus|scaly|snail|clam|mussel|shrimp|crab|octopus|tubeworm|riftia|chimney",
+  "retired": true
  },
  {
   "id": "makes-light",
@@ -361,7 +374,8 @@
   "id": "trench",
   "text": "Name an ocean trench.",
   "group": "trenches",
-  "difficulty": 3
+  "difficulty": 3,
+  "retired": true
  },
  {
   "id": "atlantic-sea",
@@ -515,7 +529,8 @@
   "text": "Name an ocean animal that can grow longer than 8 metres.",
   "group": "records",
   "difficulty": 3,
-  "min": 35
+  "min": 35,
+  "retired": true
  },
  {
   "id": "fast-fish",
@@ -772,7 +787,8 @@
   "id": "living-fossil",
   "text": "Name a sea creature often called a living fossil.",
   "group": "records",
-  "difficulty": 4
+  "difficulty": 4,
+  "retired": true
  },
  {
   "id": "sea-prefix",
@@ -988,7 +1004,8 @@
   "id": "echolocation",
   "text": "Name a sea animal that uses echolocation.",
   "group": "senses",
-  "difficulty": 3
+  "difficulty": 3,
+  "retired": true
  },
  {
   "id": "benthic",
@@ -1159,20 +1176,23 @@
   "id": "pacific-country",
   "text": "Name a country with a Pacific Ocean coastline.",
   "group": "countries",
-  "difficulty": 1
+  "difficulty": 1,
+  "retired": true
  },
  {
   "id": "indian-ocean-country",
   "text": "Name a country with an Indian Ocean coastline.",
   "group": "countries",
   "difficulty": 2,
-  "min": 36
+  "min": 36,
+  "retired": true
  },
  {
   "id": "island-nation",
   "text": "Name a country that is made up entirely of islands.",
   "group": "countries",
-  "difficulty": 2
+  "difficulty": 2,
+  "retired": true
  },
  {
   "id": "famous-beach",
@@ -1330,7 +1350,8 @@
   "group": "letters",
   "difficulty": 4,
   "taxon": "cetaceans",
-  "taxonFilter": "^[sbh]"
+  "taxonFilter": "^[sbh]",
+  "retired": true
  },
  {
   "id": "shark-letter",
@@ -1376,7 +1397,8 @@
   "difficulty": 4,
   "taxon": "cetaceans",
   "taxonFilter": "whale.*\\b(blue|grey|gray|white|black|pygmy|dwarf|giant|minke|antarctic|arctic|atlantic|pacific|indian|southern|northern|arnoux|baird|bryde|sei|fin|humpback|bowhead|right|sperm|beaked|pilot|killer)\\b|\\b(blue|grey|gray|white|black|pygmy|dwarf|giant|antarctic|arctic|atlantic|pacific|indian|southern|northern|australian|japanese|chilean|peruvian|californian|hawaiian|mediterranean|caribbean|bering|baikal|gulf|andrews|arnoux|bairds|blainville|cuvier|gervais|gray|hector|hubbs|longman|perrin|pygmy|shepherd|sowerby|stejneger|true|deraniyagala|ginkgo|strap|spade)\\b.*whale",
-  "min": 31
+  "min": 31,
+  "retired": true
  },
  {
   "id": "prehistoric-sea",
@@ -1388,12 +1410,290 @@
   "id": "ocean-record",
   "text": "Name the holder of an ocean record: the largest, smallest, deepest-living, fastest or longest-lived of its kind.",
   "group": "records",
-  "difficulty": 4
+  "difficulty": 4,
+  "retired": true
  },
  {
   "id": "sea-turtle-reptile-mammal",
   "text": "Name a sea animal that breathes air but lives in the water.",
   "group": "behaviour",
   "difficulty": 2
+ },
+ {
+  "id": "goby-blenny",
+  "text": "Name a goby, blenny or dragonet species.",
+  "group": "gobies",
+  "difficulty": 3,
+  "taxon": "fish",
+  "taxonFilter": "goby|gobies|blenny|blennies|dragonet|gudgeon"
+ },
+ {
+  "id": "rockfish-scorpionfish",
+  "text": "Name a rockfish, scorpionfish, lionfish, stonefish or sculpin species.",
+  "group": "scorpionfish",
+  "difficulty": 3,
+  "taxon": "fish",
+  "taxonFilter": "rockfish|scorpionfish|lionfish|stonefish|sculpin|rockcod|turkeyfish|firefish|waspfish|velvetfish|stingfish|devilfish|rosefish|thornyhead|idiotfish|lingcod|greenling|poacher|snailfish|lumpsucker|lumpfish"
+ },
+ {
+  "id": "cichlid",
+  "text": "Name a cichlid species.",
+  "group": "cichlids",
+  "difficulty": 4,
+  "taxon": "freshwater-fish",
+  "taxonFilter": "cichlid|tilapia|\\boscar\\b|discus|mbuna|peacock|frontosa|tropheus|julidochromis|severum|acara|jack dempsey|convict|firemouth|\\bram\\b|apistogramma|kribensis|\\bkrib\\b|haplochrom|aulonocara|labidochromis|pseudotropheus|melanochromis|lamprologus|cyphotilapia|geophagus|uaru|green terror|texas cichlid|midas|red devil|flowerhorn|parrot cichlid|guapote|wolf cichlid|dovii|managuense|jaguar cichlid|festivum|keyhole|chocolate cichlid|pike cichlid|crenicichla|eartheater|mouthbrooder|hap\\b|chromis|angelfish|altum"
+ },
+ {
+  "id": "tetra-barb",
+  "text": "Name a tetra, barb, danio, rasbora or other small shoaling aquarium fish.",
+  "group": "aquarium-fish",
+  "difficulty": 3,
+  "taxon": "freshwater-fish",
+  "taxonFilter": "tetra|\\bbarbs?\\b|danio|rasbora|pencilfish|hatchetfish|headstander|piranha|pacu|silver dollar|characin|minnow|zebrafish|white cloud|harlequin|neon|cardinal|rummy|glowlight|emperor|serpae|bloodfin|buenos aires|congo|lemon tetra|black skirt|widow|penguin|diamond|bleeding heart|splash|pristella|x-ray|costello|flame tetra|rosy|cherry barb|tiger barb|tinfoil|denison|torpedo|odessa|checker|gold barb|rosy barb|ruby barb|clown barb|filament|spanner|black ruby|five-banded|six-banded|melon|t-barb|arulius|pearl danio|leopard danio|giant danio|celestial|galaxy|chili|mosquito|phoenix|lambchop|scissortail|espei|hengeli|brilliant|dwarf rasbora|exclamation|strawberry|clown rasbora|porthole|glass fish|rainbowfish|boeseman|threadfin|forktail|blue-eye|pseudomugil|furcata|gertrudae|signifer"
+ },
+ {
+  "id": "perch-bass-sunfish",
+  "text": "Name a perch, bass, sunfish or darter species.",
+  "group": "perches",
+  "difficulty": 3,
+  "taxon": "freshwater-fish",
+  "taxonFilter": "\\bperch\\b|\\bbass\\b|sunfish|darter|crappie|bluegill|walleye|sauger|zander|pumpkinseed|warmouth|logperch|ruffe|sacramento|redear|redbreast|longear|spotted sunfish|dollar sunfish|green sunfish|mud sunfish|flier|rock bass|white bass|yellow bass|striped bass|largemouth|smallmouth|spotted bass|redeye bass|shoal bass|guadalupe|suwannee|alabama bass|florida bass|choctaw bass|tallapoosa|chattahoochee|bartram|cahaba|warrior bass"
+ },
+ {
+  "id": "carp-minnow",
+  "text": "Name a carp, minnow, chub or other member of the carp family.",
+  "group": "carps",
+  "difficulty": 4,
+  "taxon": "freshwater-fish",
+  "taxonFilter": "\\bcarp\\b|minnow|\\bchub\\b|\\bdace\\b|shiner|\\broach\\b|\\brudd\\b|\\bbream\\b|tench|barbel|gudgeon|bleak|\\bide\\b|bitterling|goldfish|\\bkoi\\b|mahseer|\\basp\\b|\\bnase\\b|vimba|zährte|ziege|sichel|silver carp|bighead|grass carp|black carp|crucian|prussian|gibel|orfe|golden shiner|fathead|bluntnose|stoneroller|creek chub|river chub|hornyhead|fallfish|squawfish|pikeminnow|hardhead|hitch|splittail|blackfish|tui chub|bonytail|humpback chub|roundtail|razorback|sucker|redhorse|buffalo|quillback|carpsucker|chiselmouth|peamouth|cutlips|tonguetied|rosyside|redbelly|redside|spottail|emerald shiner|common shiner|striped shiner|sand shiner|mimic shiner|bigeye|blacknose|longnose|pearl dace|lake chub|finescale|northern redbelly|brassy minnow|silvery minnow|suckermouth|bullhead minnow|flathead chub|sturgeon chub|sicklefin|silver chub|speckled chub|gravel chub|streamline|blotched chub|slender chub|spotfin chub|bigmouth|highscale|roundtail|bonytail|spikedace|loach minnow|woundfin|moapa dace|relict dace|least chub|kendall|white river|railroad valley|ash meadows|devils hole"
+ },
+ {
+  "id": "over-3m",
+  "text": "Name a sea animal that can grow longer than 3 metres.",
+  "group": "size",
+  "difficulty": 3
+ },
+ {
+  "id": "deeper-than-2000",
+  "text": "Name a fish found deeper than 2,000 metres.",
+  "group": "deep-sea",
+  "difficulty": 5,
+  "taxon": "deep-sea|fish"
+ },
+ {
+  "id": "mullet-goatfish-barracuda",
+  "text": "Name a mullet, goatfish or barracuda species.",
+  "group": "mullets",
+  "difficulty": 4,
+  "taxon": "fish",
+  "taxonFilter": "mullet|goatfish|barracuda|sennet|\\bpicuda|guaguanche|kaku\\b|weke\\b|moano|munu\\b|surmullet|red mullet|striped mullet|grey mullet|gray mullet|thinlip|thicklip|golden grey|leaping mullet|flathead mullet|silver mullet|white mullet|diamond mullet|bluespot mullet|sea mullet|freshwater mullet|mangrove mullet|squaretail mullet|fringelip|warty-lipped|dash-dot goatfish|yellowfin goatfish|yellowstripe goatfish|manybar goatfish|doublebar goatfish|indian goatfish|yellowsaddle|blue goatfish|goldsaddle|dash-and-dot|spotted goatfish|yellow goatfish|red goatfish|dwarf goatfish|bandtail goatfish|sidespot goatfish|cinnabar goatfish|two-barred goatfish|longbarbel goatfish|rosy goatfish|bluestriped goatfish|half-and-half goatfish|whitesaddle goatfish|blackstriped goatfish|freckled goatfish|bartail goatfish|gold-saddle|great barracuda|pickhandle|chevron barracuda|blackfin barracuda|yellowtail barracuda|yellowstripe barracuda|obtuse barracuda|sharpfin barracuda|bigeye barracuda|european barracuda|mediterranean barracuda|yellowmouth barracuda|pacific barracuda|california barracuda|mexican barracuda|pelican barracuda|lucas barracuda|guinean barracuda|japanese barracuda|red barracuda|heller's barracuda|arabian barracuda|brass striped|northern sennet|southern sennet|guachanche"
+ },
+ {
+  "id": "gull-tern-skua",
+  "text": "Name a gull, tern or skua species.",
+  "group": "seabirds",
+  "difficulty": 3,
+  "taxon": "seabirds",
+  "taxonFilter": "\\bgull|\\btern\\b|terns\\b|skua|jaeger|kittiwake|noddy|noddies|skimmer|\\bmew\\b|kelp gull|herring gull|black-headed|laughing gull|ring-billed|glaucous|iceland gull|ivory gull|sabine|ross's gull|little gull|franklin|heermann|western gull|yellow-footed|slaty-backed|great black-backed|lesser black-backed|pacific gull|silver gull|red-billed|black-billed|dolphin gull|grey gull|lava gull|swallow-tailed|sooty gull|white-eyed|audouin|mediterranean gull|relict|saunders|brown-headed|brown-hooded|hartlaub|grey-headed|black-tailed|common gull|thayer|kumlien|vega|armenian|caspian gull|yellow-legged|steppe|heuglin|pallas's gull|great black-headed|bonaparte|andean gull|olrog|belcher|band-tailed|arctic tern|common tern|roseate|sandwich|royal tern|caspian tern|elegant tern|least tern|little tern|fairy tern|white tern|sooty tern|bridled tern|black tern|whiskered|white-winged|gull-billed|inca tern|antarctic tern|south american tern|white-fronted|black-fronted|damara|saunders's tern|yellow-billed tern|large-billed|peruvian tern|aleutian tern|spectacled tern|grey-backed|kerguelen tern|forster|crested tern|lesser crested|chinese crested|river tern|black-bellied|black-naped|snowy-crowned|trudeau|great skua|south polar|brown skua|chilean skua|pomarine|parasitic|long-tailed jaeger|arctic skua|falkland skua|subantarctic skua|black skimmer|african skimmer|indian skimmer|brown noddy|black noddy|lesser noddy|blue-grey noddy|grey noddy|blue noddy"
+ },
+ {
+  "id": "petrel-shearwater",
+  "text": "Name a petrel, shearwater, prion or storm petrel species.",
+  "group": "seabirds",
+  "difficulty": 4,
+  "taxon": "seabirds",
+  "taxonFilter": "petrel|shearwater|prion|fulmar|diving-petrel|diving petrel|storm-petrel|storm petrel|gadfly|mollymawk?|cahow|puffinus|pterodroma|procellaria|calonectris|ardenna|oceanites|hydrobates|fregetta|pelagodroma|pachyptila|halobaena|daption|cape pigeon|pintado|whalebird|muttonbird|bulweria|pseudobulweria|snow petrel|giant petrel|antarctic petrel|blue petrel|fairy prion|broad-billed|slender-billed|salvin|antarctic prion|fulmar prion|wilson's|leach's|white-faced|black-bellied|white-bellied|grey-backed|european storm|band-rumped|madeiran|swinhoe|matsudaira|tristram|ashy storm|fork-tailed|least storm|wedge-rumped|elliot's|galapagos storm|markham|hornby|ringed storm|white-vented|black storm|polynesian storm|new zealand storm|white-throated storm|grey petrel|white-chinned|spectacled petrel|parkinson|westland petrel|black petrel|great shearwater|sooty shearwater|short-tailed|manx|balearic|yelkouan|cory's|scopoli|cape verde shearwater|streaked|pink-footed|flesh-footed|wedge-tailed|buller's|hutton's|fluttering|little shearwater|audubon's|tropical shearwater|persian|bannerman|boyd's|barolo|heinroth|newell's|townsend's|rapa|christmas shearwater|bryan's|galapagos shearwater|black-vented|subantarctic|kermadec petrel|trindade|herald|henderson|phoenix petrel|murphy's|solander|providence|great-winged|grey-faced|white-headed|atlantic petrel|schlegel|magenta|chatham petrel|black-winged|bonin|hawaiian petrel|galapagos petrel|juan fernandez|white-necked|vanuatu|barau|mottled|cook's|stejneger's|pycroft|gould's|collared|masatierra|de filippi|fea's|zino's|deserta|cape verde petrel|bermuda petrel|black-capped|jamaican petrel|soft-plumaged|tahiti petrel|beck's|fiji petrel|mascarene|jouanin|bulwer|macgillivray|kerguelen petrel|blue petrel|common diving|south georgia diving|peruvian diving|magellanic diving|whenua hou|southern fulmar|northern fulmar|southern giant|northern giant"
+ },
+ {
+  "id": "sea-star",
+  "text": "Name a sea star (starfish) species.",
+  "group": "echinoderms",
+  "difficulty": 4,
+  "taxon": "echinoderms",
+  "taxonFilter": "star\\b|stars\\b|starfish|sunstar|sun star"
+ },
+ {
+  "id": "urchin-cucumber",
+  "text": "Name a sea urchin, sand dollar or sea cucumber species.",
+  "group": "echinoderms",
+  "difficulty": 4,
+  "taxon": "echinoderms",
+  "taxonFilter": "urchin|sand dollar|sea cucumber|sea biscuit|heart urchin|pencil urchin|cake urchin|sea potato|sea pig|sea apple|trepang|holothurian|beche|bêche|sea cuke|sea egg|cidaroid|echinus|diadema|lytechinus|strongylocentrotus|tripneustes|echinometra|heterocentrotus|mespilia|salmacis|toxopneustes|arbacia|paracentrotus|psammechinus|sphaerechinus|echinothrix|astropyga|centrostephanus|eucidaris|phyllacanthus|prionocidaris|colobocentrotus|holothuria|stichopus|thelenota|actinopyga|bohadschia|cucumaria|psolus|pentacta|apostichopus|parastichopus|isostichopus|synapta|euapta|chiridota|leptosynapta|scotoplanes|enypniastes|peniagone|elpidia|deima|psychropotes|benthodytes|paelopatides|molpadia|caudina|paracaudina|eupentacta|pseudocolochirus|colochirus|cercodemas|ocnus|aslia|thyone|sclerodactyla|havelockia|pentamera|thyonidium|clypeaster|mellita|dendraster|echinarachnius|encope|leodia|astriclypeus|arachnoides|laganum|peronella|fibularia|echinocyamus|echinoneus|brissus|meoma|plagiobrissus|moira|lovenia|echinocardium|spatangus|brissopsis|schizaster|abatus|tripylus"
+ },
+ {
+  "id": "flyingfish-needlefish",
+  "text": "Name a flying fish, needlefish, halfbeak or garfish species.",
+  "group": "beloniforms",
+  "difficulty": 4,
+  "taxon": "fish",
+  "taxonFilter": "flying ?fish|flyingfish|needlefish|halfbeak|half-beak|garfish|\\bgar\\b|houndfish|longtom|ballyhoo|balao|sauries|saury|skipper|garpike|agujon|timucu|keeltail|crocodile needlefish|hornfish|needle fish|flying fishes|exocoetus|cheilopogon|hirundichthys|cypselurus|parexocoetus|prognichthys|fodiator|oxyporhamphus|hemiramphus|hyporhamphus|euleptorhamphus|dermogenys|nomorhamphus|zenarchopterus|tylosurus|strongylura|ablennes|belone|platybelone|petalichthys|potamorrhaphis|xenentodon|cololabis|scomberesox|elassichthys|nanichthys|arrhamphus|rhynchorhamphus|chriodorus|hemirhamphodon|tondanichthys"
+ },
+ {
+  "id": "toadfish-frogfish-angler",
+  "text": "Name a toadfish, frogfish or anglerfish species.",
+  "group": "anglerfish",
+  "difficulty": 5,
+  "taxon": "fish|deep-sea",
+  "taxonFilter": "toadfish|frogfish|anglerfish|angler\\b|anglers\\b|monkfish|goosefish|midshipman|batfish|handfish|sea toad|coffinfish|seadevil|sea devil|dreamer|footballfish|whipnose|wolftrap|warty angler|triplewart|blackdevil|hairy angler|fanfin|humpback angler|sargassumfish|sargassum fish|striated frogfish|painted frogfish|warty frogfish|giant frogfish|clown frogfish|hispid|psychedelic|lophius|antennarius|histrio|ogcocephalus|halieutaea|malthopsis|dibranchus|chaunax|melanocetus|ceratias|cryptopsaras|himantolophus|oneirodes|linophryne|gigantactis|caulophryne|thaumatichthys|lasiognathus|diceratias|bufoceratias|centrophryne|neoceratias|photocorynus|haplophryne|opsanus|porichthys|halophryne|batrachoides|allenbatrachus|thalassophryne|daector|sanopus|triathalassothia|batrachomoeus|bifax|chatrabus|colletteichthys|perulibatrachus|riekertia|austrobatrachus|barchatus|potamobatrachus|vladichthys|aphos|amphichthys|batrichthys"
+ },
+ {
+  "id": "jack-trevally",
+  "text": "Name a jack, trevally, pompano, scad or other member of the jack family.",
+  "group": "jacks",
+  "difficulty": 4,
+  "taxon": "fish",
+  "taxonFilter": "\\bjack\\b|jacks\\b|trevally|trevallies|pompano|\\bscad\\b|scads\\b|amberjack|yellowtail|kingfish|permit\\b|queenfish|leatherjack|leatherjacket|lookdown|moonfish|roosterfish|rainbow runner|pilotfish|pilot fish|bumper\\b|horse mackerel|jack mackerel|crevalle|cavalla|runner\\b|palometa|dart\\b|darts\\b|giant trevally|bluefin trevally|golden trevally|bigeye trevally|brassy trevally|yellowspotted|silver trevally|white trevally|black jack|almaco|greater amberjack|lesser amberjack|japanese amberjack|samson fish|bar jack|blue runner|green jack|horse-eye|yellow jack|crevalle jack|pacific crevalle|african pompano|florida pompano|snubnose pompano|silver pompano|permit|indian threadfish|threadfin trevally|african threadfish|longfin trevally|coachwhip trevally|talang queenfish|doublespotted queenfish|needlescaled queenfish|barred queenfish|cottonmouth jack|black pomfret|torpedo scad|bigeye scad|mackerel scad|round scad|yellowtail scad|yellowstripe scad|shrimp scad|oxeye scad|finny scad|smallmouth scad|redtail scad|amberstripe scad|blackfin scad|decapterus|selar|alepes|atule|caranx|carangoides|seriola|trachinotus|trachurus|scomberoides|alectis|elagatis|naucrates|gnathanodon|pseudocaranx|uraspis|selene|chloroscombrus|hemicaranx|oligoplites|parastromateus|megalaspis|ulua|atropus|campogramma|lichia|leerfish|garrick"
+ },
+ {
+  "id": "bream-porgy",
+  "text": "Name a sea bream, porgy or related species.",
+  "group": "breams",
+  "difficulty": 4,
+  "taxon": "fish",
+  "taxonFilter": "sea ?bream|seabream|porgy|porgies|\\bscup\\b|sheepshead|pinfish|\\bsargo\\b|dentex|pandora|pagrus|pagellus|diplodus|sparus|sarpa|salema|saupe|gilt-head|gilthead|red seabream|black seabream|white seabream|zebra seabream|two-banded|annular|striped seabream|common dentex|large-eye dentex|pink dentex|morocco dentex|axillary|blackspot|common pandora|axillary seabream|bogue|boops|oblada|saddled|lithognathus|sand steenbras|white steenbras|west coast steenbras|steenbras|musselcracker|chrysoblephus|roman|red stumpnose|dageraad|slinger|santer|scotsman|englishman|seventy-four|poenskop|black musselcracker|white musselcracker|bronze bream|blacktail|dassie|karanteen|strepie|stonebream|zebra|wildeperd|john brown|galjoen|hottentot|fransmadam|cape stumpnose|natal stumpnose|rhabdosargus|acanthopagrus|yellowfin bream|black bream|pikey bream|silver bream|tarwhine|snapper \\(sparidae\\)|australasian snapper|squirefish|chrysophrys|pagrus auratus|silver seabream|crimson seabream|evynnis|yellowback seabream|dentex tumifrons|calamus|jolthead|saucereye|littlehead|knobbed|sheepshead porgy|grass porgy|whitebone|pluma|archosargus|stenotomus|longspine porgy|red porgy|silver porgy|spottail pinfish|lagodon|argyrops|king soldierbream|soldierbream|taiwan tai|longspine seabream|polysteganus|crenidens|karenteen|sparodon|cheimerius|petrus|cymatoceps|porcostoma|gymnocrotaphus|pachymetopon|boopsoidea|spondyliosoma|black bream|cantharus"
+ },
+ {
+  "id": "cardinalfish-squirrelfish",
+  "text": "Name a cardinalfish, squirrelfish or soldierfish species.",
+  "group": "nocturnal-reef",
+  "difficulty": 5,
+  "taxon": "fish",
+  "taxonFilter": "cardinalfish|cardinal fish|squirrelfish|squirrel fish|soldierfish|soldier fish|apogon|ostorhinchus|cheilodipterus|sphaeramia|pterapogon|banggai|pajama|pyjama|holocentrus|sargocentron|neoniphon|myripristis|plectrypops|ostichthys|pristilepis|corniger|blackbar soldier|bigscale soldier|crown squirrel|longjaw squirrel|hawaiian squirrel|tahitian squirrel|sabre squirrel|redcoat|dusky squirrel|reef squirrel|longspine squirrel|deepwater squirrel|silverspot|pinecone soldier|epaulette soldier|shadowfin|whitetip soldier|yellowfin soldier|blotcheye|brick soldier|doubletooth|red soldier|scarlet soldier|splendid soldier|violet soldier|bronze soldier|lattice soldier|cardinal|alaʻihi|menpachi|ʻuʻu|kaʻawa"
+ },
+ {
+  "id": "croaker-drum",
+  "text": "Name a croaker, drum, meagre or other member of the drum family.",
+  "group": "drums",
+  "difficulty": 4,
+  "taxon": "fish",
+  "taxonFilter": "croaker|\\bdrum\\b|drums\\b|meagre|\\bmeager|weakfish|seatrout|sea trout|corvina|corbina|totoaba|kingcroaker|kingfish \\(sciaenid\\)|whiting|jewfish|mulloway|silver perch|spot\\b|cubbyu|high-hat|highhat|jackknife|ribbonfish|reef croaker|yellowfin croaker|queenfish|shi drum|brown meagre|umbrina|sciaena|argyrosomus|cynoscion|micropogonias|pogonias|sciaenops|menticirrhus|leiostomus|bairdiella|larimus|equetus|pareques|stellifer|ophioscion|nebris|isopisthus|macrodon|plagioscion|pachyurus|pachypops|aplodinotus|genyonemus|seriphus|roncador|cheilotrema|atractoscion|johnius|nibea|otolithes|pennahia|protonibea|collichthys|larimichthys|miichthys|pseudotolithus|atrobucca|dendrophysa|kathala|chrysochir|daysciaena|paranibea|austronibea|bahaba|boesemania|aspericorvina|panna|megalonibea|pteroscion|pterotolithus|umbrina canariensis|argyrosomus regius|japanese meagre|south african mulloway|dusky kob|silver kob|squaretail kob|geelbek|baardman|belman|tasselfish|slender baardman|snapper kob|yellowbelly|black jewfish|silver jewfish|yellow croaker|large yellow croaker|small yellow croaker|white croaker|brown croaker|tiger-toothed|bearded croaker|sin croaker|silver croaker|big-snout|pawak|blackmouth croaker|sharptooth|flathead croaker|soldier croaker|goatee croaker|karut croaker|bengal croaker|dark croaker|spotted croaker|caroun|jakatan"
+ },
+ {
+  "id": "killifish-livebearer",
+  "text": "Name a killifish, guppy, molly, platy, swordtail or other livebearer species.",
+  "group": "livebearers",
+  "difficulty": 4,
+  "taxon": "freshwater-fish",
+  "taxonFilter": "killifish|killi|guppy|guppies|molly|mollies|platy|platies|swordtail|livebearer|mosquitofish|topminnow|pupfish|lampeye|panchax|rivulus|nothobranch|aphyosemion|fundulopanchax|aplocheilus|epiplatys|lyretail|gardneri|annual|aphanius|cyprinodon|fundulus|lucania|jordanella|flagfish|poecilia|xiphophorus|gambusia|heterandria|limia|girardinus|phalloceros|priapella|brachyrhaphis|belonesox|pike livebearer|alfaro|poeciliopsis|carlhubbsia|neoheterandria|scolichthys|xenodexia|xenophallus|tomeurus|micropoecilia|pamphorichthys|cnesterodon|phallichthys|phalloptychus|phallotorynus|quintana|least killifish|dwarf livebearer|endler|sailfin molly|black molly|lyretail molly|balloon molly|shortfin molly|liberty molly|amazon molly|mexican molly|yucatan molly|sulphur molly|cave molly|variatus|variable platy|southern platy|wagtail|sunset platy|mickey mouse|tuxedo|green swordtail|montezuma|hellerii|pygmy swordtail|marbled swordtail|delicate swordtail|sheepshead swordtail|highland swordtail|goodeid|splitfin|butterfly splitfin|ameca|xenotoca|redtail splitfin|characodon|skiffia|ilyodon|zoogoneticus|allotoca|girardinichthys|chapalichthys|alloophorus|hubbsina|xenoophorus|allodontichthys|goodea|crenichthys|empetrichthys|four-eyed|anableps|one-sided|jenynsia|halfbeak|wrestling halfbeak|celebes halfbeak|rainbow killifish|clown killifish|golden wonder|striped panchax|blue panchax|blue gularis|steel-blue|red-chinned|two-striped|banded panchax|chocolate lyretail|cape lopez|dageti|walkeri|sjoestedti|australe|gardneri|striatum|bivittatum|amieti|scheeli|elegans|celiae|christyi|cognatum|cyanostictum|exiguum|franzwerneri|gabunense|georgiae|hera|hofmanni|joergenscheeli|kouamense|labarrei|lamberti|lefiniense|loennbergii|louessense|maculatum|marginatum|mimbon|ndianum|ocellatum|ogoense|pascheni|poliaki|primigenium|punctatum|puerzli|raddai|rectogoense|riggenbachi|schioetzi|splendopleure|thysi|volcanum|wachtersi|wildekampi|zygaima|rachovii|guentheri|furzeri|korthausae|foerschi|palmqvisti|eggersi|rubripinnis|jubbi|kirki|melanospilus|orthonotus|patrizii|kafuensis|kuhntae|ugandensis|neumanni|robustus|taeniopygus|brieni|elongatus|janpapi|cardinalis|flammicomantis|luekei|lucius|symoensi|hassoni|malaissei|polli|kadleci|vosseleri|annectens|steinforti|willerti|kilomberoensis|seegersi|interruptus|ruudwildekampi|pienaari|rosenstocki|fuscotaeniatus|hengstleri|geminus|vanderwaali|boklundi|albimarginatus|lourensi|nubaensis|virgatus|bellemansi|kardashevi|rubroreticulatus|microlepis|chochamandai|sainthousei|cooperi|ivanovae|rungwaensis|itigiensis|usanguensis|wattersi|torgashevi|sonjae|krammeri|niassa|derhami|mkuziensis|rubroreticulatus|flagrans|hoermanni|ottoschmidti|sagittae|bojiensis|ditte|streltsovi|skeltoni|prognathus|lanceolatus|fasciatus|ocellatus|chapini|nikiforovi|ugandensis|guentheri"
+ },
+ {
+  "id": "loach",
+  "text": "Name a loach species.",
+  "group": "loaches",
+  "difficulty": 5,
+  "taxon": "freshwater-fish",
+  "taxonFilter": "loach|loaches|botia|clown loach|kuhli|coolie|weather loach|weatherfish|dojo|hillstream|horseface|zebra loach|yoyo|skunk loach|dwarf chain|sidthimunki|polka dot|kubotai|angelicus|burmese border|redtail botia|tiger loach|bengal loach|queen loach|gold zebra|blue botia|emperor botia|striata|histrionica|rostrata|almorhae|dario|lohachata|morleti|hymenophysa|helodes|berdmorei|kubotai|sumo loach|golden zebra|chinese golden zebra|hong kong pleco|butterfly loach|lizard loach|sewellia|beaufortia|gastromyzon|pseudogastromyzon|homaloptera|balitora|schistura|nemacheilus|lepidocephalichthys|pangio|acanthocobitis|acantopsis|cobitis|misgurnus|sabanejewia|paracobitis|triplophysa|barbatula|stone loach|spined loach|spiny loach|oriental weatherfish|european weatherfish|large-scale loach|horsefaced|long-nosed loach|banded loach|rosy loach|panda loach|galaxy loach|yunnanilus|micronemacheilus|oreonectes|homatula|traccatichthys|vanmanenia|annamia|serpenticobitis|ellopostoma|vaillantella|barbucca|kottelatlimia|neoeucirrhichthys|lepidocephalus|canthophrys|niwaella|koreocobitis|iksookimia|kichulchoia|paralepidocephalus|bibarba|protocobitis|cobitis taenia|cobitis elongatoides|golden spined|balkan loach|danube spined|italian loach|bulgarian loach|turkish loach|arachthos|hellenic|sand loach|ruby loach|mud loach|pond loach|siberian loach|amur weatherfish|chinese weatherfish|kuhli loach|black kuhli|myers' loach|shelford|half-banded|giant kuhli|striped loach|leopard loach|java loach|slimy loach|eel loach|cinnamon loach|chocolate loach|sun loach|green tiger|dwarf botia|silver loach|lemon loach|cherry fin|reticulated hillstream|spotted hillstream|chinese hillstream|borneo sucker|tiger hillstream|saddled hillstream|rhino loach|flat loach|torrent loach|river loach|brook loach|cave loach|blind loach|golden loach|dwarf loach|pygmy loach|chain loach|fairy loach|rainbow loach|red-tailed loach|blue loach|green loach|clown kuhli|burmese loach|indian loach|nepalese loach|thai loach|vietnamese loach|chinese loach|japanese loach|korean loach|taiwanese loach"
+ },
+ {
+  "id": "gurnard-flathead",
+  "text": "Name a gurnard, sea robin, flathead or similar bottom fish.",
+  "group": "bottom-fish",
+  "difficulty": 5,
+  "taxon": "fish",
+  "taxonFilter": "gurnard|sea ?robin|searobin|flathead|flatheads|armoured gurnard|armored sea robin|stargazer|weever|weeverfish|sand ?perch|sandperch|grubfish|sand diver|lizardfish|lizard fish|greeneye|duckbill|sand lance|sandeel|sand eel|snake blenny|eelpout|eel pout|prickleback|gunnel|wolffish|wolf eel|hairtail|cutlassfish|scabbardfish|frostfish|ribbonfish|grey gurnard|red gurnard|tub gurnard|streaked gurnard|piper gurnard|yellow gurnard|east atlantic red|spiny gurnard|bluefin gurnard|flying gurnard|helmet gurnard|oriental flying|northern searobin|striped searobin|leopard searobin|bighead searobin|blackwing searobin|bandtail searobin|barred searobin|shortwing searobin|slender searobin|mexican searobin|lumptail searobin|bluespotted searobin|dusky flathead|bartail flathead|bar-tailed flathead|southern bluespotted|northern sand|yellowfin flathead|marbled flathead|fringe-eyed|spotted flathead|rock flathead|crocodile flathead|crocodilefish|beach flathead|longsnout flathead|deepwater flathead|tiger flathead|toothy flathead|indian flathead|bartail|japanese flathead|wide-eyed flathead|platycephalus|cociella|inegocia|onigocia|rogadius|suggrundus|thysanophrys|cymbacephalus|elates|grammoplites|kumococius|leviprora|ratabulus|sorsogona|papilloculiceps|sunagocia|ambiserrula|eurycephalus|hoplichthys|bembras|bembradium|parabembras|chelidonichthys|trigla|eutrigla|lepidotrigla|aspitrigla|trigloporus|pterygotrigla|prionotus|bellator|peristedion|satyrichthys|scalicus|gargariscus|heminodus|paraheminodus|dactyloptena|dactylopterus|uranoscopus|astroscopus|kathetostoma|ichthyscopus|genyagnus|gnathagnus|pleuroscopus|xenocephalus|trachinus|echiichthys|parapercis|synodus|saurida|trachinocephalus|harpadon|bombay duck|chlorophthalmus|ammodytes|hyperoplus|gymnammodytes|zoarces|lycodes|macrozoarces|ocean pout|lycenchelys|pachycara|melanostigma|pholis|apodichthys|xererpes|stichaeus|lumpenus|anoplarchus|chirolophis|cebidichthys|monkeyface|xiphister|anarhichas|anarrhichthys|trichiurus|lepidopus|aphanopus|benthodesmus|assurger|eupleurogrammus|lepturacanthus|tentoriceps|evoxymetopon|lepidopus caudatus|black scabbard|silver scabbard|largehead hairtail|atlantic cutlassfish|pacific cutlassfish"
+ },
+ {
+  "id": "hermit-squat",
+  "text": "Name a hermit crab, squat lobster or porcelain crab species.",
+  "group": "crustaceans",
+  "difficulty": 5,
+  "taxon": "crustaceans",
+  "taxonFilter": "hermit|squat lobster|porcelain crab|porcelain|king crab|stone crab \\(lithodid\\)|coconut crab|robber crab|galathea|munida|munidopsis|pleuroncodes|cervimunida|allogalathea|lauriea|uroptychus|chirostylus|eumunida|petrolisthes|porcellana|neopetrolisthes|pisidia|pachycheles|polyonyx|aliaporcellana|porcellanella|pagurus|paguristes|dardanus|calcinus|clibanarius|diogenes|aniculus|ciliopagurus|coenobita|birgus|elassochirus|labidochirus|lithodes|paralithodes|paralomis|neolithodes|lopholithodes|cryptolithodes|rhinolithodes|phyllolithodes|placetron|acantholithodes|hapalogaster|oedignathus|dermaturus|pylopagurus|anapagurus|nematopagurus|spiropagurus|sympagurus|parapagurus|oncopagurus|tomopagurus|pylocheles|cancellus|strigopagurus|trizopagurus|paguropsis|xylopagurus|catapaguroides|catapagurus|solitariopagurus|bathypaguropsis|munidion|galacantha|shinkaia|kiwa|yeti crab|yeti lobster|hoff crab|kiwa hirsuta|kiwa puravida|kiwa tyleri|alaska king|red king|blue king|golden king|scarlet king|southern king|chilean king|japanese stone|hanasaki|box crab|umbrella crab|turtle crab|puget sound king|brown box|golden king crab|anomuran|anomura|lithodid|galatheid|munidid|chirostylid|porcellanid|paguroid|diogenid|coenobitid|parapagurid|pylochelid|land hermit|marine hermit|blue-legged hermit|red-legged hermit|scarlet hermit|left-handed hermit|electric blue hermit|halloween hermit|white-spotted hermit|anemone hermit|jewelled anemone hermit|common hermit|broad-clawed hermit|hairy hermit|grainy hermit|blueband hermit|bluehanded hermit|striped hermit|thinstripe hermit|flat-clawed hermit|long-clawed hermit|acadian hermit|giant hermit|red hermit|orange-striped hermit|yellow hermit|dwarf hermit|orange hermit|zebra hermit|equal-handed hermit|caribbean hermit|ecuadorian hermit|strawberry hermit|ruggie|purple pincher|blueberry hermit|indonesian hermit|viola hermit|australian land hermit|japanese land hermit|teeny hermit|bernhardus"
+ },
+ {
+  "id": "skate",
+  "text": "Name a skate species.",
+  "group": "rays",
+  "difficulty": 5,
+  "taxon": "rays",
+  "taxonFilter": "skate|skates|raja\\b|rajella|leucoraja|amblyraja|bathyraja|dipturus|malacoraja|rostroraja|beringraja|okamejei|hongeo|atlantoraja|psammobatis|sympterygia|rioraja|zearaja|spiniraja|dentiraja|arctoraja|breviraja|dactylobatus|fenestraja|gurgesiella|neoraja|cruriraja|anacanthobatis|sinobatis|notoraja|pavoraja|insentiraja|irolita|pseudoraja|rhinoraja|brochiraja|leucoraja naevus|cuckoo|thornback|thornback ray|blonde ray|spotted ray|small-eyed ray|undulate ray|starry ray|starry skate|common skate|flapper skate|blue skate|white skate|long-nosed skate|longnose skate|big skate|barndoor|little skate|winter skate|clearnose skate|rosette skate|smooth skate|thorny skate|round skate|arctic skate|alaska skate|aleutian skate|bering skate|commander skate|whiteblotched|whitebrow|okhotsk skate|sandpaper skate|roughtail skate|roughskin skate|deepsea skate|california skate|longnose|starry|spinytail|flathead skate|pacific white skate|black skate|broad skate|sandy skate|shagreen|sailray|norwegian skate|arctic skate|round ray|brown skate|speckled skate|brazilian skate|yellownose|eyespot skate|smallnose fanskate|zipper skate|shortfin fanskate|smallthorn fanskate|bignose fanskate|rio skate|la plata skate|south american|patagonian skate|magellan skate|yellownose skate|whitedotted skate|falkland skate|joined-fins skate|ghost skate|dusky skate|graytail skate|south georgia skate|antarctic starry|mcCain's skate|murray's skate|eaton's skate|kerguelen|dark-belly|bigmouth skate|white-bellied|slime skate|smooth freckled|peacock skate|sydney skate|argus|blue-grey skate|melbourne skate|whitley's skate|western round|black-spotted|bight skate|grey skate|longnose skate|short-tailed|white-spotted|brown skate|pale skate|variegated|sandy|spotted|biscuit skate|lace skate|rough skate|prickly skate|pygmy skate|velvet skate|blind skate|legskate|leg skate|smoothnose legskate|bottlenose legskate|smooth legskate|sinobatis|cuban legskate|african legskate|indian legskate|arctic legskate|caribbean|spinytail|black-bellied|texas skate|freckled skate|lightnose|shortnose|spreadfin|hooktail|pluto skate|abyssal skate|ocellate skate|bathyraja abyssicola|bathyraja spinosissima|dipturus batis|dipturus oxyrinchus|dipturus nidarosiensis|dipturus laevis|dipturus trachyderma|dipturus chilensis|dipturus innominatus|dipturus nasutus|raja clavata|raja brachyura|raja montagui|raja microocellata|raja undulata|raja asterias|raja miraletus|raja radula|raja polystigma|raja straeleni|raja maderensis|raja herwigi|raja africana|raja rondeleti|raja binotata|rostroraja alba|leucoraja fullonica|leucoraja circularis|leucoraja lentiginosa|leucoraja ocellata|leucoraja erinacea|leucoraja garmani|amblyraja radiata|amblyraja hyperborea|amblyraja jenseni|amblyraja georgiana|malacoraja senta|malacoraja spinacidermis|malacoraja kreffti|rajella fyllae|rajella bigelowi|rajella lintea|rajella bathyphila|rajella kukujevi|rajella nigerrima|beringraja binoculata|beringraja rhina|beringraja pulchra|okamejei kenojei|okamejei boesemani|okamejei hollandi|okamejei acutispina|okamejei meerdervoortii|hongeo koreana|zearaja chilensis|zearaja nasuta|zearaja maugeana|spiniraja whitleyi|dentiraja lemprieri|dentiraja cerva|dentiraja polyommata|dentiraja confusa|dentiraja australis|dentiraja endeavouri|dentiraja healdi|dentiraja oculus|dentiraja flindersi|dipturus canutus|dipturus gudgeri|dipturus apricus|dipturus wengi|dipturus acrobelus|dipturus melanospilus|dipturus queenslandicus|dipturus grahami|dipturus lanceorostratus|dipturus confusus|dipturus whitleyi|dipturus polyommata"
+ },
+ {
+  "id": "moray-eel",
+  "text": "Name a species of moray eel.",
+  "group": "eels",
+  "difficulty": 4,
+  "taxon": "fish",
+  "taxonFilter": "moray"
+ },
+ {
+  "id": "sculpin-snailfish",
+  "text": "Name a sculpin, poacher, snailfish or lumpsucker species.",
+  "group": "bottom-fish",
+  "difficulty": 5,
+  "taxon": "fish",
+  "taxonFilter": "sculpin|sea raven|irish lord|cabezon|poacher|snailfish|lumpsucker|lumpfish"
+ },
+ {
+  "id": "grunt-sweetlips",
+  "text": "Name a grunt or sweetlips species.",
+  "group": "reef-fish",
+  "difficulty": 4,
+  "taxon": "fish",
+  "taxonFilter": "grunt|sweetlips|margate|pigfish|tomtate|porkfish|burrito|pompon|cottonwick|sailor"
+ },
+ {
+  "id": "rainbowfish",
+  "text": "Name a rainbowfish or blue-eye species.",
+  "group": "aquarium-fish",
+  "difficulty": 4,
+  "taxon": "freshwater-fish",
+  "taxonFilter": "rainbowfish|blue-?eye|blue eye"
+ },
+ {
+  "id": "gourami-betta",
+  "text": "Name a gourami, betta or other labyrinth fish species.",
+  "group": "air-breathing",
+  "difficulty": 4,
+  "taxon": "freshwater-fish",
+  "taxonFilter": "gourami|betta|fighting fish|paradise fish|climbing perch|anabas|licorice|bushfish|ctenopoma|labyrinth"
+ },
+ {
+  "id": "darter",
+  "text": "Name a darter or logperch species.",
+  "group": "perches",
+  "difficulty": 5,
+  "taxon": "freshwater-fish",
+  "taxonFilter": "darter|logperch"
+ },
+ {
+  "id": "dottyback-basslet",
+  "text": "Name a dottyback, basslet or anthias species.",
+  "group": "reef-fish",
+  "difficulty": 5,
+  "taxon": "fish",
+  "taxonFilter": "dottyback|basslet|anthias|\\bgramma\\b"
+ },
+ {
+  "id": "fish-letter-d",
+  "text": "Name a fish whose name begins with the letter D.",
+  "group": "letters",
+  "difficulty": 3,
+  "taxon": "fish",
+  "taxonFilter": "^d"
+ },
+ {
+  "id": "fish-letter-l",
+  "text": "Name a fish whose name begins with the letter L.",
+  "group": "letters",
+  "difficulty": 3,
+  "taxon": "fish",
+  "taxonFilter": "^l"
+ },
+ {
+  "id": "fish-letter-w",
+  "text": "Name a fish whose name begins with the letter W.",
+  "group": "letters",
+  "difficulty": 3,
+  "taxon": "fish",
+  "taxonFilter": "^w"
+ },
+ {
+  "id": "fish-letter-h",
+  "text": "Name a fish whose name begins with the letter H.",
+  "group": "letters",
+  "difficulty": 3,
+  "taxon": "fish",
+  "taxonFilter": "^h"
  }
 ]

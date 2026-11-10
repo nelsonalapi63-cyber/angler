@@ -542,3 +542,67 @@ revoke all on public.bank from anon, authenticated;
 
 -- the weekly recap is sent at most once per week per diver, whoever triggers the function
 alter table public.profiles add column if not exists last_recap_day date;
+
+-- ================================================================ v4: Duel rooms
+-- A room is a jsonb state driven by shared/duel.js in the `duel` Edge Function. Players read their room and its
+-- events (the room id is the capability: it is a random uuid handed out by the function when they create or join
+-- by code); nobody writes directly — only the function, with the service role. The hidden fuse and the deadline
+-- live in duel_secrets, which has no read policy at all.
+create table if not exists public.duel_rooms (
+  id uuid primary key default gen_random_uuid(),
+  code text not null,
+  status text not null default 'lobby' check (status in ('lobby', 'playing', 'finished')),
+  state jsonb not null,                       -- the public state (duel.publicState): never the fuse or the deadline
+  seq int not null default 0,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+create index if not exists duel_rooms_code_open on public.duel_rooms (code) where status <> 'finished';
+create index if not exists duel_rooms_updated on public.duel_rooms (updated_at);
+create table if not exists public.duel_secrets (
+  room_id uuid primary key references public.duel_rooms (id) on delete cascade,
+  state jsonb not null,                       -- the full state, deadline and fuse included
+  deadline bigint,
+  fuse_ms int,
+  pop_pause_until bigint                      -- the next round is dealt once the popped puffer has been on screen this long
+);
+create table if not exists public.duel_players (
+  room_id uuid not null references public.duel_rooms (id) on delete cascade,
+  player_id text not null,
+  token text not null,                        -- proves the caller is this player; never shown to the others
+  user_id uuid references auth.users (id) on delete set null,
+  device_id text,
+  name text not null,
+  joined_at timestamptz not null default now(),
+  primary key (room_id, player_id)
+);
+create table if not exists public.duel_events (
+  id bigserial primary key,
+  room_id uuid not null references public.duel_rooms (id) on delete cascade,
+  seq int not null,
+  event jsonb not null,
+  created_at timestamptz not null default now()
+);
+create index if not exists duel_events_room on public.duel_events (room_id, seq);
+alter table public.duel_rooms enable row level security;
+alter table public.duel_secrets enable row level security;
+alter table public.duel_players enable row level security;
+alter table public.duel_events enable row level security;
+create policy duel_rooms_read on public.duel_rooms for select to anon, authenticated using (true);      -- by uuid only: the code is resolved by the function
+create policy duel_events_read on public.duel_events for select to anon, authenticated using (true);
+revoke all on public.duel_secrets from anon, authenticated;
+revoke all on public.duel_players from anon, authenticated;
+-- Realtime: players subscribe to their room row and its events
+do $$ begin
+  if not exists (select 1 from pg_publication_tables where pubname = 'supabase_realtime' and tablename = 'duel_rooms') then
+    alter publication supabase_realtime add table public.duel_rooms;
+  end if;
+  if not exists (select 1 from pg_publication_tables where pubname = 'supabase_realtime' and tablename = 'duel_events') then
+    alter publication supabase_realtime add table public.duel_events;
+  end if;
+end $$;
+-- signed-in players keep a tally on their profile
+alter table public.profiles add column if not exists duel_played int not null default 0;
+alter table public.profiles add column if not exists duel_wins int not null default 0;
+-- finished rooms older than six hours and abandoned rooms older than two days are swept by the function itself
+-- (on every `create`), with the service role; no SQL function is needed.

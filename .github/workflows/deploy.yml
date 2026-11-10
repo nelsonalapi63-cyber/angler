@@ -49,7 +49,7 @@ jobs:
         run: |
           git config user.name "angler-bot"
           git config user.email "angler-bot@users.noreply.github.com"
-          git add data/schedule.json data/version.json icons/og
+          git add data/schedule.json data/frozen.json data/version.json icons/og
           git diff --cached --quiet || git commit -m "chore: daily schedule freeze $(date -u +%F)"
           git push
       - uses: actions/upload-pages-artifact@v3

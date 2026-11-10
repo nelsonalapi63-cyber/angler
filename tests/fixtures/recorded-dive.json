@@ -1,38 +1,38 @@
 {
-  "day": "2026-11-09",
+  "day": "2026-11-10",
   "promptIds": [
-    "shelled-animal",
-    "drifter",
-    "flatfish",
-    "seafloor-feature",
-    "transparent",
-    "tuna-mackerel",
-    "sound"
+    "indian-ocean-country",
+    "fish-letter-r",
+    "jumper",
+    "warship-type",
+    "explorer",
+    "long-lived",
+    "sea-anemone-coral-species"
   ],
   "answers": [
     {
-      "typed": "Mussel",
-      "secondsUsed": 2.9,
+      "typed": "Tanzania",
+      "secondsUsed": 3.2,
       "hint": true
     },
     {
-      "typed": "jelly",
-      "secondsUsed": 1.1,
+      "typed": "steelhead",
+      "secondsUsed": 1.2,
       "hint": false
     },
     {
-      "typed": "Flouader",
-      "secondsUsed": 1.1,
+      "typed": "Flyina fish",
+      "secondsUsed": 1.2,
       "hint": false
     },
     {
-      "typed": "Mariana",
-      "secondsUsed": 1.1,
+      "typed": "Battleship",
+      "secondsUsed": 1.2,
       "hint": false
     },
     {
-      "typed": "Barreleye",
-      "secondsUsed": 1.1,
+      "typed": "Ferdinand Magellan",
+      "secondsUsed": 1.2,
       "hint": false
     },
     {
@@ -41,19 +41,19 @@
       "hint": false
     },
     {
-      "typed": "Danionella cerebrum",
-      "secondsUsed": 1.1,
+      "typed": "Deepstaria",
+      "secondsUsed": 1.2,
       "hint": false
     }
   ],
-  "depth": 2734,
-  "points": 175,
+  "depth": 2656,
+  "points": 170,
   "tiers": [
     "reef",
     "tidepool",
     "tidepool",
     "tidepool",
-    "baitball",
+    "tidepool",
     null,
     "hadal"
   ]

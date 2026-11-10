@@ -1,18 +1,131 @@
 [
-  {"id":"sharks","name":"Sharks","emoji":"🦈","blurb":"Seven dives into the world's most famous predators.","free":true,
-   "prompts":["shark-species","shark-atlantic","shark-deep","shark-live-young","shark-reef","ray-skate-sawfish","stingray-species"]},
-  {"id":"deep-sea","name":"Deep Sea","emoji":"🔦","blurb":"Below the light: trenches, vents and glowing hunters.","free":false,
-   "prompts":["deep-sea-fish","below-1000m","hadal-animal","deep-not-fish","vent-life","makes-light","deep-shipwreck"]},
-  {"id":"reef-life","name":"Reef Life","emoji":"🪸","blurb":"Corals, clownfish and the crowded city of the reef.","free":true,
-   "prompts":["reef-fish","coral-type","symbiosis","anemonefish-damsel","wrasse-parrotfish","butterfly-angel-tang","gbr"]},
-  {"id":"whales-dolphins","name":"Whales and Dolphins","emoji":"🐋","blurb":"Giants, singers and the ones that live in rivers.","free":false,
-   "prompts":["whale-species","toothed-whale","polar-cetacean","whale-hunted","cetacean-named-after","dolphin-porpoise","river-dolphin"]},
-  {"id":"seas-trenches","name":"Seas and Trenches","emoji":"🗺️","blurb":"The map of the ocean: seas, straits, currents and the deeps.","free":false,
-   "prompts":["trench","atlantic-sea","pacific-sea","strait","current","mediterranean-sea","seafloor-feature"]},
-  {"id":"weird-fish","name":"Weird Fish","emoji":"🐡","blurb":"Fish that breathe air, make sounds, glow, and jump.","free":false,
-   "prompts":["breathes-air","electric","colour-change","sound","long-snout","jumper","transparent"]},
-  {"id":"sushi-bar","name":"Sushi Bar","emoji":"🍣","blurb":"What ends up on the plate, and where it came from.","free":false,
-   "prompts":["sushi","food-fish","big-catch","farmed","tuna-mackerel","edible-shellfish","forage-fish"]},
-  {"id":"record-holders","name":"Record Holders","emoji":"🏆","blurb":"Biggest, fastest, oldest, smallest, and the ones that are gone.","free":false,
-   "prompts":["giant","fast-fish","long-lived","tiny-fish","living-fossil","extinct","migrates"]}
+ {
+  "id": "sharks",
+  "name": "Sharks",
+  "emoji": "🦈",
+  "blurb": "Seven dives into the world's most famous predators.",
+  "free": true,
+  "prompts": [
+   "shark-species",
+   "shark-atlantic",
+   "shark-deep",
+   "shark-live-young",
+   "shark-reef",
+   "ray-skate-sawfish",
+   "stingray-species"
+  ]
+ },
+ {
+  "id": "deep-sea",
+  "name": "Deep Sea",
+  "emoji": "🔦",
+  "blurb": "Below the light: trenches, vents and glowing hunters.",
+  "free": false,
+  "prompts": [
+   "deep-sea-fish",
+   "below-1000m",
+   "deeper-than-2000",
+   "deep-not-fish",
+   "deep-sea-creature-letter",
+   "makes-light",
+   "deep-shipwreck"
+  ]
+ },
+ {
+  "id": "reef-life",
+  "name": "Reef Life",
+  "emoji": "🪸",
+  "blurb": "Corals, clownfish and the crowded city of the reef.",
+  "free": true,
+  "prompts": [
+   "reef-fish",
+   "coral-type",
+   "symbiosis",
+   "anemonefish-damsel",
+   "wrasse-parrotfish",
+   "butterfly-angel-tang",
+   "gbr"
+  ]
+ },
+ {
+  "id": "whales-dolphins",
+  "name": "Whales and Dolphins",
+  "emoji": "🐋",
+  "blurb": "Giants, singers and the ones that live in rivers.",
+  "free": false,
+  "prompts": [
+   "whale-species",
+   "toothed-whale",
+   "polar-cetacean",
+   "whale-hunted",
+   "cetacean-named-after",
+   "dolphin-porpoise",
+   "river-dolphin"
+  ]
+ },
+ {
+  "id": "seas-trenches",
+  "name": "Seas and Trenches",
+  "emoji": "🗺️",
+  "blurb": "The map of the ocean: seas, straits, currents and the deeps.",
+  "free": false,
+  "prompts": [
+   "shipping-route",
+   "atlantic-sea",
+   "pacific-sea",
+   "strait",
+   "current",
+   "mediterranean-sea",
+   "seafloor-feature"
+  ],
+  "title": "Seas and Straits"
+ },
+ {
+  "id": "weird-fish",
+  "name": "Weird Fish",
+  "emoji": "🐡",
+  "blurb": "Fish that breathe air, make sounds, glow, and jump.",
+  "free": false,
+  "prompts": [
+   "breathes-air",
+   "electric",
+   "colour-change",
+   "sound",
+   "long-snout",
+   "jumper",
+   "transparent"
+  ]
+ },
+ {
+  "id": "sushi-bar",
+  "name": "Sushi Bar",
+  "emoji": "🍣",
+  "blurb": "What ends up on the plate, and where it came from.",
+  "free": false,
+  "prompts": [
+   "sushi",
+   "food-fish",
+   "big-catch",
+   "farmed",
+   "tuna-mackerel",
+   "edible-shellfish",
+   "forage-fish"
+  ]
+ },
+ {
+  "id": "record-holders",
+  "name": "Record Holders",
+  "emoji": "🏆",
+  "blurb": "Biggest, fastest, oldest, smallest, and the ones that are gone.",
+  "free": false,
+  "prompts": [
+   "over-3m",
+   "fast-fish",
+   "long-lived",
+   "tiny-fish",
+   "prehistoric-sea",
+   "extinct",
+   "migrates"
+  ]
+ }
 ]

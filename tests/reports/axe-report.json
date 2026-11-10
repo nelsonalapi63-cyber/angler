@@ -60,9 +60,7 @@
       "url": "/#leaderboard",
       "violations": 0,
       "rulesPassed": 43,
-      "needsReview": [
-        "color-contrast"
-      ]
+      "needsReview": []
     },
     {
       "screen": "settings",
@@ -74,6 +72,39 @@
     {
       "screen": "admin",
       "url": "/admin.html",
+      "violations": 0,
+      "rulesPassed": 39,
+      "needsReview": [
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "duel landing",
+      "url": "/#duel",
+      "violations": 0,
+      "rulesPassed": 43,
+      "needsReview": []
+    },
+    {
+      "screen": "duel lobby",
+      "url": "/#duel-local",
+      "violations": 0,
+      "rulesPassed": 41,
+      "needsReview": []
+    },
+    {
+      "screen": "duel turn",
+      "url": "/#duel-local",
+      "violations": 0,
+      "rulesPassed": 45,
+      "needsReview": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "screen": "duel result",
+      "url": "/#duel-local",
       "violations": 0,
       "rulesPassed": 39,
       "needsReview": [

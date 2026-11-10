@@ -7,7 +7,8 @@
   const LOW_TIME_SECONDS = 5;          // timer ring turns red and pulses below this
   const MAX_TYPED_LENGTH = 60;         // same limit as the server
   const NEXT_GUARD_MS = 450;           // a second Enter right after a reveal must not skip it
-  const AUTO_ADVANCE_ON_TOUCH = false; // on phones the player taps Next, so the keyboard opens inside a user gesture
+  const STALL_MS = 2000;               // v4: a miss shows the stalled sub on the takeover for this long before its one button
+  const REDUCED_BUTTON_MS = 600;       // v4: under reduced motion the takeover crossfades and the button comes after this
   const RESULT_LIST_FACT = true;       // show the fact under each question on the result screen
   const TILE_DELAY_FRACTION = 0.35;    // the tier badge appears this far into the descent…
   const TILE_DELAY_MAX_MS = 900;       // …but never later than this
@@ -44,6 +45,21 @@
   let resultScene = null;    // the resting sub on the result screen
 
   // ---------------------------------------------------------------- helpers
+  // v4: a day already played keeps the answers it was played with (data/frozen.json), whatever the bank does later
+  function frozenPrompt(dayKey, prompt) {
+    const frozen = F().frozen;
+    const day = frozen && dayKey && frozen[dayKey];
+    if (!day || !prompt || !day[prompt.id]) return prompt;
+    const cache = (state && state.frozenCache) || null;
+    if (cache && cache[prompt.id]) return cache[prompt.id];
+    const copy = Object.assign({}, prompt, { answers: day[prompt.id].map(a => ({ entity: a.entity, tier: a.tier })), _index: null, _frozen: true });
+    if (cache) cache[prompt.id] = copy;
+    return copy;
+  }
+  function promptFor(id) {
+    const p = F().promptsById[id];
+    return state && state.spec && state.spec.dayKey ? frozenPrompt(state.spec.dayKey, p) : p;
+  }
   function promptIndex(prompt) {
     if (!prompt._index) prompt._index = F().dive.buildIndex(prompt, F().entities, F().taxa);
     return prompt._index;
@@ -96,7 +112,8 @@
       if (state.tileTimer) clearTimeout(state.tileTimer);
       if (state.leadTimer) clearTimeout(state.leadTimer);
       if (state.radioTimer) clearTimeout(state.radioTimer);
-      state.timer = state.revealTimer = state.tileTimer = state.leadTimer = state.radioTimer = null;
+      if (state.takeoverTimer) clearTimeout(state.takeoverTimer);
+      state.timer = state.revealTimer = state.tileTimer = state.leadTimer = state.radioTimer = state.takeoverTimer = null;
     }
     if (countdownTimer) { clearInterval(countdownTimer); countdownTimer = null; }
   }
@@ -105,7 +122,7 @@
     if (state && state.scene) state.scene.destroy();
     if (resultScene) { resultScene.destroy(); resultScene = null; }
     state = null;
-    document.body.classList.remove('diving');
+    document.body.classList.remove('diving', 'takeover');
   }
   function track(name, props) { if (root.FathomOnline && root.FathomOnline.trackEvent) root.FathomOnline.trackEvent(name, props || {}); }
   function radioLine(kind, n) { const lines = RADIO[kind] || []; return lines.length ? lines[(n || 0) % lines.length] : ''; }
@@ -214,7 +231,7 @@
     const { storage, dive, sound } = F();
     leaveDive();
     const timerOn = spec.mode === 'tutorial' ? false : spec.mode === 'free' ? storage.settings().freeTimer !== false : true;
-    state = { spec, total: spec.promptIds.length, idx: 0, results: [], points: 0, depth: 0, timerOn, timer: null, revealTimer: null, tileTimer: null, leadTimer: null, radioTimer: null, answered: false, promptStart: 0, deadline: 0, attempts: 0, hint: null, hintUsed: false, rejected: [], rarity: null, scene: null };
+    state = { spec, total: spec.promptIds.length, idx: 0, results: [], points: 0, depth: 0, timerOn, timer: null, revealTimer: null, tileTimer: null, leadTimer: null, radioTimer: null, answered: false, promptStart: 0, deadline: 0, attempts: 0, hint: null, hintUsed: false, rejected: [], rarity: null, scene: null, ask: null, takeover: null, takeoverTimer: null, frozenCache: {} };
     let remainingMs = null;
     let carry = null;
     if (spec.resume) {
@@ -257,7 +274,11 @@
     state.scene = root.FathomSub ? root.FathomSub.mount(sceneWrap, {
       mode: 'dive', depth: state.depth,
       onLandmark: (lm) => landmarkPass(lm),
-      onFrame: (d) => { if (state && state.metersNode) state.metersNode.textContent = '+' + F().dive.formatMeters(Math.round(d - state.prevDepth)) + ' m'; },
+      onFrame: (d) => {
+        if (!state) return;
+        if (state.metersNode) state.metersNode.textContent = '+' + F().dive.formatMeters(Math.round(d - state.prevDepth)) + ' m';
+        if (state.takeover) updateDepthCounter(d);
+      },
     }) : null;
   }
 
@@ -302,9 +323,9 @@
   function hintsAllowed() { return !!state && state.spec.mode !== 'challenge' && !state.spec.challenge; }
 
   function renderPrompt(remainingMs, carry) {
-    const { el, dive, promptsById, esc } = F();
+    const { el, dive, esc } = F();
     const promptId = state.spec.promptIds[state.idx];
-    const prompt = promptsById[promptId];
+    const prompt = promptFor(promptId);
     state.answered = false;
     state.attempts = carry && carry.attempts ? carry.attempts : 0;
     state.hint = carry && carry.hint ? carry.hint : null;
@@ -313,7 +334,13 @@
     const last = state.idx === state.total - 1;
     const input = el('input', { class: 'input', id: 'answer', type: 'text', autocomplete: 'off', autocapitalize: 'off', autocorrect: 'off', spellcheck: 'false', enterkeyhint: 'go', placeholder: 'Your answer…', 'aria-label': 'Your answer', 'aria-describedby': 'question-text', maxlength: String(MAX_TYPED_LENGTH) });
     const submitBtn = el('button', { class: 'btn btn-primary btn-dive', type: 'submit', text: 'Dive' });
-    const form = el('form', { class: 'answer-form', onSubmit: (e) => { e.preventDefault(); submit(input.value); } }, [input, submitBtn]);
+    const form = el('form', { class: 'answer-form', onSubmit: (e) => {
+      e.preventDefault();
+      // Enter while the box asks "Did you mean to spell X?" with exactly one X submits that spelling
+      if (state.ask && state.ask.options.length === 1 && (!input.value.trim() || input.value.trim() === state.ask.from)) return submit(state.ask.options[0].name);
+      submit(input.value);
+    } }, [input, submitBtn]);
+    input.addEventListener('input', () => { if (state && state.ask && input.value.trim() !== state.ask.from) clearAsk(); });
     const suggest = el('div', { id: 'suggest', class: 'suggest', 'aria-live': 'polite' });
     const reject = el('div', { id: 'reject', class: 'reject-msg', role: 'status' });
     const hintBtn = hintsAllowed() ? el('button', { class: 'hint-box' + (state.hintUsed ? ' used' : ''), type: 'button', id: 'hint-btn', disabled: state.hintUsed ? true : null, title: state.hintUsed ? 'Your one hint for this dive is used' : 'Light up the first letter and shape of a rarer answer — once per dive', onClick: useHint }, [
@@ -376,6 +403,7 @@
     if (!node || !state) return;
     const text = radioLine(kind, n);
     if (!text) return;
+    if (state.takeover) state.takeover.radio.textContent = text;
     node.textContent = text;
     node.classList.remove('show'); void node.offsetWidth; node.classList.add('show');
     if (state.radioTimer) clearTimeout(state.radioTimer);
@@ -385,8 +413,8 @@
   // ---------------------------------------------------------------- the hint (one per dive, free)
   function useHint() {
     if (!state || state.answered || state.hint || state.hintUsed || !hintsAllowed()) return;
-    const { dive, promptsById, entities, toast } = F();
-    const prompt = promptsById[state.spec.promptIds[state.idx]];
+    const { dive, entities, toast } = F();
+    const prompt = promptFor(state.spec.promptIds[state.idx]);
     // seeded per question and dive, so a reload (or everyone playing today's dive) sees the same hint
     const rng = dive.seededRng('hint:' + prompt.id + ':' + (state.spec.dayKey || state.spec.seed || state.spec.packId || 'free'));
     const h = dive.pickHint(prompt, entities, [], rng);
@@ -411,24 +439,23 @@
   // ---------------------------------------------------------------- answering
   function submit(typed, timedOut) {
     if (!state || state.answered) return;
-    const { dive, promptsById } = F();
-    const prompt = promptsById[state.spec.promptIds[state.idx]];
+    const { dive } = F();
+    const prompt = promptFor(state.spec.promptIds[state.idx]);
     const text = typed == null ? '' : String(typed).trim();
     if (!timedOut) {
       if (!text) { nudge(); return; }
-      const m = dive.matchAnswer(text, promptIndex(prompt));
+      const m = dive.matchAnswer(text, promptIndex(prompt), F().entities);
       if (!m.entityId) { reject(text, prompt, m); return; }
       accept(m, text, false, prompt);
       return;
     }
-    const m = text ? dive.matchAnswer(text, promptIndex(prompt)) : null;
+    const m = text ? dive.matchAnswer(text, promptIndex(prompt), F().entities) : null;
     if (m && m.entityId) accept(m, text, true, prompt);
     else miss('timeout', text, prompt);
   }
   function skip() {
     if (!state || state.answered) return;
-    const { promptsById } = F();
-    miss('skip', state.input ? state.input.value.trim() : '', promptsById[state.spec.promptIds[state.idx]]);
+    miss('skip', state.input ? state.input.value.trim() : '', promptFor(state.spec.promptIds[state.idx]));
   }
   function nudge() {
     const input = state.input;
@@ -444,17 +471,55 @@
     state.attempts++;
     state.rejected.push(text);
     const input = state.input;
-    input.value = '';
-    input.classList.remove('shake', 'reject'); void input.offsetWidth; input.classList.add('shake', 'reject');
-    setTimeout(() => input.classList.remove('shake', 'reject'), REJECT_FLASH_MS);
     const msg = document.getElementById('reject');
     const ambiguous = m && m.ambiguous && m.ambiguous.length;
-    if (msg) msg.innerHTML = ambiguous ? '<b>“' + esc(text) + '”</b> could mean ' + m.ambiguous.length + ' answers — pick one' : '<b>“' + esc(text) + '”</b> is not an accepted answer — try again' + (state.attempts > 1 ? ' <span class="muted">(' + state.attempts + ' tries)</span>' : '');
-    renderChips(dive.suggestAnswers(text, promptIndex(prompt), entities));
+    const ask = m && m.correction && !m.correction.accepted ? m.correction : null;
+    clearAsk();
+    if (ask) {
+      // a near-miss: the text stays in the box and the box asks; Yes / Enter submits the spelling, No clears, the clock runs on
+      input.classList.remove('shake'); void input.offsetWidth; input.classList.add('shake');
+      setTimeout(() => input.classList.remove('shake'), REJECT_FLASH_MS);
+      if (msg) msg.innerHTML = '';
+      state.ask = { from: ask.from, options: ask.options };
+      renderAsk(document.getElementById('suggest'), ask, {
+        onYes: (name) => { if (!state || state.answered) return; clearAsk(); input.value = name; submit(name); },
+        onNo: () => { if (!state || state.answered) return; clearAsk(); input.value = ''; input.focus(); },
+      });
+    } else {
+      input.value = '';
+      input.classList.remove('shake', 'reject'); void input.offsetWidth; input.classList.add('shake', 'reject');
+      setTimeout(() => input.classList.remove('shake', 'reject'), REJECT_FLASH_MS);
+      if (msg) msg.innerHTML = ambiguous ? '<b>“' + esc(text) + '”</b> could mean ' + m.ambiguous.length + ' answers — pick one' : '<b>“' + esc(text) + '”</b> is not an accepted answer — try again' + (state.attempts > 1 ? ' <span class="muted">(' + state.attempts + ' tries)</span>' : '');
+      renderChips(ambiguous ? dive.suggestAnswers(text, promptIndex(prompt), entities) : []);
+    }
     sound.miss();
     haptics.buzz('miss');
     saveProgress(state.shownAt);
     input.focus();
+  }
+  function clearAsk() {
+    if (state) state.ask = null;
+    const box = document.getElementById('suggest');
+    if (box && box.querySelector('.ask')) box.innerHTML = '';
+  }
+  // "Did you mean to spell X?" — one spelling gets Yes / No; two get a chip each with the same wording. Shared with Duel.
+  function renderAsk(box, correction, handlers) {
+    const { el } = F();
+    if (!box) return;
+    box.innerHTML = '';
+    const options = correction.options || [];
+    if (!options.length) return;
+    const ask = el('div', { class: 'ask', role: 'status' });
+    if (options.length === 1) {
+      ask.append(el('span', { class: 'ask-q', html: 'Did you mean to spell <b>' + F().esc(options[0].name) + '</b>?' }));
+      ask.append(el('button', { class: 'btn btn-sm btn-primary', type: 'button', text: 'Yes', 'aria-label': 'Yes, I meant ' + options[0].name, onClick: () => handlers.onYes(options[0].name) }));
+    } else {
+      ask.append(el('span', { class: 'ask-q', text: 'Did you mean to spell' }));
+      options.forEach((o, i) => { if (i) ask.append(el('span', { class: 'muted', text: 'or' })); ask.append(el('button', { class: 'chip-btn', type: 'button', text: o.name, 'aria-label': 'Yes, I meant ' + o.name, onClick: () => handlers.onYes(o.name) })); });
+      ask.append(el('span', { class: 'ask-q', text: '?' }));
+    }
+    ask.append(el('button', { class: 'btn btn-sm btn-ghost', type: 'button', text: 'No', 'aria-label': 'No, clear the box', onClick: () => handlers.onNo() }));
+    box.append(ask);
   }
   function renderChips(chips) {
     const { el } = F();
@@ -469,6 +534,7 @@
   }
   function lockPrompt() {
     state.answered = true;
+    state.ask = null;
     if (state.timer) { clearInterval(state.timer); state.timer = null; }
     state.input.disabled = true;
     state.form.querySelector('button').disabled = true;
@@ -480,15 +546,69 @@
     const { dive } = F();
     return Math.round(Math.min(dive.SECONDS_PER_PROMPT, Math.max(0, (performance.now() - state.promptStart) / 1000)) * 10) / 10;
   }
-  function nextButton(extraDelay) {
-    const { el, config } = F();
+  // v4: the ONE button that ends the takeover. Nothing advances on its own — on phones or desktop — and waiting costs nothing.
+  function nextButton() {
+    const { el } = F();
     // a keyboard "click" (Enter/Space, event.detail === 0) within the guard is the player's double Enter — ignore it;
     // a real tap or mouse click always advances
     const btn = el('button', { class: 'btn btn-primary', type: 'button', text: state.idx + 1 >= state.total ? 'See your dive' : 'Next question', onClick: (e) => { if (e.detail === 0 && state && performance.now() - state.revealedAt < NEXT_GUARD_MS) return; next(); } });
     state.revealedAt = performance.now();
-    const touch = root.matchMedia && root.matchMedia('(pointer: coarse)').matches;
-    if (!touch || AUTO_ADVANCE_ON_TOUCH) state.revealTimer = setTimeout(next, config.REVEAL_MS + (extraDelay || 0));
     return btn;
+  }
+  // The water column takes the whole viewport (same scene instance, resized by CSS) and the reveal moves onto a dark plate over it.
+  function enterTakeover() {
+    const { el, dive } = F();
+    const sceneWrap = document.getElementById('dive-scene');
+    const section = sceneWrap && sceneWrap.closest('.dive');
+    if (!sceneWrap || !section || state.takeover) return;
+    const depthNode = el('div', { class: 'num', text: dive.formatMeters(state.prevDepth != null ? state.prevDepth : state.depth) + ' m' });
+    const zoneNode = el('div', { class: 'zone', text: zoneName(state.prevDepth != null ? state.prevDepth : state.depth) });
+    const radio = el('div', { class: 'takeover-radio', role: 'status' });
+    const plate = el('div', { class: 'takeover-plate' });
+    const reveal = state.mainCol.querySelector('#reveal');
+    if (reveal) plate.append(reveal);                       // the reveal itself moves onto the plate (tier, +N m, rarity, fact, the button)
+    const hud = el('div', { class: 'takeover-hud' }, [
+      el('div', { class: 'takeover-top' }, [el('div', { class: 'takeover-depth', 'aria-live': 'off' }, [depthNode, zoneNode]), radio]),
+      plate,
+    ]);
+    sceneWrap.append(hud);
+    section.classList.add('takeover');
+    document.body.classList.add('takeover');
+    state.mainCol.setAttribute('inert', '');
+    state.mainCol.setAttribute('aria-hidden', 'true');
+    state.takeover = { hud, plate, radio, depthNode, zoneNode };
+  }
+  function leaveTakeover() {
+    if (!state || !state.takeover) return;
+    const section = document.querySelector('.dive');
+    if (section) section.classList.remove('takeover');
+    document.body.classList.remove('takeover');
+    state.takeover.hud.remove();
+    state.mainCol.removeAttribute('inert');
+    state.mainCol.removeAttribute('aria-hidden');
+    state.takeover = null;
+  }
+  function zoneName(depth) { const z = F().dive.zoneFor(depth); return z ? z.name : ''; }       // ZONES names already end in "zone"
+  function updateDepthCounter(d) {
+    const { dive } = F();
+    const t = state.takeover;
+    if (!t) return;
+    t.depthNode.textContent = dive.formatMeters(Math.round(d)) + ' m';
+    const z = zoneName(d);
+    if (t.zoneNode.textContent !== z) t.zoneNode.textContent = z;
+  }
+  // The one button, when the descent (or the stall) is over: appended to the plate and focused.
+  function showNextButton(reveal, afterMs) {
+    const { el } = F();
+    const place = () => {
+      state.takeoverTimer = null;
+      if (!state || !reveal.isConnected) return;
+      reveal.append(el('div', { class: 'next-row' }, [progressDots(), nextButton()]));
+      const btn = reveal.querySelector('.next-row button');
+      btn.focus({ preventScroll: true });
+      showNext(reveal);
+    };
+    if (afterMs > 0) state.takeoverTimer = setTimeout(place, afterMs); else place();
   }
   // "Only 4% said that": from today's answer counts when they are known, otherwise the tier's own blurb.
   function rarityLine(prompt, entityId, tier) {
@@ -512,6 +632,9 @@
     const tier = dive.TIER_BY_CODE[m.tier];
     const earned = m.points;
     const input = state.input;
+    const corrected = m.correction && m.correction.accepted ? m.correction : null;
+    clearAsk();
+    if (corrected) { input.value = corrected.to; input.classList.remove('corrected'); void input.offsetWidth; input.classList.add('corrected'); }
     input.classList.remove('accept'); void input.offsetWidth; input.style.setProperty('--c', 'var(--tier-' + m.tier + ')'); input.classList.add('accept');
     setTimeout(() => { if (input) input.classList.remove('accept'); }, ACCEPT_FLASH_MS);
     lockPrompt();
@@ -526,20 +649,27 @@
     const rarity = rarityLine(prompt, m.entityId, tier);
     const reveal = state.mainCol.querySelector('#reveal');
     reveal.innerHTML = '';
+    enterTakeover();
+    if (corrected) reveal.append(el('p', { class: 'corrected-note', role: 'status', html: 'Did you mean to spell <b>' + esc(corrected.to) + '</b>? Accepted.' }));
     reveal.append(el('p', { class: 'rarity tier-' + m.tier, role: 'status', html: '<span class="tier tier-' + m.tier + '">' + esc(tier.emoji + ' ' + tier.name) + '</span> · ' + esc(rarity) }));
     say(m.tier, state.idx);
     sound.reveal(m.tier);
     haptics.buzz(m.tier === 'hadal' ? 'hadal' : 'accept');
+    const reduced = root.matchMedia && root.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const wantMs = root.FathomSub ? root.FathomSub.takeoverMs(state.depth - prevDepth) : 0;
     const drop = () => {
       state.leadTimer = null;
-      const ms = state.scene ? state.scene.descendTo(state.depth, { tier: m.tier }) : 0;
+      const ms = state.scene ? state.scene.descendTo(state.depth, { tier: m.tier, ms: wantMs }) : 0;
       setSceneDepth(state.depth);
       sound.descend(prevDepth, state.depth, ms);
+      if (!ms) updateDepthCounter(state.depth);
+      // the one button: when the sub has settled (2–3 s), or 600 ms into the crossfade under reduced motion
+      showNextButton(reveal, reduced || !ms ? REDUCED_BUTTON_MS : ms);
       const showTile = () => {
         state.tileTimer = null;
         const shownSoFar = state.scene ? Math.max(prevDepth, Math.min(state.depth, state.scene.getDepth())) : state.depth;
         state.metersNode = el('div', { class: 'tile-meters', text: '+' + dive.formatMeters(Math.round((ms ? shownSoFar : state.depth) - prevDepth)) + ' m' });
-        const subBits = [ent.name + (m.via === 'fuzzy' ? ' (close enough)' : m.via === 'group' ? ' (for “' + text + '”)' : '') + ' · ' + tier.points + ' points'];
+        const subBits = [(corrected ? corrected.to : ent.name) + (m.via === 'group' ? ' (for “' + text + '”)' : '') + ' · ' + tier.points + ' points'];
         if (result.attempts > 1) subBits.push(result.attempts + ' tries');
         const tile = el('div', { class: 'tile tier-' + m.tier + (m.tier === 'hadal' ? ' hadal' : ''), style: '--c: var(--tier-' + m.tier + ')' }, [
           el('div', { class: 'tile-top' }, [el('div', { class: 'tile-name', text: tier.emoji + ' ' + tier.name }), state.metersNode]),
@@ -549,9 +679,6 @@
         reveal.append(tile);
         if (ent.fact) reveal.append(el('p', { class: 'fact', html: '<b>Did you know?</b> ' + esc(ent.fact) }));
         if (taxonHit) reveal.append(el('p', { class: 'small muted', text: 'Not on our hand-written list, but a real species — it scores Midnight. Tell us if it deserves a tier of its own.' }));
-        reveal.append(el('div', { class: 'next-row' }, [progressDots(), nextButton(Math.max(0, ms - Math.min(ms, TILE_DELAY_MAX_MS)) + 600)]));
-        reveal.querySelector('.next-row button').focus({ preventScroll: true });
-        showNext(reveal);
         if (m.tier === 'hadal') sound.hadal();
       };
       const tileAt = ms ? Math.min(TILE_DELAY_MAX_MS, ms * TILE_DELAY_FRACTION) : 0;
@@ -581,12 +708,14 @@
     ]);
     const reveal = state.mainCol.querySelector('#reveal');
     reveal.innerHTML = '';
+    state.prevDepth = state.depth;
+    enterTakeover();
+    updateDepthCounter(state.depth);
     reveal.append(el('p', { class: 'rarity miss', role: 'status', text: kind === 'timeout' ? 'The sub stalls — no descent this time' : 'The sub holds its depth' }));
     reveal.append(tile);
     if (hadal && hadal.fact) reveal.append(el('p', { class: 'fact', html: '<b>Did you know?</b> ' + esc(hadal.fact) }));
-    reveal.append(el('div', { class: 'next-row' }, [progressDots(), nextButton(300)]));
-    reveal.querySelector('.next-row button').focus({ preventScroll: true });
-    showNext(reveal);
+    const reduced = root.matchMedia && root.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    showNextButton(reveal, reduced ? REDUCED_BUTTON_MS : STALL_MS);
   }
   // On a phone the reveal can run past the bottom edge: bring the Next button into view with the smallest possible scroll.
   function showNext(reveal) {
@@ -608,7 +737,9 @@
     if (!state) return;
     if (state.revealTimer) { clearTimeout(state.revealTimer); state.revealTimer = null; }
     if (state.tileTimer) { clearTimeout(state.tileTimer); state.tileTimer = null; }
+    if (state.takeoverTimer) { clearTimeout(state.takeoverTimer); state.takeoverTimer = null; }
     if (state.leadTimer) { clearTimeout(state.leadTimer); state.leadTimer = null; if (state.scene) state.scene.setDepth(state.depth); F().setSceneDepth(state.depth); }
+    leaveTakeover();
     state.idx++;
     if (state.idx >= state.total) return finish();
     renderPrompt();
@@ -625,6 +756,7 @@
       finishedAt: new Date().toISOString(), challenge: s.challenge || null, timerOn: state.timerOn,
     };
     clearTimers();
+    leaveTakeover();
     if (state.scene) state.scene.destroy();
     state = null;
     if (s.mode === 'tutorial') {
@@ -752,7 +884,7 @@
     // per question breakdown
     const list = el('ul', { class: 'result-list' });
     record.results.forEach((r, i) => {
-      const prompt = promptsById[r.promptId];
+      const prompt = frozenPrompt(record.dayKey, promptsById[r.promptId]);   // a played day keeps its answer list
       if (!prompt) return;
       const taxonHit = dive.isTaxonId(r.entityId);
       const ent = r.entityId ? (taxonHit ? { name: r.typed } : entities[r.entityId]) : null;
@@ -905,5 +1037,5 @@
     else if (what === 'skip') skip();
   }
 
-  root.FathomGame = { startDaily, startFree, startArchive, startPack, startChallenge, startTutorial, startDive, resultScreen, leaveDive, copyText, hadalEntity, answersByTier, artNode, shortcut, drawStanding, RADIO, TUTORIAL_PROMPT_IDS };
+  root.FathomGame = { startDaily, startFree, startArchive, startPack, startChallenge, startTutorial, startDive, resultScreen, leaveDive, copyText, hadalEntity, answersByTier, artNode, shortcut, drawStanding, renderAsk, RADIO, TUTORIAL_PROMPT_IDS };
 })(window);

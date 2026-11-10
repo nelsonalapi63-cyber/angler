@@ -147,7 +147,7 @@
   }
   async function loadProfile() {
     if (!user()) return null;
-    const rows = await rest('/rest/v1/profiles?select=handle,flag,hidden,email_optin&user_id=eq.' + user().id);
+    const rows = await rest('/rest/v1/profiles?select=handle,flag,hidden,email_optin,duel_played,duel_wins&user_id=eq.' + user().id);
     profile = rows && rows[0] ? rows[0] : null;
     saveSession();
     return profile;
@@ -830,9 +830,9 @@
 
   root.FathomOnline = {
     FLAGS, LEAGUES, EARLY_CURVE_DIVES, RATING_WINDOW_DAYS, RATING_BEST_OF, MIN_RANKED_DAYS, HANDLE_RE,
-    init, user, entitlements, refreshEntitlements, signIn, signInWithEmail, emailSignInModal, signOut, handleProblem, saveProfile, deleteAccount,
+    init, user, profile: () => profile, entitlements, refreshEntitlements, signIn, signInWithEmail, emailSignInModal, signOut, handleProblem, saveProfile, deleteAccount,
     submitDaily, drainQueue, submitStatusLine, getSubmitState, fetchCurve, fetchWeekShape, curveSection, othersSection, lastStanding, lastPercentile, percentileOf, rarityFor, recapToggle, refreshRating, syncProgressUp,
     leaderboardPage, ratingSummary, settingsSection, trackEvent, leagueFor, mockDaily, mockBoards,
-    _rest: rest, _headers: headers, _configured: configured, rest, configured, VAPID_PUBLIC_KEY,
+    _rest: rest, _headers: headers, _configured: configured, rest, configured, VAPID_PUBLIC_KEY, supabaseUrl: () => SUPABASE_URL, anonKey: () => SUPABASE_ANON_KEY,
   };
 })(window);

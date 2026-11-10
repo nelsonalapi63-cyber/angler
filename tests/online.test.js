@@ -96,3 +96,13 @@ test('handles are validated', () => {
   assert.ok(O.handleProblem('has space'));
   assert.ok(O.handleProblem('shithead'));
 });
+
+// Live smoke of the `duel` Edge Function: only with SUPABASE_URL and SUPABASE_ANON_KEY in the environment (CI and
+// the default test run never touch the live project). tools/duel-smoke.js plays a two-player room end to end.
+const LIVE = process.env.SUPABASE_URL && process.env.SUPABASE_ANON_KEY;
+test('live duel function: create → join → start → answer → pop → leave → rematch', { skip: !LIVE && 'set SUPABASE_URL and SUPABASE_ANON_KEY' }, async () => {
+  const smoke = require('../tools/duel-smoke.js');
+  const r = await smoke.run({ url: process.env.SUPABASE_URL, key: process.env.SUPABASE_ANON_KEY, log: () => {} });
+  assert.strictEqual(r.ok, true, r.failures.join('; '));
+  assert.ok(r.steps >= 10);
+});

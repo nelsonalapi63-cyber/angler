@@ -1,0 +1,1675 @@
+{
+ "started": "2026-11-10T10:27:52.175Z",
+ "questions": [
+  {
+   "id": "shark-species",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "shark-atlantic",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "shark-deep",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "shark-live-young",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "shark-reef",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "ray-skate-sawfish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "stingray-species",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "flat-seabed-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "arctic-animal",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sea-reptile",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "shelled-animal",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "cephalopod",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "octopus-species",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "squid-species",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "tentacles",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "crab-species",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "lobster-shrimp",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "edible-shellfish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "jellyfish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "venomous",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "drifter",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "flatfish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "buries-in-sand",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "deep-sea-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "below-1000m",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "deep-not-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "deep-shipwreck",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "vent-life",
+   "before": 48,
+   "after": 48,
+   "added": 0,
+   "retired": true
+  },
+  {
+   "id": "makes-light",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "transparent",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fresh-salt",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "salmon-trout",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "breathes-air",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "tide-pool",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "echinoderm",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "filter-feeder",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "reef-system",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "reef-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "coral-type",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "symbiosis",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "atlantic-sea",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "pacific-sea",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "strait",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "current",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "pacific-island",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "atlantic-island",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "water-named-person",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "mediterranean-sea",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "research-vessel",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "explorer",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sunken-ship",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "atlantic-port",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "boat-type",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "seaweed",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "eats-seaweed",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sushi",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "food-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "big-catch",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "farmed",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "tuna-mackerel",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "cod-family",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "catfish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "eel",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fast-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "long-lived",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "tiny-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "anemonefish-damsel",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "wrasse-parrotfish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "butterfly-angel-tang",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "grouper-snapper-bass",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "seahorse",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "puffer-box-trigger",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "seabird",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "migrates",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "electric",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "pelagic",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "antarctic",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "mangrove",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "gbr",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "kelp-forest",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "plankton",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "snail-slug-mollusc",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "parent-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "red-sea",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "mediterranean-animal",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "named-after-land-animal",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "colour-change",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sound",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "long-snout",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "jumper",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "seafloor-feature",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "dive-site",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "endangered",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "extinct",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "colour-name",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "caribbean",
+   "before": 76,
+   "after": 76,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "galapagos",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "invasive",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "aquarium",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "freshwater",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "game-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sea-prefix",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "forage-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "north-sea",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "pacific-northwest",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "nocturnal",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "regenerates",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "gulf-of-mexico",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "indian-ocean",
+   "before": 80,
+   "after": 80,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "shark-species-b",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fish-letter-s",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fish-letter-b",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fish-letter-c",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fish-letter-p",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fish-letter-m",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fish-letter-g",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fish-letter-t",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fish-letter-a",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fish-letter-r",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sea-creature-letter-w",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sea-creature-letter-l",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "schooling-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sex-change-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "venomous-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "camouflage",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "barbels",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "striped-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "spotted-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "blue-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "red-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "yellow-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "benthic",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "beak",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "claws",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "poisonous-to-eat",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "endangered-fish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "food-name",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "royal-name",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "bird-name",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "seabird-species",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "bivalve",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "nudibranch",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "seagrass-mangrove",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sea-anemone-coral-species",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sponge-tunicate",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "australia",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "british-waters",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "new-zealand",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "florida",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "hawaii",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "japan-waters",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "amazon",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "africa-great-lakes",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "caribbean-island",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "indian-ocean-island",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "mediterranean-island",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "atlantic-country",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "famous-beach",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "lighthouse",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "aquarium-public",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "surf-spot",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "pacific-port",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "indian-ocean-port",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "mediterranean-port",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "shipping-route",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sea-god-monster",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sea-book-film",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "pirate",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "admiral",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "naval-battle",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "warship-type",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "submarine",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "ocean-liner",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "voyage",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "seafood-dish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fish-preparation",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "ocean-job",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sea-instrument",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sailor-word",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "ocean-phenomenon",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "ocean-organisation",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "water-sport",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "shark-letter",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "deep-sea-creature-letter",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sea-creature-letter-p",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sea-creature-letter-m",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "crustacean-species",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "prehistoric-sea",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sea-turtle-reptile-mammal",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "goby-blenny",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "rockfish-scorpionfish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "cichlid",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "tetra-barb",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "perch-bass-sunfish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "carp-minnow",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "deeper-than-2000",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "mullet-goatfish-barracuda",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "gull-tern-skua",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "petrel-shearwater",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sea-star",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "urchin-cucumber",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "flyingfish-needlefish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "toadfish-frogfish-angler",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "jack-trevally",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "bream-porgy",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "cardinalfish-squirrelfish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "croaker-drum",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "killifish-livebearer",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "loach",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "gurnard-flathead",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "hermit-squat",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "skate",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "moray-eel",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "sculpin-snailfish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "grunt-sweetlips",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "rainbowfish",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "gourami-betta",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "darter",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "dottyback-basslet",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fish-letter-d",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fish-letter-l",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fish-letter-w",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "fish-letter-h",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  },
+  {
+   "id": "over-3m",
+   "before": 75,
+   "after": 75,
+   "added": 0,
+   "retired": false
+  }
+ ],
+ "retired": [
+  {
+   "id": "whale-species",
+   "answers": 44
+  },
+  {
+   "id": "toothed-whale",
+   "answers": 45
+  },
+  {
+   "id": "polar-cetacean",
+   "answers": 42
+  },
+  {
+   "id": "whale-hunted",
+   "answers": 44
+  },
+  {
+   "id": "cetacean-named-after",
+   "answers": 43
+  },
+  {
+   "id": "dolphin-porpoise",
+   "answers": 56
+  },
+  {
+   "id": "river-dolphin",
+   "answers": 31
+  },
+  {
+   "id": "dolphin-pacific",
+   "answers": 35
+  },
+  {
+   "id": "pinniped",
+   "answers": 42
+  },
+  {
+   "id": "marine-mammal-not-cetacean",
+   "answers": 47
+  },
+  {
+   "id": "eats-krill",
+   "answers": 44
+  },
+  {
+   "id": "hadal-animal",
+   "answers": 37
+  },
+  {
+   "id": "trench",
+   "answers": 43
+  },
+  {
+   "id": "giant",
+   "answers": 35
+  },
+  {
+   "id": "living-fossil",
+   "answers": 45
+  },
+  {
+   "id": "echolocation",
+   "answers": 55
+  },
+  {
+   "id": "pacific-country",
+   "answers": 40
+  },
+  {
+   "id": "indian-ocean-country",
+   "answers": 36
+  },
+  {
+   "id": "island-nation",
+   "answers": 46
+  },
+  {
+   "id": "whale-dolphin-letter-s",
+   "answers": 41
+  },
+  {
+   "id": "whale-letter",
+   "answers": 31
+  },
+  {
+   "id": "ocean-record",
+   "answers": 47
+  },
+  {
+   "id": "vent-life",
+   "answers": 48,
+   "reason": "only 0 verified candidates"
+  }
+ ],
+ "added": [],
+ "finished": "2026-11-10T10:27:52.276Z",
+ "fetch": {
+  "hits": 0,
+  "fetched": 0,
+  "failed": 0
+ }
+}

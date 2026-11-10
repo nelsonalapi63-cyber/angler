@@ -5,7 +5,7 @@
 // service role key.
 import { createClient } from "npm:@supabase/supabase-js@2";
 
-const KEYS = ["prompts", "entities", "schedule", "taxa", "version"];
+const KEYS = ["prompts", "entities", "schedule", "taxa", "frozen", "version"];   // frozen (v4): the answer sets of days already played
 const CORS = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Headers": "authorization, apikey, content-type, x-bank-token", "Access-Control-Allow-Methods": "POST, OPTIONS" };
 const json = (status: number, body: unknown) => new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json", ...CORS } });
 

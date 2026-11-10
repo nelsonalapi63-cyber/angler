@@ -126,15 +126,29 @@ async function playDive(page, plan, opts) {
     const item = plan ? plan[i] : null;
     const typed = item ? item.typed : await page.evaluate(() => { const P = window.FATHOM_PROMPTS, E = window.FATHOM_ENTITIES; const p = P.find(x => x.text === document.querySelector('#question-text').textContent); return E[p.answers[0].entity].name; });
     if (item && item.hint) { await page.click('#hint-btn'); await page.waitForSelector('#hint-text:not(:empty)'); }
+    const timing = opts && opts.takeoverCheckAt === i;
+    if (timing) await armTakeoverTimers(page);
     await page.fill('#answer', typed);
     await page.press('#answer', 'Enter');
+    if (timing) await takeoverChecks(page, opts);
     if (item && item.kind === 'chip') {
-      await page.waitForSelector('#reject:not(:empty)');
-      assert.strictEqual(await page.inputValue('#answer'), '', 'a rejected guess clears the box');
-      assert.ok(await page.$('#answer:not([disabled])'), 'the prompt stays open after a rejected guess');
-      const chip = await page.waitForSelector('.chip-btn');
-      assert.strictEqual(await chip.textContent(), item.chip, 'the chip offers the right spelling');
-      await chip.click();
+      // v4: a near-miss is not accepted; the box keeps the text and asks "Did you mean to spell X?" — Yes submits it
+      const ask = await page.waitForSelector('.ask');
+      assert.ok(/^Did you mean to spell/.test((await ask.textContent()).trim()), 'the box asks: ' + await ask.textContent());
+      assert.ok((await ask.textContent()).includes(item.chip), 'the ask names the right spelling');
+      assert.strictEqual(await page.inputValue('#answer'), typed, 'the misspelling stays in the box while it asks');
+      assert.ok(await page.$('#answer:not([disabled])'), 'the prompt stays open while it asks');
+      assert.ok(await page.$('.ask button:has-text("No")'), 'there is a No');
+      const yes = await page.$('.ask button:has-text("Yes")');
+      if (yes) await yes.click(); else await page.click('.ask .chip-btn:has-text("' + item.chip + '")');
+      await page.waitForSelector('.tile');
+      assert.ok(!(await page.textContent('#reveal')).includes('Did you mean to spell'), 'a spelling chosen from the ask is an exact answer: no correction sentence');
+    } else if (item && item.kind === 'typo') {
+      // v4: inside the typo budget the box is corrected at once and the reveal says so
+      await page.waitForSelector('.corrected-note');
+      assert.ok(/^Did you mean to spell .+\? Accepted\.$/.test((await page.textContent('.corrected-note')).trim()), 'the correction sentence: ' + await page.textContent('.corrected-note'));
+      assert.notStrictEqual(await page.inputValue('#answer'), typed, 'the box text was corrected');
+      assert.ok(await page.$('#answer.corrected'), 'the corrected text is underlined');
     } else if (item && item.kind === 'garbage+skip') {
       await page.waitForSelector('#reject:not(:empty)');
       assert.ok(await page.$('#answer:not([disabled])'), 'garbage does not end the prompt');
@@ -145,10 +159,46 @@ async function playDive(page, plan, opts) {
     await page.waitForSelector('.tile');
     if (opts && opts.revealShotAt === i) await page.screenshot({ path: path.join(SHOTS, opts.revealShotName) });
     if (opts && opts.onAnswer) await opts.onAnswer(i);
+    // v4: every answer takes the whole screen and ends in ONE button; nothing advances on its own
+    assert.ok(await page.$('.dive.takeover'), 'the descent takes the whole screen (question ' + (i + 1) + ')');
     await page.click('.next-row button');
+    if (i < total - 1) { await page.waitForSelector('#answer:not([disabled])'); assert.strictEqual(await page.$('.dive.takeover'), null, 'the two-column layout is back after the tap'); }
   }
   await page.waitForSelector('.result-depth');
   return seen;
+}
+
+// v4 timing: the takeover must be visible within 100 ms of the answer, its one button must not appear before 2,000 ms and
+// must be there by 3,200 ms, waiting costs nothing, and the next 25-second timer starts only after the tap.
+async function armTakeoverTimers(page) {
+  await page.evaluate(() => {
+    window.__tk = { submit: null, takeover: null, next: null };
+    document.querySelector('.answer-form').addEventListener('submit', () => { window.__tk.submit = performance.now(); }, { capture: true, once: true });
+    const section = document.querySelector('.dive');
+    new MutationObserver(() => { if (section.classList.contains('takeover') && window.__tk.takeover == null) window.__tk.takeover = performance.now(); }).observe(section, { attributes: true, attributeFilter: ['class'] });
+    new MutationObserver(() => { if (window.__tk.next == null && document.querySelector('.next-row button')) window.__tk.next = performance.now(); }).observe(section, { childList: true, subtree: true });
+  });
+}
+async function takeoverChecks(page, opts) {
+  await page.waitForSelector('.dive.takeover', { timeout: 2000 });
+  if (opts && opts.takeoverShotName) { await page.waitForTimeout(1200); await page.screenshot({ path: path.join(SHOTS, opts.takeoverShotName) }); }
+  await page.waitForSelector('.next-row button', { timeout: 5000 });
+  const t = await page.evaluate(() => window.__tk);
+  assert.ok(t.submit != null && t.takeover != null && t.next != null, 'timers armed: ' + JSON.stringify(t));
+  assert.ok(t.takeover - t.submit <= 100, 'takeover visible within 100 ms of the answer (' + Math.round(t.takeover - t.submit) + ' ms)');
+  const reduced = await page.evaluate(() => matchMedia('(prefers-reduced-motion: reduce)').matches);
+  if (reduced) assert.ok(t.next - t.takeover >= 600 && t.next - t.takeover <= 1500, 'reduced motion: the button after 600 ms (' + Math.round(t.next - t.takeover) + ' ms)');
+  else assert.ok(t.next - t.takeover >= 2000 && t.next - t.takeover <= 3200, 'the button appears between 2,000 and 3,200 ms (' + Math.round(t.next - t.takeover) + ' ms)');
+  const buttons = await page.$$('.takeover-plate button');
+  assert.strictEqual(buttons.length, 1, 'ONE button on the takeover');
+  assert.ok(await page.evaluate(() => document.activeElement === document.querySelector('.next-row button')), 'the button is focused when it appears');
+  if (opts && opts.nextShotName) await page.screenshot({ path: path.join(SHOTS, opts.nextShotName) });
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(6000);                                   // waiting costs nothing
+  assert.ok(await page.$('.dive.takeover'), 'after 6 s idle the takeover is still up (Escape did nothing, nothing auto-advanced)');
+  assert.strictEqual(await page.$('#answer:not([disabled])'), null, 'the next question has not started');
+  const contrast = await page.evaluate(() => { const c = getComputedStyle(document.querySelector('.takeover-plate')); return c.color + ' on ' + c.backgroundColor; });
+  console.log('takeover plate: ' + contrast);
 }
 
 // The dive screen is two columns at every width: the water column on the left, the question and answer box to its right.
@@ -178,6 +228,87 @@ function videoToGif(video, out, fps) {
   fs.rmSync(pal, { force: true });
   if (b.status !== 0) { console.error(String(b.stderr).slice(-400)); return false; }
   return true;
+}
+
+// Duel, pass-and-play on one phone: lobby → turns → pops → winner, with the same reducer the server runs.
+async function duelPassAndPlay(browser, srv) {
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+  await ctx.addInitScript(MOCK_INIT);
+  await ctx.addInitScript(() => { window.FATHOM_DUEL_TEST = { fuseMs: 1800 }; });     // a short hidden fuse keeps the run quick
+  const page = await ctx.newPage();
+  watch(page, 'duel');
+  await page.goto(srv.url + '#duel');
+  await skipWelcome(page);
+  await page.waitForSelector('#duel-local-btn');
+  await axeCheck(page, 'duel landing');
+  await page.screenshot({ path: path.join(SHOTS, 'duel-landing.png'), fullPage: true });
+  await page.click('#duel-local-btn');
+  await page.waitForSelector('#duel-local-start');
+  await page.fill('.duel-name-line:nth-child(1) input', 'Nish');
+  await page.fill('.duel-name-line:nth-child(2) input', 'Maya');
+  await page.screenshot({ path: path.join(SHOTS, 'duel-lobby.png'), fullPage: true });
+  await axeCheck(page, 'duel lobby');
+  await page.click('#duel-local-start');
+  await page.waitForSelector('#duel-answer:not([disabled])');
+  const question = await page.textContent('#question-text');
+  assert.ok(question.length > 10, 'a question is dealt: ' + question);
+  assert.ok(/Nish holds the puffer/.test(await page.textContent('#duel-holder')), 'the host holds the puffer in round 1');
+  assert.strictEqual(await page.$$eval('.ring-player', els => els.length), 2, 'two players in the ring');
+  assert.strictEqual(await page.$$eval('.tank.full', els => els.length), 4, 'two tanks each');
+  // the two columns, like the dive
+  const cols = await page.evaluate(() => { const l = document.querySelector('.duel-left').getBoundingClientRect(), r = document.querySelector('.duel-main').getBoundingClientRect(); return { lr: l.right, rl: r.left }; });
+  assert.ok(cols.lr <= cols.rl + 1, 'two columns at phone width');
+  // an accepted answer passes the puffer; a repeat is refused with who said it; garbage is refused; the clock runs on
+  const answers = await page.evaluate((q) => { const P = window.FATHOM_PROMPTS, E = window.FATHOM_ENTITIES; const p = P.find(x => x.text === q); return p.answers.slice(0, 3).map(a => E[a.entity].name); }, question);
+  await page.fill('#duel-answer', answers[0]); await page.press('#duel-answer', 'Enter');
+  await page.waitForFunction(() => /Maya holds the puffer/.test(document.querySelector('#duel-holder').textContent));
+  assert.ok((await page.textContent('.duel-feed')).includes('Nish passed · ' + answers[0]), 'the feed says who passed what: ' + await page.textContent('.duel-feed'));
+  assert.ok((await page.textContent('.duel-said')).includes(answers[0] + ' (Nish)'), 'the answer is listed under its tier');
+  await page.screenshot({ path: path.join(SHOTS, 'duel-turn.png'), fullPage: true });
+  await axeCheck(page, 'duel turn');
+  await page.fill('#duel-answer', answers[0]); await page.press('#duel-answer', 'Enter');
+  await page.waitForFunction(() => /Already said/.test(document.querySelector('#duel-msg').textContent));
+  assert.ok((await page.textContent('#duel-msg')).includes(answers[0] + ' (Nish)'), 'a repeat names who said it: ' + await page.textContent('#duel-msg'));
+  assert.ok(/Maya holds the puffer/.test(await page.textContent('#duel-holder')), 'a repeat does not end the turn');
+  await page.fill('#duel-answer', 'xqzv wppl'); await page.press('#duel-answer', 'Enter');
+  await page.waitForFunction(() => /not an accepted answer/.test(document.querySelector('#duel-msg').textContent));
+  assert.ok(/Maya holds the puffer/.test(await page.textContent('#duel-holder')), 'a non-answer does not end the turn');
+  // now let the puffer pop on Maya: a life goes, the round ends, a new question comes
+  await page.waitForFunction(() => document.querySelectorAll('.tank.full').length === 3, null, { timeout: 15000 });
+  assert.ok((await page.textContent('.duel-feed')).includes('Pop! Maya loses a tank'), 'the pop is in the feed');
+  await page.waitForFunction((q) => document.querySelector('#question-text') && document.querySelector('#question-text').textContent !== q, question, { timeout: 15000 });
+  assert.ok(/Nish holds the puffer/.test(await page.textContent('#duel-holder')), 'the next round starts with the player after the popped one');
+  // play through to a winner: nobody answers, so Nish pops, then Maya, then Nish is out → Maya wins
+  await page.waitForSelector('.duel-result', { timeout: 60000 });
+  await page.screenshot({ path: path.join(SHOTS, 'duel-result.png'), fullPage: true });
+  await axeCheck(page, 'duel result');
+  const result = await page.textContent('.duel-result');
+  assert.ok(/(Nish|Maya) wins/.test(result), 'a winner is named: ' + result.slice(0, 80));
+  assert.ok(/ANGLER Duel · won \d–\d/.test(await page.textContent('.share-preview')), 'the share line: ' + await page.textContent('.share-preview'));
+  assert.ok(/Deepest answer/.test(result), 'the summary names the deepest answer');
+  await page.click('#duel-rematch');
+  await page.waitForSelector('#duel-answer:not([disabled])', { timeout: 10000 });
+  assert.strictEqual(await page.$$eval('.tank.full', els => els.length), 4, 'a rematch resets the lives');
+  await ctx.close();
+}
+
+// Reduced motion: the takeover still appears, the sub jumps with a crossfade, and the one button comes after 600 ms.
+async function reducedMotionTakeover(browser, srv) {
+  const ctx = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
+  await ctx.addInitScript(MOCK_INIT);
+  const page = await ctx.newPage();
+  watch(page, 'reduced motion');
+  await page.goto(srv.url + '#home');
+  await page.waitForSelector('.modal');
+  await page.click('#welcome-tutorial');
+  await page.waitForSelector('#answer:not([disabled])');
+  await armTakeoverTimers(page);
+  await page.fill('#answer', 'great white'); await page.press('#answer', 'Enter');
+  await takeoverChecks(page, {});
+  await page.click('.next-row button');
+  await page.waitForSelector('#answer:not([disabled])');
+  assert.strictEqual(await page.$('.dive.takeover'), null, 'reduced motion: the layout returns after the tap');
+  await ctx.close();
 }
 
 // A cold visitor: lands, sees motion within five seconds, taps the one big Dive button, answers seven questions (one
@@ -260,8 +391,22 @@ async function coldVisitorWalkthrough(browser, srv) {
   await page.waitForSelector('#answer:not([disabled])');
   assert.ok((await page.textContent('main')).includes('Tutorial 1/3'));
   assert.ok((await page.textContent('main')).includes('No timer'));
-  await page.fill('#answer', 'great white'); await page.press('#answer', 'Enter');
-  await page.waitForSelector('.tile'); await page.click('.next-row button');
+  // v4 autocorrect: four letters off is outside the budget — the box asks, Yes submits that spelling
+  await page.fill('#answer', 'scalopd hamrhead'); await page.press('#answer', 'Enter');
+  const ask = await page.waitForSelector('.ask');
+  assert.ok(/^Did you mean to spell Scalloped hammerhead\?/.test((await ask.textContent()).trim()), 'the box asks: ' + await ask.textContent());
+  assert.strictEqual(await page.inputValue('#answer'), 'scalopd hamrhead', 'the text stays in the box while it asks');
+  await page.screenshot({ path: path.join(SHOTS, 'did-you-mean-mobile.png') });
+  await page.click('.ask button:has-text("No")');
+  assert.strictEqual(await page.inputValue('#answer'), '', 'No clears the box');
+  assert.strictEqual(await page.$('.ask'), null, 'and the question goes away');
+  await page.fill('#answer', 'scalopd hamrhead'); await page.press('#answer', 'Enter');
+  await page.waitForSelector('.ask');
+  await page.press('#answer', 'Enter');                                                       // Enter = Yes when there is exactly one spelling
+  await page.waitForSelector('.tile');
+  assert.ok((await page.textContent('.tile')).includes('Scalloped hammerhead'), 'the asked-for spelling was submitted: ' + await page.textContent('.tile'));
+  assert.ok(!(await page.textContent('#reveal')).includes('Did you mean to spell'), 'an exact answer carries no correction sentence');
+  await page.click('.next-row button');
   await page.waitForSelector('#answer:not([disabled])');
   await page.fill('#answer', 'zzzzz whale'); await page.press('#answer', 'Enter');          // rejected: the prompt stays open
   await page.waitForSelector('#reject:not(:empty)');
@@ -269,8 +414,13 @@ async function coldVisitorWalkthrough(browser, srv) {
   await page.waitForSelector('#hint-text:not(:empty)');
   assert.strictEqual((await page.textContent('#hint-btn')).trim(), 'Hint used');
   await page.fill('#answer', 'humpbak whale'); await page.press('#answer', 'Enter');       // a letter off still counts
+  await page.waitForSelector('.corrected-note', { timeout: 1000 });
+  assert.strictEqual((await page.textContent('.corrected-note')).trim(), 'Did you mean to spell Humpback whale? Accepted.');
+  assert.strictEqual(await page.inputValue('#answer'), 'Humpback whale', 'the box text is corrected');
   await page.waitForSelector('.tile');
+  assert.ok((await page.textContent('.tile')).includes('Humpback whale'), 'the corrected name is on the tile');
   assert.ok((await page.textContent('.tile')).includes('2 tries'));
+  await page.screenshot({ path: path.join(SHOTS, 'autocorrect-accepted-mobile.png') });
   await page.click('.next-row button');
   await page.waitForSelector('#answer:not([disabled])');
   assert.ok(await page.$('#hint-btn[disabled]'), 'one hint per dive: the box is spent on the next question too');
@@ -299,7 +449,7 @@ async function coldVisitorWalkthrough(browser, srv) {
   const plan = await planAnswers(page);
   console.log('daily plan:', plan.map(p => p.kind + ':' + JSON.stringify(p.typed)).join(' | '));
   const depthsSeen = [];
-  await playDive(page, plan, { shotAt: 0, shotName: 'dive-mobile.png', revealShotAt: 2, revealShotName: 'dive-reveal-mobile.png', descentShotAt: 6, descentShotName: 'hadal-moment.png', humanPace: true, onAnswer: async (i) => {
+  await playDive(page, plan, { shotAt: 0, shotName: 'dive-mobile.png', revealShotAt: 2, revealShotName: 'dive-reveal-mobile.png', descentShotAt: 6, descentShotName: 'hadal-moment.png', humanPace: true, takeoverCheckAt: 1, takeoverShotName: 'takeover-descent.png', nextShotName: 'takeover-next.png', onAnswer: async (i) => {
     // the submarine is the single depth display: it sinks on an accepted answer and stalls on a skip
     const item = plan[i];
     if (item.kind === 'garbage+skip') {
@@ -310,7 +460,8 @@ async function coldVisitorWalkthrough(browser, srv) {
     }
     depthsSeen.push(Number(await page.getAttribute('#dive-scene', 'data-depth')));
     if (i === 0) {
-      assert.ok((await page.textContent('#radio')).length > 0 && (await page.textContent('#radio')).length < 60, 'the pilot radios a short line: ' + await page.textContent('#radio'));
+      const radio = await page.textContent('.takeover-radio');
+      assert.ok(radio.length > 0 && radio.length < 60, 'the pilot radios a short line on the takeover: ' + radio);
       assert.ok(/said that|anyone says|clever pick|solid answer|uncommon|specialist|one best/i.test(await page.textContent('.rarity')), 'the rarity line: ' + await page.textContent('.rarity'));
     }
   } });
@@ -620,6 +771,8 @@ async function coldVisitorWalkthrough(browser, srv) {
 
   // ---- the engagement walk-through: a cold visitor, landing to finished dive, recorded as tests/screenshots/dive.gif
   await coldVisitorWalkthrough(browser, srv);
+  await reducedMotionTakeover(browser, srv);
+  await duelPassAndPlay(browser, srv);
 
   await browser.close();
   srv.close();

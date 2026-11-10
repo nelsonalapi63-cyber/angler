@@ -178,22 +178,22 @@
     const list = [];
     const variants = new Map();         // short form -> claim, or null once two answers have claimed it
     const bases = [];                   // every real spelling, to derive variants from
-    const claim = (form, entityId, tierCode, display, kind) => {
+    const claim = (form, entityId, tierCode, display, kind, raw) => {
       if (exact.has(form)) return;
-      exact.set(form, { entityId, tier: tierCode, name: display, kind: kind || 'name' });
-      list.push({ form, entityId, tier: tierCode, name: display, kind: kind || 'name' });
+      exact.set(form, { entityId, tier: tierCode, name: display, kind: kind || 'name', raw: raw || display || null });
+      list.push({ form, entityId, tier: tierCode, name: display, kind: kind || 'name', raw: raw || display || null });
     };
-    const base = (norm, entityId, tierCode, display, kind) => {
+    const base = (norm, entityId, tierCode, display, kind, raw) => {
       if (!norm) return;
-      for (const form of pluralForms(norm)) claim(form, entityId, tierCode, display, kind);
+      for (const form of pluralForms(norm)) claim(form, entityId, tierCode, display, kind, raw);
       const owner = exact.get(norm);
       if (owner && owner.entityId === entityId) bases.push({ norm, entityId, tier: tierCode, name: display });   // a spelling already owned by another answer (a reference-list duplicate of a hand-listed name) derives no variants
     };
     const answers = prompt.answers.filter(a => entitiesById[a.entity] && TIER_BY_CODE[a.tier]);
-    for (const a of answers) base(normalise(entitiesById[a.entity].name), a.entity, a.tier, undefined, 'name');
+    for (const a of answers) base(normalise(entitiesById[a.entity].name), a.entity, a.tier, undefined, 'name', entitiesById[a.entity].name);
     const byTier = answers.slice().sort((x, y) => TIER_BY_CODE[x.tier].points - TIER_BY_CODE[y.tier].points);
     for (const a of byTier) {
-      for (const raw of (entitiesById[a.entity].aliases || [])) base(normalise(raw), a.entity, a.tier, undefined, 'alias');
+      for (const raw of (entitiesById[a.entity].aliases || [])) base(normalise(raw), a.entity, a.tier, undefined, 'alias', raw);
     }
     const taxonNames = taxa && prompt.taxon ? taxonGroups(prompt.taxon).flatMap(g => taxa[g] || []) : [];
     if (taxonNames.length) {
@@ -201,7 +201,7 @@
       for (const raw of taxonNames) {
         const norm = normalise(raw);
         if (!norm || (filter && !filter.test(norm))) continue;
-        base(norm, 'taxon:' + norm.replace(/ /g, '-'), TAXON_TIER, raw, 'taxon');
+        base(norm, 'taxon:' + norm.replace(/ /g, '-'), TAXON_TIER, raw, 'taxon', raw);
       }
     }
     const variant = (form, b) => {
@@ -250,10 +250,26 @@
     return 0;
   }
   const VARIANT_RANK = { name: 0, alias: 1, taxon: 2, variant: 3 };
-  function matchAnswer(typed, index) {
+  // The real spelling of an index entry: the bank's own name or alias, so a correction can show it.
+  function spellingOf(cand, entitiesById) {
+    if (cand.raw) return cand.raw;
+    if (cand.name) return cand.name;
+    const e = entitiesById && entitiesById[cand.entityId];
+    return e ? e.name : cand.form;
+  }
+  // matchAnswer(typed, index[, entitiesById]). A fuzzy hit carries `correction: { from, to, accepted: true }`; a miss
+  // that is within suggestion range carries `correction: { from, to, accepted: false, options: [{ name, entityId }] }`
+  // so the answer box can ask "Did you mean to spell …?". An ambiguous short form keeps `ambiguous` instead.
+  function matchAnswer(typed, index, entitiesById) {
     const norm = normalise(typed);
+    const from = String(typed == null ? '' : typed).trim();
     const miss = { entityId: null, tier: null, points: 0, via: null, norm };
     if (!norm) return miss;
+    const askOrMiss = () => {
+      const options = suggestAnswers(typed, index, entitiesById).filter(o => !o.ambiguousForm).map(o => ({ name: o.name, entityId: o.entityId }));
+      if (!options.length) return miss;
+      return Object.assign(miss, { correction: { from, to: options[0].name, accepted: false, options } });
+    };
     const found = (hit, via) => ({ entityId: hit.entityId, tier: hit.tier, points: TIER_BY_CODE[hit.tier].points, via, norm, name: hit.name || null });
     const hit = index.exact.get(norm);
     if (hit) return found(hit, hit.kind === 'variant' ? 'group' : 'exact');
@@ -265,7 +281,7 @@
       if (ambiguous.has(form)) return Object.assign(miss, { ambiguous: ambiguous.get(form) });
     }
     const maxDist = fuzzyBudget(norm);
-    if (!maxDist) return miss;
+    if (!maxDist) return askOrMiss();
     let best = null;
     for (const cand of index.list) {
       if (Math.abs(cand.form.length - norm.length) > maxDist) continue;
@@ -278,8 +294,8 @@
         best = { cand, d, lenDiff, rank, pts };
       }
     }
-    if (!best) return miss;
-    return { entityId: best.cand.entityId, tier: best.cand.tier, points: best.pts, via: 'fuzzy', norm, distance: best.d, name: best.cand.name || null };
+    if (!best) return askOrMiss();
+    return { entityId: best.cand.entityId, tier: best.cand.tier, points: best.pts, via: 'fuzzy', norm, distance: best.d, name: best.cand.name || null, correction: { from, to: spellingOf(best.cand, entitiesById), accepted: true } };
   }
 
   // "Did you mean": spelling help for a rejected guess. Returns up to SUGGEST_MAX candidates — never from fewer than
@@ -287,15 +303,11 @@
   // spelling is 3–4 edits away, or the same words in another order, or missing exactly one word of a longer answer.
   function suggestAnswers(typed, index, entitiesById) {
     const norm = normalise(typed);
-    const display = (cand) => {
-      if (cand.name) return cand.name;
-      const e = entitiesById && entitiesById[cand.entityId];
-      return e ? e.name : cand.form;
-    };
+    const display = (cand) => spellingOf(cand, entitiesById);
     // a short form that fits several answers: offer every one of them, most common first
     const ambiguous = index.ambiguous || new Map();
     for (const form of [norm].concat(groupForms(norm))) {
-      if (ambiguous.has(form)) return ambiguous.get(form).slice(0, AMBIGUOUS_MAX).map(c => ({ name: display(c), entityId: c.entityId, tier: c.tier }));
+      if (ambiguous.has(form)) return ambiguous.get(form).slice(0, AMBIGUOUS_MAX).map(c => ({ name: display(c), entityId: c.entityId, tier: c.tier, ambiguousForm: true }));
     }
     if (norm.length < SUGGEST_MIN_LEN) return [];
     const typedWords = norm.split(' ');
@@ -444,9 +456,11 @@
   // server), so adding prompts never changes a day anyone has played. Days beyond the frozen horizon are generated
   // on the fly with the same rule: prefer the least recently scheduled prompts (never-scheduled first), break ties
   // with a per-day seeded shuffle, keep the seven groups distinct, then order by difficulty.
+  // v4: a retired question keeps its answers for the archive but is never scheduled or dealt again
+  function livePrompts(prompts) { return prompts.filter(p => !p.retired); }
   function pickDay(key, prompts, promptsById, lastUsed) {
     const rng = seededRng('fathom-day:' + key);
-    const order = shuffle(prompts.map(p => p.id).sort(), rng);
+    const order = shuffle(livePrompts(prompts).map(p => p.id).sort(), rng);
     order.sort((a, b) => {
       const la = lastUsed[a] == null ? -1 : lastUsed[a], lb = lastUsed[b] == null ? -1 : lastUsed[b];
       return la - lb;                                          // stable: ties keep the shuffled order
@@ -495,7 +509,7 @@
 
   function freePromptIds(seed, prompts) {
     const promptsById = byId(prompts);
-    const ids = shuffle(prompts.map(p => p.id).sort(), seededRng(FREE_SEED_PREFIX + seed));
+    const ids = shuffle(livePrompts(prompts).map(p => p.id).sort(), seededRng(FREE_SEED_PREFIX + seed));
     let { picked } = pickDistinctGroups(ids, promptsById, PROMPTS_PER_DIVE);
     if (picked.length < PROMPTS_PER_DIVE) picked = ids.slice(0, PROMPTS_PER_DIVE);
     return sortByDifficulty(picked, promptsById);
@@ -607,7 +621,7 @@
     depthFor, zoneFor, tierForCode, tiersToEmoji, tiersToDigits, digitsToTiers,
     fnv1a, seededRng, shuffle, randomSeed,
     dayKey, dayIndex, puzzleNumber, keyPlusDays, msUntilNextDay, nextMidnightUtc,
-    dailyPromptIds, buildSchedule, pickDay, freePromptIds, packPromptIds, sortByDifficulty, byId,
+    dailyPromptIds, buildSchedule, pickDay, freePromptIds, packPromptIds, sortByDifficulty, byId, livePrompts,
     makeChallengeHash, parseChallenge, challengeSeedFor, challengePromptIds, shareText, formatMeters, scoreSubmission,
   };
 });

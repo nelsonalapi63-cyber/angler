@@ -5,3 +5,6 @@ tests/screenshots/
 supabase/vapid-private.key
 dist/
 tests/reports/lighthouse-mobile.report.json
+tools/bank/cache/
+tools/bank/backup/
+tools/bank/build.log

@@ -266,3 +266,17 @@ test('hints point at a rarer unanswered answer and are free', () => {
   const scored2 = dive.scoreSubmissionFull({ promptIds: ['h'], answers: [{ typed: 'alpha fish', secondsUsed: 5, hint: true }] }, [p], ents);
   assert.strictEqual(scored2.points, 10);  // the hint costs nothing
 });
+
+// ---- v4: retired questions stay in the bank (the archive still shows them) but never get scheduled or dealt again
+test('livePrompts: a retired question is out of the daily schedule, free dives and challenge decks', () => {
+  const mk = (id, group, retired) => Object.assign({ id, text: id, group, difficulty: 1, answers: [{ entity: 'x', tier: 'hadal' }] }, retired ? { retired: true } : {});
+  const prompts = [];
+  for (let i = 0; i < 12; i++) prompts.push(mk('q' + i, 'g' + i, i % 3 === 0));
+  assert.deepStrictEqual(dive.livePrompts(prompts).map(p => p.id), ['q1', 'q2', 'q4', 'q5', 'q7', 'q8', 'q10', 'q11']);
+  const sched = dive.buildSchedule(prompts, {}, '2026-11-11', '2026-11-20');
+  for (const ids of Object.values(sched)) for (const id of ids) assert.ok(!/q(0|3|6|9)$/.test(id), 'scheduled a retired question: ' + id);
+  for (const id of dive.freePromptIds('abc', prompts)) assert.ok(!/q(0|3|6|9)$/.test(id), 'free dive dealt a retired question: ' + id);
+  // a day already in the schedule keeps its retired question: what people played stays
+  const kept = dive.buildSchedule(prompts, { '2026-11-02': ['q0', 'q1', 'q2', 'q4', 'q5', 'q7', 'q8'] }, '2026-11-03', '2026-11-04');
+  assert.deepStrictEqual(kept['2026-11-02'], ['q0', 'q1', 'q2', 'q4', 'q5', 'q7', 'q8']);
+});

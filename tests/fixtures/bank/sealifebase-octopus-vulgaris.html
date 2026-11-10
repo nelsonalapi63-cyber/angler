@@ -1,0 +1,565 @@
+    <!-- Display Cookie Consent Banner -->
+    <link rel="stylesheet" type="text/css" href="/css/cookie-consent.css">
+
+    <div id="cookie-consent-container" style="display:none;">
+        <div id="cookie-consent-banner">
+            <div class="cookie-consent-banner-item">
+                <p>
+                   This website uses cookies to enhance your browsing experience and ensure the functionality of our site. For more detailed information about the types of cookies we use and how we protect your privacy, please visit our <a href='../cookieMoreinfo.php' target='_blank'>Privacy Information</a> page..
+                </p>
+            </div>
+            <div class="cookie-consent-banner-item">
+                <button id="accept-all">Accept All</button>
+                <button id="accept-necessary">Accept Necessary Cookies Only</button>
+                <button id="cookie-settings">Cookie Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay"></div>
+
+    <!-- Cookie Settings Dialog -->
+    <div id="cookie-settings-dialog">
+        <span id="close-dialog">&times;</span>
+        <h3>Cookie Settings</h3>
+        <p>This website uses different types of cookies to enhance your experience. Please select your preferences below:</p>
+
+        <label>
+           <div class="cookie-categ">
+                <span>Strictly Necessary</span>
+                <label class="switch">
+
+                    <input type="checkbox" id="necessary-toggle" checked disabled>
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <p>
+                These cookies are essential for the website to function properly. They include session cookies, which help maintain your session while you navigate the site, as well as cookies that remember your language preferences and other essential functionalities. Without these cookies, certain features of the website cannot be provided.
+            </p>
+        </label>
+
+        <label>
+            <div class="cookie-categ">
+                <span>Performance</span>
+                <label class="switch">
+                    <input type="checkbox" id="performance-toggle">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <p>
+                These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. For example, we use Google Analytics to generate web statistics, which helps us improve our website's performance and user experience. These cookies may track information such as the pages visited, time spent on the site, and any errors encountered.
+            </p>
+        </label>
+
+        <button id="save-close">Save and Close</button>
+    </div>
+    <script src='/libs/jquery/scripts/cookie.js'></script>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<HTML lang="en">
+<HEAD>
+	<!--<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">-->
+	<meta name='keywords' content="Octopus vulgaris, Common octopus, Octopodidae, octopuses, maturity">
+	<title>Octopus vulgaris,  Common octopus  : fisheries</title>
+	<link rel="stylesheet" href="/fishbase.css" type="text/css">
+	<link rel="stylesheet" href="/css/slbscreen.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="/css/speciessummary_layout.css" type="text/css">
+	<link href="/libs/jquery/css/jquery-ui-custom.css" rel="stylesheet" type="text/css" />
+	<META http-equiv="Content-type" content="text/html" charset="utf-8">
+	<script language="javascript" src="../includes/ajax/ajax.js"></script>
+	<link rel="stylesheet" href="../css/spsum.css" type="text/css">
+	<script type="text/javascript" src="/libs/jquery/jquery.js"></script>
+	<script src='/libs/jquery/jquery-ui-min.js'></script>
+	<script src='/libs/jquery/scripts/speciessummary.js'></script>
+	<script src="/jquery/ImageAspectRatio.js"></script>
+	</HEAD>
+
+<BODY>
+	<!-- For Facebook Like and Share -->
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+	<!-- GOOGLE Translate Widget <script src="http://www.gmodules.com/ig/ifr?url=https://www.google.com/ig/modules/translatemypage.xml&up_source_language=en&w=160&h=60&title=&border=&output=js"></script>-->
+	<div id="ss-ad">
+		<div class='slabel6 scalign'>Advertisement</div><div class='scalign slabel6'><a target='blank' href="http://fishbase.aquanet.de/jump.asp?uid=MjAyNjExMTAwNjU1MDkxNjAuNzkuMTA2LjEyODYw"><img  src='/images/gifs/FishBase_ADBanner.gif' border="0"></a><br />You can <a href='../Sponsors.htm'>sponsor</a> this page
+					</div>	</div>
+	<div id="ss-container">
+		<!-- Search Box -->
+		<div id="search-box" title="Search SeaLifeBase" style="display:none">
+			<p>Common name (e.g. turtle)</p>
+			<form name="fn_comnames" action="/comnames/CommonNameSearchList.php" method="post">
+				<input type="hidden" name="crit1_fieldname" value="COMNAMES.ComName">
+				<input type="hidden" name="lang" value="English">
+				<input type="hidden" name="resultPage" value="1" />
+				<input type="hidden" name="crit1_fieldtype" value="CHAR">
+
+				<select name="crit1_operator" size="1">
+					<option value="CONTAINS">contains</option>
+					<option value="BEGINS_WITH">begins with</option>
+					<option value="ENDS_WITH">ends with</option>
+					<option value="EQUAL" selected>is</option>
+				</select>
+				<input type="text" name="CommonName" id="CommonName" value="" />
+				<input type="submit" value="search" />
+			</form>
+
+			<p>Genus + Species (e.g. Caretta caretta)</p>
+			<form name="fn_genspec" action="/Nomenclature/ScientificNameSearchList.php?" method="post">
+				<input name="gs" id="gs" size="35" value="" />
+				<input type="hidden" name="group" value="summary" />
+				<input type="submit" value="search" />
+			</form>
+		</div>
+
+		<div id="ss-topmenu" class="slabel7">
+			<div>
+				
+		<div id='ss-heading'>
+		<div class='logo'>
+		<a href='/search.php'>
+			<img src='/images/png/SLB_new.png' alt='Back to search' title='Go back to Search page'>
+		</a>
+		</div>
+		<nav>
+		<ul class='menu-list'>
+			<li class='menu-item'>
+				<a href='#' title='About this page' style='min-height: 23px;'>About this page <span class='arrow'>▾</span></a>
+				<ul class='submenu'>
+					<li><a href='/manual/English/fishbasethe_SPECIES_table.htm' title='More Info on species'>More Info</a></li>
+					<li><a href='/manual/French/FishBaseNomenclature.htm#00358710' title='Plus d info'>Plus d'info</a></li>
+					<li><a href='/manual/Portuguese/Nomenclature.htm#The_Species_table' title='Mais info'>Mais info</a></li>
+				</ul>
+			</li>
+			<li class='menu-item'>
+				<a href='#' title='Languages' style='min-height: 23px;'>Languages <span class='arrow'>▾</span></a>
+				<ul class='submenu'>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=arabic' title='Arabic'>Arabic</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=bahasa' title='Bahasa Malay/Indonesian'>Bahasa Malay/Indonesian</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=bangla' title='Bangla'>Bangla</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=scchinese' title='Simplified Chinese'>Chinese(Si)</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=chinese' title='Traditional Chinese'>Chinese(Tr)</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=german' title='German'>Deutsch</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=English' title='English'>English</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=spanish' title='Spanish'>Español</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=farsi' title='Farsi'>Farsi</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=french' title='French'>Français</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=greek' title='Greek'>Greek</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=hindi' title='Hindi'>Hindi</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=italian' title='Italian'>Italiano</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=japanese' title='Japanese'>Japanese</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=laos' title='Lao'>Lao</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=dutch' title='Dutch'>Nederlands</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=portuguese' title='Portuguese-Brasil'>Português(Br)</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=portuguese_po' title='Portuguese-Portugal'>Português(Pt)</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=russian' title='Russian'>Russian</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=swedish' title='Swedish'>Swedish</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=thai' title='Thai'>Thai</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=vietnamese' title='Vietnamese'>Vietnamese</a></li>
+					<li><a href='/summary/SpeciesSummary.php?id=58190&lang=myanmar' title='Myanmar'>Myanmar</a></li>
+				</ul>
+			</li>
+			<li class='menu-item'>
+				<a href='#' title='Send us a Feedback' style='min-height: 23px;'>Feedback <span class='arrow'>▾</span></a>
+				<ul class='submenu'>
+					<li><a href='javascript:document.mail.submit()' title='Send us your Comments & Corrections'>Comments & Corrections&emsp13;</a></li>
+					<li><a href='../facebooklinks.php' title='Explore our community support' target='_blank'>Facebook</a></li>
+				</ul>
+			</li>
+			<li class='menu-item'>
+				<a href='../summary/citation.php' title='How to cite Sealifebase' style='min-height: 23px;'>Citation</a>
+			</li>
+			<li class='menu-item'>
+				<a href='#' title='Upload Octopus vulgaris' style='min-height: 23px;'>Upload <span class='arrow'>▾</span></a>
+				<ul class='submenu'>
+					<li><a href='https://sealifebase.ca/tools/UploadPhoto/start.php?speccode=58190' title='Upload photo -  Octopus vulgaris'>Upload photo</a></li>
+
+				</ul>
+			</li>
+			<li class='menu-item'>
+				<a fref='#' title='Restricted - Octopus vulgaris' style='min-height: 23px;'>Related species <span class='arrow'>▾</span></a>
+				<ul class='submenu'>
+					<li><a style = 'width:148px;' href='../identification/SpeciesList.php?genus=Octopus' title='Species in Octopus'>Species in <i>Octopus</i></a></li>
+					<li><a style = 'width:148px;' href='/identification/SpeciesList.php?famcode=1890&areacode=&spines=&fins=' title='Species in Octopodidae'>Species in <i>Octopodidae</a></i></li>
+				<li style='background: #02CDE5; text-align:center;'>- Classification -</li>
+						<li><a style = 'width:148px;' href='/summary/FamilySummary.php?ID=1890' class='sciname' title='Family'>Octopodidae</a></li>
+						<li><a style = 'width:148px;' href='/summary/OrdersSummary.php?order=Octopoda' class='sciname' title='Order'>Octopoda</a></li>
+						<li><a style = 'width:148px; color:#D9D9D9;' href='#' class='sciname' title='Class'>Cephalopoda</a></li>
+						<li><a style = 'width:148px; color:#D9D9D9;' href='#' class='sciname' title='Phylum'>Chordata</a></li>
+						<li><a style = 'width:148px; color:#D9D9D9;' href='#' class='sciname' title='Kingdom'>Animalia</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+	<div class='logo'>
+		<a id='search-button' href='#'>
+		<img src='/images/png/search-logo-new.png' alt='Search' title='Search names'>
+		</a>
+	</div>
+	<div  class='logo'>
+		<a href='https://www.facebook.com/TheSeaLifeBaseProject/' target='_blank'>
+			<img src='/images/png/search-fb.png' height='35' border='0'/>
+		</a>
+	</div>
+	<div  class='logo'>
+		<a href='/donate/donate.php'><img src='/images/gifs/DonateButton.gif' width='90' alt=''></a>
+	</div>
+	</div>			</div>
+			<!-- <div>
+				<a href="https://www.facebook.com/TheSeaLifeBaseProject" target="_blank">
+					<img src="/images/png/search-fb.png" height="33" border="0" />
+				</a>
+				<a href='/donate/donate.php'><img src='/images/gifs/DonateButton.gif' width='90' alt=''></a>
+			</div> -->
+			<!-- Start main left pane -->
+		</div>
+
+		<div id="ss-ad">
+			<span class='slabel5'>
+							</span>
+		</div> <!-- ss-ad -->
+
+		<!-- Start Page header -->
+		<div id="ss-sciname">
+			<h1>
+				<span class="sciname"><b>Octopus vulgaris</b></span>
+				<span class='sheader6'>&nbsp; Cuvier, 1797</span>			</h1>
+
+			<span class='sheader2'>
+				Common octopus			</span>
+		</div><!-- ss-sciname -->
+
+
+		<div id="ss-photomap-container">
+			<!-- start aquamaps webservice -->
+							<div id="ss-map">
+					<br/><div class="aquamaps"><center><section><section_title></section_title><section_body><table border='1' cellpadding='2' cellspacing='0' style='font-size : xx-small; font-family : Arial;' width = '350'>
+		<tr><td align='center'>
+		<a href='#' onmouseover='javascript:document.getElementById(&quot;pix&quot;).src=&quot;/images/aquamaps/native/pic_W-Msc-140605.jpg&quot;'>
+		Native range</a> |
+			<a href='#' onmouseover='javascript:document.getElementById(&quot;pix&quot;).src=&quot;/images/aquamaps/suitable/pic_W-Msc-140605.jpg&quot;'>
+			All suitable habitat</a> |
+			<a href='#' onmouseover='javascript:document.getElementById(&quot;pix&quot;).src=&quot;/images/aquamaps/pointmap/pic_W-Msc-140605.jpg&quot;'>
+			Point map</a> |
+			<a href='#' onmouseover='javascript:document.getElementById(&quot;pix&quot;).src=&quot;/images/aquamaps/2050/pic_W-Msc-140605.jpg&quot;'>
+			Year 2050</a></td></tr><tr><td align='center'>
+		<a target='am_W-Msc-140605' href='//www.aquamaps.org/preMap.php?cache=1&SpecID=W-Msc-140605'><img id='pix' src='/images/aquamaps/native/pic_W-Msc-140605.jpg'></a>
+	</td></tr><tr><td align='center' style='font-size : xx-small;'>This map was computer-generated and has not yet been reviewed.</td></tr><tr><td align='center'><font style='font-family : Arial; font-size : xx-small;'>
+		<a target='fb_W-Msc-140605' href='http://www.sealifebase.org/summary/SpeciesSummary.php?genusname=Octopus&speciesname=vulgaris'><i>Octopus vulgaris</i></a>&nbsp; 
+		<a target='am_org' href='//www.aquamaps.org'>AquaMaps</a>&nbsp;
+		Data sources: 	<a target='gbif_W-Msc-140605' href='https://www.gbif.org/occurrence/search?q=Octopus vulgaris'>GBIF</a> 
+						<a target='obis_W-Msc-140605' href='https://obis.org/taxon/140605'>OBIS</a>			
+	</font></td></tr></table></section_body></section></center></div>				</div><!-- ss-map -->
+						<!-- Species Photo -->
+						<div id="ss-photo" class="slabel8">
+				<span class='sheader5'>
+					Upload your <a href='https://sealifebase.ca/tools/UploadPhoto/start.php?speccode=58190'>photos</a>&nbsp;<BR />				</span>
+				<a href='../Photos/thumbnailssummary.php?ID=58190'>All pictures</a> | <a href='https://images.google.com/images?hl=en&q=Octopus+vulgaris&btnG=Search+Images&gbv=2'>Google image</a> | <div><a style='text-decoration:none;' href='/Photos/ThumbnailsSummary.php?Genus=Octopus&Species=vulgaris'><img height='150' src='/images/thumbnails/jpg/Tn_Ocvul_u0.jpg' title ='Image of Octopus vulgaris (Common octopus)' alt='Image of Octopus vulgaris (Common octopus)' border='0' ></a></div><span class='sciname slabel8'>Octopus vulgaris</span><br/><span class='slabel8'>
+					Picture by
+					<a href='/Collaborators/CollaboratorSummary.php?ID=63'>
+					FAO</a><br />
+					</span><!--<script src="/libs/jquery/jquery.js"></script>-->
+<link rel="stylesheet" href="/css/swipeslider.css">
+<script src="/libs/jquery/swipeslider/swipeslider.min.js"></script>
+<script class="no-change">
+$(window).load(function() {
+	if($("#ss-photo-full").length > 0){			//the photo is full width
+		$('#image-slider').swipeslider({sliderHeight:'27%', autoPlayTimeout: 8000});
+	}else{
+		$('#image-slider').swipeslider({sliderHeight:'52%', autoPlayTimeout: 8000});
+	}
+});
+</script>
+<style>
+.swipslider{
+	max-width: 310px;
+	margin:	auto;
+}
+
+</style>				<!--<span class='sciname'>
+						Octopus vulgaris					</span>
+					<br/>
+			<span class="slabel8">
+				
+						Picture by
+						<a href='/Collaborators/CollaboratorSummary.php?ID=63'>
+						FAO</a><br />
+									</span>-->
+			</div><!-- ss-photo or ss-photo-full -->
+		</div> <!-- ss-photomap-container -->
+
+		<!-- MAIN CONTENT -->
+		<div id="ss-main">
+			<p>
+			<h1 class='slabel bottomBorder'>
+				
+				Classification   / Names
+				<span class="addLinks">
+					<!-- Start classification-->
+					<a href='/comnames/CommonNamesList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&StockCode=3996'>Common names</a> | <a href='/Nomenclature/SynonymsList.php?ID=58190&SynCode=71148&GenusName=Octopus&SpeciesName=vulgaris'>Synonyms</a> | <span class='slabel1'><a href='http://www.catalogueoflife.org/col/search/all/key/Octopus+vulgaris/match/1' target='_blank'>CoL</a></span> | <span class='slabel1'>ITIS</span> | <span class='slabel1'><a href='http://www.marinespecies.org/aphia.php?p=taxlist&tName=Octopus vulgaris' target='_blank'>WoRMS</a></span>				</span>
+			</h1>
+			Cephalopoda | <span class='slabel1'><a href='/summary/OrdersSummary.php?order=Octopoda' alt='Octopoda for Octopus vulgaris' title='Octopoda for Octopus vulgaris' target='_blank'>Octopoda</a></span> | <span class='slabel1'><a href='/summary/FamilySummary.php?ID=1890' alt='Octopodidae for Octopus vulgaris' title='Octopodidae for Octopus vulgaris' target='_blank'>Octopodidae</a></span>
+			</p><!-- Classification -->
+
+			<p><!-- Environment -->
+			<h1 class='slabel bottomBorder'>
+				Environment: milieu / climate zone / depth range / distribution range				<!--Begin Mod 08/24/17 Shelumiel Ortiz-->
+				<span class="addLinks">
+					<span class='slabel1'><a href='../Ecology/SpeciesEcologySummary.php?StockCode=3996&GenusName=Octopus&SpeciesName=vulgaris' alt='Ecology for Octopus vulgaris' title='Ecology for Octopus vulgaris' target='_blank'>Ecology</a></span>				</span>
+				<!--End Mod 08/24/17 Shelumiel Ortiz-->
+			</h1>
+			<span>
+				Reef-associated; oceanodromous (Ref. <A href='../references/FBRefSummary.php?ID=75927' target='_blank'>75927</A>); depth range 0 - 347 m (Ref. <A href='../references/FBRefSummary.php?ID=417' target='_blank'>417</A>), usually 0 - 100 m (Ref. <A href='../references/FBRefSummary.php?ID=1977' target='_blank'>1977</A>). &nbsp;Tropical;  ? - 7&deg;C (Ref. <A href='../references/FBRefSummary.php?ID=275' target='_blank'>275</A>), preferred 26&deg;C (Ref. <A href='../references/FBRefSummary.php?ID=107945' target='_blank'>107945</A>); 57&deg;N -   38&deg;S, 98&deg;W -   146&deg;E (Ref. <A href='../references/FBRefSummary.php?ID=275' target='_blank'>275</A>)			</span>
+			</p><!-- End Environment -->
+
+
+			<p><!-- Climate / Range -->
+				<!--<h1 class='slabel bottomBorder'>
+							</h1>
+			<span>
+							</span>
+		</p><!-- End Climate / Range -->
+
+			<p><!-- Distribution -->
+			<h1 class='slabel bottomBorder'>
+				Distribution				<span class="addLinks">
+					<span class='slabel1'><a href='../Country/CountryList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris' alt='Territories for Octopus vulgaris' title='Territories for Octopus vulgaris' target='_blank'>Territories</a></span> | <span class='slabel1'><a href='../Country/FaoAreaList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&fc=1890&StockCode=3996&Scientific=Octopus+vulgaris' alt='FAO areas for Octopus vulgaris' title='FAO areas for Octopus vulgaris' target='_blank'>FAO areas</a></span> | <span class='slabel1'><a href='../trophiceco/EcosysList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris' alt='Ecosystems for Octopus vulgaris' title='Ecosystems for Octopus vulgaris' target='_blank'>Ecosystems</a></span> | <span class='slabel1' style='color:gray;'>Occurrences</span> | <span class='slabel1' style='color:gray;'>Introductions</span>				</span>
+			</h1>
+			<span>
+				Circumglobal in temperate and tropical seas.<BR />			</span>
+			<!--
+			// <span class ='slabel1'>
+							// 						// </span>
+						-->
+			</p><!-- End Distribution -->
+
+			<p><!-- Size / Weight / Age -->
+			<h1 class='slabel bottomBorder'>
+				Length at first maturity / Size / Weight / Age<br />			</h1>
+			<span>
+				Maturity: L<sub>m</sub>&nbsp<a href=../Reproduction/MaturityList.php?ID=58190>?</a>, range 8 -  11.3 cm Max length : 180 cm TL male/unsexed; (Ref. <A href='../references/FBRefSummary.php?ID=104052' target='_blank'>104052</A>); 120 cm TL (female); max. published weight: 10.0 kg (Ref. <A href='../references/FBRefSummary.php?ID=275' target='_blank'>275</A>)			</span>
+			</p><!-- End Size / Weight / Age -->
+
+			<!-- Start Short Description -->
+						<!-- End Short Description -->
+
+			<!-- Start Biology -->
+			<p>
+			<form action='/Glossary/Glossary.php' method='POST'>
+				<div class='sleft'>
+					<h1 class='slabel bottomBorder'>
+						Biology						<span class="floatRight">
+								<span class='uploads'>
+				&nbsp;&nbsp;&nbsp;
+				Glossary
+				<input  type='text' name='q' id='q' size='10' maxlength='25' />
+				</span>
+				<span class='submit slabel6'>
+				<input  type='submit' value='Search'> (e.g.  epibenthic)
+				</span>
+			<BR />						</span>
+					</h1>
+				</div>
+
+			</form>
+			<div class="smallSpace">
+				<span>
+					Maximum common depth is 150 m in Ref. <a href='../references/FBRefSummary.php?ID=75927'>75927</a>.  Maximum depth range from Ref. <a href='../references/FBRefSummary.php?ID=114857'>114857</a>.  Maximum length for female from Ref. <a href='../references/FBRefSummary.php?ID=804'>804</a>.  This octopus is taken by amateur fishers and in small to large-scale harvest throughout its range.  The greatest fishery effort occurs off northwest Africa, and it is know as one of the most valuable octopod species throughout the Mediterranean Sea where it is marketed fresh or frozen (Ref. <a href='../references/FBRefSummary.php?ID=96968'>96968</a>). Inhabits rocky, sandy and muddy bottoms of the coastline to the edge of the continental shelf (Ref. <a href='../references/FBRefSummary.php?ID=2133'>2133</a>).  Found in intertidal and subtidal areas (Ref. <a href='../references/FBRefSummary.php?ID=83938'>83938</a>).				</span>
+			</div>
+			</p><!-- End Biology -->
+
+			<!-- start Reproduction -->
+			<p>
+			<h1 class='slabel bottomBorder'>
+				Life cycle and mating behavior				<span class='addLinks'>
+					<span class='slabel1'><a href='../Reproduction/MaturityList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&fc=1890' alt='Maturity for Octopus vulgaris' title='Maturity for Octopus vulgaris' target='_blank'>Maturity</a></span> | <span class='slabel1'><a href='../Reproduction/ReproSummary.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&fc=1890&StockCode=3996' alt='Reproduction for Octopus vulgaris' title='Reproduction for Octopus vulgaris' target='_blank'>Reproduction</a></span> | <span class='slabel1'><a href='../Reproduction/SpawningList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&fc=1890&StockCode=3996' alt='Spawning for Octopus vulgaris' title='Spawning for Octopus vulgaris' target='_blank'>Spawning</a></span> | <span class='slabel1' style='color:gray;'>Eggs</span> | <span class='slabel1'><a href='/Reproduction/FecundityList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&fc=1890&StockCode=3996' alt='Fecundity for Octopus vulgaris' title='Fecundity for Octopus vulgaris' target='_blank'>Fecundity</a></span> | <span class='slabel1' style='color:gray;'>Larvae</span>				</span>
+			</h1>
+			<div class="smallSpace">
+				<span>
+					Members of the class Cephalopoda are gonochoric.  Male and female adults usually die shortly after spawning and brooding, respectively.  Mating behavior:  Males perform various displays to attract potential females for copulation.  During copulation, male grasp the female and inserts the hectocotylus into the female's mantle cavity where fertilization usually occurs.  Life cycle:  Embryos hatch into planktonic stage and live for some time before they grow larger and take up a benthic existence as adults.				</span>
+			</div>
+			</p><!-- End Reproduction -->
+
+			<p><!-- Main Reference -->
+			<h1 class='slabel bottomBorder'>
+				Main reference  				<span class="addLinks">
+					<span class='slabel1'><a href='../References/SummaryRefList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris' alt='References for Octopus vulgaris' title='References for Octopus vulgaris' target='_blank'>References</a></span> | <span style="color:gray;">Coordinator</span> | <span class='slabel1'><a href='../Collaborators/CollaboratorsList.php?ID=58190&Genus=Octopus&Species=vulgaris' alt='Collaborators for Octopus vulgaris' title='Collaborators for Octopus vulgaris' target='_blank'>Collaborators</a></span><BR />				</span>
+			</h1>
+			<span>
+				<b>Roper, C.F.E., M.J. Sweeney and C.E. Nauen</b> 1984 FAO Species Catalogue. Vol. 3. Cephalopods of the world. An annotated and illustrated catalogue of species of interest to fisheries. FAO Fish. Synop. 125(3):277p. Rome: FAO. (Ref. <A href='../references/FBRefSummary.php?ID=275' target='_blank'>275</A>)<BR />			</span>
+			<!--
+			// <span class='slabel1'>
+				// 			// </span>
+
+			// <span class='slabel1'>
+				// 			// </span>
+
+			// <span class='slabel1'>
+				// 			// </span>
+
+			// <span class='slabel1'>
+				// 			// </span> 
+			-->
+			</p><!-- End Main Reference -->
+
+			<!-- start Translation -->
+			
+
+			<p><!-- IUCN redlist status -->
+			
+					<h1 class='slabel bottomBorder'>
+						IUCN Red List Status    
+						 (Ref. <A href='../references/FBRefSummary.php?ID=130435' target='_blank'>130435</A>: Version 2025-2 (Global))<BR />
+					</h1>
+
+					<div class='smallSpace'><span>
+						<span class='box' style='background-color:#3cb371'>&nbsp;</span><span class=&quot;black&quot;><a class=&quot;black&quot; href=https://www.iucnredlist.org/species/162571/918906 target=&quot;_blank&quot;> Least Concern (LC)</a></span>&nbsp;; Date assessed: <span class='black'>08 April 2016</span>
+					</span></div>
+
+					<br>
+				
+
+			<!-- </div> -->
+
+			<!-- CITES  -->
+			<!-- <div class='sonehalf'> -->
+			<h1 class='slabel bottomBorder'>
+				CITES status   (Ref. <A href='../references/FBRefSummary.php?ID=108899' target='_blank'>108899</A>)<BR />
+			</h1>
+			<div class="smallSpace">
+				<span>
+					Not Evaluated				</span>
+			</div><br>
+			<!-- </div> -->
+
+			<!--Begin Mod 10/17/17 Shelumiel Ortiz-->
+			<!--CMS -->
+			<h1 class='slabel bottomBorder'>
+				CMS (Ref. <A href='../references/FBRefSummary.php?ID=116361' target='_blank'>116361</A>)<BR />			</h1>
+			<div class="smallSpace">
+				<span>
+					Not Evaluated				</span>
+			</div><br>
+			<!--End Mod 10/17/17 Shelumiel Ortiz-->
+
+			<!-- Threat to Humans -->
+			<!-- <div class='ralign sonehalf'> -->
+			<h1 class='slabel bottomBorder'>
+				Threat to humans  <BR />			</h1>
+			<div class="smallSpace">
+				<span>
+									</span>
+			</div>
+			<!-- </div> -->
+			<!-- end Threat to Humans -->
+			</p>
+			<!-- <br/><br/><br/> -->
+			<!-- end IUCN redlist status -->
+			<p><!-- Human Uses -->
+			<h1 class='slabel bottomBorder'>
+				Human uses  <BR />			</h1>
+			<span>
+				Fisheries: commercial			</span>
+			<br />
+
+			<span>
+				FAO - Fisheries: <a target='_blank' href='https://www.fao.org/fishery/en/aqspecies/3571/en' title='FAO Species fact sheets' target='_blank'>species profile</a>, <a target='_blank' href='https://www.fao.org/fishery/statistics-query/en?dataset=capture&timeseries=capture_quantity' title='FAO Capture Production'>landings search</a>; Publication: <a href='http://www.fao.org/fishery/publications/query/Octopus vulgaris,Common octopus*,Common octopus*' title='FAO publications' target='_blank'>search</a>  | FIRMS <a href='http://firms.fao.org/firms/search/species/OCC' title='FIRMS Fishery Marine Resources fact sheets' target='_blank'>(Stock assessments)</a> | <a href='https://www.fishsource.org/fishbase_query?genus=Octopus&specific_descriptor=vulgaris' target='_blank' title='Information for Octopus vulgaris fisheries on FishSource'>FishSource</a> | <span class='slabel1'><a href='http://www.seaaroundus.org/data/#/taxa/690088' target='_blank'>Sea Around Us</a></span>			</span>
+
+			</p><!-- end Human Uses -->
+			<!-- Start CITES -->
+			
+			<p>
+			<h1 class='slabel bottomBorder fontSize10'>Tools<BR /></h1>
+			<div class="smallSpace">
+				<span>
+					<span class='slabel1'><a href='../FieldGuide/FieldGuideSummary.php?GenusName=Octopus&SpeciesName=vulgaris&pda=&sps=' alt='E-book for Octopus vulgaris' title='E-book for Octopus vulgaris' target='_blank'>E-book</a></span> | <span class='slabel1'><a href='../FieldGuide/FieldGuideSummary.php?GenusName=Octopus&SpeciesName=vulgaris&sps=&print=' alt='Field guide for Octopus vulgaris' title='Field guide for Octopus vulgaris' target='_blank'>Field guide</a></span><BR />
+				</span>
+			</div>
+			</p>
+			<p>
+			<div id='ss-moreinfo-container'><!-- More Information -->
+
+				<h1 class='slabel bottomBorder'>
+					More information				</h1>
+
+				<div class="flex-container">
+					<div class='flex-column-container'><div class='topic-container'><span class='title'> Trophic Ecology</span><div class='topic-list-container'><span class='slabel1'><a href='../TrophicEco/FoodItemsList.php?vstockcode=3996&genus=Octopus&species=vulgaris' alt='Food items (preys) for Octopus vulgaris' title='Food items (preys) for Octopus vulgaris' target='_blank'>Food items (preys)</a></span><BR /><span class='slabel1' style='color:gray;'>Diet composition</span><BR /><span class='slabel1'><a href='../TrophicEco/FoodConsumptionList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris' alt='Food consumption for Octopus vulgaris' title='Food consumption for Octopus vulgaris' target='_blank'>Food consumption</a></span><BR /><span class='slabel1'><a href='../TrophicEco/PredatorList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris' alt='Predators for Octopus vulgaris' title='Predators for Octopus vulgaris' target='_blank'>Predators</a></span><BR /></div></div><div class='topic-container'><span class='title'> Ecology</span><div class='topic-list-container'><span class='slabel1'><a href='../Ecology/SpeciesEcologySummary.php?StockCode=3996&GenusName=Octopus&SpeciesName=vulgaris' alt='Ecology for Octopus vulgaris' title='Ecology for Octopus vulgaris' target='_blank'>Ecology</a></span><BR /></div></div><div class='topic-container'><span class='title'> Population dynamics</span><div class='topic-list-container'><span class='slabel1'><a href='../PopDyn/PopGrowthList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&fc=1890' alt='Growth for Octopus vulgaris' title='Growth for Octopus vulgaris' target='_blank'>Growth</a></span><BR /><span class='slabel1'><a href='../PopDyn/PopCharList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&fc=1890' alt='Max. ages / sizes for Octopus vulgaris' title='Max. ages / sizes for Octopus vulgaris' target='_blank'>Max. ages / sizes</a></span><BR /><span class='slabel1'><a href='../PopDyn/LWRelationshipList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&fc=1890' alt='Length-weight rel. for Octopus vulgaris' title='Length-weight rel. for Octopus vulgaris' target='_blank'>Length-weight rel.</a></span><BR /><span class='slabel1' style='color:gray;'>Length-length rel.</span><BR /><span class='slabel1' style='color:gray;'>Length-frequencies</span><BR /><span class='slabel1'><a href='../Summary/biomass.php?id=58190' alt='Mass conversion for Octopus vulgaris' title='Mass conversion for Octopus vulgaris' target='_blank'>Mass conversion</a></span><BR /><span class='slabel1' style='color:gray;'>Abundance</span><BR /></div></div></div><div class='flex-column-container'><div class='topic-container'><span class='title'> Life cycle</span><div class='topic-list-container'><span class='slabel1'><a href='../Reproduction/ReproSummary.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&fc=1890&StockCode=3996' alt='Reproduction for Octopus vulgaris' title='Reproduction for Octopus vulgaris' target='_blank'>Reproduction</a></span><BR /><span class='slabel1'><a href='../Reproduction/MaturityList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&fc=1890' alt='Maturity for Octopus vulgaris' title='Maturity for Octopus vulgaris' target='_blank'>Maturity</a></span><BR /><span class='slabel1'><a href='/Reproduction/FecundityList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&fc=1890&StockCode=3996' alt='Fecundity for Octopus vulgaris' title='Fecundity for Octopus vulgaris' target='_blank'>Fecundity</a></span><BR /><span class='slabel1'><a href='../Reproduction/SpawningList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&fc=1890&StockCode=3996' alt='Spawning for Octopus vulgaris' title='Spawning for Octopus vulgaris' target='_blank'>Spawning</a></span><BR /><span class='slabel1' style='color:gray;'>Eggs</span><BR /><span class='slabel1' style='color:gray;'>Egg development</span><BR /><span class='slabel1' style='color:gray;'>Larvae</span><BR /></div></div><div class='topic-container'><span class='title'> Distribution</span><div class='topic-list-container'><span class='slabel1'><a href='../Country/CountryList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris' alt='Territories for Octopus vulgaris' title='Territories for Octopus vulgaris' target='_blank'>Territories</a></span><BR /><span class='slabel1'><a href='../Country/FaoAreaList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&fc=1890&StockCode=3996&Scientific=Octopus+vulgaris' alt='FAO areas for Octopus vulgaris' title='FAO areas for Octopus vulgaris' target='_blank'>FAO areas</a></span><BR /><span class='slabel1'><a href='../trophiceco/EcosysList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris' alt='Ecosystems for Octopus vulgaris' title='Ecosystems for Octopus vulgaris' target='_blank'>Ecosystems</a></span><BR /><span class='slabel1' style='color:gray;'>Occurrences</span><BR /><span class='slabel1' style='color:gray;'>Introductions</span><BR /></div></div><div class='topic-container'><span class='title'> Physiology</span><div class='topic-list-container'><span class='slabel1' style='color:gray;'>Oxygen consumption</span><BR /></div></div></div><div class='flex-column-container'><div class='topic-container'><span class='title'> Human Related</span><div class='topic-list-container'><span class='slabel1' style='color:gray;'>Stamps, coins, misc.</span><BR /></div></div><div class='topic-container'><span class='title'> Outreach</span><div class='topic-list-container'><span class='slabel1'><a href='../Collaborators/CollaboratorsList.php?ID=58190&Genus=Octopus&Species=vulgaris' alt='Collaborators for Octopus vulgaris' title='Collaborators for Octopus vulgaris' target='_blank'>Collaborators</a></span><BR /></div></div><div class='topic-container'><span class='title'> Taxonomy</span><div class='topic-list-container'><span class='slabel1'><a href='../comnames/CommonNamesList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris&StockCode=3996' alt='Common names for Octopus vulgaris' title='Common names for Octopus vulgaris' target='_blank'>Common names</a></span><BR /><span class='slabel1'><a href='../Nomenclature/SynonymsList.php?ID=58190&SynCode=71148&GenusName=Octopus&SpeciesName=vulgaris' alt='Synonyms for Octopus vulgaris' title='Synonyms for Octopus vulgaris' target='_blank'>Synonyms</a></span><BR /><span class='slabel1' style='color:gray;'>Morphology</span><BR /><span class='slabel1'><a href='../Photos/thumbnailssummary.php?ID=58190' alt='Pictures for Octopus vulgaris' title='Pictures for Octopus vulgaris' target='_blank'>Pictures</a></span><BR /></div></div><div class='topic-container'><span class='title'> References</span><div class='topic-list-container'><span class='slabel1'><a href='../References/SummaryRefList.php?ID=58190&GenusName=Octopus&SpeciesName=vulgaris' alt='References for Octopus vulgaris' title='References for Octopus vulgaris' target='_blank'>References</a></span><BR /></div></div></div>				</div>
+
+			</div><!-- end More Information -->
+			</p>
+			<p style='clear: both;'><!-- Internet sources -->
+			<h1 class='slabel bottomBorder'>
+				Internet sources<BR />			</h1>
+			<span class='sleft sheader5'>
+				<span class='slabel1'><a href='https://www.biodiversitylibrary.org/search?SearchTerm=Octopus+vulgaris#/names' target='_blank'>BHL</a></span> | BOLD Systems | <span class='slabel1'><a href='https://science-libraries.canada.ca/eng/search/?q=Octopus+vulgaris' target='_blank'>CISTI</a></span> | <span class='slabel1'><a href='http://www.discoverlife.org/20/q?search=Octopus+vulgaris&b=FB58190' target='_blank'>DiscoverLife</a></span> | FAO - Fisheries: <a target='_blank' href='https://www.fao.org/fishery/en/aqspecies/3571/en' title='FAO Species fact sheets' target='_blank'>species profile</a>, <a target='_blank' href='https://www.fao.org/fishery/statistics-query/en?dataset=capture&timeseries=capture_quantity' title='FAO Capture Production'>landings search</a>; Publication: <a href='http://www.fao.org/fishery/publications/query/Octopus vulgaris,Common octopus*,Common octopus*' title='FAO publications' target='_blank'>search</a>  | <a href='http://www.fishipedia.fr/fr/mollusques/octopus-vulgaris' target='_blank'>Fishipedia</a> | GenBank (<span class='slabel1'><a href='https://www.ncbi.nlm.nih.gov/genome/?term=Octopus+vulgaris%5Borgn%5D&report=docsum' target='_blank'>genome</a></span>, <span class='slabel1'><a href='https://www.ncbi.nlm.nih.gov/nuccore/?term=Octopus+vulgaris%5Borgn%5D&report=docsum' target='_blank'>nucleotide</a></span>) | <a href='https://www.globalbioticinteractions.org/?interactionType=interactsWith&sourceTaxon=FBC%3ASLB%3ASpecCode%3A58190' target='_blank'>GloBI</a> | Gomexsi | <span class='slabel1'><a href='https://books.google.com/books?ie=UTF-8&q=%22Octopus+vulgaris%22 OR %22Common+octopus%22&btnG=Search' target='_blank'>Google Books</a></span> | <span class='slabel1'><a href='https://scholar.google.com/scholar?q=%22Octopus+vulgaris%22 OR %22Common+octopus%22&ie=UTF-8&oe=UTF-8&hl=en&btnG=Search' target='_blank'>Google Scholar</a></span> | <span class='slabel1'><a href='https://www.google.com/search?q=%22Octopus+vulgaris%22+%22Common+octopus%22&time=7&x=44&y=7' target='_blank'>Google</a></span> | <span class='slabel1'><a href='https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pubmed&term=Octopus+vulgaris' target='_blank'>PubMed</a></span> | <span class='slabel1'><a href='http://tolweb.org/tree?group=' target='_blank'>Tree of Life</a></span> | Wikipedia (<span class='slabel1'><a href='https://en.wikipedia.org/wiki/Special:Search?search=Octopus+vulgaris&go=Go' target='_blank'>Go</a></span>, <span class='slabel1'><a href='https://en.wikipedia.org/wiki/Special:Search?search=Octopus+vulgaris&fulltext=Search' target='_blank'>Search</a></span>) | <span class='slabel1'><a href='http://www.organismnames.com/query.htm?q=Octopus+vulgaris&Submit.x=20&Submit.y=7&searchType=simple&so=a0' target='_blank'>Zoological Record</a></span>			</span>
+			</p><!-- end Internet sources -->
+
+			<p><!-- Estimation -->
+			<h1 class='slabel bottomBorder'>
+				Estimates based on models<BR />			</h1>
+			<!--Begin Mod 08/10/17 Shelumiel Ortiz-->
+			
+			<!-- Indefinitely temporary disabled showing - Preferred Temparature  -->
+			<!-- <div class="smallSpace">
+									<span class='slabel'>
+						Preferred temperature  					</span>
+				 (Ref. <a href='../references/FBRefSummary.php?ID=115969' target='_blank'>115969</a>): 10 - 28.9, mean 25.8 (based on 8514 cells).			</div> -->
+
+			<table id='estimates_model'>
+								<tr class='em_row'>
+									<td class='emlabel'>Resilience<br>(Ref. <a href='/manual/English/key%20facts.htm#resilience'>69278</a>):</td>
+									<td class='emvalue'>High, minimum population doubling time less than 15 months (K=0.38-0.72; tm=1.2)</td>
+								</tr>
+							
+								<tr class='em_row'>
+									<td class='emlabel'>Rate of population increase<br></td>
+									<td class='emvalue'> <b>Prior r</b> = 0.77, 95% CL = 0.51 - 1.15, Based on 4 full stock assessments.</td>
+								</tr>
+							
+								<tr class='em_row'>
+									<td class='emlabel'>Fishing Vulnerability<br>(Ref. <A href='../references/FBRefSummary.php?ID=71543' target='_blank'>71543</A>)</td>
+									<td class='emvalue'>Moderate to high vulnerability (48 of 100).</td>
+								</tr>
+							
+								<tr class='em_row'>
+									<td class='emlabel'>Climate Vulnerability<br>(Ref. <A href='../references/FBRefSummary.php?ID=125649' target='_blank'>125649</A>)</td>
+									<td class='emvalue'>Low vulnerability (21 of 100)</td>
+								</tr>
+							
+								<tr class='em_row'>
+									<td class='emlabel'>Price category<br>(Ref. <A href='../references/FBRefSummary.php?ID=80766' target='_blank'>80766</A>):</td>
+									<td class='emvalue'><span id='pricecateg'><a href='#price' onclick='getDetails('../includes/ajax/price.js.php?id=58190', 'pricecateg');return false;'>Very high.</a></span></td>
+								</tr>
+							
+								<tr class='em_row'>
+									<td class='emlabel'>Nutrients<br></td>
+									<td class='emvalue'>Calcium = 126 [75, 177]  mg/100g; Iron = 4.79 [1.67, 7.92]  mg/100g; Protein = 15.5 [13.7, 17.4] %; Omega3 = 0.414 [0.262, 0.566]  g/100g; Selenium = 57.8 [48.5, 67.2]  μg/100g; VitaminA = 0 μg/100g; Zinc = 1.97 [0.92, 3.02]  mg/100g (wet weight); based on <a href='../Nutrients/NutrientsList.php?speccode=58190&GenusName=Octopus&SpeciesName=vulgaris'>nutrient studies.</a></td>
+								</tr>
+							</table>	
+		</div><!-- ss-main -->
+
+		<!-- NavFooter -->
+		<div id="ss-footer">
+
+			<hr>
+			<div class='slabel7 calign'>
+				<a href='/summary/RandomSpecies.php'>Random Species</a>
+				<div class="sfooter"><div class="onethird lalign"><a href="/search.php">Back to Search</a></a></div><div class="onethird calign"><a href="javascript:document.mail.submit()">Comments & Corrections</a></div><div class="onethird ralign"><a href="#">Back to Top</a></div></div><form name="mail" method="post" action="/Mail/MailForm.php"><input type="hidden" name="code" value=11><input type="hidden" name="pagefrom" value=http://www.sealifebase.se/summary/Octopus-vulgaris.html&nbsp;-&nbsp;sealifebase.se><input type="hidden" name="pagefrom_only" value=http://www.sealifebase.se/summary/Octopus-vulgaris.html></form>			</div>
+
+
+			
+		</div>
+
+	</div><!-- end ss-container -->
+	</BODY>
+
+</HTML>

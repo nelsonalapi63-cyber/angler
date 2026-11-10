@@ -72,13 +72,19 @@ const toKey = dive.keyPlusDays(today, SCHEDULE_DAYS_AHEAD);
 const schedule = dive.buildSchedule(prompts, existing, fromKey, toKey);
 fs.writeFileSync(schedulePath, JSON.stringify(schedule, null, 0).replace(/\],"/g, '],\n"') + '\n');
 const frozenDays = Object.keys(schedule).filter(k => k < fromKey).length;
+// ---- v4: the answer sets of every day up to today are frozen in data/frozen.json the first time that day is built
+const { snapshotFrozen } = require('./tools/frozen.js');
+const frozenPath = path.join(ROOT, 'data', 'frozen.json');
+const frozenBefore = fs.existsSync(frozenPath) ? JSON.parse(fs.readFileSync(frozenPath, 'utf8')) : {};
+const frozen = snapshotFrozen(schedule, prompts, frozenBefore, today);
+fs.writeFileSync(frozenPath, JSON.stringify(frozen, null, 0).replace(/\},"/g, '},\n"') + '\n');
 
 const byId = {};
 for (const e of entities) byId[e.id] = e;
 const version = crypto.createHash('sha1').update(JSON.stringify(entities) + JSON.stringify(prompts) + JSON.stringify(schedule) + JSON.stringify(taxa)).digest('hex').slice(0, 12);
 fs.writeFileSync(path.join(ROOT, 'data', 'version.json'), JSON.stringify({ version, built: stamp }) + '\n');
 fs.writeFileSync(path.join(ROOT, 'entities.js'), header + 'window.FATHOM_ENTITIES = ' + JSON.stringify(byId) + ';\n');
-fs.writeFileSync(path.join(ROOT, 'prompts.js'), header + 'window.FATHOM_PROMPTS = ' + JSON.stringify(prompts) + ';\nwindow.FATHOM_PACKS = ' + JSON.stringify(packs) + ';\nwindow.FATHOM_SCHEDULE = ' + JSON.stringify(schedule) + ';\nwindow.FATHOM_DATA_VERSION = ' + JSON.stringify(version) + ';\nwindow.FATHOM_DATA_BUILT = ' + JSON.stringify(stamp) + ';\n');
+fs.writeFileSync(path.join(ROOT, 'prompts.js'), header + 'window.FATHOM_PROMPTS = ' + JSON.stringify(prompts) + ';\nwindow.FATHOM_PACKS = ' + JSON.stringify(packs) + ';\nwindow.FATHOM_SCHEDULE = ' + JSON.stringify(schedule) + ';\nwindow.FATHOM_FROZEN = ' + JSON.stringify(frozen) + ';\nwindow.FATHOM_DATA_VERSION = ' + JSON.stringify(version) + ';\nwindow.FATHOM_DATA_BUILT = ' + JSON.stringify(stamp) + ';\n');
 fs.writeFileSync(path.join(ROOT, 'taxa.js'), header + 'window.FATHOM_TAXA = ' + JSON.stringify(taxa) + ';\n');
 
 // ---- boot bundle
@@ -100,7 +106,10 @@ for (const p of bootPrompts) {
     bootTaxa[g] = Array.from(new Set((bootTaxa[g] || []).concat(names)));
   }
 }
-const boot = { built: stamp, version, days: Object.keys(bootDays), prompts: bootPrompts, entities: bootEntities, packs, schedule: bootDays, taxa: bootTaxa };
+const bootFrozen = {};
+for (const k of Object.keys(bootDays)) if (frozen[k]) bootFrozen[k] = frozen[k];
+for (const day of Object.values(bootFrozen)) for (const answers of Object.values(day)) for (const a of answers) if (byId[a.entity]) bootEntities[a.entity] = byId[a.entity];
+const boot = { built: stamp, version, days: Object.keys(bootDays), prompts: bootPrompts, entities: bootEntities, packs, schedule: bootDays, frozen: bootFrozen, taxa: bootTaxa };
 fs.writeFileSync(path.join(ROOT, 'boot.js'), header + 'window.FATHOM_SITE = ' + JSON.stringify({ siteUrl: SITE_URL }) + ';\nwindow.FATHOM_BOOT = ' + JSON.stringify(boot) + ';\nwindow.FATHOM_DATA_VERSION = ' + JSON.stringify(version) + ';\n');
 
 // ---- site files that depend on the address: robots.txt, sitemap.xml, the Open Graph tags in index.html
@@ -123,7 +132,7 @@ if (wantDist) {
   fs.rmSync(dist, { recursive: true, force: true });
   fs.mkdirSync(dist, { recursive: true });
   const copy = (rel) => { const from = path.join(ROOT, rel); if (!fs.existsSync(from)) return; fs.mkdirSync(path.dirname(path.join(dist, rel)), { recursive: true }); fs.cpSync(from, path.join(dist, rel), { recursive: true }); };
-  ['index.html', '404.html', 'styles.css', 'app.js', 'game.js', 'pages.js', 'storage.js', 'charts.js', 'online.js', 'monetise.js', 'achievements.js', 'share.js', 'surface.js', 'sub.js', 'retain.js', 'social.js', 'admin.js', 'boot.js', 'entities.js', 'prompts.js', 'taxa.js', 'sw.js', 'manifest.json', 'robots.txt', 'sitemap.xml', 'privacy.html', 'terms.html', 'refunds.html', 'admin.html', 'shared/dive.js', 'fonts', 'icons', 'data/illustrations'].forEach(copy);
+  ['index.html', '404.html', 'styles.css', 'app.js', 'game.js', 'pages.js', 'storage.js', 'charts.js', 'online.js', 'monetise.js', 'achievements.js', 'share.js', 'surface.js', 'sub.js', 'duel.js', 'retain.js', 'social.js', 'admin.js', 'boot.js', 'entities.js', 'prompts.js', 'taxa.js', 'sw.js', 'manifest.json', 'robots.txt', 'sitemap.xml', 'privacy.html', 'terms.html', 'refunds.html', 'admin.html', 'shared/dive.js', 'shared/duel.js', 'fonts', 'icons', 'data/illustrations'].forEach(copy);
   for (const html of ['index.html', 'admin.html']) {
     for (const m of fs.readFileSync(path.join(ROOT, html), 'utf8').matchAll(/<script src="([^"]+)"/g)) {
       if (!fs.existsSync(path.join(dist, m[1]))) throw new Error(html + ' loads ' + m[1] + ' but it is not in the dist list');
@@ -138,4 +147,4 @@ if (wantDist) {
 const kb = (f) => Math.round(fs.statSync(path.join(ROOT, f)).size / 1024) + ' KB';
 console.log('taxon prompts: ' + prompts.filter(p => p.taxon).length + ' of ' + prompts.length + (taxonChanged ? ' (data/prompts.json updated from seeds)' : ''));
 console.log('built entities.js (' + entities.length + ' entities, ' + artIds.size + ' illustrated, ' + kb('entities.js') + '), prompts.js (' + prompts.length + ' prompts, ' + packs.length + ' packs, ' + kb('prompts.js') + '), taxa.js (' + Object.keys(taxa).length + ' groups, ' + Object.values(taxa).reduce((n, l) => n + l.length, 0) + ' names, ' + kb('taxa.js') + '), boot.js (' + bootPrompts.length + ' prompts, ' + Object.keys(bootEntities).length + ' entities, ' + kb('boot.js') + ')');
-console.log('schedule ' + Object.keys(schedule).length + ' days (' + frozenDays + ' frozen, regenerated from ' + fromKey + '); data version ' + version + (partial ? ' [partial]' : ''));
+console.log('schedule ' + Object.keys(schedule).length + ' days (' + frozenDays + ' frozen, regenerated from ' + fromKey + '; ' + Object.keys(frozen).length + ' days with frozen answer sets); data version ' + version + (partial ? ' [partial]' : ''));

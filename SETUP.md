@@ -18,7 +18,20 @@ npx lighthouse http://127.0.0.1:8787/ --form-factor=mobile --screenEmulation.mob
 
 The last Lighthouse mobile run (dist build, simulated slow 4G and a 4× slower CPU) scored performance 96–97 (total blocking time varies between runs), accessibility 100, best practices 100, SEO 100; the report is `tests/reports/lighthouse-mobile.report.html`. The browser run writes `tests/reports/axe-report.json` (axe-core, default rules, zero violations on every screen).
 
-Content lives in `data/prompt-seeds.json` (one entry per prompt, with `taxon`/`taxonFilter` for the taxa safety net and `min` only where 40 answers are impossible), `data/batches/*` (answers, aliases, facts, tiers) and `data/taxa/*.json` (scientific and common names per group, merged by `node tools/merge-taxa.js`). `node tools/add-batch.js` merges a batch, `node tools/validate-data.js` checks the whole bank, `node tools/apply-patch.js data/patches/<file>.json` applies corrections (including the admin inbox export). Past days in `data/schedule.json` are frozen; the build only fills future days.
+Content lives in `data/prompt-seeds.json` (one entry per prompt, with `taxon`/`taxonFilter` for the taxa safety net and `retired` for questions that could not reach the floor), `data/prompts.json` + `data/entities.json` (the bank itself) and `data/taxa/*.json` (scientific and common names per group, merged by `node tools/merge-taxa.js`). `node tools/add-batch.js` merges a batch, `node tools/validate-data.js` checks the whole bank, `node tools/apply-patch.js data/patches/<file>.json` applies corrections (including the admin inbox export). Past days in `data/schedule.json` are frozen and `data/frozen.json` keeps the exact answer sets those days were played with; the build only fills future days.
+
+### The v4 bank floor (75 sourced answers per live question)
+
+```
+node tools/bank/build.js --concurrency 8      # tops every live question up to 75 answers; hours the first time (every page is cached under tools/bank/cache/)
+node tools/bank/refresh-facts.js              # repairs any fact cut short and restores hand-written facts the builder touched
+node tools/bank/legacy-list.js                # rebuilds data/legacy-entities.json (pre-v4 entities without a source; it can only shrink)
+node tools/validate-data.js                   # must print OK: every live question 75+ answers and the tier floors, every v4 answer a source, 211+ live questions
+node tools/check-leniency.js                  # name collisions must still be zero
+node build.js                                 # then upload the bank (step 5 of §2) and redeploy submit-dive and duel
+```
+
+`tools/bank/questions.js` says where each question's candidates come from (a reference list, the existing bank, or a hand list in `tools/bank/lists/`) and the FishBase / SeaLifeBase / Wikipedia test a candidate must pass; a question whose config is `retire: true`, or that still cannot reach 75 verified answers, is retired (`retired: true` on the prompt and its seed): it keeps its answers for the archive and the days it was played on, and is never scheduled or dealt again. Replacement questions are the `REPLACE` list in the same file. `tools/bank/report.json` is the before/after count of the last run. The builder never rewrites a hand-written entity: new answers get a page-derived fact and a `source`; pre-v4 answers keep their own fact and are counted by the validator (`data/legacy-entities.json`).
 
 ## 1. Deploy on your domain
 
@@ -51,6 +64,7 @@ node tools/sync-shared.js                       # copies shared/dive.js next to 
 supabase login
 supabase link --project-ref <ref>
 supabase functions deploy submit-dive
+supabase functions deploy duel                 # v4: private duel rooms (verify_jwt off — guests play with the anon key; every call is checked in the function)
 supabase functions deploy delete-account
 supabase functions deploy push-subscribe
 supabase functions deploy send-reminders
@@ -69,6 +83,8 @@ SUPABASE_URL=https://<ref>.supabase.co SUPABASE_ANON_KEY=<anon key> BANK_TOKEN=<
 Add those three as repository secrets (`SUPABASE_URL`, `SUPABASE_ANON_KEY`, `BANK_TOKEN`) and the deploy workflow re-uploads the bank after every build. The token can write the bank and nothing else; the service role key never leaves Supabase.
 
    v3 note: `daily_curve` now also returns `at_or_above` and `below` (the browser turns them into "You beat X% of divers today"); re-run the `daily_curve` block of `schema.sql` on a project created before v3. The hint is free (`HINT_COST = 0` in `shared/dive.js`) and limited to one per dive by the game itself.
+
+   v4 note — Duel: run the "v4 Duel" block of `schema.sql` (tables `duel_rooms`, `duel_secrets`, `duel_players`, `duel_events`, their policies, the Realtime publication and the `duel_played` / `duel_wins` profile columns), then deploy the `duel` function (`node tools/sync-shared.js` first: it copies `shared/dive.js` and `shared/duel.js` next to it). Players only ever read `duel_rooms` and `duel_events` (Realtime broadcasts the public state; the hidden fuse lives in `duel_secrets`, which nobody can read) and every write goes through the function with a per-player token. Check a deployment with `SUPABASE_URL=… SUPABASE_ANON_KEY=… node tools/duel-smoke.js` — it plays a whole two-player room (create, join, start, refused turn, refused repeat, the pop on the server clock, the next round, leave, rematch) in about 35 seconds; the same run is the env-gated last test of `tests/online.test.js`. Finished rooms are swept six hours after they end, untouched rooms after two days.
 
 6. In `online.js` set `SUPABASE_URL` and `SUPABASE_ANON_KEY`, then `LEADERBOARD_ENABLED: true`, `ANALYTICS_ENABLED: true`, `MOCK_ONLINE_DATA: false`. Redeploy (push to `main`). The browser tests keep running in demo mode: they set `localStorage['angler.mock'] = '1'`, which turns the online flags off for that browser only.
 

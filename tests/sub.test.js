@@ -66,3 +66,14 @@ test('drawSub issues canvas commands without touching anything else', () => {
   Sub.drawSub(ctx, { x: 60, y: 120, scale: 1, tilt: 0.2, t: 1.5, lamp: 0.6, fist: 0, flicker: 0 });
   assert.ok(calls.includes('arc') && calls.includes('fill') && calls.includes('stroke'), 'hull, porthole and beam are drawn');
 });
+
+// ---- v4: the descent takes the whole screen and always lasts 2,000–3,000 ms, whatever the drop
+test('takeoverMs: every drop sinks for two to three seconds, bigger drops longer', () => {
+  assert.strictEqual(Sub.takeoverMs(dive.depthFor(10)), 2000 + Math.round(1000 * dive.depthFor(10) / 3000));
+  assert.ok(Sub.takeoverMs(1) >= 2000 && Sub.takeoverMs(1) <= 3000);
+  assert.ok(Sub.takeoverMs(dive.depthFor(100)) > Sub.takeoverMs(dive.depthFor(10)), 'a hadal drop sinks longer than a tide-pool one');
+  assert.strictEqual(Sub.takeoverMs(dive.CHALLENGER_DEEP_M), 3000);
+  assert.strictEqual(Sub.takeoverMs(0), 2000);
+  assert.strictEqual(Sub.TAKEOVER_MIN_MS, 2000);
+  assert.strictEqual(Sub.TAKEOVER_MAX_MS, 3000);
+});

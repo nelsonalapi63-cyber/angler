@@ -2,6 +2,7 @@
 /* Uploads the answer bank to the `bank` table in Supabase, where the Edge Functions score dives with it:
  *   prompts  ← data/prompts.json       entities ← data/entities.json
  *   schedule ← data/schedule.json      taxa     ← data/taxa.json        version ← data/version.json
+ *   frozen   ← data/frozen.json  (v4: the answer sets of days already played, so the server scores a day the way it was served)
  * One row per key, through the bank-upload Edge Function, so the server always scores with the bank the players see.
  *
  * Usage: SUPABASE_URL=https://xxx.supabase.co SUPABASE_ANON_KEY=... BANK_TOKEN=... node tools/upload-bank.js
@@ -15,8 +16,8 @@ const ROOT = path.join(__dirname, '..');
 const URL = process.env.SUPABASE_URL;
 const ANON = process.env.SUPABASE_ANON_KEY;
 const TOKEN = process.env.BANK_TOKEN;
-const FILES = { prompts: 'data/prompts.json', entities: 'data/entities.json', schedule: 'data/schedule.json', taxa: 'data/taxa.json', version: 'data/version.json' };
-const ORDER = ['taxa', 'entities', 'prompts', 'schedule', 'version'];   // version last: the functions re-read everything when it changes
+const FILES = { prompts: 'data/prompts.json', entities: 'data/entities.json', schedule: 'data/schedule.json', taxa: 'data/taxa.json', frozen: 'data/frozen.json', version: 'data/version.json' };
+const ORDER = ['taxa', 'entities', 'prompts', 'schedule', 'frozen', 'version'];   // version last: the functions re-read everything when it changes
 
 async function put(key, data) {
   const res = await fetch(URL + '/functions/v1/bank-upload', {

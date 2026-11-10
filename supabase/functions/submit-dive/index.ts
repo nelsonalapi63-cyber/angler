@@ -16,7 +16,9 @@ const BANK_TTL_MS = 10 * 60 * 1000;       // how long a loaded bank is trusted b
 
 type Answer = { typed: string; secondsUsed: number; hint?: boolean; guesses?: string[] };
 type Body = { day: string; promptIds: string[]; answers: Answer[]; deviceId?: string; clientDepth?: number; dataVersion?: string | null };
-type Bank = { prompts: Array<{ id: string; answers: unknown[] }>; entitiesById: Record<string, unknown>; schedule: unknown; taxa: Record<string, string[]>; version: string; loadedAt: number };
+type Prompt = { id: string; answers: Array<{ entity: string; tier: string }> };
+type Frozen = Record<string, Record<string, Array<{ entity: string; tier: string }>>>;   // day -> prompt id -> the answer list it was played with
+type Bank = { prompts: Prompt[]; entitiesById: Record<string, unknown>; schedule: unknown; taxa: Record<string, string[]>; frozen: Frozen; version: string; loadedAt: number };
 
 // deno-lint-ignore no-explicit-any
 const dive = (globalThis as any).FathomDive;
@@ -30,14 +32,23 @@ async function loadBank(admin: any): Promise<Bank> {
   const { data: v } = await admin.from("bank").select("data").eq("key", "version").maybeSingle();
   const version = v?.data?.version ?? "";
   if (bank && bank.version === version) { bank.loadedAt = Date.now(); return bank; }
-  const { data: rows, error } = await admin.from("bank").select("key,data").in("key", ["prompts", "entities", "schedule", "taxa"]);
+  const { data: rows, error } = await admin.from("bank").select("key,data").in("key", ["prompts", "entities", "schedule", "taxa", "frozen"]);
   if (error) throw new Error("bank: " + error.message);
   const by: Record<string, unknown> = Object.fromEntries((rows || []).map((r: { key: string; data: unknown }) => [r.key, r.data]));
   if (!by.prompts || !by.entities) throw new Error("bank is empty — run node tools/upload-bank.js");
-  const prompts = (by.prompts as Array<{ id: string; answers: unknown[] }>).filter((p) => p.answers && p.answers.length);
+  const prompts = (by.prompts as Prompt[]).filter((p) => p.answers && p.answers.length);
   const entitiesById = Object.fromEntries((by.entities as Array<{ id: string }>).map((e) => [e.id, e]));
-  bank = { prompts, entitiesById, schedule: by.schedule || {}, taxa: (by.taxa as Record<string, string[]>) || {}, version, loadedAt: Date.now() };
+  bank = { prompts, entitiesById, schedule: by.schedule || {}, taxa: (by.taxa as Record<string, string[]>) || {}, frozen: (by.frozen as Frozen) || {}, version, loadedAt: Date.now() };
   return bank;
+}
+// v4: a day already played keeps the answer sets it was served with (data/frozen.json, uploaded as `frozen`), so the
+// server scores it exactly as the browser did however the bank has grown since. Returns prompts by id for the scorer.
+function promptsForDay(b: Bank, day: string): Record<string, Prompt> {
+  const byId: Record<string, Prompt> = {};
+  for (const p of b.prompts) byId[p.id] = p;
+  const frozenDay = b.frozen && b.frozen[day];
+  if (frozenDay) for (const id of Object.keys(frozenDay)) if (byId[id] && Array.isArray(frozenDay[id])) byId[id] = { ...byId[id], answers: frozenDay[id].map((a) => ({ entity: a.entity, tier: a.tier })) };
+  return byId;
 }
 
 Deno.serve(async (req) => {
@@ -81,7 +92,7 @@ Deno.serve(async (req) => {
   }));
 
   // --- re-score on the server (hint costs deducted, reference-list species accepted at Midnight — same code as the browser)
-  const scored = dive.scoreSubmissionFull({ promptIds: expected, answers }, b.prompts, b.entitiesById, b.taxa);
+  const scored = dive.scoreSubmissionFull({ promptIds: expected, answers }, promptsForDay(b, today), b.entitiesById, b.taxa);
   if (scored.secondsUsed < MIN_PLAUSIBLE_SECONDS) return json(400, { error: "implausibly fast" });
   const flagged = scored.points >= FLAG_POINTS_AT_LEAST && scored.secondsUsed < FLAG_IF_SECONDS_UNDER;
 
