@@ -31,11 +31,11 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: Install Playwright's Chromium (renders the per-day Open Graph images)
         run: npm install --no-save playwright@1 && npx playwright install --with-deps chromium
       - name: Tests
-        run: node --test 'tests/*.test.js'
+        run: node --test tests/*.test.js
       - name: Build (freezes past days, regenerates the schedule, writes boot.js and dist/)
         run: |
           node build.js --dist
